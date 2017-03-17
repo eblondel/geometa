@@ -177,6 +177,11 @@ ISOMetadata <- R6Class("ISOMetadata",
          stop("The argument should be a 'ISODistribution' object")
        }
        self$distributionInfo = distributionInfo
+     },
+     
+     #setDataQualityInfo
+     setDataQualityInfo = function(dataQualityInfo){
+       stop("Not yet implemented")
      }
   )                        
 )
