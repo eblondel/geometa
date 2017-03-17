@@ -25,7 +25,7 @@ ISORole <- R6Class("ISORole",
       if(!is.null(xml)){
         self$decode(xml)
       }else{
-        super$initialize(id = "CI_RoleCode", value = value)
+        super$initialize(id = "CI_RoleCode", value = value, setValue = FALSE)
       }
     }
   )                        

@@ -25,7 +25,7 @@ ISOMaintenanceFrequency <- R6Class("ISOMaintenanceFrequency",
        if(!is.null(xml)){
          self$decode(xml)
        }else{
-         super$initialize(id = "MD_MaintenanceFrequencyCode", value = value)
+         super$initialize(id = "MD_MaintenanceFrequencyCode", value = value, setValue = FALSE)
        }
      }
    )                        

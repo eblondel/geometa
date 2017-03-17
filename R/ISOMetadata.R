@@ -76,7 +76,7 @@ ISOMetadata <- R6Class("ISOMetadata",
      dateStamp = NULL,
      metadataStandardName = NULL,
      metadataStandardVersion = NULL,
-     spatialRepresentationInfo = NULL, #TODO
+     spatialRepresentationInfo = NULL,
      referenceSystemInfo = NULL, #TODO
      identificationInfo = NULL,
      distributionInfo = NULL,
@@ -145,6 +145,22 @@ ISOMetadata <- R6Class("ISOMetadata",
          stop("The argument should be a 'ISOResponsibleParty' object")
        }
        self$contact = c(self$contact, contact)
+     },
+     
+     #setSpatialRepresentationInfo
+     setSpatialRepresentationInfo = function(spatialRepresentationInfo){
+       if(!is(spatialRepresentationInfo,"ISOVectorSpatialRepresentation")){
+         stop("The argument should be a 'ISOVectorSpatialRepresentation' object")
+       }
+       self$spatialRepresentationInfo = spatialRepresentationInfo
+     },
+     
+     #setReferenceSystemInfo
+     setReferenceSystemInfo = function(referenceSystemInfo){
+       if(!is(referenceSystemInfo, "ISOReferenceSystem")){
+        stop("The argument should be a 'ISOReferenceSystem' object")  
+       }
+       self$referenceSystemInfo = referenceSystemInfo
      },
      
      #setIdentificationInfo

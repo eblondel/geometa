@@ -98,7 +98,6 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
           if(is(fieldObj, "ISOMetadataElement")){
             wrapperNode <- xmlOutputDOM(
               tag = field,
-              attrs = fieldObj$attrs,
               nameSpace = ISOMetadataNamespace$GMD$id
             )
             wrapperNode$addNode(fieldObj$encode(addNS = FALSE))
@@ -107,7 +106,6 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             for(item in fieldObj){
               wrapperNode <- xmlOutputDOM(
                 tag = field,
-                attrs = fieldObj$attrs,
                 nameSpace = ISOMetadataNamespace$GMD$id
               )
               nodeValue <- NULL

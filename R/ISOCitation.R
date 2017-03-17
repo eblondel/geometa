@@ -32,7 +32,7 @@
 #'  \item{\code{setEditionDate(editionDate)}}{
 #'    Sets the edition date (ISODate object containing date and dateType)
 #'  }
-#'  \item{\code{setIdentifier(identifier)}}{
+#'  \item{\code{setIdentifier(code, codeSpace)}}{
 #'    Sets the identifier
 #'  }
 #'  \item{\code{setCitedResponsibleParty(rp)}}{
@@ -93,11 +93,10 @@ ISOCitation<- R6Class("ISOCitation",
     },
     
     #setIdentifier
-    setIdentifier = function(identifier){
-      if(is(identifier, "character")){
-        identifier <- ISOIdentifier$new(prefix = "MD", code = identifier)
-      }
-      self$identifier <- identifier
+    setIdentifier = function(code, codeSpace = NULL){
+      self$identifier <- ISOIdentifier$new(prefix = "MD",
+                                           code = code,
+                                           codeSpace = codeSpace)
     },
     
     #setCitedResponsibleParty

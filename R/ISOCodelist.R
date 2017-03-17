@@ -98,10 +98,12 @@ fetchISOCodelists <- function(){
   dateTypeCL <- ISOCodelist$new(gmxCL, "CI_DateTypeCode")
   presentationFormCL <- ISOCodelist$new(gmxCL, "CI_PresentationFormCode")
   keywordTypeCL <- ISOCodelist$new(gmxCL, "MD_KeywordTypeCode")
+  topologyLevelCL <- ISOCodelist$new(gmxCL, "MD_TopologyLevelCode")
+  geomObjectTypeCL <- ISOCodelist$new(gmxCL, "MD_GeometricObjectTypeCode")
   
   codelists <- list(languageCL, charsetCL, scopeCL, roleCL, topicCL,
                     restrictionCL, mfreqCL, dateTypeCL, presentationFormCL,
-                    keywordTypeCL)
+                    keywordTypeCL, topologyLevelCL, geomObjectTypeCL)
   names(codelists) <- sapply(codelists, function(cl){cl$identifier})
   .geometa.iso$codelists <- codelists
 }

@@ -8,10 +8,11 @@
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field code
+#' @field codeSpace
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, code)}}{
+#'  \item{\code{new(xml, code, codeSpace)}}{
 #'    This method is used to instantiate an ISOIdentifier
 #'  }
 #' }
@@ -22,7 +23,8 @@ ISOIdentifier <- R6Class("ISOIdentifier",
    inherit = ISOMetadataElement,
    public = list(
      code = NULL,
-     initialize = function(xml = NULL, prefix, code){
+     codeSpace = NULL,
+     initialize = function(xml = NULL, prefix, code, codeSpace = NULL){
        super$initialize(
          element = paste(prefix, "Identifier", sep = "_"),
          namespace = ISOMetadataNamespace$GMD
@@ -31,6 +33,7 @@ ISOIdentifier <- R6Class("ISOIdentifier",
          self$decode(xml)
        }else{
          self$code <- as.character(code)
+         if(!is.null(codeSpace)) self$codeSpace <- as.character(codeSpace)
        }
      }
    )                        

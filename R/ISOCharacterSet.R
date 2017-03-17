@@ -25,7 +25,8 @@ ISOCharacterSet <- R6Class("ISOCharacterSet",
      if(!is.null(xml)){
        self$decode(xml)
      }else{
-       super$initialize(id = "MD_CharacterSetCode",value = value, addCodeSpaceAttr = FALSE)
+       super$initialize(id = "MD_CharacterSetCode",value = value,
+                        setValue = FALSE, addCodeSpaceAttr = FALSE)
      }
    }
  )                        

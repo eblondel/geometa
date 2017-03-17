@@ -18,11 +18,13 @@ ISOIdentifier
 
 \describe{
 \item{\code{code}}{}
+
+\item{\code{codeSpace}}{}
 }}
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, code)}}{
+ \item{\code{new(xml, code, codeSpace)}}{
    This method is used to instantiate an ISOIdentifier
  }
 }

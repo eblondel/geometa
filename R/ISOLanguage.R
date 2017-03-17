@@ -25,7 +25,7 @@ ISOLanguage <- R6Class("ISOLanguage",
      if(!is.null(xml)){
        self$decode(xml)
      }else{
-       super$initialize(id = "LanguageCode", value = value)
+       super$initialize(id = "LanguageCode", value = value, setValue = FALSE)
      }
    }
   )                        

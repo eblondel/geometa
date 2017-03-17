@@ -12,13 +12,13 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(value)}}{
-#'    This method is used to instantiate an ISOInteger
+#'    This method is used to instantiate an ISOBaseInteger
 #'  }
 #' }
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOInteger <- R6Class("ISOInteger",
+ISOBaseInteger <- R6Class("ISOBaseInteger",
   inherit = ISOMetadataElement,
   public = list(
     value = NA,

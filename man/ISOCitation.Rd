@@ -49,7 +49,7 @@ ISOCitation
  \item{\code{setEditionDate(editionDate)}}{
    Sets the edition date (ISODate object containing date and dateType)
  }
- \item{\code{setIdentifier(identifier)}}{
+ \item{\code{setIdentifier(code, codeSpace)}}{
    Sets the identifier
  }
  \item{\code{setCitedResponsibleParty(rp)}}{

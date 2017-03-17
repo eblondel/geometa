@@ -47,6 +47,22 @@ test_that("encoding",{
     md$addContact(rp)
   }
   
+  #VectorSpatialRepresentation
+  #---------------------
+  vsr <- ISOVectorSpatialRepresentation$new()
+  vsr$setTopologyLevel("geometryOnly")
+  geomObject <- ISOGeometricObjects$new()
+  geomObject$setGeometricObjectType("surface")
+  geomObject$setGeometricObjectCount(5L)
+  vsr$setGeometricObjects(geomObject)
+  md$setSpatialRepresentationInfo(vsr)
+  
+  #ReferenceSystem
+  #----------------
+  rs <- ISOReferenceSystem$new()
+  rs$setReferenceSystemIdentifier(code = "4326", codeSpace = "EPSG")
+  md$setReferenceSystemInfo(rs)
+  
   #data identification
   #--------------------
   ident <- ISODataIdentification$new()
@@ -142,7 +158,7 @@ test_that("encoding",{
   
   #supplementalInformation
   ident$setSupplementalInformation("some additional information")
-
+  
   md$setIdentificationInfo(ident)
   
   #Distribution
