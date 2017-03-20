@@ -57,11 +57,23 @@ ISOMetadataElement
  \item{\code{setParentIdentifier(parentIdentifier)}}{
    Sets the parentIdentifier
  }
- \item{\code{setLanguage{language}}}{
-   Sets the language
+ \item{\code{addLanguage(locale)}}{
+   Adds a locale
+ }
+ \item{\code{setLanguage{locale}}}{
+   Sets the locale
+ }
+ \item{\code{delLanguage(locale)}}{
+   Deletes a locale
+ }
+ \item{\code{addCharacterSet(charset)}}{
+   Adds a character set
  }
  \item{\code{setCharacterSet(charset)}}{
    Sets the character set
+ }
+ \item{\code{delCharacterSet(charset)}}{
+   Deletes a character set
  }
  \item{\code{setHierarchyLevel(level)}}{
    Sets the hierarchy level

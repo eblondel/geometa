@@ -33,11 +33,23 @@
 #'  \item{\code{setParentIdentifier(parentIdentifier)}}{
 #'    Sets the parentIdentifier
 #'  }
-#'  \item{\code{setLanguage{language}}}{
-#'    Sets the language
+#'  \item{\code{addLanguage(locale)}}{
+#'    Adds a locale
+#'  }
+#'  \item{\code{setLanguage{locale}}}{
+#'    Sets the locale
+#'  }
+#'  \item{\code{delLanguage(locale)}}{
+#'    Deletes a locale
+#'  }
+#'  \item{\code{addCharacterSet(charset)}}{
+#'    Adds a character set
 #'  }
 #'  \item{\code{setCharacterSet(charset)}}{
 #'    Sets the character set
+#'  }
+#'  \item{\code{delCharacterSet(charset)}}{
+#'    Deletes a character set
 #'  }
 #'  \item{\code{setHierarchyLevel(level)}}{
 #'    Sets the hierarchy level
@@ -77,19 +89,19 @@ ISOMetadata <- R6Class("ISOMetadata",
   inherit = ISOMetadataElement,
   public = list(
      fileIdentifier = NULL,
-     language = NULL,
-     characterSet = NULL,
+     language = list(),
+     characterSet = list(),
      parentIdentifier = NULL,
      hierarchyLevel = NULL,
      contact = list(),
      dateStamp = NULL,
      metadataStandardName = NULL,
      metadataStandardVersion = NULL,
-     spatialRepresentationInfo = NULL,
-     referenceSystemInfo = NULL,
-     identificationInfo = NULL,
-     distributionInfo = NULL,
-     dataQualityInfo = NULL,
+     spatialRepresentationInfo = NULL, #TODO allow N cardinality
+     referenceSystemInfo = NULL, #TODO allow N cardinality
+     identificationInfo = NULL, #TODO allow N cardinality
+     distributionInfo = NULL, #TODO allow N cardinality
+     dataQualityInfo = NULL, #TODO allow N cardinality
      initialize = function(xml){
        super$initialize(
          element = "MD_Metadata",
@@ -107,20 +119,58 @@ ISOMetadata <- R6Class("ISOMetadata",
        self$parentIdentifier <- parentIdentifier
      },
      
-     #setLanguage
-     setLanguage = function(locale){
+     #addLanguage
+     addLanguage = function(locale){
        if(is(locale, "character")){
          locale <- ISOLanguage$new(value = locale)
        }
-       self$language <- locale
+       startNb <- length(self$language)
+       if(length(which(sapply(self$language, function(x){return(x$attrs$codeListValue)}) == locale$attrs$codeListValue)) == 0){
+         self$language = c(self$language, locale)
+       }
+       endNb = length(self$language)
+       return(endNb == startNb+1)
+     },
+     
+     #setLanguage
+     setLanguage = function(locale){
+       self$language <- list()
+       self$addLanguage(locale)
+     },
+     
+     #delLanguage
+     delLanguage = function(locale){
+       startNb <- length(self$language)
+       self$language <- self$language[sapply(self$language, function(x){return(x$attrs$codeListValue)}) != locale]
+       endNb = length(self$language)
+       return(endNb == startNb-1)
+     },
+     
+     #addCharacterSet
+     addCharacterSet = function(charset){
+       if(is(charset, "character")){
+         charset <- ISOCharacterSet$new(value = charset)
+       }
+       startNb <- length(self$characterSet)
+       if(length(which(sapply(self$characterSet, function(x){x$attrs$codeListValue}) == charset$attrs$codeListValue)) == 0){
+         self$characterSet = c(self$characterSet, charset)
+       }
+       endNb = length(self$characterSet)
+       return(endNb == startNb+1)
      },
      
      #setCharacterSet
      setCharacterSet = function(charset){
-       if(is(charset, "character")){
-         charset <- ISOCharacterSet$new(value = charset)
-       }
-       self$characterSet <- charset
+       self$characterSet = list()
+       self$addCharacterSet(charset)
+     },
+     
+     #delCharacterSet
+     delCharacterSet = function(charset){
+       startNb <- length(self$characterSet)
+       self$characterSet <- self$characterSet[sapply(self$characterSet, function(x){return(x$attrs$codeListValue)}) != charset]
+       endNb = length(self$characterSet)
+       return(endNb == startNb-1)
      },
      
      #setHierarchyLevel
@@ -167,9 +217,9 @@ ISOMetadata <- R6Class("ISOMetadata",
      #setReferenceSystemInfo
      setReferenceSystemInfo = function(referenceSystemInfo){
        if(!is(referenceSystemInfo, "ISOReferenceSystem")){
-        stop("The argument should be a 'ISOReferenceSystem' object")  
+         stop("The argument should be a 'ISOReferenceSystem' object")  
        }
-       self$referenceSystemInfo = referenceSystemInfo
+       self$referenceSystemInfo <- c(self$referenceSystemInfo, referenceSystemInfo)
      },
      
      #setIdentificationInfo

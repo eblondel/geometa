@@ -35,6 +35,9 @@ test_that("encoding",{
   dq$addReport(dc)
   
   #add lineage
+  lineage <- ISOLineage$new()
+  lineage$setStatement("statement")
+  dq$setLineage(lineage)
   
   #xml
   xml <- dq$encode()
