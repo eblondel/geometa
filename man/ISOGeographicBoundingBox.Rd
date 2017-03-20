@@ -28,7 +28,7 @@ ISOGeographicBoundingBox
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, minx, miny, maxx, maxy)}}{
+ \item{\code{new(xml, minx, miny, maxx, maxy, bbox)}}{
    This method is used to instantiate an ISOGeographicBoundingBox
  }
 }

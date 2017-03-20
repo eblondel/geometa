@@ -19,7 +19,7 @@ ISOMetadataElement
 \describe{
 \item{\code{fileIdentifier}}{}
 
-\item{\code{anguage}}{}
+\item{\code{language}}{}
 
 \item{\code{characterSet}}{}
 

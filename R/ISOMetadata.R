@@ -8,7 +8,7 @@
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field fileIdentifier
-#' @field anguage 
+#' @field language 
 #' @field characterSet
 #' @field parentIdentifier
 #' @field hierarchyLevel
