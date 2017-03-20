@@ -147,6 +147,11 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if(regexpr("^http*",fieldObj, TRUE) > 0 | regexpr("^ftp*",fieldObj, TRUE) > 0){
         dataType <- "url"
       }
+      #exception for EPSG code uris
+      #TODO think about cleaner solution for URLs + anchors
+      if(is(self, "ISOIdentifier") && field == "code"){
+        dataType <- "character"
+      }
       dataObj <- switch(dataType,
                         "character" = ISOBaseCharacterString$new(value = fieldObj),
                         "numeric"   = ISOBaseDecimal$new(value = fieldObj),
