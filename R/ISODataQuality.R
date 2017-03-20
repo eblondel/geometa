@@ -19,8 +19,8 @@
 #'  \item{\code{setScope(scope)}}{
 #'    Sets the scope
 #'  }
-#'  \item{\code{setReport(report)}}{
-#'    Sets the report
+#'  \item{\code{addReport(report)}}{
+#'    Adds a report
 #'  }
 #'  \item{\code{setLineage(lineage)}}{
 #'    Sets the lineage
@@ -33,7 +33,7 @@ ISODataQuality <- R6Class("ISODataQuality",
   inherit = ISOMetadataElement,
   public = list(
     scope = NULL,
-    report = NULL,
+    report = list(),
     lineage = NULL,
     initialize = function(xml = NULL){
       super$initialize(
@@ -47,17 +47,26 @@ ISODataQuality <- R6Class("ISODataQuality",
     
     #setScope
     setScope = function(scope){
-      stop("Not yet implemented")
+      if(!is(scope, "ISOScope")){
+        stop("The argument should be a 'ISOScope' object")
+      }
+      self$scope <- scope
     },
     
-    #setReport
-    setReport = function(report){
-      stop("Not yet implemented")
+    #addReport
+    addReport = function(report){
+      if(!is(report, "ISODomainConsistency")){
+        stop("The argument should be a 'ISODomainConsistency' object")
+      }
+      self$report <- c(self$report, report)
     },
     
     #setLineage
     setLineage = function(lineage){
-      stop("Not yet implemented")
+      if(!is(lineage, "ISOLineage")){
+        stop("The argument should be a 'ISOLineage' object")
+      }
+      self$lineage <- lineage
     }
   )                        
 )

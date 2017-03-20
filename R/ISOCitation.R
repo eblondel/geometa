@@ -23,6 +23,9 @@
 #'  \item{\code{setTitle(title)}}{
 #'    Sets the title
 #'  }
+#'  \item{\code{setAlternateTitle(alternateTitle)}}{
+#'    Sets an alternate title
+#'  }
 #'  \item{\code{addDate(date)}}{
 #'    Adds the date (ISODate object containing date and dateType)
 #'  }
@@ -69,6 +72,11 @@ ISOCitation<- R6Class("ISOCitation",
     #setTitle
     setTitle = function(title){
       self$title <- as.character(title)
+    },
+    
+    #setAlternateTitle
+    setAlternateTitle = function(alternateTitle){
+      self$alternateTitle <- as.character(alternateTitle)
     },
     
     #addDate

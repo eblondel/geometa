@@ -78,11 +78,20 @@ ISOMetadataElement
  \item{\code{addContact(contact)}}{
    Adds a contact (responsible party)
  }
+ \item{\code{setSpatialRepresentationInfo(spatialRepresentationInfo)}}{
+   Sets the spatial representation
+ }
+ \item{\code{setReferenceSystemInfo(referenceSystemInfo)}}{
+   Sets the reference system
+ }
  \item{\code{setIdentificationInfo(identificationInfo)}}{
    Sets the data identification
  }
  \item{\code{setDistributionInfo(distributionInfo)}}{
    Sets the distribution
+ }
+ \item{\code{setDataQualityInfo(dataQualityInfo)}}{
+   Sets the data quality
  }
 }
 }

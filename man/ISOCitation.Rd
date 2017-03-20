@@ -40,6 +40,9 @@ ISOCitation
  \item{\code{setTitle(title)}}{
    Sets the title
  }
+ \item{\code{setAlternateTitle(alternateTitle)}}{
+   Sets an alternate title
+ }
  \item{\code{addDate(date)}}{
    Adds the date (ISODate object containing date and dateType)
  }

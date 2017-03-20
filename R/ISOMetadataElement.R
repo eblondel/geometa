@@ -91,9 +91,6 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       
       for(field in fields){
         fieldObj <- self[[field]]
-        if(is.logical(fieldObj)){
-          fieldObj <- tolower(as.character(fieldObj))
-        }
         if(!is.null(fieldObj)){
           if(is(fieldObj, "ISOMetadataElement")){
             wrapperNode <- xmlOutputDOM(
@@ -154,6 +151,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                         "character" = ISOBaseCharacterString$new(value = fieldObj),
                         "numeric"   = ISOBaseDecimal$new(value = fieldObj),
                         "integer"   = ISOBaseInteger$new(value = fieldObj),
+                        "logical"   = ISOBaseBoolean$new(value = fieldObj),
                         "datetime"  = ISOBaseDateTime$new(value = fieldObj),
                         "date"      = ISOBaseDate$new(value = fieldObj),
                         "url"       = ISOBaseURL$new(value = fieldObj),

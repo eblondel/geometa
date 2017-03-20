@@ -54,11 +54,20 @@
 #'  \item{\code{addContact(contact)}}{
 #'    Adds a contact (responsible party)
 #'  }
+#'  \item{\code{setSpatialRepresentationInfo(spatialRepresentationInfo)}}{
+#'    Sets the spatial representation
+#'  }
+#'  \item{\code{setReferenceSystemInfo(referenceSystemInfo)}}{
+#'    Sets the reference system
+#'  }
 #'  \item{\code{setIdentificationInfo(identificationInfo)}}{
 #'    Sets the data identification
 #'  }
 #'  \item{\code{setDistributionInfo(distributionInfo)}}{
 #'    Sets the distribution
+#'  }
+#'  \item{\code{setDataQualityInfo(dataQualityInfo)}}{
+#'    Sets the data quality
 #'  }
 #' }
 #' 
@@ -77,10 +86,10 @@ ISOMetadata <- R6Class("ISOMetadata",
      metadataStandardName = NULL,
      metadataStandardVersion = NULL,
      spatialRepresentationInfo = NULL,
-     referenceSystemInfo = NULL, #TODO
+     referenceSystemInfo = NULL,
      identificationInfo = NULL,
      distributionInfo = NULL,
-     dataQualityInfo = NULL, #TODO
+     dataQualityInfo = NULL,
      initialize = function(xml){
        super$initialize(
          element = "MD_Metadata",
@@ -181,7 +190,10 @@ ISOMetadata <- R6Class("ISOMetadata",
      
      #setDataQualityInfo
      setDataQualityInfo = function(dataQualityInfo){
-       stop("Not yet implemented")
+       if(!is(dataQualityInfo,"ISODataQuality")){
+         stop("The argument should be a 'ISODataQuality' object")
+       }
+       self$dataQualityInfo = dataQualityInfo
      }
   )                        
 )
