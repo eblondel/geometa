@@ -147,7 +147,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if((regexpr("^http*",fieldObj, TRUE) > 0 | regexpr("^ftp*",fieldObj, TRUE) > 0) && is(self, "ISOOnlineResource")){
         dataType <- "url"
       }
-      dataObj <- switch(dataType,
+      dataObj <- switch(tolower(dataType),
                         "character" = ISOBaseCharacterString$new(value = fieldObj),
                         "numeric"   = ISOBaseDecimal$new(value = fieldObj),
                         "integer"   = ISOBaseInteger$new(value = fieldObj),
