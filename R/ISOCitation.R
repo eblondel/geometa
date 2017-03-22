@@ -97,7 +97,7 @@ ISOCitation<- R6Class("ISOCitation",
     
     #setEditionDate
     setEditionDate = function(editionDate){
-      if(!all(class(editionDate) == c("POSIXct","POSIXt")) || !is(editionDate, "ISODate")){
+      if(!all(class(editionDate) == c("POSIXct","POSIXt")) && !is(editionDate, "ISODate")){
         stop("The argument should be either a date object ('POSIXct'/'POSIXt')  or 'ISODate' object")
       }
       self$editionDate <- editionDate
