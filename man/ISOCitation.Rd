@@ -50,7 +50,10 @@ ISOCitation
    Sets the edition
  }
  \item{\code{setEditionDate(editionDate)}}{
-   Sets the edition date (ISODate object containing date and dateType)
+   Sets the edition date, either an ISODate object containing date and dateType or
+   a simple R date "POSIXct"/"POSIXt" object. For thesaurus citations, an ISODate
+   should be used while for the general citation of \code{ISODataIdentification},
+   a simple R date should be used.
  }
  \item{\code{setIdentifier(code, codeSpace)}}{
    Sets the identifier
