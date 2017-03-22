@@ -25,7 +25,7 @@ ISOBaseURL <- R6Class("ISOBaseURL",
     initialize = function(xml = NULL, value){
       super$initialize(
         element = "URL",
-        namespace = ISOMetadataNamespace$GCO
+        namespace = ISOMetadataNamespace$GMD
       )
       if(!is.null(xml)){
         self$decode(xml)
