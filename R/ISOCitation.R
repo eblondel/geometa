@@ -41,7 +41,7 @@
 #'  \item{\code{setIdentifier(code, codeSpace)}}{
 #'    Sets the identifier
 #'  }
-#'  \item{\code{setCitedResponsibleParty(rp)}}{
+#'  \item{\code{seCitedResponsibleParty(rp)}}{
 #'    Sets the cited responsiblep party
 #'  }
 #'  \item{\code{setPresentationForm}}{
@@ -97,8 +97,8 @@ ISOCitation<- R6Class("ISOCitation",
     
     #setEditionDate
     setEditionDate = function(editionDate){
-      if(!all(class(editionDate) == c("POSIXct","POSIXt")) || !is(editionDate, "ISODate")){
-        stop("The argument should be either a date object ('POSIXct'/'POSIXt')  or 'ISODate' object")
+      if(!is(editionDate, "Date") && !is(editionDate, "ISODate")){ 
+        stop("The argument should be either a 'Date' or 'ISODate' object")
       }
       self$editionDate <- editionDate
     },
