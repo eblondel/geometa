@@ -29,7 +29,7 @@ ISOResponsibleParty <- R6Class("ISOResponsibleParty",
     initialize = function(xml = NULL){
       super$initialize(
         element = "CI_ResponsibleParty",
-        namespace = ISOMetadataNamespace$GCO
+        namespace = ISOMetadataNamespace$GMD
       )
       if(!is.null(xml)){
         self$decode(xml)
