@@ -41,8 +41,8 @@
 #'  \item{\code{setIdentifier(code, codeSpace)}}{
 #'    Sets the identifier
 #'  }
-#'  \item{\code{setCitedResponsibleParty(rp)}}{
-#'    Sets the cited responsiblep party
+#'  \item{\code{addCitedResponsibleParty(rp)}}{
+#'    Adds the cited responsiblep party
 #'  }
 #'  \item{\code{setPresentationForm}}{
 #'    Sets the presentation form
@@ -60,7 +60,7 @@ ISOCitation<- R6Class("ISOCitation",
     edition = NULL,
     editionDate = NULL,
     identifier = NULL,
-    citedResponsibleParty = NULL,
+    citedResponsibleParty = list(),
     presentationForm = NULL,
     initialize = function(xml = NULL){
       super$initialize(
@@ -110,12 +110,12 @@ ISOCitation<- R6Class("ISOCitation",
                                            codeSpace = codeSpace)
     },
     
-    #setCitedResponsibleParty
-    setCitedResponsibleParty = function(rp){
+    #addCitedResponsibleParty
+    addCitedResponsibleParty = function(rp){
       if(!is(rp, "ISOResponsibleParty")){
         stop("The argument should be a 'ISOResponsibleParty' object")
       }
-      self$citedResponsibleParty <- rp
+      self$citedResponsibleParty <- c(self$citedResponsibleParty, rp)
     },
     
     #setPresentationForm
