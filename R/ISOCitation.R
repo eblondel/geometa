@@ -41,8 +41,8 @@
 #'  \item{\code{setIdentifier(code, codeSpace)}}{
 #'    Sets the identifier
 #'  }
-#'  \item{\code{addCitedResponsibleParty(rp)}}{
-#'    Adds the cited responsiblep party
+#'  \item{\code{setCitedResponsibleParty(rp)}}{
+#'    Sets the cited responsiblep party
 #'  }
 #'  \item{\code{setPresentationForm}}{
 #'    Sets the presentation form
@@ -60,7 +60,7 @@ ISOCitation<- R6Class("ISOCitation",
     edition = NULL,
     editionDate = NULL,
     identifier = NULL,
-    citedResponsibleParty = list(),
+    citedResponsibleParty = NULL,
     presentationForm = NULL,
     initialize = function(xml = NULL){
       super$initialize(
@@ -97,8 +97,8 @@ ISOCitation<- R6Class("ISOCitation",
     
     #setEditionDate
     setEditionDate = function(editionDate){
-      if(!is(editionDate, "Date") && !is(editionDate, "ISODate")){
-        stop("The argument should be either a 'Date' or 'ISODate' object")
+      if(!all(class(editionDate) == c("POSIXct","POSIXt")) || !is(editionDate, "ISODate")){
+        stop("The argument should be either a date object ('POSIXct'/'POSIXt')  or 'ISODate' object")
       }
       self$editionDate <- editionDate
     },
@@ -110,12 +110,12 @@ ISOCitation<- R6Class("ISOCitation",
                                            codeSpace = codeSpace)
     },
     
-    #addCitedResponsibleParty
-    addCitedResponsibleParty = function(rp){
+    #setCitedResponsibleParty
+    setCitedResponsibleParty = function(rp){
       if(!is(rp, "ISOResponsibleParty")){
         stop("The argument should be a 'ISOResponsibleParty' object")
       }
-      self$citedResponsibleParty <- c(self$citedResponsibleParty, rp)
+      self$citedResponsibleParty <- rp
     },
     
     #setPresentationForm
