@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISODataQuality
 #'  }
 #'  \item{\code{setScope(scope)}}{
@@ -31,18 +31,20 @@
 #'
 ISODataQuality <- R6Class("ISODataQuality",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "DQ_DataQuality",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     scope = NULL,
     report = list(),
     lineage = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "DQ_DataQuality",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #setScope

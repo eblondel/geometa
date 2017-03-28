@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISODataIdentification
 #'  }
 #' }
@@ -20,6 +20,10 @@
 #'
 ISODataIdentification <- R6Class("ISODataIdentification",
    inherit = ISOMetadataElement,
+   private = list(
+     xmlElement = "MD_DataIdentification",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      citation = NULL,
      abstract = NULL,
@@ -36,12 +40,10 @@ ISODataIdentification <- R6Class("ISODataIdentification",
      supplementalInformation = NULL, 
      initialize = function(xml = NULL){
        super$initialize(
-         element = "MD_DataIdentification",
-         namespace = ISOMetadataNamespace$GMD
+         xml = xml,
+         element = private$xmlElement,
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }
      },
      
      #setCitation

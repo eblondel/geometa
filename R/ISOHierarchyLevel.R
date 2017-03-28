@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOHierarchyLevel
 #'  }
 #' }
@@ -20,17 +20,17 @@
 #'
 ISOHierarchyLevel <- R6Class("ISOHierarchyLevel",
  inherit = ISOMetadataCodelistElement,
+ private = list(
+   xmlElement = "MD_ScopeCode",
+   xmlNamespacePrefix = "GMD"
+ ),
  public = list(
    initialize = function(xml = NULL, value){
-     if(!is.null(xml)){
-       self$decode(xml)
-     }else{
-       super$initialize(id = "MD_ScopeCode", value = value, setValue = FALSE)
-     }
+     super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = FALSE)
    }
  )                        
 )
 
 ISOHierarchyLevel$values <- function(){
-  return(getISOCodelist("MD_ScopeCode")$entries$value)
+  return(getISOCodelist(ISOHierarchyLevel$private_fields$xmlElement)$entries$value)
 }

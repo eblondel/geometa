@@ -17,7 +17,7 @@ ISOMetadataNamespace
 \section{Methods}{
 
 \describe{
- \item{\code{new()}}{
+ \item{\code{new(id, uri)}}{
    This method is used to instantiate an ISOMetadata
  }
 }

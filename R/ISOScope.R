@@ -23,16 +23,18 @@
 #'
 ISOScope <- R6Class("ISOScope",
    inherit = ISOMetadataElement,
+   private = list(
+     xmlElement = "DQ_Scope",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      level = NULL,
      initialize = function(xml = NULL){
        super$initialize(
-         element = "DQ_Scope",
-         namespace = ISOMetadataNamespace$GMD
+         xml = xml,
+         element = private$xmlElement,
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }
      },
      
      #setLevel

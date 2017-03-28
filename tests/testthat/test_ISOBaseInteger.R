@@ -12,7 +12,14 @@ test_that("encoding",{
   
   #encoding
   md <- ISOBaseInteger$new(value = 19L)
-  expect_is(md, "ISODateInteger")
+  expect_is(md, "ISOBaseInteger")
   xml <- md$encode()
-  expect_is(xml, "XMLNode")
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOBaseInteger$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  
 })

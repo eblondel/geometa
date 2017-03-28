@@ -28,7 +28,7 @@ ISOOnlineResource
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, linkage, name)}}{
+ \item{\code{new(xml)}}{
    This method is used to instantiate an ISOOnlineResource
  }
  \item{\code{setLinkage(linkage)}}{

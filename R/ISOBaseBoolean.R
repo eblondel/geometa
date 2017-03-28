@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOBaseBoolean
 #'  }
 #' }
@@ -20,16 +20,19 @@
 #'
 ISOBaseBoolean <- R6Class("ISOBaseBoolean",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "Boolean",
+    xmlNamespacePrefix = "GCO"
+  ),
   public = list(
     value = NA,
     initialize = function(xml = NULL, value){
       super$initialize(
-        element = "Boolean",
-        namespace = ISOMetadataNamespace$GCO
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }else{
+      if(is.null(xml)){
         newValue <- value
         if(!is(value, "logical")){
           newValue <- as.logical(value)

@@ -27,17 +27,19 @@
 #'
 ISOExtent <- R6Class("ISOExtent",
    inherit = ISOMetadataElement,
+   private = list(
+      xmlElement = "EX_Extent",
+      xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      geographicElement = NULL,
      temporalElement = NULL,
      initialize = function(xml = NULL){
        super$initialize(
-         element = "EX_Extent",
-         namespace = ISOMetadataNamespace$GMD
+         xml = xml,
+         element = private$xmlElement,
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }
      },
      
      #setGeographicElement

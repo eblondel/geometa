@@ -40,13 +40,21 @@ test_that("encoding",{
   address$setCountry("France")
   address$setEmail("someone@theorg.org")
   contact$setAddress(address)
-  res <- ISOOnlineResource$new(linkage = "http://www.somewhereovertheweb.org", name = "somename")
+  res <- ISOOnlineResource$new()
+  res$setLinkage("http://www.somewhereovertheweb.org")
+  res$setName("somename")
   contact$setOnlineResource(res)
   rp$setContactInfo(contact)
   md$setCitedResponsibleParty(rp)
   
   expect_is(md, "ISOCitation")
-  expect_equal(md$value, "2015-01-01")
   xml <- md$encode()
-  expect_is(xml, "XMLNode")
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOCitation$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  
 })

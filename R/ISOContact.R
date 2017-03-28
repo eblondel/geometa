@@ -31,18 +31,20 @@
 #'
 ISOContact <- R6Class("ISOContact",
    inherit = ISOMetadataElement,
+   private = list(
+     xmlElement = "CI_Contact",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      phone = NULL,
      address = NULL,
      onlineResource = NULL,
      initialize = function(xml = NULL){
        super$initialize(
-         element = "CI_Contact",
-         namespace = ISOMetadataNamespace$GMD
+         xml = xml,
+         element = private$xmlElement,
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }
      },
      
      #setPhone

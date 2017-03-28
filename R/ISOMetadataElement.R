@@ -7,9 +7,16 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
 #' @format \code{\link{R6Class}} object.
 #'
+#' @section Static Methods:
+#' \describe{
+#'  \item{\code{getISOClassByNode(node)}}{
+#'    Inherit the ISO class matching an XML document or node
+#'  }
+#' }
+#'
 #' @section Abstract Methods:
 #' \describe{
-#'  \item{\code{new()}}{
+#'  \item{\code{new(xml, element, namespace)}}{
 #'    This method is used to instantiate an ISOMetadataElement
 #'  }
 #'  \item{\code{decode(xml)}}{
@@ -30,11 +37,10 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     element = NA,
     namespace = NA,
     initialize = function(xml = NULL, element, namespace){
+      self$element = element
+      self$namespace = namespace
       if(!is.null(xml)){
         self$decode(xml)
-      }else{
-        self$element = element
-        self$namespace = namespace
       }
     },
     
@@ -45,11 +51,49 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     
     #decode
     decode = function(xml){
-      self$element = xmlName(xml)
-      ns <- xmlNamespaceDefinitions(xml)
-      ns[[1]] = ns[[1]]$uri
-      self$namespace = ns
-      stop("Unimplement decoding")
+      if(is(xml, "XMLInternalDocument")){
+        xml <- xmlChildren(xml)[[1]]
+      }
+      for(child in xmlChildren(xml)){
+        fieldName <- xmlName(child)
+        fieldClass <- NULL
+        if(!is(child, "XMLInternalTextNode")){
+          fieldClass <- ISOMetadataElement$getISOClassByNode(child)
+          if(is.null(fieldClass)){
+            child <- xmlChildren(child)[[1]]
+            fieldClass <- ISOMetadataElement$getISOClassByNode(child)
+          }
+        }
+        fieldValue <- NULL
+        if(!is.null(fieldClass)){
+          if(regexpr("^ISOBase.+", fieldClass$classname)>0){
+            fieldValue <- xmlValue(child)
+            fieldValue <- switch(fieldClass$classname,
+                                 "ISOBaseBoolean" = as.logical(fieldValue),
+                                 "ISOBaseInteger" = as.integer(fieldValue),
+                                 "ISOBaseDecimal" = as.numeric(fieldValue),
+                                 "ISOBaseDate" = as.Date(fieldValue),
+                                 "ISOBaseDateTime" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S")),
+                                 fieldValue
+            )
+          }else{
+            if(fieldClass$classname == "ISOIdentifier"){
+              prefix <- unlist(strsplit(xmlName(child),"_"))[1]
+              fieldValue <- fieldClass$new(xml = child, prefix = prefix)
+            }else{
+              fieldValue <- fieldClass$new(xml = child)
+            }
+          }
+          if(is(self[[fieldName]], "list")){
+            self[[fieldName]] <- c(self[[fieldName]], fieldValue)
+          }else{
+            self[[fieldName]] <- fieldValue
+          }
+        }else{
+          self$value <- as(child, "character") 
+        }
+        
+      }
     },
     
     #encode
@@ -137,7 +181,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         }
       }
 
-      return(rootXML$value())
+      return(as(rootXML$value(), "XMLInternalNode"))
     },
     
     #wrapBaseElement
@@ -164,3 +208,28 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     }
   )                              
 )
+
+ISOMetadataElement$getISOClassByNode = function(node){
+  outClass <- NULL
+  if(!is(node, "XMLInternalDocument")) node <- xmlDoc(node)
+  nodeElement <- xmlRoot(node)
+  list_of_classes <- rev(ls("package:geometa"))
+  list_of_classes <- list_of_classes[regexpr("^ISO.+", list_of_classes)>0]
+  for(classname in list_of_classes){
+    class <- eval(parse(text=classname))
+    if(length(class$private_fields)>0
+       && !is.null(class$private_fields$xmlElement)
+       && !is.null(class$private_fields$xmlNamespacePrefix)){
+      nodeElementName <- xmlName(nodeElement)
+      nodeElementNames <- unlist(strsplit(xmlName(nodeElement), ":"))
+      if(length(nodeElementNames)>1){
+        nodeElementName <- nodeElementNames[2]
+      }
+      if(nodeElementName %in% class$private_fields$xmlElement){
+        outClass <- class
+        break
+      }
+    }
+  }
+  return(outClass)
+}

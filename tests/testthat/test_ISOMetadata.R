@@ -8,8 +8,9 @@ require(testthat)
 
 context("ISOMetadata")
 
-test_that("encoding",{
+test_that("encoding/decoding",{
   
+  #encoding
   md = ISOMetadata$new()
   md$setFileIdentifier("my-metadata-identifier")
   md$setParentIdentifier("my-parent-metadata-identifier")
@@ -112,7 +113,7 @@ test_that("encoding",{
   d$setDateType("publication")
   ct$addDate(d)
   ct$setEdition("1.0")
-  ct$setEditionDate(ISOdate(2015, 1, 1, 1))
+  ct$setEditionDate(as.Date(ISOdate(2015, 1, 1, 1)))
   ct$setIdentifier("identifier")
   ct$setPresentationForm("mapDigital")
   ct$setCitedResponsibleParty(rp)
@@ -215,5 +216,12 @@ test_that("encoding",{
   md$setDataQualityInfo(dq)
   
   xml <- md$encode()
-  expect_is(xml, "XMLNode")
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOMetadata$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  
 })

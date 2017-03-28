@@ -22,18 +22,20 @@
 #'
 ISOLegalConstraints<- R6Class("ISOLegalConstraints",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "MD_LegalConstraints",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     useLimitation = list(),
     accessConstraints = list(),
     useConstraints = list(),
     initialize = function(xml = NULL){
       super$initialize(
-        element = "MD_LegalConstraints",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #addUseLimitation

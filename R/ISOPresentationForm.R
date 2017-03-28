@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOPresentationForm
 #'  }
 #' }
@@ -20,17 +20,17 @@
 #'
 ISOPresentationForm <- R6Class("ISOPresentationForm",
    inherit = ISOMetadataCodelistElement,
+   private = list(
+     xmlElement = "CI_PresentationFormCode",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      initialize = function(xml = NULL, value){
-       if(!is.null(xml)){
-         self$decode(xml)
-       }else{
-         super$initialize(id = "CI_PresentationFormCode", value = value, setValue = FALSE)
-       }
+      super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = FALSE)
      }
    )                        
 )
 
 ISOPresentationForm$values <- function(){
-  return(getISOCodelist("CI_PresentationFormCode")$entries$value)
+  return(getISOCodelist(ISOPresentationForm$private_fields$xmlElement)$entries$value)
 }

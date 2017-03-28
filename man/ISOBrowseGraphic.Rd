@@ -17,12 +17,16 @@ ISOBrowseGraphic
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{fileName}}{}
+
+\item{\code{fileDescription}}{}
+
+\item{\code{fileType}}{}
 }}
 \section{Methods}{
 
 \describe{
- \item{\code{new(value, fileName, fileDescription, fileType)}}{
+ \item{\code{new(xml, fileName, fileDescription, fileType)}}{
    This method is used to instantiate an ISOBrowseGraphic
  }
 }

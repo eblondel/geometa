@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOResponsibleParty
 #'  }
 #' }
@@ -20,6 +20,10 @@
 #'
 ISOResponsibleParty <- R6Class("ISOResponsibleParty",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "CI_ResponsibleParty",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     individualName = NULL,
     organisationName = NULL,
@@ -28,12 +32,10 @@ ISOResponsibleParty <- R6Class("ISOResponsibleParty",
     role = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "CI_ResponsibleParty",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #setIndividualName

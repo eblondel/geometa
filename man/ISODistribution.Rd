@@ -22,7 +22,7 @@ ISODistribution
 \section{Methods}{
 
 \describe{
- \item{\code{new(value)}}{
+ \item{\code{new(xml,value)}}{
    This method is used to instantiate an ISODistribution
  }
  \item{\code{setDigitalTransferOptions(options)}}{

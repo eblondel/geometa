@@ -14,5 +14,12 @@ test_that("encoding",{
   lineage <- ISOLineage$new()
   lineage$setStatement("statement")
   xml <- lineage$encode()
-  expect_is(xml, "XMLNode")
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  lineage2 <- ISOLineage$new(xml = xml)
+  xml2 <- lineage2$encode()
+  
+  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  
 })

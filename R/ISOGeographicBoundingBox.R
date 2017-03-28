@@ -23,6 +23,10 @@
 #'
 ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
    inherit = ISOMetadataElement,
+   private = list(
+     xmlElement = "EX_GeographicBoundingBox",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      westBoundLongitude = NULL,
      eastBoundLongitude = NULL,
@@ -30,12 +34,11 @@ ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
      northBoundLatitude = NULL,
      initialize = function(xml = NULL, minx, miny, maxx, maxy, bbox = NULL){
        super$initialize(
-         element = "EX_GeographicBoundingBox",
-         namespace = ISOMetadataNamespace$GMD
+         xml = xml,
+         element = private$xmlElement,
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }else{
+       if(is.null(xml)){
          if(!is.null(bbox)){
            if(!is(bbox, "matrix") || !all.equal(dim(bbox), c(2,2))){
              stop("The argument bbox should be a valid 2-2 matrix")

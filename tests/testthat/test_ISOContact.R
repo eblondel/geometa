@@ -23,9 +23,18 @@ test_that("encoding",{
   address$setCountry("France")
   address$setEmail("someone@theorg.org")
   md$setAddress(address)
-  res <- ISOOnlineResource$new(linkage = "http://www.somewhereovertheweb.org", name = "somename")
+  res <- ISOOnlineResource$new()
+  res$setLinkage("http://www.somewhereovertheweb.org")
+  res$setName("somename")
   md$setOnlineResource(res)
   
   xml <- md$encode()
-  expect_is(xml, "XMLNode")
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOContact$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  
 })

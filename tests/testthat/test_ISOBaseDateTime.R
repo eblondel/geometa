@@ -15,5 +15,12 @@ test_that("encoding",{
   expect_is(md, "ISOBaseDateTime")
   expect_equal(md$value, "2015-01-01T01:00:00")
   xml <- md$encode()
-  expect_is(xml, "XMLNode")
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOBaseDateTime$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  
 })

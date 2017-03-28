@@ -12,7 +12,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, code, codeSpace)}}{
+#'  \item{\code{new(xml, prefix, code, codeSpace)}}{
 #'    This method is used to instantiate an ISOIdentifier
 #'  }
 #' }
@@ -21,17 +21,20 @@
 #'
 ISOIdentifier <- R6Class("ISOIdentifier",
    inherit = ISOMetadataElement,
+   private = list(
+     xmlElement = c("MD_Identifier", "RS_Identifier"),
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      code = NULL,
      codeSpace = NULL,
      initialize = function(xml = NULL, prefix, code, codeSpace = NULL){
        super$initialize(
+         xml = xml,
          element = paste(prefix, "Identifier", sep = "_"),
-         namespace = ISOMetadataNamespace$GMD
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }else{
+       if(is.null(xml)){
          self$code <- as.character(code)
          if(!is.null(codeSpace)) self$codeSpace <- as.character(codeSpace)
        }

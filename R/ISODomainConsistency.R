@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISODomainConsistency
 #'  }
 #'  \item{\code{addResult(result)}}{
@@ -23,16 +23,18 @@
 #'
 ISODomainConsistency <- R6Class("ISODomainConsistency",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "DQ_DomainConsistency",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     result = list(),
     initialize = function(xml = NULL){
       super$initialize(
+        xml = xml,
         element = "DQ_DomainConsistency",
-        namespace = ISOMetadataNamespace$GMD
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #addResult

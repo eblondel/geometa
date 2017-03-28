@@ -58,7 +58,7 @@ ISOCitation
  \item{\code{setIdentifier(code, codeSpace)}}{
    Sets the identifier
  }
- \item{\code{setCitedResponsibleParty(rp)}}{
+ \item{\code{seCitedResponsibleParty(rp)}}{
    Sets the cited responsiblep party
  }
  \item{\code{setPresentationForm}}{

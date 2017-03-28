@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOCharacterSet
 #'  }
 #' }
@@ -20,18 +20,18 @@
 #'
 ISOCharacterSet <- R6Class("ISOCharacterSet",
  inherit = ISOMetadataCodelistElement,
+ private = list(
+   xmlElement = "MD_CharacterSetCode",
+   xmlNamespacePrefix = "GMD"
+ ),
  public = list(
    initialize = function(xml = NULL, value){
-     if(!is.null(xml)){
-       self$decode(xml)
-     }else{
-       super$initialize(id = "MD_CharacterSetCode",value = value,
+       super$initialize(xml = xml, id = private$xmlElement, value = value,
                         setValue = FALSE, addCodeSpaceAttr = FALSE)
-     }
    }
  )                        
 )
 
 ISOCharacterSet$values <- function(){
-  return(getISOCodelist("MD_CharacterSetCode")$entries$value)
+  return(getISOCodelist(ISOCharacterSet$private_fields$xmlElement)$entries$value)
 }

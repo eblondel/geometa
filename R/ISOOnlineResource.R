@@ -14,7 +14,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, linkage, name)}}{
+#'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOOnlineResource
 #'  }
 #'  \item{\code{setLinkage(linkage)}}{
@@ -35,6 +35,10 @@
 #'
 ISOOnlineResource <- R6Class("ISOOnlineResource",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "CI_OnlineResource",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     linkage = NULL,
     protocol = NULL,
@@ -42,12 +46,10 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     description = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "CI_OnlineResource",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #setLinkage

@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml, value)}}{
 #'    This method is used to instantiate an ISOReferenceSystem
 #'  }
 #'  \item{\code{setReferenceSystemIdentifier(code, codeSpace)}}{
@@ -23,16 +23,18 @@
 #'
 ISOReferenceSystem <- R6Class("ISOReferenceSystem",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "MD_ReferenceSystem",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     referenceSystemIdentifier = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "MD_ReferenceSystem",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #setReferenceSystemIdentifier

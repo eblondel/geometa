@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOConformanceResult
 #'  }
 #'  \item{\code{setSpecification(specification)}}{
@@ -29,18 +29,20 @@
 #'
 ISOConformanceResult <- R6Class("ISOConformanceResult",
   inherit = ISOMetadataElement,
+  private = list(
+      xmlElement = "DQ_ConformanceResult",
+      xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     specification = NULL,
     explanation = NULL,
     pass = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "DQ_ConformanceResult",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #setSpecification

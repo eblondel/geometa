@@ -53,6 +53,10 @@
 #'
 ISOCitation<- R6Class("ISOCitation",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "CI_Citation",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     title = NULL,
     alternateTitle = NULL,
@@ -64,12 +68,10 @@ ISOCitation<- R6Class("ISOCitation",
     presentationForm = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "CI_Citation",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #setTitle

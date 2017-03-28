@@ -12,7 +12,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOTelephone
 #'  }
 #' }
@@ -21,17 +21,19 @@
 #'
 ISOTelephone <- R6Class("ISOTelephone",
    inherit = ISOMetadataElement,
+   private = list(
+     xmlElement = "CI_Telephone",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      voice = NULL,
      facsimile = NULL,
      initialize = function(xml = NULL){
        super$initialize(
-         element = "CI_Telephone",
-         namespace = ISOMetadataNamespace$GMD
+         xml = xml,
+         element = private$xmlElement,
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }
      },
      
      #setVoice

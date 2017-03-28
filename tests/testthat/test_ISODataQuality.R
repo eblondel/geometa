@@ -41,5 +41,12 @@ test_that("encoding",{
   
   #xml
   xml <- dq$encode()
-  expect_is(xml, "XMLNode")
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  dq2 <- ISODataQuality$new(xml = xml)
+  xml2 <- dq2$encode()
+  
+  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  
 })

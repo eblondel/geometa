@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISODateType
 #'  }
 #' }
@@ -20,17 +20,17 @@
 #'
 ISODateType <- R6Class("ISODateType",
    inherit = ISOMetadataCodelistElement,
+   private = list(
+     xmlElement = "CI_DateTypeCode",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      initialize = function(xml = NULL, value){
-       if(!is.null(xml)){
-         self$decode(xml)
-       }else{
-         super$initialize(id = "CI_DateTypeCode", value = value, setValue = FALSE)
-       }
+       super$initialize(xml = xml, id = "CI_DateTypeCode", value = value, setValue = FALSE)
      }
    )                        
 )
 
 ISODateType$values <- function(){
-  return(getISOCodelist("CI_DateTypeCode")$entries$value)
+  return(getISOCodelist(ISODateType$private_fields$xmlElement)$entries$value)
 }

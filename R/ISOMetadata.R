@@ -24,7 +24,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new()}}{
+#'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOMetadata
 #'  }
 #'  \item{\code{setFileIdentifier(fileIdentifier)}}{
@@ -87,6 +87,10 @@
 #'
 ISOMetadata <- R6Class("ISOMetadata",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "MD_Metadata",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
      fileIdentifier = NULL,
      language = list(),
@@ -102,10 +106,11 @@ ISOMetadata <- R6Class("ISOMetadata",
      identificationInfo = NULL, #TODO allow N cardinality
      distributionInfo = NULL, #TODO allow N cardinality
      dataQualityInfo = NULL, #TODO allow N cardinality
-     initialize = function(xml){
+     initialize = function(xml = NULL){
        super$initialize(
-         element = "MD_Metadata",
-         namespace = ISOMetadataNamespace$GMD
+         xml = xml,
+         element = private$xmlElement,
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
      },
      

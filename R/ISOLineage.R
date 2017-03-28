@@ -23,16 +23,18 @@
 #'
 ISOLineage<- R6Class("ISOLineage",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "LI_Lineage",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     statement = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "LI_Lineage",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #setStatement

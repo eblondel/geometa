@@ -27,17 +27,19 @@
 #'
 ISODate <- R6Class("ISODate",
    inherit = ISOMetadataElement,
+   private = list(
+      xmlElement = "CI_Date",
+      xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      date = NULL,
      dateType = NULL,
      initialize = function(xml = NULL){
        super$initialize(
-         element = "CI_Date",
-         namespace = ISOMetadataNamespace$GMD
+         xml = xml,
+         element = private$xmlElement,
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }
      },
      
      #setDate

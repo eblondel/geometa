@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOMetadataCodelistElement
 #'  }
 #'  \item{\code{getAcceptedValues()}}{
@@ -27,36 +27,36 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
      codelistId = NULL,
      attrs = list(),
      value = NULL,
-     initialize = function(xml = NULL, id, value,
-                           addCodeSpaceAttr = TRUE, setValue = TRUE){
+     initialize = function(xml = NULL, id, value, addCodeSpaceAttr = TRUE, setValue = TRUE){
+       super$initialize(
+         xml = xml,
+         element = id,
+         namespace = ISOMetadataNamespace$GMD
+       )
        if(!is.null(xml)){
-         self$decode(xml)
-       }else{
-         super$initialize(
-           element = id,
-           namespace = ISOMetadataNamespace$GMD
-         )
-         cl <- getISOCodelist(id)
-         if(is.null(cl)){
-           stop(sprintf("No ISO codelist for identifier '%s'", id))
-         }
-         self$codelistId = cl
-         clEntry <- cl$entries[cl$entries$value == value,]
-         if(nrow(clEntry)==0){
-           stop(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
-         }
-         clEntry <- clEntry[1L,]
-         self$attrs <- list(
-          codeList = sprintf("%s/Codelist/%s#%s",
-                             .geometa.iso$schemaBaseUrl, cl$refFile, id),
-          codeListValue = clEntry$value
-         )
-         if(addCodeSpaceAttr){
-           self$attrs <- c(self$attrs, codeSpace = "eng")
-         }
-         if(setValue){
-           self$value <-clEntry$description
-         }
+         value <- xmlGetAttr(xml, "codeListValue")
+       }
+       
+       cl <- getISOCodelist(id)
+       if(is.null(cl)){
+         stop(sprintf("No ISO codelist for identifier '%s'", id))
+       }
+       self$codelistId = cl
+       clEntry <- cl$entries[cl$entries$value == value,]
+       if(nrow(clEntry)==0){
+         stop(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
+       }
+       clEntry <- clEntry[1L,]
+       self$attrs <- list(
+        codeList = sprintf("%s/Codelist/%s#%s",
+                           .geometa.iso$schemaBaseUrl, cl$refFile, id),
+        codeListValue = clEntry$value
+       )
+       if(addCodeSpaceAttr){
+         self$attrs <- c(self$attrs, codeSpace = "eng")
+       }
+       if(setValue){
+         self$value <-clEntry$description
        }
      },
      

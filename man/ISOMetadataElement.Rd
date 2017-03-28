@@ -14,10 +14,19 @@ Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
 \description{
 ISOMetadataElement
 }
+\section{Static Methods}{
+
+\describe{
+ \item{\code{getISOClassByNode(node)}}{
+   Inherit the ISO class matching an XML document or node
+ }
+}
+}
+
 \section{Abstract Methods}{
 
 \describe{
- \item{\code{new()}}{
+ \item{\code{new(xml, element, namespace)}}{
    This method is used to instantiate an ISOMetadataElement
  }
  \item{\code{decode(xml)}}{

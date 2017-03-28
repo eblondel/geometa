@@ -12,7 +12,7 @@
 #' 
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, linkage, name)}}{
+#'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOGeometricObjects
 #'  }
 #'  \item{\code{setGeometricObjectType(geometricObjectType)}}{
@@ -27,17 +27,19 @@
 #'
 ISOGeometricObjects <- R6Class("ISOGeometricObjects",
    inherit = ISOMetadataElement,
+   private = list(
+     xmlElement = "MD_GeometricObjects",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      geometricObjectType = NULL,
      geometricObjectCount = NULL,
      initialize = function(xml = NULL){
        super$initialize(
-         element = "MD_GeometricObjects",
-         namespace = ISOMetadataNamespace$GMD
+         xml = xml,
+         element = private$xmlElement,
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }
      },
      
      #setGeometricObjectType

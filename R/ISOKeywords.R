@@ -33,18 +33,20 @@
 #'
 ISOKeywords <- R6Class("ISOKeywords",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "MD_Keywords",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     keyword = list(),
     type = NULL,
     thesaurusName = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "MD_Keywords",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #addKeyword

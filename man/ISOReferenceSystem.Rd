@@ -22,7 +22,7 @@ ISOReferenceSystem
 \section{Methods}{
 
 \describe{
- \item{\code{new(value)}}{
+ \item{\code{new(xml, value)}}{
    This method is used to instantiate an ISOReferenceSystem
  }
  \item{\code{setReferenceSystemIdentifier(code, codeSpace)}}{

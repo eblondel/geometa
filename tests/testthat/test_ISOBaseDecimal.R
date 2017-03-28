@@ -13,7 +13,14 @@ test_that("encoding",{
   #encoding
   md <- ISOBaseDecimal$new(value = 11.40)
   expect_is(md, "ISOBaseDecimal")
-  expect_equal(md$value, "myvalue")
+  expect_equal(md$value, 11.40)
   xml <- md$encode()
-  expect_is(xml, "XMLNode")
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOBaseDecimal$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  
 })

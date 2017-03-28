@@ -27,17 +27,19 @@
 #'
 ISOVectorSpatialRepresentation <- R6Class("ISOVectorSpatialRepresentation",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "MD_VectorSpatialRepresentation",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     topologyLevel = NULL,
-    geometricObjects = NULL, #TODO
+    geometricObjects = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "MD_VectorSpatialRepresentation",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #setTopologyLevel

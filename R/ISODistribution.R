@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISODistribution
 #'  }
 #'  \item{\code{setDigitalTransferOptions(options)}}{
@@ -23,16 +23,18 @@
 #'
 ISODistribution <- R6Class("ISODistribution",
    inherit = ISOMetadataElement,
+   private = list(
+      xmlElement = "MD_Distribution",
+      xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      transferOptions = NULL,
      initialize = function(xml = NULL){
        super$initialize(
+         xml = xml,
          element = "MD_Distribution",
-         namespace = ISOMetadataNamespace$GMD
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
-       if(!is.null(xml)){
-         self$decode(xml)
-       }
      },
      
      #setDigitalTransferOptions

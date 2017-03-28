@@ -48,7 +48,7 @@ ISOMetadataElement
 \section{Methods}{
 
 \describe{
- \item{\code{new()}}{
+ \item{\code{new(xml)}}{
    This method is used to instantiate an ISOMetadata
  }
  \item{\code{setFileIdentifier(fileIdentifier)}}{

@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOGeometricObjectType
 #'  }
 #' }
@@ -20,17 +20,17 @@
 #'
 ISOGeometricObjectType <- R6Class("ISOGeometricObjectType",
   inherit = ISOMetadataCodelistElement,
+  private = list(
+    xmlElement = "MD_GeometricObjectTypeCode",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     initialize = function(xml = NULL, value){
-      if(!is.null(xml)){
-        self$decode(xml)
-      }else{
-        super$initialize(id = "MD_GeometricObjectTypeCode", value = value, setValue = FALSE)
-      }
+      super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = FALSE)
     }
   )                        
 )
 
 ISOGeometricObjectType$values <- function(){
-  return(getISOCodelist("MD_GeometricObjectTypeCode")$entries$value)
+  return(getISOCodelist(ISOGeometricObjectType$private_fields$xmlElement)$entries$value)
 }

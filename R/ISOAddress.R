@@ -39,6 +39,10 @@
 #'
 ISOAddress <- R6Class("ISOAddress",
   inherit = ISOMetadataElement,
+  private = list(
+    xmlElement = "CI_Address",
+    xmlNamespacePrefix = "GMD"
+  ),
   public = list(
     deliveryPoint = NULL,
     city = NULL,
@@ -47,12 +51,10 @@ ISOAddress <- R6Class("ISOAddress",
     electronicMailAddress = NULL,
     initialize = function(xml = NULL){
       super$initialize(
-        element = "CI_Address",
-        namespace = ISOMetadataNamespace$GMD
+        xml = xml,
+        element = private$xmlElement,
+        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
-      if(!is.null(xml)){
-        self$decode(xml)
-      }
     },
     
     #setDeliveryPoint

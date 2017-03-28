@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISORestriction
 #'  }
 #' }
@@ -20,17 +20,17 @@
 #'
 ISORestriction <- R6Class("ISORestriction",
    inherit = ISOMetadataCodelistElement,
+   private = list(
+     xmlElement = "MD_RestrictionCode",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      initialize = function(xml = NULL, value){
-       if(!is.null(xml)){
-         self$decode(xml)
-       }else{
-         super$initialize(id = "MD_RestrictionCode", value = value, setValue = FALSE)
-       }
+       super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = FALSE)
      }
    )                        
 )
 
 ISORestriction$values <- function(){
-  return(getISOCodelist("MD_RestrictionCode")$entries$value)
+  return(getISOCodelist(ISORestriction$private_fields$xmlElement)$entries$value)
 }

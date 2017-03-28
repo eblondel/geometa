@@ -24,7 +24,7 @@ ISOIdentifier
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, code, codeSpace)}}{
+ \item{\code{new(xml, prefix, code, codeSpace)}}{
    This method is used to instantiate an ISOIdentifier
  }
 }

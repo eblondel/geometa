@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOKeywordType
 #'  }
 #' }
@@ -20,17 +20,17 @@
 #'
 ISOKeywordType <- R6Class("ISOKeywordType",
  inherit = ISOMetadataCodelistElement,
+ private = list(
+   xmlElement = "MD_KeywordTypeCode",
+   xmlNamespacePrefix = "GMD"
+ ),
  public = list(
    initialize = function(xml = NULL, value){
-     if(!is.null(xml)){
-       self$decode(xml)
-     }else{
-       super$initialize(id = "MD_KeywordTypeCode", value = value, setValue = FALSE)
-     }
+     super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = FALSE)
    }
  )                        
 )
 
 ISOKeywordType$values <- function(){
-  return(getISOCodelist("MD_KeywordTypeCode")$entries$value)
+  return(getISOCodelist(ISOKeywordType$private_fields$xmlElement)$entries$value)
 }

@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(value)}}{
+#'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOTopologyLevel
 #'  }
 #' }
@@ -20,17 +20,17 @@
 #'
 ISOTopologyLevel <- R6Class("ISOTopologyLevel",
    inherit = ISOMetadataCodelistElement,
+   private = list(
+     xmlElement = "MD_TopologyLevelCode",
+     xmlNamespacePrefix = "GMD"
+   ),
    public = list(
      initialize = function(xml = NULL, value){
-       if(!is.null(xml)){
-         self$decode(xml)
-       }else{
-         super$initialize(id = "MD_TopologyLevelCode", value = value, setValue = FALSE)
-       }
+       super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = FALSE)
      }
    )                        
 )
 
 ISOTopologyLevel$values <- function(){
-  return(getISOCodelist("MD_TopologyLevelCode")$entries$value)
+  return(getISOCodelist(ISOTopologyLevel$private_fields$xmlElement)$entries$value)
 }
