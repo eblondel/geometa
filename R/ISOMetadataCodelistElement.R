@@ -34,7 +34,8 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
          namespace = ISOMetadataNamespace$GMD
        )
        if(!is.null(xml)){
-         value <- xmlGetAttr(xml, "codeListValue")
+         value <- xmlGetAttr(xml, "codeListValue") #codeListValue should be as attribute
+         if(is.null(value)) value <- xmlValue(xml) #try to pick up value instead
        }
        
        cl <- getISOCodelist(id)

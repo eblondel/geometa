@@ -107,6 +107,14 @@ ISOMetadata <- R6Class("ISOMetadata",
      distributionInfo = NULL, #TODO allow N cardinality
      dataQualityInfo = NULL, #TODO allow N cardinality
      initialize = function(xml = NULL){
+       
+       if(!is.null(xml)){
+         #in case of CSW GetRecordByIdResponse
+         rootName <- xmlName(xmlRoot(xml))
+         if(rootName == "GetRecordByIdResponse"){
+           xml <- xmlChildren(xmlChildren(xml)[[1]])[[1]]
+         }
+       }
        super$initialize(
          xml = xml,
          element = private$xmlElement,

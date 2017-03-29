@@ -165,6 +165,9 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
           }else{
             if(field == "value"){
               #special case of node value
+              #if(class(fieldObj)=="character"){
+              #  if(Encoding(fieldObj)!="UTF-8") fieldObj <- iconv(fieldObj, from="ISO-8859-1", to="UTF-8")
+              #}
               rootXML$addNode(xmlTextNode(fieldObj))
             }else{
               #general case of gco wrapper element
@@ -180,8 +183,11 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
           }
         }
       }
-
-      return(as(rootXML$value(), "XMLInternalNode"))
+      out <- rootXML$value()
+      #if(addNS){
+        out <- as(out, "XMLInternalNode")
+      #}
+      return(out)
     },
     
     #wrapBaseElement
