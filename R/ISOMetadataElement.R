@@ -56,6 +56,8 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
       for(child in xmlChildren(xml)){
         fieldName <- xmlName(child)
+        if(!(fieldName %in% names(self))) next
+        
         fieldClass <- NULL
         if(!is(child, "XMLInternalTextNode")){
           fieldClass <- ISOMetadataElement$getISOClassByNode(child)
