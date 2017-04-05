@@ -2,6 +2,7 @@
 #'
 #' @docType class
 #' @importFrom R6 R6Class
+#' @import XML
 #' @export
 #' @keywords ISO metadata element
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
