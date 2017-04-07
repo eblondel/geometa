@@ -2,7 +2,7 @@ Package: geometa
 Type: Package
 Title: Facilities for handling geographic metadata
 Version: 0.1-0
-Date: 2017-03-28
+Date: 2017-04-07
 Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Description: Provides facilities to handle reading and writing of geographic 
