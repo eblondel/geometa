@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
-   inherit = ISOMetadataElement,
+   inherit = ISOGeographicExtent,
    private = list(
      xmlElement = "EX_GeographicBoundingBox",
      xmlNamespacePrefix = "GMD"
