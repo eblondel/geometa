@@ -42,7 +42,7 @@ ISODataIdentification
  \item{\code{setAbstract(abstract)}}{
    Sets an abstract (object of class "character")
  }
- \item{\copde{setPurpose(purpose)}}{
+ \item{\code{setPurpose(purpose)}}{
    Sets a purpose (object of class "character")
  }
  \item{\code{addCredit(credit)}}{

@@ -20,6 +20,8 @@ ISOExtent
 \item{\code{geographicElement}}{}
 
 \item{\code{temporalElement}}{}
+
+\item{\code{verticalElement}}{}
 }}
 \section{Methods}{
 
@@ -27,11 +29,32 @@ ISOExtent
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOExtent
  }
+ \item{\code{addGeographicElement(extent)}}{
+   Adds an object extending \code{ISOGeographicExtent}
+ }
  \item{\code{setGeographicElement(extent)}}{
-   Sets the geographic element
+   Sets an object extending \code{ISOGeographicExtent}
+ }
+ \item{\code{delGeographicElement(extent)}}{
+   Deletes an object extending \code{ISOGeographicExtent}
+ }
+ \item{\code{addTemporalElement(extent)}}{
+   Adds an object extending \code{ISOTemporalExtent}
  }
  \item{\code{setTemporalElement(extent)}}{
-   Sets the temporal element
+   Sets an object extending \code{ISOTemporalExtent}
+ }
+ \item{\code{delTemporalElement(extent)}}{
+   Deletes an object extending \code{ISOTemporalExtent}
+ }
+ \item{\code{addVerticalElement(extent)}}{
+   Adds an object extending \code{ISOVerticalExtent}
+ }
+ \item{\code{setVerticalElement(extent)}}{
+   Sets an object extending \code{ISOVerticalExtent}
+ }
+ \item{\code{delVerticalElement(extent)}}{
+   Deletes an object extending \code{ISOVerticalExtent}
  }
 }
 }

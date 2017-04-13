@@ -54,6 +54,7 @@
 #'
 ISOMetadataElement <- R6Class("ISOMetadataElement",
   public = list(
+    wrap = TRUE,
     element = NA,
     namespace = NA,
     defaults = list(),
@@ -78,6 +79,11 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
       for(child in xmlChildren(xml)){
         fieldName <- xmlName(child)
+        fNames <- unlist(strsplit(fieldName, ":"))
+        if(length(fNames)>1){
+         fieldName <- fNames[2]
+        }
+        
         if(!(fieldName %in% names(self))) next
         
         fieldClass <- NULL
@@ -97,7 +103,9 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                                  "ISOBaseInteger" = as.integer(fieldValue),
                                  "ISOBaseDecimal" = as.numeric(fieldValue),
                                  "ISOBaseDate" = as.Date(fieldValue),
-                                 "ISOBaseDateTime" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S")),
+                                 "ISOBaseDateTime" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT"),
+                                 "ISOBaseTimeBeginPosition" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT"),
+                                 "ISOBaseTimeEndPosition" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT"),
                                  fieldValue
             )
           }else{
@@ -136,25 +144,17 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if(self$element == "MD_Metadata"){
         rootNamespaces <- sapply(ISOMetadataNamespace$all(), function(x){x$getDefinition()})
       }
-      if(addNS){
-        rootXML <- xmlOutputDOM(
-          tag = self$element,
-          attrs = rootXMLAttrs,
-          nameSpace = self$namespace$id,
-          nsURI = rootNamespaces
-        )
-      }else{
-        rootXML <- xmlOutputDOM(
-          tag = self$element,
-          attrs = rootXMLAttrs,
-          nameSpace = self$namespace$id
-        )
-      }
+
+      rootXML <- xmlOutputDOM(
+        tag = self$element,
+        attrs = rootXMLAttrs,
+        nameSpace = self$namespace$id
+      )
       
       #fields
       fields <- fields[!sapply(fields, function(x){
         (class(self[[x]]) %in% c("environment", "function")) ||
-          (x %in% c("element", "namespace", "defaults", "attrs", "codelistId"))
+          (x %in% c("wrap", "element", "namespace", "defaults", "attrs", "codelistId"))
       })]
       
       for(field in fields){
@@ -170,56 +170,63 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         #user values management
         if(!is.null(fieldObj)){
           if(is(fieldObj, "ISOMetadataElement")){
-            wrapperNode <- xmlOutputDOM(
-              tag = field,
-              nameSpace = ISOMetadataNamespace$GMD$id
-            )
-            wrapperNode$addNode(fieldObj$encode(addNS = FALSE))
-            rootXML$addNode(wrapperNode$value())
-          }else if(is(fieldObj, "list")){
-            for(item in fieldObj){
+            if(fieldObj$wrap){
               wrapperNode <- xmlOutputDOM(
                 tag = field,
                 nameSpace = ISOMetadataNamespace$GMD$id
               )
+              wrapperNode$addNode(fieldObj$encode(addNS = FALSE))
+              rootXML$addNode(wrapperNode$value())
+            }else{
+              rootXML$addNode(fieldObj$encode(addNS = FALSE))
+            }
+          }else if(is(fieldObj, "list")){
+            for(item in fieldObj){
               nodeValue <- NULL
               if(is(item, "ISOMetadataElement")){
                 nodeValue <- item$encode(addNS = FALSE)
               }else{
                 nodeValue <- self$wrapBaseElement(field, item)
               }
-              wrapperNode <- xmlOutputDOM(
-                tag = field,
-                nameSpace = ISOMetadataNamespace$GMD$id
-              )
-              wrapperNode$addNode(nodeValue)
-              rootXML$addNode(wrapperNode$value())
+              if(item$wrap){
+                wrapperNode <- xmlOutputDOM(
+                  tag = field,
+                  nameSpace = ISOMetadataNamespace$GMD$id
+                )
+                wrapperNode$addNode(nodeValue)
+                rootXML$addNode(wrapperNode$value())
+              }else{
+                rootXML$addNode(nodeValue)
+              }
             }
           }else{
             if(field == "value"){
-              #special case of node value
-              #if(class(fieldObj)=="character"){
-              #  if(Encoding(fieldObj)!="UTF-8") fieldObj <- iconv(fieldObj, from="ISO-8859-1", to="UTF-8")
-              #}
               rootXML$addNode(xmlTextNode(fieldObj))
             }else{
-              #general case of gco wrapper element
-              wrapperNode <- xmlOutputDOM(
-                tag = field,
-                nameSpace = ISOMetadataNamespace$GMD$id
-              )
               dataObj <- self$wrapBaseElement(field, fieldObj)
-              wrapperNode$addNode(dataObj)
-              rootXML$addNode(wrapperNode$value())
+              if(!is.null(dataObj)){
+                if(dataObj$wrap){
+                  #general case of gco wrapper element
+                  wrapperNode <- xmlOutputDOM(
+                    tag = field,
+                    nameSpace = ISOMetadataNamespace$GMD$id
+                  )
+                  wrapperNode$addNode(dataObj$encode(addNS = FALSE))
+                  rootXML$addNode(wrapperNode$value())
+                }else{
+                  rootXML$addNode(dataObj$encode(addNS = FALSE))
+                }
+              }
             }
             
           }
         }
       }
       out <- rootXML$value()
-      #if(addNS){
-        out <- as(out, "XMLInternalNode")
-      #}
+      out <- as(out, "XMLInternalNode")
+      if(addNS){
+       xmlNamespaces(out, set = TRUE) <- self$namespace$getDefinition() 
+      }
       return(out)
     },
     
@@ -230,6 +237,8 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if((regexpr("^http*",fieldObj, TRUE) > 0 | regexpr("^ftp*",fieldObj, TRUE) > 0) && is(self, "ISOOnlineResource")){
         dataType <- "url"
       }
+      if(field == "beginPosition") dataType <- "begintime"
+      if(field == "endPosition") dataType <- "endtime"
       dataObj <- switch(tolower(dataType),
                         "character" = ISOBaseCharacterString$new(value = fieldObj),
                         "numeric"   = ISOBaseDecimal$new(value = fieldObj),
@@ -238,11 +247,10 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                         "datetime"  = ISOBaseDateTime$new(value = fieldObj),
                         "date"      = ISOBaseDate$new(value = fieldObj),
                         "url"       = ISOBaseURL$new(value = fieldObj),
+                        "begintime" = ISOBaseTimeBeginPosition$new(value = fieldObj),
+                        "endtime"   = ISOBaseTimeEndPosition$new(value = fieldObj),
                         NULL
       )
-      if(!is.null(dataObj)){
-        dataObj <- dataObj$encode(addNS = FALSE)
-      }
       return(dataObj)
     },
     
@@ -285,6 +293,11 @@ ISOMetadataElement$getISOClassByNode = function(node){
   outClass <- NULL
   if(!is(node, "XMLInternalDocument")) node <- xmlDoc(node)
   nodeElement <- xmlRoot(node)
+  nodeElementName <- xmlName(nodeElement)
+  nodeElementNames <- unlist(strsplit(nodeElementName, ":"))
+  if(length(nodeElementNames)>1){
+    nodeElementName <- nodeElementNames[2]
+  }
   list_of_classes <- rev(ls("package:geometa"))
   list_of_classes <- list_of_classes[regexpr("^ISO.+", list_of_classes)>0]
   for(classname in list_of_classes){
@@ -292,11 +305,7 @@ ISOMetadataElement$getISOClassByNode = function(node){
     if(length(class$private_fields)>0
        && !is.null(class$private_fields$xmlElement)
        && !is.null(class$private_fields$xmlNamespacePrefix)){
-      nodeElementName <- xmlName(nodeElement)
-      nodeElementNames <- unlist(strsplit(xmlName(nodeElement), ":"))
-      if(length(nodeElementNames)>1){
-        nodeElementName <- nodeElementNames[2]
-      }
+
       if(nodeElementName %in% class$private_fields$xmlElement){
         outClass <- class
         break

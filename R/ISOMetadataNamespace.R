@@ -36,13 +36,15 @@ ISOMetadataNamespace$GMD = ISOMetadataNamespace$new("gmd", "http://www.isotc211.
 ISOMetadataNamespace$GMI = ISOMetadataNamespace$new("gmi", "http://www.isotc211.org/2005/gmi")
 ISOMetadataNamespace$GTS = ISOMetadataNamespace$new("gts", "http://www.isotc211.org/2005/gts")
 ISOMetadataNamespace$SRV = ISOMetadataNamespace$new("srv", "http://www.isotc211.org/2005/srv")
+ISOMetadataNamespace$GML = ISOMetadataNamespace$new("gml", "http://www.opengis.net/gml")
 ISOMetadataNamespace$all = function(){
   return(list(
     ISOMetadataNamespace$GCO,
     ISOMetadataNamespace$GMD,
     ISOMetadataNamespace$GMI,
     ISOMetadataNamespace$GTS,
-    ISOMetadataNamespace$SRV
+    ISOMetadataNamespace$SRV,
+    ISOMetadataNamespace$GML
   ))
 }
 

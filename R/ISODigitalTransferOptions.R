@@ -62,7 +62,7 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
      },
      
      #setTransferSize
-     setUnitsOfDistribution = function(transferSize){
+     setTransferSize = function(transferSize){
        self$transferSize = as.numeric(transferSize)
      },
      

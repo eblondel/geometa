@@ -92,7 +92,6 @@ ISOExtent <- R6Class("ISOExtent",
      
      #addTemporalElement
      addTemporalElement = function(element){
-       stop("Method not yet supported by geometa!")
        if(!is(element, "ISOTemporalExtent")){
          stop("The argument should extend 'ISOTemporalExtent' object")
        }
@@ -101,14 +100,12 @@ ISOExtent <- R6Class("ISOExtent",
      
      #setTemporalElement
      setTemporalElement = function(element){
-       stop("Method not yet supported by geometa!")
-       sself$temporalElement = list()
+       self$temporalElement = list()
        return(self$addTemporalElement(element))
      },
      
      #delTemporalElement
      delTemporalElement = function(element){
-       stop("Method not yet supported by geometa!")
        if(!is(element, "ISOTemporalExtent")){
          stop("The argument should extend 'ISOTemporalExtent' object")
        }
