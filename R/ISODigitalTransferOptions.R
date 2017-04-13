@@ -14,8 +14,20 @@
 #'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISODigitalTransferOptions
 #'  }
+#'  \item{\code{setUnitsOfDistribution(unit)}}{
+#'    Sets the units of distribution
+#'  }
+#'  \item{\code{setTransferSize(transferSize)}}{
+#'    Sets the transfer Size
+#'  }
 #'  \item{\code{addOnlineResource(onlineResource)}}{
-#'    Adds an online resource
+#'    Adds an object of class \code{ISOOnlineResource}
+#'  }
+#'  \item{\code{setOnlineResource(onlineResource)}}{
+#'    Sets an object of class \code{ISOOnlineResource}
+#'  }
+#'  \item{\code{delOnlineResource(onlineResource)}}{
+#'    Deletes an object of class \code{ISOOnlineResource}
 #'  }
 #' }
 #' 
@@ -28,7 +40,14 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #+ unitsOfDistribution [0..1]: character
+     unitsOfDistribution = NULL,
+     #transferSize [0..1]: integer
+     transferSize = NULL,
+     #+ onLine [0..*]: ISOOnlineResource
      onLine = list(),
+     #+ offLine [0..1]: MD_Medium
+     offLine = NULL, #TODO
      initialize = function(xml = NULL){
        super$initialize(
          xml = xml,
@@ -37,12 +56,36 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
        )
      },
      
+     #setUnitsOfDistribution
+     setUnitsOfDistribution = function(unit){
+       self$unitsOfDistribution = unit
+     },
+     
+     #setTransferSize
+     setUnitsOfDistribution = function(transferSize){
+       self$transferSize = as.numeric(transferSize)
+     },
+     
      #addOnlineResource
      addOnlineResource = function(onlineResource){
        if(!is(onlineResource, "ISOOnlineResource")){
          stop("The argument should be a 'ISOOnlineResource' object")
        }
-       self$onLine <- c(self$onLine, onlineResource)
+       return(self$addListElement("onLine", onlineResource))
+     },
+     
+     #setOnlineResource
+     setOnlineResource = function(onlineResource){
+       self$onLine <- list()
+       return(self$addOnlineResource(onlineResource))
+     },
+     
+     #delOnlineResource
+     delOnlineResource = function(onlineResource){
+       if(!is(onlineResource, "ISOOnlineResource")){
+         stop("The argument should be a 'ISOOnlineResource' object")
+       }
+       return(self$delListElement("onLine", onlineResource))
      }
      
    )                        

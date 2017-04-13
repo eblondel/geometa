@@ -28,6 +28,7 @@ ISODistribution <- R6Class("ISODistribution",
       xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #+ transferOptions [0..*]: ISODigitalTransferOptions
      transferOptions = NULL,
      initialize = function(xml = NULL){
        super$initialize(
@@ -37,12 +38,29 @@ ISODistribution <- R6Class("ISODistribution",
        )
      },
      
-     #setDigitalTransferOptions
-     setDigitalTransferOptions = function(options){
+     #MD_DigitalTransferOptions
+     #--------------------------------------------------------------------------
+     
+     #addDigitalTransferOptions
+     addDigitalTransferOptions = function(options){
        if(!is(options, "ISODigitalTransferOptions")){
          stop("The argument should be a 'ISODigitalTransferOptions' object")
        }
-       self$transferOptions = options
+       return(self$addListElement("transferOptions", options))
+     },
+     
+     #setDigitalTransferOptions
+     setDigitalTransferOptions = function(options){
+       self$transferOptions <- list()
+       return(self$addDigitalTransferOptions(options))
+     },
+     
+     #delDigitalTransferOptions
+     delDigitalTransferOptions = function(options){
+       if(!is(options, "ISODigitalTransferOptions")){
+         stop("The argument should be a 'ISODigitalTransferOptions' object")
+       }
+       return(self$delListElement("transferOptions", options))
      }
    )                        
 )
