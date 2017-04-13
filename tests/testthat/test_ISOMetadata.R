@@ -14,17 +14,12 @@ test_that("encoding/decoding",{
   md = ISOMetadata$new()
   md$setFileIdentifier("my-metadata-identifier")
   md$setParentIdentifier("my-parent-metadata-identifier")
-  expect_true(md$setCharacterSet("utf16"))
-  expect_true(md$addCharacterSet("utf8"))
-  expect_false(md$addCharacterSet("utf8"))
-  expect_true(md$delCharacterSet("utf16"))
-  expect_true( md$setLanguage("fra"))
-  expect_true(md$addLanguage("eng"))
-  expect_false(md$addLanguage("eng"))
-  expect_true(md$delLanguage("fra"))
+  md$setCharacterSet("utf8")
+  md$setLanguage("eng")
   md$setDateStamp(ISOdate(2015, 1, 1, 1))
   md$setMetadataStandardName("ISO 19115:2003/19139")
   md$setMetadataStandardVersion("1.0")
+  md$setDataSetURI("my-dataset-identifier")
   
   #add 3 contacts
   #--------------------
@@ -51,8 +46,11 @@ test_that("encoding/decoding",{
     res$setName("someresourcename")
     contact$setOnlineResource(res)
     rp$setContactInfo(contact)
-    md$addContact(rp)
+    expect_true(md$addContact(rp))
   }
+  expect_equal(length(md$contact), 3L)
+  expect_true(md$delContact(rp))
+  expect_equal(length(md$contact), 2L)  
   
   #VectorSpatialRepresentation
   #---------------------
@@ -62,8 +60,11 @@ test_that("encoding/decoding",{
   geomObject$setGeometricObjectType("surface")
   geomObject$setGeometricObjectCount(5L)
   vsr$setGeometricObjects(geomObject)
-  md$setSpatialRepresentationInfo(vsr)
-  
+  expect_true(md$addSpatialRepresentationInfo(vsr))
+  expect_false(md$addSpatialRepresentationInfo(vsr))
+  geomObject$setGeometricObjectCount(6L)
+  expect_true(md$delSpatialRepresentationInfo(vsr))
+
   #ReferenceSystem
   #----------------
   rs <- ISOReferenceSystem$new()
@@ -75,6 +76,21 @@ test_that("encoding/decoding",{
   ident <- ISODataIdentification$new()
   ident$setAbstract("abstract")
   ident$setPurpose("purpose")
+  expect_true(ident$addCredit("credit1"))
+  expect_false(ident$addCredit("credit1"))
+  expect_true(ident$addCredit("credit2"))
+  expect_true(ident$addCredit("credit3"))
+  expect_equal(length(ident$credit), 3L)
+  expect_true(ident$delCredit("credit3"))
+  expect_equal(length(ident$credit), 2L)
+  expect_true(ident$addStatus("completed"))
+  expect_false(ident$addStatus("completed"))
+  expect_true(ident$addStatus("valid"))
+  expect_true(ident$addStatus("final"))
+  expect_equal(length(ident$status), 3L)
+  expect_true(ident$delStatus("final"))
+  expect_equal(length(ident$status), 2L)
+  
   ident$setLanguage("eng")
   ident$setCharacterSet("utf8")
   ident$addTopicCategory("biota")
@@ -120,12 +136,22 @@ test_that("encoding/decoding",{
   ident$setCitation(ct)
   
   #graphic overview
-  go <- ISOBrowseGraphic$new(
-    fileName = "http://wwww.somefile.org/png",
-    fileDescription = "Map Overview",
+  go1 <- ISOBrowseGraphic$new(
+    fileName = "http://wwww.somefile.org/png1",
+    fileDescription = "Map Overview 1",
     fileType = "image/png"
   )
-  ident$setGraphicOverview(go)
+  go2 <- ISOBrowseGraphic$new(
+    fileName = "http://www.somefile.org/png2",
+    fileDescription = "Map Overview 2",
+    fileType = "image/png"
+  )
+  expect_true(ident$addGraphicOverview(go1))
+  expect_false(ident$addGraphicOverview(go1))
+  expect_true(ident$addGraphicOverview(go2))
+  expect_equal(length(ident$graphicOverview), 2L)
+  expect_true(ident$delGraphicOverview(go2))
+  expect_equal(length(ident$graphicOverview), 1L)
   
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
@@ -144,7 +170,19 @@ test_that("encoding/decoding",{
   expect_equal(length(lc$useLimitation), 3L)
   expect_equal(length(lc$accessConstraints), 2L)
   expect_equal(length(lc$useConstraints), 2L)
-  ident$setResourceConstraints(lc)
+  ident$addResourceConstraints(lc)
+  
+  #adding security constraints
+  sc <- ISOSecurityConstraints$new()
+  sc$setClassification("secret")
+  sc$setUserNote("ultra secret")
+  sc$setClassificationSystem("no classification in particular")
+  sc$setHandlingDescription("description")
+  ident$addResourceConstraints(sc)
+  
+  expect_equal(length(ident$resourceConstraints), 2L)
+  expect_true(ident$delResourceConstraints(sc))
+  expect_equal(length(ident$resourceConstraints), 1L)
   
   #adding extent
   extent <- ISOExtent$new()
@@ -165,6 +203,14 @@ test_that("encoding/decoding",{
   
   #supplementalInformation
   ident$setSupplementalInformation("some additional information")
+  
+  #spatial representation type
+  expect_true(ident$addSpatialRepresentationType("vector"))
+  expect_false(ident$addSpatialRepresentationType("vector"))
+  expect_true(ident$addSpatialRepresentationType("grid"))
+  expect_equal(length(ident$spatialRepresentationType), 2L)
+  expect_true(ident$delSpatialRepresentationType("grid"))
+  expect_equal(length(ident$spatialRepresentationType), 1L)
   
   md$setIdentificationInfo(ident)
   

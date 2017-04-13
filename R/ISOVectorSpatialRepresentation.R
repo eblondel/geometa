@@ -18,22 +18,30 @@
 #'  \item{\code{setTopologyLevel(topologyLevel)}}{
 #'    Sets the topology level
 #'  }
+#'  \item{\code{addGeometricObject(geometricObjects)}}{
+#'    Adds the geometricObjects
+#'  }
 #'  \item{\code{setGeometricObject(geometricObjects)}}{
 #'    Sets the geometricObjects
+#'  }
+#'  \item{\code{delGeometricObject(geometricObjects)}}{
+#'    Deletes the geometricObjects
 #'  }
 #' }
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOVectorSpatialRepresentation <- R6Class("ISOVectorSpatialRepresentation",
-  inherit = ISOMetadataElement,
+  inherit = ISOSpatialRepresentation,
   private = list(
     xmlElement = "MD_VectorSpatialRepresentation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #+ topologyLevel [0..1]: ISOTopologyLevel
     topologyLevel = NULL,
-    geometricObjects = NULL,
+    #+ geometricObjects [0..*]: ISOGeometricObjects
+    geometricObjects = list(),
     initialize = function(xml = NULL){
       super$initialize(
         xml = xml,
@@ -50,12 +58,26 @@ ISOVectorSpatialRepresentation <- R6Class("ISOVectorSpatialRepresentation",
       self$topologyLevel <- topologyLevel
     },
     
-    #setGeometricObjects
-    setGeometricObjects = function(geometricObjects){
+    #addGeometricObjects
+    addGeometricObjects = function(geometricObjects){
       if(!is(geometricObjects, "ISOGeometricObjects")){
         stop("The argument should be a 'ISOGeometricObjects' object")
       }
-      self$geometricObjects <- geometricObjects
+      return(self$addListElement("geometricObjects", geometricObjects))
+    },
+    
+    #setGeometricObjects
+    setGeometricObjects = function(geometricObjects){
+      self$geometricObjects <- list()
+      return(self$addGeometricObjects(geometricObjects))
+    },
+    
+    #delGeometricObjects
+    delGeometricObjects = function(geometricObjects){
+      if(!is(geometricObjects, "ISOGeometricObjects")){
+        stop("The argument should be a 'ISOGeometricObjects' object")
+      }
+      return(self$delListElement("geometricObjects", geometricObjects))
     }
     
   )                        

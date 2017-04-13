@@ -31,6 +31,6 @@ ISOGeometricObjectType <- R6Class("ISOGeometricObjectType",
   )                        
 )
 
-ISOGeometricObjectType$values <- function(){
-  return(getISOCodelist(ISOGeometricObjectType$private_fields$xmlElement)$entries$value)
+ISOGeometricObjectType$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOGeometricObjectType, labels))
 }

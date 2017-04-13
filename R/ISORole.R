@@ -31,6 +31,6 @@ ISORole <- R6Class("ISORole",
   )                        
 )
 
-ISORole$values <- function(){
-  return(getISOCodelist(ISORole$private_fields$xmlElement)$entries$value)
+ISORole$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISORole, labels))
 }

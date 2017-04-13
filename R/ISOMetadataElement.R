@@ -12,6 +12,12 @@
 #'  \item{\code{getISOClassByNode(node)}}{
 #'    Inherit the ISO class matching an XML document or node
 #'  }
+#'  \item{\code{compare(metadataElement1, metadataElement2)}}{
+#'    Compares two metadata elements objects. Returns TRUE if they are equal,
+#'    FALSE otherwise. The comparison of object is done by comparing the XML 
+#'    representation of the objects (since no R6 object comparison method seems 
+#'    to exist)
+#'  }
 #' }
 #'
 #' @section Abstract Methods:
@@ -28,6 +34,20 @@
 #'  \item{\code{wrapBaseElement(field, fieldObj)}}{
 #'    Wraps a base element type
 #'  }
+#'  \item{\code{contains(field, metadataElement)}}{
+#'    Indicates of the present class object contains an metadata element object
+#'    for a particular list-based field.
+#'  }
+#'  \item{\code{addListElement(field, metadataElement)}}{
+#'    Adds a metadata element to a list-based field. Returns TRUE if the element
+#'    has been added, FALSE otherwise. In case an element is already added, the 
+#'    element will not be added and this method will return FALSE.
+#'  }
+#'  \item{\code{delListElement(field, metadataElement)}}{
+#'    Deletes a metadata element from a list-based field. Returns TRUE if the element
+#'    has been deleted, FALSE otherwise. In case an element is abstent, this method 
+#'    will return FALSE.
+#'  }
 #' }
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
@@ -36,9 +56,11 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
   public = list(
     element = NA,
     namespace = NA,
-    initialize = function(xml = NULL, element, namespace){
+    defaults = list(),
+    initialize = function(xml = NULL, element, namespace, defaults = list()){
       self$element = element
       self$namespace = namespace
+      self$defaults = defaults
       if(!is.null(xml)){
         self$decode(xml)
       }
@@ -100,7 +122,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     
     #encode
     encode = function(addNS = TRUE){
-      
+
       #list of fields to encode as XML
       fields <- rev(names(self))
       
@@ -132,11 +154,20 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       #fields
       fields <- fields[!sapply(fields, function(x){
         (class(self[[x]]) %in% c("environment", "function")) ||
-          (x %in% c("element", "namespace", "attrs", "codelistId"))
+          (x %in% c("element", "namespace", "defaults", "attrs", "codelistId"))
       })]
       
       for(field in fields){
         fieldObj <- self[[field]]
+        
+        #default values management
+        if(is.null(fieldObj) || (is.list(fieldObj) & length(fieldObj)==0)){
+          if(field %in% names(self$defaults)){
+            fieldObj <- self$defaults[[field]]
+          }
+        }
+        
+        #user values management
         if(!is.null(fieldObj)){
           if(is(fieldObj, "ISOMetadataElement")){
             wrapperNode <- xmlOutputDOM(
@@ -213,6 +244,39 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         dataObj <- dataObj$encode(addNS = FALSE)
       }
       return(dataObj)
+    },
+    
+    #contains
+    contains = function(field, metadataElement){
+      out = FALSE
+      if(length(self[[field]]) == 0){
+        out = FALSE
+      }else{
+        out = any(sapply(self[[field]], function(x){
+          ISOMetadataElement$compare(x, metadataElement)
+        }))
+      }
+      return(out)
+    },
+    
+    #addListElement
+    addListElement = function(field, metadataElement){
+      startNb <- length(self[[field]])
+      if(!self$contains(field, metadataElement)){
+        self[[field]] = c(self[[field]], metadataElement)
+      }
+      endNb = length(self[[field]])
+      return(endNb == startNb+1)
+    },
+    
+    #delListElement
+    delListElement = function(field, metadataElement){
+      startNb <- length(self[[field]])
+      if(self$contains(field, metadataElement)){
+        self[[field]] = self[[field]][!sapply(self[[field]], ISOMetadataElement$compare, metadataElement)]
+      }
+      endNb = length(self[[field]])
+      return(endNb == startNb-1)
     }
   )                              
 )
@@ -240,4 +304,20 @@ ISOMetadataElement$getISOClassByNode = function(node){
     }
   }
   return(outClass)
+}
+
+ISOMetadataElement$compare = function(metadataElement1, metadataElement2){
+  text1 <- NULL
+  if(is(metadataElement1, "ISOMetadataElement")){
+    text1 <- as(XML::xmlDoc(metadataElement1$encode(FALSE)), "character")
+  }else{
+    text1 <- as.character(metadataElement1)
+  }
+  text2 <- NULL
+  if(is(metadataElement2, "ISOMetadataElement")){
+    text2 <- as(XML::xmlDoc(metadataElement2$encode(FALSE)), "character")
+  }else{
+    text2 <- as.character(metadataElement2)
+  }
+  return(text1 == text2)
 }

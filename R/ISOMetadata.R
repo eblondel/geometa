@@ -17,11 +17,13 @@
 #' @field dateStamp
 #' @field metadataStandardName
 #' @field metadataStandardVersion
+#' @field dataSetURI
 #' @field spatialRepresentationInfo
 #' @field referenceSystemInfo
 #' @field identificationInfo
 #' @field distributionInfo
 #' @field dataQualityInfo
+#' @field metadataMaintenance
 #'
 #' @section Methods:
 #' \describe{
@@ -31,29 +33,29 @@
 #'  \item{\code{setFileIdentifier(fileIdentifier)}}{
 #'    Sets the file identifier
 #'  }
-#'  \item{\code{setParentIdentifier(parentIdentifier)}}{
-#'    Sets the parentIdentifier
-#'  }
-#'  \item{\code{addLanguage(locale)}}{
-#'    Adds a locale
-#'  }
 #'  \item{\code{setLanguage{locale}}}{
 #'    Sets the locale
-#'  }
-#'  \item{\code{delLanguage(locale)}}{
-#'    Deletes a locale
-#'  }
-#'  \item{\code{addCharacterSet(charset)}}{
-#'    Adds a character set
 #'  }
 #'  \item{\code{setCharacterSet(charset)}}{
 #'    Sets the character set
 #'  }
-#'  \item{\code{delCharacterSet(charset)}}{
-#'    Deletes a character set
+#'  \item{\code{setParentIdentifier(parentIdentifier)}}{
+#'    Sets the parentIdentifier
+#'  }
+#'  \item{\code{addHierarchyLevel(level)}}{
+#'    Adds the hierarchy level
 #'  }
 #'  \item{\code{setHierarchyLevel(level)}}{
 #'    Sets the hierarchy level
+#'  }
+#'  \item{\code{delHierarchyLevel(level)}}{
+#'    Deletes the hierarchy level
+#'  }
+#'  \item{\code{addContact(contact)}}{
+#'    Adds a contact as object of class \code{ISOResponsibleParty}
+#'  }
+#'  \item{\code{delContact(contact)}}{
+#'    Deletes a contact as object of class \code{ISOResponsibleParty}
 #'  }
 #'  \item{\code{setDateStamp(date)}}{
 #'    Sets the date stamp
@@ -64,23 +66,50 @@
 #'  \item{\code{setMetadataStandardVersion(version)}}{
 #'    Sets the metadata standard version
 #'  }
-#'  \item{\code{addContact(contact)}}{
-#'    Adds a contact (responsible party)
+#'  \item{\code{setDataSetURI(dataSetURI)}}{
+#'    Sets the metadata dataSet URI
+#'  }
+#'  \item{\code{addSpatialRepresentationInfo(spatialRepresentationInfo)}}{
+#'    Adds a spatial representation
 #'  }
 #'  \item{\code{setSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-#'    Sets the spatial representation
+#'    Sets a spatial representation
+#'  }
+#'  \item{\code{delSpatialRepresentationInfo(spatialRepresentationInfo)}}{
+#'    Deletes a spatial representation
+#'  }
+#'  \item{\code{addReferenceSystemInfo(referenceSystemInfo)}}{
+#'    Adds a reference system
 #'  }
 #'  \item{\code{setReferenceSystemInfo(referenceSystemInfo)}}{
 #'    Sets the reference system
 #'  }
+#'  \item{\code{delReferenceSystemInfo(referenceSystemInfo)}}{
+#'    Deletes a reference system
+#'  }
+#'  \item{\code{addIdentificationInfo(identificationInfo)}}{
+#'    Adds a data identification
+#'  }
 #'  \item{\code{setIdentificationInfo(identificationInfo)}}{
 #'    Sets the data identification
+#'  }
+#'  \item{\code{delIdentificationInfo(identificationInfo)}}{
+#'    Deletes a data identification
 #'  }
 #'  \item{\code{setDistributionInfo(distributionInfo)}}{
 #'    Sets the distribution
 #'  }
+#'  \item{\code{addDataQualityInfo(dataQualityInfo)}}{
+#'    Adds a data quality
+#'  }
 #'  \item{\code{setDataQualityInfo(dataQualityInfo)}}{
 #'    Sets the data quality
+#'  }
+#'  \item{\code{delDataQualityInfo(dataQualityInfo)}}{
+#'    Deletes a data quality
+#'  }
+#'  \item{\code{setMetadataMaintenance(metadataMaintenance)}}{
+#'    Sets a metadata maintenance as object of class \code{ISOMaintenanceInformation}
 #'  }
 #' }
 #' 
@@ -93,21 +122,57 @@ ISOMetadata <- R6Class("ISOMetadata",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+     #+ fileIdentifier [0..1] : character
      fileIdentifier = NULL,
-     language = list(),
-     characterSet = list(),
+     #+ language [0..1] : character
+     language = NULL,
+     #+ characterSet [0..1] : ISOCharacterSet = "utf8"
+     characterSet = NULL,
+     #+ parentIdentifier [0..1] : character
      parentIdentifier = NULL,
-     hierarchyLevel = NULL,
+     #+ hierarchyLevel [0..*] : ISOHierarchyLevel = "dataset"
+     hierarchyLevel = list(),
+     #+ contact [1..*] : ISOResponsibleParty
      contact = list(),
+     #+ dateStamp : POSIXct/POSIXt
      dateStamp = NULL,
+     #+ metadataStandardName [0..1] : character
      metadataStandardName = NULL,
+     #+ metadataStandardVersion [0..1] : character
      metadataStandardVersion = NULL,
-     spatialRepresentationInfo = NULL, #TODO allow N cardinality
-     referenceSystemInfo = NULL, #TODO allow N cardinality
-     identificationInfo = NULL, #TODO allow N cardinality
-     distributionInfo = NULL, #TODO allow N cardinality
-     dataQualityInfo = NULL, #TODO allow N cardinality
+     #+ dataSetURI [0..1] : character
+     dataSetURI = NULL,
+     #+ spatialRepresentationInfo [0..*]: ISOSpatialRepresentation
+     spatialRepresentationInfo = list(),
+     #+ referenceSystemInfo [0..*]: ISOReferenceSystem
+     referenceSystemInfo = list(),
+     #+ identificationInfo [1..*]: ISODataIdentification
+     identificationInfo = list(),
+     #+ distributionInfo [0..1] : ISODistribution
+     distributionInfo = NULL,
+     #+ dataQualityInfo [0..*]: ISODataQuality
+     dataQualityInfo = list(),
+     #+ metadataMaintenance [0..1]: ISOMaintenanceInformation
+     metadataMaintenance = NULL,
+     
+     #unsupported sets (to implement)
+     #----------------
+     #+ contentInformation [0..*]
+     contentInformation = list(), #TODO
+     #+ portrayalCatalogueInfo [0..*]
+     portrayalCatalogueInfo = list(), #TODO
+     #+ applicationSchemaInfo [0..*]
+     applicationSchemaInformation = list(), #TODO
+     #+ metadataExtensionInfo [0..*]
+     metadataExtensionInfo = list(), #TODO
+     
      initialize = function(xml = NULL){
+       
+       #default values
+       defaults <- list(
+         characterSet = ISOCharacterSet$new(value = "utf8"),
+         hierarchyLevel = ISOHierarchyLevel$new(value = "dataset")
+       )
        
        if(!is.null(xml)){
          #in case of CSW GetRecordByIdResponse
@@ -119,13 +184,33 @@ ISOMetadata <- R6Class("ISOMetadata",
        super$initialize(
          xml = xml,
          element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
+         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix),
+         defaults = defaults
        )
      },
+     
+     #MD_Metadata
+     #--------------------------------------------------------------------------
      
      #setFileIdentifier
      setFileIdentifier = function(fileIdentifier){
        self$fileIdentifier <- fileIdentifier
+     },
+
+     #setLanguage
+     setLanguage = function(locale){
+       if(is(locale, "character")){
+         locale <- ISOLanguage$new(value = locale)
+       }
+       self$language <- locale
+     },
+
+     #setCharacterSet
+     setCharacterSet = function(charset){
+       if(is(charset, "character")){
+         charset <- ISOCharacterSet$new(value = charset)
+       }
+       self$characterSet <- charset
      },
      
      #setParentIdentifier
@@ -133,67 +218,44 @@ ISOMetadata <- R6Class("ISOMetadata",
        self$parentIdentifier <- parentIdentifier
      },
      
-     #addLanguage
-     addLanguage = function(locale){
-       if(is(locale, "character")){
-         locale <- ISOLanguage$new(value = locale)
+     #addHierarchyLevel
+     addHierarchyLevel = function(level){
+       if(!is(level, "ISOHierarchyLevel")){
+         level <- ISOHierarchyLevel$new(value = level)
        }
-       startNb <- length(self$language)
-       if(length(which(sapply(self$language, function(x){return(x$attrs$codeListValue)}) == locale$attrs$codeListValue)) == 0){
-         self$language = c(self$language, locale)
-       }
-       endNb = length(self$language)
-       return(endNb == startNb+1)
-     },
-     
-     #setLanguage
-     setLanguage = function(locale){
-       self$language <- list()
-       self$addLanguage(locale)
-     },
-     
-     #delLanguage
-     delLanguage = function(locale){
-       startNb <- length(self$language)
-       self$language <- self$language[sapply(self$language, function(x){return(x$attrs$codeListValue)}) != locale]
-       endNb = length(self$language)
-       return(endNb == startNb-1)
-     },
-     
-     #addCharacterSet
-     addCharacterSet = function(charset){
-       if(is(charset, "character")){
-         charset <- ISOCharacterSet$new(value = charset)
-       }
-       startNb <- length(self$characterSet)
-       if(length(which(sapply(self$characterSet, function(x){x$attrs$codeListValue}) == charset$attrs$codeListValue)) == 0){
-         self$characterSet = c(self$characterSet, charset)
-       }
-       endNb = length(self$characterSet)
-       return(endNb == startNb+1)
-     },
-     
-     #setCharacterSet
-     setCharacterSet = function(charset){
-       self$characterSet = list()
-       self$addCharacterSet(charset)
-     },
-     
-     #delCharacterSet
-     delCharacterSet = function(charset){
-       startNb <- length(self$characterSet)
-       self$characterSet <- self$characterSet[sapply(self$characterSet, function(x){return(x$attrs$codeListValue)}) != charset]
-       endNb = length(self$characterSet)
-       return(endNb == startNb-1)
+       return(self$addListElement("hierarchyLevel", level))
      },
      
      #setHierarchyLevel
      setHierarchyLevel = function(level){
-       if(is(level, "character")){
+       self$hierarchyLevel <- list()
+       self$addHierarchyLevel(level)
+     },
+     
+     #delHierarchyLevel
+     delHierarchyLevel = function(level){
+       if(!is(level, "ISOHierarchyLevel")){
          level <- ISOHierarchyLevel$new(value = level)
        }
-       self$hierarchyLevel <- level
+       return(self$delListElement("hierarchyLevel", level))
      },
+     
+     #addContact
+     addContact = function(contact){
+       if(!is(contact,"ISOResponsibleParty")){
+         stop("The argument should be a 'ISOResponsibleParty' object")
+       }
+       return(self$addListElement("contact", contact))
+     },
+     
+     #delContact
+     delContact = function(contact){
+       if(!is(contact,"ISOResponsibleParty")){
+         stop("The argument should be a 'ISOResponsibleParty' object")
+       }
+       return(self$delListElement("contact", contact))
+     },
+     
      
      #setDateStamp
      setDateStamp = function(date){
@@ -212,37 +274,88 @@ ISOMetadata <- R6Class("ISOMetadata",
        self$metadataStandardVersion <- version
      },
      
-     #addContact
-     addContact = function(contact){
-       if(!is(contact,"ISOResponsibleParty")){
-         stop("The argument should be a 'ISOResponsibleParty' object")
+     #setDataSetURI
+     setDataSetURI = function(dataSetURI){
+       self$dataSetURI = dataSetURI
+     },
+     
+     #MD_SpatialRepresentation
+     #--------------------------------------------------------------------------
+     
+     #addSpatialRepresentationInfo
+     addSpatialRepresentationInfo = function(spatialRepresentationInfo){
+       if(!is(spatialRepresentationInfo,"ISOSpatialRepresentation")){
+         stop("The argument should be a 'ISOSpatialRepresentation' object")
        }
-       self$contact = c(self$contact, contact)
+       return(self$addListElement("spatialRepresentationInfo", spatialRepresentationInfo))
      },
      
      #setSpatialRepresentationInfo
      setSpatialRepresentationInfo = function(spatialRepresentationInfo){
-       if(!is(spatialRepresentationInfo,"ISOVectorSpatialRepresentation")){
-         stop("The argument should be a 'ISOVectorSpatialRepresentation' object")
+       self$spatialRepresentationInfo = list()
+       return(self$addSpatialRepresentationInfo(spatialRepresentationInfo))
+     },
+     
+     #delSpatialRepresentationInfo
+     delSpatialRepresentationInfo = function(spatialRepresentationInfo){
+       if(!is(spatialRepresentationInfo,"ISOSpatialRepresentation")){
+         stop("The argument should be a 'ISOSpatialRepresentation' object")
        }
-       self$spatialRepresentationInfo = spatialRepresentationInfo
+       return(self$delListElement("spatialRepresentationInfo", spatialRepresentationInfo))
+     },
+     
+     #MD_ReferenceSystem
+     #--------------------------------------------------------------------------
+     
+     #addReferenceSystemInfo
+     addReferenceSystemInfo = function(referenceSystemInfo){
+       if(!is(referenceSystemInfo, "ISOReferenceSystem")){
+         stop("The argument should be a 'ISOReferenceSystem' object")  
+       }
+       return(self$addListElement("referenceSystemInfo", referenceSystemInfo))
      },
      
      #setReferenceSystemInfo
      setReferenceSystemInfo = function(referenceSystemInfo){
+       self$referenceSystemInfo <- list()
+       return(self$addReferenceSystemInfo(referenceSystemInfo))
+     },
+     
+     #delReferenceSystemInfo
+     delReferenceSystemInfo = function(referenceSystemInfo){
        if(!is(referenceSystemInfo, "ISOReferenceSystem")){
          stop("The argument should be a 'ISOReferenceSystem' object")  
        }
-       self$referenceSystemInfo <- c(self$referenceSystemInfo, referenceSystemInfo)
+       return(self$delListElement("referenceSystemInfo", referenceSystemInfo))
+     },
+     
+     #MD_Identification
+     #--------------------------------------------------------------------------
+     
+     #addIdentificationInfo
+     addIdentificationInfo = function(identificationInfo){
+       if(!is(identificationInfo,"ISODataIdentification")){
+         stop("The argument should be a 'ISODataIdentification' object")
+       }
+       return(self$addListElement("identificationInfo", identificationInfo))
      },
      
      #setIdentificationInfo
      setIdentificationInfo = function(identificationInfo){
+       self$identificationInfo = list()
+       return(addIdentificationInfo(identificationInfo))
+     },
+     
+     #delIdentificationInfo
+     delIdentificationInfo = function(identificationInfo){
        if(!is(identificationInfo,"ISODataIdentification")){
          stop("The argument should be a 'ISODataIdentification' object")
        }
-       self$identificationInfo = identificationInfo
+       return(self$delListElement("identificationInfo", identificationInfo))
      },
+     
+     #MD_Distribution
+     #--------------------------------------------------------------------------
      
      #setDistributionInfo
      setDistributionInfo = function(distributionInfo){
@@ -252,12 +365,41 @@ ISOMetadata <- R6Class("ISOMetadata",
        self$distributionInfo = distributionInfo
      },
      
-     #setDataQualityInfo
-     setDataQualityInfo = function(dataQualityInfo){
+     #DQ_DataQuality
+     #--------------------------------------------------------------------------     
+     
+     #addDataQualityInfo
+     addDataQualityInfo = function(dataQualityInfo){
        if(!is(dataQualityInfo,"ISODataQuality")){
          stop("The argument should be a 'ISODataQuality' object")
        }
-       self$dataQualityInfo = dataQualityInfo
+       return(self$addListElement("dataQualityInfo", dataQualityInfo))
+     },
+     
+     #setDataQualityInfo
+     setDataQualityInfo = function(dataQualityInfo){
+       self$dataQualityInfo = list()
+       return(addDataQualityInfo(dataQualityInfo))
+     },
+     
+     #delDataQualityInfo
+     delDataQualityInfo = function(dataQualityInfo){
+       if(!is(dataQualityInfo,"ISODataQuality")){
+         stop("The argument should be a 'ISODataQuality' object")
+       }
+       return(self$delListElement("dataQualityInfo", dataQualityInfo))
+     },
+     
+     #MD_MaintenanceInformation
+     #-------------------------------------------------------------------------- 
+     
+     #setMetadataMaintenance
+     setMetadataMaintenance = function(metadataMaintenance){
+       if(!is(metadataMaintenance,"ISOMaintenanceInformation")){
+         stop("The argument should be a 'ISOMaintenanceInformation' object")
+       }
+       self$metadataMaintenance <- metadataMaintenance
      }
+     
   )                        
 )

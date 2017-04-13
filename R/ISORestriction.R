@@ -31,6 +31,6 @@ ISORestriction <- R6Class("ISORestriction",
    )                        
 )
 
-ISORestriction$values <- function(){
-  return(getISOCodelist(ISORestriction$private_fields$xmlElement)$entries$value)
+ISORestriction$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISORestriction, labels))
 }

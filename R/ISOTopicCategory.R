@@ -31,6 +31,6 @@ ISOTopicCategory <- R6Class("ISOTopicCategory",
    )                        
 )
 
-ISOTopicCategory$values <- function(){
-  return(getISOCodelist(ISOTopicCategory$private_fields$xmlElement)$entries$value)
+ISOTopicCategory$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOTopicCategory, labels))
 }

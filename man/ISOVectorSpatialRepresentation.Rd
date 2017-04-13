@@ -30,8 +30,14 @@ ISOVectorSpatialRepresentation
  \item{\code{setTopologyLevel(topologyLevel)}}{
    Sets the topology level
  }
+ \item{\code{addGeometricObject(geometricObjects)}}{
+   Adds the geometricObjects
+ }
  \item{\code{setGeometricObject(geometricObjects)}}{
    Sets the geometricObjects
+ }
+ \item{\code{delGeometricObject(geometricObjects)}}{
+   Deletes the geometricObjects
  }
 }
 }

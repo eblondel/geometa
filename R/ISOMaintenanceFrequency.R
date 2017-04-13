@@ -31,6 +31,6 @@ ISOMaintenanceFrequency <- R6Class("ISOMaintenanceFrequency",
    )                        
 )
 
-ISOMaintenanceFrequency$values <- function(){
-  return(getISOCodelist(ISOMaintenanceFrequency$private_fields$xmlElement)$entries$value)
+ISOMaintenanceFrequency$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOMaintenanceFrequency, labels))
 }

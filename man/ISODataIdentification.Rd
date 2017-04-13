@@ -17,13 +17,181 @@ ISODataIdentification
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{spatialRepresentationType}}{}
+
+\item{\code{spatialResolution}}{}
+
+\item{\code{language}}{}
+
+\item{\code{characterSet}}{}
+
+\item{\code{topicCategory}}{}
+
+\item{\code{environmentDescription}}{}
+
+\item{\code{extent}}{}
+
+\item{\code{supplementalInformation}}{}
 }}
+\section{Inherited methods}{
+
+\describe{
+ \item{\code{\code{setCitation(citation)}}}{
+   Sets an object of class \code{ISOCitation}
+ }
+ \item{\code{setAbstract(abstract)}}{
+   Sets an abstract (object of class "character")
+ }
+ \item{\copde{setPurpose(purpose)}}{
+   Sets a purpose (object of class "character")
+ }
+ \item{\code{addCredit(credit)}}{
+   Adds a credit (object of class "character")
+ }
+ \item{\code{delCredit(credit)}}{
+   Deletes a credit (object of class "character")
+ }
+ \item{\code{addStatus(status)}}{
+   Adds a status, as object of class "character" or class \code{ISOStatus}. If
+   an object of class "character" is specified, it must match the accepted
+   progress status values \code{ISOStatus$values()}.
+ }
+ \item{\code{delStatus(status)}}{
+   Deletes a status, as object of class "character" or class \code{ISOStatus}. If
+   an object of class "character" is specified, it must match the accepted
+   progress status values \code{ISOStatus$values()}.
+ }
+ \item{\code{addPointOfContact(pointOfContact)}}{
+   Adds an object of class \code{ISOResponsibleParty}
+ }
+ \item{\code{delPointOfContact(pointOfContact)}}{
+   Deletes an object of class \code{ISOResponsibleParty}
+ }
+ \item{\code{addResourceMaintenance(resourceMaintenance)}}{
+   Adds a resource maintenance information as object of class
+   \code{ISOMaintenanceInformation}.
+ }
+ \item{\code{setResourceMaintenance(resourceMaintenance)}}{
+   Sets a resource maintenance information as object of class
+   \code{ISOMaintenanceInformation}.
+ }
+ \item{\code{delResourceMaintenance(resourceMaintenance)}}{
+   Deletes a resource maintenance information as object of class
+   \code{ISOMaintenanceInformation}.
+ }
+ \item{\code{addGraphicOverview(graphicOverview)}}{
+   Adds an object of class \code{ISOBrowseGraphic}
+ }
+ \item{\code{setGraphicOverview(graphicOverview)}}{
+   Sets an object of class \code{ISOBrowseGraphic}
+ }
+ \item{\code{delGraphicOverview(graphicOverview)}}{
+   Deletes an object of class \code{ISOBrowseGraphic}
+ }
+ \item{\code{addKeywords(keywords)}}{
+   Adds a set of keywords as object of class \code{ISOKeywords}
+ }
+ \item{\code{setKeywords(keywords)}}{
+   Sets a set of keywords as object of class \code{ISOKeywords}
+ }
+ \item{\code{delKeywords(keywords)}}{
+   Deletes a set of keywords as object of class \code{ISOKeywords}
+ }
+ \item{\code{addResourceConstraints(resourceConstraints)}}{
+   Adds an object of class \code{ISOLegalConstraints}
+ }
+ \item{\code{setResourceConstraints(resourceConstraints)}}{
+   Sets an object of class \code{ISOLegalConstraints}
+ }
+ \item{\code{addResourceConstraints(resourceConstraints)}}{
+   Deletes an object of class \code{ISOLegalConstraints}
+ }
+}
+}
+
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value)}}{
    This method is used to instantiate an ISODataIdentification
+ }
+ \item{\code{addSpatialRepresentationType(spatialRepresentationType)}}{
+   Adds a spatial representation type, as object of class "character" or class
+   \code{ISOSpatialRepresentationType}. If an object of class "character" is
+   specified, it must match the accepted values listed by
+   \code{ISOSpatialRepresentationType$values()}.
+ }
+ \item{\code{setSpatialRepresentationType(spatialRepresentationType)}}{
+   Sets a spatial representation type, as object of class "character" or class
+   \code{ISOSpatialRepresentationType}. If an object of class "character" is
+   specified, it must match the accepted values listed by
+   \code{ISOSpatialRepresentationType$values()}.
+ }
+ \item{\code{delSpatialRepresentationType(spatialRepresentationType)}}{
+   Deletes a spatial representation type, as object of class "character" or class
+   \code{ISOSpatialRepresentationType}. If an object of class "character" is
+   specified, it must match the accepted values listed by
+   \code{ISOSpatialRepresentationType$values()}.
+ }
+ \item{\code{addLanguage(locale)}}{
+   Adds a language, as object of class "character" or class \code{ISOLanguage}. If
+   an object of class "character" is specified, it must match the accepted
+   language values \code{ISOLanguage$values()}.
+ }
+ \item{\code{setLanguage(locale)}}{
+   Sets a language, as object of class "character" or class \code{ISOLanguage}. If
+   an object of class "character" is specified, it must match the accepted
+   language values \code{ISOLanguage$values()}.
+ }
+ \item{\code{delLanguage(locale)}}{
+   Deletes a language, as object of class "character" or class \code{ISOLanguage}. If
+   an object of class "character" is specified, it must match the accepted
+   language values \code{ISOLanguage$values()}.
+ }
+ \item{\code{addCharacterSet(charset)}}{
+   Adds a character set, as object of class "character" or class \code{ISOCharacterSet}. If
+   an object of class "character" is specified, it must match the accepted
+   charset values \code{ISOCharacterSet$values()}.
+ }
+ \item{\code{setCharacterSet(charset)}}{
+   Sets a character set, as object of class "character" or class \code{ISOCharacterSet}. If
+   an object of class "character" is specified, it must match the accepted
+   charset values \code{ISOCharacterSet$values()}.
+ }
+ \item{\code{delCharacterSet(charset)}}{
+   Deletes a character set, as object of class "character" or class \code{ISOCharacterSet}. If
+   an object of class "character" is specified, it must match the accepted
+   charset values \code{ISOCharacterSet$values()}.
+ }
+ \item{\code{addTopicCategory(topicCategory)}}{
+   Adds a character set, as object of class "character" or class \code{ISOTopicCategory}. If
+   an object of class "character" is specified, it must match the accepted
+   topic category values \code{ISOTopicCategory$values()}.
+ }
+ \item{\code{setTopicCategory(topicCategory)}}{
+   Sets a character set, as object of class "character" or class \code{ISOTopicCategory}. If
+   an object of class "character" is specified, it must match the accepted
+   topic category values \code{ISOTopicCategory$values()}.
+ }
+ \item{\code{delTopicCategory(topicCategory)}}{
+   Deletes a character set, as object of class "character" or class \code{ISOTopicCategory}. If
+   an object of class "character" is specified, it must match the accepted
+   topic category values \code{ISOTopicCategory$values()}.
+ }
+ \item{\code{setEnvironmentDescription(environmentDescription)}}{
+   Sets the environment description
+ }
+ \item{\code{addExtent(extent)}}{
+   Adds an object of class \code{ISOExtent}.
+ }
+ \item{\code{setExtent(extent)}}{
+   Sets an object of class \code{ISOExtent}.
+ }
+ \item{\code{delExtent(extent)}}{
+   Deletes an object of class \code{ISOExtent}.
+ }
+ \item{\code{setSupplementalInformation(supplementalInformation)}}{
+   Sets supplemental information
  }
 }
 }

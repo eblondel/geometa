@@ -35,6 +35,8 @@ ISOMetadataElement
 
 \item{\code{metadataStandardVersion}}{}
 
+\item{\code{dataSetURI}}{}
+
 \item{\code{spatialRepresentationInfo}}{}
 
 \item{\code{referenceSystemInfo}}{}
@@ -44,6 +46,8 @@ ISOMetadataElement
 \item{\code{distributionInfo}}{}
 
 \item{\code{dataQualityInfo}}{}
+
+\item{\code{metadataMaintenance}}{}
 }}
 \section{Methods}{
 
@@ -54,29 +58,29 @@ ISOMetadataElement
  \item{\code{setFileIdentifier(fileIdentifier)}}{
    Sets the file identifier
  }
- \item{\code{setParentIdentifier(parentIdentifier)}}{
-   Sets the parentIdentifier
- }
- \item{\code{addLanguage(locale)}}{
-   Adds a locale
- }
  \item{\code{setLanguage{locale}}}{
    Sets the locale
- }
- \item{\code{delLanguage(locale)}}{
-   Deletes a locale
- }
- \item{\code{addCharacterSet(charset)}}{
-   Adds a character set
  }
  \item{\code{setCharacterSet(charset)}}{
    Sets the character set
  }
- \item{\code{delCharacterSet(charset)}}{
-   Deletes a character set
+ \item{\code{setParentIdentifier(parentIdentifier)}}{
+   Sets the parentIdentifier
+ }
+ \item{\code{addHierarchyLevel(level)}}{
+   Adds the hierarchy level
  }
  \item{\code{setHierarchyLevel(level)}}{
    Sets the hierarchy level
+ }
+ \item{\code{delHierarchyLevel(level)}}{
+   Deletes the hierarchy level
+ }
+ \item{\code{addContact(contact)}}{
+   Adds a contact as object of class \code{ISOResponsibleParty}
+ }
+ \item{\code{delContact(contact)}}{
+   Deletes a contact as object of class \code{ISOResponsibleParty}
  }
  \item{\code{setDateStamp(date)}}{
    Sets the date stamp
@@ -87,23 +91,50 @@ ISOMetadataElement
  \item{\code{setMetadataStandardVersion(version)}}{
    Sets the metadata standard version
  }
- \item{\code{addContact(contact)}}{
-   Adds a contact (responsible party)
+ \item{\code{setDataSetURI(dataSetURI)}}{
+   Sets the metadata dataSet URI
+ }
+ \item{\code{addSpatialRepresentationInfo(spatialRepresentationInfo)}}{
+   Adds a spatial representation
  }
  \item{\code{setSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-   Sets the spatial representation
+   Sets a spatial representation
+ }
+ \item{\code{delSpatialRepresentationInfo(spatialRepresentationInfo)}}{
+   Deletes a spatial representation
+ }
+ \item{\code{addReferenceSystemInfo(referenceSystemInfo)}}{
+   Adds a reference system
  }
  \item{\code{setReferenceSystemInfo(referenceSystemInfo)}}{
    Sets the reference system
  }
+ \item{\code{delReferenceSystemInfo(referenceSystemInfo)}}{
+   Deletes a reference system
+ }
+ \item{\code{addIdentificationInfo(identificationInfo)}}{
+   Adds a data identification
+ }
  \item{\code{setIdentificationInfo(identificationInfo)}}{
    Sets the data identification
+ }
+ \item{\code{delIdentificationInfo(identificationInfo)}}{
+   Deletes a data identification
  }
  \item{\code{setDistributionInfo(distributionInfo)}}{
    Sets the distribution
  }
+ \item{\code{addDataQualityInfo(dataQualityInfo)}}{
+   Adds a data quality
+ }
  \item{\code{setDataQualityInfo(dataQualityInfo)}}{
    Sets the data quality
+ }
+ \item{\code{delDataQualityInfo(dataQualityInfo)}}{
+   Deletes a data quality
+ }
+ \item{\code{setMetadataMaintenance(metadataMaintenance)}}{
+   Sets a metadata maintenance as object of class \code{ISOMaintenanceInformation}
  }
 }
 }

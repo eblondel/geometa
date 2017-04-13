@@ -31,6 +31,6 @@ ISOKeywordType <- R6Class("ISOKeywordType",
  )                        
 )
 
-ISOKeywordType$values <- function(){
-  return(getISOCodelist(ISOKeywordType$private_fields$xmlElement)$entries$value)
+ISOKeywordType$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOKeywordType, labels))
 }

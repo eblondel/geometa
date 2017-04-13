@@ -32,6 +32,6 @@ ISOCharacterSet <- R6Class("ISOCharacterSet",
  )                        
 )
 
-ISOCharacterSet$values <- function(){
-  return(getISOCodelist(ISOCharacterSet$private_fields$xmlElement)$entries$value)
+ISOCharacterSet$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOCharacterSet, labels))
 }

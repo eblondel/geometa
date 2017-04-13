@@ -31,6 +31,6 @@ ISOLanguage <- R6Class("ISOLanguage",
   )                        
 )
 
-ISOLanguage$values <- function(){
-  return(getISOCodelist(ISOLanguage$private_fields$xmlElement)$entries$value)
+ISOLanguage$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOLanguage, labels))
 }

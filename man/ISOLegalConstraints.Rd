@@ -17,17 +17,43 @@ ISOLegalConstraints
 \section{Fields}{
 
 \describe{
-\item{\code{useLimitation}}{}
-
 \item{\code{accessConstraints}}{}
 
 \item{\code{useConstraints}}{}
+
+\item{\code{otherConstraints}}{}
 }}
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOLegalConstraints
+ }
+ \item{\code{addAccessConstraint(constraint)}}{
+   Adds an access constraint, as object of class "character" or class \code{ISORestriction}.
+   If an object of class "character" is specified, it must match the accepted
+   values given by \code{ISORestriction$values()}.
+ }
+ \item{\code{delAccessConstraint(constraint)}}{
+   Deletes an access constraint, as object of class "character" or class \code{ISORestriction}.
+   If an object of class "character" is specified, it must match the accepted
+   values given by \code{ISORestriction$values()}.
+ }
+ \item{\code{addUseConstraint(constraint)}}{
+   Adds a use constraint, as object of class "character" or class \code{ISORestriction}.
+   If an object of class "character" is specified, it must match the accepted
+   values given by \code{ISORestriction$values()}.
+ }
+ \item{\code{delUseConstraint(constraint)}}{
+   Deletes a use constraint, as object of class "character" or class \code{ISORestriction}.
+   If an object of class "character" is specified, it must match the accepted
+   values given by \code{ISORestriction$values()}.
+ }
+ \item{\code{addOtherConstraint(constraint)}}{
+   Adds an other constraint as object of class "character
+ }
+ \item{\code{delOtherConstraint(constraint)}}{
+   Deletes an other constraint as object of class "character
  }
 }
 }

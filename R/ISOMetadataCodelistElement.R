@@ -67,3 +67,9 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
      }
    )                        
 )
+
+ISOMetadataCodelistElement$values = function(class, labels = FALSE){
+  fields <- "value"
+  if(labels) fields <- c(fields, "description")
+  return(getISOCodelist(class$private_fields$xmlElement)$entries[,fields])
+}

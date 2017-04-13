@@ -31,6 +31,6 @@ ISODateType <- R6Class("ISODateType",
    )                        
 )
 
-ISODateType$values <- function(){
-  return(getISOCodelist(ISODateType$private_fields$xmlElement)$entries$value)
+ISODateType$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISODateType, labels))
 }

@@ -31,6 +31,6 @@ ISOHierarchyLevel <- R6Class("ISOHierarchyLevel",
  )                        
 )
 
-ISOHierarchyLevel$values <- function(){
-  return(getISOCodelist(ISOHierarchyLevel$private_fields$xmlElement)$entries$value)
+ISOHierarchyLevel$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOHierarchyLevel, labels))
 }

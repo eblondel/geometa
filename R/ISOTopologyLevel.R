@@ -31,6 +31,6 @@ ISOTopologyLevel <- R6Class("ISOTopologyLevel",
    )                        
 )
 
-ISOTopologyLevel$values <- function(){
-  return(getISOCodelist(ISOTopologyLevel$private_fields$xmlElement)$entries$value)
+ISOTopologyLevel$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOTopologyLevel, labels))
 }
