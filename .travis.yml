@@ -1,0 +1,24 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+language: R
+sudo: required
+cache: packages
+
+r:
+  - oldrel
+  - release
+  - devel
+
+r_packages:
+  - R6
+  - XML
+  - testthat
+
+r_check_args: --as-cran
+
+after_script:
+ - ./travis-tool.sh dump_logs
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
