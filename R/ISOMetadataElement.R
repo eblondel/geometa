@@ -110,7 +110,12 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             )
           }else{
             if(fieldClass$classname == "ISOIdentifier"){
-              prefix <- unlist(strsplit(xmlName(child),"_"))[1]
+              childElem <- xmlName(child)
+              childElemList <- unlist(strsplit(childElem, ":"))
+              if(length(childElemList)>1){
+                childElem <- childElemList[2]
+              }
+              prefix <- unlist(strsplit(childElem,"_"))[1]
               fieldValue <- fieldClass$new(xml = child, prefix = prefix)
             }else{
               fieldValue <- fieldClass$new(xml = child)
@@ -184,19 +189,19 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             for(item in fieldObj){
               nodeValue <- NULL
               if(is(item, "ISOMetadataElement")){
-                nodeValue <- item$encode(addNS = FALSE)
+                nodeValue <- item
               }else{
                 nodeValue <- self$wrapBaseElement(field, item)
               }
-              if(item$wrap){
+              if(nodeValue$wrap){
                 wrapperNode <- xmlOutputDOM(
                   tag = field,
                   nameSpace = ISOMetadataNamespace$GMD$id
                 )
-                wrapperNode$addNode(nodeValue)
+                wrapperNode$addNode(nodeValue$encode(addNS = FALSE))
                 rootXML$addNode(wrapperNode$value())
               }else{
-                rootXML$addNode(nodeValue)
+                rootXML$addNode(nodeValue$encode(addNS = FALSE))
               }
             }
           }else{

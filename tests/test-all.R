@@ -1,3 +1,3 @@
 library(testthat)
-library(geosapi)
+library(geometa)
 test_check("geometa")

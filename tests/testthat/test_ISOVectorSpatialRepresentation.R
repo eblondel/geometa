@@ -28,5 +28,5 @@ test_that("encoding",{
   expect_equal(length(md$geometricObjects), 1L)
   
   xml <- md$encode()
-  expect_is(xml, "XMLNode")
+  expect_is(xml, "XMLInternalNode")
 })

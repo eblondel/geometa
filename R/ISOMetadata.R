@@ -343,7 +343,7 @@ ISOMetadata <- R6Class("ISOMetadata",
      #setIdentificationInfo
      setIdentificationInfo = function(identificationInfo){
        self$identificationInfo = list()
-       return(addIdentificationInfo(identificationInfo))
+       return(self$addIdentificationInfo(identificationInfo))
      },
      
      #delIdentificationInfo
@@ -379,7 +379,7 @@ ISOMetadata <- R6Class("ISOMetadata",
      #setDataQualityInfo
      setDataQualityInfo = function(dataQualityInfo){
        self$dataQualityInfo = list()
-       return(addDataQualityInfo(dataQualityInfo))
+       return(self$addDataQualityInfo(dataQualityInfo))
      },
      
      #delDataQualityInfo
