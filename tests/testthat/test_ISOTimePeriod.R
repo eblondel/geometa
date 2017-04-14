@@ -5,6 +5,7 @@
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
+require(XML)
 
 context("ISOTimePeriod")
 
