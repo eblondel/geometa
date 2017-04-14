@@ -6,7 +6,7 @@ Date: 2017-04-13
 Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Description: Provides facilities to handle reading and writing of geographic 
-  standard metadata defined with OGC/ISO 19115-19139 standards
+  standard metadata defined with OGC/ISO 19115:2003 and 19139 standards
 Depends: R (>= 3.1.0)
 Imports: methods, R6, XML
 Suggests: testthat, roxygen2
