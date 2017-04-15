@@ -18,7 +18,7 @@
 #' 
 #' @section Inherited methods:
 #' \describe{
-#'  \item{\code{\code{setCitation(citation)}}}{
+#'  \item{\code{setCitation(citation)}}{
 #'    Sets an object of class \code{ISOCitation}
 #'  }
 #'  \item{\code{setAbstract(abstract)}}{

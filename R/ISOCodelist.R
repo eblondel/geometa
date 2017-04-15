@@ -112,14 +112,10 @@ fetchISOCodelists <- function(){
   .geometa.iso$codelists <- codelists
 }
 
-#' getISOCodelists
-#' @export
 getISOCodelists <- function(){
   return(.geometa.iso$codelists)
 }
 
-#' getISOCodelist
-#' @export
 getISOCodelist <- function(id){
   codelist <- NULL
   invisible(lapply(.geometa.iso$codelists, function(cl){

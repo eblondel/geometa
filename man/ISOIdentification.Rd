@@ -45,7 +45,7 @@ ISOIdentification
  \item{\code{new(xml, element, namespace, defaults)}}{
    This method is used to instantiate an ISOIdentification
  }
- \item{\code{\code{setCitation(citation)}}}{
+ \item{\code{setCitation(citation)}}{
    Sets an object of class \code{ISOCitation}
  }
  \item{\code{setAbstract(abstract)}}{
