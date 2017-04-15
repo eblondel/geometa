@@ -18,7 +18,6 @@ test_that("encoding",{
   
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
-  expect_equal(XML::xmlGetAttr(xml,"gml:id"), "P10Y7M10DT12M58S")
   
   #decoding
   md2 <- ISOTimePeriod$new(xml = xml)
