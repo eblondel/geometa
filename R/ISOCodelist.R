@@ -42,7 +42,7 @@ ISOCodelist <- R6Class("ISOCodelist",
       
       #parse ISO XML codelist file
       clXML <- XML::xmlParse(clFile)
-      clXML <- as(clXML, "character")
+      clXML <- methods::as(clXML, "character")
       clXML <- gsub("<!--.*?-->", "", clXML)
       clXML <- XML::xmlParse(clXML, asText = TRUE)
       ns <- XML::xmlNamespaceDefinitions(clXML)
