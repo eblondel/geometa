@@ -42,7 +42,7 @@ ISOCodelist <- R6Class("ISOCodelist",
         self$identifier <- id
         self$codeSpace <- "ISO 639-2"
         self$description <- "Language : ISO 639-2 (3 characters)"
-        self$entries <- read.csv(clFile, sep="|")
+        self$entries <- read.csv(clFile, sep="|", stringsAsFactors = FALSE)
         self$entries <- self$entries[,c("alpha3", "english")]
         colnames(self$entries) <- c("value","description")
       }else{

@@ -44,21 +44,28 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
        }
        self$codelistId = cl
        clEntry <- cl$entries[cl$entries$value == value,]
+       clValue <- ""
+       clDescription <- ""
        if(nrow(clEntry)==0){
-         stop(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
+         warning(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
+       }else{
+         clEntry <- clEntry[1L,]
+         clValue <- clEntry$value
+         clDescription <- clEntry$description
        }
-       clEntry <- clEntry[1L,]
+       
        self$attrs <- list(
-        codeList = sprintf("%s/Codelist/%s#%s",
-                           .geometa.iso$schemaBaseUrl, cl$refFile, id),
-        codeListValue = clEntry$value
+         codeList = sprintf("%s/Codelist/%s#%s",
+                            .geometa.iso$schemaBaseUrl, cl$refFile, id),
+         codeListValue = clValue
        )
        if(addCodeSpaceAttr){
-         self$attrs <- c(self$attrs, codeSpace = "eng")
+         self$attrs <- c(self$attrs, codeSpace = cl$codeSpace)
        }
        if(setValue){
-         self$value <-clEntry$description
+         self$value <-clDescription
        }
+       
      },
      
      #getAcceptedValues
