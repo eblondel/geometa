@@ -32,53 +32,63 @@ ISOCodelist <- R6Class("ISOCodelist",
      
     parse = function(refFile, id){
       
-      isML <- regexpr("ML", refFile) > 0
-      
       #query ISO XML Codelist file
       clFile <- system.file("extdata", refFile, package = "geometa")
       if(nchar(clFile)==0){
         stop(sprintf("Reference file '%s' missing in geometa files", refFile))
       }
       
-      #parse ISO XML codelist file
-      clXML <- XML::xmlParse(clFile)
-      clXML <- methods::as(clXML, "character")
-      clXML <- gsub("<!--.*?-->", "", clXML)
-      clXML <- XML::xmlParse(clXML, asText = TRUE)
-      ns <- XML::xmlNamespaceDefinitions(clXML)
-      nsdf <- do.call("rbind", lapply(ns, function(x){
-        return(data.frame(id = x$id, uri = x$uri, stringsAsFactors = FALSE))
-      }))
-      clDicts <- XML::xpathApply(clXML,"//gmx:codelistItem", function(x){XML::xmlChildren(x)[[1]]},
-                            namespaces = c(gmx = nsdf[nsdf$id == "","uri"]))
-      clDictXML <- NULL
-      invisible(lapply(clDicts, function(x){
-        clId <- XML::xmlGetAttr(x, "gml:id")
-        if(clId == id || regexpr(id, clId) != -1){
-          clDictXML <<- XML::xmlDoc(x)
+      if(id == "LanguageCode"){
+        self$identifier <- id
+        self$codeSpace <- "ISO 639-2"
+        self$description <- "Language : ISO 639-2 (3 characters)"
+        self$entries <- read.csv(clFile, sep="|")
+        self$entries <- self$entries[,c("alpha3", "english")]
+        colnames(self$entries) <- c("value","description")
+      }else{
+      
+        isML <- regexpr("ML", refFile) > 0
+        
+        #parse ISO XML codelist file
+        clXML <- XML::xmlParse(clFile)
+        clXML <- methods::as(clXML, "character")
+        clXML <- gsub("<!--.*?-->", "", clXML)
+        clXML <- XML::xmlParse(clXML, asText = TRUE)
+        ns <- XML::xmlNamespaceDefinitions(clXML)
+        nsdf <- do.call("rbind", lapply(ns, function(x){
+          return(data.frame(id = x$id, uri = x$uri, stringsAsFactors = FALSE))
+        }))
+        clDicts <- XML::xpathApply(clXML,"//gmx:codelistItem", function(x){XML::xmlChildren(x)[[1]]},
+                              namespaces = c(gmx = nsdf[nsdf$id == "","uri"]))
+        clDictXML <- NULL
+        invisible(lapply(clDicts, function(x){
+          clId <- XML::xmlGetAttr(x, "gml:id")
+          if(clId == id || regexpr(id, clId) != -1){
+            clDictXML <<- XML::xmlDoc(x)
+          }
+        }))
+        
+        #codelist identification
+        idXML <- XML::getNodeSet(clDictXML, "//gml:identifier",
+                            namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+        if(length(idXML)>1){
+          self$identifier <- XML::xmlValue(idXML[[1]])
+          self$codeSpace <- XML::xmlGetAttr(idXML[[1]], "codeSpace")
         }
-      }))
-      
-      #codelist identification
-      idXML <- XML::getNodeSet(clDictXML, "//gml:identifier",
-                          namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
-      if(length(idXML)>1){
-        self$identifier <- XML::xmlValue(idXML[[1]])
-        self$codeSpace <- XML::xmlGetAttr(idXML[[1]], "codeSpace")
+        desXML <- XML::getNodeSet(clDictXML, "//gml:description",
+                             namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+        if(length(desXML)>1){
+          self$description <- XML::xmlValue(desXML[[1]])
+        }
+        
+        #codelist entries
+        entriesXML <- XML::getNodeSet(clDictXML, "//gmx:codeEntry",
+                                 c(gmx = nsdf[nsdf$id=="","uri"]))
+        self$entries <- do.call("rbind",lapply(entriesXML, function(x){
+          XML::xmlToDataFrame(x, stringsAsFactors = FALSE)[,c("identifier", "description")]
+        }))
+        colnames(self$entries) <- c("value", "description")
       }
-      desXML <- XML::getNodeSet(clDictXML, "//gml:description",
-                           namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
-      if(length(desXML)>1){
-        self$description <- XML::xmlValue(desXML[[1]])
-      }
-      
-      #codelist entries
-      entriesXML <- XML::getNodeSet(clDictXML, "//gmx:codeEntry",
-                               c(gmx = nsdf[nsdf$id=="","uri"]))
-      self$entries <- do.call("rbind",lapply(entriesXML, function(x){
-        XML::xmlToDataFrame(x, stringsAsFactors = FALSE)[,c("identifier", "description")]
-      }))
-      colnames(self$entries) <- c("value", "description")
     }
   )                      
 )
@@ -86,9 +96,14 @@ ISOCodelist <- R6Class("ISOCodelist",
 #' fetchISOCodelists
 #' @export
 fetchISOCodelists <- function(){
+
+  #specific language codelist
+  #from http://www.loc.gov/standards/iso639-2/
+  languageCL <- ISOCodelist$new("ISO-639-2_utf-8.txt", "LanguageCode")
+  
+  #other ISO codelists
   ML_gmxCL <- "ML_gmxCodelists.xml"
   gmxCL <- "gmxCodelists.xml"
-  languageCL <- ISOCodelist$new(ML_gmxCL, "LanguageCode")
   charsetCL <- ISOCodelist$new(ML_gmxCL, "MD_CharacterSetCode")
   scopeCL <- ISOCodelist$new(ML_gmxCL, "MD_ScopeCode")
   roleCL <- ISOCodelist$new(gmxCL, "CI_RoleCode")
