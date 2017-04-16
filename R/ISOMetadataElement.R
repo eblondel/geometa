@@ -98,14 +98,26 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         if(!is.null(fieldClass)){
           if(regexpr("^ISOBase.+", fieldClass$classname)>0){
             fieldValue <- xmlValue(child)
+            
+            #coerceTimePosition util
+            coerceTimePosition <- function(fieldValue){
+              outval <- NULL
+              if(nchar(fieldValue)==10){
+                outval <- as.Date(fieldValue)
+              }else{
+                outval <- as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT")
+              }
+              return(outval)
+            }
+            
             fieldValue <- switch(fieldClass$classname,
                                  "ISOBaseBoolean" = as.logical(fieldValue),
                                  "ISOBaseInteger" = as.integer(fieldValue),
                                  "ISOBaseDecimal" = as.numeric(fieldValue),
                                  "ISOBaseDate" = as.Date(fieldValue),
                                  "ISOBaseDateTime" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT"),
-                                 "ISOBaseTimeBeginPosition" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT"),
-                                 "ISOBaseTimeEndPosition" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT"),
+                                 "ISOBaseTimeBeginPosition" = coerceTimePosition(fieldValue),
+                                 "ISOBaseTimeEndPosition" = coerceTimePosition(fieldValue),
                                  fieldValue
             )
           }else{
@@ -127,7 +139,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             self[[fieldName]] <- fieldValue
           }
         }else{
-          self$value <- as(child, "character") 
+          self[[fieldName]] <- as(child, "character") 
         }
         
       }

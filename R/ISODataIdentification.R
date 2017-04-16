@@ -194,7 +194,8 @@ ISODataIdentification <- R6Class("ISODataIdentification",
      characterSet = NULL,
      #+ topicCategory [0..*]: ISOTopicCategory
      topicCategory = list(),
-     extent = NULL,
+     #+ extent [0..*]: ISOExtent
+     extent = list(),
      supplementalInformation = NULL, 
      initialize = function(xml = NULL){
        

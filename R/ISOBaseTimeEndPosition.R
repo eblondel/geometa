@@ -37,6 +37,8 @@ ISOBaseTimeEndPosition <- R6Class("ISOBaseTimeEndPosition",
       if(is.null(xml)){
         if(all(class(value)==c("POSIXct","POSIXt"))){
           value <- format(value,"%Y-%m-%dT%H:%M:%S")
+        }else if(class(value) == "Date"){
+          value <- format(value,"%Y-%m-%d")
         }
         self$value = value
       }
