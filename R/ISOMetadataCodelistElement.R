@@ -54,9 +54,14 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
          clDescription <- clEntry$description
        }
        
+       if(id == "LanguageCode"){
+         clUrl <- .geometa.iso$languageUrl
+       }else{
+         clUrl <- sprintf("%s/Codelist/%s#%s", .geometa.iso$schemaBaseUrl, cl$refFile, id)
+       }
+       
        self$attrs <- list(
-         codeList = sprintf("%s/Codelist/%s#%s",
-                            .geometa.iso$schemaBaseUrl, cl$refFile, id),
+         codeList = clUrl,
          codeListValue = clValue
        )
        if(addCodeSpaceAttr){
