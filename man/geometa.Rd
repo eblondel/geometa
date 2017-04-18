@@ -14,7 +14,7 @@ standard metadata defined with OGC/ISO 19115-19139 standards
    Package: \tab geometa\cr
    Type: \tab Package\cr
    Version: \tab 0.1-0\cr
-   Date: \tab 2017-04-15\cr
+   Date: \tab 2017-04-18\cr
    License: \tab MIT\cr
    LazyLoad: \tab yes\cr
  }

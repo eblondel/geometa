@@ -25,10 +25,10 @@ ISOGeographicExtent <- R6Class("ISOGeographicExtent",
       xmlNamespacePrefix = "GMD"
     ),
     public = list(
-      #+ extentTypeCode [0..1]: default "1"
+      #+ extentTypeCode [0..1]: ISOBaseBoolean default "true"
       extentTypeCode = NULL,
       initialize = function(xml = NULL, element, namespace, defaults = list()){        
-        defaults = list(extentTypeCode = "1")
+        defaults = list(extentTypeCode = TRUE)
         super$initialize(xml, element, namespace, defaults)
       }
     )                                          

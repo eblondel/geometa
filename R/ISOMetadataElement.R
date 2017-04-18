@@ -120,18 +120,8 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                                  "ISOBaseTimeEndPosition" = coerceTimePosition(fieldValue),
                                  fieldValue
             )
-          }else{
-            if(fieldClass$classname == "ISOIdentifier"){
-              childElem <- xmlName(child)
-              childElemList <- unlist(strsplit(childElem, ":"))
-              if(length(childElemList)>1){
-                childElem <- childElemList[2]
-              }
-              prefix <- unlist(strsplit(childElem,"_"))[1]
-              fieldValue <- fieldClass$new(xml = child, prefix = prefix)
-            }else{
-              fieldValue <- fieldClass$new(xml = child)
-            }
+          }else{    
+            fieldValue <- fieldClass$new(xml = child)
           }
           if(is(self[[fieldName]], "list")){
             self[[fieldName]] <- c(self[[fieldName]], fieldValue)

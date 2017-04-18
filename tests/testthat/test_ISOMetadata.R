@@ -68,7 +68,8 @@ test_that("encoding/decoding",{
   #ReferenceSystem
   #----------------
   rs <- ISOReferenceSystem$new()
-  rs$setReferenceSystemIdentifier(code = "4326", codeSpace = "EPSG")
+  rsId <- ISOReferenceIdentifier(code = "4326", codeSpace = "EPSG")
+  rs$setReferenceSystemIdentifier(rsId)
   md$setReferenceSystemInfo(rs)
   
   #data identification
@@ -130,7 +131,7 @@ test_that("encoding/decoding",{
   ct$addDate(d)
   ct$setEdition("1.0")
   ct$setEditionDate(as.Date(ISOdate(2015, 1, 1, 1)))
-  ct$setIdentifier("identifier")
+  ct$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
   ct$setPresentationForm("mapDigital")
   ct$setCitedResponsibleParty(rp)
   ident$setCitation(ct)

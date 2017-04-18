@@ -1,24 +1,24 @@
-# test_ISOReferenceSystem.R
+# test_ISOMetaIdentifier.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOReferenceSystem.R
+# Description: Unit tests for ISOMetaIdentifier.R
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISOReferenceSystem")
+context("ISOMetaIdentifier")
 
-test_that("encoding/decoding",{
+test_that("encoding",{
   
   #encoding
-  md <- ISOReferenceSystem$new()
-  rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
-  md$setReferenceSystemIdentifier(rsId)
+  md <- ISOMetaIdentifier$new(code = "identifier")
+  expect_is(md, "ISOMetaIdentifier")
+  expect_equal(md$code, "identifier")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  md2 <- ISOReferenceSystem$new(xml = xml)
+  md2 <- ISOMetaIdentifier$new(xml = xml)
   xml2 <- md2$encode()
   
   expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))

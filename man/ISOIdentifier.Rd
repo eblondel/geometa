@@ -17,15 +17,18 @@ ISOIdentifier
 \section{Fields}{
 
 \describe{
-\item{\code{code}}{}
+\item{\code{authority}}{}
 
-\item{\code{codeSpace}}{}
+\item{\code{code}}{}
 }}
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, prefix, code, codeSpace)}}{
    This method is used to instantiate an ISOIdentifier
+ }
+ \item{\code{setAuthority(authority)}}{
+   Sets an authority object of class \code{ISOCitation}
  }
 }
 }

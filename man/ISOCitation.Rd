@@ -55,8 +55,8 @@ ISOCitation
    should be used while for the general citation of \code{ISODataIdentification},
    a simple R date should be used.
  }
- \item{\code{setIdentifier(code, codeSpace)}}{
-   Sets the identifier
+ \item{\code{setIdentifier(identifier)}}{
+   Sets the identifier as object of class 'ISOMetaIdentifier'
  }
  \item{\code{seCitedResponsibleParty(rp)}}{
    Sets the cited responsiblep party

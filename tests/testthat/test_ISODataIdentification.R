@@ -53,7 +53,7 @@ test_that("encoding",{
   ct$addDate(d)
   ct$setEdition("1.0")
   ct$setEditionDate(d)
-  ct$setIdentifier("identifier")
+  ct$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
   ct$setPresentationForm("mapDigital")
   ct$setCitedResponsibleParty(rp)
   md$setCitation(ct)

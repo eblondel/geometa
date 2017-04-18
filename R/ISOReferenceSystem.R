@@ -29,7 +29,7 @@ ISOReferenceSystem <- R6Class("ISOReferenceSystem",
   ),
   public = list(
     referenceSystemIdentifier = NULL,
-    initialize = function(xml = NULL){
+    initialize = function(xml = NULL, prefix, code){
       super$initialize(
         xml = xml,
         element = private$xmlElement,
@@ -38,10 +38,12 @@ ISOReferenceSystem <- R6Class("ISOReferenceSystem",
     },
     
     #setReferenceSystemIdentifier
-    setReferenceSystemIdentifier = function(code, codeSpace = NULL){
-      self$referenceSystemIdentifier <- ISOIdentifier$new(prefix = "RS",
-                                                          code = code,
-                                                          codeSpace = codeSpace)
+    setReferenceSystemIdentifier = function(identifier){
+      if(!is(identifier, "ISOReferenceIdentifier")){
+        stop("The argument should be an object of class 'ISOReferenceIdentifier")
+      }
+      self$referenceSystemIdentifier <- identifier
+      
     }
   )                        
 )

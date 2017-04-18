@@ -2,7 +2,7 @@ Package: geometa
 Type: Package
 Title: Facilities for write and read ISO/OGC geographic metadata
 Version: 0.1-0
-Date: 2017-04-15
+Date: 2017-04-18
 Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Description: Provides facilities to handle reading and writing of geographic 

@@ -19,7 +19,7 @@ test_that("encoding",{
   md$addDate(d)
   md$setEdition("1.0")
   md$setEditionDate(d)
-  md$setIdentifier("identifier")
+  md$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
   md$setPresentationForm("mapDigital")
   
   #adding a cited responsible party

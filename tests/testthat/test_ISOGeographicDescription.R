@@ -1,24 +1,23 @@
-# test_ISOReferenceSystem.R
+# test_ISOGeographicDescription.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOReferenceSystem.R
+# Description: Unit tests for ISOGeographicDescription.R
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISOReferenceSystem")
+context("ISOGeographicDescription")
 
-test_that("encoding/decoding",{
+test_that("encoding",{
   
   #encoding
-  md <- ISOReferenceSystem$new()
-  rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
-  md$setReferenceSystemIdentifier(rsId)
+  md <- ISOGeographicDescription$new()
+  md$setGeographicIdentifier(ISOMetaIdentifier$new(code = "identifier"))
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  md2 <- ISOReferenceSystem$new(xml = xml)
+  md2 <- ISOGeographicDescription$new(xml = xml)
   xml2 <- md2$encode()
   
   expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
