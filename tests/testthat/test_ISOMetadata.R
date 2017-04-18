@@ -68,7 +68,7 @@ test_that("encoding/decoding",{
   #ReferenceSystem
   #----------------
   rs <- ISOReferenceSystem$new()
-  rsId <- ISOReferenceIdentifier(code = "4326", codeSpace = "EPSG")
+  rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
   rs$setReferenceSystemIdentifier(rsId)
   md$setReferenceSystemInfo(rs)
   
