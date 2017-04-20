@@ -80,7 +80,7 @@ ISOTimePeriod <- R6Class("ISOTimePeriod",
         self$setBeginPosition(beginPosition)
         self$setEndPosition(endPosition)
       }else{
-        print(class(gmlId))
+        print(class(xml))
         gmlId <- XML::xmlGetAttr(xml, "gml:id")
         print(gmlId)
         if(!is.null(gmlId)){
