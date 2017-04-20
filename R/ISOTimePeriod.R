@@ -24,6 +24,9 @@
 #'    Sets the end position (ending date or date and time of the resource 
 #'    contents), as object of class "POSIXct"/"POSIXt" or "Date"
 #'  }
+#'  \item{\code{setId(id)}}{
+#'  Sets the GML id string. 
+#'  }
 #'  \item{\code{setDuration(years, months, days, hours, mins, secs)}}{
 #'    Set duration (Length of time between measurements)
 #'  }
@@ -80,13 +83,11 @@ ISOTimePeriod <- R6Class("ISOTimePeriod",
         self$setBeginPosition(beginPosition)
         self$setEndPosition(endPosition)
       }else{
-        print(class(xml))
         gmlId <- XML::xmlGetAttr(xml, "gml:id")
-        print(gmlId)
         if(!is.null(gmlId)){
           self$attrs[["gml:id"]] <- gmlId
         }else{
-          if(!is.null(private$begin) && !is.null(private$end)){
+          if(!is.null(self$beginPosition) & !is.null(self$endPosition)){
             private$computeInterval()
           }
         }
@@ -99,7 +100,7 @@ ISOTimePeriod <- R6Class("ISOTimePeriod",
         stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
       }
       self$beginPosition <- beginPosition
-      if(!is.null(self$endPosition)) private$computeInterval()
+      if(!is.null(self$endPosition)) self$computeInterval()
     },
     
     #setEndPosition
@@ -108,7 +109,12 @@ ISOTimePeriod <- R6Class("ISOTimePeriod",
         stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
       }
       self$endPosition <- endPosition
-      if(!is.null(self$beginPosition)) private$computeInterval()
+      if(!is.null(self$beginPosition)) self$computeInterval()
+    },
+    
+    #setId
+    setId = function(id){
+      self$attrs[["gml:id"]] <- as.character(id)
     },
     
     #setDuration

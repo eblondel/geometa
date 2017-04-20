@@ -37,6 +37,9 @@ ISOTimePeriod
    Sets the end position (ending date or date and time of the resource
    contents), as object of class "POSIXct"/"POSIXt" or "Date"
  }
+ \item{\code{setId(id)}}{
+ Sets the GML id string.
+ }
  \item{\code{setDuration(years, months, days, hours, mins, secs)}}{
    Set duration (Length of time between measurements)
  }
