@@ -23,6 +23,6 @@ test_that("encoding",{
   md2 <- ISOOnlineResource$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  expect_true(ISOMetadataElement$compare(md, md2))
   
 })

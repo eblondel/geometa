@@ -11,7 +11,7 @@ context("ISOConformanceResult")
 test_that("encoding",{
   
   #encoding
-  result <- ISOConformanceResult$new()
+  md <- ISOConformanceResult$new()
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
   spec$setAlternateTitle("specification alternate title")
@@ -19,16 +19,16 @@ test_that("encoding",{
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
   spec$addDate(d)
-  result$setSpecification(spec)
-  result$setExplanation("some explanation about the conformance")
-  result$setPass(TRUE)
-  xml <- result$encode()
+  md$setSpecification(spec)
+  md$setExplanation("some explanation about the conformance")
+  md$setPass(TRUE)
+  xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
   #decoding
   md2 <- ISOConformanceResult$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  expect_true(ISOMetadataElement$compare(md, md2))
   
 })

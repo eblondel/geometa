@@ -29,4 +29,9 @@ test_that("encoding",{
   
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOVectorSpatialRepresentation$new(xml = xml)
+  
+  expect_true(ISOMetadataElement$compare(md, md2))
 })

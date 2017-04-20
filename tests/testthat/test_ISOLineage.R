@@ -20,6 +20,6 @@ test_that("encoding",{
   lineage2 <- ISOLineage$new(xml = xml)
   xml2 <- lineage2$encode()
   
-  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  expect_true(ISOMetadataElement$compare(lineage, lineage2))
   
 })

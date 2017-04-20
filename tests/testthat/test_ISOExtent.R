@@ -25,6 +25,15 @@ test_that("encoding",{
   time$setTimePeriod(tp)
   extent$setTemporalElement(time)
   
+  #adding verticalElement
+  vert <- ISOVerticalExtent$new()
+  vert$setMinimumValue(0)
+  vert$setMaximumValue(19)
+  uom <- ISOUomLength$new()
+  uom$setUomName("Meter")
+  uom$setUomSymbol("m")
+  extent$setVerticalElement(vert)
+  
   xml <- extent$encode()
   expect_is(xml, "XMLInternalNode")
   
@@ -32,6 +41,6 @@ test_that("encoding",{
   extent2 <- ISOExtent$new(xml = xml)
   xml2 <- extent2$encode()
   
-  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  expect_true(ISOMetadataElement$compare(extent, extent2))
   
 })

@@ -84,7 +84,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
          fieldName <- fNames[2]
         }
         
-        if(!(fieldName %in% names(self))) next
+        if(!(fieldName %in% names(self)) & fieldName != "text") next
         
         fieldClass <- NULL
         if(!is(child, "XMLInternalTextNode")){
@@ -134,7 +134,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             self[[fieldName]] <- fieldValue
           }
         }else{
-          self[[fieldName]] <- as(child, "character") 
+          self[["value"]] <- as(child, "character") 
         }
         
       }

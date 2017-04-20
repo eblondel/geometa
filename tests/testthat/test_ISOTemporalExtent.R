@@ -24,6 +24,6 @@ test_that("encoding",{
   te2 <- ISOTemporalExtent$new(xml = xml)
   xml2 <- te2$encode()
   
-  expect_true(all(sapply(XML::compareXMLDocs(XML::xmlDoc(xml), XML::xmlDoc(xml2)), length) == 0))
+  expect_true(ISOMetadataElement$compare(te, te2))
   
 })

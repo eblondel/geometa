@@ -57,9 +57,9 @@ ISOExtent <- R6Class("ISOExtent",
      #+ geographicElement [0..*]: ISOGeographicExtent
      geographicElement = list(),
      #+ temporalElement [0..*]: ISOTemporalExtent
-     temporalElement = list(), #TODO
+     temporalElement = list(),
      #+ verticialElement [0..*]: ISOVerticalElement
-     verticalElement = list(), #TODO
+     verticalElement = list(),
      initialize = function(xml = NULL){
        super$initialize(
          xml = xml,
@@ -114,7 +114,6 @@ ISOExtent <- R6Class("ISOExtent",
      
      #addVerticalElement
      addVerticalElement = function(element){
-       stop("Method not yet supported by geometa!")
        if(!is(element, "ISOVerticalExtent")){
          stop("The argument should extend 'ISOVerticalExtent' object")
        }
@@ -123,14 +122,12 @@ ISOExtent <- R6Class("ISOExtent",
      
      #setVerticalElement
      setVerticalElement = function(element){
-       stop("Method not yet supported by geometa!")
-       sself$verticalElement = list()
+       self$verticalElement = list()
        return(self$addVerticalElement(element))
      },
      
      #delVerticalElement
      delVerticalElement = function(element){
-       stop("Method not yet supported by geometa!")
        if(!is(element, "ISOVerticalExtent")){
          stop("The argument should extend 'ISOVerticalExtent' object")
        }
