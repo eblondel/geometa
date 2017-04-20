@@ -24,6 +24,9 @@
 #'    Sets the end position (ending date or date and time of the resource 
 #'    contents), as object of class "POSIXct"/"POSIXt" or "Date"
 #'  }
+#'  \item{\code{computeInterval()}}{
+#'   Computes the ISO interval string and set as GML id
+#'  }
 #'  \item{\code{setId(id)}}{
 #'  Sets the GML id string. 
 #'  }
@@ -38,32 +41,7 @@ ISOTimePeriod <- R6Class("ISOTimePeriod",
   inherit = ISOTemporalPrimitive,
   private = list(
     xmlElement = "TimePeriod",
-    xmlNamespacePrefix = "GML",
-    computeInterval = function(){
-      
-      start <- self$beginPosition
-      end <- self$endPosition
-      years.seq <- seq(start, end, by = "years")
-      years <- length(years.seq)-1
-      months.start <- years.seq[length(years.seq)]
-      months.seq <- seq(months.start, end, by = "months")
-      months <- length(months.seq)-1
-      days.start <- months.seq[length(months.seq)]
-      days.seq <- seq(days.start, end, by = "DSTdays")
-      days <- length(days.seq)-1
-      hours.start <- days.seq[length(days.seq)]
-      hours.seq <- seq(hours.start, end, by = "hours")
-      hours <- length(hours.seq)-1
-      mins.start <- hours.seq[length(hours.seq)]
-      mins.seq <- seq(mins.start, end, by = "mins")
-      mins <- length(mins.seq)-1
-      secs.start <- mins.seq[length(mins.seq)]
-      secs.seq <- seq(secs.start, end, by = "secs")
-      secs <- length(secs.seq)-1
-      isoduration <- ISOTimePeriod$computeISODuration(years, months, days, 
-                                                      hours, mins, secs)           
-      self$attrs[["gml:id"]] <- isoduration
-    }
+    xmlNamespacePrefix = "GML"
   ),
   public = list(
     attrs = list("gml:id" = NA),
@@ -88,7 +66,7 @@ ISOTimePeriod <- R6Class("ISOTimePeriod",
           self$attrs[["gml:id"]] <- gmlId
         }else{
           if(!is.null(self$beginPosition) & !is.null(self$endPosition)){
-            private$computeInterval()
+            self$computeInterval()
           }
         }
       }
@@ -110,6 +88,33 @@ ISOTimePeriod <- R6Class("ISOTimePeriod",
       }
       self$endPosition <- endPosition
       if(!is.null(self$beginPosition)) self$computeInterval()
+    },
+    
+    #computeInterval
+    computeInterval = function(){
+      
+      start <- self$beginPosition
+      end <- self$endPosition
+      years.seq <- seq(start, end, by = "years")
+      years <- length(years.seq)-1
+      months.start <- years.seq[length(years.seq)]
+      months.seq <- seq(months.start, end, by = "months")
+      months <- length(months.seq)-1
+      days.start <- months.seq[length(months.seq)]
+      days.seq <- seq(days.start, end, by = "DSTdays")
+      days <- length(days.seq)-1
+      hours.start <- days.seq[length(days.seq)]
+      hours.seq <- seq(hours.start, end, by = "hours")
+      hours <- length(hours.seq)-1
+      mins.start <- hours.seq[length(hours.seq)]
+      mins.seq <- seq(mins.start, end, by = "mins")
+      mins <- length(mins.seq)-1
+      secs.start <- mins.seq[length(mins.seq)]
+      secs.seq <- seq(secs.start, end, by = "secs")
+      secs <- length(secs.seq)-1
+      isoduration <- ISOTimePeriod$computeISODuration(years, months, days, 
+                                                      hours, mins, secs)           
+      self$setId(isoduration)
     },
     
     #setId
