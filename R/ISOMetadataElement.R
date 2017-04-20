@@ -113,7 +113,12 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             fieldValue <- switch(fieldClass$classname,
                                  "ISOBaseBoolean" = as.logical(fieldValue),
                                  "ISOBaseInteger" = as.integer(fieldValue),
-                                 "ISOBaseDecimal" = as.numeric(fieldValue),
+                                 "ISOBaseReal" = as.numeric(fieldValue),
+                                 "ISOBaseDecimal" = {
+                                   fieldValue <- as.numeric(fieldValue)
+                                   class(fieldValue) <- "decimal"
+                                   fieldValue
+                                 },
                                  "ISOBaseDate" = as.Date(fieldValue),
                                  "ISOBaseDateTime" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT"),
                                  "ISOBaseTimeBeginPosition" = coerceTimePosition(fieldValue),
@@ -161,7 +166,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       #fields
       fields <- fields[!sapply(fields, function(x){
         (class(self[[x]]) %in% c("environment", "function")) ||
-          (x %in% c("wrap", "element", "namespace", "defaults", "attrs", "codelistId"))
+          (x %in% c("wrap", "element", "namespace", "defaults", "attrs", "codelistId", "measureType"))
       })]
       
       for(field in fields){
@@ -248,7 +253,8 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if(field == "endPosition") dataType <- "endtime"
       dataObj <- switch(tolower(dataType),
                         "character" = ISOBaseCharacterString$new(value = fieldObj),
-                        "numeric"   = ISOBaseDecimal$new(value = fieldObj),
+                        "numeric"   = ISOBaseReal$new(value = fieldObj),
+                        "decimal"   = ISOBaseDecimal$new(value = fieldObj), #Requires specific class call
                         "integer"   = ISOBaseInteger$new(value = fieldObj),
                         "logical"   = ISOBaseBoolean$new(value = fieldObj),
                         "datetime"  = ISOBaseDateTime$new(value = fieldObj),
