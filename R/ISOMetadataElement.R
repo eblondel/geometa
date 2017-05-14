@@ -170,6 +170,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       })]
       
       for(field in fields){
+        cat(sprintf("Encoding '%s' element \n", field))
         fieldObj <- self[[field]]
         
         #default values management
