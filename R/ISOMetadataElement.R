@@ -155,9 +155,15 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if("attrs" %in% fields){
         rootXMLAttrs <- self[["attrs"]]
       }
-      rootNamespaces <- self$getNamespaceDefinition()
+      
       if(self$element == "MD_Metadata"){
         rootNamespaces <- sapply(ISOMetadataNamespace$all(), function(x){x$getDefinition()})
+        rootXML <- xmlOutputDOM(
+          tag = self$element,
+          attrs = rootXMLAttrs,
+          nameSpace = self$namespace$id,
+          nsURI = rootNamespaces
+        )
       }
       
       rootXML <- xmlOutputDOM(
@@ -240,8 +246,8 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
       out <- rootXML$value()
       out <- as(out, "XMLInternalNode")
-      if(addNS){
-       xmlNamespaces(out, set = TRUE) <- rootNamespaces
+      if(addNS & self$element != "MD_Metadata"){
+       xmlNamespaces(out, set = TRUE) <- self$getNamespaceDefinition()
       }
       return(out)
     },
