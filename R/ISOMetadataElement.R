@@ -256,7 +256,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if(field == "beginPosition") dataType <- "begintime"
       if(field == "endPosition") dataType <- "endtime"
       dataObj <- switch(tolower(dataType),
-                        "character" = ISOBaseCharacterString$new(value = fieldObj),
+                        "character" = ISOBaseCharacterString$new(value = iconv(fieldObj, to  = "UTF-8//IGNORE")),
                         "numeric"   = ISOBaseReal$new(value = fieldObj),
                         "decimal"   = ISOBaseDecimal$new(value = fieldObj), #Requires specific class call
                         "integer"   = ISOBaseInteger$new(value = fieldObj),
