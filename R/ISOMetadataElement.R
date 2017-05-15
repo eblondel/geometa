@@ -164,14 +164,14 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
           nameSpace = self$namespace$id,
           nsURI = rootNamespaces
         )
+      }else{
+        rootXML <- xmlOutputDOM(
+          tag = self$element,
+          attrs = rootXMLAttrs,
+          nameSpace = self$namespace$id
+        )
       }
-      
-      rootXML <- xmlOutputDOM(
-        tag = self$element,
-        attrs = rootXMLAttrs,
-        nameSpace = self$namespace$id
-      )
-      
+        
       #fields
       fields <- fields[!sapply(fields, function(x){
         (class(self[[x]]) %in% c("environment", "function")) ||
