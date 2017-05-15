@@ -53,6 +53,9 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMetadataElement <- R6Class("ISOMetadataElement",
+  private = list(
+    encoding = "UTF-8"
+  ),
   public = list(
     wrap = TRUE,
     element = NA,
@@ -75,9 +78,9 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     #decode
     decode = function(xml){
       if(is(xml, "XMLInternalDocument")){
-        xml <- xmlChildren(xml)[[1]]
+        xml <- xmlChildren(xml, encoding = private$encoding)[[1]]
       }
-      for(child in xmlChildren(xml)){
+      for(child in xmlChildren(xml, encoding = private$encoding)){
         fieldName <- xmlName(child)
         fNames <- unlist(strsplit(fieldName, ":"))
         if(length(fNames)>1){
@@ -90,7 +93,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         if(!is(child, "XMLInternalTextNode")){
           fieldClass <- ISOMetadataElement$getISOClassByNode(child)
           if(is.null(fieldClass)){
-            child <- xmlChildren(child)[[1]]
+            child <- xmlChildren(child, encoding = private$encoding)[[1]]
             fieldClass <- ISOMetadataElement$getISOClassByNode(child)
           }
         }
