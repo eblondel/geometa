@@ -54,7 +54,7 @@
 #'
 ISOMetadataElement <- R6Class("ISOMetadataElement",
   private = list(
-    encoding = "UTF-8"
+    encoding = options("encoding")
   ),
   public = list(
     wrap = TRUE,
