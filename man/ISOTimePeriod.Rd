@@ -37,6 +37,9 @@ ISOTimePeriod
    Sets the end position (ending date or date and time of the resource
    contents), as object of class "POSIXct"/"POSIXt" or "Date"
  }
+ \item{\code{computeInterval()}}{
+  Computes the ISO interval string and set as GML id
+ }
  \item{\code{setId(id)}}{
  Sets the GML id string.
  }
