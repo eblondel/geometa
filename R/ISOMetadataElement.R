@@ -53,6 +53,9 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMetadataElement <- R6Class("ISOMetadataElement",
+  private = list(
+    encoding = options("encoding")
+  ),
   public = list(
     wrap = TRUE,
     element = NA,
@@ -75,9 +78,9 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     #decode
     decode = function(xml){
       if(is(xml, "XMLInternalDocument")){
-        xml <- xmlChildren(xml)[[1]]
+        xml <- xmlChildren(xml, encoding = private$encoding)[[1]]
       }
-      for(child in xmlChildren(xml)){
+      for(child in xmlChildren(xml, encoding = private$encoding)){
         fieldName <- xmlName(child)
         fNames <- unlist(strsplit(fieldName, ":"))
         if(length(fNames)>1){
@@ -90,7 +93,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         if(!is(child, "XMLInternalTextNode")){
           fieldClass <- ISOMetadataElement$getISOClassByNode(child)
           if(is.null(fieldClass)){
-            child <- xmlChildren(child)[[1]]
+            child <- xmlChildren(child, encoding = private$encoding)[[1]]
             fieldClass <- ISOMetadataElement$getISOClassByNode(child)
           }
         }
@@ -152,17 +155,23 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if("attrs" %in% fields){
         rootXMLAttrs <- self[["attrs"]]
       }
-      rootNamespaces <- self$getNamespaceDefinition()
+      
       if(self$element == "MD_Metadata"){
         rootNamespaces <- sapply(ISOMetadataNamespace$all(), function(x){x$getDefinition()})
+        rootXML <- xmlOutputDOM(
+          tag = self$element,
+          attrs = rootXMLAttrs,
+          nameSpace = self$namespace$id,
+          nsURI = rootNamespaces
+        )
+      }else{
+        rootXML <- xmlOutputDOM(
+          tag = self$element,
+          attrs = rootXMLAttrs,
+          nameSpace = self$namespace$id
+        )
       }
-
-      rootXML <- xmlOutputDOM(
-        tag = self$element,
-        attrs = rootXMLAttrs,
-        nameSpace = self$namespace$id
-      )
-      
+        
       #fields
       fields <- fields[!sapply(fields, function(x){
         (class(self[[x]]) %in% c("environment", "function")) ||
@@ -236,8 +245,8 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
       out <- rootXML$value()
       out <- as(out, "XMLInternalNode")
-      if(addNS){
-       xmlNamespaces(out, set = TRUE) <- self$namespace$getDefinition() 
+      if(addNS & self$element != "MD_Metadata"){
+       xmlNamespaces(out, set = TRUE) <- self$getNamespaceDefinition()
       }
       return(out)
     },
@@ -252,7 +261,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if(field == "beginPosition") dataType <- "begintime"
       if(field == "endPosition") dataType <- "endtime"
       dataObj <- switch(tolower(dataType),
-                        "character" = ISOBaseCharacterString$new(value = fieldObj),
+                        "character" = ISOBaseCharacterString$new(value = iconv(fieldObj, to  = "UTF-8//IGNORE")),
                         "numeric"   = ISOBaseReal$new(value = fieldObj),
                         "decimal"   = ISOBaseDecimal$new(value = fieldObj), #Requires specific class call
                         "integer"   = ISOBaseInteger$new(value = fieldObj),
