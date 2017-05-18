@@ -53,6 +53,11 @@ ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
           self$southBoundLatitude = as.double(miny)
           self$northBoundLatitude = as.double(maxy)
          }
+         
+         class(self$westBoundLongitude) <- "decimal"
+         class(self$eastBoundLongitude) <- "decimal"
+         class(self$southBoundLatitude) <- "decimal"
+         class(self$northBoundLatitude) <- "decimal"
        }
      }
    )                                          

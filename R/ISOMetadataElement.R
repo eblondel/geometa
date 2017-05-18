@@ -258,8 +258,12 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       if((regexpr("^http*",fieldObj, TRUE) > 0 | regexpr("^ftp*",fieldObj, TRUE) > 0) && is(self, "ISOOnlineResource")){
         dataType <- "url"
       }
+      
+      #specific coercing
       if(field == "beginPosition") dataType <- "begintime"
       if(field == "endPosition") dataType <- "endtime"
+      
+      #wrapping
       dataObj <- switch(tolower(dataType),
                         "character" = ISOBaseCharacterString$new(value = iconv(fieldObj, to  = "UTF-8//IGNORE")),
                         "numeric"   = ISOBaseReal$new(value = fieldObj),
