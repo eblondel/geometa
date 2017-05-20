@@ -16,6 +16,9 @@ Current Focus:
 
 To do:
 
-* Planned for release in CRAN
+* 1st release in CRAN
+
+Next:
+* Add classes for ISO 19110 / Feature Catalogue
 * Add classes specific to raster/coverage data description
 
