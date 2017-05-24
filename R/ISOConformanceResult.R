@@ -25,7 +25,8 @@
 #'  }
 #' }
 #' 
-#' @examples 
+#' @examples
+#'  md <- ISOConformanceResult$new()
 #'  spec <- ISOCitation$new()
 #'  spec$setTitle("specification title")
 #'  spec$setAlternateTitle("specification alternate title")
