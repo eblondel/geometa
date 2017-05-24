@@ -17,6 +17,12 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   md <- ISOTelephone$new()
+#'   md$setVoice("myphonenumber")
+#'   md$setFacsimile("myfacsimile")
+#'   xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOTelephone <- R6Class("ISOTelephone",

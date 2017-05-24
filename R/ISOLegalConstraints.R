@@ -44,6 +44,19 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'   #create object
+#'   md <- ISOLegalConstraints$new()
+#'   md$addUseLimitation("limitation1")
+#'   md$addUseLimitation("limitation2")
+#'   md$addUseLimitation("limitation3")
+#'   md$addAccessConstraint("copyright")
+#'   md$addAccessConstraint("license")
+#'   md$addUseConstraint("copyright")
+#'   md$addUseConstraint("license")
+#'   
+#'   xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOLegalConstraints <- R6Class("ISOLegalConstraints",

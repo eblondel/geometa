@@ -14,6 +14,9 @@ Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
 \description{
 ISOMetadataElement
 }
+\note{
+Abstract ISO Metadata class used internally by geometa
+}
 \section{Static Methods}{
 
 \describe{

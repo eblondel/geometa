@@ -27,6 +27,13 @@ ISOStatus
  }
 }
 }
+\examples{
+#possible values
+  values <- ISOStatus$values(labels = TRUE)
+
+  #pending status
+  pending <- ISOStatus$new(value = "pending")
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

@@ -27,6 +27,25 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'  md <- ISOContact$new()
+#'  phone <- ISOTelephone$new()
+#'  phone$setVoice("myphonenumber")
+#'  phone$setFacsimile("myfacsimile")
+#'  md$setPhone(phone)
+#'  address <- ISOAddress$new()
+#'  address$setDeliveryPoint("theaddress")
+#'  address$setCity("thecity")
+#'  address$setPostalCode("111")
+#'  address$setCountry("France")
+#'  address$setEmail("someone@@theorg.org")
+#'  md$setAddress(address)
+#'  res <- ISOOnlineResource$new()
+#'  res$setLinkage("http://www.somewhereovertheweb.org")
+#'  res$setName("somename")
+#'  md$setOnlineResource(res)
+#'  xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOContact <- R6Class("ISOContact",

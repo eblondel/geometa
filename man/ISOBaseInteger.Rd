@@ -19,6 +19,9 @@ ISOBaseInteger
 \describe{
 \item{\code{value}}{}
 }}
+\note{
+Class used by geometa internal XML decoder/encoder
+}
 \section{Methods}{
 
 \describe{

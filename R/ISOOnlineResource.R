@@ -31,6 +31,14 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'   md <- ISOOnlineResource$new()
+#'   md$setLinkage("http://somelink")
+#'   md$setName("name")
+#'   md$setDescription("description")
+#'   md$setProtocol("protocol")
+#'   xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOOnlineResource <- R6Class("ISOOnlineResource",

@@ -16,6 +16,13 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   #possible values
+#'   values <- ISODateType$values(labels = TRUE)
+#'   
+#'   #creation datetype
+#'   creation <- ISODateType$new(value = "creation")
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODateType <- R6Class("ISODateType",

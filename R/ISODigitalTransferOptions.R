@@ -31,6 +31,18 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   md <- ISODigitalTransferOptions$new()  
+#'   
+#'   or <- ISOOnlineResource$new()
+#'   or$setLinkage("http://somelink")
+#'   or$setName("name")
+#'   or$setDescription("description")
+#'   or$setProtocol("WWW:LINK-1.0-http--link")
+#'   md$addOnlineResource(or)
+#'   
+#'   xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",

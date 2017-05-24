@@ -16,6 +16,13 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   #possible values
+#'   values <- ISOPresentationForm$values(labels = TRUE)
+#'   
+#'   #mapDigital type
+#'   map <- ISOPresentationForm$new(value = "mapDigital")
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOPresentationForm <- R6Class("ISOPresentationForm",
@@ -31,6 +38,6 @@ ISOPresentationForm <- R6Class("ISOPresentationForm",
    )                        
 )
 
-ISOPresentationForm$values <- function(){
-  return(getISOCodelist(ISOPresentationForm$private_fields$xmlElement)$entries$value)
+ISOPresentationForm$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOPresentationForm, labels))
 }

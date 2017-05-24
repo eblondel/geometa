@@ -27,6 +27,13 @@ ISOPresentationForm
  }
 }
 }
+\examples{
+#possible values
+  values <- ISOPresentationForm$values(labels = TRUE)
+
+  #mapDigital type
+  map <- ISOPresentationForm$new(value = "mapDigital")
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

@@ -48,6 +48,12 @@ ISOTimePeriod
  }
 }
 }
+\examples{
+start <- ISOdate(2000, 1, 12, 12, 59, 45)
+  end <- ISOdate(2010, 8, 22, 13, 12, 43)
+  md <- ISOTimePeriod$new(beginPosition = start, endPosition = end)
+  xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

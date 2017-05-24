@@ -29,6 +29,15 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   md <- ISOVectorSpatialRepresentation$new()
+#'   md$setTopologyLevel("geometryOnly")
+#'   geomObject1 <- ISOGeometricObjects$new()
+#'   geomObject1$setGeometricObjectType("surface")
+#'   geomObject1$setGeometricObjectCount(5L)
+#'   md$addGeometricObjects(geomObject1)
+#'   xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOVectorSpatialRepresentation <- R6Class("ISOVectorSpatialRepresentation",

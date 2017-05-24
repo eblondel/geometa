@@ -15,6 +15,8 @@
 #'  }
 #' }
 #' 
+#' @note Class used internally by geometa
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOTemporalPrimitive <- R6Class("ISOTemporalPrimitive",

@@ -23,6 +23,13 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   md <- ISODate$new()
+#'   d <- ISOBaseDate$new(value = ISOdate(2015, 1, 1, 1))
+#'   md$setDate(d)
+#'   md$setDateType("publication")
+#'   xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODate <- R6Class("ISODate",

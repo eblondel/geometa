@@ -27,6 +27,13 @@ ISOLanguage
  }
 }
 }
+\examples{
+#possible values
+  values <- ISOLanguage$values(labels = TRUE)
+
+  #english language
+  eng <- ISOLanguage$new(value = "eng")
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

@@ -27,6 +27,13 @@ ISOTopicCategory
  }
 }
 }
+\examples{
+#possible values
+  values <- ISOTopicCategory$values(labels = TRUE)
+
+  #biota topic
+  biota <- ISOTopicCategory$new(value = "biota")
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

@@ -14,6 +14,16 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'   ve <- ISOVerticalExtent$new()
+#'   ve$setMinimumValue(0)
+#'   ve$setMaximumValue(19)
+#'   uom <- ISOUomLength$new()
+#'   uom$setUomName("Meter")
+#'   uom$setUomSymbol("m")
+#'   ve$setUnitOfMeasure(uom)
+#'   xml <- ve$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOVerticalExtent <- R6Class("ISOVerticalExtent",

@@ -27,6 +27,13 @@ ISOTopologyLevel
  }
 }
 }
+\examples{
+#possible values
+  values <- ISOTopologyLevel$values(labels = TRUE)
+
+  #geomOnly
+  geomOnly <- ISOTopologyLevel$new(value = "geometryOnly")
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

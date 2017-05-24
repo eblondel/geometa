@@ -21,6 +21,9 @@ ISOIdentifier
 
 \item{\code{code}}{}
 }}
+\note{
+Abstract ISO class
+}
 \section{Methods}{
 
 \describe{

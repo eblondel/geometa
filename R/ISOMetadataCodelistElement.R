@@ -19,6 +19,8 @@
 #'  }
 #' }
 #' 
+#' @note Abstract ISO codelist class used internally by geometa
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",

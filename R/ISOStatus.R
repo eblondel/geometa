@@ -16,20 +16,27 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   #possible values
+#'   values <- ISOStatus$values(labels = TRUE)
+#'   
+#'   #pending status
+#'   pending <- ISOStatus$new(value = "pending")
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOStatus<- R6Class("ISOStatus",
-                           inherit = ISOMetadataCodelistElement,
-                           private = list(
-                             xmlElement = "MD_ProgressCode",
-                             xmlNamespacePrefix = "GMD"
-                           ),
-                           public = list(
-                             initialize = function(xml = NULL, value){
-                               super$initialize(xml = xml, id = private$xmlElement, value = value,
-                                                setValue = FALSE, addCodeSpaceAttr = FALSE)
-                             }
-                           )                        
+   inherit = ISOMetadataCodelistElement,
+   private = list(
+     xmlElement = "MD_ProgressCode",
+     xmlNamespacePrefix = "GMD"
+   ),
+   public = list(
+     initialize = function(xml = NULL, value){
+       super$initialize(xml = xml, id = private$xmlElement, value = value,
+                        setValue = FALSE, addCodeSpaceAttr = FALSE)
+     }
+   )                        
 )
 
 ISOStatus$values <- function(labels = FALSE){

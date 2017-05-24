@@ -4,17 +4,17 @@
 \name{geometa}
 \alias{geometa}
 \alias{geometa-package}
-\title{Facilities for handling geographic metadata}
+\title{Tools for Reading and Writing ISO/OGC Geographic Metadata}
 \description{
-Provides facilities to handle reading and writing of geographic
-standard metadata defined with OGC/ISO 19115-19139 standards
+Provides facilities to handle reading and writing of geographic metadata
+defined with OGC/ISO 19115 and 19139 (XML) standards.
 }
 \details{
 \tabular{ll}{
    Package: \tab geometa\cr
    Type: \tab Package\cr
    Version: \tab 0.1-0\cr
-   Date: \tab 2017-05-18\cr
+   Date: \tab 2017-05-24\cr
    License: \tab MIT\cr
    LazyLoad: \tab yes\cr
  }

@@ -19,6 +19,9 @@ ISOConstraints
 \describe{
 \item{\code{useLimitation}}{}
 }}
+\note{
+Abstract ISO class
+}
 \section{Methods}{
 
 \describe{

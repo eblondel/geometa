@@ -22,6 +22,10 @@ ISOMetaIdentifier
  }
 }
 }
+\examples{
+md <- ISOMetaIdentifier$new(code = "identifier")
+  xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

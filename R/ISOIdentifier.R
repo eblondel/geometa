@@ -20,6 +20,8 @@
 #'  }
 #' }
 #' 
+#' @note Abstract ISO class
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOIdentifier <- R6Class("ISOIdentifier",

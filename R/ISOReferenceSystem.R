@@ -19,6 +19,12 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   md <- ISOReferenceSystem$new()
+#'   rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
+#'   md$setReferenceSystemIdentifier(rsId)
+#'   xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOReferenceSystem <- R6Class("ISOReferenceSystem",

@@ -16,6 +16,13 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   #possible values
+#'   values <- ISORestriction$values(labels = TRUE)
+#'   
+#'   #copyright restriction
+#'   cr <- ISORestriction$new(value = "copyright")
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISORestriction <- R6Class("ISORestriction",

@@ -19,6 +19,9 @@ ISOCodelist
 \describe{
 \item{\code{value}}{}
 }}
+\note{
+Class used by geometa internal codelist XML decoder/encoder
+}
 \section{Methods}{
 
 \describe{

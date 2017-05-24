@@ -27,6 +27,13 @@ ISOClassification
  }
 }
 }
+\examples{
+#possible values
+ values <- ISOClassification$values(labels = TRUE)
+
+ #restricted classification
+ cl <- ISOClassification$new(value = "restricted")
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

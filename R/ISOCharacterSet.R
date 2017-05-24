@@ -16,6 +16,13 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'   #possible values
+#'   values <- ISOCharacterSet$values(labels = TRUE)
+#'   
+#'   #some charset
+#'   charset <- ISOCharacterSet$new(value = "utf8")
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCharacterSet <- R6Class("ISOCharacterSet",

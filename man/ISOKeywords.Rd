@@ -9,7 +9,7 @@
 ISOKeywords
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO Keywords
+Object of \code{\link{R6Class}} for modelling a ISO set of keywords
 }
 \description{
 ISOKeywords
@@ -40,6 +40,16 @@ ISOKeywords
    Sets the thesaurus name
  }
 }
+}
+\examples{
+md <- ISOKeywords$new()
+  md$addKeyword("keyword1")
+  md$addKeyword("keyword2")
+  md$setKeywordType("theme")
+  th <- ISOCitation$new()
+  th$setTitle("General")
+  md$setThesaurusName(th)
+  xml <- md$encode()
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

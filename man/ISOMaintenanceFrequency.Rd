@@ -27,6 +27,13 @@ ISOMaintenanceFrequency
  }
 }
 }
+\examples{
+#possible values
+  values <- ISOMaintenanceFrequency$values(labels = TRUE)
+
+  #daily frequency
+  daily <- ISOMaintenanceFrequency$new(value = "daily")
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

@@ -27,6 +27,13 @@ ISORole
  }
 }
 }
+\examples{
+#possible values
+  values <- ISORole$values(labels = TRUE)
+
+  #publisher restriction
+  role <- ISORole$new(value = "publisher")
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

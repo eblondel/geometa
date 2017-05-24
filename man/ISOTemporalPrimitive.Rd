@@ -14,6 +14,9 @@ Object of \code{\link{R6Class}} for modelling an ISO abstract temporal primitive
 \description{
 ISOTemporalPrimitive
 }
+\note{
+Class used internally by geometa
+}
 \section{Methods}{
 
 \describe{

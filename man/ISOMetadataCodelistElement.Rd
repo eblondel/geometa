@@ -19,6 +19,9 @@ ISOMetadataCodelistElement
 \describe{
 \item{\code{value}}{}
 }}
+\note{
+Abstract ISO codelist class used internally by geometa
+}
 \section{Methods}{
 
 \describe{

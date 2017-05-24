@@ -47,6 +47,16 @@ ISOSecurityConstraints
  }
 }
 }
+\examples{
+#create object
+   md <- ISOSecurityConstraints$new()
+   md$setClassification("secret")
+   md$setUserNote("ultra secret")
+   md$setClassificationSystem("no classification in particular")
+   md$setHandlingDescription("description")
+
+   xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

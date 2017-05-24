@@ -16,6 +16,8 @@
 #'  }
 #' }
 #' 
+#' @note Class used by geometa internal XML decoder/encoder
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOBaseBoolean <- R6Class("ISOBaseBoolean",

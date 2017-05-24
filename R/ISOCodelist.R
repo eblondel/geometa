@@ -16,6 +16,8 @@
 #'  }
 #' }
 #' 
+#' @note Class used by geometa internal codelist XML decoder/encoder
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCodelist <- R6Class("ISOCodelist",

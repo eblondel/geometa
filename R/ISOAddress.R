@@ -35,6 +35,15 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'  md <- ISOAddress$new()
+#'  md$setDeliveryPoint("theaddress")
+#'  md$setCity("thecity")
+#'  md$setPostalCode("111")
+#'  md$setCountry("France")
+#'  md$setEmail("someone@@theorg.org")
+#'  xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOAddress <- R6Class("ISOAddress",

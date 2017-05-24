@@ -30,6 +30,11 @@ ISOLineage
  }
 }
 }
+\examples{
+lineage <- ISOLineage$new()
+  lineage$setStatement("statement")
+  xml <- lineage$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

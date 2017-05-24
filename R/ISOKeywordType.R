@@ -16,6 +16,13 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   #possible values
+#'   values <- ISOKeywordType$values(labels = TRUE)
+#'   
+#'   #place keywordType
+#'   place <- ISOKeywordType$new(value = "place")
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOKeywordType <- R6Class("ISOKeywordType",

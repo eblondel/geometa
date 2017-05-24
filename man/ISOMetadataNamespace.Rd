@@ -14,6 +14,9 @@ Object of \code{\link{R6Class}} for modelling an ISO Metadata Namespace
 \description{
 ISOMetadataNamespace
 }
+\note{
+ISO class used internally by geometa for specifying XML namespaces
+}
 \section{Methods}{
 
 \describe{

@@ -30,6 +30,11 @@ ISOMaintenanceInformation
  }
 }
 }
+\examples{
+md <- ISOMaintenanceInformation$new()
+  md$setMaintenanceFrequency("daily")
+  xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

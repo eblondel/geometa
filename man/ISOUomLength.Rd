@@ -22,6 +22,12 @@ ISOUomLength
  }
 }
 }
+\examples{
+uom <- ISOUomLength$new()
+  uom$setUomName("Meter")
+  uom$setUomSymbol("m")
+  xml <- uom$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

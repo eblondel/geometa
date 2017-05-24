@@ -18,6 +18,14 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'  md <- ISOBrowseGraphic$new(
+#'   fileName = "http://wwww.somefile.org/png",
+#'   fileDescription = "Map Overview",
+#'   fileType = "image/png"
+#'  )
+#'  xml <- md$encode()
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOBrowseGraphic <- R6Class("ISOBrowseGraphic",

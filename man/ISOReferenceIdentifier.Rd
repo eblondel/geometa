@@ -28,6 +28,10 @@ ISOReferenceIdentifier
  }
 }
 }
+\examples{
+md <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
+  xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

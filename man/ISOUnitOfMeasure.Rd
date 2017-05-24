@@ -31,6 +31,9 @@ ISOUnitOfMeasure
 
 \item{\code{formula}}{}
 }}
+\note{
+Abstract ISO class used internally by geometa
+}
 \section{Methods}{
 
 \describe{

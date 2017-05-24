@@ -30,6 +30,11 @@ ISOScope
  }
 }
 }
+\examples{
+md <- ISOScope$new()
+  md$setLevel("dataset")
+  xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

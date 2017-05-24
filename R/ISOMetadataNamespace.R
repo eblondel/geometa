@@ -14,6 +14,8 @@
 #'  }
 #' }
 #' 
+#' @note ISO class used internally by geometa for specifying XML namespaces
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMetadataNamespace <- R6Class("ISOMetadataNamespace",

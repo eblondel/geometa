@@ -22,6 +22,8 @@
 #'  }
 #' }
 #' 
+#' @note Abstract ISO class used internally by geometa
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOUnitOfMeasure <- R6Class("ISOUnitOfMeasure",

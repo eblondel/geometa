@@ -50,6 +50,8 @@
 #'  }
 #' }
 #' 
+#' @note Abstract ISO Metadata class used internally by geometa
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMetadataElement <- R6Class("ISOMetadataElement",
