@@ -37,7 +37,8 @@ ISOConformanceResult
 }
 }
 \examples{
-spec <- ISOCitation$new()
+md <- ISOConformanceResult$new()
+ spec <- ISOCitation$new()
  spec$setTitle("specification title")
  spec$setAlternateTitle("specification alternate title")
  d <- ISODate$new()
