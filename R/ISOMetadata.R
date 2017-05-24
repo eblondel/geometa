@@ -113,6 +113,228 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'     #example 1 - WRITE: Create an ISO metadata and encode it as XML
+#'     #######################################################
+#'     md = ISOMetadata$new()
+#'     md$setFileIdentifier("my-metadata-identifier")
+#'     md$setParentIdentifier("my-parent-metadata-identifier")
+#'     md$setCharacterSet("utf8")
+#'     md$setLanguage("eng")
+#'     md$setDateStamp(ISOdate(2015, 1, 1, 1))
+#'     md$setMetadataStandardName("ISO 19115:2003/19139")
+#'     md$setMetadataStandardVersion("1.0")
+#'     md$setDataSetURI("my-dataset-identifier")
+#'     
+#'     #add 3 contacts
+#'     for(i in 1:3){
+#'       rp <- ISOResponsibleParty$new()
+#'       rp$setIndividualName(paste0("someone",i))
+#'       rp$setOrganisationName("somewhere")
+#'       rp$setPositionName(paste0("someposition",i))
+#'       rp$setRole("pointOfContact")
+#'       contact <- ISOContact$new()
+#'       phone <- ISOTelephone$new()
+#'       phone$setVoice(paste0("myphonenumber",i))
+#'       phone$setFacsimile(paste0("myfacsimile",i))
+#'       contact$setPhone(phone)
+#'       address <- ISOAddress$new()
+#'       address$setDeliveryPoint("theaddress")
+#'       address$setCity("thecity")
+#'       address$setPostalCode("111")
+#'       address$setCountry("France")
+#'       address$setEmail("someone@@theorg.org")
+#'       contact$setAddress(address)
+#'       res <- ISOOnlineResource$new()
+#'       res$setLinkage("http://somelink")
+#'       res$setName("someresourcename")
+#'       contact$setOnlineResource(res)
+#'       rp$setContactInfo(contact)
+#'       md$addContact(rp)
+#'    }
+#'    
+#'    #VectorSpatialRepresentation
+#'    vsr <- ISOVectorSpatialRepresentation$new()
+#'    vsr$setTopologyLevel("geometryOnly")
+#'    geomObject <- ISOGeometricObjects$new()
+#'    geomObject$setGeometricObjectType("surface")
+#'    geomObject$setGeometricObjectCount(5L)
+#'    vsr$setGeometricObjects(geomObject)
+#'    md$addSpatialRepresentationInfo(vsr)
+#'    
+#'    #ReferenceSystem
+#'    rs <- ISOReferenceSystem$new()
+#'    rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
+#'    rs$setReferenceSystemIdentifier(rsId)
+#'    md$setReferenceSystemInfo(rs)
+#'    
+#'    #data identification
+#'    ident <- ISODataIdentification$new()
+#'    ident$setAbstract("abstract")
+#'    ident$setPurpose("purpose")
+#'    ident$addCredit("credit1")
+#'    ident$addCredit("credit2")
+#'    ident$addCredit("credit3")
+#'    ident$addStatus("completed")
+#'    ident$setLanguage("eng")
+#'    ident$setCharacterSet("utf8")
+#'    ident$addTopicCategory("biota")
+#'    ident$addTopicCategory("oceans")
+#'    
+#'    #adding a point of contact
+#'    rp <- ISOResponsibleParty$new()
+#'    rp$setIndividualName("someone")
+#'    rp$setOrganisationName("somewhere")
+#'    rp$setPositionName("someposition")
+#'    rp$setRole("pointOfContact")
+#'    contact <- ISOContact$new()
+#'    phone <- ISOTelephone$new()
+#'    phone$setVoice("myphonenumber")
+#'    phone$setFacsimile("myfacsimile")
+#'    contact$setPhone(phone)
+#'    address <- ISOAddress$new()
+#'    address$setDeliveryPoint("theaddress")
+#'    address$setCity("thecity")
+#'    address$setPostalCode("111")
+#'    address$setCountry("France"
+#'    address$setEmail("someone@@theorg.org")
+#'    contact$setAddress(address)
+#'    res <- ISOOnlineResource$new()
+#'    res$setLinkage("http://somelink")
+#'    res$setName("somename")
+#'    contact$setOnlineResource(res)
+#'    rp$setContactInfo(contact)
+#'    ident$addPointOfContact(rp)
+#'    
+#'    #citation
+#'    ct <- ISOCitation$new()
+#'    ct$setTitle("sometitle")
+#'    d <- ISODate$new()
+#'    d$setDate(ISOdate(2015, 1, 1, 1))
+#'    d$setDateType("publication")
+#'    ct$addDate(d)
+#'    ct$setEdition("1.0")
+#'    ct$setEditionDate(as.Date(ISOdate(2015, 1, 1, 1)))
+#'    ct$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+#'    ct$setPresentationForm("mapDigital")
+#'    ct$setCitedResponsibleParty(rp)
+#'    ident$setCitation(ct)
+#'    
+#'    #graphic overview
+#'    go1 <- ISOBrowseGraphic$new(
+#'      fileName = "http://wwww.somefile.org/png1",
+#'      fileDescription = "Map Overview 1",
+#'      fileType = "image/png"
+#'    )
+#'    go2 <- ISOBrowseGraphic$new(
+#'      fileName = "http://www.somefile.org/png2",
+#'      fileDescription = "Map Overview 2",
+#'      fileType = "image/png"
+#'    )
+#'    ident$addGraphicOverview(go1)
+#'    ident$addGraphicOverview(go2)
+#'    
+#'    #maintenance information
+#'    mi <- ISOMaintenanceInformation$new()
+#'    mi$setMaintenanceFrequency("daily")
+#'    ident$setResourceMaintenance(mi)
+#'    
+#'    #adding legal constraints
+#'    lc <- ISOLegalConstraints$new()
+#'    lc$addUseLimitation("limitation1")
+#'    lc$addUseLimitation("limitation2")
+#'    lc$addUseLimitation("limitation3")
+#'    lc$addAccessConstraint("copyright")
+#'    lc$addAccessConstraint("license")
+#'    lc$addUseConstraint("copyright")
+#'    lc$addUseConstraint("license")
+#'    ident$addResourceConstraints(lc)
+#'    
+#'    #adding security constraints
+#'    sc <- ISOSecurityConstraints$new()
+#'    sc$setClassification("secret")
+#'    sc$setUserNote("ultra secret")
+#'    sc$setClassificationSystem("no classification in particular")
+#'    sc$setHandlingDescription("description")
+#'    ident$addResourceConstraints(sc)
+#'    
+#'    #adding extent
+#'    extent <- ISOExtent$new()
+#'    bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
+#'    extent$setGeographicElement(bbox)
+#'    ident$setExtent(extent)
+#'    
+#'    #add keywords
+#'    kwds <- ISOKeywords$new()
+#'    kwds$addKeyword("keyword1")
+#'    kwds$addKeyword("keyword2")
+#'    kwds$setKeywordType("theme")
+#'    th <- ISOCitation$new()
+#'    th$setTitle("General")
+#'    th$addDate(d)
+#'    kwds$setThesaurusName(th)
+#'    ident$addKeywords(kwds)
+#'    
+#'    #supplementalInformation
+#'    ident$setSupplementalInformation("some additional information")
+#'    
+#'    #spatial representation type
+#'    ident$addSpatialRepresentationType("vector")
+#'    
+#'    md$setIdentificationInfo(ident)
+#'    
+#'    #Distribution
+#'    distrib <- ISODistribution$new()
+#'    dto <- ISODigitalTransferOptions$new()  
+#'    for(i in 1:3){
+#'      or <- ISOOnlineResource$new()
+#'      or$setLinkage(paste0("http://somelink",i))
+#'      or$setName(paste0("name",i))
+#'      or$setDescription(paste0("description",i))
+#'      or$setProtocol("WWW:LINK-1.0-http--link")
+#'      dto$addOnlineResource(or)
+#'    }
+#'    distrib$setDigitalTransferOptions(dto)
+#'    md$setDistributionInfo(distrib)
+#'    
+#'    #Data Quality
+#'    dq <- ISODataQuality$new()
+#'    scope <- ISOScope$new()
+#'    scope$setLevel("dataset")
+#'    dq$setScope(scope)
+#'    
+#'    #add report
+#'    dc <- ISODomainConsistency$new()
+#'    result <- ISOConformanceResult$new()
+#'    spec <- ISOCitation$new()
+#'    spec$setTitle("specification title")
+#'    spec$setAlternateTitle("specification alternate title")
+#'    d <- ISODate$new()
+#'    d$setDate(ISOdate(2015, 1, 1, 1))
+#'    d$setDateType("publication")
+#'    spec$addDate(d)
+#'    result$setSpecification(spec)
+#'    result$setExplanation("some explanation about the conformance")
+#'    result$setPass(TRUE)
+#'    dc$addResult(result)
+#'    dq$addReport(dc)
+#'    
+#'    #add lineage
+#'    lineage <- ISOLineage$new()
+#'    lineage$setStatement("statement")
+#'    dq$setLineage(lineage)
+#'    
+#'    md$setDataQualityInfo(dq)
+#'    
+#'    #XML representation of the ISOMetadata
+#'    xml <- md$encode()
+#'    
+#'    #example 2 - READ: Create an ISO metadata reading from XML
+#'    ######################################################
+#'    xmlfile <- system.file("extdata", "metadata.xml", package = "geometa")
+#'    xml <- xmlParse(xmlfile)
+#'    md <- ISOMetadata$new(xml = xml)
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMetadata <- R6Class("ISOMetadata",
