@@ -15,11 +15,10 @@ Current Focus:
 * ISO 19139 XML with **Encoding** and **Decoding** support
 * Classes for describing **vector data**
 
-To do:
-
+Next:
 * 1st release in CRAN
 
-Next:
+Nice to have:
 * Add classes for ISO 19110 / Feature Catalogue
 * Add classes specific to raster/coverage data description
 
