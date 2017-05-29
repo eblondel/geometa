@@ -77,7 +77,7 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
      
      #getAcceptedValues
      getAcceptedValues = function(){
-       return(getISOCodelist(self$codelistId)$entries$value)
+       return(self$codelistId$entries$value)
      }
    )                        
 )
