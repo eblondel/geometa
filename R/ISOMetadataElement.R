@@ -77,6 +77,67 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       return(self$namespace$getDefinition())
     },
     
+    #getClassName
+    getClassName = function(){
+      return(class(self)[1])
+    },
+    
+    #print
+    print = function(..., depth = 1){
+      #list of fields to encode as XML
+      fields <- rev(names(self))
+      
+      #fields
+      fields <- fields[!sapply(fields, function(x){
+        (class(self[[x]]) %in% c("environment", "function")) ||
+          (x %in% c("wrap", "element", "namespace", "defaults", "attrs", "codelistId", "measureType"))
+      })]
+      
+      cat(sprintf("<%s>", self$getClassName()))
+      
+      for(field in fields){
+        fieldObj <- self[[field]]
+        
+        #default values management
+        if(is.null(fieldObj) || (is.list(fieldObj) & length(fieldObj)==0)){
+          if(field %in% names(self$defaults)){
+            fieldObj <- self$defaults[[field]]
+          }
+        }
+        
+        #user values management
+        shift <- "...."
+        if(!is.null(fieldObj)){
+          if(is(fieldObj, "ISOMetadataElement")){
+            cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, " "))
+            fieldObj$print(depth = depth+1)
+            if(is(fieldObj, "ISOMetadataCodelistElement")){
+              clVal <- fieldObj$attrs$codeListValue
+              clDes <- fieldObj$codelistId$entries[fieldObj$codelistId$entries$value == clVal,"description"]
+              cat(paste0(": ", clVal, " {",clDes,"}"))
+            }
+          }else if(is(fieldObj, "list")){
+            for(item in fieldObj){
+              if(is(item, "ISOMetadataElement")){
+                cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, " "))
+                item$print(depth = depth+1)
+                if(is(item, "ISOMetadataCodelistElement")){
+                  clVal <- item$attrs$codeListValue
+                  clDes <- item$codelistId$entries[item$codelistId$entries$value == clVal,"description"]
+                  cat(paste0(": ", clVal, " {",clDes,"}"))
+                }
+              }else{
+                cat(paste0("\n", ifelse(depth>0,rep(shift, depth),""),"|-- ", field, ": ", fieldObj))
+              }
+            }
+          }else{
+            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", fieldObj))
+          }
+        }
+      }
+      invisible(self)
+    },
+    
     #decode
     decode = function(xml){
       if(is(xml, "XMLInternalDocument")){
