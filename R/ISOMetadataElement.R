@@ -127,7 +127,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                   cat(paste0(": ", clVal, " {",clDes,"}"))
                 }
               }else{
-                cat(paste0("\n", ifelse(depth>0,rep(shift, depth),""),"|-- ", field, ": ", fieldObj))
+                cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", item))
               }
             }
           }else{
