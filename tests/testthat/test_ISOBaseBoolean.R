@@ -1,23 +1,24 @@
-# test_ISOBaseInteger.R
+# test_ISOBaseBoolean.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOBaseInteger.R
+# Description: Unit tests for ISOBaseBoolean.R
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISOBaseInteger")
+context("ISOBaseBoolean")
 
 test_that("encoding",{
   
   #encoding
-  md <- ISOBaseInteger$new(value = 19L)
-  expect_is(md, "ISOBaseInteger")
+  md <- ISOBaseBoolean$new(value = TRUE)
+  expect_is(md, "ISOBaseBoolean")
+  expect_equal(md$value, "true")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  md2 <- ISOBaseInteger$new(xml = xml)
+  md2 <- ISOBaseBoolean$new(xml = xml)
   xml2 <- md2$encode()
   
   expect_true(ISOMetadataElement$compare(md, md2))
@@ -27,13 +28,14 @@ test_that("encoding",{
 test_that("encoding with coercing",{
   
   #encoding
-  md <- ISOBaseInteger$new(value = "19")
-  expect_is(md, "ISOBaseInteger")
+  md <- ISOBaseBoolean$new(value = "true")
+  expect_is(md, "ISOBaseBoolean")
+  expect_equal(md$value, "true")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  md2 <- ISOBaseInteger$new(xml = xml)
+  md2 <- ISOBaseBoolean$new(xml = xml)
   xml2 <- md2$encode()
   
   expect_true(ISOMetadataElement$compare(md, md2))
