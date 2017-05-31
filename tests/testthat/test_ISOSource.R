@@ -10,7 +10,7 @@ context("ISOSource")
 
 test_that("encoding",{
   
-  src <- ISOSource$new()
+  md <- ISOSource$new()
   md$setDescription("description")
   md$setScaleDenominator(1L)
   
