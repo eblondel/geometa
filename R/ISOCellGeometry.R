@@ -1,9 +1,9 @@
-#' ISOCellGeometryCode
+#' ISOCellGeometry
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO cell geometry code
+#' @keywords ISO cell geometry
 #' @return Object of \code{\link{R6Class}} for modelling an ISO CellGeometryCode
 #' @format \code{\link{R6Class}} object.
 #'
@@ -12,20 +12,20 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOCellGeometryCode
+#'    This method is used to instantiate an ISOCellGeometry
 #'  }
 #' }
 #' 
 #' @examples 
 #'   #possible values
-#'   values <- ISOCellGeometryCode$values(labels = TRUE)
+#'   values <- ISOCellGeometry$values(labels = TRUE)
 #'   
 #'   #example of 'point' cell geometry code
-#'   pointCode <- ISOCellGeometryCode$new(value = "point")
+#'   pointCode <- ISOCellGeometry$new(value = "point")
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOCellGeometryCode <- R6Class("ISOCellGeometryCode",
+ISOCellGeometry <- R6Class("ISOCellGeometry",
     inherit = ISOMetadataCodelistElement,
     private = list(
       xmlElement = "MD_CellGeometryCode",
@@ -38,6 +38,6 @@ ISOCellGeometryCode <- R6Class("ISOCellGeometryCode",
     )                        
 )
 
-ISOCellGeometryCode$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOCellGeometryCode, labels))
+ISOCellGeometry$values <- function(labels = FALSE){
+  return(ISOMetadataCodelistElement$values(ISOCellGeometry, labels))
 }
