@@ -94,6 +94,11 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       })]
       
       cat(sprintf("<%s>", self$getClassName()))
+      if(is(self, "ISOMetadataCodelistElement")){
+        clVal <- self$attrs$codeListValue
+        clDes <- self$codelistId$entries[self$codelistId$entries$value == clVal,"description"]
+        cat(paste0(": ", clVal, " {",clDes,"}"))
+      }
       
       for(field in fields){
         fieldObj <- self[[field]]
@@ -111,11 +116,6 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
           if(is(fieldObj, "ISOMetadataElement")){
             cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, " "))
             fieldObj$print(depth = depth+1)
-            if(is(fieldObj, "ISOMetadataCodelistElement")){
-              clVal <- fieldObj$attrs$codeListValue
-              clDes <- fieldObj$codelistId$entries[fieldObj$codelistId$entries$value == clVal,"description"]
-              cat(paste0(": ", clVal, " {",clDes,"}"))
-            }
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
               if(is(item, "ISOMetadataElement")){
