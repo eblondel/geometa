@@ -121,7 +121,8 @@ fetchISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MD_ProgressCode"),
     ISOCodelist$new(gmxCL, "MD_SpatialRepresentationTypeCode"),
     ISOCodelist$new(gmxCL, "MD_ClassificationCode"),
-    ISOCodelist$new(gmxCL, "MD_CellGeometryCode")
+    ISOCodelist$new(gmxCL, "MD_CellGeometryCode"),
+    ISOCodelist$new(gmxCL, "MD_DimensionNameTypeCode")
   )
   names(codelists) <- sapply(codelists, function(cl){cl$identifier})
   .geometa.iso$codelists <- codelists
