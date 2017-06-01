@@ -99,14 +99,12 @@ ISOCodelist <- R6Class("ISOCodelist",
 #' @export
 fetchISOCodelists <- function(){
 
-  #parse language codelist
-  #from http://www.loc.gov/standards/iso639-2/
-  languageCL <- ISOCodelist$new("ISO-639-2_utf-8.txt", "LanguageCode")
-  
   #parse other ISO codelists
+  languageCL <- "ISO-639-2_utf-8.txt" #from http://www.loc.gov/standards/iso639-2/
   ML_gmxCL <- "ML_gmxCodelists.xml"
   gmxCL <- "gmxCodelists.xml"
   codelists <- list(
+    ISOCodelist$new(languageCL, "LanguageCode"),
     ISOCodelist$new(ML_gmxCL, "MD_CharacterSetCode"),
     ISOCodelist$new(ML_gmxCL, "MD_ScopeCode"),
     ISOCodelist$new(gmxCL, "CI_RoleCode"),
