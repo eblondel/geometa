@@ -68,11 +68,13 @@ ISOGridSpatialRepresentation <- R6Class("ISOGridSpatialRepresentation",
       #+ transformationParameterAvailability : logical
       transformationParameterAvailability = NULL,
       
-      initialize = function(xml = NULL){
+      initialize = function(xml = NULL, element = NULL, namespace = NULL){
+        if(is.null(element)) element <- private$xmlElement
+        if(is.null(namespace)) namespace <- getISOMetadataNamespace(private$xmlNamespacePrefix)
         super$initialize(
           xml = xml,
-          element = private$xmlElement,
-          namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
+          element = element,
+          namespace = namespace
         )
       },
       
