@@ -15,6 +15,8 @@ test_that("encoding",{
   md$setMemberName("name")
   md$setDefinition("definition")
   md$setCardinality(lower=1,upper=1)
+  md$setSignature("signature")
+  md$setFormalDefinition("def")
   expect_is(md, "ISOFeatureOperation")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
