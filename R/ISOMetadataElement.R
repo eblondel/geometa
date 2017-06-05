@@ -271,6 +271,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                         "numeric"   = ISOBaseReal$new(value = fieldObj),
                         "decimal"   = ISOBaseDecimal$new(value = fieldObj), #Requires specific class call
                         "integer"   = ISOBaseInteger$new(value = fieldObj),
+                        "unlimitedinteger" = ISOUnlimitedInteger$new(value = fieldObj),
                         "logical"   = ISOBaseBoolean$new(value = fieldObj),
                         "datetime"  = ISOBaseDateTime$new(value = fieldObj),
                         "date"      = ISOBaseDate$new(value = fieldObj),
