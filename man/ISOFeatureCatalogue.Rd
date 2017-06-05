@@ -28,14 +28,54 @@ ISOFeatureCatalogue
  \item{\code{setName(name)}}{
    Sets the name
  }
+ \item{\code{addScope(scope)}}{
+   Adds scope (object of class \code{character})
+ }
+ \item{\code{delScope(scope)}}{
+   Deletes scope
+ }
+ \item{\code{addFieldOfApplication(fieldOfApplication)}}{
+   Adds a field of application (object of class \code{character})
+ }
+ \item{\code{delFieldOfApplication(fieldOfApplication)}}{
+   Deletes fieldOfApplication
+ }
+ \item{\code{setVersionNumber(versionNumber)}}{
+   Sets version number (object of class \code{character})
+ }
+ \item{\code{setVersionDate(versionDate)}}{
+   Sets version date
+ }
+ \item{\code{setProducer(producer)}}{
+   Sets an object of class \code{ISOResponsibleParty} as producer
+ }
+ \item{\code{setFunctionalLanguage(functionalLanguage)}}{
+   Sets the functional language
+ }
 }
 }
 \examples{
 fc <- ISOFeatureCatalogue$new()
+ fc$setName("name")
+ fc$addScope("scope1")
+ fc$addScope("scope2")
+ fc$addFieldOfApplication("field1")
+ fc$addFieldOfApplication("field2")
+ fc$setVersionNumber("1.0")
+ fc$setVersionDate(ISOdate(2015, 1, 1, 1))
+
+ producer <- ISOResponsibleParty$new()
+ producer$setIndividualName("someone")
+ fc$setProducer(producer)
+ fc$setFunctionalLanguage("eng")
+
  xml <- fc$encode()
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
+}
+\references{
+ISO 19110:2005 Methodology for Feature cataloguing
 }
 \keyword{ISO}
 \keyword{catalogue}

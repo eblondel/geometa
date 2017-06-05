@@ -17,11 +17,51 @@
 #'  \item{\code{setName(name)}}{
 #'    Sets the name
 #'  }
+#'  \item{\code{addScope(scope)}}{
+#'    Adds scope (object of class \code{character})
+#'  }
+#'  \item{\code{delScope(scope)}}{
+#'    Deletes scope
+#'  }
+#'  \item{\code{addFieldOfApplication(fieldOfApplication)}}{
+#'    Adds a field of application (object of class \code{character})
+#'  }
+#'  \item{\code{delFieldOfApplication(fieldOfApplication)}}{
+#'    Deletes fieldOfApplication
+#'  }
+#'  \item{\code{setVersionNumber(versionNumber)}}{
+#'    Sets version number (object of class \code{character})
+#'  }
+#'  \item{\code{setVersionDate(versionDate)}}{
+#'    Sets version date
+#'  }
+#'  \item{\code{setProducer(producer)}}{
+#'    Sets an object of class \code{ISOResponsibleParty} as producer
+#'  }
+#'  \item{\code{setFunctionalLanguage(functionalLanguage)}}{
+#'    Sets the functional language
+#'  }
 #' }
 #'
 #' @examples 
 #'  fc <- ISOFeatureCatalogue$new()
+#'  fc$setName("name")
+#'  fc$addScope("scope1")
+#'  fc$addScope("scope2")
+#'  fc$addFieldOfApplication("field1")
+#'  fc$addFieldOfApplication("field2")
+#'  fc$setVersionNumber("1.0")
+#'  fc$setVersionDate(ISOdate(2015, 1, 1, 1))
+#'  
+#'  producer <- ISOResponsibleParty$new()
+#'  producer$setIndividualName("someone")
+#'  fc$setProducer(producer)
+#'  fc$setFunctionalLanguage("eng")
+#'  
 #'  xml <- fc$encode()
+#'  
+#' @references 
+#'   ISO 19110:2005 Methodology for Feature cataloguing
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -32,13 +72,22 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       xmlNamespacePrefix = "GFC"
     ),
     public = list(
+      #+ name [1..1]: character
       name = NULL,
+      #+ scope [1..*]: character
       scope = list(),
+      #+ fieldOfApplication [0.*]: character
       fieldOfApplication = list(),
+      #+ versionNumber [1..1]: character
       versionNumber = NULL,
+      #+ versionDate [1..1]: character
       versionDate = NULL,
+      #+ producer [1..1]: ISOResponsibleParty
       producer = NULL,
+      #+ functionalLanguage [0..1]: character 
       functionalLanguage = NULL,
+      #+ featureType [1..*]: ISOFeatureType
+      featureType = list(),
       initialize = function(xml = NULL){
         super$initialize(
           xml = xml,
@@ -96,7 +145,22 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       setFunctionalLanguage = function(functionalLanguage){
         if(!is(functionalLanguage,"character")) functionalLanguage <- as(functionalLanguage, "character")
         self$functionalLanguage <- functionalLanguage
-      }
+      },
       
+      #addFeatureType
+      addFeatureType = function(featureType){
+        if(!is(featureType, "ISOFeatureType")){
+          stop("The argument should be a 'ISOFeatureType' object")
+        }
+        return(self$addListElement("featureType", featureType))
+      },
+      
+      #delFeatureType
+      delFeatureType = function(featureType){
+        if(!is(featureType, "ISOFeatureType")){
+          stop("The argument should be a 'ISOFeatureType' object")
+        }
+        return(self$delListElement("featureType", featureType))
+      }
     )                        
 )
