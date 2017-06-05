@@ -257,7 +257,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             if(fieldObj$wrap){
               wrapperNode <- xmlOutputDOM(
                 tag = field,
-                nameSpace = ISOMetadataNamespace$GMD$id
+                nameSpace = self$namespace$id
               )
               wrapperNode$addNode(fieldObj$encode(addNS = FALSE))
               rootXML$addNode(wrapperNode$value())
@@ -275,7 +275,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
               if(nodeValue$wrap){
                 wrapperNode <- xmlOutputDOM(
                   tag = field,
-                  nameSpace = ISOMetadataNamespace$GMD$id
+                  nameSpace = self$namespace$id
                 )
                 wrapperNode$addNode(nodeValue$encode(addNS = FALSE))
                 rootXML$addNode(wrapperNode$value())
@@ -293,7 +293,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                   #general case of gco wrapper element
                   wrapperNode <- xmlOutputDOM(
                     tag = field,
-                    nameSpace = ISOMetadataNamespace$GMD$id
+                    nameSpace = self$namespace$id
                   )
                   wrapperNode$addNode(dataObj$encode(addNS = FALSE))
                   rootXML$addNode(wrapperNode$value())
@@ -332,6 +332,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                         "numeric"   = ISOBaseReal$new(value = fieldObj),
                         "decimal"   = ISOBaseDecimal$new(value = fieldObj), #Requires specific class call
                         "integer"   = ISOBaseInteger$new(value = fieldObj),
+                        "unlimitedinteger" = ISOUnlimitedInteger$new(value = fieldObj),
                         "logical"   = ISOBaseBoolean$new(value = fieldObj),
                         "datetime"  = ISOBaseDateTime$new(value = fieldObj),
                         "date"      = ISOBaseDate$new(value = fieldObj),
