@@ -196,7 +196,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             if(fieldObj$wrap){
               wrapperNode <- xmlOutputDOM(
                 tag = field,
-                nameSpace = ISOMetadataNamespace$GMD$id
+                nameSpace = self$namespace$id
               )
               wrapperNode$addNode(fieldObj$encode(addNS = FALSE))
               rootXML$addNode(wrapperNode$value())
@@ -214,7 +214,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
               if(nodeValue$wrap){
                 wrapperNode <- xmlOutputDOM(
                   tag = field,
-                  nameSpace = ISOMetadataNamespace$GMD$id
+                  nameSpace = self$namespace$id
                 )
                 wrapperNode$addNode(nodeValue$encode(addNS = FALSE))
                 rootXML$addNode(wrapperNode$value())
@@ -232,7 +232,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                   #general case of gco wrapper element
                   wrapperNode <- xmlOutputDOM(
                     tag = field,
-                    nameSpace = ISOMetadataNamespace$GMD$id
+                    nameSpace = self$namespace$id
                   )
                   wrapperNode$addNode(dataObj$encode(addNS = FALSE))
                   rootXML$addNode(wrapperNode$value())
