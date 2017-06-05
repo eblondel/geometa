@@ -42,7 +42,7 @@
 #'  ft$setTypeName("typeName")
 #'  ft$setDefinition("definition")
 #'  ft$setCode("code")
-#'  ft$isAbstract(FALSE)
+#'  ft$setIsAbstract(FALSE)
 #'  ft$addAlias("alias1")
 #'  ft$addAlias("alias2")
 #'  xml <- ft$encode()
