@@ -47,14 +47,17 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       #+ cardinality [1..1]: ISOMultiplicityRange
       cardinality = NULL,
       
-      initialize = function(xml = NULL){
+      initialize = function(xml = NULL,
+                            element = NULL, namespace = NULL,
+                            defaults = NULL){
         
-        defaults = list(cardinality = ISOMultiplicityRange$new(lower=1L,upper=1L))
-        
+        if(is.null(element)) element <- private$xmlElement
+        if(is.null(namespace)) namespace <- getISOMetadataNamespace(private$xmlNamespacePrefix)
+        if(is.null(defaults)) defaults <- list(cardinality = ISOMultiplicityRange$new(lower=1L,upper=1L))
         super$initialize(
           xml = xml,
-          element = private$xmlElement,
-          namespace = getISOMetadataNamespace(private$xmlNamespacePrefix),
+          element = element,
+          namespace = namespace,
           defaults = defaults
         )
       },

@@ -35,8 +35,8 @@ ISOPropertyType
  \item{\code{setDefinition(definition)}}{
    Sets the definition
  }
- \item{\code{setCardinality(cardinality)}}{
-   Sets the cardinality
+ \item{\code{setCardinality(lower, upper)}}{
+   Sets the cardinality boundaries lower and upper of class \code{numeric}
  }
 }
 }
