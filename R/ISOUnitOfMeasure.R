@@ -30,7 +30,7 @@ ISOUnitOfMeasure <- R6Class("ISOUnitOfMeasure",
   inherit = ISOMetadataElement,
   private = list(
     xmlElement = "UnitOfMeasure",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = "GCO"
   ),
   public = list(
     uomName = NULL,

@@ -27,7 +27,7 @@ ISOUomLength <- R6Class("ISOUomLength",
   inherit = ISOUnitOfMeasure,
   private = list(
     xmlElement = "UomLength",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = "GCO"
   ),
   public = list(
     initialize = function(xml = NULL){
