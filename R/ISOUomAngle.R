@@ -1,37 +1,37 @@
-#' ISOUomLength
+#' ISOUomAngle
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO unit measure length
-#' @return Object of \code{\link{R6Class}} for modelling an ISO UomLength
+#' @keywords ISO unit measure angle
+#' @return Object of \code{\link{R6Class}} for modelling an ISOUomAngle
 #' @format \code{\link{R6Class}} object.
 #'
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOUomLength
+#'    This method is used to instantiate an ISOUomAngle
 #'  }
 #' }
 #' 
 #' @examples 
-#'   uom <- ISOUomLength$new()
-#'   uom$setUomName("Meter")
-#'   uom$setUomSymbol("m")
+#'   uom <- ISOUomAngle$new()
+#'   uom$setUomName("Degrees")
+#'   uom$setUomSymbol("deg")
 #'   xml <- uom$encode()
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOUomLength <- R6Class("ISOUomLength",
+ISOUomAngle <- R6Class("ISOUomAngle",
   inherit = ISOUnitOfMeasure,
   private = list(
-    xmlElement = "UomLength",
+    xmlElement = "UomAngle",
     xmlNamespacePrefix = "GCO"
   ),
   public = list(
     initialize = function(xml = NULL){
-      super$initialize(xml = xml, measureType = "length")
+      super$initialize(xml = xml, measureType = "angle")
     }
   )                        
 )

@@ -45,12 +45,12 @@ md <- ISOFeatureAttribute$new()
   md$setMemberName("name")
   md$setDefinition("definition")
   md$setCardinality(lower=1,upper=1)
-  md$setCode(code)
+  md$setCode("code")
 
   uom <- ISOUomLength$new()
   uom$setUomName("Meter")
   uom$setUomSymbol("m")
-  md$setValueMeasurementType(uom)
+  md$setValueMeasurementUnit(uom)
 
   md$setValueType("typeName")
 }

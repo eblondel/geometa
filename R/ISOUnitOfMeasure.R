@@ -42,11 +42,6 @@ ISOUnitOfMeasure <- R6Class("ISOUnitOfMeasure",
     formula = NULL,
     initialize = function(xml = NULL, measureType){
       
-      measureTypes <- c("area", "length", "angle", "time", "velocity", "volume", "scale", "weight")
-      if(!(measureType %in% measureTypes)){
-        stop(sprintf("Unknown measure type '%s'. Possibles values are [%s]",
-                     measureType, paste0(measureTypes, collapse=",")))
-      }
       self$measureType <- measureType
       
       super$initialize(
