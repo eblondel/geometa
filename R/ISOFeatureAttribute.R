@@ -9,6 +9,7 @@
 #'
 #' @field code
 #' @field valueMeasurementUnit
+#' @field listedValue
 #' @field valueType
 #'
 #' @section Methods:
@@ -21,6 +22,12 @@
 #'  }
 #'  \item{\code{setValueMeasurementUnit(uom)}}{
 #'    Sets the value measurement unit
+#'  }
+#'  \item{\code{addListedValue(value)}}{
+#'    Adds a listed value (object of class \code{ISOListedValue})
+#'  }
+#'  \item{\code{delListedValue(value)}}{
+#'   Deletes a listed value (object of class \code{ISOListedValue})
 #'  }
 #'  \item{\code{setValueType(typeName)}}{
 #'    Sets the value type
@@ -39,6 +46,18 @@
 #'   uom$setUomSymbol("m")
 #'   md$setValueMeasurementUnit(uom)
 #'   
+#'   ISOListedValue( = "One")
+#'   
+#'   val1 <- ISOListedValue()
+#'   val1$setCode("code1")
+#'   val1$setLabel("label1")
+#'   val1$setDefinition("definition1)
+#'   md$addListedValue(val1)
+#'   val2 <- ISOListedValue()
+#'   val2$setCode("code2")
+#'   val2$setLabel("label2")
+#'   val2$setDefinition("definition12)
+#'   md$addListedValue(val2)
 #'   md$setValueType("typeName")
 #'  
 #' @references 
@@ -58,6 +77,8 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      code = NULL,
      #+ valueMeasurementUnit [0..1]: ISOUnitOfMeasure
      valueMeasurementUnit = NULL,
+     #+ listedValue [0..*]: ISOListedValue
+     listedValue = list(),
      #+ valueType [0..1]: ISOTypeName
      valueType = NULL,
      
@@ -80,6 +101,22 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
          stop("The argument should be an object of class 'ISOUnitOfMeasure")
        } 
        self$valueMeasurementUnit <- uom
+     },
+     
+     #addListedValue
+     addListedValue = function(value){
+       if(!is(value, "ISOListedValue")){
+         value <- ISOListedValue$new(label = value)
+       }
+       return(self$addListElement("listedValue", value))
+     },
+     
+     #delListedValue
+     delListedValue = function(value){
+       if(!is(value, "ISOListedValue")){
+         value <- ISOListedValue$new(label = value)
+       }
+       return(self$delListElement("listedValue", value))
      },
      
      #setValueType

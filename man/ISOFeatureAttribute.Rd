@@ -21,6 +21,8 @@ ISOFeatureAttribute
 
 \item{\code{valueMeasurementUnit}}{}
 
+\item{\code{listedValue}}{}
+
 \item{\code{valueType}}{}
 }}
 \section{Methods}{
@@ -34,6 +36,12 @@ ISOFeatureAttribute
  }
  \item{\code{setValueMeasurementUnit(uom)}}{
    Sets the value measurement unit
+ }
+ \item{\code{addListedValue(value)}}{
+   Adds a listed value (object of class \code{ISOListedValue})
+ }
+ \item{\code{delListedValue(value)}}{
+  Deletes a listed value (object of class \code{ISOListedValue})
  }
  \item{\code{setValueType(typeName)}}{
    Sets the value type
@@ -52,6 +60,18 @@ md <- ISOFeatureAttribute$new()
   uom$setUomSymbol("m")
   md$setValueMeasurementUnit(uom)
 
+  ISOListedValue( = "One")
+
+  val1 <- ISOListedValue()
+  val1$setCode("code1")
+  val1$setLabel("label1")
+  val1$setDefinition("definition1)
+  md$addListedValue(val1)
+  val2 <- ISOListedValue()
+  val2$setCode("code2")
+  val2$setLabel("label2")
+  val2$setDefinition("definition12)
+  md$addListedValue(val2)
   md$setValueType("typeName")
 }
 \author{
