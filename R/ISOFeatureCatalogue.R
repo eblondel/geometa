@@ -90,6 +90,7 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       xmlNamespacePrefix = "GFC"
     ),
     public = list(
+      
       #+ name [1..1]: character
       name = NULL,
       #+ scope [1..*]: character
@@ -108,6 +109,7 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       featureType = list(),
       #+ definitionSource [0..*]: ISODefinitionSource
       definitionSource = list(),
+      
       initialize = function(xml = NULL){
         super$initialize(
           xml = xml,
