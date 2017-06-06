@@ -54,7 +54,7 @@ ISOListedValue <- R6Class("ISOListedValue",
      code = NULL,
      #+ definition [0..1]: character
      definition = NULL,
-     #+ definitionReference [0..1]: ? TODO
+     #+ definitionReference [0..1]: ISODefinitionReference
      definitionReference = NULL,
      
      initialize = function(xml = NULL){
@@ -82,7 +82,10 @@ ISOListedValue <- R6Class("ISOListedValue",
      
      #setDefinitionReference
      setDefinitionReference = function(definitionReference){
-       stop("Method not yet implemented in geometa!")
+       if(!is(definitionReference, "ISODefinitionReference")){
+         stop("The argument should be an object of class 'ISODefinitionReference'")
+       }
+       self$definitionReference <- definitionReference
      }
    )         
 )

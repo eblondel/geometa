@@ -11,6 +11,12 @@
 #' @field definition
 #' @field code
 #' @field isAbstract
+#' @field aliases
+#' @field inheritsFrom
+#' @field inheritsTo
+#' @field featureCatalogue
+#' @field carrierOfCharacteristics
+#' @field 
 #'
 #' @section Methods:
 #' \describe{
@@ -34,6 +40,24 @@
 #'  }
 #'  \item{\code{delAlias(alias)}}{
 #'    Deletes alias name
+#'  }
+#'  \item{\code{setFeatureCatalogue(fc)}}{
+#'    Sets a feature catalogue, object of class \code{ISOFeatureCatalogue}
+#'  }
+#'  \item{\code{addCharacteristic(characteristic)}}{
+#'    Adds a characteristic as object of class \code{ISOPropertyType} or subclass
+#'  }
+#'  \item{\code{delCharacteristic(characteristic)}}{
+#'    Deletes a characteristic as object of class \code{ISOPropertyType} or subclass
+#'  }
+#'  \item{\code{addConstraint(constraint)}}{
+#'    Adds a constraint, object of class \code{ISOConstraint} or \code{character}
+#'  }
+#'  \item{\code{delConstraint(constraint)}}{
+#'    Deletes a constraint, object of class \code{ISOConstraint} or \code{character}
+#'  }
+#'  \item{\code{setDefinitionReference(definitionReference)}}{
+#'    Sets the definition Reference, object of class \code{ISODefinitionReference}
 #'  }
 #' }
 #'
@@ -59,6 +83,7 @@ ISOFeatureType <- R6Class("ISOFeatureType",
      xmlNamespacePrefix = "GFC"
    ),
    public = list(
+     
      #+ typeName [1..1]: ISOLocalName
      typeName = NULL,
      #+ definition [0..1]: character
@@ -81,6 +106,7 @@ ISOFeatureType <- R6Class("ISOFeatureType",
      constrainedBy = list(),
      #+ definitionReference [0..*]: ISODefinitionReference
      definitionReference = list(),
+     
      initialize = function(xml = NULL){
        super$initialize(
          xml = xml,
@@ -152,6 +178,46 @@ ISOFeatureType <- R6Class("ISOFeatureType",
          stop("Argument value should be an object of class 'ISOFeatureCatalogue'")
        }
        self$featureCatalogue = fc
+     },
+     
+     #addCharacteristic
+     addCharacteristic = function(characteristic){
+       if(!is(characteristic, "ISOPropertyType")){
+         stop("The argument should be an object of class 'ISOPropertyType' or subclass")
+       }
+       return(self$addListElement("carrierOfCharacteristics", characteristic))
+     },
+     
+     #delCharacteristic
+     delCharacteristic = function(characteristic){
+       if(!is(characteristic, "ISOPropertyType")){
+         stop("The argument should be an object of class 'ISOPropertyType' or subclass")
+       }
+       return(self$delListElement("carrierOfCharacteristics", characteristic))
+     },
+     
+     #addConstraint
+     addConstraint = function(constraint){
+       if(!is(constraint, "ISOConstraint")){
+         constraint <- ISOConstraint$new(description = constraint)
+       }
+       return(self$addListElement("constrainedBy", constraint))
+     },
+     
+     #delConstraint
+     delConstraint = function(constraint){
+       if(!is(constraint, "ISOConstraint")){
+         constraint <- ISOConstraint$new(description = constraint)
+       }
+       return(self$delListElement("constrainedBy", constraint))
+     },
+     
+     #setDefinitionReference
+     setDefinitionReference = function(definitionReference){
+       if(!is(definition, "ISODefinitionReference")){
+         stop("The argument should be an object of class 'ISODefinitionReference'")
+       }
+       self$definitionReference = definitionReference
      }
    )         
 )
