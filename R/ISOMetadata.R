@@ -381,7 +381,7 @@ ISOMetadata <- R6Class("ISOMetadata",
      #unsupported sets (to implement)
      #----------------
      #+ contentInformation [0..*]
-     contentInformation = list(), #TODO
+     contentInformation = list(),
      #+ portrayalCatalogueInfo [0..*]
      portrayalCatalogueInfo = list(), #TODO
      #+ applicationSchemaInfo [0..*]
@@ -622,6 +622,25 @@ ISOMetadata <- R6Class("ISOMetadata",
          stop("The argument should be a 'ISOMaintenanceInformation' object")
        }
        self$metadataMaintenance <- metadataMaintenance
+     },
+     
+     #MD_ContentInformation
+     #--------------------------------------------------------------------------     
+     
+     #addContentInfo
+     addContentInfo = function(contentInfo){
+       if(!is(contentInfo,"ISOFeatureCatalogueDescription")){
+         stop("The argument should be a 'ISOFeatureCatalogueDescription' object")
+       }
+       return(self$addListElement("contentInformation", contentInfo))
+     },
+     
+     #delContentInfo
+     delContentInfo = function(contentInfo){
+       if(!is(contentInfo,"ISOFeatureCatalogueDescription")){
+         stop("The argument should be a 'ISOFeatureCatalogueDescription' object")
+       }
+       return(self$delListElement("contentInformation", contentInfo))
      }
      
   )                        
