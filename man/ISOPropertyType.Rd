@@ -22,6 +22,12 @@ ISOPropertyType
 \item{\code{definition}}{}
 
 \item{\code{cardinality}}{}
+
+\item{\code{featureType}}{}
+
+\item{\code{constrainedBy}}{}
+
+\item{\code{definitionReference}}{}
 }}
 \section{Methods}{
 
@@ -37,6 +43,21 @@ ISOPropertyType
  }
  \item{\code{setCardinality(lower, upper)}}{
    Sets the cardinality boundaries lower and upper of class \code{numeric}
+ }
+ \item{\code{addFeatureType(featureType)}}{
+   Adds a feature type, object of class \code{ISOFeatureType}
+ }
+ \item{\code{delFeatureType(featureType)}}{
+   Deletes a feature type, object of class \code{ISOFeatureType}
+ }
+ \item{\code{addConstraint(constraint)}}{
+   Adds a constraint, object of class \code{ISOConstraint} or \code{character}
+ }
+ \item{\code{delConstraint(constraint)}}{
+   Deletes a constraint, object of class \code{ISOConstraint} or \code{character}
+ }
+ \item{\code{setDefinitionReference(definitionReference)}}{
+   Sets the definition Reference, object of class \code{ISODefinitionReference}
  }
 }
 }

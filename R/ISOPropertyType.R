@@ -10,6 +10,9 @@
 #' @field memberName
 #' @field definition
 #' @field cardinality
+#' @field featureType
+#' @field constrainedBy
+#' @field definitionReference
 #'
 #' @section Methods:
 #' \describe{
@@ -24,6 +27,21 @@
 #'  }
 #'  \item{\code{setCardinality(lower, upper)}}{
 #'    Sets the cardinality boundaries lower and upper of class \code{numeric}
+#'  }
+#'  \item{\code{addFeatureType(featureType)}}{
+#'    Adds a feature type, object of class \code{ISOFeatureType}
+#'  }
+#'  \item{\code{delFeatureType(featureType)}}{
+#'    Deletes a feature type, object of class \code{ISOFeatureType}
+#'  }
+#'  \item{\code{addConstraint(constraint)}}{
+#'    Adds a constraint, object of class \code{ISOConstraint} or \code{character}
+#'  }
+#'  \item{\code{delConstraint(constraint)}}{
+#'    Deletes a constraint, object of class \code{ISOConstraint} or \code{character}
+#'  }
+#'  \item{\code{setDefinitionReference(definitionReference)}}{
+#'    Sets the definition Reference, object of class \code{ISODefinitionReference}
 #'  }
 #' }
 #'  
@@ -46,6 +64,12 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       definition = NULL,
       #+ cardinality [1..1]: ISOMultiplicityRange
       cardinality = NULL,
+      #+ featureType [0..*]: ISOFeatureType
+      featureType = list(),
+      #+ constrainedBy [0..*]: ISOConstraint
+      constrainedBy = list(),
+      #+ definitionReference [0..1]
+      definitionReference = NULL,
       
       initialize = function(xml = NULL,
                             element = NULL, namespace = NULL,
@@ -76,6 +100,46 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       #setCardinality
       setCardinality = function(lower, upper){
         self$cardinality = ISOMultiplicityRange$new(lower = lower, upper = upper)
+      },
+      
+      #addFeatureType
+      addFeatureType = function(featureType){
+        if(!is(featureType, "ISOFeatureType")){
+          stop("The argument should be an object of class 'ISOFeatureType'")
+        }
+        return(self$addListElement("featureType", featureType))
+      },
+      
+      #delFeatureType
+      delFeatureType = function(featureType){
+        if(!is(featureType, "ISOFeatureType")){
+          stop("The argument should be an object of class 'ISOFeatureType'")
+        }
+        return(self$delListElement("featureType", featureType))
+      },
+      
+      #addConstraint
+      addConstraint = function(constraint){
+        if(!is(constraint, "ISOConstraint")){
+          constraint <- ISOConstraint$new(description = constraint)
+        }
+        return(self$addListElement("constrainedBy", constraint))
+      },
+      
+      #delConstraint
+      delConstraint = function(constraint){
+        if(!is(constraint, "ISOConstraint")){
+          constraint <- ISOConstraint$new(description = constraint)
+        }
+        return(self$delListElement("constrainedBy", constraint))
+      },
+      
+      #setDefinitionReference
+      setDefinitionReference = function(definitionReference){
+        if(!is(definition, "ISODefinitionReference")){
+          stop("The argument should be an object of class 'ISODefinitionReference'")
+        }
+        self$definitionReference = definitionReference
       }
     )         
 )
