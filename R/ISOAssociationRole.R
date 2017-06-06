@@ -51,9 +51,9 @@ ISOAssociationRole <- R6Class("ISOAssociationRole",
      #+ type: ?
      type = NULL,
      #+ isOrdered: logical
-     isOrdered = NULL,
+     isOrdered = FALSE,
      #+ isNavigable: logical
-     isNavigable = NULL,
+     isNavigable = TRUE,
      #+ relation: ISOFeatureAssociation
      relation = NULL,
      #+ valueType: ISOFeatureType
