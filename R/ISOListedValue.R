@@ -29,7 +29,7 @@
 #' }
 #' 
 #' @examples 
-#'   val <- ISOListedValue()
+#'   val <- ISOListedValue$new()
 #'   val$setCode("code1")
 #'   val$setLabel("label1")
 #'   val$setDefinition("definition1")
