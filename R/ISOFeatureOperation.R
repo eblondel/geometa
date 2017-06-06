@@ -36,7 +36,7 @@ ISOFeatureOperation <- R6Class("ISOFeatureOperation",
    ),
    public = list(
      
-     #+ typeName: character
+     #+ signature: character
      signature = NULL,
      #+ definition [0..1]: character
      formalDefinition = NULL,
