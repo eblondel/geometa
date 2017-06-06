@@ -2,6 +2,7 @@
 
 export(ISOAddress)
 export(ISOAngle)
+export(ISOAssociationRole)
 export(ISOBaseBoolean)
 export(ISOBaseCharacterString)
 export(ISOBaseDate)
