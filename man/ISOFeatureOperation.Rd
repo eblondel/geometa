@@ -35,6 +35,14 @@ ISOFeatureOperation
  }
 }
 }
+\examples{
+md <- ISOFeatureOperation$new()
+  md$setMemberName("name")
+  md$setDefinition("definition")
+  md$setCardinality(lower=1,upper=1)
+  md$setSignature("signature")
+  md$setFormalDefinition("def")
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

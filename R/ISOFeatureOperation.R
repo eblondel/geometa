@@ -23,6 +23,14 @@
 #'  }
 #' }
 #'  
+#' @examples 
+#'   md <- ISOFeatureOperation$new()
+#'   md$setMemberName("name")
+#'   md$setDefinition("definition")
+#'   md$setCardinality(lower=1,upper=1)
+#'   md$setSignature("signature")
+#'   md$setFormalDefinition("def")
+#'  
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
 #' 
