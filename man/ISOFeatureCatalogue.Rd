@@ -52,6 +52,20 @@ ISOFeatureCatalogue
  \item{\code{setFunctionalLanguage(functionalLanguage)}}{
    Sets the functional language
  }
+ \item{\code{addFeatureType(featureType)}}{
+   Adds a feature type, object of class \code{ISOFeatureType}
+ }
+ \item{\code{delFeatureType(featureType)}}{
+   Deletes a feature type, object of class \code{ISOFeatureType}
+ }
+ \item{\code{addDefinitionSource(source)}}{
+   Adds a definition source, object of class \code{ISODefinitionSource} or
+   \code{ISOCitation}
+ }
+ \item{\code{delDefinitionSource(source)}}{
+   Deletes a definition source, object of class \code{ISODefinitionSource} or
+   \code{ISOCitation}
+ }
 }
 }
 \examples{
@@ -68,6 +82,10 @@ fc <- ISOFeatureCatalogue$new()
  producer$setIndividualName("someone")
  fc$setProducer(producer)
  fc$setFunctionalLanguage("eng")
+
+ cit <- ISOCitation$new()
+ cit$setTitle("some citation title")
+ fc$addDefinitionSource(cit)
 
  xml <- fc$encode()
 }

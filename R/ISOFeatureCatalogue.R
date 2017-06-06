@@ -41,6 +41,20 @@
 #'  \item{\code{setFunctionalLanguage(functionalLanguage)}}{
 #'    Sets the functional language
 #'  }
+#'  \item{\code{addFeatureType(featureType)}}{
+#'    Adds a feature type, object of class \code{ISOFeatureType}
+#'  }
+#'  \item{\code{delFeatureType(featureType)}}{
+#'    Deletes a feature type, object of class \code{ISOFeatureType}
+#'  }
+#'  \item{\code{addDefinitionSource(source)}}{
+#'    Adds a definition source, object of class \code{ISODefinitionSource} or
+#'    \code{ISOCitation}
+#'  }
+#'  \item{\code{delDefinitionSource(source)}}{
+#'    Deletes a definition source, object of class \code{ISODefinitionSource} or
+#'    \code{ISOCitation}
+#'  }
 #' }
 #'
 #' @examples 
@@ -57,6 +71,10 @@
 #'  producer$setIndividualName("someone")
 #'  fc$setProducer(producer)
 #'  fc$setFunctionalLanguage("eng")
+#'
+#'  cit <- ISOCitation$new()
+#'  cit$setTitle("some citation title")
+#'  fc$addDefinitionSource(cit)
 #'  
 #'  xml <- fc$encode()
 #'  
@@ -88,6 +106,8 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       functionalLanguage = NULL,
       #+ featureType [1..*]: ISOFeatureType
       featureType = list(),
+      #+ definitionSource [0..*]: ISODefinitionSource
+      definitionSource = list(),
       initialize = function(xml = NULL){
         super$initialize(
           xml = xml,
@@ -161,6 +181,30 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
           stop("The argument should be a 'ISOFeatureType' object")
         }
         return(self$delListElement("featureType", featureType))
+      },
+      
+      #addDefinitionSource
+      addDefinitionSource = function(source){
+        if(!is(source, "ISODefinitionSource")){
+          if(is(source, "ISOCitation")){
+            source <- ISODefinitionSource$new(source = source)
+          }else{
+            stop("The argument should be an object of class 'ISODefinitionSource' or 'ISOCitation'")
+          }
+        }
+        return(self$addListElement("definitionSource", source))
+      },
+      
+      #delDefinitionSource
+      delDefinitionSource = function(source){
+        if(!is(source, "ISODefinitionSource")){
+          if(is(source, "ISOCitation")){
+            source <- ISODefinitionSource$new(source = source)
+          }else{
+            stop("The argument should be an object of class 'ISODefinitionSource' or 'ISOCitation'")
+          }
+        }
+        return(self$delListElement("definitionSource", source))
       }
     )                        
 )
