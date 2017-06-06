@@ -16,7 +16,8 @@
 #' @field inheritsTo
 #' @field featureCatalogue
 #' @field carrierOfCharacteristics
-#' @field 
+#' @field constrainedBy
+#' @field definitionResource
 #'
 #' @section Methods:
 #' \describe{

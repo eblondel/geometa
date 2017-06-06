@@ -24,6 +24,20 @@ ISOFeatureType
 \item{\code{code}}{}
 
 \item{\code{isAbstract}}{}
+
+\item{\code{aliases}}{}
+
+\item{\code{inheritsFrom}}{}
+
+\item{\code{inheritsTo}}{}
+
+\item{\code{featureCatalogue}}{}
+
+\item{\code{carrierOfCharacteristics}}{}
+
+\item{\code{constrainedBy}}{}
+
+\item{\code{definitionResource}}{}
 }}
 \section{Methods}{
 
@@ -48,6 +62,24 @@ ISOFeatureType
  }
  \item{\code{delAlias(alias)}}{
    Deletes alias name
+ }
+ \item{\code{setFeatureCatalogue(fc)}}{
+   Sets a feature catalogue, object of class \code{ISOFeatureCatalogue}
+ }
+ \item{\code{addCharacteristic(characteristic)}}{
+   Adds a characteristic as object of class \code{ISOPropertyType} or subclass
+ }
+ \item{\code{delCharacteristic(characteristic)}}{
+   Deletes a characteristic as object of class \code{ISOPropertyType} or subclass
+ }
+ \item{\code{addConstraint(constraint)}}{
+   Adds a constraint, object of class \code{ISOConstraint} or \code{character}
+ }
+ \item{\code{delConstraint(constraint)}}{
+   Deletes a constraint, object of class \code{ISOConstraint} or \code{character}
+ }
+ \item{\code{setDefinitionReference(definitionReference)}}{
+   Sets the definition Reference, object of class \code{ISODefinitionReference}
  }
 }
 }
