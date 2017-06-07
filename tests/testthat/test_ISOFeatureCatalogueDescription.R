@@ -1,12 +1,12 @@
-# test_ISOFeatureCatalogue.R
+# test_ISOFeatureCatalogueDescription.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOFeatureCatalogue.R
+# Description: Unit tests for ISOFeatureCatalogueDescription.R
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISOFeatureCatalogue")
+context("ISOFeatureCatalogueDescription")
 
 test_that("encoding",{
   
