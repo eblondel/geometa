@@ -219,7 +219,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         rootXMLAttrs <- self[["attrs"]]
       }
       
-      if(self$element == "MD_Metadata"){
+      if(self$getClassName() %in%  c("ISOMetadata", "ISOFeatureCatalogue")){
         rootNamespaces <- sapply(ISOMetadataNamespace$all(), function(x){x$getDefinition()})
         rootXML <- xmlOutputDOM(
           tag = self$element,
