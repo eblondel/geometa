@@ -103,7 +103,7 @@
 #'    #add feature attribute as carrierOfCharacteristic
 #'    md$addCharacteristic(fat)
 #'  }
-#'  xml <- ft$encode()
+#'  xml <- md$encode()
 #'  
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing

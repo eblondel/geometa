@@ -124,7 +124,7 @@ ISOFeatureType
    #add feature attribute as carrierOfCharacteristic
    md$addCharacteristic(fat)
  }
- xml <- ft$encode()
+ xml <- md$encode()
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
