@@ -73,7 +73,7 @@ md <- ISOFeatureCatalogueDescription$new()
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \references{
-ISO 19110:2005 Methodology for Feature cataloguing
+ISO 19115:2003 - Geographic information -- Metadata
 }
 \keyword{ISO}
 \keyword{catalogue}

@@ -56,12 +56,12 @@
 #'   md$addFeatureCatalogueCitation(cit)
 #'  
 #' @references 
-#'   ISO 19110:2005 Methodology for Feature cataloguing
+#'   ISO 19115:2003 - Geographic information -- Metadata 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
-   inherit = ISOMetadataElement,
+   inherit = ISOContentInformation,
    private = list(
      xmlElement = "MD_FeatureCatalogueDescription",
      xmlNamespacePrefix = "GMD"

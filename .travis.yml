@@ -3,6 +3,9 @@ language: R
 sudo: required
 cache: packages
 
+before_install:
+  - tlmgr install texlive-latex-recommended
+
 r:
   - oldrel
   - release
