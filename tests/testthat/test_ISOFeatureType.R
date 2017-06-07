@@ -52,12 +52,12 @@ test_that("encoding",{
   }
   
   xml <- md$encode()
-  expect_is(md, "ISOFeatureCatalogue")
+  expect_is(md, "ISOFeatureType")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  md2 <- ISOFeatureCatalogue$new(xml = xml)
+  md2 <- ISOFeatureType$new(xml = xml)
   xml2 <- md2$encode()
   
   expect_true(ISOMetadataElement$compare(md, md2))
