@@ -4,7 +4,7 @@ sudo: required
 cache: packages
 
 before_install:
-  - tlmgr install texlive-latex-recommended
+  - sudo apt-get install texlive-latex-recommended
 
 r:
   - oldrel
