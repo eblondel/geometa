@@ -1,41 +1,23 @@
-# test_ISOFeatureCatalogue.R
+# test_ISOFeatureType.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOFeatureCatalogue.R
+# Description: Unit tests for ISOFeatureType.R
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISOFeatureCatalogue")
+context("ISOFeatureType")
 
 test_that("encoding",{
   
-  fc <- ISOFeatureCatalogue$new()
-  fc$setName("name")
-  fc$addScope("scope1")
-  fc$addScope("scope2")
-  fc$addFieldOfApplication("field1")
-  fc$addFieldOfApplication("field2")
-  fc$setVersionNumber("1.0")
-  fc$setVersionDate(ISOdate(2015, 1, 1, 1))
-  
-  producer <- ISOResponsibleParty$new()
-  producer$setIndividualName("someone")
-  fc$setProducer(producer)
-  fc$setFunctionalLanguage("eng")
-
-  cit <- ISOCitation$new()
-  cit$setTitle("some citation title")
-  fc$addDefinitionSource(cit)
-  
-  #add featureType
-  ft <- ISOFeatureType$new()
-  ft$setTypeName("typeName")
-  ft$setDefinition("definition")
-  ft$setCode("code")
-  ft$setIsAbstract(FALSE)
-  ft$addAlias("alias1")
-  ft$addAlias("alias2")
+  #featuretype
+  md <- ISOFeatureType$new()
+  md$setTypeName("typeName")
+  md$setDefinition("definition")
+  md$setCode("code")
+  md$setIsAbstract(FALSE)
+  md$addAlias("alias1")
+  md$addAlias("alias2")
   
   #add feature attributes
   for(i in 1:3){
@@ -66,21 +48,18 @@ test_that("encoding",{
     fat$setValueType("typeName")
     
     #add feature attribute as carrierOfCharacteristic
-    ft$addCharacteristic(fat)
+    md$addCharacteristic(fat)
   }
   
-  #add featureType to catalogue
-  fc$addFeatureType(ft)
-  
-  xml <- fc$encode()
+  xml <- md$encode()
   expect_is(md, "ISOFeatureCatalogue")
-  xml <- fc$encode()
+  xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  fc2 <- ISOFeatureCatalogue$new(xml = xml)
-  xml2 <- fc2$encode()
+  md2 <- ISOFeatureCatalogue$new(xml = xml)
+  xml2 <- md2$encode()
   
-  expect_true(ISOMetadataElement$compare(fc, fc2))
+  expect_true(ISOMetadataElement$compare(md, md2))
   
 })
