@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml)}}{
+#'  \item{\code{new(xml, aName)}}{
 #'    This method is used to instantiate an ISOTypeName
 #'  }
 #'  \item{\code{setName(aName)}}{
@@ -32,12 +32,15 @@ ISOTypeName <- R6Class("ISOTypeName",
      #+ aName: character
      aName = NULL,
      
-     initialize = function(xml = NULL){
+     initialize = function(xml = NULL, aName = NULL){
        super$initialize(
          xml = xml,
          element = private$xmlElement,
          namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
        )
+       if(is.null(xml)){
+         if(!is.null(aName)) self$setName(aName)
+       }
      },
      
      #setName

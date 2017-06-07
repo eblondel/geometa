@@ -22,7 +22,7 @@ ISOTypeName
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml)}}{
+ \item{\code{new(xml, aName)}}{
    This method is used to instantiate an ISOTypeName
  }
  \item{\code{setName(aName)}}{
