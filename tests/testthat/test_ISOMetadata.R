@@ -262,6 +262,26 @@ test_that("encoding/decoding",{
   
   md$setDataQualityInfo(dq)
   
+  #Content Information
+  #-------------------------
+  #add a feature catalogue description
+  fcd <- ISOFeatureCatalogueDescription$new()
+  fcd$setComplianceCode(FALSE)
+  fcd$addLanguage("eng")
+  fcd$setIncludeWithDataset(FALSE)
+  cit = ISOCitation$new()
+  contact = ISOContact$new()
+  fcLink <- ISOOnlineResource$new()
+  fcLink$setLinkage("http://somelink/featurecatalogue")
+  contact$setOnlineResource(fcLink)
+  rp = ISOResponsibleParty$new()
+  rp$setContactInfo(contact)
+  cit$setCitedResponsibleParty(rp)
+  fcd$addFeatureCatalogueCitation(cit)
+  
+  md$addContentInfo(fcd)
+  
+  
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   

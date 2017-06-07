@@ -24,6 +24,7 @@
 #' @field distributionInfo
 #' @field dataQualityInfo
 #' @field metadataMaintenance
+#' @field contentInfo
 #'
 #' @section Methods:
 #' \describe{
@@ -326,6 +327,24 @@
 #'    
 #'    md$setDataQualityInfo(dq)
 #'    
+#'    #Content Information
+#'    #-------------------------
+#'    #add a feature catalogue description
+#'    fcd <- ISOFeatureCatalogueDescription$new()
+#'    fcd$setComplianceCode(FALSE)
+#'    fcd$addLanguage("eng")
+#'    fcd$setIncludeWithDataset(FALSE)
+#'    cit = ISOCitation$new()
+#'    contact = ISOContact$new()
+#'    fcLink <- ISOOnlineResource$new()
+#'    fcLink$setLinkage("http://somelink/featurecatalogue")
+#'    contact$setOnlineResource(fcLink)
+#'    rp = ISOResponsibleParty$new()
+#'    rp$setContactInfo(contact)
+#'    cit$setCitedResponsibleParty(rp)
+#'    fcd$addFeatureCatalogueCitation(cit)
+#'    md$addContentInfo(fcd)
+#'    
 #'    #XML representation of the ISOMetadata
 #'    xml <- md$encode()
 #'    
@@ -380,8 +399,8 @@ ISOMetadata <- R6Class("ISOMetadata",
      
      #unsupported sets (to implement)
      #----------------
-     #+ contentInformation [0..*]
-     contentInformation = list(),
+     #+ contentInfo [0..*]
+     contentInfo = list(),
      #+ portrayalCatalogueInfo [0..*]
      portrayalCatalogueInfo = list(), #TODO
      #+ applicationSchemaInfo [0..*]
@@ -632,7 +651,7 @@ ISOMetadata <- R6Class("ISOMetadata",
        if(!is(contentInfo,"ISOFeatureCatalogueDescription")){
          stop("The argument should be a 'ISOFeatureCatalogueDescription' object")
        }
-       return(self$addListElement("contentInformation", contentInfo))
+       return(self$addListElement("contentInfo", contentInfo))
      },
      
      #delContentInfo
@@ -640,7 +659,7 @@ ISOMetadata <- R6Class("ISOMetadata",
        if(!is(contentInfo,"ISOFeatureCatalogueDescription")){
          stop("The argument should be a 'ISOFeatureCatalogueDescription' object")
        }
-       return(self$delListElement("contentInformation", contentInfo))
+       return(self$delListElement("contentInfo", contentInfo))
      }
      
   )                        
