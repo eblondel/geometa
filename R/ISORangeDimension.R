@@ -29,6 +29,9 @@
 #'    md$setSequenceIdentifier(ISOMemberName$new(aName = "name", attributeType = "type"))
 #'    md$setDescriptor("descriptor")
 #'    xml <- md$encode()
+#'    
+#' @references 
+#'   ISO 19115:2003 - Geographic information -- Metadata
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

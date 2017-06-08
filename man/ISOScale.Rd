@@ -22,8 +22,10 @@ ISOScale
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISOScale measure
+ \item{\code{new(xml,value, uom, useUomURI)}}{
+   This method is used to instantiate an ISOScale. The \code{uom} argument represents
+   the symbol of unit of measure used. The parameter  \code{useUomURI} can be used to
+   set the uom as URI, its default value is \code{FALSE}.
  }
 }
 }

@@ -36,6 +36,9 @@
 #'    md$setSize(1)
 #'    md$setResolution(ISOLength$new(value=1,uom="m"))
 #'    xml <- md$encode()
+#'    
+#' @references 
+#'   ISO 19115:2003 - Geographic information -- Metadata 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

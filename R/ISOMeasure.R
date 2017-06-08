@@ -11,8 +11,10 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOMeasure
+#'  \item{\code{new(xml,value, uom, useUomURI)}}{
+#'    This method is used to instantiate an ISOMeasure. The \code{uom} argument represents
+#'    the symbol of unit of measure used. The parameter  \code{useUomURI} can be used to 
+#'    set the uom as URI, its default value is \code{FALSE}.
 #'  }
 #' }
 #' 
@@ -30,7 +32,7 @@ ISOMeasure <- R6Class("ISOMeasure",
     public = list(
       value = NA,
       attrs = list(),
-      initialize = function(xml = NULL, element = NULL, namespace = NULL, value, uom){
+      initialize = function(xml = NULL, element = NULL, namespace = NULL, value, uom, useUomURI = FALSE){
         if(is.null(element)) element <- private$xmlElement
         if(is.null(namespace)) namespace <- getISOMetadataNamespace(private$xmlNamespacePrefix)
         super$initialize(
@@ -43,7 +45,11 @@ ISOMeasure <- R6Class("ISOMeasure",
             value <- as.double(value)
           }
           self$value = value
-          self$attrs[["uom"]] <- uom
+          uomAttr <- uom
+          if(useUomURI){
+            uomAttr <- sprintf("http://schemas.opengis.net/iso/19139/20070417/resources/uom/gmxUom.xml#xpointer(//*[@gml:id='%s'])", uomAttr)
+          }
+          self$attrs[["uom"]] <- uomAttr
         }else{
           uomId <- XML::xmlGetAttr(xml, "uom")
           if(!is.null(uomId)){

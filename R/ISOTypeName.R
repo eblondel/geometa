@@ -19,6 +19,13 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   typeName <- ISOTypeName$new(aName = "name")
+#'   xml <- typeName$encode()
+#' 
+#' @references
+#'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOTypeName <- R6Class("ISOTypeName",

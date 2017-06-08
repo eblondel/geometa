@@ -10,7 +10,7 @@ context("ISOMeasure")
 
 test_that("ISOMeasure",{
   #encoding
-  md <- ISOMeasure$new(value = 1, uom = "m")
+  md <- ISOMeasure$new(value = 1, uom = "m", useUomURI = TRUE)
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding
@@ -22,7 +22,7 @@ test_that("ISOMeasure",{
 
 test_that("ISOLength",{
   #encoding
-  md <- ISOLength$new(value = 1, uom = "m")
+  md <- ISOLength$new(value = 1, uom = "m", useUomURI = TRUE)
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding
@@ -34,7 +34,7 @@ test_that("ISOLength",{
 
 test_that("ISODistance",{
   #encoding
-  md <- ISODistance$new(value = 1, uom = "m")
+  md <- ISODistance$new(value = 1, uom = "m", useUomURI = TRUE)
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding
@@ -46,7 +46,7 @@ test_that("ISODistance",{
 
 test_that("ISOAngle",{
   #encoding
-  md <- ISOAngle$new(value = 1, uom = "angleunit")
+  md <- ISOAngle$new(value = 1, uom = "angleunit", useUomURI = TRUE)
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding
@@ -58,7 +58,7 @@ test_that("ISOAngle",{
 
 test_that("ISOScale",{
   #encoding
-  md <- ISOScale$new(value = 1, uom = "scaleunit")
+  md <- ISOScale$new(value = 1, uom = "scaleunit", useUomURI = TRUE)
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding

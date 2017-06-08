@@ -16,6 +16,16 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   #possible values
+#'   values <- ISOGeometricObjectType$values(labels = TRUE)
+#'   
+#'   #point type
+#'   pt <- ISOGeometricObjectType$new(value = "point")
+#' 
+#' @references 
+#'   ISO 19115:2003 - Geographic information -- Metadata
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOGeometricObjectType <- R6Class("ISOGeometricObjectType",

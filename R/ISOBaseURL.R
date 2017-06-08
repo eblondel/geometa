@@ -18,6 +18,9 @@
 #' 
 #' @note Class used by geometa internal XML decoder/encoder
 #' 
+#' @references 
+#'   ISO 19115:2003 - Geographic information -- Metadata 
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOBaseURL <- R6Class("ISOBaseURL",

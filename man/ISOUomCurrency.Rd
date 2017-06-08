@@ -31,6 +31,9 @@ uom <- ISOUomCurrency$new()
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
+\references{
+ISO/TS 19103:2005 Geographic information -- Conceptual schema language
+}
 \keyword{ISO}
 \keyword{currency}
 \keyword{measure}

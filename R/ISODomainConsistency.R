@@ -19,6 +19,9 @@
 #'  }
 #' }
 #' 
+#' @references 
+#'   ISO 19115:2003 - Geographic information -- Metadata 
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODomainConsistency <- R6Class("ISODomainConsistency",

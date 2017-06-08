@@ -53,6 +53,9 @@ ISODimension
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
+\references{
+ISO 19115:2003 - Geographic information -- Metadata
+}
 \keyword{ISO}
 \keyword{dimension}
 

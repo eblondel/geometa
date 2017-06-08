@@ -19,6 +19,13 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'   md <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
+#'   xml <- md$encode()
+#' 
+#' @references 
+#'   ISO 19115:2003 - Geographic information -- Metadata 
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",

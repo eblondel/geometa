@@ -11,8 +11,10 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISODistance measure
+#'  \item{\code{new(xml,value, uom, useUomURI)}}{
+#'    This method is used to instantiate an ISODistance. The \code{uom} argument represents
+#'    the symbol of unit of measure used. The parameter  \code{useUomURI} can be used to 
+#'    set the uom as URI, its default value is \code{FALSE}.
 #'  }
 #' }
 #' 
@@ -28,8 +30,8 @@ ISODistance <- R6Class("ISODistance",
      xmlNamespacePrefix = "GCO"
    ),
    public = list(
-     initialize = function(xml = NULL, value, uom){
-       super$initialize(xml = xml, value = value, uom = uom)
+     initialize = function(xml = NULL, value, uom, useUomURI = FALSE){
+       super$initialize(xml = xml, value = value, uom = uom, useUomURI = useUomURI)
      }
    )                        
 )

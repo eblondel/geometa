@@ -27,6 +27,9 @@
 #'    tp <- ISOTimePeriod$new(beginPosition = start, endPosition = end)
 #'    te$setTimePeriod(tp)
 #' 
+#' @references 
+#'   ISO 19115:2003 - Geographic information -- Metadata
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOTemporalExtent <- R6Class("ISOTemporalExtent",

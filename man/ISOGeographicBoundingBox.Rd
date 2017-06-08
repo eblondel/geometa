@@ -33,8 +33,15 @@ ISOGeographicBoundingBox
  }
 }
 }
+\examples{
+md <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
+  xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
+}
+\references{
+ISO 19115:2003 - Geographic information -- Metadata
 }
 \keyword{ISO}
 \keyword{extent}

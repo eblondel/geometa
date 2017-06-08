@@ -24,6 +24,9 @@
 #'   xml1 <- fr$encode()
 #'   fr$setDenominator(2L)
 #'   xml2 <- fr$encode()
+#'   
+#' @references 
+#'   ISO 19115:2003 - Geographic information -- Metadata
 #'  
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
