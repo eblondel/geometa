@@ -66,8 +66,10 @@ ISOBand
 }
 }
 \examples{
-#create dimension
+#create band range dimension
    md <- ISOBand$new()
+   md$setSequenceIdentifier(ISOMemberName$new(aName = "name", attributeType = "type"))
+   md$setDescriptor("descriptor")
    md$setMaxValue(10)
    md$setMinValue(1)
    uom = ISOUomLength$new()

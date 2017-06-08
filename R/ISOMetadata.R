@@ -112,6 +112,14 @@
 #'  \item{\code{setMetadataMaintenance(metadataMaintenance)}}{
 #'    Sets a metadata maintenance as object of class \code{ISOMaintenanceInformation}
 #'  }
+#'  \item{\code{addContentInfo(contentInfo)}}{
+#'    Adds a content info, either an object of class \code{ISOCoverageDescription} 
+#'    for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
+#'  }
+#'  \item{\code{delContentInfo(contentInfo)}}{
+#'    Deletes a content info, either an object of class \code{ISOCoverageDescription} 
+#'    for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
+#'  }
 #' }
 #' 
 #' @examples
@@ -648,16 +656,16 @@ ISOMetadata <- R6Class("ISOMetadata",
      
      #addContentInfo
      addContentInfo = function(contentInfo){
-       if(!is(contentInfo,"ISOFeatureCatalogueDescription")){
-         stop("The argument should be a 'ISOFeatureCatalogueDescription' object")
+       if(!is(contentInfo,"ISOContentInformation")){
+         stop("The argument should be a 'ISOContentInformation' object")
        }
        return(self$addListElement("contentInfo", contentInfo))
      },
      
      #delContentInfo
      delContentInfo = function(contentInfo){
-       if(!is(contentInfo,"ISOFeatureCatalogueDescription")){
-         stop("The argument should be a 'ISOFeatureCatalogueDescription' object")
+       if(!is(contentInfo,"ISOContentInformation")){
+         stop("The argument should be a 'ISOContentInformation' object")
        }
        return(self$delListElement("contentInfo", contentInfo))
      }
