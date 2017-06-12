@@ -11,8 +11,13 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOMetadataCodelistElement
+#'  \item{\code{new(xml, id, value, addCodeListAttrs, addCodeSpaceAttr, setValue)}}{
+#'    This method is used to instantiate an ISOMetadataCodelistElement. By default,
+#'    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The 
+#'    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
+#'    \code{addCodeLisAttrs} is set to \code{FALSE}. The argument \code{setValue}
+#'    sets the value as node text (defaut is \code{TRUE}).
+#'    
 #'  }
 #'  \item{\code{getAcceptedValues()}}{
 #'    This method allows to get the codelist accepted values
@@ -32,7 +37,10 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
      codelistId = NULL,
      attrs = list(),
      value = NULL,
-     initialize = function(xml = NULL, id, value, addCodeSpaceAttr = TRUE, setValue = TRUE){
+     initialize = function(xml = NULL, id, value,
+                           addCodeListAttrs = TRUE,
+                           addCodeSpaceAttr = TRUE,
+                           setValue = TRUE){
        super$initialize(
          xml = xml,
          element = id,
@@ -65,15 +73,20 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
          clUrl <- sprintf("%s/Codelist/%s#%s", .geometa.iso$schemaBaseUrl, cl$refFile, id)
        }
        
-       self$attrs <- list(
-         codeList = clUrl,
-         codeListValue = clValue
-       )
-       if(addCodeSpaceAttr){
-         self$attrs <- c(self$attrs, codeSpace = cl$codeSpace)
+       if(addCodeListAttrs){
+         self$attrs <- list(
+           codeList = clUrl,
+           codeListValue = clValue
+         )
+         if(addCodeSpaceAttr){
+           self$attrs <- c(self$attrs, codeSpace = cl$codeSpace)
+         }
        }
        if(setValue){
          self$value <-clDescription
+       }
+       if(id == "MD_TopicCategoryCode"){
+         self$value <- clValue 
        }
        
      },
