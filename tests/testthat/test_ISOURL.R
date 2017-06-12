@@ -1,24 +1,24 @@
-# test_ISOBaseURL.R
+# test_ISOURL.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOBaseURL.R
+# Description: Unit tests for ISOURL.R
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISOBaseURL")
+context("ISOURL")
 
 test_that("encoding",{
   
   #encoding
-  md <- ISOBaseURL$new(value = "myvalue")
-  expect_is(md, "ISOBaseURL")
+  md <- ISOURL$new(value = "myvalue")
+  expect_is(md, "ISOURL")
   expect_equal(md$value, "myvalue")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  md2 <- ISOBaseURL$new(xml = xml)
+  md2 <- ISOURL$new(xml = xml)
   xml2 <- md2$encode()
   
   expect_true(ISOMetadataElement$compare(md, md2))

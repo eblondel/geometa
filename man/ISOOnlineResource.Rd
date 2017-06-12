@@ -32,7 +32,7 @@ ISOOnlineResource
    This method is used to instantiate an ISOOnlineResource
  }
  \item{\code{setLinkage(linkage)}}{
-   Sets the linkage (URL)
+   Sets the linkage (URL), an object of class \code{character} or \code{ISOUrl}
  }
  \item{\code{setProtocol(protocol)}}{
    Sets the protocol

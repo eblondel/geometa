@@ -18,7 +18,7 @@
 #'    This method is used to instantiate an ISOOnlineResource
 #'  }
 #'  \item{\code{setLinkage(linkage)}}{
-#'    Sets the linkage (URL)
+#'    Sets the linkage (URL), an object of class \code{character} or \code{ISOUrl}
 #'  }
 #'  \item{\code{setProtocol(protocol)}}{
 #'    Sets the protocol
@@ -65,7 +65,9 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     
     #setLinkage
     setLinkage = function(linkage){
-      if(!is(linkage, "character")) linkage <- as.character(linkage)
+      if(!is(linkage, "ISOURL")){
+        linkage <- ISOURL$new(value = as.character(linkage))
+      }
       self$linkage <- linkage
     },
     

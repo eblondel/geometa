@@ -1,10 +1,10 @@
-#' ISOBaseURL
+#' ISOURL
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO URL
-#' @return Object of \code{\link{R6Class}} for modelling an ISO BaseURL
+#' @return Object of \code{\link{R6Class}} for modelling an ISOURL
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field value
@@ -12,7 +12,7 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOBaseURL
+#'    This method is used to instantiate an ISOURL
 #'  }
 #' }
 #' 
@@ -23,7 +23,7 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOBaseURL <- R6Class("ISOBaseURL",
+ISOURL <- R6Class("ISOURL",
   inherit = ISOMetadataElement,
   private = list(
     xmlElement = "URL",
