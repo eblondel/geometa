@@ -82,7 +82,7 @@ ISOKeywords <- R6Class("ISOKeywords",
     
     #setKeywordType
     setKeywordType = function(keywordType){
-      if(is(keywordType, "ISOKeywordType")){
+      if(!is(keywordType, "ISOKeywordType")){
         keywordType <- ISOKeywordType$new(value = keywordType)
       }
       self$type <- keywordType
