@@ -15,9 +15,12 @@ test_that("encoding",{
   md$addKeyword("keyword1")
   md$addKeyword("keyword2")
   md$setKeywordType("theme")
+  expect_is(md$keyword, "list")
+  expect_is(md$type, "ISOKeywordType")
   th <- ISOCitation$new()
   th$setTitle("General")
   md$setThesaurusName(th)
+  expect_is(md$thesaurusName, "ISOCitation")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
