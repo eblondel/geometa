@@ -318,7 +318,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     wrapBaseElement = function(field, fieldObj){
       dataType <- class(fieldObj)
       if(all(dataType == c("POSIXct","POSIXt"))) dataType <- "datetime"
-      if((regexpr("^http*",fieldObj, TRUE) > 0 | regexpr("^ftp*",fieldObj, TRUE) > 0) && is(self, "ISOOnlineResource")){
+      if((regexpr("^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-]*)*/?$", fieldObj, TRUE) > 0 | regexpr("^ftp*",fieldObj, TRUE) > 0) && is(self, "ISOOnlineResource")){
         dataType <- "url"
       }
       
