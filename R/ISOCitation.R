@@ -53,12 +53,8 @@
 #'  #create ISOCitation
 #'  md <- ISOCitation$new()
 #'  md$setTitle("sometitle")
-#'  d <- ISODate$new()
-#'  d$setDate(ISOdate(2015, 1, 1, 1))
-#'  d$setDateType("publication")
-#'  md$addDate(d)
 #'  md$setEdition("1.0")
-#'  md$setEditionDate(d)
+#'  md$setEditionDate(ISOdate(2015,1,1))
 #'  md$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
 #'  md$setPresentationForm("mapDigital")
 #'  
@@ -141,8 +137,8 @@ ISOCitation<- R6Class("ISOCitation",
     
     #setEditionDate
     setEditionDate = function(editionDate){
-      if(!is(editionDate, "Date") && !is(editionDate, "ISODate")){ 
-        stop("The argument should be either a 'Date' or 'ISODate' object")
+      if(!is(editionDate, "Date") && !all(class(editionDate) == c("POSIXct","POSIXt"))){ 
+        stop("The argument should be either a 'Date' or 'POSIXct'/'POSIXt' object")
       }
       self$editionDate <- editionDate
     },

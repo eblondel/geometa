@@ -13,6 +13,7 @@ test_that("encoding",{
   #encoding
   md <- ISOGridSpatialRepresentation$new()
   md$setNumberOfDimensions(1)
+  md$setTransformationParameterAvailability(FALSE)
   dim1 <- ISODimension$new()
   dim1$setName("row")
   dim1$setSize(100)
@@ -25,6 +26,7 @@ test_that("encoding",{
   
   #decoding
   md2 <- ISOGridSpatialRepresentation$new(xml = xml)
+  xml2 <- md2$encode()
   
   expect_true(ISOMetadataElement$compare(md, md2))
 })

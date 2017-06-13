@@ -21,7 +21,7 @@ ISOFeatureCatalogueDescription
 
 \item{\code{language}}{}
 
-\item{\code{includeWithDataset}}{}
+\item{\code{includedWithDataset}}{}
 
 \item{\code{featureCatalogueCitation}}{}
 }}
@@ -40,7 +40,7 @@ ISOFeatureCatalogueDescription
  \item{\code{delLanguage(lang)}}{
    Deletes a language
  }
- \item{\code{setIncludeWithDataset(include)}}{
+ \item{\code{setIncludedWithDataset(include)}}{
    Sets TRUE if included with dataset, FALSE otherwise
  }
  \item{\code{addFeatureCatalogueCitation(citation)}}{
@@ -57,7 +57,7 @@ ISOFeatureCatalogueDescription
 md <- ISOFeatureCatalogueDescription$new()
   md$setComplianceCode(FALSE)
   md$addLanguage("eng")
-  md$setIncludeWithDataset(FALSE)
+  md$setIncludedWithDataset(FALSE)
 
   cit = ISOCitation$new()
   contact = ISOContact$new()

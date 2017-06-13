@@ -19,7 +19,7 @@ test_that("encoding",{
   md$addDate(d)
   expect_error(md$addDate("wrong date type"))
   md$setEdition("1.0")
-  md$setEditionDate(d)
+  md$setEditionDate(ISOdate(2015, 1, 1, 1))
   expect_error(md$setEditionDate("wrong date type"))
   md$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
   expect_error(md$setIdentifier("wrong identifier type"))

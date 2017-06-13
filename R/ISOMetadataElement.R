@@ -261,24 +261,20 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         rootNamespaces <- sapply(ISOMetadataNamespace$all(), function(x){x$getDefinition()})
         rootXML <- xmlOutputDOM(
           tag = self$element,
-          attrs = rootXMLAttrs,
           nameSpace = self$namespace$id,
           nsURI = rootNamespaces
         )
       }else{
         if(addNS){
           nsdefs <- self$getNamespaceDefinition(recursive = TRUE)
-          #nsdefs <- nsdefs[sapply(nsdefs, function(x){return(x != self$namespace$uri)})]
           rootXML <- xmlOutputDOM(
             tag = self$element,
-            attrs = rootXMLAttrs,
             nameSpace = self$namespace$id,
             nsURI = nsdefs
           )
         }else{
           rootXML <- xmlOutputDOM(
             tag = self$element,
-            attrs = rootXMLAttrs,
             nameSpace = self$namespace$id
           )
         }
@@ -351,8 +347,13 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
       out <- rootXML$value()
       out <- as(out, "XMLInternalNode")
+      if(length(rootXMLAttrs)>0){
+        suppressWarnings(xmlAttrs(out) <- rootXMLAttrs)
+      }
       
       #validation vs. ISO 19139 XML schemas
+      #no GFC validation for the timebeing
+      if(self$namespace$id == "gfc") validate <- FALSE
       if(validate){
         self$validate(xml = out, strict = strict)
       }
@@ -365,7 +366,9 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       
       #xml
       if(is.null(xml)){
-        xml <- md$encode(addNS = TRUE, validate = FALSE, strict = strict)
+        #no GFC validation for the timebeing
+        if(self$namespace$id == "gfc") return(TRUE)
+        xml <- self$encode(addNS = TRUE, validate = FALSE, strict = strict)
       }
       
       #proceed with schema xml schema validation
@@ -400,7 +403,6 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     getNamespaceDefinition = function(recursive = FALSE){
       nsdefs <- NULL
       if(recursive){
-        
         #list of fields
         fields <- rev(names(self))
         fields <- fields[!sapply(fields, function(x){
@@ -412,17 +414,47 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         nsdefs <- list()
         invisible(lapply(fields, function(x){
           xObj <- self[[x]]
+          if(is.null(xObj) || (is.list(xObj) & length(xObj) == 0)){
+            if(x %in% names(self$defaults)){
+              xObj <- self$defaults[[x]]
+            }
+          }
           if(!is.null(xObj)){
             nsdef <- NULL
             if(is(xObj, "ISOMetadataElement")){
-              nsdef <- xObj$getNamespaceDefinition()
+              nsdef <- xObj$getNamespaceDefinition(recursive = recursive)
+            }else if(is(xObj, "list")){
+              nsdef <- list()
+              invisible(lapply(xObj, function(xObj.item){
+                nsdef.item <- NULL
+                if(is(xObj.item, "ISOMetadataElement")){
+                  nsdef.item <- xObj.item$getNamespaceDefinition(recursive = recursive)
+                }else{
+                  nsdef.item <- ISOMetadataNamespace$GCO$getDefinition() 
+                }
+                for(item in names(nsdef.item)){
+                  nsd <- nsdef.item[[item]]
+                  if(!(nsd %in% nsdef)){
+                    nsdef.new <- c(nsdef, nsd)
+                    names(nsdef.new) <- c(names(nsdef), item)
+                    nsdef <<- nsdef.new
+                  }
+                }
+              }))
             }else{
               nsdef <- ISOMetadataNamespace$GCO$getDefinition()
             }
-            if(!(nsdef %in% nsdefs) & nsdef[[1]] != selfNsdef[[1]]) nsdefs <<- c(nsdefs, nsdef)
+            for(item in names(nsdef)){
+              nsdef.item <- nsdef[[item]]
+              if(!(nsdef.item %in% nsdefs)){
+                nsdefs.new <- c(nsdefs, nsdef.item)
+                names(nsdefs.new) <- c(names(nsdefs), item)
+                nsdefs <<- nsdefs.new
+              }
+            }
           }
         }))
-        nsdefs <- c(selfNsdef, nsdefs)
+        if(!(selfNsdef[[1]] %in% nsdefs)) nsdefs <- c(selfNsdef, nsdefs)
         nsdefs <- nsdefs[!sapply(nsdefs, is.null)]
       }else{
         nsdefs <- self$namespace$getDefinition()
@@ -525,13 +557,13 @@ ISOMetadataElement$getISOClassByNode = function(node){
 ISOMetadataElement$compare = function(metadataElement1, metadataElement2){
   text1 <- NULL
   if(is(metadataElement1, "ISOMetadataElement")){
-    text1 <- as(XML::xmlDoc(metadataElement1$encode(addNS = FALSE, validate = FALSE)), "character")
+    text1 <- as(XML::xmlDoc(metadataElement1$encode(addNS = TRUE, validate = FALSE)), "character")
   }else{
     text1 <- as.character(metadataElement1)
   }
   text2 <- NULL
   if(is(metadataElement2, "ISOMetadataElement")){
-    text2 <- as(XML::xmlDoc(metadataElement2$encode(addNS = FALSE, validate = FALSE)), "character")
+    text2 <- as(XML::xmlDoc(metadataElement2$encode(addNS = TRUE, validate = FALSE)), "character")
   }else{
     text2 <- as.character(metadataElement2)
   }

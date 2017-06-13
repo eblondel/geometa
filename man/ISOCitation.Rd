@@ -70,12 +70,8 @@ ISOCitation
 #create ISOCitation
  md <- ISOCitation$new()
  md$setTitle("sometitle")
- d <- ISODate$new()
- d$setDate(ISOdate(2015, 1, 1, 1))
- d$setDateType("publication")
- md$addDate(d)
  md$setEdition("1.0")
- md$setEditionDate(d)
+ md$setEditionDate(ISOdate(2015,1,1))
  md$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
  md$setPresentationForm("mapDigital")
 
