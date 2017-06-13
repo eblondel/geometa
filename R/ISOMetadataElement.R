@@ -25,11 +25,38 @@
 #'  \item{\code{new(xml, element, namespace)}}{
 #'    This method is used to instantiate an ISOMetadataElement
 #'  }
+#'  \item{\code{INFO(text)}}{
+#'    Logger to report information. Used internally
+#'  }
+#'  \item{\code{WARN(text)}}{
+#'    Logger to report warnings. Used internally
+#'  }
+#'  \item{\code{ERROR(text)}}{
+#'    Logger to report errors. Used internally
+#'  }
+#'  \item{\code{print()}}{
+#'    Provides a custom print output (as tree) of the current class
+#'  }
 #'  \item{\code{decode(xml)}}{
 #'    Decodes a ISOMetadata* R6 object from XML representation
 #'  }
-#'  \item{\code{encode()}}{
-#'    Encodes a ISOMetadata* R6 object to XML representation
+#'  \item{\code{encode(addNS, validate, strict)}}{
+#'    Encodes a ISOMetadata* R6 object to XML representation. By default, namespace
+#'    definition will be added to XML root (\code{addNS = TRUE}), and validation
+#'    of object will be performed (\code{validate = TRUE}) prior to its XML encoding.
+#'    The argument \code{strict} allows to stop the encoding in case object is not
+#'    valid, with a default value set to \code{FALSE}.
+#'  }
+#'  \item{\code{validate(xml, strict)}}{
+#'    Validates the encoded XML against ISO 19139 XML schemas. If \code{strict} is
+#'    \code{TRUE}, a error will be raised. Default is \code{FALSE}. 
+#'  }
+#'  \item{\code{getNamespaceDefinition(recursive)}}{
+#'    Gets the namespace definition of the current ISO* class. By default, only
+#'    the namespace definition of the current element is retrieved (\code{recursive = FALSE}).
+#'  }
+#'  \item{\code{getClassName()}}{
+#'    Gets the class name
 #'  }
 #'  \item{\code{wrapBaseElement(field, fieldObj)}}{
 #'    Wraps a base element type
@@ -56,9 +83,21 @@
 #'
 ISOMetadataElement <- R6Class("ISOMetadataElement",
   private = list(
-    encoding = options("encoding")
+    encoding = options("encoding"),
+    logger = function(type, text){
+      cat(sprintf("[geometa][%s] %s \n", type, text))
+    }
   ),
   public = list(
+    
+    #logger
+    INFO = function(text){private$logger("INFO", text)},
+    WARN = function(text){private$logger("WARN", text)},
+    ERROR = function(text){private$logger("ERROR", text)},
+    
+    
+    #fields
+    #---------------------------------------------------------------------------
     wrap = TRUE,
     element = NA,
     namespace = NA,
@@ -72,15 +111,8 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
     },
     
-    #getNamespaceDefinition
-    getNamespaceDefinition = function(){
-      return(self$namespace$getDefinition())
-    },
-    
-    #getClassName
-    getClassName = function(){
-      return(class(self)[1])
-    },
+    #Main methods
+    #---------------------------------------------------------------------------
     
     #print
     print = function(..., depth = 1){
@@ -207,7 +239,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     },
     
     #encode
-    encode = function(addNS = TRUE){
+    encode = function(addNS = TRUE, validate = TRUE, strict = FALSE){
 
       #list of fields to encode as XML
       fields <- rev(names(self))
@@ -219,6 +251,12 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         rootXMLAttrs <- self[["attrs"]]
       }
       
+      #fields
+      fields <- fields[!sapply(fields, function(x){
+        (class(self[[x]]) %in% c("environment", "function")) ||
+          (x %in% c("wrap", "element", "namespace", "defaults", "attrs", "codelistId", "measureType"))
+      })]
+      
       if(self$getClassName() %in%  c("ISOMetadata", "ISOFeatureCatalogue")){
         rootNamespaces <- sapply(ISOMetadataNamespace$all(), function(x){x$getDefinition()})
         rootXML <- xmlOutputDOM(
@@ -228,18 +266,23 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
           nsURI = rootNamespaces
         )
       }else{
-        rootXML <- xmlOutputDOM(
-          tag = self$element,
-          attrs = rootXMLAttrs,
-          nameSpace = self$namespace$id
-        )
+        if(addNS){
+          nsdefs <- self$getNamespaceDefinition(recursive = TRUE)
+          #nsdefs <- nsdefs[sapply(nsdefs, function(x){return(x != self$namespace$uri)})]
+          rootXML <- xmlOutputDOM(
+            tag = self$element,
+            attrs = rootXMLAttrs,
+            nameSpace = self$namespace$id,
+            nsURI = nsdefs
+          )
+        }else{
+          rootXML <- xmlOutputDOM(
+            tag = self$element,
+            attrs = rootXMLAttrs,
+            nameSpace = self$namespace$id
+          )
+        }
       }
-        
-      #fields
-      fields <- fields[!sapply(fields, function(x){
-        (class(self[[x]]) %in% c("environment", "function")) ||
-          (x %in% c("wrap", "element", "namespace", "defaults", "attrs", "codelistId", "measureType"))
-      })]
       
       for(field in fields){
         fieldObj <- self[[field]]
@@ -259,10 +302,10 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                 tag = field,
                 nameSpace = self$namespace$id
               )
-              wrapperNode$addNode(fieldObj$encode(addNS = FALSE))
+              wrapperNode$addNode(fieldObj$encode(addNS = FALSE, validate = FALSE))
               rootXML$addNode(wrapperNode$value())
             }else{
-              rootXML$addNode(fieldObj$encode(addNS = FALSE))
+              rootXML$addNode(fieldObj$encode(addNS = FALSE, validate = FALSE))
             }
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
@@ -277,10 +320,10 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                   tag = field,
                   nameSpace = self$namespace$id
                 )
-                wrapperNode$addNode(nodeValue$encode(addNS = FALSE))
+                wrapperNode$addNode(nodeValue$encode(addNS = FALSE, validate = FALSE))
                 rootXML$addNode(wrapperNode$value())
               }else{
-                rootXML$addNode(nodeValue$encode(addNS = FALSE))
+                rootXML$addNode(nodeValue$encode(addNS = FALSE, validate = FALSE))
               }
             }
           }else{
@@ -295,10 +338,10 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                     tag = field,
                     nameSpace = self$namespace$id
                   )
-                  wrapperNode$addNode(dataObj$encode(addNS = FALSE))
+                  wrapperNode$addNode(dataObj$encode(addNS = FALSE, validate = FALSE))
                   rootXML$addNode(wrapperNode$value())
                 }else{
-                  rootXML$addNode(dataObj$encode(addNS = FALSE))
+                  rootXML$addNode(dataObj$encode(addNS = FALSE, validate = FALSE))
                 }
               }
             }
@@ -308,10 +351,88 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
       out <- rootXML$value()
       out <- as(out, "XMLInternalNode")
-      if(addNS & self$element != "MD_Metadata"){
-       xmlNamespaces(out, set = TRUE) <- self$getNamespaceDefinition()
+      
+      #validation vs. ISO 19139 XML schemas
+      if(validate){
+        self$validate(xml = out, strict = strict)
       }
+      
       return(out)
+    },
+    
+    #validate
+    validate = function(xml = NULL, strict = FALSE){
+      
+      #xml
+      if(is.null(xml)){
+        xml <- md$encode(addNS = TRUE, validate = FALSE, strict = strict)
+      }
+      
+      #proceed with schema xml schema validation
+      xsd <- getISOSchemas()
+      report <- xmlSchemaValidate(xsd, xmlDoc(xml))
+      
+      #check validity on self
+      isValid <- report$status == 0
+      if(!isValid){
+        loggerType <- ifelse(strict, "ERROR", "WARN")
+        for(error in report$errors){
+          errorMsg <- paste0(substr(error$msg, 1, nchar(error$msg)-2), " at line ", error$line, ".")
+          self[[loggerType]](errorMsg)
+        }
+        msg <- sprintf("Object '%s' is INVALID according to ISO 19139 XML schemas!", self$getClassName())
+        if(strict){
+          self$ERROR(msg)
+          stop(msg)
+        }else{
+          self$WARN(msg)
+        }
+      }else{
+        self$INFO(sprintf("Object '%s' is VALID according to ISO 19139 XML schemas!", self$getClassName()))
+      }
+      return(isValid)
+    },
+    
+    #Util & internal methods
+    #---------------------------------------------------------------------------
+    
+    #getNamespaceDefinition
+    getNamespaceDefinition = function(recursive = FALSE){
+      nsdefs <- NULL
+      if(recursive){
+        
+        #list of fields
+        fields <- rev(names(self))
+        fields <- fields[!sapply(fields, function(x){
+          (class(self[[x]]) %in% c("environment", "function")) ||
+            (x %in% c("wrap", "element", "namespace", "defaults", "attrs", "codelistId", "measureType"))
+        })]
+        
+        selfNsdef <- self$getNamespaceDefinition()
+        nsdefs <- list()
+        invisible(lapply(fields, function(x){
+          xObj <- self[[x]]
+          if(!is.null(xObj)){
+            nsdef <- NULL
+            if(is(xObj, "ISOMetadataElement")){
+              nsdef <- xObj$getNamespaceDefinition()
+            }else{
+              nsdef <- ISOMetadataNamespace$GCO$getDefinition()
+            }
+            if(!(nsdef %in% nsdefs) & nsdef[[1]] != selfNsdef[[1]]) nsdefs <<- c(nsdefs, nsdef)
+          }
+        }))
+        nsdefs <- c(selfNsdef, nsdefs)
+        nsdefs <- nsdefs[!sapply(nsdefs, is.null)]
+      }else{
+        nsdefs <- self$namespace$getDefinition()
+      }
+      return(nsdefs)
+    },
+    
+    #getClassName
+    getClassName = function(){
+      return(class(self)[1])
     },
     
     #wrapBaseElement
@@ -404,15 +525,34 @@ ISOMetadataElement$getISOClassByNode = function(node){
 ISOMetadataElement$compare = function(metadataElement1, metadataElement2){
   text1 <- NULL
   if(is(metadataElement1, "ISOMetadataElement")){
-    text1 <- as(XML::xmlDoc(metadataElement1$encode(FALSE)), "character")
+    text1 <- as(XML::xmlDoc(metadataElement1$encode(addNS = FALSE, validate = FALSE)), "character")
   }else{
     text1 <- as.character(metadataElement1)
   }
   text2 <- NULL
   if(is(metadataElement2, "ISOMetadataElement")){
-    text2 <- as(XML::xmlDoc(metadataElement2$encode(FALSE)), "character")
+    text2 <- as(XML::xmlDoc(metadataElement2$encode(addNS = FALSE, validate = FALSE)), "character")
   }else{
     text2 <- as.character(metadataElement2)
   }
   return(text1 == text2)
+}
+
+#ISO 19139 schemas fetcher / getter
+#===============================================================================
+#fetchISOSchemas
+fetchISOSchemas <- function(){
+  cat("[geometa][INFO] Loading ISO schemas... \n")
+  xsdfile <- system.file("extdata/schemas", "gmd/gmd.xsd", package = "geometa")
+  .geometa.iso$schemas <- tryCatch(
+    XML::xmlTreeParse(
+      xsdfile, isSchema = TRUE, xinclude = TRUE,
+      error = function (msg, code, domain, line, col, level, filename, class = "XMLError"){}
+    )
+  )
+}
+
+#getISOSchemas
+getISOSchemas <- function(){
+  return(.geometa.iso$schemas)
 }

@@ -35,7 +35,7 @@ ISOCodelist <- R6Class("ISOCodelist",
     parse = function(refFile, id){
       
       #query ISO XML Codelist file
-      clFile <- system.file("extdata", refFile, package = "geometa")
+      clFile <- system.file("extdata/codelists", refFile, package = "geometa")
       if(nchar(clFile)==0){
         stop(sprintf("Reference file '%s' missing in geometa files", refFile))
       }
@@ -98,7 +98,8 @@ ISOCodelist <- R6Class("ISOCodelist",
 #' fetchISOCodelists
 #' @export
 fetchISOCodelists <- function(){
-
+  cat("[geometa][INFO] Loading ISO codelists... \n")
+  
   #parse other ISO codelists
   languageCL <- "ISO-639-2_utf-8.txt" #from http://www.loc.gov/standards/iso639-2/
   ML_gmxCL <- "ML_gmxCodelists.xml"
