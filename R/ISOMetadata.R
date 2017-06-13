@@ -2,7 +2,6 @@
 #'
 #' @docType class
 #' @importFrom R6 R6Class
-#' @import methods
 #' @import XML
 #' @export
 #' @keywords ISO metadata element
