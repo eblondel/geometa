@@ -8,7 +8,7 @@ Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Description: Provides facilities to handle reading and writing of geographic metadata 
  defined with OGC/ISO 19115 and 19139 (XML) standards.
 Depends: R (>= 3.1.0)
-Imports: R6, XML
+Imports: R6, methods, XML
 Suggests: testthat, roxygen2
 License: MIT + file LICENSE
 URL: https://github.com/eblondel/geometa/wiki
