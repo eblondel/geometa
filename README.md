@@ -13,7 +13,7 @@ Please check the [online documentation](https://github.com/eblondel/geometa/wiki
 
 Current Focus:
 * ISO 19115:2003 standard
-* ISO 19139 XML with **Encoding** and **Decoding** support
+* ISO 19139 XML with **Encoding**, **Decoding** and **Validation** support
 * Classes for describing **vector data**
 
 Not yet supported:
