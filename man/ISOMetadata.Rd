@@ -43,13 +43,13 @@ ISOMetadataElement
 
 \item{\code{identificationInfo}}{}
 
+\item{\code{contentInfo}}{}
+
 \item{\code{distributionInfo}}{}
 
 \item{\code{dataQualityInfo}}{}
 
 \item{\code{metadataMaintenance}}{}
-
-\item{\code{contentInfo}}{}
 }}
 \section{Methods}{
 
@@ -123,6 +123,14 @@ ISOMetadataElement
  \item{\code{delIdentificationInfo(identificationInfo)}}{
    Deletes a data identification
  }
+ \item{\code{addContentInfo(contentInfo)}}{
+   Adds a content info, either an object of class \code{ISOCoverageDescription}
+   for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
+ }
+ \item{\code{delContentInfo(contentInfo)}}{
+   Deletes a content info, either an object of class \code{ISOCoverageDescription}
+   for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
+ }
  \item{\code{setDistributionInfo(distributionInfo)}}{
    Sets the distribution
  }
@@ -137,14 +145,6 @@ ISOMetadataElement
  }
  \item{\code{setMetadataMaintenance(metadataMaintenance)}}{
    Sets a metadata maintenance as object of class \code{ISOMaintenanceInformation}
- }
- \item{\code{addContentInfo(contentInfo)}}{
-   Adds a content info, either an object of class \code{ISOCoverageDescription}
-   for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
- }
- \item{\code{delContentInfo(contentInfo)}}{
-   Deletes a content info, either an object of class \code{ISOCoverageDescription}
-   for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
  }
 }
 }

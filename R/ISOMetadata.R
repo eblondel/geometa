@@ -21,10 +21,10 @@
 #' @field spatialRepresentationInfo
 #' @field referenceSystemInfo
 #' @field identificationInfo
+#' @field contentInfo
 #' @field distributionInfo
 #' @field dataQualityInfo
 #' @field metadataMaintenance
-#' @field contentInfo
 #'
 #' @section Methods:
 #' \describe{
@@ -97,6 +97,14 @@
 #'  \item{\code{delIdentificationInfo(identificationInfo)}}{
 #'    Deletes a data identification
 #'  }
+#'  \item{\code{addContentInfo(contentInfo)}}{
+#'    Adds a content info, either an object of class \code{ISOCoverageDescription} 
+#'    for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
+#'  }
+#'  \item{\code{delContentInfo(contentInfo)}}{
+#'    Deletes a content info, either an object of class \code{ISOCoverageDescription} 
+#'    for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
+#'  }
 #'  \item{\code{setDistributionInfo(distributionInfo)}}{
 #'    Sets the distribution
 #'  }
@@ -111,14 +119,6 @@
 #'  }
 #'  \item{\code{setMetadataMaintenance(metadataMaintenance)}}{
 #'    Sets a metadata maintenance as object of class \code{ISOMaintenanceInformation}
-#'  }
-#'  \item{\code{addContentInfo(contentInfo)}}{
-#'    Adds a content info, either an object of class \code{ISOCoverageDescription} 
-#'    for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
-#'  }
-#'  \item{\code{delContentInfo(contentInfo)}}{
-#'    Deletes a content info, either an object of class \code{ISOCoverageDescription} 
-#'    for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
 #'  }
 #' }
 #' 
@@ -401,6 +401,8 @@ ISOMetadata <- R6Class("ISOMetadata",
      referenceSystemInfo = list(),
      #+ identificationInfo [1..*]: ISODataIdentification
      identificationInfo = list(),
+     #+ contentInfo [0..*]
+     contentInfo = list(),
      #+ distributionInfo [0..1] : ISODistribution
      distributionInfo = NULL,
      #+ dataQualityInfo [0..*]: ISODataQuality
@@ -410,8 +412,6 @@ ISOMetadata <- R6Class("ISOMetadata",
      
      #unsupported sets (to implement)
      #----------------
-     #+ contentInfo [0..*]
-     contentInfo = list(),
      #+ portrayalCatalogueInfo [0..*]
      portrayalCatalogueInfo = list(), #TODO
      #+ applicationSchemaInfo [0..*]

@@ -9,7 +9,7 @@
 #'
 #' @field complianceCode
 #' @field language
-#' @field includeWithDataset
+#' @field includedWithDataset
 #' @field featureCatalogueCitation
 #'
 #' @section Methods:
@@ -26,7 +26,7 @@
 #'  \item{\code{delLanguage(lang)}}{
 #'    Deletes a language
 #'  }
-#'  \item{\code{setIncludeWithDataset(include)}}{
+#'  \item{\code{setIncludedWithDataset(include)}}{
 #'    Sets TRUE if included with dataset, FALSE otherwise
 #'  }
 #'  \item{\code{addFeatureCatalogueCitation(citation)}}{
@@ -43,7 +43,7 @@
 #'   md <- ISOFeatureCatalogueDescription$new()
 #'   md$setComplianceCode(FALSE)
 #'   md$addLanguage("eng")
-#'   md$setIncludeWithDataset(FALSE)
+#'   md$setIncludedWithDataset(FALSE)
 #'   
 #'   cit = ISOCitation$new()
 #'   contact = ISOContact$new()
@@ -72,8 +72,8 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
      complianceCode = NULL,
      #+ language [0..*]: character
      language = list(),
-     #+ includeWithDataset: logical
-     includeWithDataset = NULL,
+     #+ includedWithDataset: logical
+     includedWithDataset = FALSE,
      #+ featureTypes [0..*]: GenericName #TODO?
      featureTypes = list(),
      #+ featureCatalogueCitation [1..*]: ISOCitation
@@ -106,13 +106,13 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
        return(self$delListElement("language", lang))
      },
      
-     #setIncludeWithDataset
-     setIncludeWithDataset = function(include){
+     #setIncludedWithDataset
+     setIncludedWithDataset = function(include){
        if(!is(include, "logical")){
          include <- as.logical(include)
          if(is.na(include)) stop("Value cannot be coerced to 'logical'")
        }
-       self$includeWithDataset <- include
+       self$includedWithDataset <- include
      },
      
      #addFeatureCatalogueCitation

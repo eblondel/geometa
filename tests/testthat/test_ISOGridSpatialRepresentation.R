@@ -13,6 +13,7 @@ test_that("encoding",{
   #encoding
   md <- ISOGridSpatialRepresentation$new()
   md$setNumberOfDimensions(1)
+  md$setTransformationParameterAvailability(FALSE)
   dim1 <- ISODimension$new()
   dim1$setName("row")
   dim1$setSize(100)

@@ -14,6 +14,7 @@ test_that("encoding",{
   
   #inherited methods from ISOGridSpatialRepresentation
   md$setNumberOfDimensions(1)
+  md$setTransformationParameterAvailability(FALSE)
   dim1 <- ISODimension$new()
   dim1$setName("row")
   dim1$setSize(100)
@@ -28,6 +29,11 @@ test_that("encoding",{
   md$setGeoreferencedParameters("record")
   ct <- ISOCitation$new()
   ct$setTitle("citation")
+  ct$setAlternateTitle("alternate title")
+  d <- ISODate$new()
+  d$setDate(ISOdate(2015,1,1))
+  d$setDateType("revision")
+  ct$addDate(d)
   md$addParameterCitation(ct)
   
   xml <- md$encode()

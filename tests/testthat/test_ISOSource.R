@@ -20,7 +20,12 @@ test_that("encoding",{
   md$setReferenceSystem(rs)
   
   cit <- ISOCitation$new()
-  cit$setTitle("sometitle") #and more citation properties...
+  cit$setTitle("sometitle") 
+  cit$setAlternateTitle("somealternatetitle") #and more citation properties...
+  d <- ISODate$new()
+  d$setDate(ISOdate(2015,1,1))
+  d$setDateType("creation")
+  cit$addDate(d)
   md$setCitation(cit)
   
   extent <- ISOExtent$new()
