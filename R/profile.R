@@ -8,4 +8,7 @@
   #fetch ISO codelists
   fetchISOCodelists()
   
+  #fetch ISO schemas
+  fetchISOSchemas()
+  
 } # nocov end

@@ -14,7 +14,7 @@ defined with OGC/ISO 19115 and 19139 (XML) standards.
    Package: \tab geometa\cr
    Type: \tab Package\cr
    Version: \tab 0.2-0\cr
-   Date: \tab 2017-06-08\cr
+   Date: \tab 2017-06-13\cr
    License: \tab MIT\cr
    LazyLoad: \tab yes\cr
  }

@@ -38,11 +38,38 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{new(xml, element, namespace)}}{
    This method is used to instantiate an ISOMetadataElement
  }
+ \item{\code{INFO(text)}}{
+   Logger to report information. Used internally
+ }
+ \item{\code{WARN(text)}}{
+   Logger to report warnings. Used internally
+ }
+ \item{\code{ERROR(text)}}{
+   Logger to report errors. Used internally
+ }
+ \item{\code{print()}}{
+   Provides a custom print output (as tree) of the current class
+ }
  \item{\code{decode(xml)}}{
    Decodes a ISOMetadata* R6 object from XML representation
  }
- \item{\code{encode()}}{
-   Encodes a ISOMetadata* R6 object to XML representation
+ \item{\code{encode(addNS, validate, strict)}}{
+   Encodes a ISOMetadata* R6 object to XML representation. By default, namespace
+   definition will be added to XML root (\code{addNS = TRUE}), and validation
+   of object will be performed (\code{validate = TRUE}) prior to its XML encoding.
+   The argument \code{strict} allows to stop the encoding in case object is not
+   valid, with a default value set to \code{FALSE}.
+ }
+ \item{\code{validate(xml, strict)}}{
+   Validates the encoded XML against ISO 19139 XML schemas. If \code{strict} is
+   \code{TRUE}, a error will be raised. Default is \code{FALSE}.
+ }
+ \item{\code{getNamespaceDefinition(recursive)}}{
+   Gets the namespace definition of the current ISO* class. By default, only
+   the namespace definition of the current element is retrieved (\code{recursive = FALSE}).
+ }
+ \item{\code{getClassName()}}{
+   Gets the class name
  }
  \item{\code{wrapBaseElement(field, fieldObj)}}{
    Wraps a base element type
