@@ -98,7 +98,7 @@ ISOCodelist <- R6Class("ISOCodelist",
 #' fetchISOCodelists
 #' @export
 fetchISOCodelists <- function(){
-  cat("[geometa][INFO] Loading ISO codelists... \n")
+  packageStartupMessage("Loading ISO 19115 codelists... \n")
   
   #parse other ISO codelists
   languageCL <- "ISO-639-2_utf-8.txt" #from http://www.loc.gov/standards/iso639-2/
@@ -125,11 +125,11 @@ fetchISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MD_CoverageContentTypeCode")
   )
   names(codelists) <- sapply(codelists, function(cl){cl$identifier})
-  .geometa.iso$codelists <- codelists
+  .geometa.iso.codelists <- codelists
 }
 
 getISOCodelists <- function(){
-  return(.geometa.iso$codelists)
+  return(.geometa.iso.codelists)
 }
 
 getISOCodelist <- function(id){

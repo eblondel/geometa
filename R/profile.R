@@ -1,5 +1,7 @@
 .onLoad <- function (libname, pkgname) { # nocov start
   assign(".geometa.iso", new.env(), envir= asNamespace(pkgname))
+  assign(".geometa.iso.codelists", new.env(), envir= asNamespace(pkgname))
+  assign(".geometa.iso.schemas", new.env(), envir= asNamespace(pkgname))
   
   #schema base URL
   .geometa.iso$languageUrl <- "http://www.loc.gov/standards/iso639-2/"

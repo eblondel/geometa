@@ -367,7 +367,7 @@ ISOMetadataElement
    fcd <- ISOFeatureCatalogueDescription$new()
    fcd$setComplianceCode(FALSE)
    fcd$addLanguage("eng")
-   fcd$setIncludeWithDataset(FALSE)
+   fcd$setIncludedWithDataset(FALSE)
    cit = ISOCitation$new()
    contact = ISOContact$new()
    fcLink <- ISOOnlineResource$new()
