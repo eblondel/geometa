@@ -41,6 +41,7 @@ test_that("encoding",{
   
   #decoding
   md2 <- ISOGeoreferenceable$new(xml = xml)
+  xml2 <- md2$encode()
   
   expect_true(ISOMetadataElement$compare(md, md2))
 })

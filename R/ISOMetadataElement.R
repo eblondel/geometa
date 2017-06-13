@@ -261,7 +261,6 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         rootNamespaces <- sapply(ISOMetadataNamespace$all(), function(x){x$getDefinition()})
         rootXML <- xmlOutputDOM(
           tag = self$element,
-          attrs = rootXMLAttrs,
           nameSpace = self$namespace$id,
           nsURI = rootNamespaces
         )
@@ -270,14 +269,12 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
           nsdefs <- self$getNamespaceDefinition(recursive = TRUE)
           rootXML <- xmlOutputDOM(
             tag = self$element,
-            attrs = rootXMLAttrs,
             nameSpace = self$namespace$id,
             nsURI = nsdefs
           )
         }else{
           rootXML <- xmlOutputDOM(
             tag = self$element,
-            attrs = rootXMLAttrs,
             nameSpace = self$namespace$id
           )
         }
@@ -350,9 +347,9 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
       out <- rootXML$value()
       out <- as(out, "XMLInternalNode")
-      #if(addNS & self$element != "MD_Metadata"){
-      #  xmlNamespaces(out, set = TRUE) <- self$getNamespaceDefinition()
-      #}
+      if(length(rootXMLAttrs)>0){
+        suppressWarnings(xmlAttrs(out) <- rootXMLAttrs)
+      }
       
       #validation vs. ISO 19139 XML schemas
       #no GFC validation for the timebeing
@@ -560,13 +557,13 @@ ISOMetadataElement$getISOClassByNode = function(node){
 ISOMetadataElement$compare = function(metadataElement1, metadataElement2){
   text1 <- NULL
   if(is(metadataElement1, "ISOMetadataElement")){
-    text1 <- as(XML::xmlDoc(metadataElement1$encode(addNS = FALSE, validate = FALSE)), "character")
+    text1 <- as(XML::xmlDoc(metadataElement1$encode(addNS = TRUE, validate = FALSE)), "character")
   }else{
     text1 <- as.character(metadataElement1)
   }
   text2 <- NULL
   if(is(metadataElement2, "ISOMetadataElement")){
-    text2 <- as(XML::xmlDoc(metadataElement2$encode(addNS = FALSE, validate = FALSE)), "character")
+    text2 <- as(XML::xmlDoc(metadataElement2$encode(addNS = TRUE, validate = FALSE)), "character")
   }else{
     text2 <- as.character(metadataElement2)
   }
