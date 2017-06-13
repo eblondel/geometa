@@ -35,7 +35,7 @@ ISOCodelist <- R6Class("ISOCodelist",
     parse = function(refFile, id){
       
       #query ISO XML Codelist file
-      clFile <- system.file("extdata/codelists", refFile, package = "geometa")
+      clFile <- system.file("extdata/codelists", refFile, package = "geometa", mustWork = TRUE)
       if(nchar(clFile)==0){
         stop(sprintf("Reference file '%s' missing in geometa files", refFile))
       }

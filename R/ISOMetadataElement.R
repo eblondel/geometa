@@ -575,7 +575,7 @@ ISOMetadataElement$compare = function(metadataElement1, metadataElement2){
 #fetchISOSchemas
 fetchISOSchemas <- function(){
   cat("[geometa][INFO] Loading ISO schemas... \n")
-  xsdfile <- system.file("extdata/schemas", "gmd/gmd.xsd", package = "geometa")
+  xsdfile <- system.file("extdata/schemas/gmd", "gmd.xsd", package = "geometa", mustWork = TRUE)
   .geometa.iso$schemas <- tryCatch(
     XML::xmlTreeParse(
       xsdfile, isSchema = TRUE, xinclude = TRUE,
