@@ -359,7 +359,7 @@
 #'    #example 2 - READ: Create an ISO metadata reading from XML
 #'    ######################################################
 #'    require(XML)
-#'    xmlfile <- system.file("extdata", "metadata.xml", package = "geometa")
+#'    xmlfile <- system.file("extdata/examples", "metadata.xml", package = "geometa")
 #'    xml <- xmlParse(xmlfile)
 #'    md <- ISOMetadata$new(xml = xml)
 #' 
