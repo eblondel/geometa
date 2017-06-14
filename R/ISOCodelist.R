@@ -125,16 +125,16 @@ fetchISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MD_CoverageContentTypeCode")
   )
   names(codelists) <- sapply(codelists, function(cl){cl$identifier})
-  .geometa.iso.codelists <- codelists
+  .geometa.iso$codelists <- codelists
 }
 
 getISOCodelists <- function(){
-  return(.geometa.iso.codelists)
+  return(.geometa.iso$codelists)
 }
 
 getISOCodelist <- function(id){
   codelist <- NULL
-  invisible(lapply(.geometa.iso.codelists, function(cl){
+  invisible(lapply(.geometa.iso$codelists, function(cl){
     if(cl$identifier == id){
       codelist <<- cl
     }
