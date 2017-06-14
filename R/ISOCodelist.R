@@ -134,7 +134,7 @@ getISOCodelists <- function(){
 
 getISOCodelist <- function(id){
   codelist <- NULL
-  invisible(lapply(.geometa.iso$codelists, function(cl){
+  invisible(lapply(.geometa.iso.codelists, function(cl){
     if(cl$identifier == id){
       codelist <<- cl
     }
