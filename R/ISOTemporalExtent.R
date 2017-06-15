@@ -24,7 +24,7 @@
 #'    te <- ISOTemporalExtent$new()
 #'    start <- ISOdate(2000, 1, 12, 12, 59, 45)
 #'    end <- ISOdate(2010, 8, 22, 13, 12, 43)
-#'    tp <- ISOTimePeriod$new(beginPosition = start, endPosition = end)
+#'    tp <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
 #'    te$setTimePeriod(tp)
 #' 
 #' @references 
@@ -56,7 +56,7 @@ ISOTemporalExtent <- R6Class("ISOTemporalExtent",
     
     #setTimePeriod
     setTimePeriod = function(timePeriod){
-      if(!is(timePeriod, "ISOTimePeriod")){
+      if(!is(timePeriod, "GMLTimePeriod")){
         stop("Value should be an object of class 'ISOTimePeriod'")
       }
       self$extent = timePeriod

@@ -14,7 +14,7 @@ test_that("encoding",{
   te <- ISOTemporalExtent$new()
   start <- ISOdate(2000, 1, 12, 12, 59, 45)
   end <- ISOdate(2010, 8, 22, 13, 12, 43)
-  tp <- ISOTimePeriod$new(beginPosition = start, endPosition = end)
+  tp <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
   te$setTimePeriod(tp)
   
   xml <- te$encode()

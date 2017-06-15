@@ -1,10 +1,10 @@
-#' ISOTimePeriod
+#' GMLTimePeriod
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO time period
-#' @return Object of \code{\link{R6Class}} for modelling an ISOTimePeriod
+#' @return Object of \code{\link{R6Class}} for modelling an GMLTimePeriod
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field beginPosition
@@ -14,7 +14,7 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, beginPosition, endPosition)}}{
-#'    This method is used to instantiate an ISOTimePeriod
+#'    This method is used to instantiate an GMLTimePeriod
 #'  }
 #'  \item{\code{setBeginPosition(beginPosition)}}{
 #'    Sets the begin position (beginning date or date and time of the resource 
@@ -38,13 +38,13 @@
 #' @examples 
 #'   start <- ISOdate(2000, 1, 12, 12, 59, 45)
 #'   end <- ISOdate(2010, 8, 22, 13, 12, 43)
-#'   md <- ISOTimePeriod$new(beginPosition = start, endPosition = end)
+#'   md <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
 #'   xml <- md$encode()
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOTimePeriod <- R6Class("ISOTimePeriod",
-  inherit = ISOTemporalPrimitive,
+GMLTimePeriod <- R6Class("GMLTimePeriod",
+  inherit = GMLTemporalPrimitive,
   private = list(
     xmlElement = "TimePeriod",
     xmlNamespacePrefix = "GML"
@@ -118,7 +118,7 @@ ISOTimePeriod <- R6Class("ISOTimePeriod",
       secs.start <- mins.seq[length(mins.seq)]
       secs.seq <- seq(secs.start, end, by = "secs")
       secs <- length(secs.seq)-1
-      isoduration <- ISOTimePeriod$computeISODuration(years, months, days, 
+      isoduration <- GMLTimePeriod$computeISODuration(years, months, days, 
                                                       hours, mins, secs)           
       self$setId(isoduration)
     },
@@ -131,13 +131,13 @@ ISOTimePeriod <- R6Class("ISOTimePeriod",
     #setDuration
     setDuration = function(years = 0, months = 0, days = 0,
                            hours = 0, mins = 0, secs = 0){
-      self$duration <- ISOTimePeriod$computeISODuration(years, months, days,
+      self$duration <- GMLTimePeriod$computeISODuration(years, months, days,
                                                         hours, mins, secs)  
     }
   )                        
 )
 
-ISOTimePeriod$computeISODuration = function(years = 0, months = 0, days = 0,
+GMLTimePeriod$computeISODuration = function(years = 0, months = 0, days = 0,
                                             hours = 0, mins = 0, secs = 0){
   duration <- "P"
   if(years>0) duration <- paste0(duration, years, "Y")
@@ -149,3 +149,13 @@ ISOTimePeriod$computeISODuration = function(years = 0, months = 0, days = 0,
   if(secs>0) duration <- paste0(duration, secs, "S")
   return(duration)
 }
+
+#' ISOTimePeriod
+#' @export
+#' @noRd
+ISOTimePeriod <- R6Class("ISOTimePeriod",
+   private = list(xmlElement = "TimePeriod", xmlNamespacePrefix = "GML"),
+   public = list(initialize = function(xml = NULL, beginPosition, endPosition){
+    stop("Use of 'ISOTimePeriod' is deprecated, use 'GMLTimePeriod' instead!") 
+   })
+)

@@ -1,10 +1,10 @@
-#' ISOTemporalPrimitive
+#' GMLTemporalPrimitive
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO temporal primitive
-#' @return Object of \code{\link{R6Class}} for modelling an ISO abstract temporal primitive
+#' @return Object of \code{\link{R6Class}} for modelling an ISO GML abstract temporal primitive
 #' @format \code{\link{R6Class}} object.
 #'
 #'
@@ -22,11 +22,11 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOTemporalPrimitive <- R6Class("ISOTemporalPrimitive",
+GMLTemporalPrimitive <- R6Class("GMLTemporalPrimitive",
   inherit = ISOMetadataElement,
   private = list(
     xmlElement = "TM_Primitive",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = "GML"
   ),
   public = list(
     initialize = function(xml = NULL, element, namespace, defaults = list()){
