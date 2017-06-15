@@ -154,7 +154,7 @@ GMLTimePeriod$computeISODuration = function(years = 0, months = 0, days = 0,
 #' @export
 #' @noRd
 ISOTimePeriod <- R6Class("ISOTimePeriod",
-   private = list(xmlElement = "TimePeriod", xmlNamespacePrefix = "GML"),
+   private = NULL,
    public = list(initialize = function(xml = NULL, beginPosition, endPosition){
     stop("Use of 'ISOTimePeriod' is deprecated, use 'GMLTimePeriod' instead!") 
    })

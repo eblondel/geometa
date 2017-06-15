@@ -538,7 +538,7 @@ ISOMetadataElement$getISOClassByNode = function(node){
     nodeElementName <- nodeElementNames[2]
   }
   list_of_classes <- rev(ls("package:geometa"))
-  list_of_classes <- list_of_classes[regexpr("^ISO.+", list_of_classes)>0]
+  list_of_classes <- list_of_classes[regexpr("^ISO.+", list_of_classes)>0 | regexpr("^GML.+", list_of_classes)>0]
   for(classname in list_of_classes){
     class <- eval(parse(text=classname))
     if(length(class$private_fields)>0
