@@ -57,7 +57,7 @@ ISOTemporalExtent <- R6Class("ISOTemporalExtent",
     #setTimePeriod
     setTimePeriod = function(timePeriod){
       if(!is(timePeriod, "GMLTimePeriod")){
-        stop("Value should be an object of class 'ISOTimePeriod'")
+        stop("Value should be an object of class 'GMLTimePeriod'")
       }
       self$extent = timePeriod
     }
