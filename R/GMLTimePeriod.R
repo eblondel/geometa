@@ -151,8 +151,18 @@ GMLTimePeriod$computeISODuration = function(years = 0, months = 0, days = 0,
 }
 
 #' ISOTimePeriod
+#'
+#' @docType class
+#' @importFrom R6 R6Class
 #' @export
-#' @noRd
+#' @keywords ISO time period
+#' @return Object of \code{\link{R6Class}} for modelling an GMLTimePeriod
+#' @format \code{\link{R6Class}} object.
+#' 
+#' @section Warning: Deprecated class, use \code{GMLTimePeriod} instead
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#' 
 ISOTimePeriod <- R6Class("ISOTimePeriod",
    private = NULL,
    public = list(initialize = function(xml = NULL, beginPosition, endPosition){
