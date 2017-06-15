@@ -98,7 +98,7 @@ ISOCodelist <- R6Class("ISOCodelist",
 #' fetchISOCodelists
 #' @export
 fetchISOCodelists <- function(){
-  packageStartupMessage("Loading ISO 19115 codelists... \n")
+  packageStartupMessage("Loading ISO 19115 codelists...")
   
   #parse other ISO codelists
   languageCL <- "ISO-639-2_utf-8.txt" #from http://www.loc.gov/standards/iso639-2/

@@ -352,8 +352,6 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
       
       #validation vs. ISO 19139 XML schemas
-      #no GFC validation for the timebeing
-      if(self$namespace$id == "gfc") validate <- FALSE
       if(validate){
         self$validate(xml = out, strict = strict)
       }
@@ -365,14 +363,16 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     validate = function(xml = NULL, strict = FALSE){
       
       #xml
+      schemaNamespaceId <- NULL
       if(is.null(xml)){
-        #no GFC validation for the timebeing
-        if(self$namespace$id == "gfc") return(TRUE)
+        schemaNamespaceId <- self$namespace$id
         xml <- self$encode(addNS = TRUE, validate = FALSE, strict = strict)
+      }else{
+        schemaNamespaceId <- names(xmlNamespace(xml))
       }
       
       #proceed with schema xml schema validation
-      xsd <- getISOSchemas()
+      xsd <- getISOSchemasFor(schemaNamespaceId)
       report <- xmlSchemaValidate(xsd, xmlDoc(xml))
       
       #check validity on self
@@ -572,19 +572,30 @@ ISOMetadataElement$compare = function(metadataElement1, metadataElement2){
 
 #ISO 19139 schemas fetcher / getter
 #===============================================================================
-#fetchISOSchemas
-fetchISOSchemas <- function(){
-  packageStartupMessage("Loading ISO 19139 XML schemas... \n")
-  xsdfile <- system.file("extdata/schemas/gmd", "gmd.xsd", package = "geometa", mustWork = TRUE)
-  .geometa.iso$schemas <- tryCatch(
+#fetchISOSchemaFor
+fetchISOSchemasFor <- function(namespace){
+  schemaPath <- "extdata/schemas"
+  xsd <- tryCatch(
     XML::xmlParse(
-      xsdfile, isSchema = TRUE, xinclude = TRUE,
+      system.file(paste(schemaPath, namespace, sep="/"), paste0(namespace,".xsd"),
+                  package = "geometa", mustWork = TRUE),
+      isSchema = TRUE, xinclude = TRUE,
       error = function (msg, code, domain, line, col, level, filename, class = "XMLError"){}
     )
   )
+  return(xsd)
+}
+
+#fetchISOSchemas
+fetchISOSchemas <- function(){
+  packageStartupMessage("Loading ISO 19139 XML schemas...")
+  namespaces <- c("gco", "gfc", "gmd", "gmx")
+  schemas <- lapply(namespaces, fetchISOSchemasFor)
+  names(schemas) <- namespaces
+  .geometa.iso$schemas <- schemas
 }
 
 #getISOSchemas
-getISOSchemas <- function(){
-  return(.geometa.iso$schemas)
+getISOSchemasFor <- function(namespace){
+  return(.geometa.iso$schemas[[namespace]])
 }

@@ -12,9 +12,14 @@ test_that("encoding",{
   
   #encoding
   md <- ISODefinitionReference$new()
+  md$setSourceIdentifier("identifier")
   citation <- ISOCitation$new()
   citation$setTitle("title")
-  md$setSourceIdentifier("identifier")
+  citation$setAlternateTitle("alternate title")
+  d <- ISODate$new()
+  d$setDate(ISOdate(2017,1,1))
+  d$setDateType("creation")
+  citation$addDate(d)
   md$setDefinitionSource(citation)
   source <- ISODefinitionSource$new(source = citation)
   md$setDefinitionSource(source)
