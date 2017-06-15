@@ -99,7 +99,7 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       
       #setCardinality
       setCardinality = function(lower, upper){
-        self$cardinality = ISOMultiplicityRange$new(lower = lower, upper = upper)
+        self$cardinality = ISOMultiplicity$new(lower = lower, upper = upper)
       },
       
       #addFeatureType

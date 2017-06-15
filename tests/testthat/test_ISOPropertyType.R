@@ -16,12 +16,12 @@ test_that("encoding",{
   md$setDefinition("definition")
   md$setCardinality(lower=1,upper=1)
   expect_is(md, "ISOPropertyType")
-  xml <- md$encode()
+  xml <- md$encode(validate = F)
   expect_is(xml, "XMLInternalNode")
   
   #decoding
   md2 <- ISOPropertyType$new(xml = xml)
-  xml2 <- md2$encode()
+  xml2 <- md2$encode(validate = F)
   
   expect_true(ISOMetadataElement$compare(md, md2))
   

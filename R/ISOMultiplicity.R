@@ -1,10 +1,10 @@
-#' ISOMultiplicityRange
+#' ISOMultiplicity
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO multiplicity range
-#' @return Object of \code{\link{R6Class}} for modelling an ISO MultiplicityRange
+#' @keywords ISO multiplicity
+#' @return Object of \code{\link{R6Class}} for modelling an ISOMultiplicity
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field value
@@ -12,12 +12,13 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, lower, upper)}}{
-#'    This method is used to instantiate an ISOMultiplicityRange
+#'    This method is used to instantiate an ISOMultiplicity. The range is specified
+#'    by two arguments \code{lower} and \code{upper}.
 #'  }
 #' }
 #' 
 #' @examples
-#'   md <- ISOMultiplicityRange$new(lower = 1, upper = Inf)
+#'   md <- ISOMultiplicity$new(lower = 1, upper = Inf)
 #'   xml <- md$encode()
 #' 
 #' @references
@@ -25,15 +26,14 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOMultiplicityRange <- R6Class("ISOMultiplicityRange",
+ISOMultiplicity <- R6Class("ISOMultiplicity",
   inherit = ISOMetadataElement,
   private = list(
-    xmlElement = "MultiplicityRange",
+    xmlElement = "Multiplicity",
     xmlNamespacePrefix = "GCO"
   ),
   public = list(
-    lower = NULL,
-    upper = NULL,
+    range = NULL,
     initialize = function(xml = NULL, lower, upper){
       super$initialize(
         xml = xml,
@@ -41,15 +41,7 @@ ISOMultiplicityRange <- R6Class("ISOMultiplicityRange",
         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       )
       if(is.null(xml)){
-        if(!is(lower, "integer")){
-          lower <- as.integer(lower)
-          if(is.na(lower)){
-            stop("The argument 'lower' should an integer")
-          }
-        }
-        self$lower = lower
-        self$upper = upper
-        class(self$upper) <- "unlimitedinteger"
+        self$range <- ISOMultiplicityRange$new(lower = lower, upper = upper)
       }
     }
   )                        
