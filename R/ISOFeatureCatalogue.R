@@ -130,6 +130,7 @@
 ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
     inherit = ISOMetadataElement,
     private = list(
+      document = TRUE,
       xmlElement = "FC_FeatureCatalogue",
       xmlNamespacePrefix = "GFC"
     ),

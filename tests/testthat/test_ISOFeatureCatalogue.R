@@ -75,7 +75,7 @@ test_that("encoding",{
   xml <- fc$encode()
   expect_is(fc, "ISOFeatureCatalogue")
   xml <- fc$encode()
-  expect_is(xml, "XMLInternalNode")
+  expect_is(xml, "XMLInternalDocument")
   
   #decoding
   fc2 <- ISOFeatureCatalogue$new(xml = xml)

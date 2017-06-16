@@ -371,6 +371,7 @@
 ISOMetadata <- R6Class("ISOMetadata",
   inherit = ISOMetadataElement,
   private = list(
+    document = TRUE,
     xmlElement = "MD_Metadata",
     xmlNamespacePrefix = "GMD"
   ),
