@@ -35,7 +35,7 @@ ISOFeatureAttribute
    Sets the code
  }
  \item{\code{setValueMeasurementUnit(uom)}}{
-   Sets the value measurement unit
+   Sets the value measurement unit, an object of class \code{GMLUnitDefinition}
  }
  \item{\code{addListedValue(value)}}{
    Adds a listed value (object of class \code{ISOListedValue})
@@ -55,10 +55,15 @@ md <- ISOFeatureAttribute$new()
   md$setCardinality(lower=1,upper=1)
   md$setCode("code")
 
-  uom <- ISOUomLength$new()
-  uom$setUomName("Meter")
-  uom$setUomSymbol("m")
-  md$setValueMeasurementUnit(uom)
+  gml <- GMLBaseUnit$new(id = "ID")
+  gml$setDescriptionReference("someref")
+  gml$setIdentifier("identifier", "codespace")
+  gml$addName("name1", "codespace")
+  gml$addName("name2", "codespace")
+  gml$setQuantityTypeReference("someref")
+  gml$setCatalogSymbol("symbol")
+  gml$setUnitsSystem("somelink")
+  md$setValueMeasurementUnit(gml)
 
   val1 <- ISOListedValue$new()
   val1$setCode("code1")

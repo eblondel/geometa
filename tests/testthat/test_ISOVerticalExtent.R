@@ -14,16 +14,13 @@ test_that("encoding",{
   ve <- ISOVerticalExtent$new()
   ve$setMinimumValue(0)
   ve$setMaximumValue(19)
-  uom <- ISOUomLength$new()
-  uom$setUomName("Meter")
-  uom$setUomSymbol("m")
-  ve$setUnitOfMeasure(uom)
+  
   xml <- ve$encode()
   expect_is(xml, "XMLInternalNode")
   
   #decoding
   ve2 <- ISOVerticalExtent$new(xml = xml)
   
-  expect_true(ISOMetadataElement$compare(ve, ve2))
+  expect_true(ISOAbstractObject$compare(ve, ve2))
   
 })

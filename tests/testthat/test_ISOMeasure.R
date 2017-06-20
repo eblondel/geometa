@@ -17,7 +17,7 @@ test_that("ISOMeasure",{
   md2 <- ISOMeasure$new(xml = xml)
   xml2 <- md2$encode()
   #identity
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
 })
 
 test_that("ISOLength",{
@@ -29,7 +29,7 @@ test_that("ISOLength",{
   md2 <- ISOLength$new(xml = xml)
   xml2 <- md2$encode()
   #identity
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
 })
 
 test_that("ISODistance",{
@@ -41,7 +41,7 @@ test_that("ISODistance",{
   md2 <- ISODistance$new(xml = xml)
   xml2 <- md2$encode()
   #identity
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
 })
 
 test_that("ISOAngle",{
@@ -53,7 +53,7 @@ test_that("ISOAngle",{
   md2 <- ISOAngle$new(xml = xml)
   xml2 <- md2$encode()
   #identity
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
 })
 
 test_that("ISOScale",{
@@ -65,5 +65,5 @@ test_that("ISOScale",{
   md2 <- ISOScale$new(xml = xml)
   xml2 <- md2$encode()
   #identity
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
 })

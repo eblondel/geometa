@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCharacterSet <- R6Class("ISOCharacterSet",
- inherit = ISOMetadataCodelistElement,
+ inherit = ISOCodeListValue,
  private = list(
    xmlElement = "MD_CharacterSetCode",
    xmlNamespacePrefix = "GMD"
@@ -43,5 +43,5 @@ ISOCharacterSet <- R6Class("ISOCharacterSet",
 )
 
 ISOCharacterSet$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOCharacterSet, labels))
+  return(ISOCodeListValue$values(ISOCharacterSet, labels))
 }

@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOLanguage <- R6Class("ISOLanguage",
-  inherit = ISOMetadataCodelistElement,
+  inherit = ISOCodeListValue,
   private = list(
     xmlElement = "LanguageCode",
     xmlNamespacePrefix = "GMD"
@@ -42,5 +42,5 @@ ISOLanguage <- R6Class("ISOLanguage",
 )
 
 ISOLanguage$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOLanguage, labels))
+  return(ISOCodeListValue$values(ISOLanguage, labels))
 }

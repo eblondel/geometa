@@ -25,7 +25,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODomainConsistency <- R6Class("ISODomainConsistency",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "DQ_DomainConsistency",
     xmlNamespacePrefix = "GMD"
@@ -33,11 +33,7 @@ ISODomainConsistency <- R6Class("ISODomainConsistency",
   public = list(
     result = list(),
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = "DQ_DomainConsistency",
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #addResult

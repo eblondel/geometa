@@ -16,7 +16,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, element, namespace, defaults)}}{
+#'  \item{\code{new(xml, defaults)}}{
 #'    This method is used to instantiate an ISOPropertyType
 #'  }
 #'  \item{\code{setMemberName(memberName)}}{
@@ -51,7 +51,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOPropertyType <- R6Class("ISOPropertyType",
-    inherit = ISOMetadataElement,
+    inherit = ISOAbstractObject,
     private = list(
       xmlElement = "FC_PropertyType",
       xmlNamespacePrefix = "GFC"
@@ -71,19 +71,9 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       #+ definitionReference [0..1]
       definitionReference = NULL,
       
-      initialize = function(xml = NULL,
-                            element = NULL, namespace = NULL,
-                            defaults = NULL){
-        
-        if(is.null(element)) element <- private$xmlElement
-        if(is.null(namespace)) namespace <- getISOMetadataNamespace(private$xmlNamespacePrefix)
+      initialize = function(xml = NULL, defaults = NULL){
         if(is.null(defaults)) defaults <- list(cardinality = ISOMultiplicityRange$new(lower=1L,upper=1L))
-        super$initialize(
-          xml = xml,
-          element = element,
-          namespace = namespace,
-          defaults = defaults
-        )
+        super$initialize(xml = xml, defaults = defaults)
       },
       
       #setMemberName

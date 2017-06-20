@@ -32,7 +32,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOBrowseGraphic <- R6Class("ISOBrowseGraphic",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MD_BrowseGraphic",
      xmlNamespacePrefix = "GMD"
@@ -42,11 +42,7 @@ ISOBrowseGraphic <- R6Class("ISOBrowseGraphic",
      fileDescription = NULL,
      fileType = NULL,
      initialize = function(xml = NULL, fileName, fileDescription, fileType){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
        if(is.null(xml)){
          self$fileName <- fileName
          self$fileDescription <- fileDescription

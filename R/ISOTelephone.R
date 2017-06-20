@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOTelephone <- R6Class("ISOTelephone",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "CI_Telephone",
      xmlNamespacePrefix = "GMD"
@@ -38,11 +38,7 @@ ISOTelephone <- R6Class("ISOTelephone",
      voice = NULL,
      facsimile = NULL,
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setVoice

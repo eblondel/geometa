@@ -55,11 +55,7 @@ ISOVectorSpatialRepresentation <- R6Class("ISOVectorSpatialRepresentation",
     #+ geometricObjects [0..*]: ISOGeometricObjects
     geometricObjects = list(),
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #setTopologyLevel

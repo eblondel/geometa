@@ -36,11 +36,7 @@ ISOGeographicDescription <- R6Class("ISOGeographicDescription",
     #+ geographicIdentifier [1..1]: character
     geographicIdentifier = NULL,
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #setGeographicIdentifier

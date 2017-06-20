@@ -33,8 +33,6 @@ ISOAngle <- R6Class("ISOAngle",
      initialize = function(xml = NULL, value, uom, useUomURI = FALSE){
        super$initialize(
          xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix),
          value = value,
          uom = uom,
          useUomURI = useUomURI

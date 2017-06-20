@@ -302,12 +302,7 @@ ISODataIdentification <- R6Class("ISODataIdentification",
          characterSet = ISOCharacterSet$new(value = "utf8")
        )
        
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix),
-         defaults = defaults
-       )
+       super$initialize(xml = xml, defaults = defaults)
      },
      
      #addSpatialRepresentationType

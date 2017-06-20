@@ -43,7 +43,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODimension <- R6Class("ISODimension",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MD_Dimension",
      xmlNamespacePrefix = "GMD"
@@ -56,11 +56,7 @@ ISODimension <- R6Class("ISODimension",
      #+ resolution [0..1]: ISOMeasure or subclass
      resolution = NULL,
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
     
      #setName

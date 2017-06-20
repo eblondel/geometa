@@ -30,7 +30,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOConstraint <- R6Class("ISOConstraint",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "FC_Constraint",
      xmlNamespacePrefix = "GFC"
@@ -41,11 +41,7 @@ ISOConstraint <- R6Class("ISOConstraint",
      description = NULL,
      
      initialize = function(xml = NULL, description = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
        if(!is.null(description)){
          self$setDescription(description)
        }

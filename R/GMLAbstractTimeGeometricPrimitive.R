@@ -1,4 +1,4 @@
-#' GMLTemporalPrimitive
+#' GMLAbstractTimeGeometricPrimitive
 #'
 #' @docType class
 #' @importFrom R6 R6Class
@@ -11,7 +11,7 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, element, namespace, defaults)}}{
-#'    This method is used to instantiate an ISOTemporalPrimitive
+#'    This method is used to instantiate an ISOAbstractTimeGeometricPrimitive
 #'  }
 #' }
 #' 
@@ -22,15 +22,15 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-GMLTemporalPrimitive <- R6Class("GMLTemporalPrimitive",
-  inherit = ISOMetadataElement,
+GMLAbstractTimeGeometricPrimitive <- R6Class("GMLAbstractTimeGeometricPrimitive",
+  inherit = GMLAbstractTimePrimitive,
   private = list(
-    xmlElement = "TM_Primitive",
+    xmlElement = "AbstractTimeGeometricPrimitive",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
-    initialize = function(xml = NULL, element, namespace, defaults = list()){
-      super$initialize(xml, element, namespace, defaults)
+    initialize = function(xml = NULL, defaults = list()){
+      super$initialize(xml, defaults)
     }
   )                        
 )

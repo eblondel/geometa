@@ -31,7 +31,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISORepresentativeFraction <- R6Class("ISORepresentativeFraction",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MD_RepresentativeFraction",
     xmlNamespacePrefix = "GMD"
@@ -39,11 +39,7 @@ ISORepresentativeFraction <- R6Class("ISORepresentativeFraction",
   public = list(
     denominator = NULL,
     initialize = function(xml = NULL, denominator){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
       if(is.null(xml) & !missing(denominator)){
         self$setDenominator(denominator)
       }

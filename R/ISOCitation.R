@@ -90,7 +90,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCitation<- R6Class("ISOCitation",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "CI_Citation",
     xmlNamespacePrefix = "GMD"
@@ -105,11 +105,7 @@ ISOCitation<- R6Class("ISOCitation",
     citedResponsibleParty = NULL,
     presentationForm = NULL,
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #setTitle

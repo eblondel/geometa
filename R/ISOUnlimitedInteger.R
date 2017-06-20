@@ -24,7 +24,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOUnlimitedInteger <- R6Class("ISOUnlimitedInteger",
-    inherit = ISOMetadataElement,
+    inherit = ISOAbstractObject,
     private = list(
       xmlElement = "UnlimitedInteger",
       xmlNamespacePrefix = "GCO"
@@ -33,11 +33,7 @@ ISOUnlimitedInteger <- R6Class("ISOUnlimitedInteger",
       value = NA,
       attrs = list(),
       initialize = function(xml = NULL, value){
-        super$initialize(
-          xml = xml,
-          element = private$xmlElement,
-          namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-        )
+        super$initialize(xml = xml)
         if(is.null(xml)){
           if(!is(value, "integer") & !is.infinite(value)){
             value <- as.integer(value)

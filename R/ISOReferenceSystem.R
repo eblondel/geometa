@@ -31,7 +31,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOReferenceSystem <- R6Class("ISOReferenceSystem",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MD_ReferenceSystem",
     xmlNamespacePrefix = "GMD"
@@ -39,11 +39,7 @@ ISOReferenceSystem <- R6Class("ISOReferenceSystem",
   public = list(
     referenceSystemIdentifier = NULL,
     initialize = function(xml = NULL, prefix, code){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #setReferenceSystemIdentifier

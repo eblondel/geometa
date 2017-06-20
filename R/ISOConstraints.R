@@ -33,7 +33,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOConstraints<- R6Class("ISOConstraints",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MD_Constraints",
     xmlNamespacePrefix = "GMD"
@@ -41,10 +41,8 @@ ISOConstraints<- R6Class("ISOConstraints",
   public = list(
     #+ useLimitation [0..*]: character
     useLimitation = list(),
-    initialize = function(xml = NULL, element = NULL, namespace = NULL, defaults = list()){
-      if(is.null(element)) element <- private$xmlElement
-      if(is.null(namespace)) namespace <- getISOMetadataNamespace(private$xmlNamespacePrefix)
-      super$initialize(xml, element, namespace, defaults)
+    initialize = function(xml = NULL, defaults = list()){
+      super$initialize(xml, defaults = defaults)
     },
     
     #addUseLimitation

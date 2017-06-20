@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCellGeometry <- R6Class("ISOCellGeometry",
-    inherit = ISOMetadataCodelistElement,
+    inherit = ISOCodeListValue,
     private = list(
       xmlElement = "MD_CellGeometryCode",
       xmlNamespacePrefix = "GMD"
@@ -42,5 +42,5 @@ ISOCellGeometry <- R6Class("ISOCellGeometry",
 )
 
 ISOCellGeometry$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOCellGeometry, labels))
+  return(ISOCodeListValue$values(ISOCellGeometry, labels))
 }

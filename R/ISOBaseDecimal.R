@@ -24,7 +24,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOBaseDecimal <- R6Class("ISOBaseDecimal",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "Decimal",
      xmlNamespacePrefix = "GCO"
@@ -32,11 +32,7 @@ ISOBaseDecimal <- R6Class("ISOBaseDecimal",
    public = list(
      value = NA,
      initialize = function(xml = NULL, value){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
        if(is.null(xml)){
          if(!is(value, "double")){
            value <- as.double(value)

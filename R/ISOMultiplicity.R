@@ -27,7 +27,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMultiplicity <- R6Class("ISOMultiplicity",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "Multiplicity",
     xmlNamespacePrefix = "GCO"
@@ -35,11 +35,7 @@ ISOMultiplicity <- R6Class("ISOMultiplicity",
   public = list(
     range = NULL,
     initialize = function(xml = NULL, lower, upper){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
       if(is.null(xml)){
         self$range <- ISOMultiplicityRange$new(lower = lower, upper = upper)
       }

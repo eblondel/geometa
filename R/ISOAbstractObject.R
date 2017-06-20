@@ -1,4 +1,4 @@
-#' ISOMetadataElement
+#' ISOAbstractObject
 #'
 #' @docType class
 #' @importFrom utils packageDescription
@@ -23,8 +23,8 @@
 #'
 #' @section Abstract Methods:
 #' \describe{
-#'  \item{\code{new(xml, element, namespace)}}{
-#'    This method is used to instantiate an ISOMetadataElement
+#'  \item{\code{new(xml, element, namespace, defaults, attrs)}}{
+#'    This method is used to instantiate an ISOAbstractObject
 #'  }
 #'  \item{\code{INFO(text)}}{
 #'    Logger to report information. Used internally
@@ -76,17 +76,41 @@
 #'    has been deleted, FALSE otherwise. In case an element is abstent, this method 
 #'    will return FALSE.
 #'  }
+#'  \item{\code{setAttr(attrKey, attrValue)}}{
+#'    Set an attribute
+#'  }
+#'  \item{\code{setId(id, addNS)}}{
+#'    Set an id. By default \code{addNS} is \code{FALSE} (no namespace prefix added).
+#'  }
+#'  \item{\code{setHref(href)}}{
+#'    Sets an href reference
+#'  }
+#'  \item{\code{setCodeList(codeList)}}{
+#'    Sets a codeList
+#'  }
+#'  \item{\code{setCodeListValue(codeListValue)}}{
+#'    Sets a codeList value
+#'  }
+#'  \item{\code{setCodeSpace(codeSpace)}}{
+#'    Set a codeSpace
+#'  }
+#'  \item{\code{setValue(value)}}{
+#'    Set a value
+#'  }
 #' }
 #' 
 #' @note Abstract ISO Metadata class used internally by geometa
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOMetadataElement <- R6Class("ISOMetadataElement",
+ISOAbstractObject <- R6Class("ISOAbstractObject",
   private = list(
+    xmlElement = "AbstractObject",
+    xmlNamespacePrefix = "GCO",
     encoding = options("encoding"),
     document = FALSE,
-    system_fields = c("wrap", "element", "namespace", "defaults", "attrs",
+    system_fields = c("wrap", 
+                      "element", "namespace", "defaults", "attrs",
                       "codelistId", "measureType"),
     logger = function(type, text){
       cat(sprintf("[geometa][%s] %s \n", type, text))
@@ -113,6 +137,23 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       txt <- paste(txt, bugReport, sep="\n")
       txt <- paste(txt, "-->", sep="\n")
       return(txt)
+    },
+    toComplexTypes = function(value){
+      newvalue <- value
+      if(regexpr(pattern = "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})", value)>0){
+        newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = "GMT")
+      }else if(regexpr(pattern = "(\\d{4})-(\\d{2})-(\\d{2})", value)>0){
+        newvalue <- as.Date(value) 
+      }
+      return(newvalue)
+    },
+    fromComplexTypes = function(value){
+      if(suppressWarnings(all(class(value)==c("POSIXct","POSIXt")))){
+        value <- format(value,"%Y-%m-%dT%H:%M:%S")
+      }else if(class(value)[1] == "Date"){
+        value <- format(value,"%Y-%m-%d")
+      }
+      return(value)
     }
   ),
   public = list(
@@ -129,10 +170,18 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     element = NA,
     namespace = NA,
     defaults = list(),
-    initialize = function(xml = NULL, element, namespace, defaults = list()){
-      self$element = element
-      self$namespace = namespace
+    attrs = list(),
+    value = NULL,
+    initialize = function(xml = NULL, element = NULL, namespace = NULL,
+                          attrs = list(), defaults = list(),
+                          wrap = TRUE){
+      if(!is.null(element)){ private$xmlElement <- element }
+      if(!is.null(namespace)){ private$xmlNamespacePrefix <- toupper(namespace)}
+      self$element = private$xmlElement
+      self$namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
+      self$attrs = attrs
       self$defaults = defaults
+      self$wrap = wrap
       if(!is.null(xml)){
         self$decode(xml)
       }
@@ -153,7 +202,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       })]
       
       cat(sprintf("<%s>", self$getClassName()))
-      if(is(self, "ISOMetadataCodelistElement")){
+      if(is(self, "ISOCodeListValue")){
         clVal <- self$attrs$codeListValue
         clDes <- self$codelistId$entries[self$codelistId$entries$value == clVal,"description"]
         cat(paste0(": ", clVal, " {",clDes,"}"))
@@ -172,15 +221,15 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         #user values management
         shift <- "...."
         if(!is.null(fieldObj)){
-          if(is(fieldObj, "ISOMetadataElement")){
+          if(is(fieldObj, "ISOAbstractObject")){
             cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, " "))
             fieldObj$print(depth = depth+1)
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
-              if(is(item, "ISOMetadataElement")){
+              if(is(item, "ISOAbstractObject")){
                 cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, " "))
                 item$print(depth = depth+1)
-                if(is(item, "ISOMetadataCodelistElement")){
+                if(is(item, "ISOCodeListValue")){
                   clVal <- item$attrs$codeListValue
                   clDes <- item$codelistId$entries[item$codelistId$entries$value == clVal,"description"]
                   cat(paste0(": ", clVal, " {",clDes,"}"))
@@ -207,6 +256,8 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       }
       for(child in xmlChildren(xml, encoding = private$encoding)){
         fieldName <- xmlName(child)
+        childElement <- child
+        nsPrefix <- ""
         fNames <- unlist(strsplit(fieldName, ":"))
         if(length(fNames)>1){
          fieldName <- fNames[2]
@@ -216,28 +267,28 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         
         fieldClass <- NULL
         if(!is(child, "XMLInternalTextNode")){
-          fieldClass <- ISOMetadataElement$getISOClassByNode(child)
+          fieldClass <- ISOAbstractObject$getISOClassByNode(child)
+          nsPrefix <- names(xmlNamespace(child))
           if(is.null(fieldClass)){
-            child <- xmlChildren(child, encoding = private$encoding)[[1]]
-            fieldClass <- ISOMetadataElement$getISOClassByNode(child)
+            children <- xmlChildren(child, encoding = private$encoding)
+            if(length(children)>0){
+              childroot <- children[[1]]
+              if(!is(childroot, "XMLInternalTextNode")){
+                child <- childroot
+                fieldClass <- ISOAbstractObject$getISOClassByNode(childroot)
+              }
+            }
           }
         }
         
-        fieldValue <- NULL
+        #coercing
+        fieldValue <- xmlValue(child, recursive = FALSE)
+        if(length(fieldValue)>0){
+          fieldValue <- private$toComplexTypes(fieldValue)
+        }
+        
         if(!is.null(fieldClass)){
           if(regexpr("^ISOBase.+", fieldClass$classname)>0){
-            fieldValue <- xmlValue(child)
-            
-            #coerceTimePosition util
-            coerceTimePosition <- function(fieldValue){
-              outval <- NULL
-              if(nchar(fieldValue)==10){
-                outval <- as.Date(fieldValue)
-              }else{
-                outval <- as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT")
-              }
-              return(outval)
-            }
             
             fieldValue <- switch(fieldClass$classname,
                                  "ISOBaseBoolean" = as.logical(fieldValue),
@@ -248,14 +299,11 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                                    class(fieldValue) <- "decimal"
                                    fieldValue
                                  },
-                                 "ISOBaseDate" = as.Date(fieldValue),
-                                 "ISOBaseDateTime" = as.POSIXct(strptime(fieldValue, "%Y-%m-%dT%H:%M:%S"), tz = "GMT"),
-                                 "ISOBaseTimeBeginPosition" = coerceTimePosition(fieldValue),
-                                 "ISOBaseTimeEndPosition" = coerceTimePosition(fieldValue),
                                  fieldValue
             )
           }else{
             fieldValue <- fieldClass$new(xml = child)
+            fieldValue$attrs <- as.list(xmlAttrs(child, TRUE, FALSE))
           }
           if(is(self[[fieldName]], "list")){
             self[[fieldName]] <- c(self[[fieldName]], fieldValue)
@@ -263,10 +311,23 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             self[[fieldName]] <- fieldValue
           }
         }else{
-          self[["value"]] <- as(child, "character") 
+          if(nsPrefix == "gml"){
+            gmlElem <- GMLElement$new(element = fieldName)
+            gmlElem$decode(xml = childElement)
+            if(is(self[[fieldName]], "list")){
+              self[[fieldName]] <- c(self[[fieldName]], gmlElem)
+            }else{
+              self[[fieldName]] <- gmlElem
+            }
+          }else{
+            self[["value"]] <- as(child, "character")
+          }
         }
         
       }
+      
+      #inherit attributes if any
+      self$attrs <- as.list(xmlAttrs(xml, TRUE, FALSE))
     },
     
     #encode
@@ -323,8 +384,8 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         
         #user values management
         if(!is.null(fieldObj)){
-          if(is(fieldObj, "ISOMetadataElement")){
-            if(fieldObj$wrap){
+          if(is(fieldObj, "ISOAbstractObject")){
+            if(self$wrap){
               wrapperNode <- xmlOutputDOM(
                 tag = field,
                 nameSpace = self$namespace$id
@@ -337,7 +398,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
               nodeValue <- NULL
-              if(is(item, "ISOMetadataElement")){
+              if(is(item, "ISOAbstractObject")){
                 nodeValue <- item
               }else{
                 nodeValue <- self$wrapBaseElement(field, item)
@@ -355,6 +416,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
             }
           }else{
             if(field == "value"){
+              fieldObj <- private$fromComplexTypes(fieldObj)
               rootXML$addNode(xmlTextNode(fieldObj))
             }else{
               dataObj <- self$wrapBaseElement(field, fieldObj)
@@ -446,6 +508,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     #getNamespaceDefinition
     getNamespaceDefinition = function(recursive = FALSE){
       nsdefs <- NULL
+      
       if(recursive){
         #list of fields
         fields <- rev(names(self))
@@ -456,52 +519,65 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         
         selfNsdef <- self$getNamespaceDefinition()
         nsdefs <- list()
-        invisible(lapply(fields, function(x){
-          xObj <- self[[x]]
-          if(is.null(xObj) || (is.list(xObj) & length(xObj) == 0)){
-            if(x %in% names(self$defaults)){
-              xObj <- self$defaults[[x]]
-            }
-          }
-          if(!is.null(xObj)){
-            nsdef <- NULL
-            if(is(xObj, "ISOMetadataElement")){
-              nsdef <- xObj$getNamespaceDefinition(recursive = recursive)
-            }else if(is(xObj, "list")){
-              nsdef <- list()
-              invisible(lapply(xObj, function(xObj.item){
-                nsdef.item <- NULL
-                if(is(xObj.item, "ISOMetadataElement")){
-                  nsdef.item <- xObj.item$getNamespaceDefinition(recursive = recursive)
-                }else{
-                  nsdef.item <- ISOMetadataNamespace$GCO$getDefinition() 
-                }
-                for(item in names(nsdef.item)){
-                  nsd <- nsdef.item[[item]]
-                  if(!(nsd %in% nsdef)){
-                    nsdef.new <- c(nsdef, nsd)
-                    names(nsdef.new) <- c(names(nsdef), item)
-                    nsdef <<- nsdef.new
-                  }
-                }
-              }))
-            }else{
-              nsdef <- ISOMetadataNamespace$GCO$getDefinition()
-            }
-            for(item in names(nsdef)){
-              nsdef.item <- nsdef[[item]]
-              if(!(nsdef.item %in% nsdefs)){
-                nsdefs.new <- c(nsdefs, nsdef.item)
-                names(nsdefs.new) <- c(names(nsdefs), item)
-                nsdefs <<- nsdefs.new
+        if(length(fields)>0){
+          invisible(lapply(fields, function(x){
+            xObj <- self[[x]]
+            if(is.null(xObj) || (is.list(xObj) & length(xObj) == 0)){
+              if(x %in% names(self$defaults)){
+                xObj <- self$defaults[[x]]
               }
             }
-          }
-        }))
+            if(!is.null(xObj)){
+              nsdef <- NULL
+              if(is(xObj, "ISOAbstractObject")){
+                nsdef <- xObj$getNamespaceDefinition(recursive = recursive)
+              }else if(is(xObj, "list")){
+                nsdef <- list()
+                invisible(lapply(xObj, function(xObj.item){
+                  nsdef.item <- NULL
+                  if(is(xObj.item, "ISOAbstractObject")){
+                    nsdef.item <- xObj.item$getNamespaceDefinition(recursive = recursive)
+                  }else{
+                    nsdef.item <- ISOMetadataNamespace$GCO$getDefinition() 
+                  }
+                  for(item in names(nsdef.item)){
+                    nsd <- nsdef.item[[item]]
+                    if(!(nsd %in% nsdef)){
+                      nsdef.new <- c(nsdef, nsd)
+                      names(nsdef.new) <- c(names(nsdef), item)
+                      nsdef <<- nsdef.new
+                    }
+                  }
+                }))
+              }else{
+                nsdef <- ISOMetadataNamespace$GCO$getDefinition()
+              }
+              for(item in names(nsdef)){
+                nsdef.item <- nsdef[[item]]
+                if(!(nsdef.item %in% nsdefs)){
+                  nsdefs.new <- c(nsdefs, nsdef.item)
+                  names(nsdefs.new) <- c(names(nsdefs), item)
+                  nsdefs <<- nsdefs.new
+                }
+              }
+            }
+          }))
+        }
         if(!(selfNsdef[[1]] %in% nsdefs)) nsdefs <- c(selfNsdef, nsdefs)
         nsdefs <- nsdefs[!sapply(nsdefs, is.null)]
       }else{
         nsdefs <- self$namespace$getDefinition()
+        invisible(lapply(names(self$attrs), function(attr){
+          str <- unlist(strsplit(attr,":", fixed=T))
+          if(length(str)>1){
+            nsprefix <- str[1]
+            namespace <- ISOMetadataNamespace[[toupper(nsprefix)]]
+            if(!is.null(namespace)){
+              ns <- namespace$getDefinition()
+              if(!(ns %in% nsdefs)) nsdefs <<- c(nsdefs, ns)
+            }
+          }
+        }))
       }
       return(nsdefs)
     },
@@ -517,8 +593,6 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
       
       #specific coercing
       if(all(dataType == c("POSIXct","POSIXt"))) dataType <- "datetime"
-      if(field == "beginPosition") dataType <- "begintime"
-      if(field == "endPosition") dataType <- "endtime"
       
       #wrapping
       dataObj <- switch(tolower(dataType),
@@ -530,8 +604,6 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
                         "logical"   = ISOBaseBoolean$new(value = fieldObj),
                         "datetime"  = ISOBaseDateTime$new(value = fieldObj),
                         "date"      = ISOBaseDate$new(value = fieldObj),
-                        "begintime" = ISOBaseTimeBeginPosition$new(value = fieldObj),
-                        "endtime"   = ISOBaseTimeEndPosition$new(value = fieldObj),
                         NULL
       )
       return(dataObj)
@@ -544,7 +616,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
         out = FALSE
       }else{
         out = any(sapply(self[[field]], function(x){
-          ISOMetadataElement$compare(x, metadataElement)
+          ISOAbstractObject$compare(x, metadataElement)
         }))
       }
       return(out)
@@ -564,10 +636,47 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
     delListElement = function(field, metadataElement){
       startNb <- length(self[[field]])
       if(self$contains(field, metadataElement)){
-        self[[field]] = self[[field]][!sapply(self[[field]], ISOMetadataElement$compare, metadataElement)]
+        self[[field]] = self[[field]][!sapply(self[[field]], ISOAbstractObject$compare, metadataElement)]
       }
       endNb = length(self[[field]])
       return(endNb == startNb-1)
+    },
+    
+    #setAttr
+    setAttr = function(attrKey, attrValue){
+      self$attrs[[attrKey]] <- attrValue
+    },
+    
+    #setId
+    setId = function(id, addNS = FALSE){
+      attrKey <- "id"
+      if(addNS) attrKey <- paste(tolower(private$xmlNamespacePrefix), attrKey, sep=":")
+      self$attrs[[attrKey]] <- id
+    },
+    
+    #setHref
+    setHref = function(href){
+      self$attrs[["xlink:href"]] <- href
+    },
+    
+    #setCodeList
+    setCodeList = function(codeList){
+      self$attrs[["codeList"]] <- codeList
+    },
+    
+    #setCodeListValue
+    setCodeListValue = function(codeListValue){
+      self$attrs[["codeListValue"]] <- codeListValue
+    },
+    
+    #setCodeSpace
+    setCodeSpace = function(codeSpace){
+      self$attrs[["codeSpace"]] <- codeSpace
+    },
+    
+    #setValue
+    setValue = function(value){
+      self$value <- value
     },
     
     #isDocument
@@ -577,7 +686,7 @@ ISOMetadataElement <- R6Class("ISOMetadataElement",
   )                              
 )
 
-ISOMetadataElement$getISOClassByNode = function(node){
+ISOAbstractObject$getISOClassByNode = function(node){
   outClass <- NULL
   if(!is(node, "XMLInternalDocument")) node <- xmlDoc(node)
   nodeElement <- xmlRoot(node)
@@ -603,9 +712,9 @@ ISOMetadataElement$getISOClassByNode = function(node){
   return(outClass)
 }
 
-ISOMetadataElement$compare = function(metadataElement1, metadataElement2){
+ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
   text1 <- NULL
-  if(is(metadataElement1, "ISOMetadataElement")){
+  if(is(metadataElement1, "ISOAbstractObject")){
     xml1 <-metadataElement1$encode(addNS = TRUE, validate = FALSE)
     if(metadataElement1$isDocument()){
       content1 <- as(xml1, "character")
@@ -619,7 +728,7 @@ ISOMetadataElement$compare = function(metadataElement1, metadataElement2){
     text1 <- as.character(metadataElement1)
   }
   text2 <- NULL
-  if(is(metadataElement2, "ISOMetadataElement")){
+  if(is(metadataElement2, "ISOAbstractObject")){
     xml2 <- metadataElement2$encode(addNS = TRUE, validate = FALSE)
     if(metadataElement2$isDocument()){
       content2 <- as(xml2, "character")

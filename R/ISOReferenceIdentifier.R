@@ -41,7 +41,7 @@ ISOReferenceIdentifier <- R6Class("ISOReferenceIdentifier",
      #+ version [0..1]: character
      version = NULL,
      initialize = function(xml = NULL, code, codeSpace = NULL){
-       super$initialize(xml = xml, prefix = "RS", code = code)
+       super$initialize(xml = xml, code = code)
        if(!is.null(codeSpace)) self$setCodeSpace(codeSpace)
      },
      

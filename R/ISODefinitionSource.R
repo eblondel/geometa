@@ -25,7 +25,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODefinitionSource <- R6Class("ISODefinitionSource",
-    inherit = ISOMetadataElement,
+    inherit = ISOAbstractObject,
     private = list(
       xmlElement = "FC_DefinitionSource",
       xmlNamespacePrefix = "GFC"
@@ -34,11 +34,7 @@ ISODefinitionSource <- R6Class("ISODefinitionSource",
       #+ source [0..1]: ISOCitation
       source = NULL,
       initialize = function(xml = NULL, source = NULL){
-        super$initialize(
-          xml = xml,
-          element = private$xmlElement,
-          namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-        )
+        super$initialize(xml = xml)
         if(!is.null(source)){
           self$setSource(source)
         }

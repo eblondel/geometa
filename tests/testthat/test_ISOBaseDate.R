@@ -13,7 +13,7 @@ test_that("encoding",{
   #encoding
   md <- ISOBaseDate$new(value = ISOdate(2015, 1, 1, 1))
   expect_is(md, "ISOBaseDate")
-  expect_equal(md$value, "2015-01-01")
+  expect_equal(md$value, as.Date(ISOdate(2015, 1, 1, 1)))
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   
@@ -21,6 +21,6 @@ test_that("encoding",{
   md2 <- ISOBaseDate$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
   
 })

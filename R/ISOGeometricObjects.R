@@ -35,7 +35,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOGeometricObjects <- R6Class("ISOGeometricObjects",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MD_GeometricObjects",
      xmlNamespacePrefix = "GMD"
@@ -44,11 +44,7 @@ ISOGeometricObjects <- R6Class("ISOGeometricObjects",
      geometricObjectType = NULL,
      geometricObjectCount = NULL,
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setGeometricObjectType

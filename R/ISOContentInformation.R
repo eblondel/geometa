@@ -9,7 +9,7 @@
 #'
 #' @section Abstract Methods:
 #' \describe{
-#'  \item{\code{new(xml, element, namespace)}}{
+#'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOContentInformation
 #'  }
 #' }
@@ -22,14 +22,14 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOContentInformation <- R6Class("ISOContentInformation",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MD_ContentInformation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    initialize = function(xml = NULL, element, namespace){
-      super$initialize(xml = xml, element = element, namespace = namespace)
+    initialize = function(xml = NULL){
+      super$initialize(xml = xml)
     }
   )                        
 )

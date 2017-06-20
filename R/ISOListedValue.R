@@ -41,7 +41,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOListedValue <- R6Class("ISOListedValue",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "FC_ListedValue",
      xmlNamespacePrefix = "GFC"
@@ -58,11 +58,7 @@ ISOListedValue <- R6Class("ISOListedValue",
      definitionReference = NULL,
      
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setLabel

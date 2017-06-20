@@ -20,7 +20,7 @@ Abstract class. Used internally by \pkg{geometa}
 \section{Abstract Methods}{
 
 \describe{
- \item{\code{new(xml, element, namespace)}}{
+ \item{\code{new(xml)}}{
    This method is used to instantiate an ISOContentInformation
  }
 }

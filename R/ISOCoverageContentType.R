@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCoverageContentType <- R6Class("ISOCoverageContentType",
-    inherit = ISOMetadataCodelistElement,
+    inherit = ISOCodeListValue,
     private = list(
       xmlElement = "MD_CoverageContentTypeCode",
       xmlNamespacePrefix = "GMD"
@@ -42,5 +42,5 @@ ISOCoverageContentType <- R6Class("ISOCoverageContentType",
 )
 
 ISOCoverageContentType$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOCoverageContentType, labels))
+  return(ISOCodeListValue$values(ISOCoverageContentType, labels))
 }

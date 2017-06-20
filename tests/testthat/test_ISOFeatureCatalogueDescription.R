@@ -31,8 +31,6 @@ test_that("encoding",{
   rp$setContactInfo(contact)
   cit$setCitedResponsibleParty(rp)
   md$addFeatureCatalogueCitation(cit)
-  
-  xml <- md$encode()
   expect_is(md, "ISOFeatureCatalogueDescription")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
@@ -41,6 +39,6 @@ test_that("encoding",{
   md2 <- ISOFeatureCatalogueDescription$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
   
 })

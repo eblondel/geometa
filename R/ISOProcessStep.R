@@ -56,7 +56,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOProcessStep <- R6Class("ISOProcessStep",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "LI_ProcessStep",
      xmlNamespacePrefix = "GMD"
@@ -75,11 +75,7 @@ ISOProcessStep <- R6Class("ISOProcessStep",
      source = list(),
      
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setDescription

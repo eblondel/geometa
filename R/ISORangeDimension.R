@@ -12,7 +12,7 @@
 #' 
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, element, namespace)}}{
+#'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISORangeDimension
 #'  }
 #'  \item{\code{setSequenceIdentifier(memberName)}}{
@@ -36,7 +36,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISORangeDimension <- R6Class("ISORangeDimension",
-    inherit = ISOMetadataElement,
+    inherit = ISOAbstractObject,
     private = list(
       xmlElement = "MD_RangeDimension",
       xmlNamespacePrefix = "GMD"
@@ -44,14 +44,8 @@ ISORangeDimension <- R6Class("ISORangeDimension",
     public = list(
       sequenceIdentifier = NULL,
       descriptor = NULL,
-      initialize = function(xml = NULL, element = NULL, namespace = NULL){
-        if(is.null(element)) element <- private$xmlElement
-        if(is.null(namespace)) namespace <- getISOMetadataNamespace(private$xmlNamespacePrefix)
-        super$initialize(
-          xml = xml,
-          element = element,
-          namespace = namespace
-        )
+      initialize = function(xml = NULL){
+        super$initialize(xml = xml)
       },
       
       #setSequenceIdentifier

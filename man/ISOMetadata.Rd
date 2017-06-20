@@ -3,16 +3,16 @@
 \docType{class}
 \name{ISOMetadata}
 \alias{ISOMetadata}
-\title{ISOMetadataElement}
+\title{ISOMetadata}
 \format{\code{\link{R6Class}} object.}
 \usage{
 ISOMetadata
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
+Object of \code{\link{R6Class}} for modelling an ISO Metadata
 }
 \description{
-ISOMetadataElement
+ISOMetadata
 }
 \section{Fields}{
 

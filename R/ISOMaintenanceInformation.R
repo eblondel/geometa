@@ -30,7 +30,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMaintenanceInformation <- R6Class("ISOMaintenanceInformation",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MD_MaintenanceInformation",
      xmlNamespacePrefix = "GMD"
@@ -38,11 +38,7 @@ ISOMaintenanceInformation <- R6Class("ISOMaintenanceInformation",
    public = list(
      maintenanceAndUpdateFrequency = NULL,
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setMaintenanceFrequency

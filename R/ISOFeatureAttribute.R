@@ -21,7 +21,7 @@
 #'    Sets the code
 #'  }
 #'  \item{\code{setValueMeasurementUnit(uom)}}{
-#'    Sets the value measurement unit
+#'    Sets the value measurement unit, an object of class \code{GMLUnitDefinition}
 #'  }
 #'  \item{\code{addListedValue(value)}}{
 #'    Adds a listed value (object of class \code{ISOListedValue})
@@ -41,10 +41,15 @@
 #'   md$setCardinality(lower=1,upper=1)
 #'   md$setCode("code")
 #'   
-#'   uom <- ISOUomLength$new()
-#'   uom$setUomName("Meter")
-#'   uom$setUomSymbol("m")
-#'   md$setValueMeasurementUnit(uom)
+#'   gml <- GMLBaseUnit$new(id = "ID")
+#'   gml$setDescriptionReference("someref")
+#'   gml$setIdentifier("identifier", "codespace")
+#'   gml$addName("name1", "codespace")
+#'   gml$addName("name2", "codespace")
+#'   gml$setQuantityTypeReference("someref")
+#'   gml$setCatalogSymbol("symbol")
+#'   gml$setUnitsSystem("somelink")
+#'   md$setValueMeasurementUnit(gml)
 #'   
 #'   val1 <- ISOListedValue$new()
 #'   val1$setCode("code1")
@@ -73,7 +78,7 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      
      #+ code [0..1]: character
      code = NULL,
-     #+ valueMeasurementUnit [0..1]: ISOUnitOfMeasure
+     #+ valueMeasurementUnit [0..1]: GMLUnitDefinition
      valueMeasurementUnit = NULL,
      #+ listedValue [0..*]: ISOListedValue
      listedValue = list(),
@@ -81,11 +86,7 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      valueType = NULL,
      
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setCode
@@ -95,8 +96,8 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      
      #setValueMeasurementUnit
      setValueMeasurementUnit = function(uom){
-       if(!is(uom, "ISOUnitOfMeasure")){
-         stop("The argument should be an object of class 'ISOUnitOfMeasure")
+       if(!is(uom, "GMLUnitDefinition")){
+         stop("The argument should be an object of class 'GMLUnitDefinition")
        } 
        self$valueMeasurementUnit <- uom
      },

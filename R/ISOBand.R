@@ -28,7 +28,7 @@
 #'    Sets the minimum value
 #'  }
 #'  \item{\code{setUnits(units)}}{
-#'    Sets the unit, object of class \code{ISOUomLength}
+#'    Sets the unit, object of class \code{GMLUnitDefinition}
 #'  }
 #'  \item{\code{setPeakResponse(peakResponse)}}{
 #'    Sets the peak response
@@ -54,10 +54,15 @@
 #'    md$setDescriptor("descriptor")
 #'    md$setMaxValue(10)
 #'    md$setMinValue(1)
-#'    uom = ISOUomLength$new()
-#'    uom$setUomName("var")
-#'    uom$setUomSymbol("symbol")
-#'    md$setUnits(uom)
+#'    gml <- GMLBaseUnit$new(id = "ID")
+#'    gml$setDescriptionReference("someref")
+#'    gml$setIdentifier("identifier", "codespace")
+#'    gml$addName("name1", "codespace")
+#'    gml$addName("name2", "codespace")
+#'    gml$setQuantityTypeReference("someref")
+#'    gml$setCatalogSymbol("symbol")
+#'    gml$setUnitsSystem("somelink")
+#'    md$setUnits(gml)
 #'    md$setPeakResponse(9)
 #'    md$setBitsPerValue(5)
 #'    md$setToneGradation(100)
@@ -93,11 +98,7 @@ ISOBand <- R6Class("ISOBand",
      offset = NULL,
      
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setMaxValue
@@ -112,8 +113,8 @@ ISOBand <- R6Class("ISOBand",
      
      #setUnits
      setUnits = function(uom){
-       if(!is(uom, "ISOUomLength")){
-         stop("The argument value should be an object of class 'ISOUomLength")
+       if(!is(uom, "GMLUnitDefinition")){
+         stop("The argument value should be an object of class 'GMUnitDefinition")
        }
        self$units <- uom
      },

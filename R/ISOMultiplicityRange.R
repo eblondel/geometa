@@ -26,7 +26,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMultiplicityRange <- R6Class("ISOMultiplicityRange",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MultiplicityRange",
     xmlNamespacePrefix = "GCO"
@@ -35,11 +35,7 @@ ISOMultiplicityRange <- R6Class("ISOMultiplicityRange",
     lower = NULL,
     upper = NULL,
     initialize = function(xml = NULL, lower, upper){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
       if(is.null(xml)){
         if(!is(lower, "integer")){
           lower <- as.integer(lower)

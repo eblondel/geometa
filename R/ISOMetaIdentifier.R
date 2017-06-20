@@ -33,7 +33,7 @@ ISOMetaIdentifier <- R6Class("ISOMetaIdentifier",
    ),
    public = list(
      initialize = function(xml = NULL, code){
-       super$initialize(xml = xml, prefix = "MD", code = code)
+       super$initialize(xml = xml, code = code)
      }
    )                        
 )

@@ -1,11 +1,11 @@
-#' ISOMetadataElement
+#' ISOMetadata
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @import XML
 #' @export
 #' @keywords ISO metadata element
-#' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
+#' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field fileIdentifier
@@ -369,7 +369,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMetadata <- R6Class("ISOMetadata",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     document = TRUE,
     xmlElement = "MD_Metadata",
@@ -435,12 +435,7 @@ ISOMetadata <- R6Class("ISOMetadata",
            xml <- xmlChildren(xmlChildren(xml)[[1]])[[1]]
          }
        }
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix),
-         defaults = defaults
-       )
+       super$initialize(xml = xml, defaults = defaults)
      },
      
      #MD_Metadata

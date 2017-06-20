@@ -47,6 +47,6 @@ test_that("encoding",{
   dq2 <- ISODataQuality$new(xml = xml)
   xml2 <- dq2$encode()
   
-  expect_true(ISOMetadataElement$compare(dq, dq2))
+  expect_true(ISOAbstractObject$compare(dq, dq2))
   
 })

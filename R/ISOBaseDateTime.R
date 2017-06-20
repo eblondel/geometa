@@ -24,7 +24,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOBaseDateTime <- R6Class("ISOBaseDateTime",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "DateTime",
     xmlNamespacePrefix = "GCO"
@@ -32,15 +32,8 @@ ISOBaseDateTime <- R6Class("ISOBaseDateTime",
   public = list(
     value = NA,
     initialize = function(xml = NULL, value){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
       if(is.null(xml)){
-        if(all(class(value)==c("POSIXct","POSIXt"))){
-          value <- format(value,"%Y-%m-%dT%H:%M:%S")
-        }
         self$value = value
       }
     }

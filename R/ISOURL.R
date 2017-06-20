@@ -24,7 +24,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOURL <- R6Class("ISOURL",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "URL",
     xmlNamespacePrefix = "GMD"
@@ -32,11 +32,7 @@ ISOURL <- R6Class("ISOURL",
   public = list(
     value = NA,
     initialize = function(xml = NULL, value){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
       if(is.null(xml)){
         self$value = value
       }

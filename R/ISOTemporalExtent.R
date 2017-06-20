@@ -33,7 +33,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOTemporalExtent <- R6Class("ISOTemporalExtent",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "EX_TemporalExtent",
     xmlNamespacePrefix = "GMD"
@@ -41,11 +41,7 @@ ISOTemporalExtent <- R6Class("ISOTemporalExtent",
   public = list(
     extent = NULL,
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #setTimeInstant

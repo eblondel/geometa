@@ -70,7 +70,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOLineage<- R6Class("ISOLineage",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "LI_Lineage",
     xmlNamespacePrefix = "GMD"
@@ -83,11 +83,7 @@ ISOLineage<- R6Class("ISOLineage",
     #+ source [0..*]: ISOSource 
     source = list(),
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #setStatement

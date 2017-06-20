@@ -72,7 +72,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOSource <- R6Class("ISOSource",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "LI_Source",
      xmlNamespacePrefix = "GMD"
@@ -93,11 +93,7 @@ ISOSource <- R6Class("ISOSource",
      sourceStep = list(),
      
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setDescription

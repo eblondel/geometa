@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODateType <- R6Class("ISODateType",
-   inherit = ISOMetadataCodelistElement,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "CI_DateTypeCode",
      xmlNamespacePrefix = "GMD"
@@ -42,5 +42,5 @@ ISODateType <- R6Class("ISODateType",
 )
 
 ISODateType$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISODateType, labels))
+  return(ISOCodeListValue$values(ISODateType, labels))
 }

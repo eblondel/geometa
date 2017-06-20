@@ -27,7 +27,7 @@ Abstract ISO class
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, prefix, code, codeSpace)}}{
+ \item{\code{new(xml, code, codeSpace)}}{
    This method is used to instantiate an ISOIdentifier
  }
  \item{\code{setAuthority(authority)}}{

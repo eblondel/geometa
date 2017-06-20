@@ -49,7 +49,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MD_DigitalTransferOptions",
      xmlNamespacePrefix = "GMD"
@@ -64,11 +64,7 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
      #+ offLine [0..1]: MD_Medium
      offLine = NULL, #TODO
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setUnitsOfDistribution

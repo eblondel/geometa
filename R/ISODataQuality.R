@@ -66,7 +66,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODataQuality <- R6Class("ISODataQuality",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "DQ_DataQuality",
     xmlNamespacePrefix = "GMD"
@@ -76,11 +76,7 @@ ISODataQuality <- R6Class("ISODataQuality",
     report = list(),
     lineage = NULL,
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #setScope

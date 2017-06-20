@@ -35,6 +35,6 @@ test_that("encoding",{
   md2 <- ISOContact$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
   
 })

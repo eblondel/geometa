@@ -46,10 +46,15 @@
 #'       band$setDescriptor("descriptor")
 #'       band$setMaxValue(10)
 #'       band$setMinValue(1)
-#'       uom = ISOUomLength$new()
-#'       uom$setUomName("var")
-#'       uom$setUomSymbol("symbol")
-#'       band$setUnits(uom)
+#'       gml <- GMLBaseUnit$new(id = sprintf("ID%s",i))
+#'       gml$setDescriptionReference("someref")
+#'       gml$setIdentifier("identifier", "codespace")
+#'       gml$addName("name1", "codespace")
+#'       gml$addName("name2", "codespace")
+#'       gml$setQuantityTypeReference("someref")
+#'       gml$setCatalogSymbol("symbol")
+#'       gml$setUnitsSystem("somelink")
+#'       band$setUnits(gml)
 #'       band$setPeakResponse(9)
 #'       band$setBitsPerValue(5)
 #'       band$setToneGradation(100)
@@ -65,7 +70,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCoverageDescription <- R6Class("ISOCoverageDescription",
-   inherit = ISOContentInformation,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MD_CoverageDescription",
      xmlNamespacePrefix = "GMD"
@@ -79,11 +84,7 @@ ISOCoverageDescription <- R6Class("ISOCoverageDescription",
      #+ dimension: ISORangeDimension
      dimension = list(),
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setAttributeDescription

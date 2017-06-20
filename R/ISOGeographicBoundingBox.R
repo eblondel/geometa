@@ -40,11 +40,7 @@ ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
      southBoundLatitude = NULL,
      northBoundLatitude = NULL,
      initialize = function(xml = NULL, minx, miny, maxx, maxy, bbox = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
        if(is.null(xml)){
          if(!is.null(bbox)){
            if(!is(bbox, "matrix") || !all.equal(dim(bbox), c(2,2))){

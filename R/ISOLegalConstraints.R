@@ -76,11 +76,7 @@ ISOLegalConstraints <- R6Class("ISOLegalConstraints",
     #+ otherConstraints [0..*]: character
     otherConstraints = list(),
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #addAccessConstraint

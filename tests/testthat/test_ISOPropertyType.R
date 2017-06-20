@@ -23,6 +23,6 @@ test_that("encoding",{
   md2 <- ISOPropertyType$new(xml = xml)
   xml2 <- md2$encode(validate = F)
   
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
   
 })

@@ -73,6 +73,6 @@ test_that("encoding",{
   lineage2 <- ISOLineage$new(xml = xml)
   xml2 <- lineage2$encode()
   
-  expect_true(ISOMetadataElement$compare(lineage, lineage2))
+  expect_true(ISOAbstractObject$compare(lineage, lineage2))
   
 })

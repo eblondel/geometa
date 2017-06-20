@@ -50,11 +50,7 @@ ISOFeatureOperation <- R6Class("ISOFeatureOperation",
      formalDefinition = NULL,
      
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setSignature

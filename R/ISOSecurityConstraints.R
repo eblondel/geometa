@@ -64,11 +64,7 @@ ISOSecurityConstraints <- R6Class("ISOSecurityConstraints",
      #+ handlingDescription [0..1]: character
      handlingDescription = NULL,
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setClassification

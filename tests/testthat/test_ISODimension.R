@@ -27,5 +27,5 @@ test_that("ISODimension",{
   md2 <- ISODimension$new(xml = xml)
   xml2 <- md2$encode()
   #identity
-  expect_true(ISOMetadataElement$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2))
 })

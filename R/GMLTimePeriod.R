@@ -44,7 +44,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 GMLTimePeriod <- R6Class("GMLTimePeriod",
-  inherit = GMLTemporalPrimitive,
+  inherit = GMLAbstractTimeGeometricPrimitive,
   private = list(
     xmlElement = "TimePeriod",
     xmlNamespacePrefix = "GML"
@@ -58,23 +58,10 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
     #+ duration [0..1]: character
     duration = NULL,
     initialize = function(xml = NULL, beginPosition, endPosition){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
       if(is.null(xml)){
         self$setBeginPosition(beginPosition)
         self$setEndPosition(endPosition)
-      }else{
-        gmlId <- XML::xmlGetAttr(xml, "gml:id")
-        if(!is.null(gmlId)){
-          self$attrs[["gml:id"]] <- gmlId
-        }else{
-          if(!is.null(self$beginPosition) & !is.null(self$endPosition)){
-            self$computeInterval()
-          }
-        }
       }
     },
     
@@ -83,7 +70,9 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       if(!all(class(beginPosition)==c("POSIXct","POSIXt")) | is(beginPosition, "Date")){
         stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
       }
-      self$beginPosition <- beginPosition
+      gmlElem <- GMLElement$new(element = "beginPosition")
+      gmlElem$setValue(beginPosition)
+      self$beginPosition <- gmlElem
       if(!is.null(self$endPosition)) self$computeInterval()
     },
     
@@ -92,15 +81,17 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       if(!all(class(endPosition)==c("POSIXct","POSIXt")) | is(endPosition, "Date")){
         stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
       }
-      self$endPosition <- endPosition
+      gmlElem <- GMLElement$new(element = "endPosition")
+      gmlElem$setValue(endPosition)
+      self$endPosition <- gmlElem
       if(!is.null(self$beginPosition)) self$computeInterval()
     },
     
     #computeInterval
     computeInterval = function(){
       
-      start <- self$beginPosition
-      end <- self$endPosition
+      start <- self$beginPosition$value
+      end <- self$endPosition$value
       years.seq <- seq(start, end, by = "years")
       years <- length(years.seq)-1
       months.start <- years.seq[length(years.seq)]
@@ -120,12 +111,7 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       secs <- length(secs.seq)-1
       isoduration <- GMLTimePeriod$computeISODuration(years, months, days, 
                                                       hours, mins, secs)           
-      self$setId(isoduration)
-    },
-    
-    #setId
-    setId = function(id){
-      self$attrs[["gml:id"]] <- as.character(id)
+      self$setId(isoduration, addNS = TRUE)
     },
     
     #setDuration

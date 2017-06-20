@@ -61,12 +61,7 @@ ISOAssociationRole <- R6Class("ISOAssociationRole",
      
      initialize = function(xml = NULL){
        defaults = list(cardinality = ISOMultiplicityRange(lower = 0, upper = Inf))
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix),
-         defaults = defaults
-       )
+       super$initialize(xml = xml, defaults = defaults)
      },
      
      #setType

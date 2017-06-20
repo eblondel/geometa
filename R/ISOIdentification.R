@@ -105,7 +105,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOIdentification <- R6Class("ISOIdentification",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MD_Identification",
      xmlNamespacePrefix = "GMD"
@@ -137,8 +137,8 @@ ISOIdentification <- R6Class("ISOIdentification",
      resourceSpecificUsage = list(), #TODO
      #+ aggregationInfo [0..*]: MD_AggregateInformation (ISOAggregateInformation - to implement)
      aggregationInformation = list(), #TODO
-     initialize = function(xml = NULL, element, namespace, defaults = list()){
-       super$initialize(xml, element, namespace, defaults)
+     initialize = function(xml = NULL, defaults = list()){
+       super$initialize(xml, defaults = defaults)
      },
      
      #MD_Identification

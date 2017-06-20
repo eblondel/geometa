@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMemberName <- R6Class("ISOMemberName",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MemberName",
      xmlNamespacePrefix = "GCO"
@@ -38,11 +38,7 @@ ISOMemberName <- R6Class("ISOMemberName",
      aName = NULL,
      attributeType = NULL,
      initialize = function(xml = NULL, aName, attributeType){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
        if(is.null(xml)){
          self$setName(aName)
          self$setAttributeType(attributeType)

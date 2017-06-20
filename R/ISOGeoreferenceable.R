@@ -106,11 +106,7 @@ ISOGeoreferenceable <- R6Class("ISOGeoreferenceable",
       parameterCitation = NULL,
       
       initialize = function(xml = NULL){
-        super$initialize(
-          xml = xml,
-          element = private$xmlElement,
-          namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-        )
+        super$initialize(xml = xml)
       },
       
       #setControlPointAvailability

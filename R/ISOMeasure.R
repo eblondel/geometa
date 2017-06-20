@@ -24,7 +24,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMeasure <- R6Class("ISOMeasure",
-    inherit = ISOMetadataElement,
+    inherit = ISOAbstractObject,
     private = list(
       xmlElement = "Measure",
       xmlNamespacePrefix = "GCO"
@@ -32,14 +32,8 @@ ISOMeasure <- R6Class("ISOMeasure",
     public = list(
       value = NA,
       attrs = list(),
-      initialize = function(xml = NULL, element = NULL, namespace = NULL, value, uom, useUomURI = FALSE){
-        if(is.null(element)) element <- private$xmlElement
-        if(is.null(namespace)) namespace <- getISOMetadataNamespace(private$xmlNamespacePrefix)
-        super$initialize(
-          xml = xml,
-          element = element,
-          namespace = namespace
-        )
+      initialize = function(xml = NULL, value, uom, useUomURI = FALSE){
+        super$initialize(xml = xml)
         if(is.null(xml)){
           if(!is(value, "double")){
             value <- as.double(value)
@@ -50,11 +44,6 @@ ISOMeasure <- R6Class("ISOMeasure",
             uomAttr <- sprintf("http://schemas.opengis.net/iso/19139/20070417/resources/uom/gmxUom.xml#xpointer(//*[@gml:id='%s'])", uomAttr)
           }
           self$attrs[["uom"]] <- uomAttr
-        }else{
-          uomId <- XML::xmlGetAttr(xml, "uom")
-          if(!is.null(uomId)){
-            self$attrs[["uom"]] <- uomId
-          }
         }
       }
     )                        

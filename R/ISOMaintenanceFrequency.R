@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMaintenanceFrequency <- R6Class("ISOMaintenanceFrequency",
-   inherit = ISOMetadataCodelistElement,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_MaintenanceFrequencyCode",
      xmlNamespacePrefix = "GMD"
@@ -42,5 +42,5 @@ ISOMaintenanceFrequency <- R6Class("ISOMaintenanceFrequency",
 )
 
 ISOMaintenanceFrequency$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOMaintenanceFrequency, labels))
+  return(ISOCodeListValue$values(ISOMaintenanceFrequency, labels))
 }

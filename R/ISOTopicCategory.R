@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOTopicCategory <- R6Class("ISOTopicCategory",
-   inherit = ISOMetadataCodelistElement,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_TopicCategoryCode",
      xmlNamespacePrefix = "GMD"
@@ -43,5 +43,5 @@ ISOTopicCategory <- R6Class("ISOTopicCategory",
 )
 
 ISOTopicCategory$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOTopicCategory, labels))
+  return(ISOCodeListValue$values(ISOTopicCategory, labels))
 }

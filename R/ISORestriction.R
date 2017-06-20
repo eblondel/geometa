@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISORestriction <- R6Class("ISORestriction",
-   inherit = ISOMetadataCodelistElement,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_RestrictionCode",
      xmlNamespacePrefix = "GMD"
@@ -42,5 +42,5 @@ ISORestriction <- R6Class("ISORestriction",
 )
 
 ISORestriction$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISORestriction, labels))
+  return(ISOCodeListValue$values(ISORestriction, labels))
 }

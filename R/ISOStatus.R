@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOStatus<- R6Class("ISOStatus",
-   inherit = ISOMetadataCodelistElement,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_ProgressCode",
      xmlNamespacePrefix = "GMD"
@@ -43,5 +43,5 @@ ISOStatus<- R6Class("ISOStatus",
 )
 
 ISOStatus$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOStatus, labels))
+  return(ISOCodeListValue$values(ISOStatus, labels))
 }

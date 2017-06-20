@@ -30,7 +30,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODefinitionReference <- R6Class("ISODefinitionReference",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "FC_DefinitionReference",
      xmlNamespacePrefix = "GFC"
@@ -43,11 +43,7 @@ ISODefinitionReference <- R6Class("ISODefinitionReference",
      definitionSource = NULL,
      
      initialize = function(xml = NULL){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
      },
      
      #setSourceIdentifier

@@ -29,18 +29,18 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOClassification <- R6Class("ISOClassification",
-   inherit = ISOMetadataCodelistElement,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_ClassificationCode",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
      initialize = function(xml = NULL, value){
-       super$initialize(xml = xml, id = "MD_ClassificationCode", value = value, setValue = FALSE)
+       super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = FALSE)
      }
    )                        
 )
 
 ISOClassification$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOClassification, labels))
+  return(ISOCodeListValue$values(ISOClassification, labels))
 }

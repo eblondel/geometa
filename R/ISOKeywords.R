@@ -45,7 +45,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOKeywords <- R6Class("ISOKeywords",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MD_Keywords",
     xmlNamespacePrefix = "GMD"
@@ -55,11 +55,7 @@ ISOKeywords <- R6Class("ISOKeywords",
     type = NULL,
     thesaurusName = NULL,
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #addKeyword

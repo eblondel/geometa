@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISORecordType <- R6Class("ISORecordType",
-   inherit = ISOMetadataElement,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "RecordType",
      xmlNamespacePrefix = "GCO"
@@ -30,11 +30,7 @@ ISORecordType <- R6Class("ISORecordType",
    public = list(
      value = NA,
      initialize = function(xml = NULL, value){
-       super$initialize(
-         xml = xml,
-         element = private$xmlElement,
-         namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-       )
+       super$initialize(xml = xml)
        if(is.null(xml)){
          self$value = value
        }

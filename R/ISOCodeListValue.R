@@ -1,4 +1,4 @@
-#' ISOMetadataCodelistElement
+#' ISOCodeListValue
 #'
 #' @docType class
 #' @importFrom R6 R6Class
@@ -12,7 +12,7 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, id, value, addCodeListAttrs, addCodeSpaceAttr, setValue)}}{
-#'    This method is used to instantiate an ISOMetadataCodelistElement. By default,
+#'    This method is used to instantiate an ISOCodeListValue. By default,
 #'    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The 
 #'    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
 #'    \code{addCodeLisAttrs} is set to \code{FALSE}. The argument \code{setValue}
@@ -31,8 +31,8 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
-   inherit = ISOMetadataElement,
+ISOCodeListValue <- R6Class("ISOCodeListValue",
+   inherit = ISOAbstractObject,
    public = list(
      codelistId = NULL,
      attrs = list(),
@@ -41,11 +41,7 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
                            addCodeListAttrs = TRUE,
                            addCodeSpaceAttr = TRUE,
                            setValue = TRUE){
-       super$initialize(
-         xml = xml,
-         element = id,
-         namespace = ISOMetadataNamespace$GMD
-       )
+       super$initialize(xml = xml)
        if(!is.null(xml)){
          value <- xmlGetAttr(xml, "codeListValue") #codeListValue should be as attribute
          if(is.null(value)) value <- xmlValue(xml) #try to pick up value instead
@@ -98,7 +94,7 @@ ISOMetadataCodelistElement <- R6Class("ISOMetadataCodelistElement",
    )                        
 )
 
-ISOMetadataCodelistElement$values = function(class, labels = FALSE){
+ISOCodeListValue$values = function(class, labels = FALSE){
   fields <- "value"
   if(labels) fields <- c(fields, "description")
   return(getISOCodelist(class$private_fields$xmlElement)$entries[,fields])

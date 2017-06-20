@@ -45,7 +45,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOOnlineResource <- R6Class("ISOOnlineResource",
-  inherit = ISOMetadataElement,
+  inherit = ISOAbstractObject,
   private = list(
     xmlElement = "CI_OnlineResource",
     xmlNamespacePrefix = "GMD"
@@ -56,11 +56,7 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     name = NULL,
     description = NULL,
     initialize = function(xml = NULL){
-      super$initialize(
-        xml = xml,
-        element = private$xmlElement,
-        namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
-      )
+      super$initialize(xml = xml)
     },
     
     #setLinkage

@@ -29,7 +29,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOHierarchyLevel <- R6Class("ISOHierarchyLevel",
- inherit = ISOMetadataCodelistElement,
+ inherit = ISOCodeListValue,
  private = list(
    xmlElement = "MD_ScopeCode",
    xmlNamespacePrefix = "GMD"
@@ -42,5 +42,5 @@ ISOHierarchyLevel <- R6Class("ISOHierarchyLevel",
 )
 
 ISOHierarchyLevel$values <- function(labels = FALSE){
-  return(ISOMetadataCodelistElement$values(ISOHierarchyLevel, labels))
+  return(ISOCodeListValue$values(ISOHierarchyLevel, labels))
 }

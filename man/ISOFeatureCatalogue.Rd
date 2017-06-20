@@ -104,11 +104,15 @@ fc <- ISOFeatureCatalogue$new()
    fat$setCardinality(lower=1,upper=1)
    fat$setCode(sprintf("code \%s",i))
 
-   #add measurement unit
-   uom <- ISOUomLength$new()
-   uom$setUomName("Meter")
-   uom$setUomSymbol("m")
-   fat$setValueMeasurementUnit(uom)
+   gml <- GMLBaseUnit$new(id = sprintf("ID\%s",i))
+   gml$setDescriptionReference("someref")
+   gml$setIdentifier("identifier", "codespace")
+   gml$addName("name1", "codespace")
+   gml$addName("name2", "codespace")
+   gml$setQuantityTypeReference("someref")
+   gml$setCatalogSymbol("symbol")
+   gml$setUnitsSystem("somelink")
+   fat$setValueMeasurementUnit(gml)
 
    #add listed values
    val1 <- ISOListedValue$new()

@@ -32,7 +32,7 @@ ISOPropertyType
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, element, namespace, defaults)}}{
+ \item{\code{new(xml, defaults)}}{
    This method is used to instantiate an ISOPropertyType
  }
  \item{\code{setMemberName(memberName)}}{

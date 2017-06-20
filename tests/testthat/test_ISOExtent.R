@@ -29,9 +29,6 @@ test_that("encoding",{
   vert <- ISOVerticalExtent$new()
   vert$setMinimumValue(0)
   vert$setMaximumValue(19)
-  uom <- ISOUomLength$new()
-  uom$setUomName("Meter")
-  uom$setUomSymbol("m")
   extent$setVerticalElement(vert)
   
   xml <- extent$encode()
@@ -41,6 +38,6 @@ test_that("encoding",{
   extent2 <- ISOExtent$new(xml = xml)
   xml2 <- extent2$encode()
   
-  expect_true(ISOMetadataElement$compare(extent, extent2))
+  expect_true(ISOAbstractObject$compare(extent, extent2))
   
 })
