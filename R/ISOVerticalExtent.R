@@ -51,14 +51,6 @@ ISOVerticalExtent <- R6Class("ISOVerticalExtent",
     #setMaximumValue
     setMaximumValue = function(maximumValue){
       self$maximumValue = maximumValue
-    },
-    
-    #setUnitOfMeasure
-    setUnitOfMeasure = function(unitOfMeasure){
-      if(!is(unitOfMeasure, "GMLUnitDefinition")){
-        stop("The unit of measure should be an object of class 'GMLUnitDefinition")
-      }
-      self$unitOfMeasure = unitOfMeasure
     }
    
   )                                          
