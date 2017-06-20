@@ -37,6 +37,7 @@ ISOMetadataNamespace$GCO = ISOMetadataNamespace$new("gco", "http://www.isotc211.
 ISOMetadataNamespace$GFC = ISOMetadataNamespace$new("gfc", "http://www.isotc211.org/2005/gfc")
 ISOMetadataNamespace$GMD = ISOMetadataNamespace$new("gmd", "http://www.isotc211.org/2005/gmd")
 ISOMetadataNamespace$GMI = ISOMetadataNamespace$new("gmi", "http://www.isotc211.org/2005/gmi")
+ISOMetadataNamespace$GMX = ISOMetadataNamespace$new("gmx", "http://www.isotc211.org/2005/gmx")
 ISOMetadataNamespace$GTS = ISOMetadataNamespace$new("gts", "http://www.isotc211.org/2005/gts")
 ISOMetadataNamespace$SRV = ISOMetadataNamespace$new("srv", "http://www.isotc211.org/2005/srv")
 ISOMetadataNamespace$GML = ISOMetadataNamespace$new("gml", "http://www.opengis.net/gml/3.2")
@@ -47,6 +48,7 @@ ISOMetadataNamespace$all = function(){
     ISOMetadataNamespace$GFC,
     ISOMetadataNamespace$GMD,
     ISOMetadataNamespace$GMI,
+    ISOMetadataNamespace$GMX,
     ISOMetadataNamespace$GTS,
     ISOMetadataNamespace$SRV,
     ISOMetadataNamespace$GML,

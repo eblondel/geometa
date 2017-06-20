@@ -71,6 +71,9 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{getClassName()}}{
    Gets the class name
  }
+ \item{\code{getClass()}}{
+   Gets the class
+ }
  \item{\code{wrapBaseElement(field, fieldObj)}}{
    Wraps a base element type
  }
@@ -108,6 +111,13 @@ Abstract ISO Metadata class used internally by geometa
  }
  \item{\code{setValue(value)}}{
    Set a value
+ }
+ \item{\code{isDocument()}}{
+   Indicates if the object is a metadata document, typically an object of class
+   \code{ISOMetadata} or \code{ISOFeatureCatalogue}
+ }
+ \item{\cod€{isFieldInheritedFrom(field)}}{
+   Gives the parent from which the field is inherited, otherwise return \code{NULL}.
  }
 }
 }

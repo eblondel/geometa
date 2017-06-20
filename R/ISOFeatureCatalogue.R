@@ -9,11 +9,8 @@
 #'
 #' @field name
 #'
-#' @section Methods:
+#' @section Inherited Methods from \code{ISOAbstractCatalogue}:
 #' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOFeatureCatalogue
-#'  }
 #'  \item{\code{setName(name)}}{
 #'    Sets the name
 #'  }
@@ -34,6 +31,13 @@
 #'  }
 #'  \item{\code{setVersionDate(versionDate)}}{
 #'    Sets version date
+#'  }
+#' }
+#'
+#' @section Methods:
+#' \describe{
+#'  \item{\code{new(xml)}}{
+#'    This method is used to instantiate an ISOFeatureCatalogue
 #'  }
 #'  \item{\code{setProducer(producer)}}{
 #'    Sets an object of class \code{ISOResponsibleParty} as producer
@@ -132,7 +136,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
-    inherit = ISOAbstractObject,
+    inherit = ISOAbstractCatalogue,
     private = list(
       document = TRUE,
       xmlElement = "FC_FeatureCatalogue",
@@ -140,16 +144,6 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
     ),
     public = list(
       
-      #+ name [1..1]: character
-      name = NULL,
-      #+ scope [1..*]: character
-      scope = list(),
-      #+ fieldOfApplication [0.*]: character
-      fieldOfApplication = list(),
-      #+ versionNumber [1..1]: character
-      versionNumber = NULL,
-      #+ versionDate [1..1]: character
-      versionDate = NULL,
       #+ producer [1..1]: ISOResponsibleParty
       producer = NULL,
       #+ functionalLanguage [0..1]: character 
@@ -161,43 +155,6 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       
       initialize = function(xml = NULL){
         super$initialize(xml = xml)
-      },
-      
-      #setName
-      setName = function(name){
-        if(!is(name,"character")) name <- as(name, "character")
-        self$name <- name
-      },
-      
-      #addScope
-      addScope = function(scope){
-        return(self$addListElement("scope", scope))
-      },
-      
-      #delScope
-      delScope = function(scope){
-        return(self$delListElement("scope", scope))
-      },
-      
-      #addFieldOfApplication
-      addFieldOfApplication = function(fieldOfApplication){
-        return(self$addListElement("fieldOfApplication", fieldOfApplication))
-      },
-      
-      #delFieldOfApplication
-      delFieldOfApplication = function(fieldOfApplication){
-        return(self$delListElement("fieldOfApplication", fieldOfApplication))
-      },
-      
-      #setVersionNumber
-      setVersionNumber = function(versionNumber){
-        if(!is(versionNumber,"character")) versionNumber <- as(versionNumber, "character")
-        self$versionNumber <- versionNumber
-      },
-      
-      #setVersionDate
-      setVersionDate = function(versionDate){
-        self$versionDate <- versionDate
       },
       
       #setProducer

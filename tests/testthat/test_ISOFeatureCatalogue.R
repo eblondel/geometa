@@ -21,11 +21,18 @@ test_that("encoding",{
   
   producer <- ISOResponsibleParty$new()
   producer$setIndividualName("someone")
+  producer$setOrganisationName("organization")
+  producer$setRole("originator")
   fc$setProducer(producer)
   fc$setFunctionalLanguage("eng")
 
   cit <- ISOCitation$new()
   cit$setTitle("some citation title")
+  cit$setAlternateTitle("alternate title")
+  d <- ISODate$new()
+  d$setDate(ISOdate(2015,1,1))
+  d$setDateType("creation")
+  cit$addDate(d)
   fc$addDefinitionSource(cit)
   
   #add featureType
@@ -77,7 +84,6 @@ test_that("encoding",{
   #add featureType to catalogue
   fc$addFeatureType(ft)
   
-  xml <- fc$encode()
   expect_is(fc, "ISOFeatureCatalogue")
   xml <- fc$encode()
   expect_is(xml, "XMLInternalDocument")

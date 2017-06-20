@@ -59,6 +59,9 @@
 #'  \item{\code{getClassName()}}{
 #'    Gets the class name
 #'  }
+#'  \item{\code{getClass()}}{
+#'    Gets the class
+#'  }
 #'  \item{\code{wrapBaseElement(field, fieldObj)}}{
 #'    Wraps a base element type
 #'  }
@@ -96,6 +99,13 @@
 #'  }
 #'  \item{\code{setValue(value)}}{
 #'    Set a value
+#'  }
+#'  \item{\code{isDocument()}}{
+#'    Indicates if the object is a metadata document, typically an object of class
+#'    \code{ISOMetadata} or \code{ISOFeatureCatalogue}
+#'  }
+#'  \item{\cod€{isFieldInheritedFrom(field)}}{
+#'    Gives the parent from which the field is inherited, otherwise return \code{NULL}.
 #'  }
 #' }
 #' 
@@ -383,12 +393,20 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         }
         
         #user values management
+        ns <- self$namespace$getDefinition()
+        if(field != "value"){
+          klass <- self$isFieldInheritedFrom(field)
+          if(!is.null(klass)){
+            ns <- ISOMetadataNamespace[[klass$private_fields$xmlNamespacePrefix]]$getDefinition()
+          }
+        }
+        namespaceId <- names(ns)
         if(!is.null(fieldObj)){
           if(is(fieldObj, "ISOAbstractObject")){
             if(self$wrap){
               wrapperNode <- xmlOutputDOM(
                 tag = field,
-                nameSpace = self$namespace$id
+                nameSpace = namespaceId
               )
               wrapperNode$addNode(fieldObj$encode(addNS = FALSE, validate = FALSE))
               rootXML$addNode(wrapperNode$value())
@@ -406,7 +424,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               if(nodeValue$wrap){
                 wrapperNode <- xmlOutputDOM(
                   tag = field,
-                  nameSpace = self$namespace$id
+                  nameSpace = namespaceId
                 )
                 wrapperNode$addNode(nodeValue$encode(addNS = FALSE, validate = FALSE))
                 rootXML$addNode(wrapperNode$value())
@@ -425,7 +443,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   #general case of gco wrapper element
                   wrapperNode <- xmlOutputDOM(
                     tag = field,
-                    nameSpace = self$namespace$id
+                    nameSpace = namespaceId
                   )
                   wrapperNode$addNode(dataObj$encode(addNS = FALSE, validate = FALSE))
                   rootXML$addNode(wrapperNode$value())
@@ -528,6 +546,17 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               }
             }
             if(!is.null(xObj)){
+              
+              #add parent namespaces if any parent field
+              klass <- self$isFieldInheritedFrom(x)
+              if(!is.null(klass)){
+                ns <- ISOMetadataNamespace[[klass$private_fields$xmlNamespacePrefix]]$getDefinition()
+                if(!(ns %in% nsdefs)){
+                  nsdefs <<- c(nsdefs, ns)
+                }
+              }
+              
+              #add namespaces
               nsdef <- NULL
               if(is(xObj, "ISOAbstractObject")){
                 nsdef <- xObj$getNamespaceDefinition(recursive = recursive)
@@ -550,7 +579,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   }
                 }))
               }else{
-                nsdef <- ISOMetadataNamespace$GCO$getDefinition()
+                if(names(selfNsdef) != "gml"){
+                  nsdef <- ISOMetadataNamespace$GCO$getDefinition()
+                }
               }
               for(item in names(nsdef)){
                 nsdef.item <- nsdef[[item]]
@@ -585,6 +616,12 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #getClassName
     getClassName = function(){
       return(class(self)[1])
+    },
+    
+    #getClass
+    getClass = function(){
+      class <- eval(parse(text=self$getClassName()))
+      return(class)
     },
     
     #wrapBaseElement
@@ -682,6 +719,24 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #isDocument
     isDocument = function(){
       return(private$document)
+    },
+    
+    #isFieldInheritedFrom
+    isFieldInheritedFrom = function(field){
+      parentClass <- NULL
+      inherited <- !(field %in% names(self$getClass()$public_fields))
+      if(inherited){
+        classes <- class(self)
+        classes <- classes[c(-1,-length(classes))]
+        for(i in 1:length(classes)){
+          cl <- eval(parse(text=classes[i]))
+          if(field %in% names(cl$public_fields)){
+            parentClass <- cl
+            break
+          }
+        }
+      }
+      return(parentClass)
     }
   )                              
 )

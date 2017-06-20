@@ -19,12 +19,9 @@ ISOFeatureCatalogue
 \describe{
 \item{\code{name}}{}
 }}
-\section{Methods}{
+\section{Inherited Methods from \code{ISOAbstractCatalogue}}{
 
 \describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOFeatureCatalogue
- }
  \item{\code{setName(name)}}{
    Sets the name
  }
@@ -45,6 +42,15 @@ ISOFeatureCatalogue
  }
  \item{\code{setVersionDate(versionDate)}}{
    Sets version date
+ }
+}
+}
+
+\section{Methods}{
+
+\describe{
+ \item{\code{new(xml)}}{
+   This method is used to instantiate an ISOFeatureCatalogue
  }
  \item{\code{setProducer(producer)}}{
    Sets an object of class \code{ISOResponsibleParty} as producer
