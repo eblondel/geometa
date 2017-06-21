@@ -104,7 +104,7 @@
 #'    Indicates if the object is a metadata document, typically an object of class
 #'    \code{ISOMetadata} or \code{ISOFeatureCatalogue}
 #'  }
-#'  \item{\cod€{isFieldInheritedFrom(field)}}{
+#'  \item{\code{isFieldInheritedFrom(field)}}{
 #'    Gives the parent from which the field is inherited, otherwise return \code{NULL}.
 #'  }
 #' }
@@ -548,11 +548,13 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             if(!is.null(xObj)){
               
               #add parent namespaces if any parent field
-              klass <- self$isFieldInheritedFrom(x)
-              if(!is.null(klass)){
-                ns <- ISOMetadataNamespace[[klass$private_fields$xmlNamespacePrefix]]$getDefinition()
-                if(!(ns %in% nsdefs)){
-                  nsdefs <<- c(nsdefs, ns)
+              if(x != "value"){
+                klass <- self$isFieldInheritedFrom(x)
+                if(!is.null(klass)){
+                  ns <- ISOMetadataNamespace[[klass$private_fields$xmlNamespacePrefix]]$getDefinition()
+                  if(!(ns %in% nsdefs)){
+                    nsdefs <<- c(nsdefs, ns)
+                  }
                 }
               }
               

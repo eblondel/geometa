@@ -116,7 +116,7 @@ Abstract ISO Metadata class used internally by geometa
    Indicates if the object is a metadata document, typically an object of class
    \code{ISOMetadata} or \code{ISOFeatureCatalogue}
  }
- \item{\cod€{isFieldInheritedFrom(field)}}{
+ \item{\code{isFieldInheritedFrom(field)}}{
    Gives the parent from which the field is inherited, otherwise return \code{NULL}.
  }
 }
