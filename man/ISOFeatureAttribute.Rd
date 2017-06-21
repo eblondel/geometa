@@ -21,9 +21,9 @@ ISOFeatureAttribute
 
 \item{\code{valueMeasurementUnit}}{}
 
-\item{\code{listedValue}}{}
-
 \item{\code{valueType}}{}
+
+\item{\code{listedValue}}{}
 }}
 \section{Methods}{
 
@@ -37,14 +37,14 @@ ISOFeatureAttribute
  \item{\code{setValueMeasurementUnit(uom)}}{
    Sets the value measurement unit, an object of class \code{GMLUnitDefinition}
  }
+ \item{\code{setValueType(typeName)}}{
+   Sets the value type
+ }
  \item{\code{addListedValue(value)}}{
    Adds a listed value (object of class \code{ISOListedValue})
  }
  \item{\code{delListedValue(value)}}{
   Deletes a listed value (object of class \code{ISOListedValue})
- }
- \item{\code{setValueType(typeName)}}{
-   Sets the value type
  }
 }
 }

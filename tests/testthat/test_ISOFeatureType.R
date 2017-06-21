@@ -56,7 +56,6 @@ test_that("encoding",{
     md$addCharacteristic(fat)
   }
   
-  xml <- md$encode()
   expect_is(md, "ISOFeatureType")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")

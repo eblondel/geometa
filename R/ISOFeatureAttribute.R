@@ -9,8 +9,8 @@
 #'
 #' @field code
 #' @field valueMeasurementUnit
-#' @field listedValue
 #' @field valueType
+#' @field listedValue
 #'
 #' @section Methods:
 #' \describe{
@@ -23,14 +23,14 @@
 #'  \item{\code{setValueMeasurementUnit(uom)}}{
 #'    Sets the value measurement unit, an object of class \code{GMLUnitDefinition}
 #'  }
+#'  \item{\code{setValueType(typeName)}}{
+#'    Sets the value type
+#'  }
 #'  \item{\code{addListedValue(value)}}{
 #'    Adds a listed value (object of class \code{ISOListedValue})
 #'  }
 #'  \item{\code{delListedValue(value)}}{
 #'   Deletes a listed value (object of class \code{ISOListedValue})
-#'  }
-#'  \item{\code{setValueType(typeName)}}{
-#'    Sets the value type
 #'  }
 #' }
 #' 
@@ -80,10 +80,10 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      code = NULL,
      #+ valueMeasurementUnit [0..1]: GMLUnitDefinition
      valueMeasurementUnit = NULL,
-     #+ listedValue [0..*]: ISOListedValue
-     listedValue = list(),
      #+ valueType [0..1]: ISOTypeName
      valueType = NULL,
+     #+ listedValue [0..*]: ISOListedValue
+     listedValue = list(),
      
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
@@ -102,6 +102,16 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
        self$valueMeasurementUnit <- uom
      },
      
+     #setValueType
+     setValueType = function(typeName){
+       if(!is(typeName, "ISOTypeName")){
+         tn <- ISOTypeName$new()
+         tn$setName(typeName)
+         typeName <- tn
+       }
+       self$valueType <- typeName
+     },
+     
      #addListedValue
      addListedValue = function(value){
        if(!is(value, "ISOListedValue")){
@@ -116,16 +126,6 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
          value <- ISOListedValue$new(label = value)
        }
        return(self$delListElement("listedValue", value))
-     },
-     
-     #setValueType
-     setValueType = function(typeName){
-       if(!is(typeName, "ISOTypeName")){
-         tn <- ISOTypeName$new()
-         tn$setName(typeName)
-         typeName <- tn
-       }
-       self$valueType <- typeName
      }
    )         
 )

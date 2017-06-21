@@ -330,7 +330,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               self[[fieldName]] <- gmlElem
             }
           }else{
-            self[["value"]] <- as(child, "character")
+            value <- xmlValue(child)
+            if(value=="") value <- NA
+            if(fieldName == "text") fieldName <- "value"
+            self[[fieldName]] <- value
           }
         }
         
@@ -433,26 +436,30 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               }
             }
           }else{
-            if(field == "value"){
-              fieldObj <- private$fromComplexTypes(fieldObj)
-              rootXML$addNode(xmlTextNode(fieldObj))
+            if(is.na(fieldObj)){
+              emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
+              rootXML$addNode(emptyNode$value())
             }else{
-              dataObj <- self$wrapBaseElement(field, fieldObj)
-              if(!is.null(dataObj)){
-                if(dataObj$wrap){
-                  #general case of gco wrapper element
-                  wrapperNode <- xmlOutputDOM(
-                    tag = field,
-                    nameSpace = namespaceId
-                  )
-                  wrapperNode$addNode(dataObj$encode(addNS = FALSE, validate = FALSE))
-                  rootXML$addNode(wrapperNode$value())
-                }else{
-                  rootXML$addNode(dataObj$encode(addNS = FALSE, validate = FALSE))
+              if(field == "value"){
+                fieldObj <- private$fromComplexTypes(fieldObj)
+                rootXML$addNode(xmlTextNode(fieldObj))
+              }else{
+                dataObj <- self$wrapBaseElement(field, fieldObj)
+                if(!is.null(dataObj)){
+                  if(dataObj$wrap){
+                    #general case of gco wrapper element
+                    wrapperNode <- xmlOutputDOM(
+                      tag = field,
+                      nameSpace = namespaceId
+                    )
+                    wrapperNode$addNode(dataObj$encode(addNS = FALSE, validate = FALSE))
+                    rootXML$addNode(wrapperNode$value())
+                  }else{
+                    rootXML$addNode(dataObj$encode(addNS = FALSE, validate = FALSE))
+                  }
                 }
               }
             }
-            
           }
         }
       }
@@ -545,7 +552,11 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 xObj <- self$defaults[[x]]
               }
             }
-            if(!is.null(xObj)){
+            hasContent <- !is.null(xObj)
+            if(is(xObj, "ISOAbstractObject")){
+              hasContent <- any(hasContent, length(xObj$attrs)>0)
+            }
+            if(hasContent){
               
               #add parent namespaces if any parent field
               if(x != "value"){
@@ -600,18 +611,20 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         nsdefs <- nsdefs[!sapply(nsdefs, is.null)]
       }else{
         nsdefs <- self$namespace$getDefinition()
-        invisible(lapply(names(self$attrs), function(attr){
-          str <- unlist(strsplit(attr,":", fixed=T))
-          if(length(str)>1){
-            nsprefix <- str[1]
-            namespace <- ISOMetadataNamespace[[toupper(nsprefix)]]
-            if(!is.null(namespace)){
-              ns <- namespace$getDefinition()
-              if(!(ns %in% nsdefs)) nsdefs <<- c(nsdefs, ns)
-            }
-          }
-        }))
       }
+      
+      invisible(lapply(names(self$attrs), function(attr){
+        str <- unlist(strsplit(attr,":", fixed=T))
+        if(length(str)>1){
+          nsprefix <- str[1]
+          namespace <- ISOMetadataNamespace[[toupper(nsprefix)]]
+          if(!is.null(namespace)){
+            ns <- namespace$getDefinition()
+            if(!(ns %in% nsdefs)) nsdefs <<- c(nsdefs, ns)
+          }
+        }
+      }))
+      
       return(nsdefs)
     },
     

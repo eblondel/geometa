@@ -138,7 +138,7 @@ ISOFeatureType <- R6Class("ISOFeatureType",
      #+ inheritsTo [0..*]: ?
      inheritsTo = list(),
      #+ featureCatalogue: ISOFeatureCatalogue
-     featureCatalogue = NULL,
+     featureCatalogue = NA,
      #+ carrierOfCharacteristics [0..*]: ISOPropertyType / ISOBinding
      carrierOfCharacteristics = list(),
      #+ constrainedBy [0..*]: ISOConstraint
