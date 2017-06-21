@@ -76,6 +76,12 @@
 #'  \item{\code{delGraphicOverview(graphicOverview)}}{
 #'    Deletes an object of class \code{ISOBrowseGraphic}
 #'  }
+#'  \item{\code{addFormat(format)}}{
+#'    Adds a resource format, object of class \code{ISOFormat}
+#'  }
+#'  \item{\code{delFormat(format)}}{
+#'    Deletes a resource format, object of class \code{ISOFormat}
+#'  }
 #'  \item{\code{addKeywords(keywords)}}{
 #'    Adds a set of keywords as object of class \code{ISOKeywords}
 #'  }
@@ -111,6 +117,7 @@ ISOIdentification <- R6Class("ISOIdentification",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     
      #+ citation: ISOCitation
      citation = NULL,
      #+ abstract: character
@@ -126,17 +133,18 @@ ISOIdentification <- R6Class("ISOIdentification",
      #+ resourceMaintenance [0..*]: ISOMaintenanceInformation
      resourceMaintenance = list(),
      #+ graphicOverview [0..*]: ISOBrowseGraphic
-     graphicOverview = NULL,
+     graphicOverview = list(),
+     #+ resourceFormat [0..*]: ISOFormat
+     resourceFormat = list(),
      #+ descriptiveKeywords [0..*]: ISOKeywords
      descriptiveKeywords = list(),
      #+ resourceConstraints [0..*]: ISOLegalConstraints
-     resourceConstraints = NULL,
-     #+ resourceFormat [0..*]: MD_Format (ISOFormat - to implement)
-     resourceFormat = list(), #TODO
+     resourceConstraints = list(),
      #+ resourceSpecificUsage [0..*]: MD_Usage (ISOUsage - to implement)
      resourceSpecificUsage = list(), #TODO
      #+ aggregationInfo [0..*]: MD_AggregateInformation (ISOAggregateInformation - to implement)
      aggregationInformation = list(), #TODO
+     
      initialize = function(xml = NULL, defaults = list()){
        super$initialize(xml, defaults = defaults)
      },
@@ -252,6 +260,25 @@ ISOIdentification <- R6Class("ISOIdentification",
          stop("The argument should be a 'ISOBrowseGraphic' object")
        }
        return(self$delListElement("graphicOverview", graphicOverview))
+     },
+     
+     #MD_Format
+     #--------------------------------------------------------------------------
+     
+     #addFormat
+     addFormat = function(format){
+       if(!is(format, "ISOFormat")){
+         stop("The argument value should an object of class 'ISOFormat'")
+       }
+       return(self$addListElement("resourceFormat", format))
+     },
+     
+     #delFormat
+     delFormat = function(format){
+       if(!is(format, "ISOFormat")){
+         stop("The argument value should an object of class 'ISOFormat'")
+       }
+       return(self$delListElement("resourceFormat", format))
      },
      
      #MD_Keywords

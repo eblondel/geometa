@@ -14,6 +14,18 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISODistribution
 #'  }
+#'  \item{\code{addFormat(format)}}{
+#'    Adds a distribution format, object of class \code{ISOFormat}
+#'  }
+#'  \item{\code{delFormat(format)}}{
+#'    Deletes a distribution format, object of class \code{ISOFormat}
+#'  }
+#'  \item{\code{addDistributor(distributor)}}{
+#'    Adds a distributor, object of class \code{ISODistributor}
+#'  }
+#'  \item{\code{delDistributor(distributor)}}{
+#'    Deletes a distributor, object of class \code{ISODistributor}
+#'  }
 #'  \item{\code{setDigitalTransferOptions(options)}}{
 #'    Sets the digital transfer options
 #'  }
@@ -47,10 +59,54 @@ ISODistribution <- R6Class("ISODistribution",
       xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     
+     #+ distributionFormat [0..*]: ISOFormat
+     distributionFormat = list(),
+     #+ distributor [0..*]: ISODistributor
+     distributor = list(),
      #+ transferOptions [0..*]: ISODigitalTransferOptions
      transferOptions = NULL,
+    
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
+     },
+     
+     #MD_Format
+     #--------------------------------------------------------------------------
+     
+     #addFormat
+     addFormat = function(format){
+       if(!is(format, "ISOFormat")){
+         stop("The argument value should an object of class 'ISOFormat'")
+       }
+       return(self$addListElement("distributionFormat", format))
+     },
+     
+     #delFormat
+     delFormat = function(format){
+       if(!is(format, "ISOFormat")){
+         stop("The argument value should an object of class 'ISOFormat'")
+       }
+       return(self$delListElement("distributionFormat", format))
+     },
+     
+     #MD_Distributor
+     #--------------------------------------------------------------------------
+     
+     #addDistributor
+     addDistributor = function(distributor){
+       if(!is(distributor, "ISODistributor")){
+         stop("The argument value should an object of class 'ISODistributor'")
+       }
+       return(self$addListElement("distributor", distributor))
+     },
+     
+     #delDistributor
+     delDistributor = function(distributor){
+       if(!is(distributor, "ISODistributor")){
+         stop("The argument value should an object of class 'ISODistributor'")
+       }
+       return(self$delListElement("distributor", distributor))
      },
      
      #MD_DigitalTransferOptions
