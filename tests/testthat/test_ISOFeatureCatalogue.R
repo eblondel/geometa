@@ -10,7 +10,7 @@ context("ISOFeatureCatalogue")
 
 test_that("encoding",{
   
-  fc <- ISOFeatureCatalogue$new()
+  fc <- ISOFeatureCatalogue$new(uuid = "my-fc-identifier")
   fc$setName("name")
   fc$addScope("scope1")
   fc$addScope("scope2")

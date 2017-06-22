@@ -36,7 +36,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml)}}{
+#'  \item{\code{new(xml, uuid)}}{
 #'    This method is used to instantiate an ISOFeatureCatalogue
 #'  }
 #'  \item{\code{setProducer(producer)}}{
@@ -62,7 +62,7 @@
 #' }
 #'
 #' @examples 
-#'  fc <- ISOFeatureCatalogue$new()
+#'  fc <- ISOFeatureCatalogue$new(uuid = "my-fc-identifier")
 #'  fc$setName("name")
 #'  fc$addScope("scope1")
 #'  fc$addScope("scope2")
@@ -144,6 +144,8 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
     ),
     public = list(
       
+      attrs = list(),
+      
       #+ producer [1..1]: ISOResponsibleParty
       producer = NULL,
       #+ functionalLanguage [0..1]: character 
@@ -153,8 +155,9 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       #+ definitionSource [0..*]: ISODefinitionSource
       definitionSource = list(),
       
-      initialize = function(xml = NULL){
+      initialize = function(xml = NULL, uuid = NULL){
         super$initialize(xml = xml)
+        if(!is.null(uuid)) self$attrs[["uuid"]] <- as.character(uuid)
       },
       
       #setProducer

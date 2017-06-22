@@ -49,7 +49,7 @@ ISOFeatureCatalogue
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml)}}{
+ \item{\code{new(xml, uuid)}}{
    This method is used to instantiate an ISOFeatureCatalogue
  }
  \item{\code{setProducer(producer)}}{
@@ -75,7 +75,7 @@ ISOFeatureCatalogue
 }
 }
 \examples{
-fc <- ISOFeatureCatalogue$new()
+fc <- ISOFeatureCatalogue$new(uuid = "my-fc-identifier")
  fc$setName("name")
  fc$addScope("scope1")
  fc$addScope("scope2")
