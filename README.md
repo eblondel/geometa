@@ -16,7 +16,7 @@ Current Focus:
 * ISO 19110:2005 (Feature Catalogue) main classes
 * ISO 19139:2007 XML with **Encoding**, **Decoding** and **Validation** support
 
-Note:
+Notes:
 * on encoding/decoding: Some specific ISO classes may be still missing, and will be added iteratively, according to needs.
 * on validation: validation is perfomed using XML schema validation based on [ISO/OGC schemas](http://schemas.opengis.net/iso/19139/20070417/)
 
