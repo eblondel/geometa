@@ -67,3 +67,22 @@ GMLElement <- R6Class("GMLElement",
       }
     )
 )
+
+GMLElement$create <- function(element, value = NULL,  attrs = list(), href = NULL, 
+                              codeList = NULL, codeListValue = NULL, codeSpace = NULL){
+  #element
+  gmlElem <- GMLElement$new(element = element)
+  #value
+  if(!is.null(value)) gmlElem$setValue(value)
+  #general attributes
+  for(attrName in names(attrs)){
+    gmlElem$setAttr(attrName, attrs[[attrName]])
+  }
+  #specific attributes
+  if(!is.null(href)) gmlElem$setHref(href)
+  if(!is.null(codeList)) gmlElem$setCodeList(codeList)
+  if(!is.null(codeListValue)) gmlElem$setCodeListValue(codeListValue)
+  if(!is.null(codeSpace)) gmlElem$setCodeSpace(codeSpace)
+  
+  return(gmlElem)
+}

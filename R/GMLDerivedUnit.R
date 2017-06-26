@@ -61,9 +61,7 @@ GMLDerivedUnit <- R6Class("GMLDerivedUnit",
        if(exponent == 0L){
          stop("Exponent argument value cannot be equal to zero")
        }
-       gmlElem <- GMLElement$new(element = "derivationUnitTerm")
-       gmlElem$setAttr("uom", uom)
-       gmlElem$setAttr("exponent", exponent)
+       gmlElem <- GMLElement$create("derivationUnitTerm", attrs = list(uom = uom, exponent = exponent))
        return(self$addListElement("derivationUnitTerm", gmlElem))
      },
      
@@ -72,9 +70,7 @@ GMLDerivedUnit <- R6Class("GMLDerivedUnit",
        if(exponent == 0L){
          stop("Exponent argument value cannot be equal to zero")
        }
-       gmlElem <- GMLElement$new(element = "derivationUnitTerm")
-       gmlElem$setAttr("uom", uom)
-       gmlElem$setAttr("exponent", exponent)
+       gmlElem <- GMLElement$create("derivationUnitTerm", attrs = list(uom = uom, exponent = exponent))
        return(self$delListElement("derivationUnitTerm", gmlElem))
      }
    )

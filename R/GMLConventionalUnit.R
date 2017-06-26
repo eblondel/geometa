@@ -72,9 +72,7 @@ GMLConventionalUnit <- R6Class("GMLConventionalUnit",
       if(exponent == 0L){
         stop("Exponent argument value cannot be equal to zero")
       }
-      gmlElem <- GMLElement$new(element = "derivationUnitTerm")
-      gmlElem$setAttr("uom", uom)
-      gmlElem$setAttr("exponent", exponent)
+      gmlElem <- GMLElement$create("derivationUnitTerm", attrs = list(uom = uom, exponent = exponent))
       return(self$addListElement("derivationUnitTerm", gmlElem))
     },
     
@@ -83,19 +81,15 @@ GMLConventionalUnit <- R6Class("GMLConventionalUnit",
       if(exponent == 0L){
         stop("Exponent argument value cannot be equal to zero")
       }
-      gmlElem <- GMLElement$new(element = "derivationUnitTerm")
-      gmlElem$setAttr("uom", uom)
-      gmlElem$setAttr("exponent", exponent)
+      gmlElem <- GMLElement$create("derivationUnitTerm", attrs = list(uom = uom, exponent = exponent))
       return(self$delListElement("derivationUnitTerm", gmlElem))
     },
     
     #setConversionToPreferredUnit
     setConversionToPreferredUnit = function(uom, factor, rough = FALSE){
       elem <- ifelse(rough, "roughConversionToPreferredUnit", "conversionToPreferredUnit")
-      gmlElem <- GMLElement$new(element = elem)
-      gmlElem$setAttr("uom", uom)
-      gmlFactorElem <- GMLElement$new(element = "factor")
-      gmlFactorElem$setValue(factor)
+      gmlElem <- GMLElement$create(elem, attrs = list(uom = uom))
+      gmlFactorElem <- GMLElement$create("factor", value = factor)
       gmlElem[["factor"]] <- gmlFactorElem
       self[[elem]] <- gmlElem
     }

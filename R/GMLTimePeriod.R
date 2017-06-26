@@ -70,9 +70,7 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       if(!all(class(beginPosition)==c("POSIXct","POSIXt")) | is(beginPosition, "Date")){
         stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
       }
-      gmlElem <- GMLElement$new(element = "beginPosition")
-      gmlElem$setValue(beginPosition)
-      self$beginPosition <- gmlElem
+      self$beginPosition <- GMLElement$create("beginPosition", value = beginPosition)
       if(!is.null(self$endPosition)) self$computeInterval()
     },
     
@@ -81,9 +79,7 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       if(!all(class(endPosition)==c("POSIXct","POSIXt")) | is(endPosition, "Date")){
         stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
       }
-      gmlElem <- GMLElement$new(element = "endPosition")
-      gmlElem$setValue(endPosition)
-      self$endPosition <- gmlElem
+      self$endPosition <- GMLElement$create("endPosition", value = endPosition)
       if(!is.null(self$beginPosition)) self$computeInterval()
     },
     

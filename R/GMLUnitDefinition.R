@@ -61,16 +61,12 @@ GMLUnitDefinition <- R6Class("GMLUnitDefinition",
      
      #setQuantityTypeReference
      setQuantityTypeReference = function(quantityTypeReference){
-       gmlElem <- GMLElement$new(element = "quantityTypeReference")
-       gmlElem$setHref(quantityTypeReference)
-       self$quantityTypeReference <- gmlElem
+       self$quantityTypeReference <- GMLElement$create("quantityTypeReference", href = quantityTypeReference)
      },
      
      #setCatalogSymbol
      setCatalogSymbol = function(catalogSymbol){
-       gmlElem <- GMLElement$new(element = "catalogSymbol")
-       gmlElem$setValue(catalogSymbol)
-       self$catalogSymbol <- gmlElem
+       self$catalogSymbol <- GMLElement$create("catalogSymbol", value = catalogSymbol)
      }
    )
 )

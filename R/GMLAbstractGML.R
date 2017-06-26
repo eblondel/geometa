@@ -60,32 +60,23 @@ GMLAbstractGML <- R6Class("GMLAbstractGML",
 
      #setDescriptionReference
      setDescriptionReference = function(descriptionReference){
-       gmlElem <- GMLElement$new(element = "descriptionReference")
-       gmlElem$setHref(descriptionReference)
-       self$descriptionReference <- gmlElem
+       self$descriptionReference <- GMLElement$create("descriptionReference", href = descriptionReference)
      },
      
      #setIdentifier
      setIdentifier = function(identifier, codeSpace){
-       gmlElem <- GMLElement$new(element = "identifier")
-       gmlElem$setValue(identifier)
-       gmlElem$setCodeSpace(codeSpace)
-       self$identifier <- gmlElem
+       self$identifier <- GMLElement$create("identifier", value = identifier, codeSpace = codeSpace)
      },
      
      #addName
      addName = function(name, codeSpace = NULL){
-       gmlElem <- GMLElement$new(element = "name")
-       if(!is.null(codeSpace)) gmlElem$setCodeSpace(codeSpace)
-       gmlElem$setValue(name)
+       gmlElem <- GMLElement$create("name", value = name, codeSpace = codeSpace)
        return(self$addListElement("name", gmlElem))
      },
      
      #delName
      delName = function(name, codeSpace = NULL){
-       gmlElem <- GMLElement$new(element = "name")
-       if(!is.null(codeSpace)) gmlElem$setCodeSpace(codeSpace)
-       gmlElem$setValue(name)
+       gmlElem <- GMLElement$create("name", value = name, codeSpace = codeSpace)
        return(self$delListElement("name", gmlElem))
      }
    )                        

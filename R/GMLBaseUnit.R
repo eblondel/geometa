@@ -55,9 +55,7 @@ GMLBaseUnit <- R6Class("GMLBaseUnit",
      
      #setUnitsSystem
      setUnitsSystem = function(unitsSystem){
-       gmlElem <- GMLElement$new(element = "unitsSystem")
-       gmlElem$setHref(unitsSystem)
-       self$unitsSystem <- gmlElem
+       self$unitsSystem <- GMLElement$create("unitsSystem", href = unitsSystem)
      }
 
    )

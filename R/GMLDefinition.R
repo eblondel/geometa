@@ -41,7 +41,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 GMLDefinition <- R6Class("GMLDefinition",
-  inherit = GMLAbstractGML,
+  inherit = GMLElement,
   private = list(
     xmlElement = "Definition",
     xmlNamespacePrefix = "GML"
@@ -58,12 +58,14 @@ GMLDefinition <- R6Class("GMLDefinition",
     
     #addRemark
     addRemark = function(remark){
-      return(self$addListElement("remarks", remark))
+      gmlRemark <- GMLElement$create("remarks", value = remark)
+      return(self$addListElement("remarks", gmlRemark))
     },
     
     #delRemark
     delRemark = function(remark){
-      return(self$delListElement("remark", remark))
+      gmlRemark <- GMLElement$create("remarks", value = remark)
+      return(self$delListElement("remark", gmlRemark))
     }
   )                        
 )
