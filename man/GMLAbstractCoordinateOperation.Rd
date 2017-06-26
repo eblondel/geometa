@@ -31,7 +31,7 @@ GMLAbstractCoordinateOperation
  \item{\code{new(xml, defaults, id)}}{
    This method is used to instantiate a GML Abstract CRS
  }
- \item{\Code{setVersion(version)}}{
+ \item{\code{setVersion(version)}}{
    Sets version
  }
  \item{\code{addAccuracy(accuracy)}}{
