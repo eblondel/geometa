@@ -35,10 +35,10 @@ GMLAbstractCoordinateOperation
    Sets version
  }
  \item{\code{addAccuracy(accuracy)}}{
-   Adds coordinate operation accuracty
+   Adds coordinate operation accuracy, object extending \code{ISOAbstractPositionalAccuracy}
  }
  \item{\code{delAccuracy(accuracy)}}{
-   Deletes coordinate operation accuracty
+   Deletes coordinate operation accuracy, object extending \code{ISOAbstractPositionalAccuracy}
  }
  \item{\code{setSourceCRS(sourceCRS)}}{
    Sets the source CRS, object extending \code{GMLAbstractSingleCRS}

@@ -26,7 +26,7 @@ ISODataQuality
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml,value)}}{
+ \item{\code{new(xml)}}{
    This method is used to instantiate an ISODataQuality
  }
  \item{\code{setScope(scope)}}{

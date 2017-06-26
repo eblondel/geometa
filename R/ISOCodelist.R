@@ -122,7 +122,8 @@ fetchISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MD_ClassificationCode"),
     ISOCodelist$new(gmxCL, "MD_CellGeometryCode"),
     ISOCodelist$new(gmxCL, "MD_DimensionNameTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_CoverageContentTypeCode")
+    ISOCodelist$new(gmxCL, "MD_CoverageContentTypeCode"),
+    ISOCodelist$new(gmxCL, "DQ_EvaluationMethodTypeCode")
   )
   names(codelists) <- sapply(codelists, function(cl){cl$identifier})
   .geometa.iso$codelists <- codelists

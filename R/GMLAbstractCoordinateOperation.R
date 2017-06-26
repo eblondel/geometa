@@ -21,10 +21,10 @@
 #'    Sets version
 #'  }
 #'  \item{\code{addAccuracy(accuracy)}}{
-#'    Adds coordinate operation accuracty
+#'    Adds coordinate operation accuracy, object extending \code{ISOAbstractPositionalAccuracy}
 #'  }
 #'  \item{\code{delAccuracy(accuracy)}}{
-#'    Deletes coordinate operation accuracty
+#'    Deletes coordinate operation accuracy, object extending \code{ISOAbstractPositionalAccuracy}
 #'  }
 #'  \item{\code{setSourceCRS(sourceCRS)}}{
 #'    Sets the source CRS, object extending \code{GMLAbstractSingleCRS}
@@ -83,8 +83,8 @@ GMLAbstractCoordinateOperation <- R6Class("GMLAbstractCoordinateOperation",
      
      #delAccuracy
      delAccuracy = function(accuracy){
-       if(!inherits(accuracy, "ISOPositionalAccuracy")){
-         stop("The argument value should be an object of class 'ISOPositionalAccuracy")
+       if(!inherits(accuracy, "ISOAbstractPositionalAccuracy")){
+         stop("The argument value should be an object of class 'ISOAbstractPositionalAccuracy")
        }
        return(self$delListElement("coordinateOperationAccuracy",
                                   GMLElement$create("coordinateOperationAccuracy",
