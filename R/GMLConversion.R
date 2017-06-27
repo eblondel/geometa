@@ -44,24 +44,33 @@ GMLConversion <- R6Class("GMLConversion",
     ),
     public = list(
       
-      #+ method [1..1]: #TODO
+      #+ method [1..1]: GMLOperationMethod
       method = NULL,
-      #+ parameterValue [0..*]: #TODO
+      #+ parameterValue [0..*]: GMLParameterValue
       parameterValue = list(),
       
       #setMethod
       setMethod = function(method){
+        if(!is(method, "GMLOperationMethod")){
+          stop("The argument value should be an object of class 'GMLOperationMethod'")
+        }
         self$method <- GMLElement$create("method", method)
       },
       
       #addParameterValue
       addParameterValue = function(paramValue){
-        return(self$addListElement("parameterValue", paramValue))
+        if(!is(paramValue, "GMLParameterValue")){
+          stop("The argument value should be an object of class 'GMLParameterValue'")
+        }
+        return(self$addListElement("parameterValue", GMLElement$create("parameterValue", value = paramValue)))
       },
       
       #delParameterValue
       delParameterValue = function(paramValue){
-        return(self$delListElement("parameterValue", paramValue))
+        if(!is(paramValue, "GMLParameterValue")){
+          stop("The argument value should be an object of class 'GMLParameterValue'")
+        }
+        return(self$delListElement("parameterValue", GMLElement$create("parameterValue", value = paramValue)))
       }
       
     )
