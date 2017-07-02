@@ -107,7 +107,7 @@ fetchISOCodelists <- function(){
   codelists <- list(
     ISOCodelist$new(languageCL, "LanguageCode"),
     ISOCodelist$new(ML_gmxCL, "MD_CharacterSetCode"),
-    ISOCodelist$new(ML_gmxCL, "MD_ScopeCode"),
+    ISOCodelist$new(gmxCL, "MX_ScopeCode"),
     ISOCodelist$new(gmxCL, "CI_RoleCode"),
     ISOCodelist$new(gmxCL, "MD_TopicCategoryCode"),
     ISOCodelist$new(gmxCL, "MD_RestrictionCode"),

@@ -46,7 +46,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          value <- xmlGetAttr(xml, "codeListValue") #codeListValue should be as attribute
          if(is.null(value)) value <- xmlValue(xml) #try to pick up value instead
        }
-       
+       if(id=="MD_ScopeCode") id <- "MX_ScopeCode"
        cl <- getISOCodelist(id)
        if(is.null(cl)){
          stop(sprintf("No ISO codelist for identifier '%s'", id))
@@ -97,5 +97,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
 ISOCodeListValue$values = function(class, labels = FALSE){
   fields <- "value"
   if(labels) fields <- c(fields, "description")
-  return(getISOCodelist(class$private_fields$xmlElement)$entries[,fields])
+  element <- class$private_fields$xmlElement
+  if(element == "MD_ScopeCode") element <- "MX_ScopeCode"
+  return(getISOCodelist(element)$entries[,fields])
 }
