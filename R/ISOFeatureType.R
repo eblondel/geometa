@@ -139,7 +139,7 @@ ISOFeatureType <- R6Class("ISOFeatureType",
      inheritsTo = list(),
      #+ featureCatalogue: ISOFeatureCatalogue
      featureCatalogue = NA,
-     #+ carrierOfCharacteristics [0..*]: ISOPropertyType / ISOBinding
+     #+ carrierOfCharacteristics [0..*]: ISOCarrierOfCharacteristics
      carrierOfCharacteristics = list(),
      #+ constrainedBy [0..*]: ISOConstraint
      constrainedBy = list(),
@@ -217,8 +217,8 @@ ISOFeatureType <- R6Class("ISOFeatureType",
      
      #addCharacteristic
      addCharacteristic = function(characteristic){
-       if(!is(characteristic, "ISOPropertyType")){
-         stop("The argument should be an object of class 'ISOPropertyType' or subclass")
+       if(!is(characteristic, "ISOCarrierOfCharacteristics")){
+         stop("The argument should be an object of class extending 'ISOCarrierOfCharacteristics'")
        }
        return(self$addListElement("carrierOfCharacteristics", characteristic))
      },
@@ -226,7 +226,7 @@ ISOFeatureType <- R6Class("ISOFeatureType",
      #delCharacteristic
      delCharacteristic = function(characteristic){
        if(!is(characteristic, "ISOPropertyType")){
-         stop("The argument should be an object of class 'ISOPropertyType' or subclass")
+         stop("The argument should be an object of class extending 'ISOCarrierOfCharacteristics'")
        }
        return(self$delListElement("carrierOfCharacteristics", characteristic))
      },

@@ -10,9 +10,20 @@
 #' @field memberName
 #' @field definition
 #' @field cardinality
-#' @field featureType
-#' @field constrainedBy
 #' @field definitionReference
+#'
+#' @section Inherited methods from \code{ISOCarrierOfCharacteristics}:
+#' \describe{
+#'  \item{\code{setFeatureType(featureType)}}{
+#'    Sets a feature type, object of class \code{ISOFeatureType}
+#'  }
+#'  \item{\code{addConstraint(constraint)}}{
+#'    Adds a constraint, object of class \code{ISOConstraint} or \code{character}
+#'  }
+#'  \item{\code{delConstraint(constraint)}}{
+#'    Deletes a constraint, object of class \code{ISOConstraint} or \code{character}
+#'  }
+#' }
 #'
 #' @section Methods:
 #' \describe{
@@ -28,18 +39,6 @@
 #'  \item{\code{setCardinality(lower, upper)}}{
 #'    Sets the cardinality boundaries lower and upper of class \code{numeric}
 #'  }
-#'  \item{\code{addFeatureType(featureType)}}{
-#'    Adds a feature type, object of class \code{ISOFeatureType}
-#'  }
-#'  \item{\code{delFeatureType(featureType)}}{
-#'    Deletes a feature type, object of class \code{ISOFeatureType}
-#'  }
-#'  \item{\code{addConstraint(constraint)}}{
-#'    Adds a constraint, object of class \code{ISOConstraint} or \code{character}
-#'  }
-#'  \item{\code{delConstraint(constraint)}}{
-#'    Deletes a constraint, object of class \code{ISOConstraint} or \code{character}
-#'  }
 #'  \item{\code{setDefinitionReference(definitionReference)}}{
 #'    Sets the definition Reference, object of class \code{ISODefinitionReference}
 #'  }
@@ -51,7 +50,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOPropertyType <- R6Class("ISOPropertyType",
-    inherit = ISOAbstractObject,
+    inherit = ISOCarrierOfCharacteristics,
     private = list(
       xmlElement = "FC_PropertyType",
       xmlNamespacePrefix = "GFC"
@@ -64,10 +63,6 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       definition = NULL,
       #+ cardinality [1..1]: ISOMultiplicityRange
       cardinality = NULL,
-      #+ featureType [0..*]: ISOFeatureType
-      featureType = list(),
-      #+ constrainedBy [0..*]: ISOConstraint
-      constrainedBy = list(),
       #+ definitionReference [0..1]
       definitionReference = NULL,
       
@@ -90,38 +85,6 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       #setCardinality
       setCardinality = function(lower, upper){
         self$cardinality = ISOMultiplicity$new(lower = lower, upper = upper)
-      },
-      
-      #addFeatureType
-      addFeatureType = function(featureType){
-        if(!is(featureType, "ISOFeatureType")){
-          stop("The argument should be an object of class 'ISOFeatureType'")
-        }
-        return(self$addListElement("featureType", featureType))
-      },
-      
-      #delFeatureType
-      delFeatureType = function(featureType){
-        if(!is(featureType, "ISOFeatureType")){
-          stop("The argument should be an object of class 'ISOFeatureType'")
-        }
-        return(self$delListElement("featureType", featureType))
-      },
-      
-      #addConstraint
-      addConstraint = function(constraint){
-        if(!is(constraint, "ISOConstraint")){
-          constraint <- ISOConstraint$new(description = constraint)
-        }
-        return(self$addListElement("constrainedBy", constraint))
-      },
-      
-      #delConstraint
-      delConstraint = function(constraint){
-        if(!is(constraint, "ISOConstraint")){
-          constraint <- ISOConstraint$new(description = constraint)
-        }
-        return(self$delListElement("constrainedBy", constraint))
       },
       
       #setDefinitionReference
