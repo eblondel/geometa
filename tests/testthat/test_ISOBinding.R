@@ -16,13 +16,13 @@ test_that("encoding",{
 
   #create attribute
   fat <- ISOFeatureAttribute$new()
-  fat$setMemberName(sprintf("name %s",i))
-  fat$setDefinition(sprintf("definition %s",i))
+  fat$setMemberName("name 1")
+  fat$setDefinition("definition 1")
   fat$setCardinality(lower=1,upper=1)
-  fat$setCode(sprintf("code %s",i))
+  fat$setCode("code 1")
   
   #add measurement unit
-  gml <- GMLBaseUnit$new(id = sprintf("ID%s",i))
+  gml <- GMLBaseUnit$new(id = "ID1")
   gml$setDescriptionReference("someref")
   gml$setIdentifier("identifier", "codespace")
   gml$addName("name1", "codespace")
