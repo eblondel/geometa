@@ -23,5 +23,6 @@ Notes:
 
 Not yet supported:
 * ISO 19115-2 extension for raster description
+* ISO 19119:2005 (Service metadata)
 
 For geometa sponsoring/funding, support requests, please contact me by [e-mail](mailto:emmanuel.blondel1@gmail.com)

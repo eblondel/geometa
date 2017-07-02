@@ -436,6 +436,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               }
             }
           }else{
+            if(length(fieldObj)==0) fieldObj <- NA
             if(is.na(fieldObj)){
               emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
               rootXML$addNode(emptyNode$value())
