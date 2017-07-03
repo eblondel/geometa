@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Edit: 2017-07-03 EBlondel, added FC_RoleType for geometa R package-->
 <!-- Edit: 2015-07-02 AMilan, added 19115-1 and serviceIdentfication codes -->
 <!-- Edit: 20100305 AMilan, removed extra dash in ===MX_ScopeCode=== comment -->
 <!-- Edit: 20100521 Darmel, added 'sponsor' to === CI_RoleCode === -->
@@ -2898,6 +2899,31 @@
         <CodeDefinition gml:id="DCPList_XML">
           <gml:description>extensible markup language</gml:description>
           <gml:identifier codeSpace="ISOTC211/19119">XML</gml:identifier>
+        </CodeDefinition>
+      </codeEntry>
+    </CodeListDictionary>
+  </codelistItem>
+  <!-- FC_RoleType -->
+  <codelistItem>
+    <CodeListDictionary gml:id="FC_RoleType">
+      <gml:description> code list for the classification of roles </gml:description>
+      <gml:identifier codeSpace="ISOTC211/19110">FC_RoleType</gml:identifier>
+      <codeEntry>
+        <CodeDefinition gml:id="FC_RoleType_ordinary">
+          <gml:description>indicates an ordinary association</gml:description>
+          <gml:identifier codeSpace="ISOTC211/19110">ordinary</gml:identifier>
+        </CodeDefinition>
+      </codeEntry>
+      <codeEntry>
+        <CodeDefinition gml:id="FC_RoleType_aggregation">
+          <gml:description>indicates a UML aggregation (part role)</gml:description>
+          <gml:identifier codeSpace="ISOTC211/19110">aggregation</gml:identifier>
+        </CodeDefinition>
+      </codeEntry>
+      <codeEntry>
+        <CodeDefinition gml:id="FC_RoleType_composition">
+          <gml:description>indicates a UML composition (member role)</gml:description>
+          <gml:identifier codeSpace="ISOTC211/19110">composition</gml:identifier>
         </CodeDefinition>
       </codeEntry>
     </CodeListDictionary>

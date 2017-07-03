@@ -25,7 +25,7 @@ ISOAssociationRole
 
 \item{\code{relation}}{}
 
-\item{\code{valueType}}{}
+\item{\code{rolePlayer}}{}
 }}
 \section{Methods}{
 
@@ -33,20 +33,24 @@ ISOAssociationRole
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOAssociationRole
  }
- \item{\code{setType(type)}}{
-  Set the type of association
+ \item{\code{setRoleType(roleType)}}{
+   Sets the role type, object of class \code{ISORoleType} or any \code{character}
+   value among \code{ISORoleType$values()}.
  }
  \item{\code{setIsOrdered(isOrdered)}}{
-  Sets TRUE/FALSE if ordered
+   Sets \code{TRUE} if ordered, \code{FALSE} otherwise
  }
  \item{\code{setIsNavigable(isNavigable)}}{
-  Sets TRUE/FALSE if navigable
+   Sets \code{TRUE} if navigable, \code{FALSE} otherwise
  }
- \item{\code{setRelation(relation)}}{
-  Sets the relation, objec of class \code{ISOFeatureAssociation}
+ \item{code{setRelation(relation)}}{
+   Sets an object of class \code{ISOFeatureAssocation} as relation
  }
- \item{\code{setValueType(valueType)}}{
-  Sets a featureType, object of class \code{ISOFeatureType}
+ \item{\code{addRolePlayer(rolePlayer)}}{
+   Adds a role player, object of class \code{ISOFeatureType}
+ }
+ \item{\code{delRolePlayer(rolePlayer)}}{
+   Deletes a role player, object of class \code{ISOFeatureType}
  }
 }
 }

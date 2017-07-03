@@ -11,27 +11,31 @@
 #' @field isOrdered
 #' @field isNavigable
 #' @field relation
-#' @field valueType
+#' @field rolePlayer
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOAssociationRole
 #'  }
-#'  \item{\code{setType(type)}}{
-#'   Set the type of association
+#'  \item{\code{setRoleType(roleType)}}{
+#'    Sets the role type, object of class \code{ISORoleType} or any \code{character}
+#'    value among \code{ISORoleType$values()}.
 #'  }
 #'  \item{\code{setIsOrdered(isOrdered)}}{
-#'   Sets TRUE/FALSE if ordered
+#'    Sets \code{TRUE} if ordered, \code{FALSE} otherwise
 #'  }
 #'  \item{\code{setIsNavigable(isNavigable)}}{
-#'   Sets TRUE/FALSE if navigable
+#'    Sets \code{TRUE} if navigable, \code{FALSE} otherwise
 #'  }
-#'  \item{\code{setRelation(relation)}}{
-#'   Sets the relation, objec of class \code{ISOFeatureAssociation}
+#'  \item{code{setRelation(relation)}}{
+#'    Sets an object of class \code{ISOFeatureAssocation} as relation
 #'  }
-#'  \item{\code{setValueType(valueType)}}{
-#'   Sets a featureType, object of class \code{ISOFeatureType}
+#'  \item{\code{addRolePlayer(rolePlayer)}}{
+#'    Adds a role player, object of class \code{ISOFeatureType}
+#'  }
+#'  \item{\code{delRolePlayer(rolePlayer)}}{
+#'    Deletes a role player, object of class \code{ISOFeatureType}
 #'  }
 #' }
 #'  
@@ -41,70 +45,85 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOAssociationRole <- R6Class("ISOAssociationRole",
-   inherit = ISOPropertyType,
-   private = list(
-     xmlElement = "FC_AssociationRole",
-     xmlNamespacePrefix = "GFC"
-   ),
-   public = list(
-     
-     #+ type: ?
-     type = NULL,
-     #+ isOrdered: logical
-     isOrdered = FALSE,
-     #+ isNavigable: logical
-     isNavigable = TRUE,
-     #+ relation: ISOFeatureAssociation
-     relation = NULL,
-     #+ valueType: ISOFeatureType
-     valueType = NULL,
-     
-     initialize = function(xml = NULL){
-       defaults = list(cardinality = ISOMultiplicityRange(lower = 0, upper = Inf))
-       super$initialize(xml = xml, defaults = defaults)
-     },
-     
-     #setType
-     setType = function(type){
-       
-     },
-     
-     #setIsOrdered
-     setIsOrdered = function(isOrdered){
-       if(!is(isOrdered, "logical")){
-         isOrdered <- as.logical(isOrdered)
-         if(is.na(isOrdered)){
-           stop("Value cannot be coerced to 'logical'")
-         }
-       }
-       self$isOrdered <- isOrdered
-     },
-     
-     #setIsNavigable
-     setIsNavigable = function(isNavigable){
-       if(!is(isNavigable, "logical")){
-         isNavigable <- as.logical(isNavigable)
-         if(is.na(isNavigable)){
-           stop("Value cannot be coerced to 'logical'")
-         }
-       }
-       self$isNavigable <- isNavigable
-     },
-     
-     #setRelation
-     setRelation = function(featureAssociation){
-       if(!is(featureAssociation, "ISOFeatureAssociation")){
-         stop("The argument should be an object of class 'ISOFeatureAssociation")
-       }
-       self$relation <- featureAssociation
-     },
-     
-     #setValueType
-     setValueType = function(featureType){
-       if(!is(featureType, "ISOFeatureType")){
-         stop("The argument should be an object of class 'ISOFeatureType")
-       }
-       self$valueType <- featureType
-     }
-   )         
+    inherit = ISOPropertyType,
+    private = list(
+      xmlElement = "FC_AssociationRole",
+      xmlNamespacePrefix = "GFC"
+    ),
+    public = list(
+      
+      #+ type: ISORoleType
+      type = NULL,
+      #+ isOrdered: logical
+      isOrdered = NULL,
+      #+ isNavigable: logical
+      isNavigable = NULL,
+      #+ relation: ISOAssociationRole
+      relation = NA,
+      #+ rolePlayer: ISOFeatureType
+      rolePlayer = list(),
+      
+      initialize = function(xml = NULL){
+        defaults = list(type = ISORoleType$new(value = "ordinary"))
+        super$initialize(xml = xml, defaults = defaults)
+      },
+      
+      #setRoleType
+      setRoleType = function(roleType){
+        if(!is(roleType, "ISORoleType")){
+          if(is(roleType, "character")){
+            roleType <- ISORoleType$new(value = roleType)
+          }else{
+            stop("The argument value should be an object of class 'ISORoleType' or 'character'")
+          }
+        }
+        self$type <- roleType
+      },
+      
+      #setIsOrdered
+      setIsOrdered = function(isOrdered){
+        if(!is(isOrdered, "logical")){
+          isOrdered <- as.logical(isOrdered)
+          if(is.na(isOrdered)){
+            stop("The argument should be 'logical' or coercable as 'logical'")
+          }
+        }
+        self$isOrdered <- isOrdered
+      },
+      
+      #setIsNavigable
+      setIsNavigable = function(isNavigable){
+        if(!is(isNavigable, "logical")){
+          isNavigable <- as.logical(isNavigable)
+          if(is.na(isNavigable)){
+            stop("The argument should be 'logical' or coercable as 'logical'")
+          }
+        }
+        self$isNavigable <- isNavigable
+      },
+      
+      #setRelation
+      setRelation = function(relation){
+        if(!is(relation, "ISOAssociationRole")){
+          stop("The argument value should be an object of class 'ISOAssociationRole")
+        }
+        self$relation <- relation
+      },
+      
+      #addRolePlayer
+      addRolePlayer = function(rolePlayer){
+        if(!is(rolePlayer, "ISOFeatureType")){
+          stop("The argument value should be an object of class (ISOFeatureType")
+        }
+        return(self$addListElement("rolePlayer", rolePlayer))
+      },
+      
+      #delRolePlayer
+      delRolePlayer = function(rolePlayer){
+        if(!is(rolePlayer, "ISOFeatureType")){
+          stop("The argument value should be an object of class (ISOFeatureType")
+        }
+        return(self$delListElement("rolePlayer", rolePlayer))
+      }
+    )         
 )

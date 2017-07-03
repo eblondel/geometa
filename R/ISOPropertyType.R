@@ -61,13 +61,13 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       memberName = NULL,
       #+ definition [0..1]: character
       definition = NULL,
-      #+ cardinality [1..1]: ISOMultiplicityRange
+      #+ cardinality [1..1]: ISOMultiplicity
       cardinality = NULL,
       #+ definitionReference [0..1]
       definitionReference = NULL,
       
       initialize = function(xml = NULL, defaults = NULL){
-        if(is.null(defaults)) defaults <- list(cardinality = ISOMultiplicityRange$new(lower=1L,upper=1L))
+        if(is.null(defaults)) defaults <- list(cardinality = ISOMultiplicity$new(lower=1L,upper=1L))
         super$initialize(xml = xml, defaults = defaults)
       },
       
