@@ -124,6 +124,8 @@ fetchISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MD_DimensionNameTypeCode"),
     ISOCodelist$new(gmxCL, "MD_CoverageContentTypeCode"),
     ISOCodelist$new(gmxCL, "DQ_EvaluationMethodTypeCode"),
+    ISOCodelist$new(gmxCL, "SV_CouplingType"),
+    ISOCodelist$new(gmxCL, "SV_ParameterDirection"),
     ISOCodelist$new(gmxCL, "FC_RoleType")
   )
   names(codelists) <- sapply(codelists, function(cl){cl$identifier})

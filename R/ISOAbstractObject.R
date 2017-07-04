@@ -834,7 +834,7 @@ fetchISOSchemasFor <- function(namespace){
 #fetchISOSchemas
 fetchISOSchemas <- function(){
   packageStartupMessage("Loading ISO 19139 XML schemas...")
-  namespaces <- c("gmd", "gfc")
+  namespaces <- c("gmd", "gfc", "srv")
   schemas <- lapply(namespaces, fetchISOSchemasFor)
   names(schemas) <- namespaces
   .geometa.iso$schemas <- schemas
@@ -842,6 +842,6 @@ fetchISOSchemas <- function(){
 
 #getISOSchemas
 getISOSchemasFor <- function(namespace){
-  if(!(namespace %in% c("gmd","gfc"))) namespace <- "gmd"
+  if(!(namespace %in% c("gmd","gfc","srv"))) namespace <- "gmd"
   return(.geometa.iso$schemas[[namespace]])
 }
