@@ -105,10 +105,10 @@ fetchISOCodelists <- function(){
   ML_gmxCL <- "ML_gmxCodelists.xml"
   gmxCL <- "gmxCodelists.xml"
   codelists <- list(
-
     ISOCodelist$new(gmxCL, "CI_DateTypeCode"),
     ISOCodelist$new(gmxCL, "CI_PresentationFormCode"),
     ISOCodelist$new(gmxCL, "CI_RoleCode"),
+    ISOCodelist$new(gmxCL, "DCPList"),
     ISOCodelist$new(gmxCL, "DQ_EvaluationMethodTypeCode"),
     ISOCodelist$new(gmxCL, "FC_RoleType"),
     ISOCodelist$new(langCL, "LanguageCode"),
