@@ -19,8 +19,9 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOParameter
 #'  }
-#'  \item{\code{setName(name)}}{
-#'    Sets the parameter name
+#'  \item{\code{setName(name, attributeType)}}{
+#'    Sets the parameter name (\code{character}) and attributeType (\code{ISOTypeName} 
+#'    or \code{character})
 #'  }
 #'  \item{\code{setDirection(direction)}}{
 #'    Sets the direction, an object of class \code{ISOParameterDirection} or any
@@ -42,7 +43,7 @@
 #' 
 #' @examples
 #'   md <- ISOParameter$new()
-#'   md$setName("name")
+#'   md$setName("name", "attType")
 #'   md$setDirection("in")
 #'   md$setDescription("description")
 #'   md$setOptionality(FALSE)
@@ -82,6 +83,11 @@ ISOParameter <- R6Class("ISOParameter",
        
        #setName
        setName = function(name, attributeType){
+         if(!is(attributeType, "ISOTypeName")){
+           attrType <- ISOTypeName$new()
+           attrType$setName(attributeType)
+           attributeType <- attrtype
+         }
          self$name <- ISOElementSequence$new(aName = name, attributeType = attributeType)
        },
        
