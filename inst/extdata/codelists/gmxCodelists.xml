@@ -2814,7 +2814,7 @@
   <codelistItem>
     <CodeListDictionary gml:id="SV_CouplingType">
       <gml:description>indication of service instance coupling</gml:description>
-      <gml:identifier codeSpace="ISOTC211/19119">SV_CoupllingType</gml:identifier>
+      <gml:identifier codeSpace="ISOTC211/19119">SV_CouplingType</gml:identifier>
       <codeEntry>
         <CodeDefinition gml:id="SV_CouplingType_loose">
           <gml:description>service instance is loosely coupled with a data instance, i.e. no MD_DataIdentification class has to be described</gml:description>
