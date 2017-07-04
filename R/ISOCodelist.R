@@ -101,32 +101,33 @@ fetchISOCodelists <- function(){
   packageStartupMessage("Loading ISO 19115 codelists...")
   
   #parse other ISO codelists
-  languageCL <- "ISO-639-2_utf-8.txt" #from http://www.loc.gov/standards/iso639-2/
+  langCL <- "ISO-639-2_utf-8.txt" #from http://www.loc.gov/standards/iso639-2/
   ML_gmxCL <- "ML_gmxCodelists.xml"
   gmxCL <- "gmxCodelists.xml"
   codelists <- list(
-    ISOCodelist$new(languageCL, "LanguageCode"),
-    ISOCodelist$new(ML_gmxCL, "MD_CharacterSetCode"),
-    ISOCodelist$new(gmxCL, "MX_ScopeCode"),
-    ISOCodelist$new(gmxCL, "CI_RoleCode"),
-    ISOCodelist$new(gmxCL, "MD_TopicCategoryCode"),
-    ISOCodelist$new(gmxCL, "MD_RestrictionCode"),
-    ISOCodelist$new(gmxCL, "MD_MaintenanceFrequencyCode"),
+
     ISOCodelist$new(gmxCL, "CI_DateTypeCode"),
     ISOCodelist$new(gmxCL, "CI_PresentationFormCode"),
-    ISOCodelist$new(gmxCL, "MD_KeywordTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_TopologyLevelCode"),
-    ISOCodelist$new(gmxCL, "MD_GeometricObjectTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_ProgressCode"),
-    ISOCodelist$new(gmxCL, "MD_SpatialRepresentationTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_ClassificationCode"),
-    ISOCodelist$new(gmxCL, "MD_CellGeometryCode"),
-    ISOCodelist$new(gmxCL, "MD_DimensionNameTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_CoverageContentTypeCode"),
+    ISOCodelist$new(gmxCL, "CI_RoleCode"),
     ISOCodelist$new(gmxCL, "DQ_EvaluationMethodTypeCode"),
+    ISOCodelist$new(gmxCL, "FC_RoleType"),
+    ISOCodelist$new(langCL, "LanguageCode"),
+    ISOCodelist$new(gmxCL, "MD_CellGeometryCode"),
+    ISOCodelist$new(ML_gmxCL, "MD_CharacterSetCode"),
+    ISOCodelist$new(gmxCL, "MD_ClassificationCode"),
+    ISOCodelist$new(gmxCL, "MD_CoverageContentTypeCode"),
+    ISOCodelist$new(gmxCL, "MD_DimensionNameTypeCode"),
+    ISOCodelist$new(gmxCL, "MD_GeometricObjectTypeCode"),
+    ISOCodelist$new(gmxCL, "MD_KeywordTypeCode"),
+    ISOCodelist$new(gmxCL, "MD_MaintenanceFrequencyCode"),
+    ISOCodelist$new(gmxCL, "MD_ProgressCode"),
+    ISOCodelist$new(gmxCL, "MD_RestrictionCode"),
+    ISOCodelist$new(gmxCL, "MD_SpatialRepresentationTypeCode"),
+    ISOCodelist$new(gmxCL, "MD_TopicCategoryCode"),
+    ISOCodelist$new(gmxCL, "MD_TopologyLevelCode"),
+    ISOCodelist$new(gmxCL, "MX_ScopeCode"),
     ISOCodelist$new(gmxCL, "SV_CouplingType"),
-    ISOCodelist$new(gmxCL, "SV_ParameterDirection"),
-    ISOCodelist$new(gmxCL, "FC_RoleType")
+    ISOCodelist$new(gmxCL, "SV_ParameterDirection")
   )
   names(codelists) <- sapply(codelists, function(cl){cl$identifier})
   .geometa.iso$codelists <- codelists
