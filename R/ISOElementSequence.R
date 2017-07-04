@@ -1,0 +1,47 @@
+#' ISOElementSequence
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO record
+#' @return Object of \code{\link{R6Class}} for modelling an ISOElementSequence
+#' @format \code{\link{R6Class}} object.
+#'
+#' @field aName
+#' @field attributeType
+#'
+#' @section Methods:
+#' \describe{
+#'  \item{\code{new(xml, ...)}}{
+#'    This method is used to instantiate an element sequence
+#'  }
+#' }
+#' 
+#' @note This class is used internally by geometa to deal with simple type not
+#' handled by proper class element. e.g. \code{name} property of \code{ISOParameter}
+#' class from ISO 19119:2005
+#' 
+#' @references
+#'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
+ISOElementSequence <- R6Class("ISOElementSequence",
+   inherit = ISOAbstractObject,
+   lock_objects = FALSE,
+   private = list(
+     xmlElement = "ElementSequence",
+     xmlNamespacePrefix = "GCO"
+   ),
+   public = list(
+     initialize = function(xml = NULL, ...){
+       super$initialize(xml = xml)
+       if(is.null(xml)){
+         fields <- list(...)
+         for(fieldName in names(fields)){
+           self[[fieldName]] <- fields[[fieldName]]
+         }
+       }
+     }
+   )                        
+)

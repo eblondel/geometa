@@ -120,7 +120,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     encoding = options("encoding"),
     document = FALSE,
     system_fields = c("wrap", 
-                      "element", "namespace", "defaults", "attrs",
+                      "element", "namespace", "defaults", "attrs", "printAttrs",
                       "codelistId", "measureType"),
     logger = function(type, text){
       cat(sprintf("[geometa][%s] %s \n", type, text))
@@ -181,6 +181,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     namespace = NA,
     defaults = list(),
     attrs = list(),
+    printAttrs = list(),
     value = NULL,
     initialize = function(xml = NULL, element = NULL, namespace = NULL,
                           attrs = list(), defaults = list(),
@@ -213,7 +214,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       
       cat(sprintf("<%s>", self$getClassName()))
       if(is(self, "ISOCodeListValue")){
-        clVal <- self$attrs$codeListValue
+        clVal <- self$printAttrs$codeListValue
         clDes <- self$codelistId$entries[self$codelistId$entries$value == clVal,"description"]
         cat(paste0(": ", clVal, " {",clDes,"}"))
       }
@@ -240,7 +241,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, " "))
                 item$print(depth = depth+1)
                 if(is(item, "ISOCodeListValue")){
-                  clVal <- item$attrs$codeListValue
+                  clVal <- item$printAttrs$codeListValue
                   clDes <- item$codelistId$entries[item$codelistId$entries$value == clVal,"description"]
                   cat(paste0(": ", clVal, " {",clDes,"}"))
                 }
@@ -273,8 +274,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
          fieldName <- fNames[2]
         }
         
-        if(!(fieldName %in% names(self)) & fieldName != "text") next
-        
+        if(!is(self, "ISOElementSequence")) {
+          if(!(fieldName %in% names(self)) & fieldName != "text") next
+        }
+          
         fieldClass <- NULL
         if(!is(child, "XMLInternalTextNode")){
           fieldClass <- ISOAbstractObject$getISOClassByNode(child)
@@ -282,11 +285,17 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           if(is.null(fieldClass)){
             children <- xmlChildren(child, encoding = private$encoding)
             if(length(children)>0){
-              childroot <- children[[1]]
-              if(!is(childroot, "XMLInternalTextNode")){
-                child <- childroot
-                fieldClass <- ISOAbstractObject$getISOClassByNode(childroot)
+              if(length(children)==1){
+                childroot <- children[[1]]
+                if(!is(childroot, "XMLInternalTextNode")){
+                  child <- childroot
+                  fieldClass <- ISOAbstractObject$getISOClassByNode(childroot)
+                }
+              }else{
+                #more than one child, consider it as sequence
+                fieldClass <- ISOElementSequence
               }
+              
             }
           }
         }
@@ -406,15 +415,36 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         namespaceId <- names(ns)
         if(!is.null(fieldObj)){
           if(is(fieldObj, "ISOAbstractObject")){
-            if(self$wrap){
-              wrapperNode <- xmlOutputDOM(
-                tag = field,
-                nameSpace = namespaceId
-              )
-              wrapperNode$addNode(fieldObj$encode(addNS = FALSE, validate = FALSE))
-              rootXML$addNode(wrapperNode$value())
+            fieldObjXml <- fieldObj$encode(addNS = FALSE, validate = FALSE)
+            if(is(fieldObj, "ISOElementSequence")){
+              fieldObjXml.children <- xmlChildren(fieldObjXml)
+              if(self$wrap){
+                wrapperNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
+                for(child in fieldObjXml.children){
+                  wrapperNode$addNode(child)
+                }
+                rootXML$addNode(wrapperNode$value())
+              }else{
+                for(child in fieldObjXml.children){
+                  rootXML$addNode(child)
+                }
+              }
+        
+              #fieldObjNames <- names(fieldObj)
+              #fieldObjNames <- fieldObjNames[sapply(fieldObjNames, function(name){
+              #  return(which(fieldObjNames == name) < which(fieldObjNames == ".__enclos_env__"))
+              #})]
             }else{
-              rootXML$addNode(fieldObj$encode(addNS = FALSE, validate = FALSE))
+              if(self$wrap){
+                wrapperNode <- xmlOutputDOM(
+                  tag = field,
+                  nameSpace = namespaceId
+                )
+                wrapperNode$addNode(fieldObjXml)
+                rootXML$addNode(wrapperNode$value())
+              }else{
+                rootXML$addNode(fieldObjXml)
+              }
             }
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
@@ -424,15 +454,31 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               }else{
                 nodeValue <- self$wrapBaseElement(field, item)
               }
-              if(nodeValue$wrap){
-                wrapperNode <- xmlOutputDOM(
-                  tag = field,
-                  nameSpace = namespaceId
-                )
-                wrapperNode$addNode(nodeValue$encode(addNS = FALSE, validate = FALSE))
-                rootXML$addNode(wrapperNode$value())
+              nodeValueXml <- nodeValue$encode(addNS = FALSE, validate = FALSE)
+              if(is(item, "ISOElementSequence")){
+                nodeValueXml.children <- xmlChildren(nodeValueXml)
+                if(nodeValue$wrap){
+                  wrapperNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
+                  for(child in nodeValueXml.children){
+                    wrapperNode$addNode(child)
+                  }
+                  rootXML$addNode(wrapperNode$value())
+                }else{
+                  for(child in nodeValueXml.children){
+                    rootXML$addNode(child)
+                  }
+                }
               }else{
-                rootXML$addNode(nodeValue$encode(addNS = FALSE, validate = FALSE))
+                if(nodeValue$wrap){
+                  wrapperNode <- xmlOutputDOM(
+                    tag = field,
+                    nameSpace = namespaceId
+                  )
+                  wrapperNode$addNode(nodeValueXml)
+                  rootXML$addNode(wrapperNode$value())
+                }else{
+                  rootXML$addNode(nodeValueXml)
+                }
               }
             }
           }else{

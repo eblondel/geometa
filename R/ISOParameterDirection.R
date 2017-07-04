@@ -36,8 +36,8 @@ ISOParameterDirection <- R6Class("ISOParameterDirection",
    ),
    public = list(
      initialize = function(xml = NULL, value){
-       super$initialize(xml = xml, id = private$xmlElement, value = value,
-                        setValue = FALSE, addCodeSpaceAttr = FALSE)
+       super$initialize(xml = xml, id = private$xmlElement, value = value, 
+                        addCodeListAttrs = FALSE, setValue = FALSE)
      }
    )                        
 )

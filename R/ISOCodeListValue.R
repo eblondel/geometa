@@ -33,6 +33,9 @@
 #'
 ISOCodeListValue <- R6Class("ISOCodeListValue",
    inherit = ISOAbstractObject,
+   private = list(
+     printAttrs = list()
+   ),
    public = list(
      codelistId = NULL,
      attrs = list(),
@@ -77,11 +80,15 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          if(addCodeSpaceAttr){
            self$attrs <- c(self$attrs, codeSpace = cl$codeSpace)
          }
-       }
-       if(setValue){
-         self$value <-clDescription
-       }
-       if(id == "MD_TopicCategoryCode"){
+         if(setValue){
+           self$value <-clDescription
+         }
+       }else{
+         self$printAttrs <- list(
+           codeList = clUrl,
+           codeListValue = clValue,
+           codeSpace = cl$codeSpace
+         )
          self$value <- clValue 
        }
        
