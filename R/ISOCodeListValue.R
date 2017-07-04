@@ -60,6 +60,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        clDescription <- ""
        if(nrow(clEntry)==0){
          warning(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
+         clValue <- value
        }else{
          clEntry <- clEntry[1L,]
          clValue <- clEntry$value
