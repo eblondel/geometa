@@ -400,7 +400,7 @@ ISOMetadata <- R6Class("ISOMetadata",
      spatialRepresentationInfo = list(),
      #+ referenceSystemInfo [0..*]: ISOReferenceSystem
      referenceSystemInfo = list(),
-     #+ identificationInfo [1..*]: ISODataIdentification
+     #+ identificationInfo [1..*]: ISOIdentification
      identificationInfo = list(),
      #+ contentInfo [0..*]
      contentInfo = list(),
@@ -583,8 +583,8 @@ ISOMetadata <- R6Class("ISOMetadata",
      
      #addIdentificationInfo
      addIdentificationInfo = function(identificationInfo){
-       if(!is(identificationInfo,"ISODataIdentification")){
-         stop("The argument should be a 'ISODataIdentification' object")
+       if(!inherits(identificationInfo,"ISOIdentification")){
+         stop("The argument should be an object of class 'ISODataIdentification' or 'ISOServiceIdentification")
        }
        return(self$addListElement("identificationInfo", identificationInfo))
      },
@@ -597,8 +597,8 @@ ISOMetadata <- R6Class("ISOMetadata",
      
      #delIdentificationInfo
      delIdentificationInfo = function(identificationInfo){
-       if(!is(identificationInfo,"ISODataIdentification")){
-         stop("The argument should be a 'ISODataIdentification' object")
+       if(!inherits(identificationInfo,"ISOIdentification")){
+         stop("The argument should be an object of class 'ISODataIdentification' or 'ISOServiceIdentification")
        }
        return(self$delListElement("identificationInfo", identificationInfo))
      },
