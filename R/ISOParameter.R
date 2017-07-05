@@ -86,7 +86,7 @@ ISOParameter <- R6Class("ISOParameter",
          if(!is(attributeType, "ISOTypeName")){
            attrType <- ISOTypeName$new()
            attrType$setName(attributeType)
-           attributeType <- attrtype
+           attributeType <- attrType
          }
          self$name <- ISOElementSequence$new(aName = name, attributeType = attributeType)
        },

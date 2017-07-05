@@ -35,8 +35,9 @@ ISOParameter
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOParameter
  }
- \item{\code{setName(name)}}{
-   Sets the parameter name
+ \item{\code{setName(name, attributeType)}}{
+   Sets the parameter name (\code{character}) and attributeType (\code{ISOTypeName}
+   or \code{character})
  }
  \item{\code{setDirection(direction)}}{
    Sets the direction, an object of class \code{ISOParameterDirection} or any
@@ -58,7 +59,7 @@ ISOParameter
 }
 \examples{
 md <- ISOParameter$new()
-  md$setName("name")
+  md$setName("name", "attType")
   md$setDirection("in")
   md$setDescription("description")
   md$setOptionality(FALSE)
