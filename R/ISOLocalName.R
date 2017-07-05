@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOLocalName <- R6Class("ISOLocalName",
-    inherit = ISOAbstractObject,
+    inherit = ISOAbstractGenericName,
     private = list(
       xmlElement = "LocalName",
       xmlNamespacePrefix = "GCO"
@@ -30,10 +30,7 @@ ISOLocalName <- R6Class("ISOLocalName",
     public = list(
       value = NA,
       initialize = function(xml = NULL, value){
-        super$initialize(xml = xml)
-        if(is.null(xml)){
-          self$value = value
-        }
+        super$initialize(xml = xml, value = value)
       }
     )                        
 )

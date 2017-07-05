@@ -3,7 +3,7 @@
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO didentification
+#' @keywords ISO identification
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Identification
 #' @format \code{\link{R6Class}} object.
 #'

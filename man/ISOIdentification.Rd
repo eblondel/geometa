@@ -133,5 +133,5 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 ISO 19115:2003 - Geographic information -- Metadata
 }
 \keyword{ISO}
-\keyword{didentification}
+\keyword{identification}
 
