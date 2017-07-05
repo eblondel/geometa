@@ -6,6 +6,10 @@
 	</xs:annotation>
 	<!-- ================================== Imports ================================== -->
 	<xs:include schemaLocation="metadataApplication.xsd"/>
+	
+	<!-- 20170706 @eblondel add service metadata and feature catalogue schemas -->
+	<xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="../srv/srv.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gfc" schemaLocation="../gfc/gfc.xsd"/>
 	<!-- ########################################################################### -->
 	<!-- ########################################################################### -->
 	<!-- ================================== Classes ================================= -->
