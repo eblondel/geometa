@@ -119,7 +119,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     xmlNamespacePrefix = "GCO",
     encoding = options("encoding"),
     document = FALSE,
-    system_fields = c("wrap", 
+    system_fields = c("wrap", "valueDescription",
                       "element", "namespace", "defaults", "attrs", "printAttrs",
                       "codelistId", "measureType"),
     logger = function(type, text){
@@ -216,6 +216,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       if(is(self, "ISOCodeListValue")){
         clVal <- self$printAttrs$codeListValue
         clDes <- self$codelistId$entries[self$codelistId$entries$value == clVal,"description"]
+        if(length(clDes)==0){
+          clDes <- self$valueDescription
+        }
         cat(paste0(": ", clVal, " {",clDes,"}"))
       }
       

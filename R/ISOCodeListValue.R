@@ -40,6 +40,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
      codelistId = NULL,
      attrs = list(),
      value = NULL,
+     valueDescription = NULL,
      initialize = function(xml = NULL, id, value, description = NULL,
                            addCodeListAttrs = TRUE,
                            addCodeSpaceAttr = TRUE,
@@ -47,7 +48,8 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        super$initialize(xml = xml)
        if(!is.null(xml)){
          value <- xmlGetAttr(xml, "codeListValue") #codeListValue should be as attribute
-         if(is.null(value)) value <- xmlValue(xml) #try to pick up value instead
+         description <- xmlValue(xml) #try to pick up value instead
+         if(is.null(value)) value <- description
        }
        if(id=="MD_ScopeCode") id <- "MX_ScopeCode"
        cl <- getISOCodelist(id)
@@ -58,17 +60,21 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        clEntry <- cl$entries[cl$entries$value == value,]
        clValue <- ""
        clDescription <- ""
+       clCodeSpace <- ""
        if(nrow(clEntry)==0){
          warning(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
          clValue <- value
          if(!is.null(description)){
            setValue <- TRUE
            clDescription <- description
+           self$valueDescription <- clDescription
          }
        }else{
+         clCodeSpace <- cl$codeSpace
          clEntry <- clEntry[1L,]
          clValue <- clEntry$value
          clDescription <- clEntry$description
+         self$valueDescription <- clDescription
        }
        
        if(id == "LanguageCode"){
@@ -83,19 +89,20 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
            codeListValue = clValue
          )
          if(addCodeSpaceAttr){
-           self$attrs <- c(self$attrs, codeSpace = cl$codeSpace)
+           self$attrs <- c(self$attrs, codeSpace = clCodeSpace)
          }
          if(setValue){
            self$value <-clDescription
          }
        }else{
-         self$printAttrs <- list(
-           codeList = clUrl,
-           codeListValue = clValue,
-           codeSpace = cl$codeSpace
-         )
          self$value <- clValue 
        }
+       
+       self$printAttrs <- list(
+         codeList = clUrl,
+         codeListValue = clValue,
+         codeSpace = clCodeSpace
+       )
        
      },
      
