@@ -166,9 +166,6 @@
 #'   lc$addAccessConstraint("license")
 #'   lc$addUseConstraint("copyright")
 #'   lc$addUseConstraint("license")
-#'   expect_equal(length(lc$useLimitation), 3L)
-#'   expect_equal(length(lc$accessConstraints), 2L)
-#'   expect_equal(length(lc$useConstraints), 2L)
 #'   md$setResourceConstraints(lc)
 #'
 #'   #specific elements to service identification
