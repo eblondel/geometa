@@ -13,8 +13,9 @@ Please check the [online documentation](https://github.com/eblondel/geometa/wiki
 
 Current Focus:
 * ISO 19115:2003 (Geographic metadata) classes
-* ISO 19110:2005 (Feature Catalogue) main classes
-* ISO 19136:2007 (Geographic Markup Language – GML) partial support (classes needed for ISO 19115 and 19110)
+* ISO 19119:2005 (Service metadata) classes
+* ISO 19110:2005 (Feature Catalogue) classes
+* ISO 19136:2007 (Geographic Markup Language – GML) partial support (classes needed for ISO 19115)
 * ISO 19139:2007 XML with **Encoding**, **Decoding** and **Validation** support
 
 Notes:
@@ -23,6 +24,5 @@ Notes:
 
 Not yet supported:
 * ISO 19115-2 extension for raster description
-* ISO 19119:2005 (Service metadata)
 
 For geometa sponsoring/funding, support requests, please contact me by [e-mail](mailto:emmanuel.blondel1@gmail.com)
