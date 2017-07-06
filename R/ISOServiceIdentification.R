@@ -173,7 +173,7 @@
 #'   md$addServiceTypeVersion("1.0")
 #'   orderProcess <- ISOStandardOrderProcess$new()
 #'   orderProcess$setFees("fees")
-#'   $setPlannedAvailableDateTime(ISOdate(2017,7,5,12,0,0))
+#'   orderProcess$setPlannedAvailableDateTime(ISOdate(2017,7,5,12,0,0))
 #'   orderProcess$setOrderingInstructions("instructions")
 #'   orderProcess$setTurnaround("turnaround")
 #'   md$setAccessProperties(orderProcess)
