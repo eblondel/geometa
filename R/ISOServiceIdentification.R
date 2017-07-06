@@ -104,7 +104,7 @@
 #'   md <- ISOServiceIdentification$new()
 #'   md$setAbstract("abstract")
 #'   md$setPurpose("purpose")
-
+#'
 #'   #adding a point of contact
 #'   rp <- ISOResponsibleParty$new()
 #'   rp$setIndividualName("someone")
@@ -121,7 +121,7 @@
 #'   address$setCity("thecity")
 #'   address$setPostalCode("111")
 #'   address$setCountry("France")
-#'   address$setEmail("someone@theorg.org")
+#'   address$setEmail("someone@@theorg.org")
 #'   contact$setAddress(address)
 #'   res <- ISOOnlineResource$new()
 #'   res$setLinkage("http://www.somewhereovertheweb.org")
@@ -129,7 +129,7 @@
 #'   contact$setOnlineResource(res)
 #'   rp$setContactInfo(contact)
 #'   md$addPointOfContact(rp)
-
+#'
 #'   #citation
 #'   ct <- ISOCitation$new()
 #'   ct$setTitle("sometitle")
@@ -143,7 +143,7 @@
 #'   ct$setPresentationForm("mapDigital")
 #'   ct$setCitedResponsibleParty(rp)
 #'   md$setCitation(ct)
-
+#'
 #'   #graphic overview
 #'   go <- ISOBrowseGraphic$new(
 #'     fileName = "http://wwww.somefile.org/png",
@@ -151,12 +151,12 @@
 #'     fileType = "image/png"
 #'   )
 #'   md$setGraphicOverview(go)
-
+#'
 #'   #maintenance information
 #'   mi <- ISOMaintenanceInformation$new()
 #'   mi$setMaintenanceFrequency("daily")
 #'   md$setResourceMaintenance(mi)
-
+#'
 #'   #adding legal constraints
 #'   lc <- ISOLegalConstraints$new()
 #'   lc$addUseLimitation("limitation1")
@@ -170,7 +170,7 @@
 #'   expect_equal(length(lc$accessConstraints), 2L)
 #'   expect_equal(length(lc$useConstraints), 2L)
 #'   md$setResourceConstraints(lc)
-
+#'
 #'   #specific elements to service identification
 #'   md$setServiceType("Fishery data harmonization process")
 #'   md$addServiceTypeVersion("1.0")
@@ -181,7 +181,7 @@
 #'   orderProcess$setTurnaround("turnaround")
 #'   md$setAccessProperties(orderProcess)
 #'   md$setRestrictions(lc)
-
+#'
 #'   kwds <- ISOKeywords$new()
 #'   kwds$addKeyword("keyword1")
 #'   kwds$addKeyword("keyword2")
@@ -191,19 +191,29 @@
 #'   th$addDate(d)
 #'   kwds$setThesaurusName(th)
 #'   md$addKeywords(kwds)
-
+#'
 #'   #adding extent
 #'   extent <- ISOExtent$new()
 #'   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
 #'   extent$setGeographicElement(bbox)
 #'   md$addExtent(extent)
-
-#'   #coupledResource #TODO
-#'   md$setCouplingType("loose")
-
+#'
+#'   #coupling type
+#'   #(here "tight" associated with a particular dataset "my-dataset-identifier")
+#'   #see ISOCouplingType$values(labels = T) for other values
+#'   md$setCouplingType("tight")
+#'   coupledDataset1 <- ISOCoupledResource$new()
+#'   coupledDataset1$setOperationName("Rscript")
+#'   coupledDataset1$setIdentifier("my-dataset-identifier")
+#'   coupledDataset2 <- ISOCoupledResource$new()
+#'   coupledDataset2$setOperationName("WPS:Execute")
+#'   coupledDataset2$setIdentifier("my-dataset-identifier")
+#'   md$addCoupledResource(coupledDataset1)
+#'   md$addCoupledResource(coupledDataset2)
+#'
 #'   #add operation metadata 1 (Rscript)
 #'   scriptOp <- ISOOperationMetadata$new()
-#'   scriptOp$setOperationName("Execute")
+#'   scriptOp$setOperationName("Rscript")
 #'   scriptOp$addDCP("WebServices")
 #'   scriptOp$setOperationDescription("WPS Execute")
 #'   scriptOp$setInvocationName("identifier")

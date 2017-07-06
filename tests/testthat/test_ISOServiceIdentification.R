@@ -108,8 +108,18 @@ test_that("encoding",{
   extent$setGeographicElement(bbox)
   md$addExtent(extent)
   
-  #coupledResource #TODO
-  md$setCouplingType("loose")
+  #coupling type
+  #(here "tight" associated with a particular dataset "my-dataset-identifier")
+  #see ISOCouplingType$values(labels = T) for other values
+  md$setCouplingType("tight")
+  coupledDataset1 <- ISOCoupledResource$new()
+  coupledDataset1$setOperationName("Rscript")
+  coupledDataset1$setIdentifier("my-dataset-identifier")
+  coupledDataset2 <- ISOCoupledResource$new()
+  coupledDataset2$setOperationName("WPS:Execute")
+  coupledDataset2$setIdentifier("my-dataset-identifier")
+  md$addCoupledResource(coupledDataset1)
+  md$addCoupledResource(coupledDataset2)
   
   #add operation metadata 1 (Rscript)
   scriptOp <- ISOOperationMetadata$new()
