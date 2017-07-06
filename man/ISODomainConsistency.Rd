@@ -22,7 +22,7 @@ ISODomainConsistency
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml,value)}}{
+ \item{\code{new(xml)}}{
    This method is used to instantiate an ISODomainConsistency
  }
  \item{\code{addResult(result)}}{

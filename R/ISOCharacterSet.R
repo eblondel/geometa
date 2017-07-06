@@ -35,8 +35,8 @@ ISOCharacterSet <- R6Class("ISOCharacterSet",
    xmlNamespacePrefix = "GMD"
  ),
  public = list(
-   initialize = function(xml = NULL, value){
-       super$initialize(xml = xml, id = private$xmlElement, value = value,
+   initialize = function(xml = NULL, value, description = NULL){
+       super$initialize(xml = xml, id = private$xmlElement, value = value, description = description, 
                         setValue = FALSE, addCodeSpaceAttr = FALSE)
    }
  )                        

@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, id, value, addCodeListAttrs, addCodeSpaceAttr, setValue)}}{
+#'  \item{\code{new(xml, id, value, description, addCodeListAttrs, addCodeSpaceAttr, setValue)}}{
 #'    This method is used to instantiate an ISOCodeListValue. By default,
 #'    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The 
 #'    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
@@ -40,7 +40,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
      codelistId = NULL,
      attrs = list(),
      value = NULL,
-     initialize = function(xml = NULL, id, value,
+     initialize = function(xml = NULL, id, value, description = NULL,
                            addCodeListAttrs = TRUE,
                            addCodeSpaceAttr = TRUE,
                            setValue = TRUE){
@@ -61,6 +61,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        if(nrow(clEntry)==0){
          warning(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
          clValue <- value
+         clDescription <- description
        }else{
          clEntry <- clEntry[1L,]
          clValue <- clEntry$value

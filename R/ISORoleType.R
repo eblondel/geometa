@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml,value)}}{
+#'  \item{\code{new(xml,value, description)}}{
 #'    This method is used to instantiate an ISORoleType
 #'  }
 #' }
@@ -35,8 +35,8 @@ ISORoleType <- R6Class("ISORoleType",
      xmlNamespacePrefix = "GFC"
    ),
    public = list(
-     initialize = function(xml = NULL, value){
-       super$initialize(xml = xml, id = private$xmlElement, value = value,
+     initialize = function(xml = NULL, value, description = NULL){
+       super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
                         setValue = FALSE, addCodeSpaceAttr = FALSE)
      }
    )                        

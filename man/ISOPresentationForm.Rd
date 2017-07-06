@@ -22,7 +22,7 @@ ISOPresentationForm
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml,value)}}{
+ \item{\code{new(xml,value, description)}}{
    This method is used to instantiate an ISOPresentationForm
  }
 }

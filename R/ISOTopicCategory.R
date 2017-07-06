@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml,value)}}{
+#'  \item{\code{new(xml,value, description)}}{
 #'    This method is used to instantiate an ISOTopicCategory
 #'  }
 #' }
@@ -35,8 +35,8 @@ ISOTopicCategory <- R6Class("ISOTopicCategory",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     initialize = function(xml = NULL, value){
-       super$initialize(xml = xml, id = private$xmlElement, value = value, 
+     initialize = function(xml = NULL, value, description = NULL){
+       super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
                         addCodeListAttrs = FALSE, setValue = FALSE)
      }
    )                        

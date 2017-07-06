@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml,value)}}{
+#'  \item{\code{new(xml,value, description)}}{
 #'    This method is used to instantiate an ISOPresentationForm
 #'  }
 #' }
@@ -35,8 +35,9 @@ ISOPresentationForm <- R6Class("ISOPresentationForm",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     initialize = function(xml = NULL, value){
-      super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = FALSE)
+     initialize = function(xml = NULL, value, description = NULL){
+      super$initialize(xml = xml, id = private$xmlElement, value = value,
+                       description = description, setValue = FALSE)
      }
    )                        
 )

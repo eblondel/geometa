@@ -25,7 +25,7 @@ Abstract ISO codelist class used internally by geometa
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, id, value, addCodeListAttrs, addCodeSpaceAttr, setValue)}}{
+ \item{\code{new(xml, id, value, description, addCodeListAttrs, addCodeSpaceAttr, setValue)}}{
    This method is used to instantiate an ISOCodeListValue. By default,
    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The
    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
