@@ -153,7 +153,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       if(regexpr(pattern = "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})", value)>0){
         newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = "GMT")
       }else if(regexpr(pattern = "(\\d{4})-(\\d{2})-(\\d{2})", value)>0){
-        newvalue <- as.Date(value) 
+        newvalue <- as.Date(as.POSIXct(strptime(value, "%Y-%m-%d"), tz = "GMT"))
       }
       return(newvalue)
     },
