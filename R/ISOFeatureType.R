@@ -15,9 +15,9 @@
 #' @field inheritsFrom
 #' @field inheritsTo
 #' @field featureCatalogue
-#' @field carrierOfCharacteristics
 #' @field constrainedBy
-#' @field definitionResource
+#' @field definitionReference
+#' @field carrierOfCharacteristics
 #'
 #' @section Methods:
 #' \describe{
@@ -45,12 +45,6 @@
 #'  \item{\code{setFeatureCatalogue(fc)}}{
 #'    Sets a feature catalogue, object of class \code{ISOFeatureCatalogue}
 #'  }
-#'  \item{\code{addCharacteristic(characteristic)}}{
-#'    Adds a characteristic as object of class \code{ISOPropertyType} or subclass
-#'  }
-#'  \item{\code{delCharacteristic(characteristic)}}{
-#'    Deletes a characteristic as object of class \code{ISOPropertyType} or subclass
-#'  }
 #'  \item{\code{addConstraint(constraint)}}{
 #'    Adds a constraint, object of class \code{ISOConstraint} or \code{character}
 #'  }
@@ -59,6 +53,12 @@
 #'  }
 #'  \item{\code{setDefinitionReference(definitionReference)}}{
 #'    Sets the definition Reference, object of class \code{ISODefinitionReference}
+#'  }
+#'  \item{\code{addCharacteristic(characteristic)}}{
+#'    Adds a characteristic as object of class \code{ISOPropertyType} or subclass
+#'  }
+#'  \item{\code{delCharacteristic(characteristic)}}{
+#'    Deletes a characteristic as object of class \code{ISOPropertyType} or subclass
 #'  }
 #' }
 #'
@@ -139,12 +139,12 @@ ISOFeatureType <- R6Class("ISOFeatureType",
      inheritsTo = list(),
      #+ featureCatalogue: ISOFeatureCatalogue
      featureCatalogue = NA,
-     #+ carrierOfCharacteristics [0..*]: ISOCarrierOfCharacteristics
-     carrierOfCharacteristics = list(),
      #+ constrainedBy [0..*]: ISOConstraint
      constrainedBy = list(),
      #+ definitionReference [0..*]: ISODefinitionReference
      definitionReference = list(),
+     #+ carrierOfCharacteristics [0..*]: ISOCarrierOfCharacteristics
+     carrierOfCharacteristics = list(),
      
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
@@ -214,23 +214,7 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        }
        self$featureCatalogue = fc
      },
-     
-     #addCharacteristic
-     addCharacteristic = function(characteristic){
-       if(!is(characteristic, "ISOCarrierOfCharacteristics")){
-         stop("The argument should be an object of class extending 'ISOCarrierOfCharacteristics'")
-       }
-       return(self$addListElement("carrierOfCharacteristics", characteristic))
-     },
-     
-     #delCharacteristic
-     delCharacteristic = function(characteristic){
-       if(!is(characteristic, "ISOPropertyType")){
-         stop("The argument should be an object of class extending 'ISOCarrierOfCharacteristics'")
-       }
-       return(self$delListElement("carrierOfCharacteristics", characteristic))
-     },
-     
+           
      #addConstraint
      addConstraint = function(constraint){
        if(!is(constraint, "ISOConstraint")){
@@ -253,6 +237,22 @@ ISOFeatureType <- R6Class("ISOFeatureType",
          stop("The argument should be an object of class 'ISODefinitionReference'")
        }
        self$definitionReference = definitionReference
+     }
+     
+     #addCharacteristic
+     addCharacteristic = function(characteristic){
+       if(!is(characteristic, "ISOCarrierOfCharacteristics")){
+         stop("The argument should be an object of class extending 'ISOCarrierOfCharacteristics'")
+       }
+       return(self$addListElement("carrierOfCharacteristics", characteristic))
+     },
+     
+     #delCharacteristic
+     delCharacteristic = function(characteristic){
+       if(!is(characteristic, "ISOPropertyType")){
+         stop("The argument should be an object of class extending 'ISOCarrierOfCharacteristics'")
+       }
+       return(self$delListElement("carrierOfCharacteristics", characteristic))
      }
    )         
 )
