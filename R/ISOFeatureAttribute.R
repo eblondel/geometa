@@ -79,7 +79,7 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      #+ code [0..1]: character
      code = NULL,
      #+ valueMeasurementUnit [0..1]: GMLUnitDefinition
-     valueMeasurementUnit = NULL,
+     valueMeasurementUnit = NA,
      #+ valueType [0..1]: ISOTypeName
      valueType = NULL,
      #+ listedValue [0..*]: ISOListedValue
