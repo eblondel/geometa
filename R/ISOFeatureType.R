@@ -237,7 +237,7 @@ ISOFeatureType <- R6Class("ISOFeatureType",
          stop("The argument should be an object of class 'ISODefinitionReference'")
        }
        self$definitionReference = definitionReference
-     }
+     },
      
      #addCharacteristic
      addCharacteristic = function(characteristic){
