@@ -89,7 +89,7 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       
       #setDefinitionReference
       setDefinitionReference = function(definitionReference){
-        if(!is(definition, "ISODefinitionReference")){
+        if(!is(definitionReference, "ISODefinitionReference")){
           stop("The argument should be an object of class 'ISODefinitionReference'")
         }
         self$definitionReference = definitionReference
