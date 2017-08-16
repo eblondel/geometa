@@ -51,7 +51,7 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    linkage = NULL,
+    linkage = NA,
     protocol = NULL,
     name = NULL,
     description = NULL,
@@ -61,10 +61,12 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     
     #setLinkage
     setLinkage = function(linkage){
-      if(!is(linkage, "ISOURL")){
-        linkage <- ISOURL$new(value = as.character(linkage))
+      if(!is.na(linkage) & !is.null(linkage)){
+        if(!is(linkage, "ISOURL")){
+          linkage <- ISOURL$new(value = as.character(linkage))
+        }
+        self$linkage <- linkage
       }
-      self$linkage <- linkage
     },
     
     #setName
