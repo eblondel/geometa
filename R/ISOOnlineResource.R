@@ -61,11 +61,13 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     
     #setLinkage
     setLinkage = function(linkage){
-      if(!is.na(linkage) & !is.null(linkage)){
-        if(!is(linkage, "ISOURL")){
-          linkage <- ISOURL$new(value = as.character(linkage))
+      if(!is.null(linkage)){
+        if(!is.na(linkage)){ 
+          if(!is(linkage, "ISOURL")){
+            linkage <- ISOURL$new(value = as.character(linkage))
+          }
+          self$linkage <- linkage
         }
-        self$linkage <- linkage
       }
     },
     
