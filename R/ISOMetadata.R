@@ -13,6 +13,7 @@
 #' @field characterSet
 #' @field parentIdentifier
 #' @field hierarchyLevel
+#' @field hierarchyLevelName
 #' @field contact
 #' @field dateStamp
 #' @field metadataStandardName
@@ -386,6 +387,8 @@ ISOMetadata <- R6Class("ISOMetadata",
      parentIdentifier = NULL,
      #+ hierarchyLevel [0..*] : ISOHierarchyLevel = "dataset"
      hierarchyLevel = list(),
+     #+ hierarchyLevelName [0..*] : character
+     hierarchyLevelName = list(),
      #+ contact [1..*] : ISOResponsibleParty
      contact = list(),
      #+ dateStamp : POSIXct/POSIXt
@@ -480,13 +483,29 @@ ISOMetadata <- R6Class("ISOMetadata",
        self$hierarchyLevel <- list()
        self$addHierarchyLevel(level)
      },
-     
+
      #delHierarchyLevel
      delHierarchyLevel = function(level){
        if(!is(level, "ISOHierarchyLevel")){
          level <- ISOHierarchyLevel$new(value = level)
        }
        return(self$delListElement("hierarchyLevel", level))
+     },
+    
+     #addHierarchyLevelName
+     addHierarchyLevelName = function(levelName){
+       if(!is(levelName, "character")){
+         levelName <- as.character(levelName)
+       }
+       return(self$addListElement("hierarchyLevelName", levelName))
+     },
+
+     #delHierarchyLevelName
+     delHierarchyLevelName = function(levelName){
+       if(!is(levelName, "character")){
+         levelName <- as.character(levelName)
+       }
+       return(self$delListElement("hierarchyLevelName", levelName))
      },
      
      #addContact
