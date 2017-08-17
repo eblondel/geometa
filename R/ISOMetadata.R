@@ -53,6 +53,12 @@
 #'  \item{\code{delHierarchyLevel(level)}}{
 #'    Deletes the hierarchy level
 #'  }
+#'  \item{\code{addHierarchyLevelName(levelName)}}{
+#'    Adds the hierarchy level name
+#'  }
+#'  \item{\code{delHierarchyLevelName(levelName)}}{
+#'    Deletes the hierarchy level name
+#'  }
 #'  \item{\code{addContact(contact)}}{
 #'    Adds a contact as object of class \code{ISOResponsibleParty}
 #'  }
