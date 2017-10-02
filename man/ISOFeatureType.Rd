@@ -33,11 +33,11 @@ ISOFeatureType
 
 \item{\code{featureCatalogue}}{}
 
-\item{\code{carrierOfCharacteristics}}{}
-
 \item{\code{constrainedBy}}{}
 
-\item{\code{definitionResource}}{}
+\item{\code{definitionReference}}{}
+
+\item{\code{carrierOfCharacteristics}}{}
 }}
 \section{Methods}{
 
@@ -66,12 +66,6 @@ ISOFeatureType
  \item{\code{setFeatureCatalogue(fc)}}{
    Sets a feature catalogue, object of class \code{ISOFeatureCatalogue}
  }
- \item{\code{addCharacteristic(characteristic)}}{
-   Adds a characteristic as object of class \code{ISOPropertyType} or subclass
- }
- \item{\code{delCharacteristic(characteristic)}}{
-   Deletes a characteristic as object of class \code{ISOPropertyType} or subclass
- }
  \item{\code{addConstraint(constraint)}}{
    Adds a constraint, object of class \code{ISOConstraint} or \code{character}
  }
@@ -80,6 +74,12 @@ ISOFeatureType
  }
  \item{\code{setDefinitionReference(definitionReference)}}{
    Sets the definition Reference, object of class \code{ISODefinitionReference}
+ }
+ \item{\code{addCharacteristic(characteristic)}}{
+   Adds a characteristic as object of class \code{ISOPropertyType} or subclass
+ }
+ \item{\code{delCharacteristic(characteristic)}}{
+   Deletes a characteristic as object of class \code{ISOPropertyType} or subclass
  }
 }
 }

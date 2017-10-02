@@ -27,8 +27,8 @@ ISOMetadata
 
 \item{\code{hierarchyLevel}}{}
 
-\item{\code{hierarchyLevelName}}{} 
- 
+\item{\code{hierarchyLevelName}}{}
+
 \item{\code{contact}}{}
 
 \item{\code{dateStamp}}{}
