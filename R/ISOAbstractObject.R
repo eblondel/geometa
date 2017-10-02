@@ -642,7 +642,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   }
                 }))
               }else{
-                if(names(selfNsdef) != "gml"){
+                if(names(selfNsdef)[1] != "gml"){
                   nsdef <- ISOMetadataNamespace$GCO$getDefinition()
                 }
               }

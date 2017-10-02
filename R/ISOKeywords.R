@@ -61,23 +61,15 @@ ISOKeywords <- R6Class("ISOKeywords",
     #addKeyword
     addKeyword = function(keyword){
       if(is.null(keyword)) return(FALSE);
-      if(is.na(keyword)) return(FALSE);
-      startNb = length(self$keyword)
-      if(length(which(self$keyword == keyword)) == 0){
-        self$keyword = c(self$keyword, keyword)
-      }
-      endNb = length(self$keyword)
-      return(endNb == startNb+1)
+      if(is(keyword, "character")) if(is.na(keyword)) return(FALSE);
+      return(self$addListElement("keyword", keyword))
     },
     
     #delKeyword
     delKeyword = function(keyword){
       if(is.null(keyword)) return(FALSE);
-      if(is.na(keyword)) return(FALSE);
-      startNb = length(self$keyword)
-      self$keyword = self$keyword[which(self$keyword != keyword)]
-      endNb = length(self$keyword)
-      return(endNb == startNb-1)
+      if(is(keyword, "character")) if(is.na(keyword)) return(FALSE);
+      return(self$delListElement("keyword", keyword))
     },
     
     #setKeywordType
