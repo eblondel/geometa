@@ -14,6 +14,10 @@
 #'  }
 #' }
 #' 
+#' @examples 
+#'   md <- ISOFileName$new(file = "someuri", name = "filename")
+#'   xml <- md$encode()
+#' 
 #' @references
 #'  ISO/TS 19139:2007 Geographic information -- XML
 #' 

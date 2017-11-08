@@ -22,6 +22,10 @@ ISOAnchor
  }
 }
 }
+\examples{
+md <- ISOAnchor$new(name = "some entity name", href = "someentityuri")
+  xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

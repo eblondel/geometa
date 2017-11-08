@@ -22,6 +22,10 @@ ISOFileName
  }
 }
 }
+\examples{
+md <- ISOFileName$new(file = "someuri", name = "filename")
+  xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

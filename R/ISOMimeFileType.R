@@ -14,6 +14,10 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'   md <- ISOMimeFileType$new(type = "somemimetype", name = "Mime type name")
+#'   xml <- md$encode()
+#' 
 #' @references
 #'  ISO/TS 19139:2007 Geographic information -- XML
 #' 

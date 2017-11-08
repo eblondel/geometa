@@ -22,6 +22,10 @@ ISOMimeFileType
  }
 }
 }
+\examples{
+md <- ISOMimeFileType$new(type = "somemimetype", name = "Mime type name")
+  xml <- md$encode()
+}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

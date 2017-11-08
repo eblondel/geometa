@@ -14,6 +14,10 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'   md <- ISOAnchor$new(name = "some entity name", href = "someentityuri")
+#'   xml <- md$encode()
+#' 
 #' @references
 #'  ISO/TS 19139:2007 Geographic information -- XML
 #' 
