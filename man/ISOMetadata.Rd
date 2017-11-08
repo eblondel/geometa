@@ -43,6 +43,8 @@ ISOMetadata
 
 \item{\code{referenceSystemInfo}}{}
 
+\item{\code{metadataExtensionInfo}}{}
+
 \item{\code{identificationInfo}}{}
 
 \item{\code{contentInfo}}{}
@@ -121,6 +123,12 @@ ISOMetadata
  }
  \item{\code{delReferenceSystemInfo(referenceSystemInfo)}}{
    Deletes a reference system
+ }
+ \item{\code{addMetadataExtensionInfo(extensionInfo)}}{
+   Adds extension info, object of class \code{ISOMetadataExtensionInformation}
+ }
+ \item{\code{delMetadataExtensionInfo(extensionInfo)}}{
+   Deletes extension info, object of class \code{ISOMetadataExtensionInformation}
  }
  \item{\code{addIdentificationInfo(identificationInfo)}}{
    Adds a data identification

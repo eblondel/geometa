@@ -21,6 +21,7 @@
 #' @field dataSetURI
 #' @field spatialRepresentationInfo
 #' @field referenceSystemInfo
+#' @field metadataExtensionInfo
 #' @field identificationInfo
 #' @field contentInfo
 #' @field distributionInfo
@@ -94,6 +95,12 @@
 #'  }
 #'  \item{\code{delReferenceSystemInfo(referenceSystemInfo)}}{
 #'    Deletes a reference system
+#'  }
+#'  \item{\code{addMetadataExtensionInfo(extensionInfo)}}{
+#'    Adds extension info, object of class \code{ISOMetadataExtensionInformation}
+#'  }
+#'  \item{\code{delMetadataExtensionInfo(extensionInfo)}}{
+#'    Deletes extension info, object of class \code{ISOMetadataExtensionInformation}
 #'  }
 #'  \item{\code{addIdentificationInfo(identificationInfo)}}{
 #'    Adds a data identification
@@ -409,6 +416,8 @@ ISOMetadata <- R6Class("ISOMetadata",
      spatialRepresentationInfo = list(),
      #+ referenceSystemInfo [0..*]: ISOReferenceSystem
      referenceSystemInfo = list(),
+     #+ metadataExtensionInfo [0..*]: ISOMetadataExtensionInformation
+     metadataExtensionInfo = list(),
      #+ identificationInfo [1..*]: ISOIdentification
      identificationInfo = list(),
      #+ contentInfo [0..*]
@@ -426,8 +435,6 @@ ISOMetadata <- R6Class("ISOMetadata",
      portrayalCatalogueInfo = list(), #TODO
      #+ applicationSchemaInfo [0..*]
      applicationSchemaInformation = list(), #TODO
-     #+ metadataExtensionInfo [0..*]
-     metadataExtensionInfo = list(), #TODO
      
      initialize = function(xml = NULL){
        
@@ -601,6 +608,25 @@ ISOMetadata <- R6Class("ISOMetadata",
          stop("The argument should be a 'ISOReferenceSystem' object")  
        }
        return(self$delListElement("referenceSystemInfo", referenceSystemInfo))
+     },
+     
+     #MD_MetadataExtensionInformation
+     #--------------------------------------------------------------------------
+     
+     #addMetadataExtensionInfo
+     addMetadataExtensionInfo = function(metadataExtensionInfo){
+       if(!is(metadataExtensionInfo, "ISOMetadataExtensionInformation")){
+         stop("The argument should be a 'ISOMetadataExtensionInformation' object")  
+       }
+       return(self$addListElement("metadataExtensionInfo", metadataExtensionInfo))
+     },
+     
+     #delMetadataExtensionInfo
+     delMetadataExtensionInfo = function(metadataExtensionInfo){
+       if(!is(metadataExtensionInfo, "ISOMetadataExtensionInformation")){
+         stop("The argument should be a 'ISOMetadataExtensionInformation' object")  
+       }
+       return(self$delListElement("metadataExtensionInfo", metadataExtensionInfo))
      },
      
      #MD_Identification
