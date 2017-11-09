@@ -30,6 +30,7 @@
 #' }
 #' 
 #' @examples
+#'   #a basic keyword set
 #'   md <- ISOKeywords$new()
 #'   md$addKeyword("keyword1")
 #'   md$addKeyword("keyword2")
@@ -37,6 +38,15 @@
 #'   th <- ISOCitation$new()
 #'   th$setTitle("General")
 #'   md$setThesaurusName(th)
+#'   xml <- md$encode()
+#'   
+#'   #a keyword set with anchors
+#'   md <- ISOKeywords$new()
+#'   kwd1 <- ISOAnchor$new(name = "keyword1", href = "http://myvocabulary.geometa/keyword1")
+#'   md$addKeyword(kwd1)
+#'   kwd2 <- ISOAnchor$new(name = "keyword2", href = "http://myvocabulary.geometa/keyword2")
+#'   md$addKeyword(kwd2)
+#'   md$setKeywordType("theme")
 #'   xml <- md$encode()
 #'   
 #' @references 
@@ -61,23 +71,15 @@ ISOKeywords <- R6Class("ISOKeywords",
     #addKeyword
     addKeyword = function(keyword){
       if(is.null(keyword)) return(FALSE);
-      if(is.na(keyword)) return(FALSE);
-      startNb = length(self$keyword)
-      if(length(which(self$keyword == keyword)) == 0){
-        self$keyword = c(self$keyword, keyword)
-      }
-      endNb = length(self$keyword)
-      return(endNb == startNb+1)
+      if(is(keyword, "character")) if(is.na(keyword)) return(FALSE);
+      return(self$addListElement("keyword", keyword))
     },
     
     #delKeyword
     delKeyword = function(keyword){
       if(is.null(keyword)) return(FALSE);
-      if(is.na(keyword)) return(FALSE);
-      startNb = length(self$keyword)
-      self$keyword = self$keyword[which(self$keyword != keyword)]
-      endNb = length(self$keyword)
-      return(endNb == startNb-1)
+      if(is(keyword, "character")) if(is.na(keyword)) return(FALSE);
+      return(self$delListElement("keyword", keyword))
     },
     
     #setKeywordType
