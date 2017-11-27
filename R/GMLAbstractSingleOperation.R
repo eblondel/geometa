@@ -7,8 +7,11 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLAbstractSingleOperation
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Inherited methods from \code{GMLAbstractCoordinateOperation}
-#'
+#' @section Inherited methods:
+#' \describe{
+#'   from \code{GMLAbstractCoordinateOperation}
+#' }
+#' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, defaults, id)}}{

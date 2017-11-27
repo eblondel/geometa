@@ -14,8 +14,11 @@ Object of \code{\link{R6Class}} for modelling an GMLOperationParameter
 \description{
 GMLOperationParameter
 }
-\section{Inherited methods from \code{GMLAbstractGeneralOperationParameter}}{
+\section{Inherited methods}{
 
+\describe{
+  \code{GMLAbstractGeneralOperationParameter}
+}
 }
 
 \section{Methods}{

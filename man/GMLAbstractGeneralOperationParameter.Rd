@@ -19,8 +19,11 @@ GMLAbstractGeneralOperationParameter
 \describe{
 \item{\code{minimumOccurs}}{}
 }}
-\section{Inherited methods from \code{GMLDefinition}}{
+\section{Inherited methods}{
 
+\describe{
+  from \code{GMLDefinition}
+}
 }
 
 \section{Methods}{

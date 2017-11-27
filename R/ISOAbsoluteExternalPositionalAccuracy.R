@@ -7,8 +7,11 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbsoluteExternalPositionalAccuracy
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Inherited methods from \code{ISODataQualityAbstractElement}
-#'
+#' @section Inherited methods:
+#' \describe{
+#'   from \code{ISODataQualityAbstractElement}
+#' }
+#' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{

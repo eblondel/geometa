@@ -42,9 +42,15 @@
 #'   
 #'   #a keyword set with anchors
 #'   md <- ISOKeywords$new()
-#'   kwd1 <- ISOAnchor$new(name = "keyword1", href = "http://myvocabulary.geometa/keyword1")
+#'   kwd1 <- ISOAnchor$new(
+#'     name = "keyword1",
+#'     href = "http://myvocabulary.geometa/keyword1"
+#'   )
 #'   md$addKeyword(kwd1)
-#'   kwd2 <- ISOAnchor$new(name = "keyword2", href = "http://myvocabulary.geometa/keyword2")
+#'   kwd2 <- ISOAnchor$new(
+#'     name = "keyword2",
+#'     href = "http://myvocabulary.geometa/keyword2"
+#'   )
 #'   md$addKeyword(kwd2)
 #'   md$setKeywordType("theme")
 #'   xml <- md$encode()

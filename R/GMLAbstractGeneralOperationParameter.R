@@ -9,8 +9,11 @@
 #'
 #' @field minimumOccurs
 #'
-#' @section Inherited methods from \code{GMLDefinition}
-#'
+#' @section Inherited methods:
+#' \describe{
+#'   from \code{GMLDefinition}
+#' }
+#' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, defaults, id)}}{

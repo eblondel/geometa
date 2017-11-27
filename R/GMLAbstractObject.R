@@ -7,7 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GML abstract object
 #' @format \code{\link{R6Class}} object.
 #'
-#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, element, attrs, defaults)}}{

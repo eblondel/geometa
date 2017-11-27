@@ -10,8 +10,11 @@
 #' @field maximumOccurs
 #' @field parameter
 #'
-#' @section Inherited methods from \code{GMLAbstractGeneralOperationParameter}
-#'
+#' @section Inherited methods:
+#' \describe{
+#'   from \code{GMLAbstractGeneralOperationParameter}
+#' }
+#' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, defaults, id)}}{

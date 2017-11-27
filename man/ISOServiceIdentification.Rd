@@ -287,7 +287,10 @@ ISOServiceIdentification
   outParam$setValueType("xs:string")
   wpsOp$addParameter(outParam)
   or1 <- ISOOnlineResource$new()
-  or1$setLinkage(sprintf("http://somelink/wps?request=Execute&version=1.0.0&Identifier=\%s", invocationName))
+  or1$setLinkage(
+    sprintf("http://somelink/wps?request=Execute&version=1.0.0&Identifier=\%s",
+    invocationName)
+  )
   or1$setName("WPS process name")
   or1$setDescription("WPS process description")
   or1$setProtocol("protocol")

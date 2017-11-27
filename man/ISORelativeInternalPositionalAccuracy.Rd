@@ -14,8 +14,11 @@ Object of \code{\link{R6Class}} for modelling an ISORelativeInternalPositionalAc
 \description{
 ISORelativeInternalPositionalAccuracy
 }
-\section{Inherited methods from \code{ISODataQualityAbstractElement}}{
+\section{Inherited methods}{
 
+\describe{
+  from \code{ISODataQualityAbstractElement}
+}
 }
 
 \section{Methods}{

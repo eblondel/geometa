@@ -21,8 +21,11 @@ GMLConversion
 
 \item{\code{parameterValue}}{}
 }}
-\section{Inherited methods from \code{GMLAbstractCoordinateOperation}}{
+\section{Inherited methods}{
 
+\describe{
+  from \code{GMLAbstractCoordinateOperation}
+}
 }
 
 \section{Methods}{

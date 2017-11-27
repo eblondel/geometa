@@ -14,8 +14,11 @@ Object of \code{\link{R6Class}} for modelling an GMLAbstractSingleOperation
 \description{
 GMLAbstractSingleOperation
 }
-\section{Inherited methods from \code{GMLAbstractCoordinateOperation}}{
+\section{Inherited methods}{
 
+\describe{
+  from \code{GMLAbstractCoordinateOperation}
+}
 }
 
 \section{Methods}{

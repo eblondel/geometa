@@ -7,8 +7,11 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLOperationParameter
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Inherited methods from \code{GMLAbstractGeneralOperationParameter}
-#'
+#' @section Inherited methods:
+#' \describe{
+#'   \code{GMLAbstractGeneralOperationParameter}
+#' }
+#' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, defaults, id)}}{

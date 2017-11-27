@@ -14,8 +14,11 @@ Object of \code{\link{R6Class}} for modelling an GMLAbstractGeneralConversion
 \description{
 GMLAbstractGeneralConversion
 }
-\section{Inherited methods from \code{GMLAbstractCoordinateOperation}}{
+\section{Inherited methods}{
 
+\describe{
+  from \code{GMLAbstractCoordinateOperation}
+}
 }
 
 \section{Methods}{

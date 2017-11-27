@@ -21,8 +21,11 @@ GMLOperationParameterGroup
 
 \item{\code{parameter}}{}
 }}
-\section{Inherited methods from \code{GMLAbstractGeneralOperationParameter}}{
+\section{Inherited methods}{
 
+\describe{
+  from \code{GMLAbstractGeneralOperationParameter}
+}
 }
 
 \section{Methods}{
