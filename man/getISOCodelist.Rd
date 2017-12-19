@@ -6,6 +6,9 @@
 \usage{
 getISOCodelist(id)
 }
+\arguments{
+\item{id}{identifier of the codelist}
+}
 \description{
 \code{getISOCodelist} allows to get a registered ISO codelist by id
 registered in \pkg{geometa}

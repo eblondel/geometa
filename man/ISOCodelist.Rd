@@ -26,7 +26,7 @@ Class used by geometa internal codelist XML decoder/encoder
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml,value)}}{
+ \item{\code{new(refFile, id)}}{
    This method is used to instantiate an ISOCodelist
  }
 }

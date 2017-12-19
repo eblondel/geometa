@@ -4,7 +4,15 @@
 \alias{registerISOCodelist}
 \title{registerISOCodelist}
 \usage{
-getISOCodelist(id)
+registerISOCodelist(refFile, id, orce)
+}
+\arguments{
+\item{refFile}{ISO XML file handling the ISO codelist}
+
+\item{id}{identifier of the ISO codelist}
+
+\item{force}{logical parameter indicating if registration has be to be forced
+in case the identified codelist is already registered}
 }
 \description{
 \code{registerISOCodelist} allows to register a new codelist

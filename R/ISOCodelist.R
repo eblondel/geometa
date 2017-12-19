@@ -168,6 +168,8 @@ getISOCodelists <- function(){
 #' 
 #' @usage getISOCodelist(id)
 #' 
+#' @param id identifier of the codelist
+#' 
 #' @examples             
 #'   getISOCodelist(id = "LanguageCode")
 #' 
