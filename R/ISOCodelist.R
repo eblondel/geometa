@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml,value)}}{
+#'  \item{\code{new(refFile, id)}}{
 #'    This method is used to instantiate an ISOCodelist
 #'  }
 #' }
@@ -35,12 +35,18 @@ ISOCodelist <- R6Class("ISOCodelist",
     parse = function(refFile, id){
       
       #query ISO XML Codelist file
-      clFile <- system.file("extdata/codelists", refFile, package = "geometa", mustWork = TRUE)
+      clFile <- refFile
+      isLocalFile <- !grepl("^http", refFile) & !grepl("^https", refFile)
+      if(isLocalFile){
+        if(getGeometaOption("codelists")=="geometa"){
+          clFile <- system.file("extdata/codelists", refFile, package = "geometa", mustWork = TRUE)
+        }
+      }
       if(nchar(clFile)==0){
         stop(sprintf("Reference file '%s' missing in geometa files", refFile))
       }
       
-      if(id == "LanguageCode"){
+      if(id == "LanguageCode" & isLocalFile & getGeometaOption("codelists")=="geometa"){
         self$identifier <- id
         self$codeSpace <- "ISO 639-2"
         self$description <- "Language : ISO 639-2 (3 characters)"
@@ -135,16 +141,78 @@ fetchISOCodelists <- function(){
   .geometa.iso$codelists <- codelists
 }
 
+#' @name getISOCodelists
+#' @aliases getISOCodelists
+#' @title getISOCodelists
+#' @export
+#' @description \code{getISOCodelists} allows to get the list of ISO codelists
+#' registered in \pkg{geometa}
+#' 
+#' @usage getISOCodelists()
+#' 
+#' @examples             
+#'   getISOCodelists()
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
 getISOCodelists <- function(){
   return(.geometa.iso$codelists)
 }
 
+#' @name getISOCodelist
+#' @aliases getISOCodelist
+#' @title getISOCodelist
+#' @export
+#' @description \code{getISOCodelist} allows to get a registered ISO codelist by id
+#' registered in \pkg{geometa}
+#' 
+#' @usage getISOCodelist(id)
+#' 
+#' @examples             
+#'   getISOCodelist(id = "LanguageCode")
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
 getISOCodelist <- function(id){
   codelist <- NULL
-  invisible(lapply(.geometa.iso$codelists, function(cl){
+  invisible(lapply(getISOCodelists(), function(cl){
     if(cl$identifier == id){
       codelist <<- cl
     }
   }))
   return(codelist)
+}
+
+#' @name registerISOCodelist
+#' @aliases registerISOCodelist
+#' @title registerISOCodelist
+#' @export
+#' @description \code{registerISOCodelist} allows to register a new codelist
+#' registered in \pkg{geometa}
+#' 
+#' @usage registerISOCodelist(refFile, id, orce)
+#' 
+#' @param refFile ISO XML file handling the ISO codelist
+#' @param id identifier of the ISO codelist
+#' @param force logical parameter indicating if registration has be to be forced
+#' in case the identified codelist is already registered
+#' 
+#' @examples             
+#'   registerISOCodelist(
+#'    refFile = "http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml",
+#'    id = "LanguageCode",
+#'    force = TRUE
+#'  )
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+registerISOCodelist <- function(refFile, id, force = FALSE){
+  cl <- getISOCodelist(id)
+  if(!is.null(cl)){
+    if(!force) stop(sprintf("ISOcodelist with id '%s' already exists. Use force = TRUE to force registration", id))
+    .geometa.iso$codelists[sapply(.geometa.iso$codelists, function(x){x$identifier == id})][[1]] <- ISOCodelist$new(refFile, id)
+  }else{
+    cl <- ISOCodelist$new(refFile, id)
+    .geometa.iso$codelists <- c(.geometa.iso$codelists, cl)
+  }
 }

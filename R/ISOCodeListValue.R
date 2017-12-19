@@ -77,10 +77,10 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          self$valueDescription <- clDescription
        }
        
+       clUrl <- sprintf("%s/Codelist/%s#%s", getGeometaOption("schemaBaseUrl"), cl$refFile, id)
        if(id == "LanguageCode"){
-         clUrl <- .geometa.iso$languageUrl
-       }else{
-         clUrl <- sprintf("%s/Codelist/%s#%s", .geometa.iso$schemaBaseUrl, cl$refFile, id)
+         langUrlOp <- getGeometaOption("languageUrl")
+         if(!is.null(langUrlOp)) clUrl <- langUrlOp
        }
        
        if(addCodeListAttrs){
