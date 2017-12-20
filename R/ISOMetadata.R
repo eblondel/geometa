@@ -507,17 +507,11 @@ ISOMetadata <- R6Class("ISOMetadata",
     
      #addHierarchyLevelName
      addHierarchyLevelName = function(levelName){
-       if(!is(levelName, "character")){
-         levelName <- as.character(levelName)
-       }
        return(self$addListElement("hierarchyLevelName", levelName))
      },
 
      #delHierarchyLevelName
      delHierarchyLevelName = function(levelName){
-       if(!is(levelName, "character")){
-         levelName <- as.character(levelName)
-       }
        return(self$delListElement("hierarchyLevelName", levelName))
      },
      
