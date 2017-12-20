@@ -16,7 +16,7 @@ in case the identified namespace is already registered}
 }
 \description{
 \code{registerISOMetadataNamespace} allows to register a new namespace
-registered in \pkg{geometa}
+in \pkg{geometa}
 }
 \examples{
             

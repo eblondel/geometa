@@ -100,7 +100,7 @@ getISOMetadataNamespace = function(id){
 #' @title registerISOMetadataNamespace
 #' @export
 #' @description \code{registerISOMetadataNamespace} allows to register a new namespace
-#' registered in \pkg{geometa}
+#' in \pkg{geometa}
 #' 
 #' @usage registerISOMetadataNamespace(id, uri, force)
 #' 
