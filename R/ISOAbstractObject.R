@@ -552,7 +552,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       }
       
       #proceed with schema xml schema validation
-      xsd <- getISOSchemas()
+      xsd <- getISOMetadataSchemas()
       if(is(xml, "XMLInternalNode")) xml <- xmlDoc(xml)
       report <- xmlSchemaValidate(xsd, xml)
       
@@ -862,29 +862,4 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
     text2 <- as.character(metadataElement2)
   }
   return(text1 == text2)
-}
-
-#ISO 19139 schemas fetcher / getter
-#===============================================================================
-
-#'setISOSchemas
-#'@export
-setISOSchemas <- function(){
-  packageStartupMessage("Loading ISO 19139 XML schemas...")
-  schemaPath <- "extdata/schemas"
-  namespace <- "gmd"
-  schemas <- tryCatch(
-    XML::xmlParse(
-      system.file(paste(schemaPath, namespace, sep="/"), paste0(namespace,".xsd"),
-                  package = "geometa", mustWork = TRUE),
-      isSchema = TRUE, xinclude = TRUE,
-      error = function (msg, code, domain, line, col, level, filename, class = "XMLError"){}
-    )
-  )
-  .geometa.iso$schemas <- schemas
-}
-
-#getISOSchemas
-getISOSchemas <- function(){
-  return(.geometa.iso$schemas)
 }
