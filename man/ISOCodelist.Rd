@@ -17,7 +17,7 @@ ISOCodelist
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{entries}}{}
 }}
 
 \note{

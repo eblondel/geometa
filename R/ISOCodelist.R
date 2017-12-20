@@ -7,7 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO codelist
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
+#' @field id
+#' @field refFile
+#' @field codeSpace
+#' @field identifier
+#' @field description
+#' @field entries
 #'
 #' @section Methods:
 #' \describe{
@@ -22,6 +27,7 @@
 #'
 ISOCodelist <- R6Class("ISOCodelist",
   public = list(
+    id =NA,
     refFile = NA,
     codeSpace = NA,
     identifier = NA,
@@ -38,7 +44,7 @@ ISOCodelist <- R6Class("ISOCodelist",
       clFile <- refFile
       isLocalFile <- !grepl("^http", refFile) & !grepl("^https", refFile)
       if(isLocalFile){
-        if(getGeometaOption("codelists")=="geometa"){
+        if(getGeometaOption("internalCodelists")){
           clFile <- system.file("extdata/codelists", refFile, package = "geometa", mustWork = TRUE)
         }
       }
@@ -46,13 +52,15 @@ ISOCodelist <- R6Class("ISOCodelist",
         stop(sprintf("Reference file '%s' missing in geometa files", refFile))
       }
       
-      if(id == "LanguageCode" & isLocalFile & getGeometaOption("codelists")=="geometa"){
+      self$id <- id
+      
+      if(id == "LanguageCode" & isLocalFile & getGeometaOption("internalCodelists")){
         self$identifier <- id
         self$codeSpace <- "ISO 639-2"
         self$description <- "Language : ISO 639-2 (3 characters)"
         self$entries <- utils::read.csv(clFile, sep="|", stringsAsFactors = FALSE)
-        self$entries <- self$entries[,c("alpha3", "english")]
-        colnames(self$entries) <- c("value","description")
+        self$entries <- self$entries[,c("alpha3", "english", "english")]
+        colnames(self$entries) <- c("value","name", "description")
       }else{
       
         isML <- regexpr("ML", refFile) > 0
@@ -93,9 +101,12 @@ ISOCodelist <- R6Class("ISOCodelist",
         entriesXML <- XML::getNodeSet(clDictXML, "//gmx:codeEntry",
                                  c(gmx = nsdf[nsdf$id=="","uri"]))
         self$entries <- do.call("rbind",lapply(entriesXML, function(x){
-          XML::xmlToDataFrame(x, stringsAsFactors = FALSE)[,c("identifier", "description")]
+          entry.df <- XML::xmlToDataFrame(x, stringsAsFactors = FALSE)
+          entry.colnames <- c("identifier", "name", "description")
+          if(!("name" %in% colnames(entry.df))) entry.df$name <- NA
+          entry.df <- entry.df[,entry.colnames]
         }))
-        colnames(self$entries) <- c("value", "description")
+        colnames(self$entries) <- c("value", "name", "description")
       }
     }
   )                      
@@ -137,7 +148,7 @@ setISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "SV_CouplingType"),
     ISOCodelist$new(gmxCL, "SV_ParameterDirection")
   )
-  names(codelists) <- sapply(codelists, function(cl){cl$identifier})
+  names(codelists) <- sapply(codelists, function(cl){cl$id})
   .geometa.iso$codelists <- codelists
 }
 
@@ -178,7 +189,7 @@ getISOCodelists <- function(){
 getISOCodelist <- function(id){
   codelist <- NULL
   invisible(lapply(getISOCodelists(), function(cl){
-    if(cl$identifier == id){
+    if(cl$id == id){
       codelist <<- cl
     }
   }))
@@ -212,7 +223,7 @@ registerISOCodelist <- function(refFile, id, force = FALSE){
   cl <- getISOCodelist(id)
   if(!is.null(cl)){
     if(!force) stop(sprintf("ISOcodelist with id '%s' already exists. Use force = TRUE to force registration", id))
-    .geometa.iso$codelists[sapply(.geometa.iso$codelists, function(x){x$identifier == id})][[1]] <- ISOCodelist$new(refFile, id)
+    .geometa.iso$codelists[sapply(.geometa.iso$codelists, function(x){x$id == id})][[1]] <- ISOCodelist$new(refFile, id)
   }else{
     cl <- ISOCodelist$new(refFile, id)
     .geometa.iso$codelists <- c(.geometa.iso$codelists, cl)

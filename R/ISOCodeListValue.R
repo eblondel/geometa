@@ -73,11 +73,11 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          clCodeSpace <- cl$codeSpace
          clEntry <- clEntry[1L,]
          clValue <- clEntry$value
-         clDescription <- clEntry$description
+         clDescription <- ifelse(!is.na(clEntry$name), clEntry$name, clEntry$description)
          self$valueDescription <- clDescription
        }
        
-       clUrl <- sprintf("%s/Codelist/%s#%s", getGeometaOption("schemaBaseUrl"), cl$refFile, id)
+       clUrl <- sprintf("%s/%s#%s", getGeometaOption("codelistUrl"), cl$refFile, id)
        if(id == "LanguageCode"){
          langUrlOp <- getGeometaOption("languageUrl")
          if(!is.null(langUrlOp)) clUrl <- langUrlOp
@@ -115,7 +115,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
 
 ISOCodeListValue$values = function(class, labels = FALSE){
   fields <- "value"
-  if(labels) fields <- c(fields, "description")
+  if(labels) fields <- c(fields, "name", "description")
   element <- class$private_fields$xmlElement
   if(element == "MD_ScopeCode") element <- "MX_ScopeCode"
   return(getISOCodelist(element)$entries[,fields])
