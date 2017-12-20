@@ -42,8 +42,11 @@ ISOMetadataNamespace$GTS = ISOMetadataNamespace$new("gts", "http://www.isotc211.
 ISOMetadataNamespace$SRV = ISOMetadataNamespace$new("srv", "http://www.isotc211.org/2005/srv")
 ISOMetadataNamespace$GML = ISOMetadataNamespace$new("gml", "http://www.opengis.net/gml/3.2")
 ISOMetadataNamespace$XLINK = ISOMetadataNamespace$new("xlink", "http://www.w3.org/1999/xlink")
-ISOMetadataNamespace$all = function(){
-  return(list(
+
+#' setMetadataNamespaces
+#' @export
+setISOMetadataNamespaces <- function(){
+  .geometa.iso$namespaces <- list(
     ISOMetadataNamespace$GCO,
     ISOMetadataNamespace$GFC,
     ISOMetadataNamespace$GMD,
@@ -53,9 +56,74 @@ ISOMetadataNamespace$all = function(){
     ISOMetadataNamespace$SRV,
     ISOMetadataNamespace$GML,
     ISOMetadataNamespace$XLINK
-  ))
+  )
 }
 
+#' @name getISOMetadataNamespaces
+#' @aliases getISOMetadataNamespaces
+#' @title getISOMetadataNamespaces
+#' @export
+#' @description \code{getISOMetadataNamespaces} gets the list of namespaces registered
+#' 
+#' @usage getISOMetadataNamespaces()
+#' 
+#' @examples             
+#'   getISOMetadataNamespaces()
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+getISOMetadataNamespaces = function(){
+  return(.geometa.iso$namespaces)
+}
+
+#' @name getISOMetadataNamespace
+#' @aliases getISOMetadataNamespace
+#' @title getISOMetadataNamespace
+#' @export
+#' @description \code{getISOMetadataNamespace} gets a namespace given its id
+#' 
+#' @usage getISOMetadataNamespace(id)
+#' 
+#' @param id namespace prefix
+#' 
+#' @examples             
+#'   getISOMetadataNamespace("GMD")
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
 getISOMetadataNamespace = function(id){
   return(ISOMetadataNamespace[[id]])
+}
+
+#' @name registerISOMetadataNamespace
+#' @aliases registerISOMetadataNamespace
+#' @title registerISOMetadataNamespace
+#' @export
+#' @description \code{registerISOMetadataNamespace} allows to register a new namespace
+#' registered in \pkg{geometa}
+#' 
+#' @usage registerISOMetadataNamespace(id, uri, force)
+#' 
+#' @param id prefix of the namespace
+#' @param uri URI of the namespace
+#' @param force logical parameter indicating if registration has be to be forced
+#' in case the identified namespace is already registered
+#' 
+#' @examples             
+#'   registerISOMetadataNamespace(id = "myprefix", uri = "http://someuri")
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+registerISOMetadataNamespace <- function(id, uri, force = FALSE){
+  ns <- getISOMetadataNamespace(toupper(id))
+  if(!is.null(ns)){
+    if(!force) stop(sprintf("ISOMetadataNamespace with id '%s' already exists. Use force = TRUE to force registration", id))
+    ns <- ISOMetadataNamespace$new(id, uri)
+    ISOMetadataNamespace[[toupper(id)]] <- ns
+    .geometa.iso$namespaces[sapply(.geometa.iso$namespaces, function(x){x$id == id})][[1]] <- ns
+  }else{
+    ns <- ISOMetadataNamespace$new(id, uri)
+    ISOMetadataNamespace[[toupper(id)]] <- ns
+    .geometa.iso$namespaces <- c(.geometa.iso$namespaces, ns)
+  }
 }

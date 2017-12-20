@@ -375,7 +375,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       })]
       
       if(self$isDocument()){
-        rootNamespaces <- sapply(ISOMetadataNamespace$all(), function(x){x$getDefinition()})
+        rootNamespaces <- sapply(getISOMetadataNamespaces(), function(x){x$getDefinition()})
         rootXML <- xmlOutputDOM(
           tag = self$element,
           nameSpace = self$namespace$id,
@@ -867,8 +867,9 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
 #ISO 19139 schemas fetcher / getter
 #===============================================================================
 
-#fetchISOSchemas
-fetchISOSchemas <- function(){
+#'setISOSchemas
+#'@export
+setISOSchemas <- function(){
   packageStartupMessage("Loading ISO 19139 XML schemas...")
   schemaPath <- "extdata/schemas"
   namespace <- "gmd"

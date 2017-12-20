@@ -4,7 +4,7 @@
 \alias{registerISOCodelist}
 \title{registerISOCodelist}
 \usage{
-registerISOCodelist(refFile, id, orce)
+registerISOCodelist(refFile, id, force)
 }
 \arguments{
 \item{refFile}{ISO XML file handling the ISO codelist}

@@ -8,15 +8,13 @@
   #hidden objects
   assign(".geometa.iso", new.env(), envir= asNamespace(pkgname))
   
-  #fetch ISO codelists
-  fetchISOCodelists()
+  #set ISO metadata namespaces
+  setISOMetadataNamespaces()
   
-  #fetch ISO schemas
-  fetchISOSchemas()
+  #set ISO codelists
+  setISOCodelists()
   
-} # nocov end
-
-.onUnload <- function(libname, pkgname) { # nocov start
-  
+  #set ISO schemas
+  setISOSchemas()
   
 } # nocov end

@@ -101,9 +101,9 @@ ISOCodelist <- R6Class("ISOCodelist",
   )                      
 )
 
-#' fetchISOCodelists
+#' setISOCodelists
 #' @export
-fetchISOCodelists <- function(){
+setISOCodelists <- function(){
   packageStartupMessage("Loading ISO 19115 codelists...")
   
   #parse other ISO codelists
@@ -192,7 +192,7 @@ getISOCodelist <- function(id){
 #' @description \code{registerISOCodelist} allows to register a new codelist
 #' registered in \pkg{geometa}
 #' 
-#' @usage registerISOCodelist(refFile, id, orce)
+#' @usage registerISOCodelist(refFile, id, force)
 #' 
 #' @param refFile ISO XML file handling the ISO codelist
 #' @param id identifier of the ISO codelist
