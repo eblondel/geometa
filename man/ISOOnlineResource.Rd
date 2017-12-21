@@ -17,7 +17,7 @@ ISOOnlineResource
 \section{Fields}{
 
 \describe{
-\item{\code{description}}{}
+\item{\code{onLineFunction}}{}
 }}
 
 \section{Methods}{
@@ -38,6 +38,9 @@ ISOOnlineResource
  \item{\code{setDescription(description)}}{
    Sets the description
  }
+ \item{\code{setOnLineFunction(onLineFunction)}}{
+   Sets the online function
+ }
 }
 }
 
@@ -47,6 +50,7 @@ ISOOnlineResource
   md$setName("name")
   md$setDescription("description")
   md$setProtocol("protocol")
+  md$setOnLineFunction("download")
   xml <- md$encode()
   
 }

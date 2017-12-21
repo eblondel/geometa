@@ -11,6 +11,7 @@
 #' @field protocol
 #' @field name
 #' @field description
+#' @field onLineFunction
 #'
 #' @section Methods:
 #' \describe{
@@ -29,6 +30,9 @@
 #'  \item{\code{setDescription(description)}}{
 #'    Sets the description
 #'  }
+#'  \item{\code{setOnLineFunction(onLineFunction)}}{
+#'    Sets the online function
+#'  }
 #' }
 #' 
 #' @examples
@@ -37,6 +41,7 @@
 #'   md$setName("name")
 #'   md$setDescription("description")
 #'   md$setProtocol("protocol")
+#'   md$setOnLineFunction("download")
 #'   xml <- md$encode()
 #'   
 #' @references 
@@ -55,6 +60,7 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     protocol = NULL,
     name = NULL,
     description = NULL,
+    onLineFunction = NULL,
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
@@ -87,6 +93,11 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     setDescription = function(description){
       if(!is(description, "character")) description <- as.character(description)
       self$description <- description
+    },
+    
+    #setOnLineFunction
+    setOnLineFunction = function(onLineFunction){
+      self$onLineFunction <- onLineFunction
     }
   )                        
 )
