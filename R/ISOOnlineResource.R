@@ -97,6 +97,9 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     
     #setOnLineFunction
     setOnLineFunction = function(onLineFunction){
+      if(is(onLineFunction, "character")){
+        onLineFunction <- ISOOnLineFunction$new(value = onLineFunction)
+      }
       self$onLineFunction <- onLineFunction
     }
   )                        
