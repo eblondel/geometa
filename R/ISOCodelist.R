@@ -129,7 +129,7 @@ setISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "CI_DateTypeCode"),
     ISOCodelist$new(gmxCL, "CI_PresentationFormCode"),
     ISOCodelist$new(gmxCL, "CI_RoleCode"),
-    ISOCodelist$new(gmxCL, "CI_OnLineFunction"),
+    ISOCodelist$new(gmxCL, "CI_OnLineFunctionCode"),
     ISOCodelist$new(gmxCL, "DCPList"),
     ISOCodelist$new(gmxCL, "DQ_EvaluationMethodTypeCode"),
     ISOCodelist$new(gmxCL, "FC_RoleType"),
