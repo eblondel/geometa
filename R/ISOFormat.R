@@ -80,7 +80,7 @@ ISOFormat <- R6Class("ISOFormat",
      
       #setName
       setName = function(name){
-        self$name <- as.character(name)
+        self$name <- name
       },
       
       #setVersion
