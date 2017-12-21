@@ -11,7 +11,7 @@
 #' @field protocol
 #' @field name
 #' @field description
-#' @field onLineFunction
+#' @field function
 #'
 #' @section Methods:
 #' \describe{
@@ -60,7 +60,7 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     protocol = NULL,
     name = NULL,
     description = NULL,
-    onLineFunction = NULL,
+    "function" = NULL,
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
@@ -100,7 +100,7 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
       if(is(onLineFunction, "character")){
         onLineFunction <- ISOOnLineFunction$new(value = onLineFunction)
       }
-      self$onLineFunction <- onLineFunction
+      self[["function"]] <- onLineFunction
     }
   )                        
 )
