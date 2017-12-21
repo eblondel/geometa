@@ -32,7 +32,7 @@ ISOOnLineFunction <- R6Class("ISOOnLineFunction",
   inherit = ISOCodeListValue,
   private = list(
     xmlElement = "CI_OnLineFunctionCode",
-    xmlNamespacePrefix = "CI"
+    xmlNamespacePrefix = "GMD"
   ),
   public = list(
     initialize = function(xml = NULL, value, description = NULL){
