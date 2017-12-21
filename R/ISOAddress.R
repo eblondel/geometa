@@ -85,7 +85,6 @@ ISOAddress <- R6Class("ISOAddress",
     
     #setCountry
     setCountry = function(country){
-      if(!is(country,"character")) country <- as.character(country)
       self$country <- country
     },
     

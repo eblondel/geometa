@@ -101,10 +101,14 @@ ISOCodelist <- R6Class("ISOCodelist",
         entriesXML <- XML::getNodeSet(clDictXML, "//gmx:codeEntry",
                                  c(gmx = nsdf[nsdf$id=="","uri"]))
         self$entries <- do.call("rbind",lapply(entriesXML, function(x){
-          entry.df <- XML::xmlToDataFrame(x, stringsAsFactors = FALSE)
-          entry.colnames <- c("identifier", "name", "description")
-          if(!("name" %in% colnames(entry.df))) entry.df$name <- NA
-          entry.df <- entry.df[,entry.colnames]
+          entry.df <- data.frame(identifier = NA, name = NA, description = NA)
+          identifier <- getNodeSet(xmlDoc(x), "//gml:identifier", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+          if(length(identifier)>0) entry.df$identifier <- xmlValue(identifier[[1]])
+          name <- getNodeSet(xmlDoc(x), "//gml:name", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+          if(length(name)>0) entry.df$name <- xmlValue(name[[1]])
+          description <- getNodeSet(xmlDoc(x), "//gml:description", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+          if(length(description)>0) entry.df$description <- xmlValue(description[[1]])
+          return(entry.df)
         }))
         colnames(self$entries) <- c("value", "name", "description")
       }

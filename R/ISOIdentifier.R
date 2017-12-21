@@ -41,7 +41,7 @@ ISOIdentifier <- R6Class("ISOIdentifier",
      initialize = function(xml = NULL, code){
        super$initialize(xml = xml)
        if(is.null(xml)){
-         self$code <- as.character(code)
+         self$code <- code
        }
      },
      
