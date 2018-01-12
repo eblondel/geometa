@@ -37,7 +37,7 @@ ISOTopicCategory <- R6Class("ISOTopicCategory",
    public = list(
      initialize = function(xml = NULL, value, description = NULL){
        super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
-                        addCodeListAttrs = FALSE, setValue = FALSE)
+                        addCodeListAttrs = FALSE)
      }
    )                        
 )

@@ -37,7 +37,7 @@ ISOCharacterSet <- R6Class("ISOCharacterSet",
  public = list(
    initialize = function(xml = NULL, value, description = NULL){
        super$initialize(xml = xml, id = private$xmlElement, value = value, description = description, 
-                        setValue = FALSE, addCodeSpaceAttr = FALSE)
+                        addCodeSpaceAttr = FALSE)
    }
  )                        
 )

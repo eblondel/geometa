@@ -33,7 +33,7 @@ ISOGeographicExtent <- R6Class("ISOGeographicExtent",
       #+ extentTypeCode [0..1]: ISOBaseBoolean default "true"
       extentTypeCode = NULL,
       initialize = function(xml = NULL, defaults = list()){        
-        defaults = list(extentTypeCode = TRUE)
+        #defaults = list(extentTypeCode = TRUE)
         super$initialize(xml, defaults = defaults)
       }
     )                                          

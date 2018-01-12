@@ -37,7 +37,7 @@ ISOLanguage <- R6Class("ISOLanguage",
   public = list(
    initialize = function(xml = NULL, value, description = NULL){
      super$initialize(xml = xml, id = private$xmlElement, value = value,
-                      description = description, setValue = FALSE)
+                      description = description)
    }
   )                        
 )

@@ -66,6 +66,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          clValue <- value
          if(!is.null(description)){
            setValue <- TRUE
+           clCodeSpace <- cl$codeSpace
            clDescription <- description
            self$valueDescription <- clDescription
          }
@@ -94,7 +95,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
            self$attrs <- c(self$attrs, codeSpace = clCodeSpace)
          }
          if(setValue){
-           self$value <-clDescription
+           self$value <-clValue
          }
        }else{
          self$value <- clValue 

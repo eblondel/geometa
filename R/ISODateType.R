@@ -37,7 +37,7 @@ ISODateType <- R6Class("ISODateType",
    public = list(
      initialize = function(xml = NULL, value, description = NULL){
        super$initialize(xml = xml, id = "CI_DateTypeCode", value = value,
-                        description = description, setValue = FALSE)
+                        description = description)
      }
    )                        
 )

@@ -132,6 +132,8 @@ setISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "CI_OnLineFunctionCode"),
     ISOCodelist$new(gmxCL, "DCPList"),
     ISOCodelist$new(gmxCL, "DQ_EvaluationMethodTypeCode"),
+    ISOCodelist$new(gmxCL, "DS_AssociationTypeCode"),
+    ISOCodelist$new(gmxCL, "DS_InitiativeTypeCode"),
     ISOCodelist$new(gmxCL, "FC_RoleType"),
     ISOCodelist$new(langCL, "LanguageCode"),
     ISOCodelist$new(gmxCL, "MD_CellGeometryCode"),

@@ -37,7 +37,7 @@ ISOSpatialRepresentationType <- R6Class("ISOSpatialRepresentationType",
    public = list(
      initialize = function(xml = NULL, value, description){
        super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
-                        setValue = FALSE, addCodeSpaceAttr = FALSE)
+                        addCodeSpaceAttr = FALSE)
      }
    )                        
 )
