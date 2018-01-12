@@ -15,9 +15,9 @@
 #' @field pointOfContact
 #' @field resourceMaintenance
 #' @field graphicOverview
+#' @field resourceFormat
 #' @field descriptiveKeywords
 #' @field resourceConstraints
-#' @field resourceFormat
 #'
 #' @section Methods:
 #' \describe{
@@ -103,6 +103,12 @@
 #'    Deletes an object extending \code{ISOConstraints}, either an object of class
 #'    \code{ISOLegalConstraints} or \code{ISOSecurityConstraints}
 #'  }
+#'  \item{\code{addAggregateInformation(aggregateInfo)}}{
+#'    Adds an object of class \code{ISOAggregateInformation}
+#'  }
+#'  \item{\code{delAggregateInformation(aggregateInfo)}}{
+#'    Deletes an object of class \code{ISOAggregateInformation}
+#'  }
 #' }
 #' 
 #' @references 
@@ -142,8 +148,8 @@ ISOIdentification <- R6Class("ISOIdentification",
      resourceConstraints = list(),
      #+ resourceSpecificUsage [0..*]: MD_Usage (ISOUsage - to implement)
      resourceSpecificUsage = list(), #TODO
-     #+ aggregationInfo [0..*]: MD_AggregateInformation (ISOAggregateInformation - to implement)
-     aggregationInformation = list(), #TODO
+     #+ aggregationInfo [0..*]: ISOAggregateInformation
+     aggregationInfo = list(),
      
      initialize = function(xml = NULL, defaults = list()){
        super$initialize(xml, defaults = defaults)
@@ -329,6 +335,25 @@ ISOIdentification <- R6Class("ISOIdentification",
          stop("The argument should be 'ISOConstraints' object")
        }
        return(self$delListElement("resourceConstraints", resourceConstraints))
+     },
+     
+     #MD_AggregateInformation
+     #--------------------------------------------------------------------------
+     
+     #addAggregateInformation
+     addAggregateInformation = function(aggregateInfo){
+       if(!is(aggregateInfo, "ISOAggregateInformation")){
+         stop("The argument should be a 'ISOAggregateInformation' object")
+       }
+       return(self$addListElement("aggregationInfo", aggregateInfo))
+     },
+     
+     #delAggregateInformation
+     delAggregateInformation = function(aggregateInfo){
+       if(!is(aggregateInfo, "ISOAggregateInformation")){
+         stop("The argument should be 'ISOAggregateInformation' object")
+       }
+       return(self$delListElement("aggregationInfo", aggregateInfo))
      }
    )                        
 )

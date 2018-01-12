@@ -17,7 +17,7 @@ ISOIdentification
 \section{Fields}{
 
 \describe{
-\item{\code{resourceFormat}}{}
+\item{\code{resourceConstraints}}{}
 }}
 
 \section{Methods}{
@@ -104,6 +104,12 @@ ISOIdentification
  \item{\code{delResourceConstraints(resourceConstraints)}}{
    Deletes an object extending \code{ISOConstraints}, either an object of class
    \code{ISOLegalConstraints} or \code{ISOSecurityConstraints}
+ }
+ \item{\code{addAggregateInformation(aggregateInfo)}}{
+   Adds an object of class \code{ISOAggregateInformation}
+ }
+ \item{\code{delAggregateInformation(aggregateInfo)}}{
+   Deletes an object of class \code{ISOAggregateInformation}
  }
 }
 }
