@@ -17,7 +17,7 @@ ISOOnlineResource
 \section{Fields}{
 
 \describe{
-\item{\code{onLineFunction}}{}
+\item{\code{function}}{}
 }}
 
 \section{Methods}{
