@@ -17,6 +17,7 @@ r_packages:
   - devtools
   - R6
   - XML
+  - sf
   - testthat
   - covr
 
