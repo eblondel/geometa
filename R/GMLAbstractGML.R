@@ -53,9 +53,9 @@ GMLAbstractGML <- R6Class("GMLAbstractGML",
      identifier = NULL,
      #+ name [0..*]: character
      name = list(),
-     initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list()){
+     initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), wrap = FALSE){
        if(is.null(element)) element <- private$xmlElement
-       super$initialize(xml, element = element, attrs = attrs, defaults = defaults)
+       super$initialize(xml, element = element, attrs = attrs, defaults = defaults, wrap = wrap)
      },
 
      #setDescriptionReference

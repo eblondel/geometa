@@ -460,7 +460,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               nodeValueXml <- nodeValue$encode(addNS = FALSE, validate = FALSE)
               if(is(item, "ISOElementSequence")){
                 nodeValueXml.children <- xmlChildren(nodeValueXml)
-                if(nodeValue$wrap){
+                if(self$wrap){
+                #if(nodeValue$wrap){
                   wrapperNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
                   for(child in nodeValueXml.children){
                     wrapperNode$addNode(child)
@@ -472,7 +473,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   }
                 }
               }else{
-                if(nodeValue$wrap){
+                if(self$wrap){
+                #if(nodeValue$wrap){
                   wrapperNode <- xmlOutputDOM(
                     tag = field,
                     nameSpace = namespaceId
@@ -483,6 +485,17 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   rootXML$addNode(nodeValueXml)
                 }
               }
+            }
+          }else if(is(fieldObj, "matrix")){
+            matrix_NA <- all(is.na(fieldObj))
+            if(matrix_NA){
+              emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
+              rootXML$addNode(emptyNode$value())
+            }else{
+              wrapperNode <- xmlOutputDOM(tag = field, nameSpace = namespaceId)
+              mts <- paste(apply(fieldObj, 1L, function(x){paste(x[1], x[2])}),collapse=" ")
+              wrapperNode$addNode(xmlTextNode(mts))
+              rootXML$addNode(wrapperNode$value())
             }
           }else{
             if(length(fieldObj)==0) fieldObj <- NA

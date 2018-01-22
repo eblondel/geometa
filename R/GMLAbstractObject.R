@@ -31,11 +31,11 @@ GMLAbstractObject <- R6Class("GMLAbstractObject",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
-    initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list()){
+    initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), wrap = FALSE){
       if(is.null(element)) element <- private$xmlElement
       super$initialize(xml, element, namespace = private$xmlNamespacePrefix, 
                        attrs = attrs, defaults = defaults,
-                       wrap = FALSE)
+                       wrap = wrap)
     }
   )                        
 )
