@@ -36,7 +36,7 @@ GMLLinearRing <- R6Class("GMLLinearRing",
     attrs = list("gml:id" = NA),
     posList = matrix(NA_real_, 2, 2),
     initialize = function(xml = NULL, m){
-      super$initialize(xml, element = private$xmlElement)
+      super$initialize(xml, element = private$xmlElement, wrap = TRUE)
       if(is.null(xml)){
         if(!is(m, "matrix")) stop("Input 'matrix' object should be a 'matrix'")
         m.dims <- dim(m)

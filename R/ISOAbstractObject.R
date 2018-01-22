@@ -460,8 +460,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               nodeValueXml <- nodeValue$encode(addNS = FALSE, validate = FALSE)
               if(is(item, "ISOElementSequence")){
                 nodeValueXml.children <- xmlChildren(nodeValueXml)
-                if(self$wrap){
-                #if(nodeValue$wrap){
+                #if(self$wrap){
+                if(nodeValue$wrap){
                   wrapperNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
                   for(child in nodeValueXml.children){
                     wrapperNode$addNode(child)
@@ -473,8 +473,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   }
                 }
               }else{
-                if(self$wrap){
-                #if(nodeValue$wrap){
+                #if(self$wrap){
+                if(nodeValue$wrap){
                   wrapperNode <- xmlOutputDOM(
                     tag = field,
                     nameSpace = namespaceId
