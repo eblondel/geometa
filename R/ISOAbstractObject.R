@@ -258,6 +258,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", item))
               }
             }
+          }else if (is(fieldObj,"matrix")){
+            m <- paste(apply(fieldObj, 1L, function(x){paste(x[1], x[2])}),collapse=" ")
+            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", m))
           }else{
             cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", fieldObj))
           }
