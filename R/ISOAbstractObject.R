@@ -150,19 +150,23 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     },
     toComplexTypes = function(value){
       newvalue <- value
+      #datetime types
       if(regexpr(pattern = "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})", value)>0){
         newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = "GMT")
       }else if(regexpr(pattern = "(\\d{4})-(\\d{2})-(\\d{2})", value)>0){
         newvalue <- as.Date(as.POSIXct(strptime(value, "%Y-%m-%d"), tz = "GMT"))
       }
+      
       return(newvalue)
     },
     fromComplexTypes = function(value){
+      #datetime types
       if(suppressWarnings(all(class(value)==c("POSIXct","POSIXt")))){
         value <- format(value,"%Y-%m-%dT%H:%M:%S")
       }else if(class(value)[1] == "Date"){
         value <- format(value,"%Y-%m-%d")
       }
+      
       return(value)
     }
   ),
