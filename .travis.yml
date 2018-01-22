@@ -7,6 +7,7 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libxml2
   - sudo apt-get install -y libudunits2-dev
+  - sudo apt-get install --yes libproj-dev libgeos-dev libgdal-dev
   - sudo apt-get install texlive-latex-recommended
 
 r:
