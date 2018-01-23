@@ -343,7 +343,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }
         }else{
           if(nsPrefix == "gml"){
-            if(inherits(self,"GMLAbstractRing")){
+            if(inherits(self,"GMLAbstractRing")|
+               inherits(self,"GMLAbstractGeometricPrimitive")){
               value <- xmlValue(child)
               if(value=="") value <- NA
               if(!is.na(value)){
