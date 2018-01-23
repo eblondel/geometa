@@ -39,7 +39,9 @@ GMLPoint <- R6Class("GMLPoint",
        super$initialize(xml, element = private$xmlElement)
        if(is.null(xml)){
          if(!is(sfg, c("sfg","XY","POINT"))) stop("Input 'sfg' object should be a 'point'")
-         self$pos <- as.matrix(sfg)
+         m <- as.matrix(sfg)
+         self$pos <- m
+         self$setAttr("srsDimension", as.character(dim(m)[2]))
        }
      }
    )

@@ -43,6 +43,7 @@ GMLPolygon <- R6Class("GMLPolygon",
         rings <- sfg
         class(rings) <- "list"
         self$exterior <- GMLLinearRing$new(m=rings[[1]])
+        self$setAttr("srsDimension", as.character(dim(rings[[1]])[2]))
         rings[[1]] <- NULL
         self$interior <- lapply(rings,function(x){return(GMLLinearRing$new(m=x))})
       }
