@@ -13,7 +13,6 @@ test_that("GMLPoint",{
   #encoding
   pt <- st_point(c(1,1)) 
   md <- GMLPoint$new(sfg = pt)
-  md$setId("xx", TRUE)
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding

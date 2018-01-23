@@ -36,7 +36,7 @@ GMLLineString <- R6Class("GMLLineString",
     attrs = list("gml:id" = NA),
     posList = matrix(NA_real_, 2, 2),
     initialize = function(xml = NULL, sfg){
-      super$initialize(xml, element = private$xmlElement)
+      super$initialize(xml, element = private$xmlElement, wrap = TRUE)
       if(is.null(xml)){
         if(!is(sfg, c("sfg","XY","LINESTRING"))) stop("Input 'sfg' object should be a 'linestring'")
         m <- as.matrix(sfg)
