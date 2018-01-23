@@ -3,6 +3,9 @@ language: R
 sudo: required
 cache: packages
 
+apt_packages:
+  - libudunits2-dev
+
 before_install:
   - sudo apt-get install -y libxml2
   - sudo apt-get install libproj-dev libgeos++-dev
