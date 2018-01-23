@@ -1,0 +1,33 @@
+#' GMLAbstractGeometricAggregate
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO GML Geometric Aggregate
+#' @return Object of \code{\link{R6Class}} for modelling an GML abstract Geometric Aggregate
+#' @format \code{\link{R6Class}} object.
+#'
+#' @section Methods:
+#' \describe{
+#'  \item{\code{new(xml, element, attrs, defaults)}}{
+#'    This method is used to instantiate a GML abstract Geometric aggregate
+#'  }
+#' }
+#' 
+#' @note Class used internally by geometa
+#' 
+#' @references 
+#'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
+#'   http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32554 
+#'   
+#'   OGC Geography Markup Language. http://www.opengeospatial.org/standards/gml
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
+GMLAbstractGeometricAggregate <- R6Class("GMLAbstractGeometricAggregate",
+ inherit = GMLAbstractGeometry,
+ private = list(
+   xmlElement = "AbstractGeometricAggregate",
+   xmlNamespacePrefix = "GML"
+ )                     
+)
