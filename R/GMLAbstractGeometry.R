@@ -34,10 +34,10 @@ GMLAbstractGeometry <- R6Class("GMLAbstractGeometry",
 
 GMLAbstractGeometry$fromSimpleFeatureGeometry = function(sfg){
   if(!is(sfg, "sfg")) stop("Input 'sfg' should be a of class 'sfg' (Simple Feature Geometry)")
-  newvalue <- switch(class(value)[2],
-                     "POINT" = GMLPoint$new(sfg=value),
-                     "LINESTRING" = GMLLineString$new(sfg=value),
-                     "POLYGON" = GMLPolygon$new(sfg=value)
+  newvalue <- switch(class(sfg)[2],
+                     "POINT" = GMLPoint$new(sfg=sfg),
+                     "LINESTRING" = GMLLineString$new(sfg=sfg),
+                     "POLYGON" = GMLPolygon$new(sfg=sfg)
   )
   return(newvalue)
 }

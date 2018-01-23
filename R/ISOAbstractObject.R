@@ -343,12 +343,22 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }
         }else{
           if(nsPrefix == "gml"){
-            gmlElem <- GMLElement$new(element = fieldName)
-            gmlElem$decode(xml = childElement)
-            if(is(self[[fieldName]], "list")){
-              self[[fieldName]] <- c(self[[fieldName]], gmlElem)
+            if(inherits(self,"GMLAbstractRing")){
+              value <- xmlValue(child)
+              if(value=="") value <- NA
+              if(!is.na(value)){
+                values <- as.numeric(unlist(strsplit(value," ")))
+                m.values <- matrix(values, length(values)/2, 2, byrow = TRUE)
+                self[[fieldName]] <- m.values
+              }
             }else{
-              self[[fieldName]] <- gmlElem
+              gmlElem <- GMLElement$new(element = fieldName)
+              gmlElem$decode(xml = childElement)
+              if(is(self[[fieldName]], "list")){
+                self[[fieldName]] <- c(self[[fieldName]], gmlElem)
+              }else{
+                self[[fieldName]] <- gmlElem
+              }
             }
           }else{
             value <- xmlValue(child)
