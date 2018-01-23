@@ -376,7 +376,14 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     
     #encode
     encode = function(addNS = TRUE, validate = TRUE, strict = FALSE){
-
+      
+      #management of GML ids
+      if(addNS) .geometa.gml$serialId <- 1L
+      if(inherits(self, "GMLAbstractGML")){
+        self$setId(paste0("ID",.geometa.gml$serialId),TRUE)
+        .geometa.gml$serialId <- .geometa.gml$serialId+1
+      }
+      
       #list of fields to encode as XML
       fields <- rev(names(self))
       

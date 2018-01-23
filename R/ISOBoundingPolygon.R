@@ -41,7 +41,6 @@ ISOBoundingPolygon <- R6Class("ISOBoundingPolygon",
       if(!inherits(polygon, "GMLAbstractGeometricPrimitive")){
         stop("Input is not a geometric primitive")
       }
-      polygon$setId(paste0("P",(length(self$polygon)+1)), TRUE)
       return(self$addListElement("polygon", polygon))
     },
     

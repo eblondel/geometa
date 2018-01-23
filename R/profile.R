@@ -18,4 +18,8 @@
   #set ISO codelists
   setISOCodelists()
   
+  #Auto serial GML Id variable
+  assign(".geometa.gml", new.env(), envir = asNamespace(pkgname))
+  .geometa.gml$serialId <- 1L
+  
 } # nocov end
