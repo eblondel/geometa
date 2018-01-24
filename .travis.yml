@@ -25,6 +25,7 @@ before_install:
   - sudo make install
   - sudo ldconfig
   - sudo apt-get install texlive-latex-recommended
+  - cd ..
 
 r:
   - oldrel
