@@ -14,9 +14,6 @@
 #'  \item{\code{new(xml, defaults)}}{
 #'    This method is used to instantiate a GML Definition
 #'  }
-#'  \item{\code{setId(id)}}{
-#'    Sets the id
-#'  }
 #'  \item{\code{addRemark(remark)}}{
 #'    Adds a remark
 #'  }
@@ -41,7 +38,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 GMLDefinition <- R6Class("GMLDefinition",
-  inherit = GMLElement,
+  inherit = GMLAbstractGML,
   private = list(
     xmlElement = "Definition",
     xmlNamespacePrefix = "GML"
@@ -49,11 +46,8 @@ GMLDefinition <- R6Class("GMLDefinition",
   public = list(
     #+ remarks [0..*]: character
     remarks = list(),
-    initialize = function(xml = NULL, defaults = list(), id = NA){
+    initialize = function(xml = NULL, defaults = list()){
       super$initialize(xml, element = private$xmlElement, defaults)
-      if(is.null(xml)){
-        self$setId(id, addNS = TRUE)
-      }
     },
     
     #addRemark

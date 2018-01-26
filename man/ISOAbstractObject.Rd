@@ -53,12 +53,17 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{decode(xml)}}{
    Decodes a ISOMetadata* R6 object from XML representation
  }
- \item{\code{encode(addNS, validate, strict)}}{
+ \item{\code{encode(addNS, validate, strict, resetSerialID, setSerialID)}}{
    Encodes a ISOMetadata* R6 object to XML representation. By default, namespace
    definition will be added to XML root (\code{addNS = TRUE}), and validation
    of object will be performed (\code{validate = TRUE}) prior to its XML encoding.
    The argument \code{strict} allows to stop the encoding in case object is not
-   valid, with a default value set to \code{FALSE}.
+   valid, with a default value set to \code{FALSE}. The argument \code{setSerialID}
+   is used by \pkg{geometa} to generate automatically serial IDs associated to
+   XML elements, in particular for GML, default value is \code{TRUE} (recommended value).
+   The argument \code{resetSerialID} is used by \pkg{geometa} for reseting mandatory IDs
+   associated to XML elements, such as GML objects, default value is \code{TRUE} 
+   (recommended value).
  }
  \item{\code{validate(xml, strict)}}{
    Validates the encoded XML against ISO 19139 XML schemas. If \code{strict} is

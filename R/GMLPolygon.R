@@ -33,7 +33,6 @@ GMLPolygon <- R6Class("GMLPolygon",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
-    attrs = list("gml:id" = NA),
     exterior = NA,
     interior = list(),
     initialize = function(xml = NULL, sfg){

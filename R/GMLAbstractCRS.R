@@ -41,7 +41,7 @@ GMLAbstractCRS <- R6Class("GMLAbstractCRS",
      #+ scope [1..*]: character
      scope = list(),
      
-     initialize = function(xml = NULL, defaults = list(), id = NA){
+     initialize = function(xml = NULL, defaults = list(), id = NULL){
        super$initialize(xml = xml, defaults = defaults)
        if(is.null(xml)){
          self$setId(id, addNS = TRUE)

@@ -59,7 +59,7 @@ GMLAbstractCoordinateOperation <- R6Class("GMLAbstractCoordinateOperation",
      #+ targetCRS [0..1]: subclass of GMLAbstractCRS
      targetCRS = NULL,
      
-     initialize = function(xml = NULL, defaults = list(), id = NA){
+     initialize = function(xml = NULL, defaults = list(), id = NULL){
        super$initialize(xml = xml, defaults = defaults)
        if(is.null(xml)){
          self$setId(id, addNS = TRUE)

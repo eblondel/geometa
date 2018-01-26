@@ -33,7 +33,6 @@ GMLPoint <- R6Class("GMLPoint",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     attrs = list("gml:id" = NA),
      pos = matrix(NA_real_, 1, 2),
      initialize = function(xml = NULL, sfg){
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)

@@ -60,7 +60,7 @@ GMLConventionalUnit <- R6Class("GMLConventionalUnit",
     roughConversionToPreferredUnit = NULL,
     #+ derivationUnitTerm [1..*]: character
     derivationUnitTerm = NULL,
-    initialize = function(xml = NULL, defaults = list(), id = NA){
+    initialize = function(xml = NULL, defaults = list(), id = NULL){
       super$initialize(xml, defaults)
       if(is.null(xml)){
         self$setId(id, addNS = TRUE)

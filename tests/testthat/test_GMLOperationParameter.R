@@ -58,7 +58,7 @@ test_that("GMLOperationParameterGroup",{
   gml$setMinimumOccurs(2L)
   gml$setMaximumOccurs(4L)
   
-  param1 <- GMLOperationParameter$new(id = "ID1")
+  param1 <- GMLOperationParameter$new()
   param1$setDescriptionReference("someref")
   param1$setIdentifier("identifier", "codespace")
   param1$addName("name1", "codespace")
@@ -66,11 +66,11 @@ test_that("GMLOperationParameterGroup",{
   param1$setMinimumOccurs(2L)
   gml$addParameter(param1)
   
-  param2 <- GMLOperationParameter$new(id = "ID2")
+  param2 <- GMLOperationParameter$new()
   param2$setDescriptionReference("someref")
   param2$setIdentifier("identifier", "codespace")
-  param2$addName("name1", "codespace")
-  param2$addName("name2", "codespace")
+  param2$addName("name3", "codespace")
+  param2$addName("name4", "codespace")
   param2$setMinimumOccurs(2L)
   gml$addParameter(param2)
   

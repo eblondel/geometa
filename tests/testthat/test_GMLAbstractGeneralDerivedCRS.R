@@ -12,7 +12,7 @@ context("GMLAbstractGeneralDerivedCRS")
 test_that("encoding",{
   
   #encoding
-  gml <- GMLAbstractGeneralDerivedCRS$new(id = "ID")
+  gml <- GMLAbstractGeneralDerivedCRS$new()
   gml$setDescriptionReference("someref")
   gml$setIdentifier("test", "codespace")
   gml$addScope("somescope")

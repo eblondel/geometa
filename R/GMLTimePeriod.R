@@ -50,7 +50,6 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
-    attrs = list("gml:id" = NA),
     #+ beginPosition [1]: 'POSIXct','POSIXt'
     beginPosition = NULL,
     #+ endPosition [1]: 'POSIXct','POSIXt'

@@ -52,7 +52,7 @@ GMLUnitDefinition <- R6Class("GMLUnitDefinition",
      quantityTypeReference = NULL,
      #+ catalogSymbol [0..1]: character
      catalogSymbol = NULL,
-     initialize = function(xml = NULL, defaults = list(), id = NA){
+     initialize = function(xml = NULL, defaults = list(), id = NULL){
        super$initialize(xml, defaults)
        if(is.null(xml)){
          self$setId(id, addNS = TRUE)

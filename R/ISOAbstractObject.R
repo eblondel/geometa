@@ -43,12 +43,17 @@
 #'  \item{\code{decode(xml)}}{
 #'    Decodes a ISOMetadata* R6 object from XML representation
 #'  }
-#'  \item{\code{encode(addNS, validate, strict)}}{
+#'  \item{\code{encode(addNS, validate, strict, resetSerialID, setSerialID)}}{
 #'    Encodes a ISOMetadata* R6 object to XML representation. By default, namespace
 #'    definition will be added to XML root (\code{addNS = TRUE}), and validation
 #'    of object will be performed (\code{validate = TRUE}) prior to its XML encoding.
 #'    The argument \code{strict} allows to stop the encoding in case object is not
-#'    valid, with a default value set to \code{FALSE}.
+#'    valid, with a default value set to \code{FALSE}. The argument \code{setSerialID}
+#'    is used by \pkg{geometa} to generate automatically serial IDs associated to
+#'    XML elements, in particular for GML, default value is \code{TRUE} (recommended value).
+#'    The argument \code{resetSerialID} is used by \pkg{geometa} for reseting mandatory IDs
+#'    associated to XML elements, such as GML objects, default value is \code{TRUE} 
+#'    (recommended value).
 #'  }
 #'  \item{\code{validate(xml, strict)}}{
 #'    Validates the encoded XML against ISO 19139 XML schemas. If \code{strict} is
@@ -376,14 +381,18 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     },
     
     #encode
-    encode = function(addNS = TRUE, validate = TRUE, strict = FALSE){
+    encode = function(addNS = TRUE, validate = TRUE, strict = FALSE,
+                      resetSerialID = TRUE, setSerialID = TRUE){
       
       #management of GML ids
-      if(addNS) .geometa.gml$serialId <- 1L
-      if(inherits(self, "GMLAbstractGML")){
-        if(is.null(self$attrs[["gml:id"]])){
-          self$setId(paste0("ID",.geometa.gml$serialId),TRUE)
-          .geometa.gml$serialId <- .geometa.gml$serialId+1
+      if(resetSerialID) .geometa.gml$serialId <- 1L
+      if(setSerialID){
+        if(inherits(self, "GMLAbstractGML")){
+          if(is.null(self$attrs[["gml:id"]])){
+            serialId <- paste0("ID",.geometa.gml$serialId)
+            self$setId(serialId,TRUE)
+            .geometa.gml$serialId <- .geometa.gml$serialId+1
+          }
         }
       }
       
@@ -395,6 +404,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       rootXMLAttrs <- list()
       if("attrs" %in% fields){
         rootXMLAttrs <- self[["attrs"]]
+        rootXMLAttrs <- rootXMLAttrs[!is.na(rootXMLAttrs)]
       }
       
       #fields
@@ -447,7 +457,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         namespaceId <- names(ns)
         if(!is.null(fieldObj)){
           if(is(fieldObj, "ISOAbstractObject")){
-            fieldObjXml <- fieldObj$encode(addNS = FALSE, validate = FALSE)
+            fieldObjXml <- fieldObj$encode(addNS = FALSE, validate = FALSE,
+                                           resetSerialID = FALSE, setSerialID = setSerialID)
             if(is(fieldObj, "ISOElementSequence")){
               fieldObjXml.children <- xmlChildren(fieldObjXml)
               if(self$wrap){
@@ -467,7 +478,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               #  return(which(fieldObjNames == name) < which(fieldObjNames == ".__enclos_env__"))
               #})]
             }else{
-              if(self$wrap){
+              if(fieldObj$wrap){
                 wrapperNode <- xmlOutputDOM(
                   tag = field,
                   nameSpace = namespaceId
@@ -486,7 +497,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               }else{
                 nodeValue <- self$wrapBaseElement(field, item)
               }
-              nodeValueXml <- nodeValue$encode(addNS = FALSE, validate = FALSE)
+              nodeValueXml <- nodeValue$encode(addNS = FALSE, validate = FALSE,
+                                               resetSerialID = FALSE, setSerialID = setSerialID)
               if(is(item, "ISOElementSequence")){
                 nodeValueXml.children <- xmlChildren(nodeValueXml)
                 #if(self$wrap){
@@ -544,10 +556,12 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                       tag = field,
                       nameSpace = namespaceId
                     )
-                    wrapperNode$addNode(dataObj$encode(addNS = FALSE, validate = FALSE))
+                    wrapperNode$addNode(dataObj$encode(addNS = FALSE, validate = FALSE,
+                                                       resetSerialID = FALSE, setSerialID = setSerialID))
                     rootXML$addNode(wrapperNode$value())
                   }else{
-                    rootXML$addNode(dataObj$encode(addNS = FALSE, validate = FALSE))
+                    rootXML$addNode(dataObj$encode(addNS = FALSE, validate = FALSE,
+                                                   resetSerialID = FALSE, setSerialID = setSerialID))
                   }
                 }
               }
@@ -877,7 +891,8 @@ ISOAbstractObject$getISOClassByNode = function(node){
 ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
   text1 <- NULL
   if(is(metadataElement1, "ISOAbstractObject")){
-    xml1 <-metadataElement1$encode(addNS = TRUE, validate = FALSE)
+    xml1 <-metadataElement1$encode(addNS = TRUE, validate = FALSE,
+                                   resetSerialID = FALSE, setSerialID = FALSE)
     if(metadataElement1$isDocument()){
       content1 <- as(xml1, "character")
       content1 <- gsub("<!--.*?-->", "", content1)
@@ -891,7 +906,7 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
   }
   text2 <- NULL
   if(is(metadataElement2, "ISOAbstractObject")){
-    xml2 <- metadataElement2$encode(addNS = TRUE, validate = FALSE)
+    xml2 <- metadataElement2$encode(addNS = TRUE, validate = FALSE, setSerialID = FALSE)
     if(metadataElement2$isDocument()){
       content2 <- as(xml2, "character")
       content2 <- gsub("<!--.*?-->", "", content2)

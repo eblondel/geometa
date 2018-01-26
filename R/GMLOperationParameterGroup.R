@@ -70,7 +70,7 @@ GMLOperationParameterGroup <- R6Class("GMLOperationParameterGroup",
        if(!inherits(param, "GMLAbstractGeneralOperationParameter")){
          stop("The argument value should be an object of class 'GMLOperationParameter' or 'GMLOperationParameterGroup'")
        }
-       return(self$addListElement("parameter", GMLElement$create("parameter", value = param)))
+       return(self$addListElement("parameter", param))
      },
      
      #delParameter
@@ -78,7 +78,7 @@ GMLOperationParameterGroup <- R6Class("GMLOperationParameterGroup",
        if(!inherits(param, "GMLAbstractGeneralOperationParameter")){
          stop("The argument value should be an object of class 'GMLOperationParameter' or 'GMLOperationParameterGroup'")
        }
-       return(self$delListElement("parameter", GMLElement$create("parameter", value = param)))
+       return(self$delListElement("parameter", param))
      }
      
    )

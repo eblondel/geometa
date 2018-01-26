@@ -41,7 +41,7 @@ GMLAbstractCoordinateSystem <- R6Class("GMLAbstractCoordinateSystem",
     #+ axis [1..*]: GMLCoordinateSystemAxis
     axis = list(),
     
-    initialize = function(xml = NULL, defaults = list(), id = NA){
+    initialize = function(xml = NULL, defaults = list(), id = NULL){
       super$initialize(xml = xml, defaults = defaults)
       if(is.null(xml)){
         self$setId(id, addNS = TRUE)
@@ -53,8 +53,7 @@ GMLAbstractCoordinateSystem <- R6Class("GMLAbstractCoordinateSystem",
       if(!is(axis, "GMLCoordinateSystemAxis")){
         stop("The argument value should be an object of class 'GMLCoordinateSystemAxis")
       }
-      gmlElem <- GMLElement$create("axis", value = axis)
-      return(self$addListElement("axis", gmlElem))
+      return(self$addListElement("axis", axis))
     },
     
     #delAxis
@@ -62,8 +61,7 @@ GMLAbstractCoordinateSystem <- R6Class("GMLAbstractCoordinateSystem",
       if(!is(axis, "GMLCoordinateSystemAxis")){
         stop("The argument value should be an object of class 'GMLCoordinateSystemAxis")
       }
-      gmlElem <- GMLElement$create("axis", value = axis)
-      return(self$delListElement("axis", gmlElem))
+      return(self$delListElement("axis", axis))
     }
   )
 )

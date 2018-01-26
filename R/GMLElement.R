@@ -30,7 +30,7 @@ GMLElement <- R6Class("GMLElement",
     ),
     public = list(
       initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list()){
-        super$initialize(xml = xml, element = element, attrs = attrs, defaults = defaults)
+        super$initialize(xml = xml, element = element, attrs = attrs, defaults = defaults, wrap = FALSE)
       },
       
       decode = function(xml){

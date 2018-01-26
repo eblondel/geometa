@@ -26,9 +26,6 @@ GMLDefinition
  \item{\code{new(xml, defaults)}}{
    This method is used to instantiate a GML Definition
  }
- \item{\code{setId(id)}}{
-   Sets the id
- }
  \item{\code{addRemark(remark)}}{
    Adds a remark
  }

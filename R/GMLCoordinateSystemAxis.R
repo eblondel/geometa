@@ -62,7 +62,7 @@ GMLCoordinateSystemAxis <- R6Class("GMLCoordinateSystemAxis",
      #+ rangeMeaning [0..1]: character (with codeSpace)
      rangeMeaning = NA,
      
-     initialize = function(xml = NULL, defaults = list(), id = NA, uom = NA){
+     initialize = function(xml = NULL, defaults = list(), id = NULL, uom = NA){
        super$initialize(xml = xml, defaults = defaults)
        if(is.null(xml)){
          self$setId(id, addNS = TRUE)
