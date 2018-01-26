@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 GMLElement <- R6Class("GMLElement",
-    inherit = GMLAbstractGML,
+    inherit = GMLAbstractObject,
     lock_objects = FALSE,
     private = list(
       xmlElement = "Element",
