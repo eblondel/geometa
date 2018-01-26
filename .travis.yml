@@ -7,6 +7,7 @@ apt_packages:
   - libudunits2-dev
 
 before_install:
+  - export CURWD=`pwd`
   - sudo apt-get install -y libxml2
   - sudo apt-get install libproj-dev libgeos++-dev
   - cd
@@ -25,7 +26,7 @@ before_install:
   - sudo make install
   - sudo ldconfig
   - sudo apt-get install texlive-latex-recommended
-  - cd eblondel/geometa
+  - cd $CURWD
 
 r:
   - oldrel
