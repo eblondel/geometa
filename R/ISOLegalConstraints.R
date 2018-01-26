@@ -113,7 +113,7 @@ ISOLegalConstraints <- R6Class("ISOLegalConstraints",
     
     #addOtherConstraint
     addOtherConstraint = function(constraint){
-      return(self$delListElement("otherConstraints", constraint))
+      return(self$addListElement("otherConstraints", constraint))
     },
     
     #delOtherConstraint
