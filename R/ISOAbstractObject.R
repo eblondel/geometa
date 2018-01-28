@@ -545,6 +545,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               rootXML$addNode(emptyNode$value())
             }else{
               if(field == "value"){
+                if(is.logical(fieldObj)) fieldObj <- tolower(as.character(is.logical(fieldObj)))
                 fieldObj <- private$fromComplexTypes(fieldObj)
                 rootXML$addNode(xmlTextNode(fieldObj))
               }else{

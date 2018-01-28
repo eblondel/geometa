@@ -45,10 +45,10 @@ GMLElement <- R6Class("GMLElement",
         #set attrs if any
         self$attrs <- as.list(xmlAttrs(xml, TRUE, FALSE))
         
-        
         fieldValue <- xmlValue(xml, recursive = FALSE)
         if(length(fieldValue)>0){
           #set value if any
+          if(fieldValue %in% c("true","false")) fieldValue <- as.logical(fieldValue)
           fieldValue <- private$toComplexTypes(fieldValue)
           if(!is.na(fieldValue)) self$setValue(fieldValue)
         }else{
