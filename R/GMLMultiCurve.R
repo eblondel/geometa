@@ -63,7 +63,7 @@ GMLMultiCurve <- R6Class("GMLMultiCurve",
        }
        added = self$addListElement("curveMember", curve)
        if(added){
-         self$attrs <- curve$attrs
+         self$attrs <- curve$attrs[names(curve$attrs)!="gml:id"]
        }
        return(added)
      },

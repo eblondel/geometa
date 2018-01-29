@@ -36,21 +36,21 @@ ISOBoundingPolygon <- R6Class("ISOBoundingPolygon",
     },
     
     #addPolygon
-    addPolygon = function(sfg){
-      polygon <- GMLAbstractGeometry$fromSimpleFeatureGeometry(sfg)
-      if(!inherits(polygon, "GMLAbstractGeometricPrimitive")){
-        stop("Input is not a geometric primitive")
+    addPolygon = function(x){
+      if(is(x,"sfg")) x <- GMLAbstractGeometry$fromSimpleFeatureGeometry(x)
+      if(!inherits(x, "GMLAbstractGeometry")){
+        stop("Input is not a geometry")
       }
-      return(self$addListElement("polygon", polygon))
+      return(self$addListElement("polygon", x))
     },
     
     #delPolygon
-    delPolygon = function(sfg){
-      polygon <- GMLAbstractGeometry$fromSimpleFeatureGeometry(sfg)
-      if(!inherits(polygon, "GMLAbstractGeometricPrimitive")){
-        stop("Input is not a geometric primitive")
+    delPolygon = function(x){
+      if(is(x,"sfg")) x <- GMLAbstractGeometry$fromSimpleFeatureGeometry(x)
+      if(!inherits(x, "GMLAbstractGeometry")){
+        stop("Input is not a geometry")
       }
-      return(self$delListElement("polygon", polygon))
+      return(self$delListElement("polygon", x))
     }
   )                                          
 )

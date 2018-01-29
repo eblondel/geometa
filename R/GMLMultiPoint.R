@@ -62,7 +62,7 @@ GMLMultiPoint <- R6Class("GMLMultiPoint",
        }
        added = self$addListElement("pointMember", point)
        if(added){
-         self$attrs <- point$attrs
+         self$attrs <- point$attrs[names(point$attrs)!="gml:id"]
        }
        return(added)
      },

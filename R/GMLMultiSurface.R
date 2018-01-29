@@ -63,7 +63,7 @@ GMLMultiSurface <- R6Class("GMLMultiSurface",
       }
       added = self$addListElement("surfaceMember", surface)
       if(added){
-        self$attrs <- surface$attrs
+        self$attrs <- surface$attrs[names(surface$attrs)!="gml:id"]
       }
       return(added)
     },
