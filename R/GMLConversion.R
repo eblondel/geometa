@@ -62,18 +62,18 @@ GMLConversion <- R6Class("GMLConversion",
       
       #addParameterValue
       addParameterValue = function(paramValue){
-        if(!is(paramValue, "GMLParameterValue")){
-          stop("The argument value should be an object of class 'GMLParameterValue'")
+        if(!inherits(paramValue, "GMLAbstractGeneralParameterValue")){
+          stop("The argument value should be an object of class 'GMLParameterValue' or 'GMLParameterValueGroup'")
         }
-        return(self$addListElement("parameterValue", GMLElement$create("parameterValue", value = paramValue)))
+        return(self$addListElement("parameterValue", paramValue))
       },
       
       #delParameterValue
       delParameterValue = function(paramValue){
-        if(!is(paramValue, "GMLParameterValue")){
-          stop("The argument value should be an object of class 'GMLParameterValue'")
+        if(!inherits(paramValue, "GMLAbstractGeneralParameterValue")){
+          stop("The argument value should be an object of class 'GMLParameterValue' or 'GMLParameterValueGroup'")
         }
-        return(self$delListElement("parameterValue", GMLElement$create("parameterValue", value = paramValue)))
+        return(self$delListElement("parameterValue", paramValue))
       }
       
     )

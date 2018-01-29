@@ -17,7 +17,7 @@ GMLOperationMethod
 \section{Fields}{
 
 \describe{
-\item{\code{targetDimensions}}{}
+\item{\code{parameter}}{}
 }}
 
 \section{Inherited methods}{
@@ -35,6 +35,9 @@ GMLOperationMethod
  }
  \item{\code{setFormulaCitation(citation)}}{
    Sets the formula citation, object of class \code{ISOCitation}
+ }
+ \item{\code{setFormula(formula)}}{
+   Sets a formula, object of class \code{character}
  }
  \item{\code{setSourceDimensions(value)}}{
    Sets the number of source dimensions, object of class \code{integer}

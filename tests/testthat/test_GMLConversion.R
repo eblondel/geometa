@@ -1,0 +1,108 @@
+# test_GMLConversion.R
+# Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
+#
+# Description: Unit tests for GMLConversion.R
+#=======================
+require(geometa, quietly = TRUE)
+require(testthat)
+require(XML)
+
+context("GMLConversion")
+
+test_that("encoding",{
+  #encoding
+  pv1 <- GMLParameterValue$new()
+  pv1$setValue(1.0, "m")
+  op <- GMLOperationParameter$new()
+  op$setDescriptionReference("someref")
+  op$setIdentifier("identifier", "codespace")
+  op$addName("name1", "codespace")
+  op$addName("name2", "codespace")
+  op$setMinimumOccurs(2L)
+  pv1$setOperationParameter(op)
+  
+  pv2 <- GMLParameterValue$new()
+  pv2$setValue(2.0, "m")
+  op2 <- GMLOperationParameter$new()
+  op2$setDescriptionReference("someref")
+  op2$setIdentifier("identifier", "codespace")
+  op2$addName("name1", "codespace")
+  op2$addName("name2", "codespace")
+  op2$setMinimumOccurs(2L)
+  pv2$setOperationParameter(op2)
+  
+  pvg <- GMLParameterValueGroup$new()
+  pvg$addParameterValue(pv1)
+  pvg$addParameterValue(pv2)
+  
+  opg <- GMLOperationParameterGroup$new()
+  opg$setDescriptionReference("someref")
+  opg$setIdentifier("identifier", "codespace")
+  opg$addName("name1", "codespace")
+  opg$addName("name2", "codespace")
+  opg$setMinimumOccurs(2L)
+  opg$setMaximumOccurs(4L)
+  pvg$setOperationParameterGroup(opg)
+  
+  gml <- GMLConversion$new()
+  gml$addParameterValue(pvg)
+  
+  method <- GMLOperationMethod$new()
+  method$setIdentifier("method","codespace")
+  method$setSourceDimensions(1)
+  method$setTargetDimensions(1)
+  
+  cit <- ISOCitation$new()
+  cit$setTitle("sometitle")
+  d <- ISODate$new()
+  d$setDate(ISOdate(2015, 1, 1, 1))
+  d$setDateType("publication")
+  cit$addDate(d)
+  expect_error(cit$addDate("wrong date type"))
+  cit$setEdition("1.0")
+  cit$setEditionDate(ISOdate(2015, 1, 1, 1))
+  expect_error(cit$setEditionDate("wrong date type"))
+  cit$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+  expect_error(cit$setIdentifier("wrong identifier type"))
+  cit$setPresentationForm("mapDigital")
+  
+  #adding a cited responsible party
+  rp <- ISOResponsibleParty$new()
+  rp$setIndividualName("someone")
+  rp$setOrganisationName("somewhere")
+  rp$setPositionName("someposition")
+  rp$setRole("pointOfContact")
+  contact <- ISOContact$new()
+  phone <- ISOTelephone$new()
+  phone$setVoice("myphonenumber")
+  phone$setFacsimile("myfacsimile")
+  contact$setPhone(phone)
+  address <- ISOAddress$new()
+  address$setDeliveryPoint("theaddress")
+  address$setCity("thecity")
+  address$setPostalCode("111")
+  address$setCountry("France")
+  address$setEmail("someone@theorg.org")
+  contact$setAddress(address)
+  res <- ISOOnlineResource$new()
+  res$setLinkage("http://www.somewhereovertheweb.org")
+  res$setName("somename")
+  contact$setOnlineResource(res)
+  rp$setContactInfo(contact)
+  cit$setCitedResponsibleParty(rp)
+  method$setFormulaCitation(cit)
+  
+  gml$setIdentifier("conversion", "codespace")
+  extent <- ISOExtent$new()
+  bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
+  extent$setGeographicElement(bbox)
+  gml$setDomainOfValidity(extent)
+  gml$addScope("scope")
+  xml <- gml$encode()
+  expect_is(xml, "XMLInternalNode")
+  #decoding
+  gml2 <- GMLConversion$new(xml = xml)
+  xml2 <- gml2$encode()
+  #object identity
+  expect_true(ISOAbstractObject$compare(gml, gml2))
+})

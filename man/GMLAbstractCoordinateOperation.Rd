@@ -26,6 +26,15 @@ GMLAbstractCoordinateOperation
  \item{\code{new(xml, defaults, id)}}{
    This method is used to instantiate a GML Abstract CRS
  }
+ \item{\code{setDomainOfValidity(domainOfValidity)}}{
+   Sets the domain of validity
+ }
+ \item{\code{addScope(scope)}}{
+   Adds a scope
+ }
+ \item{\code{delScope(scope)}}{
+   Deletes a scope
+ }
  \item{\code{setVersion(version)}}{
    Sets version
  }

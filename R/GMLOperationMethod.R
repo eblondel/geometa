@@ -8,8 +8,10 @@
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field formulaCitation
+#' @field formula
 #' @field sourceDimensions
 #' @field targetDimensions
+#' @field parameter
 #'
 #' @section Inherited methods:
 #' \describe{
@@ -23,6 +25,9 @@
 #'  }
 #'  \item{\code{setFormulaCitation(citation)}}{
 #'    Sets the formula citation, object of class \code{ISOCitation}
+#'  }
+#'  \item{\code{setFormula(formula)}}{
+#'    Sets a formula, object of class \code{character}
 #'  }
 #'  \item{\code{setSourceDimensions(value)}}{
 #'    Sets the number of source dimensions, object of class \code{integer}
@@ -56,8 +61,10 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
   ),
   public = list(
    
-    #+ formulaCitation [1..1]: ISOCitation
+    #+ formulaCitation [1..1]: ISOCitation, or use forula
     formulaCitation = NA,
+    #+ formula [1..1]: character
+    formula = NULL,
     #+ sourceDimensions [0..1]: integer
     sourceDimensions = NULL,
     #+ targetDimensions [0..1]: integer
@@ -70,7 +77,15 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
       if(!is(citation, "ISOCitation")){
         stop("The argument value should be an object of class 'ISOCitation'")
       }
-      self$formulaCitation <- GMLElement$create("formulaCitation", value = citation)
+      self$formulaCitation <- citation
+    },
+    
+    #setFormula
+    setFormula = function(formula){
+      if(!is(formula, "character")) stop("Input object should be of class 'character'")
+      formulaElem <- GMLElement$new(element = "formula")
+      formulaElem$setValue(formula)
+      self$formula <- formulaElem
     },
     
     #setSourceDimensions
@@ -100,7 +115,7 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
       if(!inherits(param, "GMLAbstractGeneralOperationParameter")){
         stop("The argument value should be an object of class 'GMLOperationParameter' or 'GMLOperationParameterGroup'")
       }
-      return(self$addListElement("parameter", GMLElement$create("parameter", value = param)))
+      return(self$addListElement("parameter", param))
     },
     
     #delParameter
@@ -108,7 +123,7 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
       if(!inherits(param, "GMLAbstractGeneralOperationParameter")){
         stop("The argument value should be an object of class 'GMLOperationParameter' or 'GMLOperationParameterGroup'")
       }
-      return(self$delListElement("parameter", GMLElement$create("parameter", value = param)))
+      return(self$delListElement("parameter", param))
     }
     
   )

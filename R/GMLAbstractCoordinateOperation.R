@@ -17,6 +17,15 @@
 #'  \item{\code{new(xml, defaults, id)}}{
 #'    This method is used to instantiate a GML Abstract CRS
 #'  }
+#'  \item{\code{setDomainOfValidity(domainOfValidity)}}{
+#'    Sets the domain of validity
+#'  }
+#'  \item{\code{addScope(scope)}}{
+#'    Adds a scope
+#'  }
+#'  \item{\code{delScope(scope)}}{
+#'    Deletes a scope
+#'  }
 #'  \item{\code{setVersion(version)}}{
 #'    Sets version
 #'  }
@@ -49,7 +58,10 @@ GMLAbstractCoordinateOperation <- R6Class("GMLAbstractCoordinateOperation",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     
+     #+ domainOfValidity [0..1]: character
+     domainOfValidity = NULL,
+     #+ scope [1..*]: character
+     scope = list(),
      #+ operationVersion [0..1]: character
      operationVersion = NULL,
      #+ coordinateOperationAccuracy [0..1]: ISOPositionalAccuracy 
@@ -64,6 +76,22 @@ GMLAbstractCoordinateOperation <- R6Class("GMLAbstractCoordinateOperation",
        if(is.null(xml)){
          self$setId(id, addNS = TRUE)
        }
+     },
+     
+     #setDomainOfValidity
+     setDomainOfValidity = function(domainOfValidity){
+       if(!is(domainOfValidity, "ISOExtent")) stop("Input should be an object of class 'ISOExtent'")
+       self$domainOfValidity <- domainOfValidity
+     },
+     
+     #addScope
+     addScope = function(scope){
+       return(self$addListElement("scope", GMLElement$create("scope", value = scope)))
+     },
+     
+     #delScope
+     delScope = function(scope){
+       return(self$delListElement("scope", GMLElement$create("scope", value = scope)))
      },
      
      #setVersion
