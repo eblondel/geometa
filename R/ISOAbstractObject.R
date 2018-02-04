@@ -124,7 +124,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
   private = list(
     xmlElement = "AbstractObject",
     xmlNamespacePrefix = "GCO",
-    encoding = options("encoding"),
+    encoding = "UTF-8",
     document = FALSE,
     system_fields = c("wrap", "valueDescription",
                       "element", "namespace", "defaults", "attrs", "printAttrs",
@@ -383,7 +383,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #encode
     encode = function(addNS = TRUE, validate = TRUE, strict = FALSE,
                       resetSerialID = TRUE, setSerialID = TRUE,
-                      encoding = options("encoding")){
+                      encoding = "UTF-8"){
       
       #management of GML ids
       if(resetSerialID) .geometa.gml$serialId <- 1L
