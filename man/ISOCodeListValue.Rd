@@ -31,7 +31,9 @@ Abstract ISO codelist class used internally by geometa
    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The 
    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
    \code{addCodeLisAttrs} is set to \code{FALSE}. The argument \code{setValue}
-   sets the value as node text (defaut is \code{TRUE}).
+   sets the value as node text (defaut is \code{TRUE}). The argument \code{setValueDescription}
+   allows to force having description set as value, default is \code{FALSE} in which case
+   the name will be preferred, and in case no name is provided, code value will be used.
    
  }
  \item{\code{getAcceptedValues()}}{

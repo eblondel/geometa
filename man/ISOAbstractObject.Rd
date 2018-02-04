@@ -53,7 +53,7 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{decode(xml)}}{
    Decodes a ISOMetadata* R6 object from XML representation
  }
- \item{\code{encode(addNS, validate, strict, resetSerialID, setSerialID)}}{
+ \item{\code{encode(addNS, validate, strict, resetSerialID, setSerialID, encoding)}}{
    Encodes a ISOMetadata* R6 object to XML representation. By default, namespace
    definition will be added to XML root (\code{addNS = TRUE}), and validation
    of object will be performed (\code{validate = TRUE}) prior to its XML encoding.

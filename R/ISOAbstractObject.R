@@ -43,7 +43,7 @@
 #'  \item{\code{decode(xml)}}{
 #'    Decodes a ISOMetadata* R6 object from XML representation
 #'  }
-#'  \item{\code{encode(addNS, validate, strict, resetSerialID, setSerialID)}}{
+#'  \item{\code{encode(addNS, validate, strict, resetSerialID, setSerialID, encoding)}}{
 #'    Encodes a ISOMetadata* R6 object to XML representation. By default, namespace
 #'    definition will be added to XML root (\code{addNS = TRUE}), and validation
 #'    of object will be performed (\code{validate = TRUE}) prior to its XML encoding.
@@ -382,7 +382,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     
     #encode
     encode = function(addNS = TRUE, validate = TRUE, strict = FALSE,
-                      resetSerialID = TRUE, setSerialID = TRUE){
+                      resetSerialID = TRUE, setSerialID = TRUE,
+                      encoding = options("encoding")){
       
       #management of GML ids
       if(resetSerialID) .geometa.gml$serialId <- 1L
@@ -586,7 +587,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       if(self$isDocument()){
         outbuf <- xmlOutputBuffer("", header = private$xmlHeader(compliant))
         outbuf$add(as(out, "character"))
-        out <- xmlParse(outbuf$value())
+        out <- xmlParse(outbuf$value(), encoding = encoding)
       }
       
       return(out)

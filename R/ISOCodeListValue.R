@@ -16,7 +16,9 @@
 #'    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The 
 #'    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
 #'    \code{addCodeLisAttrs} is set to \code{FALSE}. The argument \code{setValue}
-#'    sets the value as node text (defaut is \code{TRUE}).
+#'    sets the value as node text (defaut is \code{TRUE}). The argument \code{setValueDescription}
+#'    allows to force having description set as value, default is \code{FALSE} in which case
+#'    the name will be preferred, and in case no name is provided, code value will be used.
 #'    
 #'  }
 #'  \item{\code{getAcceptedValues()}}{
@@ -44,7 +46,8 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
      initialize = function(xml = NULL, id, value, description = NULL,
                            addCodeListAttrs = TRUE,
                            addCodeSpaceAttr = TRUE,
-                           setValue = TRUE){
+                           setValue = TRUE,
+                           setValueDescription = FALSE){
        super$initialize(xml = xml)
        if(!is.null(xml)){
          value <- xmlGetAttr(xml, "codeListValue") #codeListValue should be as attribute
@@ -78,6 +81,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          clValue <- clEntry$value
          clName <- clEntry$name
          clDescription <- ifelse(!is.na(clName), clEntry$name, clEntry$description)
+         if(setValueDescription) clDescription <- clEntry$description
          self$valueDescription <- clDescription
        }
        
@@ -99,6 +103,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          }
          if(setValue){
            self$value <- ifelse(!is.na(clName), clName, clValue)
+           if(setValueDescription) self$value <- clDescription
          }
        }else{
          self$value <- clValue 
