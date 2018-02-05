@@ -59,6 +59,10 @@
 #'    Validates the encoded XML against ISO 19139 XML schemas. If \code{strict} is
 #'    \code{TRUE}, a error will be raised. Default is \code{FALSE}. 
 #'  }
+#'  \item{\code{save(file)}}{
+#'    Saves the current metadata object XML representation to a file. This utility
+#'    ensures proper indentation of XML file produced.
+#'  }
 #'  \item{\code{getNamespaceDefinition(recursive)}}{
 #'    Gets the namespace definition of the current ISO* class. By default, only
 #'    the namespace definition of the current element is retrieved (\code{recursive = FALSE}).
@@ -633,6 +637,11 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         self$INFO(sprintf("Object '%s' is VALID according to ISO 19139 XML schemas!", self$getClassName()))
       }
       return(isValid)
+    },
+    
+    #save
+    save = function(file){
+      return(cat(XML::saveXML(self$encode()), file = file))
     },
     
     #Util & internal methods
