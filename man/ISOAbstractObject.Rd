@@ -86,6 +86,11 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{wrapBaseElement(field, fieldObj)}}{
    Wraps a base element type
  }
+ \item{\code{setIsNull(isNull, reason)}}{
+   Sets the object as null object for the XML. In case \code{isNull} is \code{TRUE},
+   a reason should be specified among values 'inapplicable', 'missing', 'template',
+   'unknown', 'withheld'. By default, the reason is set 'missing'.
+ }
  \item{\code{contains(field, metadataElement)}}{
    Indicates of the present class object contains an metadata element object
    for a particular list-based field.

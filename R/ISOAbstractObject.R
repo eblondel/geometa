@@ -76,6 +76,11 @@
 #'  \item{\code{wrapBaseElement(field, fieldObj)}}{
 #'    Wraps a base element type
 #'  }
+#'  \item{\code{setIsNull(isNull, reason)}}{
+#'    Sets the object as null object for the XML. In case \code{isNull} is \code{TRUE},
+#'    a reason should be specified among values 'inapplicable', 'missing', 'template',
+#'    'unknown', 'withheld'. By default, the reason is set 'missing'.
+#'  }
 #'  \item{\code{contains(field, metadataElement)}}{
 #'    Indicates of the present class object contains an metadata element object
 #'    for a particular list-based field.
@@ -132,7 +137,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     document = FALSE,
     system_fields = c("wrap", "valueDescription",
                       "element", "namespace", "defaults", "attrs", "printAttrs",
-                      "codelistId", "measureType"),
+                      "codelistId", "measureType", "isNull"),
     logger = function(type, text){
       cat(sprintf("[geometa][%s] %s \n", type, text))
     },
@@ -198,6 +203,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     attrs = list(),
     printAttrs = list(),
     value = NULL,
+    isNull = FALSE,
     initialize = function(xml = NULL, element = NULL, namespace = NULL,
                           attrs = list(), defaults = list(),
                           wrap = TRUE){
@@ -390,6 +396,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         }
       }
       self$attrs <- as.list(xmlattrs)
+      if("gco:nilReason" %in% names(xmlattrs)) self$isNull <- TRUE
     },
     
     #encode
@@ -434,22 +441,29 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           nsURI = rootNamespaces
         )
       }else{
+        wrapperAttrs <- NULL
+        if(self$isNull){
+          wrapperAttrs <- self$attrs
+          if(length(wrapperAttrs)>1) wrapperAttrs <- wrapperAttrs[names(wrapperAttrs)!="gco:nilReason"]
+        }
         if(addNS){
           nsdefs <- self$getNamespaceDefinition(recursive = TRUE)
           rootXML <- xmlOutputDOM(
             tag = self$element,
             nameSpace = self$namespace$id,
-            nsURI = nsdefs
+            nsURI = nsdefs,
+            attrs = wrapperAttrs
           )
         }else{
           rootXML <- xmlOutputDOM(
             tag = self$element,
-            nameSpace = self$namespace$id
+            nameSpace = self$namespace$id,
+            attrs = wrapperAttrs
           )
         }
       }
       
-      for(field in fields){
+      if(!self$isNull) for(field in fields){
         fieldObj <- self[[field]]
         
         #default values management
@@ -492,12 +506,19 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               #})]
             }else{
               if(fieldObj$wrap){
+                wrapperAttrs <- NULL
+                if(fieldObj$isNull){
+                  wrapperAttrs <- fieldObj$attrs
+                  if(length(wrapperAttrs)>1) wrapperAttrs <- wrapperAttrs[names(wrapperAttrs)!="gco:nilReason"]
+                }
                 wrapperNode <- xmlOutputDOM(
                   tag = field,
-                  nameSpace = namespaceId
+                  nameSpace = namespaceId,
+                  attrs = wrapperAttrs
                 )
-                wrapperNode$addNode(fieldObjXml)
+                if(!fieldObj$isNull) wrapperNode$addNode(fieldObjXml)
                 rootXML$addNode(wrapperNode$value())
+                
               }else{
                 rootXML$addNode(fieldObjXml)
               }
@@ -516,9 +537,16 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 nodeValueXml.children <- xmlChildren(nodeValueXml)
                 #if(self$wrap){
                 if(nodeValue$wrap){
-                  wrapperNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
-                  for(child in nodeValueXml.children){
-                    wrapperNode$addNode(child)
+                  wrapperAttrs <- NULL
+                  if(nodeValue$isNull){
+                    wrapperAttrs <- nodeValue$attrs
+                    if(length(wrapperAttrs)>1) wrapperAttrs <- wrapperAttrs[names(wrapperAttrs)!="gco:nilReason"]
+                  }
+                  wrapperNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = wrapperAttrs)
+                  if(!nodeValue$isNull){
+                    for(child in nodeValueXml.children){
+                      wrapperNode$addNode(child)
+                    }
                   }
                   rootXML$addNode(wrapperNode$value())
                 }else{
@@ -527,13 +555,18 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   }
                 }
               }else{
-                #if(self$wrap){
                 if(nodeValue$wrap){
+                  wrapperAttrs <- NULL
+                  if(nodeValue$isNull){
+                    wrapperAttrs <- nodeValue$attrs
+                    if(length(wrapperAttrs)>1) wrapperAttrs <- wrapperAttrs[names(wrapperAttrs)!="gco:nilReason"]
+                  }
                   wrapperNode <- xmlOutputDOM(
                     tag = field,
-                    nameSpace = namespaceId
+                    nameSpace = namespaceId,
+                    attrs = wrapperAttrs
                   )
-                  wrapperNode$addNode(nodeValueXml)
+                  if(!nodeValue$isNull) wrapperNode$addNode(nodeValueXml)
                   rootXML$addNode(wrapperNode$value())
                 }else{
                   rootXML$addNode(nodeValueXml)
@@ -554,7 +587,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }else{
             if(length(fieldObj)==0) fieldObj <- NA
             if(is.na(fieldObj)){
-              emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
+              emptyNodeAttrs <- c("gco:nilReason" = "missing")
+              emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = emptyNodeAttrs)
               rootXML$addNode(emptyNode$value())
             }else{
               if(field == "value"){
@@ -563,6 +597,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 rootXML$addNode(xmlTextNode(fieldObj))
               }else{
                 dataObj <- self$wrapBaseElement(field, fieldObj)
+                #TODO TODO TODO
                 if(!is.null(dataObj)){
                   if(dataObj$wrap){
                     #general case of gco wrapper element
@@ -784,6 +819,22 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                         NULL
       )
       return(dataObj)
+    },
+    
+    #setIsNull
+    setIsNull = function(isNull, reason = "missing"){
+      if(isNull){
+        allowedReasons <- c("inapplicable", "missing", "template", "unknown", "withheld")
+        if(!(reason %in% allowedReasons)){
+          stop(sprintf("The reason should be a value among [%s]", paste(allowedReasons, collapse=",")))
+        }
+      }
+      self$isNull <- isNull
+      if(self$isNull){
+        self$setAttr("gco:nilReason", reason)
+      }else{
+        self$attrs <- self$attrs[names(self$attrs)!="gco:nilReason"]
+      }
     },
     
     #contains
