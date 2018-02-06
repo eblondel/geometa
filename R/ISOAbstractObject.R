@@ -128,7 +128,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
   private = list(
     xmlElement = "AbstractObject",
     xmlNamespacePrefix = "GCO",
-    encoding = "UTF-8",
+    encoding = options("encoding"),
     document = FALSE,
     system_fields = c("wrap", "valueDescription",
                       "element", "namespace", "defaults", "attrs", "printAttrs",
@@ -381,7 +381,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       }
       
       #inherit attributes if any
-      self$attrs <- as.list(xmlAttrs(xml, TRUE, FALSE))
+      xmlattrs <- NULL
+      if(!self$isDocument()) xmlattrs <- xmlAttrs(xml, TRUE, FALSE)
+      self$attrs <- as.list(xmlattrs)
     },
     
     #encode
