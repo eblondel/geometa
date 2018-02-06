@@ -384,6 +384,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       xmlattrs <- NULL
       if(!self$isDocument()) xmlattrs <- xmlAttrs(xml, TRUE, FALSE)
       if(is(self, "ISOFeatureCatalogue")){
+        xmlattrs <- xmlAttrs(xml, TRUE, FALSE)
         if("uuid" %in% names(xmlattrs)){
           xmlattrs <- xmlattrs[names(xmlattrs)=="uuid"]
         }
