@@ -162,9 +162,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     toComplexTypes = function(value){
       newvalue <- value
       #datetime types
-      if(regexpr(pattern = "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})", value)>0){
+      if(regexpr(pattern = "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})$", value)>0){
         newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = "GMT")
-      }else if(regexpr(pattern = "(\\d{4})-(\\d{2})-(\\d{2})", value)>0){
+      }else if(regexpr(pattern = "^(\\d{4})-(\\d{2})-(\\d{2})$", value)>0){
         newvalue <- as.Date(as.POSIXct(strptime(value, "%Y-%m-%d"), tz = "GMT"))
       }
       
