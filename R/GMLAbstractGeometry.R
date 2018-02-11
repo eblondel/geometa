@@ -29,6 +29,15 @@ GMLAbstractGeometry <- R6Class("GMLAbstractGeometry",
   private = list(
     xmlElement = "AbstractGeometry",
     xmlNamespacePrefix = "GML"
+  ),
+  public = list(
+    initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), wrap = TRUE){
+      if(is.null(element)) element <- private$xmlElement
+      super$initialize(xml, element = element, attrs = attrs, defaults = defaults, wrap = wrap)
+      if(!require("sf")){
+        stop("Creating GML geometry objects require 'sf' package")
+      }
+    }
   )
 )
 
