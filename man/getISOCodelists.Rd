@@ -8,7 +8,8 @@ getISOCodelists()
 }
 \description{
 \code{getISOCodelists} allows to get the list of ISO codelists
-registered in \pkg{geometa}
+registered in \pkg{geometa}, their description and XML definition. The object
+returned is of class "data.frame"
 }
 \examples{
             

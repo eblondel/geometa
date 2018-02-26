@@ -159,12 +159,31 @@ setISOCodelists <- function(){
   .geometa.iso$codelists <- codelists
 }
 
+#' @name getISOInternalCodelists
+#' @aliases getISOInternalCodelists
+#' @title getISOInternalCodelists
+#' @export
+#' @description \code{getISOInternalCodelists} allows to get the list of ISO codelists
+#' registered in \pkg{geometa}
+#' 
+#' @usage getISOInternalCodelists()
+#' 
+#' @examples             
+#'   getISOInternalCodelists()
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+getISOInternalCodelists <- function(){
+  return(.geometa.iso$codelists)
+}
+
 #' @name getISOCodelists
 #' @aliases getISOCodelists
 #' @title getISOCodelists
 #' @export
 #' @description \code{getISOCodelists} allows to get the list of ISO codelists
-#' registered in \pkg{geometa}
+#' registered in \pkg{geometa}, their description and XML definition. The object
+#' returned is of class "data.frame"
 #' 
 #' @usage getISOCodelists()
 #' 
@@ -174,7 +193,33 @@ setISOCodelists <- function(){
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 getISOCodelists <- function(){
-  return(.geometa.iso$codelists)
+  cl_classes <- list()
+  classes <- ls("package:geometa")
+  for(classname in classes){
+    clazz <- eval(parse(text=classname))
+    if(is(clazz, "R6ClassGenerator")){
+      if(!is.null(clazz$inherit)){
+        if(clazz$inherit == "ISOCodeListValue"){
+          cl_classes <- c(cl_classes, clazz)
+        }
+      }
+    }
+  }
+  cl_classes_out <- do.call("rbind", lapply(cl_classes, function(x){
+    el <- x$private_fields$xmlElement
+    if(el=="MD_ScopeCode") el <- "MX_ScopeCode"
+    cl <- getISOCodelist(el)
+    cl_ns <- getISOMetadataNamespace(x$private_fields$xmlNamespacePrefix)$uri
+    out <- data.frame(
+      classname = x$classname,
+      codeSpace = cl$codeSpace,
+      description = cl$description,
+      xmlNamespace = cl_ns,
+      xmlElement = cl$id
+    )
+    return(out)
+  }))
+  return(cl_classes_out)
 }
 
 #' @name getISOCodelist
@@ -195,7 +240,7 @@ getISOCodelists <- function(){
 #
 getISOCodelist <- function(id){
   codelist <- NULL
-  invisible(lapply(getISOCodelists(), function(cl){
+  invisible(lapply(getISOInternalCodelists(), function(cl){
     if(cl$id == id){
       codelist <<- cl
     }
