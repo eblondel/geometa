@@ -4,6 +4,7 @@
 [![codecov.io](http://codecov.io/github/eblondel/geometa/coverage.svg?branch=master)](http://codecov.io/github/eblondel/geometa?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/geometa)](https://cran.r-project.org/package=geometa)
 [![Github_Status_Badge](https://img.shields.io/badge/Github-0.3--0-blue.svg)](https://github.com/eblondel/geometa)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184894.svg)](https://doi.org/10.5281/zenodo.1184894)
 
 **Tools for Reading and Writing ISO/OGC Geographic Metadata**
 
