@@ -11,6 +11,10 @@
 
 Please check the [online documentation](https://github.com/eblondel/geometa/wiki) for more details!
 
+## Citation
+
+We thank in advance people that use ``geometa`` for citing it in their work / publication(s). For this, please use the citation provided at this link [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184894.svg)](https://doi.org/10.5281/zenodo.1184894)
+
 ## Metadata standards coverage status
 
 Some specific ISO classes may be still missing, and will be added iteratively, according to needs, hence the "Partial" status highlighted for the different standards. This applies particularly to GML classes (ISO 19136) that may be needed in some ISO 19115 and 19110 classes. In case of a missing class, [create a ticket](https://github.com/eblondel/geometa/issues/new).
