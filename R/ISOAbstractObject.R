@@ -147,7 +147,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       isCompliant <- ifelse(is.na(compliant),"NOT TESTED", ifelse(compliant, "YES", "NO"))
       compliance <- paste0("\tISO 19139 XML compliance: ", isCompliant)
       createdOn <- paste0("\tCreation date/time: ", format(Sys.time(), "%Y-%m-%dT%H:%M:%S"))
-      author <- paste0("\tContact: ", geometa$Author)
+      geometaAuthor <- unlist(strsplit(as.character(eval(parse(text=geometa$Authors)))," \\["))[1]
+      author <- paste0("\tContact: ", geometaAuthor)
       infoPage <- paste0("\tURL: ", geometa$URL)
       bugReport <- paste0("\tBugReports: ", geometa$BugReports)
       txt <- paste(txt, "<!-- ", sep="\n")
