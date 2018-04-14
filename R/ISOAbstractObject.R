@@ -357,6 +357,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             self[[fieldName]] <- fieldValue
           }
         }else{
+          if(is.null(nsPrefix)) nsPrefix <- ""
           if(nsPrefix == "gml"){
             if(inherits(self,"GMLAbstractRing")|
                inherits(self,"GMLAbstractGeometricPrimitive")){
