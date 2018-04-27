@@ -316,18 +316,20 @@ ISOMetadata
    distrib$setDigitalTransferOptions(dto)
    md$setDistributionInfo(distrib)
    
-   #Data Quality
+   #create dataQuality object with a 'dataset' scope
    dq <- ISODataQuality$new()
    scope <- ISOScope$new()
    scope$setLevel("dataset")
    dq$setScope(scope)
-   
-   #add report
+  
+   #add data quality reports...
+  
+   #add a report the data quality
    dc <- ISODomainConsistency$new()
    result <- ISOConformanceResult$new()
    spec <- ISOCitation$new()
-   spec$setTitle("specification title")
-   spec$setAlternateTitle("specification alternate title")
+   spec$setTitle("Data Quality check")
+   spec$setAlternateTitle("This is is some data quality check report")
    d <- ISODate$new()
    d$setDate(ISOdate(2015, 1, 1, 1))
    d$setDateType("publication")
@@ -337,6 +339,36 @@ ISOMetadata
    result$setPass(TRUE)
    dc$addResult(result)
    dq$addReport(dc)
+  
+   #add INSPIRE reports?
+   #INSPIRE - interoperability of spatial data sets and services
+   dc_inspire1 <- ISODomainConsistency$new()
+   cr_inspire1 <- ISOConformanceResult$new()
+   cr_inspire_spec1 <- ISOCitation$new()
+   cr_inspire_spec1$setTitle("Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services")
+   cr_inspire1$setExplanation("See the referenced specification")
+   cr_inspire_date1 <- ISODate$new()
+   cr_inspire_date1$setDate(ISOdate(2010,12,8))
+   cr_inspire_date1$setDateType("publication")
+   cr_inspire_spec1$addDate(cr_inspire_date1)
+   cr_inspire1$setSpecification(cr_inspire_spec1)
+   cr_inspire1$setPass(TRUE)
+   dc_inspire1$addResult(cr_inspire1)
+   dq$addReport(dc_inspire1)
+   #INSPIRE - metadata
+   dc_inspire2 <- ISODomainConsistency$new()
+   cr_inspire2 <- ISOConformanceResult$new()
+   cr_inspire_spec2 <- ISOCitation$new()
+   cr_inspire_spec2$setTitle("COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata")
+   cr_inspire2$setExplanation("See the referenced specification")
+   cr_inspire_date2 <- ISODate$new()
+   cr_inspire_date2$setDate(ISOdate(2008,12,4))
+   cr_inspire_date2$setDateType("publication")
+   cr_inspire_spec2$addDate(cr_inspire_date2)
+   cr_inspire2$setSpecification(cr_inspire_spec2)
+   cr_inspire2$setPass(TRUE)
+   dc_inspire2$addResult(cr_inspire2)
+   dq$addReport(dc_inspire2)
    
    #add lineage
    lineage <- ISOLineage$new()
