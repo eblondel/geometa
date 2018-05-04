@@ -294,6 +294,20 @@ ISOMetadata
    kwds$setThesaurusName(th)
    ident$addKeywords(kwds)
    
+   #add an INSPIRE spatial data theme?
+   inspire_kwd <- ISOKeywords$new()
+   anc1 <- ISOAnchor$new(name = "Environmental monitoring facilities", href = "http://inspire.ec.europa.eu/theme/ef")
+   inspire_kwd$addKeyword(anc1)
+   inspire_kwd$setKeywordType("theme")
+   th <- ISOCitation$new()
+   th$setTitle(ISOAnchor$new(name = "GEMET - INSPIRE themes, version 1.0", href="http://www.eionet.europa.eu/gemet/inspire_themes"))
+   inspire_date <- ISODate$new()
+   inspire_date$setDate("2008-06-01")
+   inspire_date$setDateType("publication")
+   th$addDate(inspire_date)
+   inspire_kwd$setThesaurusName(th)
+   ident$addKeywords(inspire_kwd)
+   
    #supplementalInformation
    ident$setSupplementalInformation("some additional information")
    

@@ -110,12 +110,18 @@ ISOCitation<- R6Class("ISOCitation",
     
     #setTitle
     setTitle = function(title){
-      self$title <- as.character(title)
+      if(!(is(title,"character") || is(title,"ISOAnchor"))){
+        stop("Title should be an object of class 'character' or 'ISOAnchor'")
+      }
+      self$title <- title
     },
     
     #setAlternateTitle
     setAlternateTitle = function(alternateTitle){
-      self$alternateTitle <- as.character(alternateTitle)
+      if(!(is(alternateTitle,"character") || is(alternateTitle,"ISOAnchor"))){
+        stop("Alternate title should be an object of class 'character' or 'ISOAnchor'")
+      }
+      self$alternateTitle <- alternateTitle
     },
     
     #addDate
