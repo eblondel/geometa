@@ -11,7 +11,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, bbox)}}{
+#'  \item{\code{new(xml, bbox, srsName)}}{
 #'    This method is used to instantiate a GML envelope. The argument 'bbox'
 #'    should be a matrix of dim 2,2 giving the x/y min/max values of a bouding box,
 #'    as returned by \code{bbox} function in package \pkg{sp}
@@ -45,7 +45,7 @@ GMLEnvelope <- R6Class("GMLEnvelope",
        self$lowerCorner = t(bbox[,1L])
        self$upperCorner = t(bbox[,2L])
        if(!is.null(srsName)) self$setAttr("srsName", srsName)
-       self$setAttr("srsDimension", as.character(dim(m)[2]))
+       self$setAttr("srsDimension", as.character(dim(bbox)[2]))
      }
    }
  )
