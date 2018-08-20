@@ -3,6 +3,7 @@
 #' @docType class
 #' @importFrom utils packageDescription
 #' @importFrom R6 R6Class
+#' @importFrom methods is
 #' @import XML
 #' @export
 #' @keywords ISO metadata element
@@ -949,7 +950,7 @@ ISOAbstractObject$getISOClassByNode = function(node){
   for(classname in list_of_classes){
     clazz <- try(eval(parse(text=classname)))
     geometa_inherits <- FALSE
-    if(class(clazz)=="R6ClassGenerator"){
+    if(class(clazz)[1]=="R6ClassGenerator"){
       superclazz <- clazz
       while(!geometa_inherits){
         clazz_fields <- names(superclazz)

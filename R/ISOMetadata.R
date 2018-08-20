@@ -300,11 +300,19 @@
 #'    
 #'    #add an INSPIRE spatial data theme?
 #'    inspire_kwd <- ISOKeywords$new()
-#'    anc1 <- ISOAnchor$new(name = "Environmental monitoring facilities", href = "http://inspire.ec.europa.eu/theme/ef")
+#'    anc1 <- ISOAnchor$new(
+#'      name = "Environmental monitoring facilities",
+#'      href = "http://inspire.ec.europa.eu/theme/ef"
+#'    )
 #'    inspire_kwd$addKeyword(anc1)
 #'    inspire_kwd$setKeywordType("theme")
 #'    th <- ISOCitation$new()
-#'    th$setTitle(ISOAnchor$new(name = "GEMET - INSPIRE themes, version 1.0", href="http://www.eionet.europa.eu/gemet/inspire_themes"))
+#'    th$setTitle(
+#'      ISOAnchor$new(
+#'        name = "GEMET - INSPIRE themes, version 1.0",
+#'        href="http://www.eionet.europa.eu/gemet/inspire_themes"
+#'      )
+#'    )
 #'    inspire_date <- ISODate$new()
 #'    inspire_date$setDate("2008-06-01")
 #'    inspire_date$setDateType("publication")
@@ -363,7 +371,12 @@
 #'    dc_inspire1 <- ISODomainConsistency$new()
 #'    cr_inspire1 <- ISOConformanceResult$new()
 #'    cr_inspire_spec1 <- ISOCitation$new()
-#'    cr_inspire_spec1$setTitle("Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services")
+#'    cr_title1 <- paste(
+#'      "Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC",
+#'      "of the European Parliament and of the Council as regards interoperability of spatial data",
+#'      "sets and services"
+#'    )
+#'    cr_inspire_spec1$setTitle(cr_title1)
 #'    cr_inspire1$setExplanation("See the referenced specification")
 #'    cr_inspire_date1 <- ISODate$new()
 #'    cr_inspire_date1$setDate(ISOdate(2010,12,8))
@@ -377,7 +390,11 @@
 #'    dc_inspire2 <- ISODomainConsistency$new()
 #'    cr_inspire2 <- ISOConformanceResult$new()
 #'    cr_inspire_spec2 <- ISOCitation$new()
-#'    cr_inspire_spec2$setTitle("COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata")
+#'    cr_title2 <- paste(
+#'      "COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC",
+#'      "of the European Parliament and of the Council as regards metadata"
+#'    )
+#'    cr_inspire_spec2$setTitle(cr_title2)
 #'    cr_inspire2$setExplanation("See the referenced specification")
 #'    cr_inspire_date2 <- ISODate$new()
 #'    cr_inspire_date2$setDate(ISOdate(2008,12,4))

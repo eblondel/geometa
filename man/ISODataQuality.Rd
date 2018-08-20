@@ -68,7 +68,12 @@ ISODataQuality
   dc_inspire1 <- ISODomainConsistency$new()
   cr_inspire1 <- ISOConformanceResult$new()
   cr_inspire_spec1 <- ISOCitation$new()
-  cr_inspire_spec1$setTitle("Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services")
+  cr_title <- paste(
+    "Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC",
+    "of the European Parliament and of the Council as regards interoperability of spatial data",
+    "sets and services"
+  )
+  cr_inspire_spec1$setTitle(cr_title)
   cr_inspire1$setExplanation("See the referenced specification")
   cr_inspire_date1 <- ISODate$new()
   cr_inspire_date1$setDate(ISOdate(2010,12,8))
@@ -82,7 +87,11 @@ ISODataQuality
   dc_inspire2 <- ISODomainConsistency$new()
   cr_inspire2 <- ISOConformanceResult$new()
   cr_inspire_spec2 <- ISOCitation$new()
-  cr_inspire_spec2$setTitle("COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata")
+  cr_title2 <- paste(
+    "COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC",
+    "of the European Parliament and of the Council as regards metadata"
+  )
+  cr_inspire_spec2$setTitle(cr_title2)
   cr_inspire2$setExplanation("See the referenced specification")
   cr_inspire_date2 <- ISODate$new()
   cr_inspire_date2$setDate(ISOdate(2008,12,4))
