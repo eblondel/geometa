@@ -12,7 +12,7 @@
 #'  \item{\code{new()}}{
 #'    This method is used to instantiate an INSPIRE Metadata validator
 #'  }
-#'  \item{\code{getValidationReport(obj, file, raw)}}{
+#'  \item{\code{getValidationReport(xml, obj, file, raw)}}{
 #'    Get validation report for a metadata specified either as R object of class
 #'    \code{ISOMetadata} (from \pkg{geometa} package) or \code{XMLInternalDocument} 
 #'    (from \pkg{XML} package), or as XML file, providing the path of the XML file
@@ -28,6 +28,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
+   inherit = geometaLogger,
    private = list(
      host = "http://inspire-geoportal.ec.europa.eu",
      endpoint = "GeoportalProxyWebServices/resources/INSPIREResourceTester"
@@ -42,37 +43,46 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
      },
      
      #getValidationReport
-     getValidationReport = function(obj = NULL, file = NULL, raw = FALSE){
+     getValidationReport = function(xml = NULL, obj = NULL, file = NULL, raw = FALSE){
        
        #check args & read data
-       xmlObj <- NULL
        if(!is.null(obj)){
-         if(is(obj,"ISOMetadata")){
-          xmlObj <- md$encode()
-         }else if(is(obj,"XMLInternalDocument")){
-           xmlObj <- obj 
-         }else{
+         if(!is(obj, "ISOMetadata") && !is(obj, "XMLInternalDocument")){
            stop("'obj' should be an object of class 'ISOMetadata' (from 'geometa') or 'XMLInternalDocument' (from 'XML')")
+         }
+         if(is(obj,"ISOMetadata")){
+          xml <- obj$encode(validate = FALSE)
          }
        }else{
          if(!is.null(file)){
-           xmlObj <- try(XML::xmlParse(file))
-           if(class(xmlObj)=="try-error"){
+           xml <- try(XML::xmlParse(file))
+           if(class(xml)=="try-error"){
              stop("Error while parsing XML file")
            }
          }else{
-           stop("Either object (XML or geometa) or XML file should be provided")
+           if(is.null(xml)){
+             stop("Either object (XML or geometa) or XML file should be provided")
+           }
          }
        }
        
        #post metadata XML to INSPIRE web-service
+       self$INFO("Sending metadata file to INSPIRE metadata validation web-service...")
        req <- httr::POST(
          url = self$url,
-         httr::add_headers("Accept" = "application/json", "Content-Type" = "text/plain"),
-         body = as(xmlObj, "character")
+         httr::add_headers(
+           "User-Agent" = paste("geometa/",as.character(packageVersion("geometa")),sep=""),
+           "Accept" = "application/json",
+           "Content-Type" = "text/plain"
+         ),
+         body = as(xml, "character")
        )
        if(httr::status_code(req)!=201){
-         stop("Error during communication with INSPIRE validation web-service")
+         errorMsg <- "Error during communication with INSPIRE validation web-service!"
+         self$INFO(errorMsg)
+         stop(errorMsg)
+       }else{
+         self$INFO("INSPIRE metadata validation test done!")
        }
        loc <- httr::headers(req)$location
        resp <- content(req)$value

@@ -38,15 +38,6 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{new(xml, element, namespace, defaults, attrs)}}{
    This method is used to instantiate an ISOAbstractObject
  }
- \item{\code{INFO(text)}}{
-   Logger to report information. Used internally
- }
- \item{\code{WARN(text)}}{
-   Logger to report warnings. Used internally
- }
- \item{\code{ERROR(text)}}{
-   Logger to report errors. Used internally
- }
  \item{\code{print()}}{
    Provides a custom print output (as tree) of the current class
  }
@@ -69,9 +60,10 @@ Abstract ISO Metadata class used internally by geometa
    Validates the encoded XML against ISO 19139 XML schemas. If \code{strict} is
    \code{TRUE}, a error will be raised. Default is \code{FALSE}. 
  }
- \item{\code{save(file)}}{
+ \item{\code{save(file, ...)}}{
    Saves the current metadata object XML representation to a file. This utility
-   ensures proper indentation of XML file produced.
+   ensures proper indentation of XML file produced. Additional arguments can be
+   specified and will be passed to the XML encoding.
  }
  \item{\code{getNamespaceDefinition(recursive)}}{
    Gets the namespace definition of the current ISO* class. By default, only
