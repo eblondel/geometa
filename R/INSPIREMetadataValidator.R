@@ -12,7 +12,7 @@
 #'  \item{\code{new()}}{
 #'    This method is used to instantiate an INSPIRE Metadata validator
 #'  }
-#'  \item{\code{getValidationReport(xml, obj, file, raw)}}{
+#'  \item{\code{getValidationReport(obj, file, raw)}}{
 #'    Get validation report for a metadata specified either as R object of class
 #'    \code{ISOMetadata} (from \pkg{geometa} package) or \code{XMLInternalDocument} 
 #'    (from \pkg{XML} package), or as XML file, providing the path of the XML file
@@ -43,7 +43,7 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
      },
      
      #getValidationReport
-     getValidationReport = function(xml = NULL, obj = NULL, file = NULL, raw = FALSE){
+     getValidationReport = function(obj = NULL, file = NULL, raw = FALSE){
        
        #check args & read data
        if(!is.null(obj)){
@@ -60,9 +60,7 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
              stop("Error while parsing XML file")
            }
          }else{
-           if(is.null(xml)){
-             stop("Either object (XML or geometa) or XML file should be provided")
-           }
+            stop("Either object (XML or geometa) or XML file should be provided")
          }
        }
        

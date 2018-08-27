@@ -20,7 +20,7 @@ INSPIREMetadataValidator
  \item{\code{new()}}{
    This method is used to instantiate an INSPIRE Metadata validator
  }
- \item{\code{getValidationReport(xml, obj, file, raw)}}{
+ \item{\code{getValidationReport(obj, file, raw)}}{
    Get validation report for a metadata specified either as R object of class
    \code{ISOMetadata} (from \pkg{geometa} package) or \code{XMLInternalDocument} 
    (from \pkg{XML} package), or as XML file, providing the path of the XML file
