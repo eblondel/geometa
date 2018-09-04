@@ -270,6 +270,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   clDes <- item$codelistId$entries[item$codelistId$entries$value == clVal,"description"]
                   cat(paste0(": ", clVal, " {",clDes,"}"))
                 }
+              }else if(is(item, "matrix")){
+                m <- paste(apply(item, 1L, function(x){paste(x[1], x[2])}),collapse=" ")
+                cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", m))
               }else{
                 cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", item))
               }
@@ -793,7 +796,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   if(is(xObj.item, "ISOAbstractObject")){
                     nsdef.item <- xObj.item$getNamespaceDefinition(recursive = recursive)
                   }else{
-                    nsdef.item <- ISOMetadataNamespace$GCO$getDefinition() 
+                    if(!is(xObj.item, "matrix")) nsdef.item <- ISOMetadataNamespace$GCO$getDefinition() 
                   }
                   for(item in names(nsdef.item)){
                     nsd <- nsdef.item[[item]]

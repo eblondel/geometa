@@ -35,7 +35,7 @@ GMLRectifiedGrid
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, element, attrs, defaults)}}{
+ \item{\code{new(xml, element)}}{
    This method is used to instantiate a GML rectified grid
  }
  \item{\code{setOrigin(x,y)}}{

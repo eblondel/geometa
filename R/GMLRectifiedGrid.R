@@ -25,7 +25,7 @@
 #' 
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
+#'  \item{\code{new(xml, element)}}{
 #'    This method is used to instantiate a GML rectified grid
 #'  }
 #'  \item{\code{setOrigin(x,y)}}{
@@ -48,7 +48,7 @@ GMLRectifiedGrid <- R6Class("GMLRectifiedGrid",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     origin = GMLPoint$new(sfg = sf::st_point(c(0,0))),
+     origin = NULL,
      offsetVector = list(),
      initialize = function(xml = NULL){
        super$initialize(xml, element = private$xmlElement)
@@ -66,7 +66,8 @@ GMLRectifiedGrid <- R6Class("GMLRectifiedGrid",
          stop(sprintf("Input vector length should equal to the number of dimensions",
                       self$attrs$dimension))
        }
-       return(self$addListElement("offsetVector", list(matrix(vec,1,2))))
+       offsetVector <- GMLElement$create("offsetVector", list(matrix(vec,1,2)))
+       return(self$addListElement("offsetVector", offsetVector))
      },
      
      #delOffsetVector
@@ -76,7 +77,8 @@ GMLRectifiedGrid <- R6Class("GMLRectifiedGrid",
          stop(sprintf("Input vector length should equal to the number of dimensions",
                       self$attrs$dimension))
        }
-       return(self$delListElement("offsetVector", list(matrix(vec,1,2))))
+       offsetVector <- GMLElement$create("offsetVector", list(matrix(vec,1,2)))
+       return(self$delListElement("offsetVector", offsetVector))
      }
    )
 )

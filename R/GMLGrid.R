@@ -46,10 +46,11 @@ GMLGrid <- R6Class("GMLGrid",
      limits = matrix(NA_real_, 2, 2),
      axisLabels = NULL,
      axisName = list(),
-     initialize = function(xml = NULL, element = NULL){
+     initialize = function(xml = NULL, element = NULL, attrs = list(dimension = 2),
+                           defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
-       super$initialize(xml, element = private$xmlElement,
-                        attrs = list(dimension = 2), defaults = list(), wrap = TRUE)
+       super$initialize(xml, element = element, attrs = attrs,
+                        defaults = defaults, wrap = wrap)
      },
      
      #setGridEnvelope
@@ -64,7 +65,9 @@ GMLGrid <- R6Class("GMLGrid",
        envelope <- GMLElement$create(element = "GridEnvelope")
        envelope[["low"]] <- GMLElement$create(element="low", value = t(m[,1L]))
        envelope[["high"]] <- GMLElement$create(element="high", value = t(m[,2L]))
-       self$limits <- GMLElement$create(element = "limits", value = envelope) 
+       limits <- GMLElement$create(element = "limits")
+       limits[["GridEnvelope"]] <- envelope
+       self$limits <- limits
        
      },
      
