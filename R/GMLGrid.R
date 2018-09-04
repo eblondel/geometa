@@ -12,7 +12,7 @@
 #'  \item{\code{new(xml, element, attrs, defaults)}}{
 #'    This method is used to instantiate a GML grid
 #'  }
-#'  \item{\code{setGridEnvelope(envelope, xmin, xmax, ymin, ymax)}}{
+#'  \item{\code{setGridEnvelope(xmin, xmax, ymin, ymax)}}{
 #'    Set the grid envelope limits with \code{xmin},\code{xmax},\code{ymin} and \code{ymax}.
 #'  }
 #'  \item{\code{setAxislabels(xlabel,ylabel)}}{
@@ -46,7 +46,8 @@ GMLGrid <- R6Class("GMLGrid",
      limits = matrix(NA_real_, 2, 2),
      axisLabels = NULL,
      axisName = list(),
-     initialize = function(xml = NULL){
+     initialize = function(xml = NULL, element = NULL){
+       if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = private$xmlElement,
                         attrs = list(dimension = 2), defaults = list(), wrap = TRUE)
      },
