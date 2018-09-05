@@ -10,7 +10,7 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML grid function
+#'    This method is used to instantiate a GML abstract feature
 #'  }
 #'  \item{\code{setBoundedBy(envelope)}}{
 #'    Set the boundedBy as object of class \code{GMLEnvelope}
