@@ -38,7 +38,7 @@ GMLEnvelope <- R6Class("GMLEnvelope",
    lowerCorner = matrix(NA_real_, 1, 2),
    upperCorner = matrix(NA_real_, 1, 2),
    initialize = function(xml = NULL, bbox, srsName = NULL){
-     super$initialize(xml, element = private$xmlElement, wrap = FALSE)
+     super$initialize(xml, element = private$xmlElement, wrap = TRUE)
      if(is.null(xml)){
        if(!is(bbox, "matrix")) stop("Input 'bbox' object should be a 'matrix'")
        if(!all(dim(bbox) == c(2,2))) stop("Incorrect bbox matrix dimensions")

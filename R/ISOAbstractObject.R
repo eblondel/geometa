@@ -313,6 +313,11 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         if(!is(child, "XMLInternalTextNode")){
           fieldClass <- ISOAbstractObject$getISOClassByNode(child)
           nsPrefix <- names(xmlNamespace(child))
+          if(is.null(nsPrefix)){
+            #try to grab from ns prefix
+            preftag <- unlist(strsplit(as(child, "character"),":"))[1]
+            nsPrefix <- substring(preftag, 2, nchar(preftag))
+          }
           if(is.null(fieldClass)){
             children <- xmlChildren(child, encoding = private$encoding)
             if(length(children)>0){
@@ -365,7 +370,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           if(nsPrefix == "gml"){
             if(inherits(self,"GMLAbstractRing")|
                inherits(self,"GMLAbstractGeometricPrimitive")|
-               inherits(self,"GMLEnvelope")){
+               is(self,"GMLEnvelope")){
               value <- xmlValue(child)
               if(value=="") value <- NA
               if(!is.na(value)){
