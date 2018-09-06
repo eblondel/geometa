@@ -315,8 +315,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           nsPrefix <- names(xmlNamespace(child))
           if(is.null(nsPrefix)){
             #try to grab from ns prefix
-            preftag <- unlist(strsplit(as(child, "character"),":"))[1]
-            nsPrefix <- substring(preftag, 2, nchar(preftag))
+            childName <- xmlName(child, full = TRUE)
+            preftag <- unlist(strsplit(as(childName, "character"),":"))[1]
+            if(preftag!=childName) nsPrefix <- substring(preftag, 2, nchar(preftag))
           }
           if(is.null(fieldClass)){
             children <- xmlChildren(child, encoding = private$encoding)
@@ -367,7 +368,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }
         }else{
           if(is.null(nsPrefix)) nsPrefix <- ""
-          if(nsPrefix == "gml"){
+          if(nsPrefix == "gml" | inherits(self, "GMLAbstractObject")){
             if(inherits(self,"GMLAbstractRing")|
                inherits(self,"GMLAbstractGeometricPrimitive")|
                is(self,"GMLEnvelope")){

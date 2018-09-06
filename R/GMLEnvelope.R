@@ -7,11 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GML envelope
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field posList
+#' @field lowerCorner
+#' @field upperCorner
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, bbox, srsName)}}{
+#'  \item{\code{new(xml, bbox, srsName, srsDimension, axisLabels, uomLabels)}}{
 #'    This method is used to instantiate a GML envelope. The argument 'bbox'
 #'    should be a matrix of dim 2,2 giving the x/y min/max values of a bouding box,
 #'    as returned by \code{bbox} function in package \pkg{sp}
@@ -37,13 +38,27 @@ GMLEnvelope <- R6Class("GMLEnvelope",
  public = list(
    lowerCorner = matrix(NA_real_, 1, 2),
    upperCorner = matrix(NA_real_, 1, 2),
-   initialize = function(xml = NULL, bbox, srsName = NULL){
+   initialize = function(xml = NULL, bbox, srsName = NULL, srsDimension = NULL, 
+                         axisLabels = NULL, uomLabels = NULL){
      super$initialize(xml, element = private$xmlElement, wrap = TRUE)
      if(is.null(xml)){
        if(!is(bbox, "matrix")) stop("Input 'bbox' object should be a 'matrix'")
-       if(!all(dim(bbox) == c(2,2))) stop("Incorrect bbox matrix dimensions")
        self$lowerCorner = t(bbox[,1L])
        self$upperCorner = t(bbox[,2L])
+       if(is.null(srsDimension)) srsDimension <- dim(bbox)[1]
+       self$setAttr("srsDimension", srsDimension)
+       if(!is.null(axisLabels)){
+         if(length(axisLabels)!=srsDimension){
+           stop("Length of 'axisLabels' should be equal to the envelope dimensions")
+         }
+         self$setAttr("axisLabels", paste(axisLabels, collapse = " "))
+       }
+       if(!is.null(uomLabels)){
+         if(length(uomLabels)!=srsDimension){
+           stop("Length of 'uomLabels' should be equal to the envelope dimensions")
+         }
+         self$setAttr("uomLabels", uomLabels)
+       }
        if(!is.null(srsName)) self$setAttr("srsName", srsName)
        self$setAttr("srsDimension", as.character(dim(bbox)[2]))
      }
