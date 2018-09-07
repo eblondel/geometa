@@ -60,7 +60,7 @@ GMLEnvelope <- R6Class("GMLEnvelope",
          self$setAttr("uomLabels", uomLabels)
        }
        if(!is.null(srsName)) self$setAttr("srsName", srsName)
-       self$setAttr("srsDimension", as.character(dim(bbox)[2]))
+       self$setAttr("srsDimension", as.character(dim(bbox)[1]))
      }
    }
  )

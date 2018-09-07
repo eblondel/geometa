@@ -368,31 +368,33 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }
         }else{
           if(is.null(nsPrefix)) nsPrefix <- ""
-          if(nsPrefix == "gml" | inherits(self, "GMLAbstractObject")){
+          if(nsPrefix == "gml" |inherits(self, "GMLAbstractObject")){
             if(inherits(self,"GMLAbstractRing")|
                inherits(self,"GMLAbstractGeometricPrimitive")|
                is(self,"GMLEnvelope")){
               value <- xmlValue(child)
               if(value=="") value <- NA
               if(!is.na(value)){
-                values <- suppressWarnings(as.numeric(unlist(strsplit(value," "))))
+                value_split <- unlist(strsplit(value," "))
+                coercable <- !suppressWarnings(is.na(as.numeric(value_split)))
+                values <- lapply(1:length(value_split), function(i){
+                  out <- value_split[i]
+                  if(coercable[i]) out <- as.numeric(out)
+                  return(out)
+                })
                 if(all(!is.na(values)) & length(values)>1){
-                  m.values <- matrix(values, length(values)/2, 2, byrow = TRUE)
+                  if(is(self,"GMLEnvelope")){
+                    values <- lapply(values, function(x){if(is.character(x)){x <- gsub("\"","",x)};x})
+                    m.values <- t(matrix(values))
+                  }else{
+                    m.values <- matrix(values, length(values)/2, 2, byrow = TRUE)
+                  }
                   if(is(self[[fieldName]], "list")){
                     self[[fieldName]] <- c(self[[fieldName]], m.values)
                   }else{
                     self[[fieldName]] <- m.values
                   }
                 }
-                #else{
-                #  gmlElem <- GMLElement$new(element = fieldName)
-                #  gmlElem$decode(xml = childElement)
-                #  if(is(self[[fieldName]], "list")){
-                #    self[[fieldName]] <- c(self[[fieldName]], gmlElem)
-                #  }else{
-                #    self[[fieldName]] <- gmlElem
-                #  }
-                #}
               }else{
                 gmlElem <- GMLElement$new(element = fieldName)
                 gmlElem$decode(xml = childElement)
@@ -568,7 +570,11 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
                   rootXML$addNode(emptyNode$value())
                 }else{
-                  mts <- paste(apply(item, 1L, function(x){paste(x[1], x[2])}),collapse=" ")
+                  mts <- do.call("paste", lapply(item, function(x){
+                    out <- x
+                    if(is.na(suppressWarnings(as.numeric(x)))) out <- paste0("\"",out,"\"")
+                    return(out)
+                  }))
                   txtNode <- xmlTextNode(mts)
                   if(field == "value"){
                     rootXML$addNode(txtNode)
@@ -633,7 +639,11 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
               rootXML$addNode(emptyNode$value())
             }else{
-              mts <- paste(apply(fieldObj, 1L, function(x){paste(x[1], x[2])}),collapse=" ")
+              mts <- do.call("paste", lapply(fieldObj, function(x){
+                out <- x
+                if(is.na(suppressWarnings(as.numeric(x)))) out <- paste0("\"",out,"\"")
+                return(out)
+              }))
               txtNode <- xmlTextNode(mts)
               if(field == "value"){
                 rootXML$addNode(txtNode)
