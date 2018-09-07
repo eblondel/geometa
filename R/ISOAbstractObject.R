@@ -271,14 +271,26 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   cat(paste0(": ", clVal, " {",clDes,"}"))
                 }
               }else if(is(item, "matrix")){
-                m <- paste(apply(item, 1L, function(x){paste(x[1], x[2])}),collapse=" ")
+                m <- paste(apply(item, 1L, function(x){
+                  x <- lapply(x, function(el){
+                    if(is.na(suppressWarnings(as.numeric(el)))) el <- paste0("\"",el,"\"")
+                    return(el)
+                  })
+                  return(paste(x, collapse = " "))
+                }), collapse = " ")
                 cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", m))
               }else{
                 cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", item))
               }
             }
           }else if (is(fieldObj,"matrix")){
-            m <- paste(apply(fieldObj, 1L, function(x){paste(x[1], x[2])}),collapse=" ")
+            m <- paste(apply(fieldObj, 1L, function(x){
+              x <- lapply(x, function(el){
+                if(is.na(suppressWarnings(as.numeric(el)))) el <- paste0("\"",el,"\"")
+                return(el)
+              })
+              return(paste(x, collapse = " "))
+            }), collapse = " ")
             cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", m))
           }else{
             cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", fieldObj))
@@ -570,11 +582,13 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
                   rootXML$addNode(emptyNode$value())
                 }else{
-                  mts <- do.call("paste", lapply(item, function(x){
-                    out <- x
-                    if(is.na(suppressWarnings(as.numeric(x)))) out <- paste0("\"",out,"\"")
-                    return(out)
-                  }))
+                  mts <- paste(apply(item, 1L, function(x){
+                    x <- lapply(x, function(el){
+                      if(is.na(suppressWarnings(as.numeric(el)))) el <- paste0("\"",el,"\"")
+                      return(el)
+                    })
+                    return(paste(x, collapse = " "))
+                  }), collapse = " ")
                   txtNode <- xmlTextNode(mts)
                   if(field == "value"){
                     rootXML$addNode(txtNode)
@@ -639,11 +653,13 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
               rootXML$addNode(emptyNode$value())
             }else{
-              mts <- do.call("paste", lapply(fieldObj, function(x){
-                out <- x
-                if(is.na(suppressWarnings(as.numeric(x)))) out <- paste0("\"",out,"\"")
-                return(out)
-              }))
+              mts <- paste(apply(fieldObj, 1L, function(x){
+                x <- lapply(x, function(el){
+                  if(is.na(suppressWarnings(as.numeric(el)))) el <- paste0("\"",el,"\"")
+                  return(el)
+                })
+                return(paste(x, collapse = " "))
+              }), collapse = " ")
               txtNode <- xmlTextNode(mts)
               if(field == "value"){
                 rootXML$addNode(txtNode)
