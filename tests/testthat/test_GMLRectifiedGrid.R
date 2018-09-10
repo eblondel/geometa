@@ -12,8 +12,10 @@ context("GMLRectifiedGrid")
 test_that("GMLRectifiedGrid",{
   #encoding
   md <- GMLRectifiedGrid$new()
-  md$setGridEnvelope(0, 500, 0, 500)
-  md$setAxisLabels("E", "N")
+  m <- matrix(c(-180,180,-90, 90), nrow = 2, ncol = 2, byrow = TRUE,
+              dimnames = list(c("x", "y"), c("min","max")))
+  md$setGridEnvelope(m = m)
+  md$setAxisLabels(c("E", "N"))
   md$setOrigin(15,15)
   md$addOffsetVector(c(0,15))
   xml <- md$encode()

@@ -918,7 +918,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }
         }
       }))
-      
+      nsdefs <- nsdefs[!duplicated(names(nsdefs))]
       return(nsdefs)
     },
     

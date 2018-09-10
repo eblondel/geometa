@@ -12,8 +12,8 @@ context("GMLReferenceableGrid")
 test_that("GMLAbstractReferenceableGrid",{
   #encoding
   md <- GMLAbstractReferenceableGrid$new()
-  envelope <- matrix(c(0,500,0,500),2,2)
-  md$setGridEnvelope(envelope)
+  m <- matrix(c(0,500,0,500),2,2)
+  md$setGridEnvelope(m = m)
   md$setAxisLabels(c("E", "N"))
   xml <- md$encode(validate = FALSE)
   expect_is(xml, "XMLInternalNode")
