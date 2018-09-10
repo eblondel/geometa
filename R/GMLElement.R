@@ -29,7 +29,8 @@ GMLElement <- R6Class("GMLElement",
       xmlNamespacePrefix = "GML"
     ),
     public = list(
-      initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list()){
+      initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), xmlNamespacePrefix = "GML"){
+        private$xmlNamespacePrefix <- xmlNamespacePrefix
         super$initialize(xml = xml, element = element, attrs = attrs, defaults = defaults, wrap = FALSE)
       },
       
@@ -73,9 +74,10 @@ GMLElement <- R6Class("GMLElement",
 )
 
 GMLElement$create <- function(element, value = NULL,  attrs = list(), href = NULL, 
-                              codeList = NULL, codeListValue = NULL, codeSpace = NULL){
+                              codeList = NULL, codeListValue = NULL, codeSpace = NULL,
+                              xmlNamespacePrefix = "GML"){
   #element
-  gmlElem <- GMLElement$new(element = element)
+  gmlElem <- GMLElement$new(element = element, xmlNamespacePrefix = xmlNamespacePrefix)
   #value
   if(!is.null(value)) gmlElem$setValue(value)
   #general attributes

@@ -26,8 +26,9 @@ Experimental
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, sfg)}}{
-   This method is used to instantiate a GML point
+ \item{\code{new(xml, sfg = NULL, m = NULL)}}{
+   This method is used to instantiate a GML point either using an object
+   of class \code{sfg} (from \pkg{sf}), or using a \code{matrix} object
  }
 }
 }

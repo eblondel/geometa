@@ -273,7 +273,13 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               }else if(is(item, "matrix")){
                 m <- paste(apply(item, 1L, function(x){
                   x <- lapply(x, function(el){
-                    if(is.na(suppressWarnings(as.numeric(el)))) el <- paste0("\"",el,"\"")
+                    if(is.na(suppressWarnings(as.numeric(el))) & !all(sapply(item,class)=="character")){
+                      el <- paste0("\"",el,"\"")
+                    }else{
+                      if(!is.na(suppressWarnings(as.numeric(el)))){
+                        el <- as.numeric(el)
+                      }
+                    }
                     return(el)
                   })
                   return(paste(x, collapse = " "))
@@ -286,7 +292,13 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }else if (is(fieldObj,"matrix")){
             m <- paste(apply(fieldObj, 1L, function(x){
               x <- lapply(x, function(el){
-                if(is.na(suppressWarnings(as.numeric(el)))) el <- paste0("\"",el,"\"")
+                if(is.na(suppressWarnings(as.numeric(el)))& !all(sapply(fieldObj,class)=="character")){
+                  el <- paste0("\"",el,"\"")
+                }else{
+                  if(!is.na(suppressWarnings(as.numeric(el)))){
+                    el <- as.numeric(el)
+                  }
+                }
                 return(el)
               })
               return(paste(x, collapse = " "))
@@ -380,10 +392,12 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }
         }else{
           if(is.null(nsPrefix)) nsPrefix <- ""
-          if(nsPrefix == "gml" |inherits(self, "GMLAbstractObject")){
-            if(inherits(self,"GMLAbstractRing")|
+          if(startsWith(nsPrefix,"gml") |inherits(self, "GMLAbstractObject")){
+            if(is(self[[fieldName]], "matrix") & 
+              (inherits(self,"GMLAbstractRing")|
                inherits(self,"GMLAbstractGeometricPrimitive")|
-               is(self,"GMLEnvelope")){
+               inherits(self,"GMLEnvelope")|
+               inherits(self,"GMLGeneralGridAxis"))){
               value <- xmlValue(child)
               if(value=="") value <- NA
               if(!is.na(value)){
@@ -395,11 +409,23 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   return(out)
                 })
                 if(all(!is.na(values)) & length(values)>1){
+                  values <- lapply(values, function(x){if(is.character(x)){x <- gsub("\"","",x)};x})
                   if(is(self,"GMLEnvelope")){
-                    values <- lapply(values, function(x){if(is.character(x)){x <- gsub("\"","",x)};x})
                     m.values <- t(matrix(values))
                   }else{
-                    m.values <- matrix(values, length(values)/2, 2, byrow = TRUE)
+                    dimension <- xmlGetAttr(xml, "srsDimension")
+                    if(!is.null(dimension)) dimension <- as.integer(dimension)
+                    if(is.null(dimension)){
+                      dimension <- 1
+                      if(inherits(self,"GMLAbstractGeometricPrimitive")){
+                        if(is(self, "GMLPoint")){
+                          dimension <- length(values)
+                        }else{
+                          self$WARN("No 'srsDimension' on geometry object. Impossible to decode coordinates!")
+                        }
+                      }
+                    }
+                    m.values <- matrix(values, length(values)/dimension, dimension, byrow = TRUE)
                   }
                   if(is(self[[fieldName]], "list")){
                     self[[fieldName]] <- c(self[[fieldName]], m.values)
@@ -408,7 +434,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   }
                 }
               }else{
-                gmlElem <- GMLElement$new(element = fieldName)
+                xmlNamespacePrefix <- "GML"
+                if(startsWith(nsPrefix,"gml")) xmlNamespacePrefix <- toupper(nsPrefix)
+                gmlElem <- GMLElement$new(element = fieldName, xmlNamespacePrefix = xmlNamespacePrefix)
                 gmlElem$decode(xml = childElement)
                 if(is(self[[fieldName]], "list")){
                   self[[fieldName]] <- c(self[[fieldName]], gmlElem)
@@ -417,7 +445,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 }
               }
             }else{
-              gmlElem <- GMLElement$new(element = fieldName)
+              xmlNamespacePrefix <- "GML"
+              if(startsWith(nsPrefix,"gml")) xmlNamespacePrefix <- toupper(nsPrefix)
+              gmlElem <- GMLElement$new(element = fieldName, xmlNamespacePrefix = xmlNamespacePrefix)
               gmlElem$decode(xml = childElement)
               if(is(self[[fieldName]], "list")){
                 self[[fieldName]] <- c(self[[fieldName]], gmlElem)
@@ -584,7 +614,15 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 }else{
                   mts <- paste(apply(item, 1L, function(x){
                     x <- lapply(x, function(el){
-                      if(is.na(suppressWarnings(as.numeric(el)))) el <- paste0("\"",el,"\"")
+                      if(!is.na(suppressWarnings(as.numeric(el)))){
+                        el <- as.numeric(el)
+                      }
+                      return(el)
+                    })
+                    x <- lapply(x, function(el){
+                      if(is.na(suppressWarnings(as.numeric(el))) & !all(sapply(x,class)=="character")){
+                        el <- paste0("\"",el,"\"")
+                      }
                       return(el)
                     })
                     return(paste(x, collapse = " "))
@@ -655,7 +693,15 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             }else{
               mts <- paste(apply(fieldObj, 1L, function(x){
                 x <- lapply(x, function(el){
-                  if(is.na(suppressWarnings(as.numeric(el)))) el <- paste0("\"",el,"\"")
+                  if(!is.na(suppressWarnings(as.numeric(el)))){
+                    el <- as.numeric(el)
+                  }
+                  return(el)
+                })
+                x <- lapply(x, function(el){
+                  if(is.na(suppressWarnings(as.numeric(el))) & !all(sapply(x,class)=="character")){
+                    el <- paste0("\"",el,"\"")
+                  }
                   return(el)
                 })
                 return(paste(x, collapse = " "))
@@ -840,7 +886,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   }
                 }))
               }else{
-                if(names(selfNsdef)[1] != "gml"){
+                if(!startsWith(names(selfNsdef)[1],"gml")){
                   nsdef <- ISOMetadataNamespace$GCO$getDefinition()
                 }
               }
@@ -966,7 +1012,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #setId
     setId = function(id, addNS = FALSE){
       attrKey <- "id"
-      if(addNS) attrKey <- paste(tolower(private$xmlNamespacePrefix), attrKey, sep=":")
+      prefix <- tolower(private$xmlNamespacePrefix)
+      if(startsWith(prefix, "gml")) prefix <- "gml"
+      if(addNS) attrKey <- paste(prefix, attrKey, sep=":")
       self$attrs[[attrKey]] <- id
     },
     

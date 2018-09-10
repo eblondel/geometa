@@ -11,8 +11,9 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml, sfg)}}{
-#'    This method is used to instantiate a GML point
+#'  \item{\code{new(xml, sfg = NULL, m = NULL)}}{
+#'    This method is used to instantiate a GML point either using an object
+#'    of class \code{sfg} (from \pkg{sf}), or using a \code{matrix} object
 #'  }
 #' }
 #' 
@@ -34,11 +35,17 @@ GMLPoint <- R6Class("GMLPoint",
    ),
    public = list(
      pos = matrix(NA_real_, 1, 2),
-     initialize = function(xml = NULL, sfg){
+     initialize = function(xml = NULL, sfg = NULL, m = NULL){
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)
        if(is.null(xml)){
-         if(!is(sfg, c("sfg","XY","POINT"))) stop("Input 'sfg' object should be a 'point'")
-         m <- as.matrix(sfg)
+         if(!is.null(sfg)){
+           if(!is(sfg, c("sfg","POINT"))) stop("Input 'sfg' object should be a 'point'")
+           m <- as.matrix(sfg)
+         }else if(!is.null(m)){
+           if(!is.matrix(m)){
+             stop("The argument 'm' should a matrix")
+           }  
+         }
          self$pos <- m
          self$setAttr("srsDimension", as.character(dim(m)[2]))
        }

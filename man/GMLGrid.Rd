@@ -23,8 +23,8 @@ Class used internally by geometa
  \item{\code{new(xml, element, attrs, defaults)}}{
    This method is used to instantiate a GML grid
  }
- \item{\code{setGridEnvelope(xmin, xmax, ymin, ymax)}}{
-   Set the grid envelope limits with \code{xmin},\code{xmax},\code{ymin} and \code{ymax}.
+ \item{\code{setGridEnvelope(m)}}{
+   Set the grid envelope limits as object.
  }
  \item{\code{setAxislabels(xlabel,ylabel)}}{
    Set the Axis labels
