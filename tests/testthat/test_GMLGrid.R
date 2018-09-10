@@ -12,8 +12,9 @@ context("GMLGrid")
 test_that("GMLGrid - with axisLabels",{
   #encoding
   md <- GMLGrid$new()
-  md$setGridEnvelope(0, 500, 0, 500)
-  md$setAxisLabels("E", "N")
+  envelope <- matrix(c(0,500,0,500),2,2)
+  md$setGridEnvelope(envelope)
+  md$setAxisLabels(c("E", "N"))
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding
@@ -26,7 +27,8 @@ test_that("GMLGrid - with axisLabels",{
 test_that("GMLGrid - with axisName",{
   #encoding
   md <- GMLGrid$new()
-  md$setGridEnvelope(0, 500, 0, 500)
+  envelope <- matrix(c(0,500,0,500),2,2)
+  md$setGridEnvelope(envelope)
   md$addAxisName("E")
   md$addAxisName("N")
   xml <- md$encode()

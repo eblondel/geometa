@@ -17,7 +17,7 @@ GMLEnvelope
 \section{Fields}{
 
 \describe{
-\item{\code{posList}}{}
+\item{\code{upperCorner}}{}
 }}
 
 \note{
@@ -26,7 +26,7 @@ Experimental
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml, bbox, srsName)}}{
+ \item{\code{new(xml, bbox, srsName, srsDimension, axisLabels, uomLabels)}}{
    This method is used to instantiate a GML envelope. The argument 'bbox'
    should be a matrix of dim 2,2 giving the x/y min/max values of a bouding box,
    as returned by \code{bbox} function in package \pkg{sp}

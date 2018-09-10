@@ -12,8 +12,8 @@
 #'  \item{\code{new(xml, element, attrs, defaults)}}{
 #'    This method is used to instantiate a GML grid
 #'  }
-#'  \item{\code{setGridEnvelope(xmin, xmax, ymin, ymax)}}{
-#'    Set the grid envelope limits with \code{xmin},\code{xmax},\code{ymin} and \code{ymax}.
+#'  \item{\code{setGridEnvelope(m)}}{
+#'    Set the grid envelope limits as object.
 #'  }
 #'  \item{\code{setAxislabels(xlabel,ylabel)}}{
 #'    Set the Axis labels
@@ -43,10 +43,10 @@ GMLGrid <- R6Class("GMLGrid",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     limits = matrix(NA_real_, 2, 2),
+     limits = NULL,
      axisLabels = NULL,
      axisName = list(),
-     initialize = function(xml = NULL, element = NULL, attrs = list(dimension = 2),
+     initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = element, attrs = attrs,
@@ -54,28 +54,33 @@ GMLGrid <- R6Class("GMLGrid",
      },
      
      #setGridEnvelope
-     setGridEnvelope = function(xmin = NULL, xmax = NULL, ymin = NULL, ymax = NULL){
-       if(is.null(xmin)|is.null(xmax)|is.null(ymin)|is.null(ymax)){
-         stop("The arguments [xmin,xmax,ymin,ymax] cannot be NULL")
+     setGridEnvelope = function(m){
+       if(!is.matrix(m)){
+         stop("The argument m should an object of class 'matrix'")
        }
-       m <- matrix(NA_real_, 2, 2)
-       m[1,1] <- xmin; m[1,2] <- xmax;
-       m[2,1] <- ymin; m[2,2] <- ymax;
-       
+       if(dim(m)[2]!=2){
+         stop("Number of matrix columns should be equal to 2 (min/max)")
+       }
        envelope <- GMLElement$create(element = "GridEnvelope")
        envelope[["low"]] <- GMLElement$create(element="low", value = t(m[,1L]))
        envelope[["high"]] <- GMLElement$create(element="high", value = t(m[,2L]))
        limits <- GMLElement$create(element = "limits")
        limits[["GridEnvelope"]] <- envelope
        self$limits <- limits
+       self$setAttr("dimension", dim(m)[1])
        
      },
      
      #setAxisLabels
-     setAxisLabels = function(xlabel, ylabel){
-       m <- matrix(NA_real_, 1, 2)
-       m[1,1] <- as(xlabel,"character")
-       m[1,2] <- as(ylabel,"character")
+     setAxisLabels = function(labels){
+       if(!is.null(self$limits)) if(length(labels) != self$attrs$dimension) {
+         stop(sprintf("The length of labels [%s] does not match the number of dimensions [%s]",
+              length(labels), self$attrs$dimension))
+       }
+       m <- matrix(NA_real_, 1, length(labels))
+       invisible(sapply(1:length(labels), function(i){
+         m[1,i] <<- labels[i]
+       }))
        self$axisLabels <- GMLElement$create(element = "axisLabels", value = m)
      },
      

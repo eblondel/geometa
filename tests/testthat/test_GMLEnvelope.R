@@ -28,7 +28,7 @@ test_that("GMLEnvelope - Rasdaman ad-hoc spatio-temporal envelope (invalid GML)"
   start= format(Sys.time(), "%Y-%m-%dT%H:%M:%S")
   Sys.sleep(5)
   end = format(Sys.time(), "%Y-%m-%dT%H:%M:%S")
-  m <- matrix(c(-90, 90,-180,180, start, end), nrow = 3, ncol = 2, byrow = TRUE,
+  m <- matrix(list(-90, 90,-180,180, start, end), nrow = 3, ncol = 2, byrow = TRUE,
               dimnames = list(c("x", "y", "time"), c("min","max")))
   md <- GMLEnvelope$new(bbox = m)
   md$setAttr("srsName", "http://ows.rasdaman.org/def/crs-compound?1=http://ows.rasdaman.org/def/crs/EPSG/0/4326&2=http://ows.rasdaman.org/def/crs/OGC/0/UnixTime")
