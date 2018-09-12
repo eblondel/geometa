@@ -356,7 +356,17 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 #more than one child, consider it as sequence
                 fieldClass <- ISOElementSequence
               }
-              
+            }else{
+              #if xlink:href attr available attempt to
+              href <- xmlGetAttr(child, "xlink:href")
+              if(!is.null(href)){
+                self$INFO(sprintf("Fetching child elemnt from xlink:href attribute '%s'", href))
+                child <- try(XML::xmlParse(href))
+                if(!is(child,"try-error")){
+                  child <- XML::xmlRoot(child)
+                  fieldClass <- ISOAbstractObject$getISOClassByNode(child)
+                }
+              }
             }
           }
         }
