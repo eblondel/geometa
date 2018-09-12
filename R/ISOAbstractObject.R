@@ -361,9 +361,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               href <- xmlGetAttr(child, "xlink:href")
               if(!is.null(href)){
                 self$INFO(sprintf("Fetching child elemnt from xlink:href attribute '%s'", href))
-                child <- try(XML::xmlParse(href))
-                if(!is(child,"try-error")){
-                  child <- XML::xmlRoot(child)
+                childXML <- try(XML::xmlParse(href))
+                if(!is(childXML,"try-error")){
+                  child <- XML::xmlRoot(childXML)
                   fieldClass <- ISOAbstractObject$getISOClassByNode(child)
                 }
               }
