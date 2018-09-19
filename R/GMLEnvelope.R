@@ -38,9 +38,11 @@ GMLEnvelope <- R6Class("GMLEnvelope",
  public = list(
    lowerCorner = matrix(NA_real_, 1, 2),
    upperCorner = matrix(NA_real_, 1, 2),
-   initialize = function(xml = NULL, bbox, srsName = NULL, srsDimension = NULL, 
+   initialize = function(xml = NULL, element = NULL, bbox,
+                         srsName = NULL, srsDimension = NULL, 
                          axisLabels = NULL, uomLabels = NULL){
-     super$initialize(xml, element = private$xmlElement, wrap = TRUE)
+     if(is.null(element)) element <- private$xmlElement
+     super$initialize(xml, element = element, wrap = TRUE)
      if(is.null(xml)){
        if(!is(bbox, "matrix")) stop("Input 'bbox' object should be a 'matrix'")
        self$lowerCorner = t(bbox[,1L])
