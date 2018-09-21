@@ -1087,11 +1087,15 @@ ISOAbstractObject$getISOClassByNode = function(node){
   if(length(nodeElementNames)>1){
     nodeElementName <- nodeElementNames[2]
   }
-  list_of_classes <- c(rev(ls("package:geometa")), rev(ls()))
+  list_of_classes <- rev(unlist(sapply(search(), ls)))
+  list_of_classes <- list_of_classes[sapply(list_of_classes, function(x){
+    clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
+    return(class(clazz)[1]=="R6ClassGenerator")
+  })]
   for(classname in list_of_classes){
     clazz <- try(eval(parse(text=classname)))
-    geometa_inherits <- FALSE
-    if(class(clazz)[1]=="R6ClassGenerator"){
+    if(nodeElementName %in% clazz$private_fields$xmlElement){
+      geometa_inherits <- FALSE
       superclazz <- clazz
       while(!geometa_inherits){
         clazz_fields <- names(superclazz)
@@ -1106,13 +1110,10 @@ ISOAbstractObject$getISOClassByNode = function(node){
           }
         }
       }
-    }
-    if(!geometa_inherits) next
-    if(length(clazz$private_fields)>0
-       && !is.null(clazz$private_fields$xmlElement)
-       && !is.null(clazz$private_fields$xmlNamespacePrefix)){
-
-      if(nodeElementName %in% clazz$private_fields$xmlElement){
+      if(!geometa_inherits) next
+      if(length(clazz$private_fields)>0
+         && !is.null(clazz$private_fields$xmlElement)
+         && !is.null(clazz$private_fields$xmlNamespacePrefix)){
         outClass <- clazz
         break
       }
