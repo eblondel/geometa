@@ -330,7 +330,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         }
         
         if(!is(self, "ISOElementSequence")) {
-          if(!(fieldName %in% names(self)) & fieldName != "text") next
+          if(!(fieldName %in% names(self)) & fieldName != "text" & self$getClass()$is_locked()) next
         }
           
         fieldClass <- NULL
