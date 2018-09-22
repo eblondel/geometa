@@ -359,15 +359,15 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               }
             }else{
               #if xlink:href attr available attempt to
-              href <- xmlGetAttr(child, "xlink:href")
-              if(!is.null(href)){
-                self$INFO(sprintf("Fetching child elemnt from xlink:href attribute '%s'", href))
-                childXML <- try(XML::xmlParse(href))
-                if(!is(childXML,"try-error")){
-                  child <- XML::xmlRoot(childXML)
-                  fieldClass <- ISOAbstractObject$getISOClassByNode(child)
-                }
-              }
+              #href <- xmlGetAttr(child, "xlink:href")
+              #if(!is.null(href)){
+              #  self$INFO(sprintf("Fetching child element from xlink:href attribute '%s'", href))
+              #  childXML <- try(XML::xmlParse(href))
+              #  if(!is(childXML,"try-error")){
+              #    child <- XML::xmlRoot(childXML)
+              #    fieldClass <- ISOAbstractObject$getISOClassByNode(child)
+              #  }
+              #}
             }
           }
         }
