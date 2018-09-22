@@ -47,6 +47,8 @@ GMLAbstractGML <- R6Class("GMLAbstractGML",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #+ metaDataProperty [0..*] 
+     metaDataProperty = list(),
      #+ descriptionReference [0..1]: character
      descriptionReference = NULL,
      #+ identifier [0..1]: character

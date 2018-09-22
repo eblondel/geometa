@@ -26,6 +26,7 @@ GMLCOVExtension <-  R6Class("GMLCOVExtension",
      xmlNamespacePrefix = "GMLCOV"
    ),
    public = list(
+     anyElement = TRUE,
      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement

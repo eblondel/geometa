@@ -137,7 +137,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     document = FALSE,
     system_fields = c("wrap", "valueDescription",
                       "element", "namespace", "defaults", "attrs", "printAttrs",
-                      "codelistId", "measureType", "isNull"),
+                      "codelistId", "measureType", "isNull", "anyElement"),
     logger = function(type, text){
       cat(sprintf("[geometa][%s] %s \n", type, text))
     },
@@ -205,6 +205,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     printAttrs = list(),
     value = NULL,
     isNull = FALSE,
+    anyElement = FALSE,
     initialize = function(xml = NULL, element = NULL, namespace = NULL,
                           attrs = list(), defaults = list(),
                           wrap = TRUE){
@@ -330,7 +331,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         }
         
         if(!is(self, "ISOElementSequence")) {
-          if(!(fieldName %in% names(self)) & fieldName != "text" & self$getClass()$is_locked()) next
+          if(!(fieldName %in% names(self)) & fieldName != "text" & !self$anyElement) next
         }
           
         fieldClass <- NULL
