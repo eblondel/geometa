@@ -8,6 +8,7 @@ require(testthat)
 require(XML)
 
 context("GMLConversion")
+testthat::skip_on_cran()
 
 test_that("encoding",{
   #encoding

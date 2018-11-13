@@ -7,7 +7,8 @@ require(geometa, quietly = TRUE)
 require(sf)
 require(testthat)
 
-context("ISOAbstractGeometricPrimitive")
+context("GMLAbstractGeometricPrimitive")
+testthat::skip_on_cran()
 
 test_that("GMLPoint",{
   #encoding

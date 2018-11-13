@@ -8,6 +8,7 @@ require(sf)
 require(testthat)
 
 context("GMLEnvelopeWithTimePeriod")
+testthat::skip_on_cran()
 
 test_that("GMLEnvelopeWithTimePeriod",{
   #encoding

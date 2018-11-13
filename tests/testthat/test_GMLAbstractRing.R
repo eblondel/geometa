@@ -7,7 +7,8 @@ require(geometa, quietly = TRUE)
 require(sf)
 require(testthat)
 
-context("ISOAbstractRing")
+context("GMLAbstractRing")
+testthat::skip_on_cran()
 
 test_that("GMLLinearRing",{
   #encoding

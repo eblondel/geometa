@@ -7,7 +7,8 @@ require(geometa, quietly = TRUE)
 require(testthat)
 require(XML)
 
-context("GMLConversion")
+context("GMLOperationMethod")
+testthat::skip_on_cran()
 
 test_that("encoding",{
   #encoding

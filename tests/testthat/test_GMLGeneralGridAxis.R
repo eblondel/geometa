@@ -8,6 +8,7 @@ require(sf)
 require(testthat)
 
 context("GMLGeneralGridAxis")
+testthat::skip_on_cran()
 
 test_that("GMLGeneralGridAxis",{
   #encoding

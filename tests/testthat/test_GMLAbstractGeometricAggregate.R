@@ -7,7 +7,8 @@ require(geometa, quietly = TRUE)
 require(sf)
 require(testthat)
 
-context("ISOAbstractGeometricAggregate")
+context("GMLAbstractGeometricAggregate")
+testthat::skip_on_cran()
 
 test_that("GMLMultiPoint",{
   #encoding

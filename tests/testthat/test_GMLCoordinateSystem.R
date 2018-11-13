@@ -8,6 +8,7 @@ require(testthat)
 require(XML)
 
 context("GMLCoordinateSystem")
+testthat::skip_on_cran()
 
 test_that("GMLAbstractCoordinateSystem",{
   gml <- GMLAbstractCoordinateSystem$new(id = "ID1")

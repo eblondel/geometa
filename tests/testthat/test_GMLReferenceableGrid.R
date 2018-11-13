@@ -8,6 +8,7 @@ require(sf)
 require(testthat)
 
 context("GMLReferenceableGrid")
+testthat::skip_on_cran()
 
 test_that("GMLAbstractReferenceableGrid",{
   #encoding

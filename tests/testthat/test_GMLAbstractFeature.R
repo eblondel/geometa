@@ -8,6 +8,7 @@ require(sf)
 require(testthat)
 
 context("GMLAbstractFeature")
+testthat::skip_on_cran()
 
 test_that("GMLAbstractFeature",{
   #encoding

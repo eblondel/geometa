@@ -8,6 +8,7 @@ require(sf)
 require(testthat)
 
 context("GMLEnvelope")
+testthat::skip_on_cran()
 
 test_that("GMLEnvelope",{
   #encoding

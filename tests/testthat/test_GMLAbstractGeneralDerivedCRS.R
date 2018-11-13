@@ -8,6 +8,7 @@ require(testthat)
 require(XML)
 
 context("GMLAbstractGeneralDerivedCRS")
+testthat::skip_on_cran()
 
 test_that("encoding",{
   
