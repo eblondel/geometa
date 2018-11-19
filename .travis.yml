@@ -29,8 +29,8 @@ before_install:
   - cd $CURWD
 
 r:
-  - oldrel
-  - release
+  #- oldrel
+  #- release
   - devel
 
 r_packages:
