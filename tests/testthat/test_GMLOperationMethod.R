@@ -8,7 +8,7 @@ require(testthat)
 require(XML)
 
 context("GMLOperationMethod")
-testthat::skip_on_cran()
+
 
 test_that("encoding",{
   #encoding

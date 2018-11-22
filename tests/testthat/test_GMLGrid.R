@@ -8,7 +8,6 @@ require(sf)
 require(testthat)
 
 context("GMLGrid")
-testthat::skip_on_cran()
 
 test_that("GMLGrid - with axisLabels",{
   #encoding

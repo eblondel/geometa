@@ -8,7 +8,6 @@ require(sf)
 require(testthat)
 
 context("GMLAbstractGeometricAggregate")
-testthat::skip_on_cran()
 
 test_that("GMLMultiPoint",{
   #encoding

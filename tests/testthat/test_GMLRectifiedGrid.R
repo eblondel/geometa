@@ -8,7 +8,6 @@ require(sf)
 require(testthat)
 
 context("GMLRectifiedGrid")
-testthat::skip_on_cran()
 
 test_that("GMLRectifiedGrid",{
   #encoding

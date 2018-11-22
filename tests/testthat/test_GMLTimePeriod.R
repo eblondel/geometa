@@ -8,7 +8,6 @@ require(testthat)
 require(XML)
 
 context("GMLTimePeriod")
-testthat::skip_on_cran()
 
 test_that("encoding",{
   

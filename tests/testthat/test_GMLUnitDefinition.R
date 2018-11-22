@@ -8,7 +8,6 @@ require(testthat)
 require(XML)
 
 context("GMLUnitDefinition")
-testthat::skip_on_cran()
 
 test_that("UnitDefinition",{
   

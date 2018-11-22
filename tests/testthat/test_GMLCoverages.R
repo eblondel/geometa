@@ -8,7 +8,6 @@ require(sf)
 require(testthat)
 
 context("GMLAbstractCoverage")
-testthat::skip_on_cran()
 
 test_that("GMLAbstractCoverage",{
   #encoding

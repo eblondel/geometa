@@ -8,7 +8,6 @@ require(testthat)
 require(XML)
 
 context("GMLParameterValue")
-testthat::skip_on_cran()
 
 test_that("encoding - value",{
   #encoding
