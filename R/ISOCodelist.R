@@ -66,10 +66,18 @@ ISOCodelist <- R6Class("ISOCodelist",
         isML <- regexpr("ML", refFile) > 0
         
         #parse ISO XML codelist file
-        clXML <- XML::xmlParse(clFile)
-        clXML <- methods::as(clXML, "character")
+        url_regex <- '(http|https)[^([:blank:]|\\"|<|&|#\n\r)]+'
+        isURL <- regexpr(url_regex, refFile) > 0
+        #parse ISO XML codelist file
+        if(isURL){
+          clXML <- httr::GET(clFile)
+          clXML <- httr::content(clXML, "text", encoding = "UTF-8")
+        }else{
+          clXML <- XML::xmlParse(clFile)
+          clXML <- methods::as(clXML, "character")
+        }
         clXML <- gsub("<!--.*?-->", "", clXML)
-        clXML <- XML::xmlParse(clXML, asText = TRUE)
+        clXML <- XML::xmlParse(clXML, asText = TRUE) 
         ns <- XML::xmlNamespaceDefinitions(clXML)
         nsdf <- do.call("rbind", lapply(ns, function(x){
           return(data.frame(id = x$id, uri = x$uri, stringsAsFactors = FALSE))
