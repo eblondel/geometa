@@ -10,6 +10,8 @@ require(XML)
 context("GMLDefinition")
 
 test_that("encoding",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   
   #encoding
   gml <- GMLDefinition$new()

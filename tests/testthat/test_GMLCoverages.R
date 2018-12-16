@@ -10,6 +10,9 @@ require(testthat)
 context("GMLAbstractCoverage")
 
 test_that("GMLAbstractCoverage",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLAbstractCoverage$new()
   m <- matrix(c(-180,-90,180,90),2,2)
@@ -26,6 +29,9 @@ test_that("GMLAbstractCoverage",{
 })
 
 test_that("GMLAbstractDiscreteCoverage",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLAbstractDiscreteCoverage$new()
   m <- matrix(c(-180,-90,180,90),2,2)
@@ -46,6 +52,9 @@ test_that("GMLAbstractDiscreteCoverage",{
 })
 
 test_that("GMLMultiPointCoverage",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLMultiPointCoverage$new()
   m <- matrix(c(-180,-90,180,90),2,2)
@@ -66,6 +75,9 @@ test_that("GMLMultiPointCoverage",{
 })
 
 test_that("GMLMultiCurveCoverage",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLMultiCurveCoverage$new()
   m <- matrix(c(-180,-90,180,90),2,2)
@@ -86,6 +98,9 @@ test_that("GMLMultiCurveCoverage",{
 })
 
 test_that("GMLMultiSurfaceCoverage",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLMultiSurfaceCoverage$new()
   m <- matrix(c(-180,-90,180,90),2,2)
@@ -106,6 +121,9 @@ test_that("GMLMultiSurfaceCoverage",{
 })
 
 test_that("GMLMultiSolidCoverage",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLMultiSolidCoverage$new()
   m <- matrix(c(-180,-90,180,90),2,2)
@@ -126,6 +144,9 @@ test_that("GMLMultiSolidCoverage",{
 })
 
 test_that("GMLGridCoverage",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLGridCoverage$new()
   m <- matrix(c(-180,-90,180,90),2,2)
@@ -146,6 +167,9 @@ test_that("GMLGridCoverage",{
 })
 
 test_that("GMLRectifiedGridCoverage",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLRectifiedGridCoverage$new()
   m <- matrix(c(-180,-90,180,90),2,2)

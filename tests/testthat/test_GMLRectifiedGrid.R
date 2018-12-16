@@ -10,6 +10,10 @@ require(testthat)
 context("GMLRectifiedGrid")
 
 test_that("GMLRectifiedGrid",{
+  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLRectifiedGrid$new()
   m <- matrix(c(-180,180,-90, 90), nrow = 2, ncol = 2, byrow = TRUE,

@@ -10,7 +10,8 @@ require(XML)
 context("GMLTimePeriod")
 
 test_that("encoding",{
-  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   start <- ISOdate(2000, 1, 12, 12, 59, 45)
   end <- ISOdate(2010, 8, 22, 13, 12, 43)

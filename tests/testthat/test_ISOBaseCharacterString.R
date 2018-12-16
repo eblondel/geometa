@@ -9,7 +9,8 @@ require(testthat)
 context("ISOBaseCharacterString")
 
 test_that("encoding",{
-  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOBaseCharacterString$new(value = "myvalue")
   expect_is(md, "ISOBaseCharacterString")

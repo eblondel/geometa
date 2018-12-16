@@ -10,6 +10,9 @@ require(testthat)
 context("GMLGridFunction")
 
 test_that("GMLGridFunction",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLGridFunction$new()
   md$setSequenceRule("Linear")

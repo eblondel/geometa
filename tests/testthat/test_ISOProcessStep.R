@@ -9,7 +9,8 @@ require(testthat)
 context("ISOProcessStep")
 
 test_that("encoding",{
-  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   md <- ISOProcessStep$new()
   md$setDescription("description")
   md$setRationale("rationale")

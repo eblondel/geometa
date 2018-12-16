@@ -9,7 +9,8 @@ require(testthat)
 context("ISOListedValue")
 
 test_that("encoding",{
-  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOListedValue$new()
   md$setLabel("label")

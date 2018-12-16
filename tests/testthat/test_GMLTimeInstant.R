@@ -10,7 +10,8 @@ require(XML)
 context("GMLTimeInstant")
 
 test_that("encoding",{
-  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   time <- ISOdate(2000, 1, 12, 12, 59, 45)
   md <- GMLTimeInstant$new(timePosition = time)

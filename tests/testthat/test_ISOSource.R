@@ -9,11 +9,12 @@ require(testthat)
 context("ISOSource")
 
 test_that("encoding",{
-  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  #encode
   md <- ISOSource$new()
   md$setDescription("description")
   md$setScaleDenominator(1L)
-  
   rs <- ISOReferenceSystem$new()
   rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
   rs$setReferenceSystemIdentifier(rsId)

@@ -1,15 +1,16 @@
-# test_ISODataIdentification.R
+# test_ISOServiceIdentification.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISODataIdentification.R
+# Description: Unit tests for ISOServiceIdentification.R
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISODataIdentification")
+context("ISOServiceIdentification")
 
 test_that("encoding",{
-  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOServiceIdentification$new()
   md$setAbstract("abstract")

@@ -10,6 +10,9 @@ require(testthat)
 context("GMLAbstractFeature")
 
 test_that("GMLAbstractFeature",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLAbstractFeature$new()
   m <- matrix(c(-180,-90,180,90),2,2)

@@ -10,6 +10,10 @@ require(testthat)
 context("GMLReferenceableGrid")
 
 test_that("GMLAbstractReferenceableGrid",{
+  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   md <- GMLAbstractReferenceableGrid$new()
   m <- matrix(c(0,500,0,500),2,2)
@@ -25,6 +29,9 @@ test_that("GMLAbstractReferenceableGrid",{
 })
 
 test_that("GMLReferenceableGridByVectors",{
+  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   
   #encoding
   md <- GMLReferenceableGridByVectors$new()

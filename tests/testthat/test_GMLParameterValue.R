@@ -10,6 +10,10 @@ require(XML)
 context("GMLParameterValue")
 
 test_that("encoding - value",{
+  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   gml <- GMLParameterValue$new()
   gml$setValue(1.1, "test")

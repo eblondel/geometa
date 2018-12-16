@@ -11,6 +11,9 @@ context("GMLUnitDefinition")
 
 test_that("UnitDefinition",{
   
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   gml <- GMLUnitDefinition$new()
   gml$setDescriptionReference("someref")
@@ -32,6 +35,9 @@ test_that("UnitDefinition",{
 })
 
 test_that("BaseUnit",{
+  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   
   #encoding
   gml <- GMLBaseUnit$new()
@@ -56,6 +62,9 @@ test_that("BaseUnit",{
 
 test_that("DerivedUnit",{
   
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  
   #encoding
   gml <- GMLDerivedUnit$new()
   gml$setDescriptionReference("someref")
@@ -78,6 +87,9 @@ test_that("DerivedUnit",{
 })
 
 test_that("ConventionalUnit",{
+  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   
   #encoding
   gml <- GMLConventionalUnit$new()

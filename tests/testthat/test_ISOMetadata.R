@@ -9,7 +9,6 @@ require(testthat)
 context("ISOMetadata")
 
 test_that("encoding/decoding",{
-  
   #encoding
   md = ISOMetadata$new()
   md$setFileIdentifier("my-metadata-identifier")

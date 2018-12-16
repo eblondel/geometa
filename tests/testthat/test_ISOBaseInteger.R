@@ -9,7 +9,8 @@ require(testthat)
 context("ISOBaseInteger")
 
 test_that("encoding",{
-  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOBaseInteger$new(value = 19L)
   expect_is(md, "ISOBaseInteger")

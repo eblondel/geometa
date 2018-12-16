@@ -9,7 +9,8 @@ require(testthat)
 context("ISOSpatialTemporalExtent")
 
 test_that("encoding",{
-  
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOSpatialTemporalExtent$new()
   start <- ISOdate(2000, 1, 12, 12, 59, 45)

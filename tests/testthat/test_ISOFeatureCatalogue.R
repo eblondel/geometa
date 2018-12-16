@@ -9,7 +9,7 @@ require(testthat)
 context("ISOFeatureCatalogue")
 
 test_that("encoding",{
-  
+  #encoding
   fc <- ISOFeatureCatalogue$new(uuid = "my-fc-identifier")
   fc$setName("name")
   fc$addScope("scope1")
