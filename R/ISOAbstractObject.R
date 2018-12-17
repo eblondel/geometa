@@ -232,7 +232,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       
       #fields
       fields <- fields[!sapply(fields, function(x){
-        (class(self[[x]]) %in% c("environment", "function")) ||
+        (class(self[[x]])[1] %in% c("environment", "function")) ||
         (x %in% private$system_fields)
       })]
       
@@ -521,7 +521,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       
       #fields
       fields <- fields[!sapply(fields, function(x){
-        (class(self[[x]]) %in% c("environment", "function")) ||
+        (class(self[[x]])[1] %in% c("environment", "function")) ||
         (x %in% private$system_fields)
       })]
       
@@ -844,7 +844,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         #list of fields
         fields <- rev(names(self))
         fields <- fields[!sapply(fields, function(x){
-          (class(self[[x]]) %in% c("environment", "function")) ||
+          (class(self[[x]])[1] %in% c("environment", "function")) ||
             (x %in% private$system_fields)
         })]
         
