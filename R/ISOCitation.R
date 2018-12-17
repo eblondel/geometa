@@ -110,7 +110,17 @@ ISOCitation<- R6Class("ISOCitation",
     
     #setTitle
     setTitle = function(title){
-      if(!(is.na(title) || is(title,"character") || is(title,"ISOAnchor"))){
+      classPass <- TRUE
+      if(is.null(title)){
+        classPass <- FALSE
+      }else{
+        if(!inherits(title,"ISOAbstractObject")){
+          if(!(is.na(title) || is(title, "character"))) classPass <- FALSE
+        }else{
+          if(is(title,"ISOAnchor")){ classPass <- TRUE }else{ classPass <- FALSE }
+        }
+      }
+      if(!classPass){
         stop("Title should be an object of class 'character' or 'ISOAnchor'")
       }
       self$title <- title
@@ -118,7 +128,17 @@ ISOCitation<- R6Class("ISOCitation",
     
     #setAlternateTitle
     setAlternateTitle = function(alternateTitle){
-      if(!(is.na(alternateTitle) || is(alternateTitle,"character") || is(alternateTitle,"ISOAnchor"))){
+      classPass <- TRUE
+      if(is.null(alternateTitle)){
+        classPath <- FALSE
+      }else{
+        if(!inherits(alternateTitle,"ISOAbstractObject")){
+          if(!(is.na(alternateTitle) || is(alternateTitle, "character"))) classPass <- FALSE
+        }else{
+          if(is(alternateTitle,"ISOAnchor")){ classPass <- TRUE }else{ classPass <- FALSE }
+        }
+      }
+      if(!classPass){
         stop("Alternate title should be an object of class 'character' or 'ISOAnchor'")
       }
       self$alternateTitle <- alternateTitle
