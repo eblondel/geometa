@@ -15,7 +15,7 @@ apt_packages:
   - libgdal-dev
 
 r:
-  - oldrel
+  #- oldrel
   - release
   - devel
 
