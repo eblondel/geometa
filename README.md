@@ -11,6 +11,13 @@
 
 Please check the [online documentation](https://github.com/eblondel/geometa/wiki) for more details!
 
+## Sponsors
+
+Many thanks to the following organizations that have provided fundings for strenghtening the ``geosapi`` package:
+
+<a href="http://www.fao.org"><img src="http://www.fao.org/figis/website/assets/images/templates/shared/faologo/en.png" width="180" height="60"></a>
+
+
 ## Citation
 
 We thank in advance people that use ``geometa`` for citing it in their work / publication(s). For this, please use the citation provided at this link [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184892.svg)](https://doi.org/10.5281/zenodo.1184892)
