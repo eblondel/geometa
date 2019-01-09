@@ -285,7 +285,7 @@ ISODataIdentification <- R6Class("ISODataIdentification",
      #+ spatialRepresentationType [0..*]: ISOSpatialRepresentationType
      spatialRepresentationType = list(),
      #+ spatialResolution [0..*]: ISOResolution
-     spatialResolution = list(), #TODO
+     spatialResolution = list(),
      #+ language [1..*]: character
      language = list(),
      #+ characterSet [0..*]: ISOCharacterSet
@@ -325,6 +325,22 @@ ISODataIdentification <- R6Class("ISODataIdentification",
          spatialRepresentationType <- ISOSpatialRepresentationType$new(value = spatialRepresentationType)
        }
        return(self$delListElement("spatialRepresentationType", spatialRepresentationType))
+     },
+     
+     #addSpatialResolution
+     addSpatialResolution = function(resolution){
+       if(!is(resolution, "ISOResolution")){
+         resolution <- ISOResolution$new(value = resolution)
+       }
+       return(self$addListElement("spatialResolution", resolution))
+     },
+     
+     #delSpatialResolution
+     delSpatialResolution = function(resolution){
+       if(!is(resolution, "ISOResolution")){
+         resolution <- ISOResolution$new(value = resolution)
+       }
+       return(self$delListElement("spatialResolution", resolution))
      },
      
      #addLanguage
