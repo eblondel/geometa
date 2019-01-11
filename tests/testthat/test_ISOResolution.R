@@ -14,6 +14,9 @@ test_that("encoding/decoding",{
   #encoding
   md <- ISOResolution$new()
   md$setDistance(ISODistance$new(value = 1, uom = "m", useUomURI = TRUE))
+  expect_null(md$equivalentScale)
+  md$setEquivalentScale(2)
+  expect_null(md$distance)
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   

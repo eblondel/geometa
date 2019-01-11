@@ -17,7 +17,7 @@
 #'  }
 #'  \item{\code{setEquivalentScale(equivalentScale)}}{
 #'    Set equivalent scale. By setting an equivalent scale, the value
-#'    of field 'distance' will be set to NULL. NOT YET SUPPORTED
+#'    of field 'distance' will be set to NULL.
 #'  }
 #'  \item{\code{setDistance(distance)}}{
 #'    Set distance. By setting a distance, the value of field
@@ -44,7 +44,7 @@ ISOResolution <- R6Class("ISOResolution",
    public = list(
      #Choice [1..1]
      #equivalentScale 
-     equivalentScale = NULL, #TODO
+     equivalentScale = NULL,
      #distance
      distance = NULL,
      initialize = function(xml = NULL, defaults = list()){        
@@ -53,8 +53,16 @@ ISOResolution <- R6Class("ISOResolution",
    
      #setEquivalentScale
      setEquivalentScale = function(equivalentScale){
-       stop("Method not yet supported")
-       self$equivalentScale = equivalentScale
+       if(is(equivalentScale, "ISORepresentativeFraction")){
+         self$equivalentScale = equivalentScale
+       }else if(is(equivalentScale, "numeric")){
+         rf <- ISORepresentativeFraction$new()
+         rf$setDenominator(equivalentScale)
+         self$equivalentScale <- rf
+       }else{
+         stop(paste0("Argument 'equivalentScale' should be an object of class ",
+                     "'numeric' or 'ISORepresentativeFraction'."))
+       }
        self$distance = NULL
      },
      

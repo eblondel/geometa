@@ -28,7 +28,7 @@ ISOResolution
  }
  \item{\code{setEquivalentScale(equivalentScale)}}{
    Set equivalent scale. By setting an equivalent scale, the value
-   of field 'distance' will be set to NULL. NOT YET SUPPORTED
+   of field 'distance' will be set to NULL.
  }
  \item{\code{setDistance(distance)}}{
    Set distance. By setting a distance, the value of field
