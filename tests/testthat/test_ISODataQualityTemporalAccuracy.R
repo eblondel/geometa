@@ -1,18 +1,18 @@
-# test_ISOPositionalAccuracy.R
+# test_ISODataQualityTemporalAccuracy.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOPositionalAccuracy.R
+# Description: Unit tests for ISODataQualityTemporalAccuracy.R
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISOPositionalAccuracy")
+context("ISODataQualityTemporalAccuracy")
 
-test_that("ISOAbstractPositionalAccuracy",{
+test_that("ISOAbstractTemporalAccuracy",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()
   #encoding
-  dq <- ISOAbstractPositionalAccuracy$new()
+  dq <- ISOAbstractTemporalAccuracy$new()
   dq$addNameOfMeasure("measure")
   metaId <- ISOMetaIdentifier$new(code = "measure-id")
   dq$setMeasureIdentification(metaId)
@@ -36,18 +36,18 @@ test_that("ISOAbstractPositionalAccuracy",{
   xml <- dq$encode(validate=F)
   expect_is(xml, "XMLInternalNode")
   #decoding
-  dq2 <- ISOAbstractPositionalAccuracy$new(xml = xml)
+  dq2 <- ISOAbstractTemporalAccuracy$new(xml = xml)
   xml2 <- dq2$encode(validate=F)
   #identity
   expect_true(ISOAbstractObject$compare(dq, dq2))
   
 })
 
-test_that("ISORelativeInternalPositionalAccuracy",{
+test_that("ISOTemporalValidity",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()
   #encoding
-  dq <- ISORelativeInternalPositionalAccuracy$new()
+  dq <- ISOTemporalValidity$new()
   dq$addNameOfMeasure("measure")
   metaId <- ISOMetaIdentifier$new(code = "measure-id")
   dq$setMeasureIdentification(metaId)
@@ -71,18 +71,18 @@ test_that("ISORelativeInternalPositionalAccuracy",{
   xml <- dq$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding
-  dq2 <- ISORelativeInternalPositionalAccuracy$new(xml = xml)
+  dq2 <- ISOTemporalValidity$new(xml = xml)
   xml2 <- dq2$encode()
   #identity
   expect_true(ISOAbstractObject$compare(dq, dq2))
   
 })
 
-test_that("ISOGriddedDataPositionalAccuracy",{
+test_that("ISOTemporalConsistency",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()
   #encoding
-  dq <- ISOGriddedDataPositionalAccuracy$new()
+  dq <- ISOTemporalConsistency$new()
   dq$addNameOfMeasure("measure")
   metaId <- ISOMetaIdentifier$new(code = "measure-id")
   dq$setMeasureIdentification(metaId)
@@ -106,18 +106,18 @@ test_that("ISOGriddedDataPositionalAccuracy",{
   xml <- dq$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding
-  dq2 <- ISOGriddedDataPositionalAccuracy$new(xml = xml)
+  dq2 <- ISOTemporalConsistency$new(xml = xml)
   xml2 <- dq2$encode()
   #identity
   expect_true(ISOAbstractObject$compare(dq, dq2))
   
 })
 
-test_that("ISOAbsoluteExternalPositionalAccuracy",{
+test_that("ISOAccuracyOfATimeMeasurement",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()
   #encoding
-  dq <- ISOAbsoluteExternalPositionalAccuracy$new()
+  dq <- ISOAccuracyOfATimeMeasurement$new()
   dq$addNameOfMeasure("measure")
   metaId <- ISOMetaIdentifier$new(code = "measure-id")
   dq$setMeasureIdentification(metaId)
@@ -141,7 +141,7 @@ test_that("ISOAbsoluteExternalPositionalAccuracy",{
   xml <- dq$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding
-  dq2 <- ISOAbsoluteExternalPositionalAccuracy$new(xml = xml)
+  dq2 <- ISOAccuracyOfATimeMeasurement$new(xml = xml)
   xml2 <- dq2$encode()
   #identity
   expect_true(ISOAbstractObject$compare(dq, dq2))

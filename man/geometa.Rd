@@ -15,8 +15,8 @@ encoded using the ISO 19139 (XML) standard.
 \tabular{ll}{
    Package: \tab geometa\cr
    Type: \tab Package\cr
-   Version: \tab 0.4-1\cr
-   Date: \tab 2018-01-09\cr
+   Version: \tab 0.5\cr
+   Date: \tab 2018-01-14\cr
    License: \tab MIT\cr
    LazyLoad: \tab yes\cr
  }

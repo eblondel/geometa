@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/eblondel/geometa.svg?branch=master)](https://travis-ci.org/eblondel/geometa)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/geometa)](https://cran.r-project.org/package=geometa)
-[![Github_Status_Badge](https://img.shields.io/badge/Github-0.4--1-blue.svg)](https://github.com/eblondel/geometa)
+[![Github_Status_Badge](https://img.shields.io/badge/Github-0.5-blue.svg)](https://github.com/eblondel/geometa)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184892.svg)](https://doi.org/10.5281/zenodo.1184892)
 
 **Tools for Reading and Writing ISO/OGC Geographic Metadata**
