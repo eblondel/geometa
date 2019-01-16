@@ -149,12 +149,12 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       isCompliant <- ifelse(is.na(compliant),"NOT TESTED", ifelse(compliant, "YES", "NO"))
       compliance <- paste0("ISO 19139 XML compliance: ", isCompliant)
       createdOn <- paste0("Metadata Creation date/time: ", format(Sys.time(), "%Y-%m-%dT%H:%M:%S"))
-      geometaAuthor <- unlist(strsplit(as.character(eval(parse(text=geometa$Authors)))," \\["))[1]
+      geometaAuthor <- gsub(">","",gsub("<","",unlist(strsplit(as.character(eval(parse(text=geometa$Authors)))," \\["))[1]))
       author <- paste0("\tContact: ", geometaAuthor)
       infoPage <- paste0("\tURL: ", geometa$URL)
       bugReport <- paste0("\tBugReports: ", geometa$BugReports)
       comments[[1]] <- paste(createdOn, title, compliance, sep="\n")
-      comments[[2]] <- paste("\tgeometa R package information:", author, infoPage, bugReport, sep="\n")
+      comments[[2]] <- paste("geometa R package information:", author, infoPage, bugReport, sep="\n")
       return(comments)
     },
     toComplexTypes = function(value){
