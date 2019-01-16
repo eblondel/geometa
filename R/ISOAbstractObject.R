@@ -774,7 +774,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       #ISSUES with: out <- iconv(out, to = "UTF-8")
       #ISSUES with: out <- xmlParse(out, encoding = Encoding(out), error = function (msg, ...) {})
       out <- xmlParse(out, error = function (msg, ...) {})
-      out <- as(out, "XMLInternalNode") #to XMLInternalNode
+      if(!self$isDocument()) out <- as(out, "XMLInternalNode") #to XMLInternalNode
       if(length(rootXMLAttrs)>0){
         suppressWarnings(xmlAttrs(out) <- rootXMLAttrs)
       }
