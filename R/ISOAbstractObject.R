@@ -29,15 +29,6 @@
 #'  \item{\code{new(xml, element, namespace, defaults, attrs)}}{
 #'    This method is used to instantiate an ISOAbstractObject
 #'  }
-#'  \item{\code{INFO(text)}}{
-#'    Logger to report information. Used internally
-#'  }
-#'  \item{\code{WARN(text)}}{
-#'    Logger to report warnings. Used internally
-#'  }
-#'  \item{\code{ERROR(text)}}{
-#'    Logger to report errors. Used internally
-#'  }
 #'  \item{\code{print()}}{
 #'    Provides a custom print output (as tree) of the current class
 #'  }
@@ -131,6 +122,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOAbstractObject <- R6Class("ISOAbstractObject",
+  inherit = geometaLogger,
   private = list(
     xmlElement = "AbstractObject",
     xmlNamespacePrefix = "GCO",
@@ -139,9 +131,6 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     system_fields = c("wrap", "valueDescription",
                       "element", "namespace", "defaults", "attrs", "printAttrs",
                       "codelistId", "measureType", "isNull", "anyElement"),
-    logger = function(type, text){
-      cat(sprintf("[geometa][%s] %s \n", type, text))
-    },
     xmlComments = function(compliant){
       comments <- list()
       geometa <- packageDescription("geometa")
@@ -182,13 +171,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     }
   ),
   public = list(
-    
-    #logger
-    INFO = function(text){private$logger("INFO", text)},
-    WARN = function(text){private$logger("WARN", text)},
-    ERROR = function(text){private$logger("ERROR", text)},
-    
-    
+
     #fields
     #---------------------------------------------------------------------------
     wrap = TRUE,

@@ -38,15 +38,6 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{new(xml, element, namespace, defaults, attrs)}}{
    This method is used to instantiate an ISOAbstractObject
  }
- \item{\code{INFO(text)}}{
-   Logger to report information. Used internally
- }
- \item{\code{WARN(text)}}{
-   Logger to report warnings. Used internally
- }
- \item{\code{ERROR(text)}}{
-   Logger to report errors. Used internally
- }
  \item{\code{print()}}{
    Provides a custom print output (as tree) of the current class
  }
