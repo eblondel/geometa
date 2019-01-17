@@ -289,7 +289,7 @@ test_that("encoding/decoding",{
   
   
   xml <- md$encode()
-  expect_is(xml, "XMLInternalDocument")
+  expect_is(xml, "XMLInternalNode")
   
   #decoding
   md2 <- ISOMetadata$new(xml = xml)

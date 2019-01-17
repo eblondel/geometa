@@ -14,7 +14,7 @@
 #'  }
 #'  \item{\code{getValidationReport(obj, file, raw)}}{
 #'    Get validation report for a metadata specified either as R object of class
-#'    \code{ISOMetadata} (from \pkg{geometa} package) or \code{XMLInternalDocument} 
+#'    \code{ISOMetadata} (from \pkg{geometa} package) or \code{XMLInternalNode} 
 #'    (from \pkg{XML} package), or as XML file, providing the path of the XML file
 #'    to be sent to the INSPIRE metadata validator web-service. By default, a summary
 #'    report is returned. To append the raw response of INSPIRE validation web-service
@@ -51,11 +51,13 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       
       #check args & read data
       if(!is.null(obj)){
-        if(!is(obj, "ISOMetadata") && !is(obj, "XMLInternalDocument")){
-          stop("'obj' should be an object of class 'ISOMetadata' (from 'geometa') or 'XMLInternalDocument' (from 'XML')")
+        if(!is(obj, "ISOMetadata") && !is(obj, "XMLInternalNode")){
+          stop("'obj' should be an object of class 'ISOMetadata' (from 'geometa') or 'XMLInternalNode' (from 'XML')")
         }
         if(is(obj,"ISOMetadata")){
           xml <- obj$encode(validate = FALSE)
+        }else{
+          xml <- obj
         }
       }else{
         if(!is.null(file)){

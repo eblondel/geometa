@@ -792,11 +792,6 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         suppressWarnings(xmlAttrs(out) <- rootXMLAttrs)
       }
       
-      if(self$isDocument()){
-        out <- paste0(capture.output(out), collapse="") #to character
-        out <- xmlParse(out, error = function (msg, ...) {})
-      }
-      
       return(out)
     },
     
