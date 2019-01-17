@@ -829,7 +829,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     
     #save
     save = function(file){
-      return(cat(XML::saveXML(self$encode(), encoding = "UTF-8", file = file, indent = T)))
+      return(cat(XML::saveXML(self$encode(), encoding = "UTF-8", indent = T), file = file))
     },
     
     #Util & internal methods
