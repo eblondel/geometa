@@ -22,6 +22,10 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'   inspireValidator <- INSPIREMetadataValidator$new()
+#'   inspireReport <- inspireValidator$getValidationReport(obj = ISOMetadata$new())
+#' 
 #' @references 
 #'   INSPIRE Geoportal Metadata Validator Web Service (http://inspire-geoportal.ec.europa.eu/validator2/html/usingaswebservice.html)
 #' 
