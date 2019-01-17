@@ -153,8 +153,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       author <- paste0("\tContact: ", geometaAuthor)
       infoPage <- paste0("\tURL: ", geometa$URL)
       bugReport <- paste0("\tBugReports: ", geometa$BugReports)
-      comments[[1]] <- paste(createdOn, title, compliance, sep="\n")
-      comments[[2]] <- paste("geometa R package information:", author, infoPage, bugReport, sep="\n")
+      comments[[1]] <- createdOn
+      comments[[2]] <- title
+      comments[[3]] <- compliance
+      comments[[4]] <- paste("geometa R package information:", author, infoPage, bugReport, sep="\n")
       return(comments)
     },
     toComplexTypes = function(value){
