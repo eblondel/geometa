@@ -13,7 +13,7 @@ Please check the [online documentation](https://github.com/eblondel/geometa/wiki
 
 ## Sponsors
 
-Many thanks to the following organizations that have provided fundings for strenghtening the ``geosapi`` package:
+Many thanks to the following organizations that have provided fundings for strenghtening the ``geometa`` package:
 
 <a href="http://www.fao.org"><img src="http://www.fao.org/figis/website/assets/images/templates/shared/faologo/en.png" width="180" height="60"></a>
 
