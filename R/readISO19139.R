@@ -52,12 +52,13 @@ readISO19139 <- function(file = NULL, url = NULL, raw = FALSE){
   out <- NULL
   if(!is.null(raw_xml)){
     raw_xml <- as(raw_xml, "XMLInternalNode")
-    iso_class <- ISOAbstractObject$getISOClassByNode(raw_xml)
-    if(!is.null(iso_class)){
-      out <- iso_class$new(xml = raw_xml)
-    }
     if(raw){
       out <- raw_xml
+    }else{
+      iso_class <- ISOAbstractObject$getISOClassByNode(raw_xml)
+      if(!is.null(iso_class)){
+        out <- iso_class$new(xml = raw_xml)
+      }
     }
   }
   return(out)
