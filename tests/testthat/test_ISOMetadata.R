@@ -968,7 +968,13 @@ test_that("encoding/decoding - i18n",{
   #decoding
   md2 <- ISOMetadata$new(xml = xml)
   xml2 <- md2$encode()
-  
+  #object identity
   expect_true(ISOAbstractObject$compare(md, md2))
+  
+  #saving and reading
+  md$save("test.xml")
+  md3 <- readISO19139("test.xml")
+  #object identity
+  expect_true(ISOAbstractObject$compare(md, md3))
   
 })
