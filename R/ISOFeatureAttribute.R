@@ -17,14 +17,16 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOFeatureAttribute
 #'  }
-#'  \item{\code{setCode(code)}}{
-#'    Sets the code
+#'  \item{\code{setCode(code, locales)}}{
+#'    Sets the code. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{setValueMeasurementUnit(uom)}}{
 #'    Sets the value measurement unit, an object of class \code{GMLUnitDefinition}
 #'  }
-#'  \item{\code{setValueType(typeName)}}{
-#'    Sets the value type
+#'  \item{\code{setValueType(typeName, locales)}}{
+#'    Sets the value type. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{addListedValue(value)}}{
 #'    Adds a listed value (object of class \code{ISOListedValue})
@@ -90,8 +92,11 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      },
      
      #setCode
-     setCode = function(code){
+     setCode = function(code, locales = NULL){
        self$code <- code
+       if(!is.null(locales)){
+         self$code <- self$createLocalisedProperty(code, locales)
+       }
      },
      
      #setValueMeasurementUnit
@@ -103,10 +108,13 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      },
      
      #setValueType
-     setValueType = function(typeName){
+     setValueType = function(typeName, locales = NULL){
        if(!is(typeName, "ISOTypeName")){
          tn <- ISOTypeName$new()
          tn$setName(typeName)
+         if(!is.null(locales)){
+           tn$setName(typeName, locales)
+         }
          typeName <- tn
        }
        self$valueType <- typeName
@@ -115,7 +123,7 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      #addListedValue
      addListedValue = function(value){
        if(!is(value, "ISOListedValue")){
-         value <- ISOListedValue$new(label = value)
+         stop("The parameter should be an object of class 'ISOListedValue'")
        }
        return(self$addListElement("listedValue", value))
      },
@@ -123,7 +131,7 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      #delListedValue
      delListedValue = function(value){
        if(!is(value, "ISOListedValue")){
-         value <- ISOListedValue$new(label = value)
+         stop("The parameter should be an object of class 'ISOListedValue")
        }
        return(self$delListElement("listedValue", value))
      }

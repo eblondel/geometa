@@ -14,14 +14,17 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOLegalConstraints
 #'  }
-#'  \item{\code{addUseLimitation(useLimitation)}}{
-#'    Adds a use limitation
+#'  \item{\code{addUseLimitation(useLimitation, locales)}}{
+#'    Adds a use limitation. Locale names can be specified 
+#'    as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{setUseLimitation(useLimitation)}}{
-#'    Sets a use limitation
+#'  \item{\code{setUseLimitation(useLimitation, locales)}}{
+#'    Sets a use limitation. Locale names can be specified 
+#'    as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{delUseLimitation(useLimitation)}}{
-#'    Deletes a use limitation
+#'  \item{\code{delUseLimitation(useLimitation, locales)}}{
+#'    Deletes a use limitation. Locale names can be specified 
+#'    as \code{list} with the \code{locales} argument.
 #'  }
 #' }
 #' 
@@ -46,20 +49,26 @@ ISOConstraints<- R6Class("ISOConstraints",
     },
     
     #addUseLimitation
-    addUseLimitation = function(useLimitation){
+    addUseLimitation = function(useLimitation, locales = NULL){
       useLimitation <- as.character(useLimitation)
+      if(!is.null(locales)){
+        useLimitation <- self$createLocalisedProperty(useLimitation, locales)
+      }
       return(self$addListElement("useLimitation", useLimitation))
     },
     
     #setUseLimitation
-    setUseLimitation = function(useLimitation){
+    setUseLimitation = function(useLimitation, locales = NULL){
       self$useLimitation <- list()
-      return(self$addUseLimitation(useLimitation))
+      return(self$addUseLimitation(useLimitation, locales))
     },
     
     #delUseLimitation
-    delUseLimitation = function(useLimitation){
+    delUseLimitation = function(useLimitation, locales = NULL){
       useLimitation <- as.character(useLimitation)
+      if(!is.null(locales)){
+        useLimitation <- self$createLocalisedProperty(useLimitation, locales)
+      }
       return(self$delListElement("useLimitation", useLimitation))
     }
   )                                          

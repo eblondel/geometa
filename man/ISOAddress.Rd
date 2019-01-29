@@ -26,20 +26,25 @@ ISOAddress
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOAddress
  }
- \item{\code{setDeliveryPoint(deliveryPoint)}}{
-   Sets the delivery point
+ \item{\code{setDeliveryPoint(deliveryPoint, locales)}}{
+   Sets the delivery point. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setCity(city)}}{
-   Sets the city
+ \item{\code{setCity(city, locales)}}{
+   Sets the city. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setPostalCode(postalCode)}}{
-   Sets the postal code
+ \item{\code{setPostalCode(postalCode, locales)}}{
+   Sets the postal code. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setCountry(country)}}{
-   Sets the country
+ \item{\code{setCountry(country, locales)}}{
+   Sets the country. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setEmail(email)}}{
-   Sets the electronic Mail address
+ \item{\code{setEmail(email, locales)}}{
+   Sets the electronic Mail address. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
 }
 }

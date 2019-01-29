@@ -26,16 +26,18 @@ ISOParameter
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOParameter
  }
- \item{\code{setName(name, attributeType)}}{
+ \item{\code{setName(name, attributeType, locales)}}{
    Sets the parameter name (\code{character}) and attributeType (\code{ISOTypeName} 
-   or \code{character})
+   or \code{character}). Locale names can be specified as \code{list} with the 
+   \code{locales} argument.
  }
  \item{\code{setDirection(direction)}}{
    Sets the direction, an object of class \code{ISOParameterDirection} or any
    \code{character} value among \code{ISOParameterDirection$values()}
  }
- \item{\code{setDescription(description)}}{
-   Sets the parameter description
+ \item{\code{setDescription(description, locales)}}{
+   Sets the parameter description. Locale names can be specified as 
+   \code{list} with the \code{locales} argument.
  }
  \item{\code{setOptionality(optional)}}{
    Set whether the parameter is optional (\code{TRUE}), \code{FALSE} otherwise
@@ -43,8 +45,9 @@ ISOParameter
  \item{\code{setRepeatability(repeatable)}}{
    Set whether the parameter is repeatable (\code{TRUE}), \code{FALSE} otherwise
  }
- \item{\code{setValueType(valueType)}}{
+ \item{\code{setValueType(valueType, locales)}}{
    Sets the type of parameter value, object of class \code{ISOTypeName} or \code{character}
+   Locale names can be specified as \code{list} with the \code{locales} argument.
  }
 }
 }

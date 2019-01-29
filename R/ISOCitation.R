@@ -20,11 +20,13 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOCitation
 #'  }
-#'  \item{\code{setTitle(title)}}{
-#'    Sets the title
+#'  \item{\code{setTitle(title, locales)}}{
+#'    Sets the title. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{setAlternateTitle(alternateTitle)}}{
-#'    Sets an alternate title
+#'  \item{\code{setAlternateTitle(alternateTitle, locales)}}{
+#'    Sets an alternate title. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{addDate(date)}}{
 #'    Adds the date (ISODate object containing date and dateType)
@@ -109,7 +111,7 @@ ISOCitation<- R6Class("ISOCitation",
     },
     
     #setTitle
-    setTitle = function(title){
+    setTitle = function(title, locales = NULL){
       classPass <- TRUE
       if(is.null(title)){
         classPass <- FALSE
@@ -124,10 +126,13 @@ ISOCitation<- R6Class("ISOCitation",
         stop("Title should be an object of class 'character' or 'ISOAnchor'")
       }
       self$title <- title
+	  if(!is.null(locales)){
+        self$title <- self$createLocalisedProperty(title, locales)
+      }
     },
     
     #setAlternateTitle
-    setAlternateTitle = function(alternateTitle){
+    setAlternateTitle = function(alternateTitle, locales = NULL){
       classPass <- TRUE
       if(is.null(alternateTitle)){
         classPath <- FALSE
@@ -142,6 +147,9 @@ ISOCitation<- R6Class("ISOCitation",
         stop("Alternate title should be an object of class 'character' or 'ISOAnchor'")
       }
       self$alternateTitle <- alternateTitle
+      if(!is.null(locales)){
+        self$alternateTitle <- self$createLocalisedProperty(alternateTitle, locales)
+      }
     },
     
     #addDate

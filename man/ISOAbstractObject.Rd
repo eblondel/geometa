@@ -130,6 +130,9 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{isFieldInheritedFrom(field)}}{
    Gives the parent from which the field is inherited, otherwise return \code{NULL}.
  }
+ \item{\code{createLocalisedProperty(text, locales)}}{
+   Creates a localised property made of a default text and a list of localised texts.
+ }
 }
 }
 

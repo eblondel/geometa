@@ -20,8 +20,9 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOOperationMetadata
 #'  }
-#'  \item{\code{setOperationName(operationName)}}{
-#'    Set the operation name
+#'  \item{\code{setOperationName(operationName, locales)}}{
+#'    Set the operation name. Locale names can be specified as 
+#'    \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{addDCP(dcp)}}{
 #'    Add a DCP
@@ -29,11 +30,13 @@
 #'  \item{\code{delDCP(dcp)}}{
 #'    Deletes a DCP
 #'  }
-#'  \item{\code{setOperationDescription(operationDescription)}}{
-#'    Set the operation description
+#'  \item{\code{setOperationDescription(operationDescription, locales)}}{
+#'    Set the operation description. Locale names can be specified as 
+#'    \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{setInvocationName(invocationName)}}{
-#'    Set the invocation name
+#'  \item{\code{setInvocationName(invocationName, locales)}}{
+#'    Set the invocation name. Locale names can be specified as 
+#'    \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{addParameter(parameter)}}{
 #'    Add a parameter, object of class \code{ISOParameter}
@@ -92,8 +95,11 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
     },
     
     #setOperationName
-    setOperationName = function(operationName){
+    setOperationName = function(operationName, locales = NULL){
       self$operationName <- as.character(operationName)
+      if(!is.null(locales)){
+        self$operationName <- self$createLocalisedProperty(operationName, locales)
+      }
     },
     
     #addDCP
@@ -113,13 +119,19 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
     },
     
     #setOperationDescription
-    setOperationDescription = function(operationDescription){
+    setOperationDescription = function(operationDescription, locales = NULL){
       self$operationDescription <- as.character(operationDescription)
+      if(!is.null(locales)){
+        self$operationDescription <- self$createLocalisedProperty(operationDescription, locales)
+      }
     },
     
     #setInvocationName
-    setInvocationName = function(invocationName){
+    setInvocationName = function(invocationName, locales = NULL){
       self$invocationName <- as.character(invocationName)
+      if(!is.null(locales)){
+        self$invocationName <- self$createLocalisedProperty(invocationName, locales)
+      }
     },
     
     #addParameter

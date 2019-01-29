@@ -26,6 +26,25 @@ ISOResponsibleParty
  \item{\code{new(xml,value)}}{
    This method is used to instantiate an ISOResponsibleParty
  }
+ \item{\code{setIndividualName(invidualName, locales)}}{
+   Set the individual name. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
+ }
+ \item{\code{setOrganisationName(organisationName, locales)}}{
+   Set the organisation name. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
+ }
+ \item{\code{setPositionName(positionName, locales)}}{
+   Set the position name. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
+ }
+ \item{\code{setContactInfo(contactInfo)}}{
+   Set the contact info, should be an object of class \code{ISOContact}
+ }
+ \item{\code{setRole(role)}}{
+   Set the role, either an object of class "character" (among values
+   available in \code{ISORole$values()}) or an object of class \code{ISORole}.
+ }
 }
 }
 

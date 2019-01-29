@@ -15,8 +15,9 @@
 #'  \item{\code{new(xml, description)}}{
 #'    This method is used to instantiate an ISOConstraint
 #'  }
-#'  \item{\code{setDescription(description)}}{
-#'    Sets the description
+#'  \item{\code{setDescription(description, locales)}}{
+#'    Sets the description. Locale names can be specified 
+#'    as \code{list} with the \code{locales} argument.
 #'  }
 #' }
 #'  
@@ -48,8 +49,11 @@ ISOConstraint <- R6Class("ISOConstraint",
      },
      
      #setDescription
-     setDescription = function(description){
+     setDescription = function(description, locales = NULL){
        self$description = description
+       if(!is.null(locales)){
+         self$description <- self$createLocalisedProperty(description, locales)
+       }
      }
     
    )         

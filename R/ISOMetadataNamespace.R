@@ -44,6 +44,7 @@ ISOMetadataNamespace$GML = ISOMetadataNamespace$new("gml", "http://www.opengis.n
 ISOMetadataNamespace$GMLCOV = ISOMetadataNamespace$new("gmlcov", "http://www.opengis.net/gmlcov/1.0")
 ISOMetadataNamespace$GMLRGRID = ISOMetadataNamespace$new("gmlrgrid", "http://www.opengis.net/gml/3.3/rgrid")
 ISOMetadataNamespace$XLINK = ISOMetadataNamespace$new("xlink", "http://www.w3.org/1999/xlink")
+ISOMetadataNamespace$XSI = ISOMetadataNamespace$new("xsi", "http://www.w3.org/2001/XMLSchema-instance")
 
 #' setMetadataNamespaces
 #' @export
@@ -59,7 +60,8 @@ setISOMetadataNamespaces <- function(){
     ISOMetadataNamespace$GML,
     ISOMetadataNamespace$GMLCOV,
     ISOMetadataNamespace$GMLRGRID,
-    ISOMetadataNamespace$XLINK
+    ISOMetadataNamespace$XLINK,
+	ISOMetadataNamespace$XSI
   )
 }
 

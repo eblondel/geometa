@@ -54,8 +54,9 @@ ISOGeoreferenceable
  \item{\code{setOrientationParameterAvailability(availability)}}{
    Sets the orientation parameter availability. TRUE/FALSE
  }
- \item{\code{setOrientationParameterDescription(description)}}{
-   Sets the orientation parameter description
+ \item{\code{setOrientationParameterDescription(description, locales)}}{
+   Sets the orientation parameter description. Locale names can be specified
+    as \code{list} with the \code{locales} argument.
  }
  \item{\code{setGeoreferencedParameters(record)}}{
    Sets the georeferenced parameter (object of class \code{ISORecord})

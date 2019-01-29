@@ -33,8 +33,9 @@
 #'  \item{\code{setMemberName(memberName)}}{
 #'    Sets the member name. Object of class \code{ISOLocalName} or \code{"character"}
 #'  }
-#'  \item{\code{setDefinition(definition)}}{
-#'    Sets the definition
+#'  \item{\code{setDefinition(definition, locales)}}{
+#'    Sets the definition. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{setCardinality(lower, upper)}}{
 #'    Sets the cardinality boundaries lower and upper of class \code{numeric}
@@ -78,8 +79,11 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       },
       
       #setDefinition
-      setDefinition = function(definition){
+      setDefinition = function(definition, locales = NULL){
         self$definition <- definition
+        if(!is.null(locales)){
+          self$definition <- self$createLocalisedProperty(definition, locales)
+        }
       },
       
       #setCardinality

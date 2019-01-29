@@ -26,14 +26,17 @@ ISOListedValue
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOListedValue
  }
- \item{\code{setLabel(label)}}{
-   Sets the label
+ \item{\code{setLabel(label, locales)}}{
+   Sets the label. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setCode(code)}}{
-   Sets the code
+ \item{\code{setCode(code, locales)}}{
+   Sets the code. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setDefinition(definition)}}{
-   Sets the definition
+ \item{\code{setDefinition(definition, locales)}}{
+   Sets the definition. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
  \item{\code{setDefinitionReference(definitionReference)}}{
    Sets the definition reference

@@ -38,8 +38,13 @@ ISOElementSequence <- R6Class("ISOElementSequence",
        super$initialize(xml = xml)
        if(is.null(xml)){
          fields <- list(...)
-         for(fieldName in names(fields)){
-           self[[fieldName]] <- fields[[fieldName]]
+         if(!is.null(names(fields))){
+           #named sequence
+           for(fieldName in names(fields)){
+             self[[fieldName]] <- fields[[fieldName]]
+           }
+         }else{
+           self[["_internal_"]] <- fields
          }
        }
      }

@@ -18,20 +18,27 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOAbstractCatalogue
 #'  }
-#'  \item{\code{setName(name)}}{
-#'    Sets the name
+#'  \item{\code{setName(name, locales)}}{
+#'    Sets the name. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{addScope(scope)}}{
-#'    Adds scope (object of class \code{character})
+#'  \item{\code{addScope(scope, locales)}}{
+#'    Adds scope (object of class \code{character}). Locale names can be 
+#'    specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{delScope(scope)}}{
-#'    Deletes scope
+#'  \item{\code{delScope(scope, locales)}}{
+#'    Deletes scope. Locale names can be  specified as \code{list} with 
+#'    the \code{locales} argument. Local names should match those of 
+#'    the scope to be deleted, otherwise nothing will be deleted.
 #'  }
-#'  \item{\code{addFieldOfApplication(fieldOfApplication)}}{
-#'    Adds a field of application (object of class \code{character})
+#'  \item{\code{addFieldOfApplication(fieldOfApplication, locales)}}{
+#'    Adds a field of application (object of class \code{character}). Locale names 
+#'    can be specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{delFieldOfApplication(fieldOfApplication)}}{
-#'    Deletes fieldOfApplication
+#'  \item{\code{delFieldOfApplication(fieldOfApplication, locales)}}{
+#'    Deletes fieldOfApplication. Locale names can be  specified as \code{list} with 
+#'    the \code{locales} argument. Local names should match those of 
+#'    the field of application to be deleted, otherwise nothing will be deleted.
 #'  }
 #'  \item{\code{setVersionNumber(versionNumber)}}{
 #'    Sets version number (object of class \code{character})
@@ -71,28 +78,43 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
      },
      
      #setName
-     setName = function(name){
+     setName = function(name, locales = NULL){
        if(!is(name,"character")) name <- as(name, "character")
+       if(!is.null(locales)){
+         name <- self$createLocalisedProperty(name, locales)
+       }
        self$name <- name
      },
      
      #addScope
-     addScope = function(scope){
+     addScope = function(scope, locales = NULL){
+       if(!is.null(locales)){
+         scope <- self$createLocalisedProperty(scope, locales)
+       }
        return(self$addListElement("scope", scope))
      },
      
      #delScope
-     delScope = function(scope){
+     delScope = function(scope, locales = NULL){
+       if(!is.null(locales)){
+         scope <- self$createLocalisedProperty(scope, locales)
+       }
        return(self$delListElement("scope", scope))
      },
      
      #addFieldOfApplication
-     addFieldOfApplication = function(fieldOfApplication){
+     addFieldOfApplication = function(fieldOfApplication, locales = NULL){
+       if(!is.null(locales)){
+         fieldOfApplication <- self$createLocalisedProperty(fieldOfApplication, locales)
+       }
        return(self$addListElement("fieldOfApplication", fieldOfApplication))
      },
      
      #delFieldOfApplication
      delFieldOfApplication = function(fieldOfApplication){
+       if(!is.null(locales)){
+         fieldOfApplication <- self$createLocalisedProperty(fieldOfApplication, locales)
+       }
        return(self$delListElement("fieldOfApplication", fieldOfApplication))
      },
      

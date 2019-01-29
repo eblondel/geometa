@@ -27,10 +27,12 @@ ISOMemberName
    This method is used to instantiate an ISOMemberName
  }
  \item{\code{setName(aName)}}{
-   Set the aName, object of class \code{character}
+   Set the aName, object of class \code{character}. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
- \item{\code{setAttributeType(attributeType)}}{
+ \item{\code{setAttributeType(attributeType, locales)}}{
    Set the attribute type, object of class \code{ISOTypeName} or \code{character}
+   Locale names can be specified as \code{list} with the \code{locales} argument.
  }
 }
 }

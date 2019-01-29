@@ -29,14 +29,17 @@ Abstract ISO class
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOLegalConstraints
  }
- \item{\code{addUseLimitation(useLimitation)}}{
-   Adds a use limitation
+ \item{\code{addUseLimitation(useLimitation, locales)}}{
+   Adds a use limitation. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
- \item{\code{setUseLimitation(useLimitation)}}{
-   Sets a use limitation
+ \item{\code{setUseLimitation(useLimitation, locales)}}{
+   Sets a use limitation. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
- \item{\code{delUseLimitation(useLimitation)}}{
-   Deletes a use limitation
+ \item{\code{delUseLimitation(useLimitation, locales)}}{
+   Deletes a use limitation. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
 }
 }

@@ -26,8 +26,9 @@ ISOBinding
  \item{\code{new(xml, defaults)}}{
    This method is used to instantiate an ISOBinding
  }
- \item{\code{setDescription(description)}}{
-   Set description of inheritance relation
+ \item{\code{setDescription(description, locales)}}{
+   Set description of inheritance relation. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
  \item{\code{setPropertyType(propertyType)}}{
    Set global property, object of class \code{ISOPropertyType}

@@ -19,8 +19,9 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOSource
 #'  }
-#'  \item{\code{setDescription(description)}}{
-#'    Sets the source description
+#'  \item{\code{setDescription(description, locales)}}{
+#'    Sets the source description. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{setScaleDenominator(denominator)}}{
 #'    Sets the scale denominator (object of class \code{ISORepresentativeFraction} or
@@ -97,8 +98,11 @@ ISOSource <- R6Class("ISOSource",
      },
      
      #setDescription
-     setDescription = function(description){
+     setDescription = function(description, locales = NULL){
        self$description <- as.character(description)
+       if(!is.null(locales)){
+         self$description <- self$createLocalisedProperty(description, locales)
+       }
      },
      
      #setScaleDenominator

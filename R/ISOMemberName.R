@@ -16,10 +16,12 @@
 #'    This method is used to instantiate an ISOMemberName
 #'  }
 #'  \item{\code{setName(aName)}}{
-#'    Set the aName, object of class \code{character}
+#'    Set the aName, object of class \code{character}. Locale names can be specified 
+#'    as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{setAttributeType(attributeType)}}{
+#'  \item{\code{setAttributeType(attributeType, locales)}}{
 #'    Set the attribute type, object of class \code{ISOTypeName} or \code{character}
+#'    Locale names can be specified as \code{list} with the \code{locales} argument.
 #'  }
 #' }
 #' 
@@ -37,7 +39,7 @@ ISOMemberName <- R6Class("ISOMemberName",
    public = list(
      aName = NULL,
      attributeType = NULL,
-     initialize = function(xml = NULL, aName, attributeType){
+     initialize = function(xml = NULL, aName = NULL, attributeType = NULL){
        super$initialize(xml = xml)
        if(is.null(xml)){
          self$setName(aName)
@@ -46,16 +48,23 @@ ISOMemberName <- R6Class("ISOMemberName",
      },
      
      #setName
-     setName = function(aName){
+     setName = function(aName, locales = NULL){
        self$aName <- aName
+       if(!is.null(aName)){
+         self$aName <- self$createLocalisedProperty(aName, locales)
+       }
      },
      
      #setAttributeType
-     setAttributeType = function(attributeType){
+     setAttributeType = function(attributeType, locales = NULL){
        if(!is(attributeType, "ISOTypeName")){
-         attributeType <- ISOTypeName$new(aName = attributeType)
+         attrType <- ISOTypeName$new(aName = attributeType)
+         if(!is.null(locales)){
+           attrType <- ISOTypeName$new()
+           attrType$setName(attributeType, locales)
+         }
        }
-       self$attributeType <- attributeType
+       self$attributeType <- attrType
      }
    )                        
 )

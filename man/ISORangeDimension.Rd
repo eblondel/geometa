@@ -29,8 +29,9 @@ ISORangeDimension
  \item{\code{setSequenceIdentifier(memberName)}}{
    Sets the sequence identifier, object of class \code{ISOMemberName}
  }
- \item{\code{setDescriptor(descriptor)}}{
-   Sets the descriptor, object of class \code{character}
+ \item{\code{setDescriptor(descriptor ,locales)}}{
+   Sets the descriptor, object of class \code{character}. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
 }
 }

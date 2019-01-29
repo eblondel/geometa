@@ -17,11 +17,13 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOProcessStep
 #'  }
-#'  \item{\code{setDescription(description)}}{
-#'    Sets the process step description
+#'  \item{\code{setDescription(description, locales)}}{
+#'    Sets the process step description. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{setRationale(rationale)}}{
-#'    Sets the process step rationale
+#'  \item{\code{setRationale(rationale, locales)}}{
+#'    Sets the process step rationale. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{setDateTime(dateTime)}}{
 #'    Sets the date time
@@ -79,13 +81,19 @@ ISOProcessStep <- R6Class("ISOProcessStep",
      },
      
      #setDescription
-     setDescription = function(description){
+     setDescription = function(description, locales = NULL){
        self$description <- as.character(description)
+       if(!is.null(locales)){
+         self$description <- self$createLocalisedProperty(description, locales)
+       }
      },
      
      #setRationale
-     setRationale = function(rationale){
+     setRationale = function(rationale, locales = NULL){
        self$rationale <- as.character(rationale)
+       if(!is.null(locales)){
+         self$rationale <- self$createLocalisedProperty(rationale, locales)
+       }
      },
      
      #setDateTime

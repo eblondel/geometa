@@ -78,6 +78,12 @@
 #'  \item{\code{setDataSetURI(dataSetURI)}}{
 #'    Sets the metadata dataSet URI
 #'  }
+#'  \item{\code{addLocale(locale)}}{
+#'    Adds a locale, object of class \code{ISOLocale}
+#'  }
+#'  \item{\code{delLocale(locale)}}{
+#'    Deletes a locale, object of class \code{ISOLocale)
+#'  }
 #'  \item{\code{addSpatialRepresentationInfo(spatialRepresentationInfo)}}{
 #'    Adds a spatial representation
 #'  }
@@ -485,6 +491,8 @@ ISOMetadata <- R6Class("ISOMetadata",
      metadataStandardVersion = NULL,
      #+ dataSetURI [0..1] : character
      dataSetURI = NULL,
+     #+ locale [0..*]: ISOLocale
+     locale = list(),
      #+ spatialRepresentationInfo [0..*]: ISOSpatialRepresentation
      spatialRepresentationInfo = list(),
      #+ referenceSystemInfo [0..*]: ISOReferenceSystem
@@ -627,6 +635,21 @@ ISOMetadata <- R6Class("ISOMetadata",
        self$dataSetURI = dataSetURI
      },
      
+     #addLocale
+     addLocale = function(locale){
+       if(!is(locale,"ISOLocale")){
+         stop("The argument should be a 'ISOLocale' object")  
+       }
+       return(self$addListElement("locale", locale))
+     },
+     
+     #delLocale
+     delLocale = function(locale){
+       if(!is(locale,"ISOLocale")){
+         stop("The argument should be a 'ISOLocale' object")  
+       }
+       return(self$delListElement("locale", locale))
+     },
      #MD_SpatialRepresentation
      #--------------------------------------------------------------------------
      

@@ -26,11 +26,13 @@ ISOProcessStep
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOProcessStep
  }
- \item{\code{setDescription(description)}}{
-   Sets the process step description
+ \item{\code{setDescription(description, locales)}}{
+   Sets the process step description. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setRationale(rationale)}}{
-   Sets the process step rationale
+ \item{\code{setRationale(rationale, locales)}}{
+   Sets the process step rationale. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
  \item{\code{setDateTime(dateTime)}}{
    Sets the date time

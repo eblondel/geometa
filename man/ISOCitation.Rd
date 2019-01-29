@@ -26,11 +26,13 @@ ISOCitation
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOCitation
  }
- \item{\code{setTitle(title)}}{
-   Sets the title
+ \item{\code{setTitle(title, locales)}}{
+   Sets the title. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setAlternateTitle(alternateTitle)}}{
-   Sets an alternate title
+ \item{\code{setAlternateTitle(alternateTitle, locales)}}{
+   Sets an alternate title. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
  \item{\code{addDate(date)}}{
    Adds the date (ISODate object containing date and dateType)

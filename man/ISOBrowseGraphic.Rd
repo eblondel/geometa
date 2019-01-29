@@ -26,6 +26,18 @@ ISOBrowseGraphic
  \item{\code{new(xml, fileName, fileDescription, fileType)}}{
    This method is used to instantiate an ISOBrowseGraphic
  }
+ \item{\code{setFileName(fileName, locales)}}{
+   Set file name. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
+ }
+ \item{\code{setFileDescription(fileDescription, locales)}}{
+   Set file description. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
+ }
+ \item{\code{setFileType(fileType, locales)}}{
+   Set file type. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
+ }
 }
 }
 

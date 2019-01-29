@@ -27,16 +27,19 @@ ISOOnlineResource
    This method is used to instantiate an ISOOnlineResource
  }
  \item{\code{setLinkage(linkage)}}{
-   Sets the linkage (URL), an object of class \code{character} or \code{ISOUrl}
+   Sets the linkage (URL), an object of class \code{character} or \code{ISOURL}
  }
- \item{\code{setProtocol(protocol)}}{
-   Sets the protocol
+ \item{\code{setProtocol(protocol, locales)}}{
+   Sets the protocol. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setName(name)}}{
-   Sets the name
+ \item{\code{setName(name, locales)}}{
+   Sets the name. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setDescription(description)}}{
-   Sets the description
+ \item{\code{setDescription(description, locales)}}{
+   Sets the description. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
  \item{\code{setOnLineFunction(onLineFunction)}}{
    Sets the online function

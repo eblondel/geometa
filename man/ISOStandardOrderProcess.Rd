@@ -26,17 +26,20 @@ ISOStandardOrderProcess
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOStandardOrderProcess
  }
- \item{\code{setFees(fees)}}{
-   Sets fees, object of class \code{character}
+ \item{\code{setFees(fees, locales)}}{
+   Sets fees, object of class \code{character}. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
  \item{\code{setPlannedAvailableDateTime(dateTime)}}{
    Sets planned available datetime, object of class \code{c('POSIXct','POSIXlt')}
  }
- \item{\code{setOrderingInstructions(instructions)}}{
-   Sets ordering instructions, object of class \code{character}
+ \item{\code{setOrderingInstructions(instructions, locales)}}{
+   Sets ordering instructions, object of class \code{character}. Locale names 
+   can be specified as \code{list} with the \code{locales} argument.
  }
- \item{\code{setTurnaround(turnaround)}}{
-   Sets turnaround, object of class \code{character}
+ \item{\code{setTurnaround(turnaround, locales)}}{
+   Sets turnaround, object of class \code{character}. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
 }
 }

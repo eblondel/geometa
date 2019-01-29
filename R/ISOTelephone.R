@@ -15,6 +15,14 @@
 #'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOTelephone
 #'  }
+#'  \item{\code{setVoice(voice, locales)}}{
+#'    Set voice phone number. Locale numbers can be specified as \code{list}
+#'    with the \code{locales} argument.
+#'  }
+#'  \item{\code{setFacsimile(voice, locales)}}{
+#'    Set facsimile phone number. Locale numbers can be specified as \code{list}
+#'    with the \code{locales} argument.
+#'  }
 #' }
 #' 
 #' @examples 
@@ -42,15 +50,21 @@ ISOTelephone <- R6Class("ISOTelephone",
      },
      
      #setVoice
-     setVoice = function(voice){
+     setVoice = function(voice, locales = NULL){
        if(!is(voice,"character")) voice <- as.character(voice)
        self$voice = voice
+       if(!is.null(locales)){
+         self$voice <- self$createLocalisedProperty(voice, locales)
+       }
      },
      
      #setFacsimile
-     setFacsimile = function(facsimile){
+     setFacsimile = function(facsimile, locales = NULL){
        if(!is(facsimile,"character")) facsimile <- as.character(facsimile)
        self$facsimile = facsimile
+       if(!is.null(locales)){
+         self$facsimile <- self$createLocalisedProperty(facsimile, locales)
+       }
      }
    )                        
 )

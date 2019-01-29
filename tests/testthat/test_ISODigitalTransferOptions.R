@@ -30,3 +30,53 @@ test_that("encoding",{
   expect_true(ISOAbstractObject$compare(md, md2))
   
 })
+
+test_that("encoding - i18n",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  #encoding
+  md <- ISODigitalTransferOptions$new()  
+  or <- ISOOnlineResource$new()
+  or$setLinkage("http://somelink")
+  or$setName(
+    "name",
+    locales=list(
+      EN="name of the website",
+      FR="nom du site internet",
+      ES="nombre del sitio web",
+      AR="اسم الموقع",
+      RU="название сайта",
+      ZH="网站名称"
+    ))
+  or$setDescription(
+    "description",
+    locales = list(
+      EN="description_EN",
+      FR="description_FR",
+      ES="description_ES",
+      AR="description_AR",
+      RU="description_RU",
+      ZH="description_ZH"
+    ))
+  or$setProtocol(
+    "protocol",
+    locales=list(
+      EN="protocol_EN",
+      FR="protocol_FR",
+      ES="protocol_ES",
+      AR="protocol_AR",
+      RU="protocol_RU",
+      ZH="protocol_ZH"
+    ))
+  md$addOnlineResource(or)
+  
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISODigitalTransferOptions$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+  
+})

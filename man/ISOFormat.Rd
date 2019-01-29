@@ -26,8 +26,9 @@ ISOFormat
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOFormat
  }
- \item{\code{setName(name)}}{
-   Sets the format name
+ \item{\code{setName(name, locales)}}{
+   Sets the format name. Locale names can be 
+   specified as \code{list} with the \code{locales} argument.
  }
  \item{\code{setVersion(version)}}{
    Sets the format version
@@ -35,8 +36,9 @@ ISOFormat
  \item{\code{setAmendmentNumber(amendmentNumber)}}{
    Sets an admenment number
  }
- \item{\code{setSpecification(specification)}}{
-   Sets the format specification
+ \item{\code{setSpecification(specification, locales)}}{
+   Sets the format specification. Locale names can be 
+   specified as \code{list} with the \code{locales} argument.
  }
  \item{\code{setFileDecompressionTechnique(technique)}}{
    Sets the file decompression technique

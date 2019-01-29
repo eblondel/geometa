@@ -18,11 +18,13 @@
 #'  \item{\code{new(xml, defaults)}}{
 #'    This method is used to instantiate an ISOInheritanceRelation
 #'  }
-#'  \item{\code{setName(name)}}{
-#'    Set name of inheritance relation
+#'  \item{\code{setName(name, locales)}}{
+#'    Set name of inheritance relation. Locale names can be specified
+#'     as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{setDescription(description)}}{
-#'    Set description of inheritance relation
+#'  \item{\code{setDescription(description, locales)}}{
+#'    Set description of inheritance relation. Locale names can be specified
+#'     as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{setUniqueInstance(uniqueInstance)}}{
 #'    Set \code{TRUE} if it's a unique instance, \code{FALSE} otherwise
@@ -60,13 +62,19 @@ ISOInheritanceRelation <- R6Class("ISOInheritanceRelation",
      supertype = NULL,
      
      #setName
-     setName = function(name){
+     setName = function(name, locales = NULL){
        self$name <- as.character(name)
+       if(!is.null(locales)){
+         self$name <- self$createLocalisedProperty(name, locales)
+       }
      },
      
      #setDescription
-     setDescription = function(description){
+     setDescription = function(description, locales = NULL){
        self$description <- as.character(description)
+       if(!is.null(locales)){
+         self$description <- self$createLocalisedProperty(description, locales)
+       }
      },
      
      #setUniqueInstance

@@ -21,17 +21,21 @@
 #'  \item{\code{setCitation(citation)}}{
 #'    Sets an object of class \code{ISOCitation}
 #'  }
-#'  \item{\code{setAbstract(abstract)}}{
-#'    Sets an abstract (object of class "character")
+#'  \item{\code{setAbstract(abstract, locales)}}{
+#'    Sets an abstract (object of class "character"). Locale names can be 
+#'    specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{setPurpose(purpose)}}{
-#'    Sets a purpose (object of class "character")
+#'  \item{\code{setPurpose(purpose, locales)}}{
+#'    Sets a purpose (object of class "character"). Locale names can be 
+#'    specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{addCredit(credit)}}{
-#'    Adds a credit (object of class "character")
+#'  \item{\code{addCredit(credit, locales)}}{
+#'    Adds a credit (object of class "character"). Locale names can be 
+#'    specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{delCredit(credit)}}{
-#'    Deletes a credit (object of class "character")
+#'  \item{\code{delCredit(credit, locales)}}{
+#'    Deletes a credit (object of class "character"). Locale names can be 
+#'    specified as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{addStatus(status)}}{
 #'    Adds a status, as object of class "character" or class \code{ISOStatus}. If
@@ -170,8 +174,9 @@
 #'  \item{\code{delExtent(extent)}}{
 #'    Deletes an object of class \code{ISOExtent}.
 #'  }
-#'  \item{\code{setSupplementalInformation(supplementalInformation)}}{
-#'    Sets supplemental information
+#'  \item{\code{setSupplementalInformation(supplementalInformation, locales)}}{
+#'    Sets supplemental information (object of class "character"). Locale names can be 
+#'    specified as \code{list} with the \code{locales} argument.
 #'  }
 #' }
 #' 
@@ -432,9 +437,12 @@ ISODataIdentification <- R6Class("ISODataIdentification",
      },
      
      #setSupplementalInformation
-     setSupplementalInformation = function(supplementalInformation){
+     setSupplementalInformation = function(supplementalInformation, locales = NULL){
        self$supplementalInformation = as.character(supplementalInformation)
-     }     
+       if(!is.null(locales)){
+         self$supplementalInformation <- self$createLocalisedProperty(supplementalInformation, locales)
+       }
+     }
      
    )                        
 )

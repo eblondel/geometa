@@ -29,11 +29,13 @@ ISOFeatureType
  \item{\code{setTypeName(typeName)}}{
    Sets the type name. Object of class \code{ISOLocalName} or \code{"character"}
  }
- \item{\code{setDefinition(definition)}}{
-   Sets the definition
+ \item{\code{setDefinition(definition, locales)}}{
+   Sets the definition. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
- \item{\code{setCode(code)}}{
-   Sets the code
+ \item{\code{setCode(code, locales)}}{
+   Sets the code. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
  \item{\code{setIsAbstract(isAbstract)}}{
    Sets TRUE/FALSE if the feature type is abstract or not

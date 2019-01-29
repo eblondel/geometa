@@ -26,8 +26,9 @@ ISOOperationMetadata
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOOperationMetadata
  }
- \item{\code{setOperationName(operationName)}}{
-   Set the operation name
+ \item{\code{setOperationName(operationName, locales)}}{
+   Set the operation name. Locale names can be specified as 
+   \code{list} with the \code{locales} argument.
  }
  \item{\code{addDCP(dcp)}}{
    Add a DCP
@@ -35,11 +36,13 @@ ISOOperationMetadata
  \item{\code{delDCP(dcp)}}{
    Deletes a DCP
  }
- \item{\code{setOperationDescription(operationDescription)}}{
-   Set the operation description
+ \item{\code{setOperationDescription(operationDescription, locales)}}{
+   Set the operation description. Locale names can be specified as 
+   \code{list} with the \code{locales} argument.
  }
- \item{\code{setInvocationName(invocationName)}}{
-   Set the invocation name
+ \item{\code{setInvocationName(invocationName, locales)}}{
+   Set the invocation name. Locale names can be specified as 
+   \code{list} with the \code{locales} argument.
  }
  \item{\code{addParameter(parameter)}}{
    Add a parameter, object of class \code{ISOParameter}

@@ -29,8 +29,9 @@ ISOConformanceResult
  \item{\code{setSpecification(specification)}}{
    Sets the specification (an ISOCitation object)
  }
- \item{\code{setExplanation(explanation)}}{
-   Sets the explanation
+ \item{\code{setExplanation(explanation, locales)}}{
+   Sets the explanation. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
  }
  \item{\code{setPass(pass)}}{
    Sets if passing the conformance or not (logical value)

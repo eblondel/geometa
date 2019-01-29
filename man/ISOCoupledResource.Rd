@@ -26,11 +26,13 @@ ISOCoupledResource
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOCoupledResource
  }
- \item{\code{setOperationName(operationName)}}{
-   Set the operation name
+ \item{\code{setOperationName(operationName, locales)}}{
+   Set the operation name. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
- \item{\code{setIdentifier(identifier)}}{
-   Set the identifier
+ \item{\code{setIdentifier(identifier, locales)}}{
+   Set the identifier. Locale names can be specified 
+   as \code{list} with the \code{locales} argument.
  }
 }
 }

@@ -14,8 +14,9 @@
 #'  \item{\code{new(xml, aName)}}{
 #'    This method is used to instantiate an ISOTypeName
 #'  }
-#'  \item{\code{setName(aName)}}{
-#'    Sets the aName
+#'  \item{\code{setName(aName, locales)}}{
+#'    Sets the aName. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #' }
 #' 
@@ -47,8 +48,11 @@ ISOTypeName <- R6Class("ISOTypeName",
      },
      
      #setName
-     setName = function(aName){
+     setName = function(aName, locales = NULL){
        self$aName <- aName
+       if(!is.null(locales)){
+         self$aName <- self$createLocalisedProperty(aName, locales)
+       }
      }
    )         
 )

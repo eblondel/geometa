@@ -18,8 +18,9 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOFormat
 #'  }
-#'  \item{\code{setName(name)}}{
-#'    Sets the format name
+#'  \item{\code{setName(name, locales)}}{
+#'    Sets the format name. Locale names can be 
+#'    specified as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{setVersion(version)}}{
 #'    Sets the format version
@@ -27,8 +28,9 @@
 #'  \item{\code{setAmendmentNumber(amendmentNumber)}}{
 #'    Sets an admenment number
 #'  }
-#'  \item{\code{setSpecification(specification)}}{
-#'    Sets the format specification
+#'  \item{\code{setSpecification(specification, locales)}}{
+#'    Sets the format specification. Locale names can be 
+#'    specified as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{setFileDecompressionTechnique(technique)}}{
 #'    Sets the file decompression technique
@@ -79,8 +81,11 @@ ISOFormat <- R6Class("ISOFormat",
       },
      
       #setName
-      setName = function(name){
+      setName = function(name, locales = NULL){
         self$name <- name
+        if(!is.null(locales)){
+          self$name <- self$createLocalisedProperty(name, locales)
+        }
       },
       
       #setVersion
@@ -94,8 +99,11 @@ ISOFormat <- R6Class("ISOFormat",
       },
       
       #setSpecification
-      setSpecification = function(specification){
+      setSpecification = function(specification, locales = NULL){
         self$specification <- as.character(specification)
+        if(!is.null(locales)){
+          self$specification <- self$createLocalisedProperty(specification, locales)
+        }
       },
       
       #setFileDecompressionTechnique

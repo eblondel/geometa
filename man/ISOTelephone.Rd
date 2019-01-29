@@ -26,6 +26,14 @@ ISOTelephone
  \item{\code{new(xml,value)}}{
    This method is used to instantiate an ISOTelephone
  }
+ \item{\code{setVoice(voice, locales)}}{
+   Set voice phone number. Locale numbers can be specified as \code{list}
+   with the \code{locales} argument.
+ }
+ \item{\code{setFacsimile(voice, locales)}}{
+   Set facsimile phone number. Locale numbers can be specified as \code{list}
+   with the \code{locales} argument.
+ }
 }
 }
 

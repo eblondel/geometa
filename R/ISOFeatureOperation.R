@@ -15,11 +15,13 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOFeatureOperation
 #'  }
-#'  \item{\code{setSignature(signature)}}{
-#'    Sets the signature
+#'  \item{\code{setSignature(signature, locales)}}{
+#'    Sets the signature. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{setFormalDefinition(formalDefinition)}}{
-#'    Sets the formal definition
+#'  \item{\code{setFormalDefinition(formalDefinition, locales)}}{
+#'    Sets the formal definition. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #' }
 #'  
@@ -54,13 +56,19 @@ ISOFeatureOperation <- R6Class("ISOFeatureOperation",
      },
      
      #setSignature
-     setSignature = function(signature){
+     setSignature = function(signature, locales = NULL){
        self$signature <- signature
+       if(!is.null(locales)){
+         self$signature <- self$createLocalisedProperty(signature, locales)
+       }
      },
      
      #setFormalDefinition
-     setFormalDefinition = function(formalDefinition){
+     setFormalDefinition = function(formalDefinition, locales = NULL){
        self$formalDefinition <- formalDefinition
+       if(!is.null(locales)){
+         self$formalDefinition <- self$createLocalisedProperty(formalDefinitoin, locales)
+       }
      }
    )         
 )

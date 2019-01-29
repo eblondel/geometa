@@ -11,20 +11,27 @@
 #'
 #' @section Inherited Methods from \code{ISOAbstractCatalogue}:
 #' \describe{
-#'  \item{\code{setName(name)}}{
-#'    Sets the name
+#'  \item{\code{setName(name, locales)}}{
+#'    Sets the name. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{addScope(scope)}}{
-#'    Adds scope (object of class \code{character})
+#'  \item{\code{addScope(scope, locales)}}{
+#'    Adds scope (object of class \code{character}). Locale names can be 
+#'    specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{delScope(scope)}}{
-#'    Deletes scope
+#'  \item{\code{delScope(scope, locales)}}{
+#'    Deletes scope. Locale names can be  specified as \code{list} with 
+#'    the \code{locales} argument. Local names should match those of 
+#'    the scope to be deleted, otherwise nothing will be deleted.
 #'  }
-#'  \item{\code{addFieldOfApplication(fieldOfApplication)}}{
-#'    Adds a field of application (object of class \code{character})
+#'  \item{\code{addFieldOfApplication(fieldOfApplication, locales)}}{
+#'    Adds a field of application (object of class \code{character}). Locale names 
+#'    can be specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{delFieldOfApplication(fieldOfApplication)}}{
-#'    Deletes fieldOfApplication
+#'  \item{\code{delFieldOfApplication(fieldOfApplication, locales)}}{
+#'    Deletes fieldOfApplication. Locale names can be  specified as \code{list} with 
+#'    the \code{locales} argument. Local names should match those of 
+#'    the field of application to be deleted, otherwise nothing will be deleted.
 #'  }
 #'  \item{\code{setVersionNumber(versionNumber)}}{
 #'    Sets version number (object of class \code{character})

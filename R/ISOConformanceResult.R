@@ -17,8 +17,9 @@
 #'  \item{\code{setSpecification(specification)}}{
 #'    Sets the specification (an ISOCitation object)
 #'  }
-#'  \item{\code{setExplanation(explanation)}}{
-#'    Sets the explanation
+#'  \item{\code{setExplanation(explanation, locales)}}{
+#'    Sets the explanation. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 ##'  \item{\code{setPass(pass)}}{
 #'    Sets if passing the conformance or not (logical value)
@@ -67,8 +68,11 @@ ISOConformanceResult <- R6Class("ISOConformanceResult",
     },
     
     #setExplanation
-    setExplanation = function(explanation){
+    setExplanation = function(explanation, locales = NULL){
       self$explanation <- as.character(explanation)
+      if(!is.null(locales)){
+        self$explanation <- self$createLocalisedProperty(explanation, locales)
+      }
     },
     
     #setPass

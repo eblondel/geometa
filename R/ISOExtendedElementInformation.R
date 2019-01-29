@@ -26,25 +26,29 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOExtendedElementInformation
 #'  }
-#'  \item{\code{setName(name)}}{
-#'    Sets the element name, object of class \code{Character}
+#'  \item{\code{setName(name, locales)}}{
+#'    Sets the element name, object of class \code{Character}. Locale names 
+#'    can be specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{setShortName(shortName)}}{
-#'    Sets the element shortname, object of class \code{character}
+#'  \item{\code{setShortName(shortName, locales)}}{
+#'    Sets the element shortname, object of class \code{character}. Locale names 
+#'    can be specified as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{setDomainCode(domainCode)}}{
 #'    Sets the element domain code, object of class \code{integer}
 #'  }
-#'  \item{\code{setDefinition(definition)}}{
-#'    Sets the element definition, object of class \code{character}
+#'  \item{\code{setDefinition(definition, locales)}}{
+#'    Sets the element definition, object of class \code{character}. Locale names 
+#'    can be specified as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{setObligation(obligation)}}{
 #'    Sets an obligation, as object of class \code{character} or class \code{ISOObligation}. 
 #'    If an object of class "character" is specified, it must match the accepted
 #'    obligation values \code{ISOObligation$values()}.
 #'  }
-#'  \item{\code{setCondition(condition)}}{
-#'    Sets the element condition, object of class \code{character}
+#'  \item{\code{setCondition(condition, locales)}}{
+#'    Sets the element condition, object of class \code{character}. Locale names 
+#'    can be specified as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{setDatatype(dataType)}}{
 #'    Sets the element datatype, as object of class \code{character} or class \code{ISODatatype}.
@@ -63,14 +67,19 @@
 #'  \item{\code{delParentEntity(parentEntity)}}{
 #'    Deletes a parent Entity, object of class \code{character}
 #'  }
-#'  \item{\code{setRule(rule)}}{
-#'    Sets a rule, object of class \code{character}
+#'  \item{\code{setRule(rule, locales)}}{
+#'    Sets a rule, object of class \code{character}. Locale names 
+#'    can be specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{addRationale(rationale)}{
-#'    Adds a rationale, object of class \code{character}
+#'  \item{addRationale(rationale, locales)}{
+#'    Adds a rationale, object of class \code{character}. Locale names 
+#'    can be specified as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{delRationale(rationale)}{
-#'    Deletes a rationale, object of class \code{character}
+#'  \item{delRationale(rationale, locales)}{
+#'    Deletes a rationale, object of class \code{character}. Locale names 
+#'    can be specified as \code{list} with the \code{locales} argument.
+#'    Local names should match those of the keyword to be deleted, otherwise 
+#'    nothing will be deleted.
 #'  }
 #'  \item{addSource(source)}{
 #'    Adds a source, object of class \code{ISOResponsibleParty}
@@ -166,13 +175,19 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
    },
    
    #setName
-   setName = function(name){
-     self$name <- name;
+   setName = function(name, locales = NULL){
+     self$name <- name
+     if(!is.null(locales)){
+       self$name <- self$createLocalisedProperty(name, locales)
+     }
    },
    
    #setShortName
-   setShortName = function(shortName){
+   setShortName = function(shortName, locales = NULL){
      self$shortName <- shortName
+     if(!is.null(locales)){
+       self$shortName <- self$createLocalisedProperty(shortName, locales)
+     }
    },
    
    #setDomainCode
@@ -184,8 +199,11 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
    },
    
    #setDefinition
-   setDefinition = function(definition){
+   setDefinition = function(definition, locales = NULL){
      self$definition <- definition
+     if(!is.null(locales)){
+       self$definition <- self$createLocalisedProperty(definition, locales)
+     }
    },
    
    #setObligation
@@ -197,8 +215,11 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
    },
   
    #setCondition
-   setCondition = function(condition){
+   setCondition = function(condition, locales = NULL){
      self$condition <- condition
+     if(!is.null(locales)){
+       self$condition <- self$createLocalisedProperty(condition, locales)
+     }
    },
    
    #setDatatype
@@ -230,17 +251,28 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
    },
    
    #setRule
-   setRule = function(rule){
+   setRule = function(rule, locales = NULL){
      self$rule <- rule
+     if(!is.null(locales)){
+       self$rule <- self$createLocalisedProperty(rule, locales)
+     }
    },
    
    #addRationale
-   addRationale = function(rationale){
+   addRationale = function(rationale, locales = NULL){
+     if(is.null(rationale)) return(FALSE);
+     if(!is.null(locales)){
+       rationale <- self$createLocalisedProperty(rationale, locales)
+     }
      return(self$addListElement("rationale", rationale))
    },
    
    #delRationale
-   delRationale = function(entity){
+   delRationale = function(rationale, locales = NULL){
+     if(is.null(rationale)) return(FALSE);
+     if(!is.null(locales)){
+       rationale <- self$createLocalisedProperty(rationale, locales)
+     }
      return(self$delListElement("rationale", rationale))
    },
    

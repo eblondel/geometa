@@ -44,8 +44,9 @@
 #'  \item{\code{setOrientationParameterAvailability(availability)}}{
 #'    Sets the orientation parameter availability. TRUE/FALSE
 #'  }
-#'  \item{\code{setOrientationParameterDescription(description)}}{
-#'    Sets the orientation parameter description
+#'  \item{\code{setOrientationParameterDescription(description, locales)}}{
+#'    Sets the orientation parameter description. Locale names can be specified
+#'     as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{setGeoreferencedParameters(record)}}{
 #'    Sets the georeferenced parameter (object of class \code{ISORecord})
@@ -120,8 +121,11 @@ ISOGeoreferenceable <- R6Class("ISOGeoreferenceable",
       },
       
       #setOrientationParameterDescription
-      setOrientationParameterDescription = function(description){
+      setOrientationParameterDescription = function(description, locales = NULL){
         self$orientationParameterDescription = as.character(description)
+        if(!is.null(locales)){
+          self$orientationParameterDescription <- self$createLocalisedProperty(description, locales)
+        }
       },
       
       #setGeoreferencedParameters

@@ -14,8 +14,9 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOLineage
 #'  }
-#'  \item{\code{setStatement(statement)}}{
-#'    Sets the statement
+#'  \item{\code{setStatement(statement, locales)}}{
+#'    Sets the statement. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{addProcessStep(processStep)}}{
 #'    Adds a process step (object of class \code{ISOProcessStep})
@@ -87,8 +88,11 @@ ISOLineage<- R6Class("ISOLineage",
     },
     
     #setStatement
-    setStatement = function(statement){
+    setStatement = function(statement, locales = NULL){
       self$statement <- as.character(statement)
+      if(!is.null(locales)){
+        self$statement <- self$createLocalisedProperty(statement, locales)
+      }
     },
     
     #addProcessStep

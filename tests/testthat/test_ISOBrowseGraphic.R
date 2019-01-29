@@ -27,3 +27,51 @@ test_that("encoding",{
   expect_true(ISOAbstractObject$compare(md, md2))
   
 })
+
+test_that("encoding - i18n",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  #encoding
+  md <- ISOBrowseGraphic$new()
+  md$setFileName(
+    "file name",
+    locales = list(
+      EN = "file name",
+      FR = "nom du fichier",
+      ES = "nombre del fichero",
+      AR = "اسم الملف",
+      RU = "имя файла",
+      ZH = "文件名"
+    )
+  )
+  md$setFileDescription(
+    "description",
+    locales = list(
+      EN = "the description",
+      FR = "la description",
+      ES = "la descripción",
+      AR = "الوصف",
+      RU = "описание",
+      ZH = "描述"
+    )
+  )
+  md$setFileType(
+    "file type",
+     locales = list(
+       EN = "file type",
+       FR = "type de fichier",
+       ES = "tipo de fichero",
+       AR = "نوع الملف",
+       RU = "тип файла",
+       ZH = "文件类型"
+     ))
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOBrowseGraphic$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+  
+})

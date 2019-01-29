@@ -15,11 +15,13 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOCoupledResource
 #'  }
-#'  \item{\code{setOperationName(operationName)}}{
-#'    Set the operation name
+#'  \item{\code{setOperationName(operationName, locales)}}{
+#'    Set the operation name. Locale names can be specified 
+#'    as \code{list} with the \code{locales} argument.
 #'  }
-#'  \item{\code{setIdentifier(identifier)}}{
-#'    Set the identifier
+#'  \item{\code{setIdentifier(identifier, locales)}}{
+#'    Set the identifier. Locale names can be specified 
+#'    as \code{list} with the \code{locales} argument.
 #'  }
 #' }
 #' 
@@ -52,13 +54,19 @@ ISOCoupledResource <- R6Class("ISOCoupledResource",
       },
       
       #setOperationName
-      setOperationName = function(operationName){
+      setOperationName = function(operationName, locales = NULL){
         self$operationName <- as.character(operationName)
+        if(!is.null(locales)){
+          self$operationName <- self$createLocalisedProperty(operationName, locales)
+        }
       },
       
       #setIdentifier
-      setIdentifier = function(identifier){
+      setIdentifier = function(identifier, locales = NULL){
         self$identifier <- as.character(identifier)
+        if(!is.null(locales)){
+          self$identifier <- self$createLocalisedProperty(identifier, locales)
+        }
       }
     )                        
 )

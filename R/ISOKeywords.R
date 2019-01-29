@@ -15,11 +15,14 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOKeywords
 #'  }
-#'  \item{\code{addKeyword(keyword)}}{
-#'    Adds a keyword
+#'  \item{\code{addKeyword(keyword, locales)}}{
+#'    Adds a keyword. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{delKeyword(keyword)}}{
-#'    Deletes a keyword
+#'  \item{\code{delKeyword(keyword, locales)}}{
+#'    Deletes a keyword. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument. Local names should match those
+#'    of the keyword to be deleted, otherwise nothing will be deleted.
 #'  }
 #'  \item{\code{setKeywordType(keywordType)}}{
 #'    Sets the keyword type
@@ -96,16 +99,22 @@ ISOKeywords <- R6Class("ISOKeywords",
     },
     
     #addKeyword
-    addKeyword = function(keyword){
+    addKeyword = function(keyword, locales = NULL){
       if(is.null(keyword)) return(FALSE);
       if(is(keyword, "character")) if(is.na(keyword)) return(FALSE);
+      if(!is.null(locales)){
+        keyword <- self$createLocalisedProperty(keyword, locales)
+      }
       return(self$addListElement("keyword", keyword))
     },
     
     #delKeyword
-    delKeyword = function(keyword){
+    delKeyword = function(keyword, locales = NULL){
       if(is.null(keyword)) return(FALSE);
       if(is(keyword, "character")) if(is.na(keyword)) return(FALSE);
+      if(!is.null(locales)){
+        keyword <- self$createLocalisedProperty(keyword, locales)
+      }
       return(self$delListElement("keyword", keyword))
     },
     

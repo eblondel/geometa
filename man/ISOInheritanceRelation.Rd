@@ -26,11 +26,13 @@ ISOInheritanceRelation
  \item{\code{new(xml, defaults)}}{
    This method is used to instantiate an ISOInheritanceRelation
  }
- \item{\code{setName(name)}}{
-   Set name of inheritance relation
+ \item{\code{setName(name, locales)}}{
+   Set name of inheritance relation. Locale names can be specified
+    as \code{list} with the \code{locales} argument.
  }
- \item{\code{setDescription(description)}}{
-   Set description of inheritance relation
+ \item{\code{setDescription(description, locales)}}{
+   Set description of inheritance relation. Locale names can be specified
+    as \code{list} with the \code{locales} argument.
  }
  \item{\code{setUniqueInstance(uniqueInstance)}}{
    Set \code{TRUE} if it's a unique instance, \code{FALSE} otherwise

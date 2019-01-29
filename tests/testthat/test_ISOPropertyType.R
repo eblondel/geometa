@@ -27,3 +27,33 @@ test_that("encoding",{
   expect_true(ISOAbstractObject$compare(md, md2))
   
 })
+
+test_that("encoding - i18n",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  #encoding
+  md <- ISOPropertyType$new()
+  md$setMemberName("name")
+  md$setDefinition(
+    "description",
+    locales = list(
+      EN = "the description",
+      FR = "la description",
+      ES = "la descripción",
+      AR = "الوصف",
+      RU = "описание",
+      ZH = "描述"
+    )
+  )
+  md$setCardinality(lower=1,upper=1)
+  expect_is(md, "ISOPropertyType")
+  xml <- md$encode(validate = F)
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOPropertyType$new(xml = xml)
+  xml2 <- md2$encode(validate = F)
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+  
+})

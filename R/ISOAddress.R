@@ -18,20 +18,25 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOAddress
 #'  }
-#'  \item{\code{setDeliveryPoint(deliveryPoint)}}{
-#'    Sets the delivery point
+#'  \item{\code{setDeliveryPoint(deliveryPoint, locales)}}{
+#'    Sets the delivery point. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{setCity(city)}}{
-#'    Sets the city
+#'  \item{\code{setCity(city, locales)}}{
+#'    Sets the city. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{setPostalCode(postalCode)}}{
-#'    Sets the postal code
+#'  \item{\code{setPostalCode(postalCode, locales)}}{
+#'    Sets the postal code. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{setCountry(country)}}{
-#'    Sets the country
+#'  \item{\code{setCountry(country, locales)}}{
+#'    Sets the country. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
-#'  \item{\code{setEmail(email)}}{
-#'    Sets the electronic Mail address
+#'  \item{\code{setEmail(email, locales)}}{
+#'    Sets the electronic Mail address. Locale names can be specified as \code{list}
+#'    with the \code{locales} argument.
 #'  }
 #' }
 #' 
@@ -66,32 +71,47 @@ ISOAddress <- R6Class("ISOAddress",
     },
     
     #setDeliveryPoint
-    setDeliveryPoint = function(deliveryPoint){
+    setDeliveryPoint = function(deliveryPoint, locales = NULL){
       if(!is(deliveryPoint,"character")) deliveryPoint <- as.character(deliveryPoint)
       self$deliveryPoint <- deliveryPoint
+      if(!is.null(locales)){
+        self$deliveryPoint <- self$createLocalisedProperty(deliveryPoint, locales)
+      }
     },
     
     #setCity
-    setCity = function(city){
+    setCity = function(city, locales = NULL){
       if(!is(city,"character")) city <- as.character(city)
       self$city <- city
+      if(!is.null(locales)){
+        self$city <- self$createLocalisedProperty(city, locales)
+      }
     },
     
     #setPostalCode
-    setPostalCode = function(postalCode){
+    setPostalCode = function(postalCode, locales = NULL){
       if(!is(postalCode,"character")) postalCode <- as.character(postalCode)
       self$postalCode <- postalCode
+      if(!is.null(locales)){
+        self$postalCode <- self$createLocalisedProperty(postalCode, locales)
+      }
     },
     
     #setCountry
-    setCountry = function(country){
+    setCountry = function(country, locales = NULL){
       self$country <- country
+      if(!is.null(locales)){
+        self$country <- self$createLocalisedProperty(country, locales)
+      }
     },
     
     #setEmail
-    setEmail = function(email){
+    setEmail = function(email, locales = NULL){
       if(!is(email, "character")) email <- as.character(email)
       self$electronicMailAddress <- email
+      if(!is.null(locales)){
+        self$electronicMailAddress <- self$createLocalisedProperty(email, locales)
+      }
     }
 
   )                        
