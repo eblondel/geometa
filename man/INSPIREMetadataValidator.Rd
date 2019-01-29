@@ -32,8 +32,10 @@ INSPIREMetadataValidator
 }
 
 \examples{
+ \donttest{
   inspireValidator <- INSPIREMetadataValidator$new()
   inspireReport <- inspireValidator$getValidationReport(obj = ISOMetadata$new())
+ }
 
 }
 \references{
