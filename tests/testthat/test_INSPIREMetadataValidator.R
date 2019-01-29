@@ -24,9 +24,13 @@ test_that("inspire - metadata validator",{
 })
 
 test_that("inspire - metadata validator 'encode' shortcut",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   xml <- md$encode(inspire = TRUE)
 })
 
 test_that("inspire - metadata validator 'save' shortcut",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   md$save("my-metadata.xml", inspire = TRUE)
 })
