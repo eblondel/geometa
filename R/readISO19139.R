@@ -5,10 +5,13 @@
 #' @description \code{readISO19139} is a function to read a ISO 19139 from a file
 #' or url into an object in the \pkg{geometa} model.
 #'
-#' @usage readISO19139(file, url)
+#' @usage readISO19139(file, url, raw)
 #'                 
 #' @param file a valid file path, as object of class \code{character}
 #' @param url a valid URL, as object of class \code{character}
+#' @param raw indicates if the function should return the raw XML. By
+#' default this is set to \code{FALSE} and the function will try to map
+#' the xml data to the \pkg{geometa} data model.
 #' 
 #' @return a \pkg{geometa} object inheriting \code{ISOAbstractObject}
 #' 
@@ -20,7 +23,7 @@
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #'    
-readISO19139 <- function(file = NULL, url = NULL){
+readISO19139 <- function(file = NULL, url = NULL, raw = FALSE){
   if(is.null(file) & is.null(url)){
     stop("Please provide at least a metadata file or url")
   }
@@ -52,6 +55,9 @@ readISO19139 <- function(file = NULL, url = NULL){
     iso_class <- ISOAbstractObject$getISOClassByNode(raw_xml)
     if(!is.null(iso_class)){
       out <- iso_class$new(xml = raw_xml)
+    }
+    if(raw){
+      out <- raw_xml
     }
   }
   return(out)

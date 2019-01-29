@@ -4,12 +4,16 @@
 \alias{readISO19139}
 \title{readISO19139}
 \usage{
-readISO19139(file, url)
+readISO19139(file, url, raw)
 }
 \arguments{
 \item{file}{a valid file path, as object of class \code{character}}
 
 \item{url}{a valid URL, as object of class \code{character}}
+
+\item{raw}{indicates if the function should return the raw XML. By
+default this is set to \code{FALSE} and the function will try to map
+the xml data to the \pkg{geometa} data model.}
 }
 \value{
 a \pkg{geometa} object inheriting \code{ISOAbstractObject}
