@@ -1211,7 +1211,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #createLocalisedProperty
     createLocalisedProperty = function(text, locales){
       if(!is(locales, "list")){
-        stop("The argument 'locales' should be an object of class 'last'")
+        stop("The argument 'locales' should be an object of class 'list'")
       }
       ft <- ISOFreeText$new()
       for(locale in names(locales)){
