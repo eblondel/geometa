@@ -50,7 +50,7 @@ ISOMemberName <- R6Class("ISOMemberName",
      #setName
      setName = function(aName, locales = NULL){
        self$aName <- aName
-       if(!is.null(aName)){
+       if(!is.null(locales)){
          self$aName <- self$createLocalisedProperty(aName, locales)
        }
      },
