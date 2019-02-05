@@ -403,7 +403,7 @@ test_that("encoding/decoding - i18n",{
     address$setCountry(
       "United Kingdom",
       locales=list(
-        EN="United Kingdom", FR="France", ES="España", AR="网站名称", RU="Россия", ZH = "Китай"
+        EN="United Kingdom", FR="France", ES="España", AR="العربية السعودية", RU="Россия", ZH = "网站名称"
       )
     )
     
@@ -596,7 +596,7 @@ test_that("encoding/decoding - i18n",{
   address$setCountry(
     "United Kingdom",
     locales=list(
-      EN="United Kingdom", FR="France", ES="España", AR="网站名称", RU="Россия", ZH = "Китай"
+      EN="United Kingdom", FR="France", ES="España", AR="العربية السعودية", RU="Россия", ZH = "网站名称"
     )
   )
   
