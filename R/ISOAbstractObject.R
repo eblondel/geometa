@@ -749,10 +749,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
 
                   hasLocales <- FALSE
                   if(!is.null(item[["_internal_"]])){
-					if(any(sapply(item[["_internal_"]],function(x){class(x)[1]})=="ISOFreeText")){
-						hasLocales <- TRUE
-					}
-				  }
+					          if(any(sapply(item[["_internal_"]],function(x){class(x)[1]})=="ISOFreeText")){
+						          hasLocales <- TRUE
+					          }
+				          }
 				  
                   if(nodeValue$wrap){
                     wrapperAttrs <- NULL
@@ -760,7 +760,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                       wrapperAttrs <- nodeValue$attrs
                       if(length(wrapperAttrs)>1) wrapperAttrs <- wrapperAttrs[names(wrapperAttrs)!="gco:nilReason"]
                     }
-					wrapperAttrs <- c(wrapperAttrs,freeTextAttr)
+					          wrapperAttrs <- c(wrapperAttrs,freeTextAttr)
                     wrapperNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = wrapperAttrs)
                     if(!nodeValue$isNull){
                       for(child in nodeValueXml.children){
@@ -769,7 +769,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                     }
                     rootXML$addNode(wrapperNode$value())
                   }else{
-					if(hasLocales && !("xsi:type" %in% names(rootXMLAttrs))) rootXMLAttrs <- c(rootXMLAttrs, freeTextAttr)
+					          if(hasLocales && !("xsi:type" %in% names(rootXMLAttrs))) rootXMLAttrs <- c(rootXMLAttrs, freeTextAttr)
                     for(child in nodeValueXml.children){
                       rootXML$addNode(child)
                     }
@@ -837,7 +837,6 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 rootXML$addNode(xmlTextNode(fieldObj))
               }else{
                 dataObj <- self$wrapBaseElement(field, fieldObj)
-                #TODO TODO TODO
                 if(!is.null(dataObj)){
                   if(dataObj$wrap){
                     #general case of gco wrapper element
@@ -959,7 +958,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     save = function(file, ...){
       xml <- self$encode(...)
       xml_str <- as(xml, "character")
-      Encoding(xml_str) <- "bytes"
+      #Encoding(xml_str) <- "bytes"
+      if(options("encoding")$encoding != "UTF-8") Encoding(xml_str) <- "bytes"
       writeLines(xml_str, con = file)
     },
     
@@ -1082,9 +1082,14 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       #specific coercing
       if(all(dataType == c("POSIXct","POSIXt"))) dataType <- "datetime"
       
+      #re-encoding (if needed)
+      if(tolower(dataType)=="character"){
+        if(Encoding(fieldObj)!="UTF-8") fieldObj <- iconv(fieldObj, to = "UTF-8")
+      }
+   
       #wrapping
       dataObj <- switch(tolower(dataType),
-                        "character" = ISOBaseCharacterString$new(value = iconv(fieldObj, to  = "UTF-8//IGNORE")),
+                        "character" = ISOBaseCharacterString$new(value = fieldObj),
                         "numeric"   = ISOBaseReal$new(value = fieldObj),
                         "decimal"   = ISOBaseDecimal$new(value = fieldObj), #Requires specific class call
                         "integer"   = ISOBaseInteger$new(value = fieldObj),
