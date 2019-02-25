@@ -959,8 +959,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       xml <- self$encode(...)
       xml_str <- as(xml, "character")
       #Encoding(xml_str) <- "bytes"
-      if(options("encoding")$encoding != "UTF-8") Encoding(xml_str) <- "bytes"
-      writeLines(xml_str, con = file)
+      writeChar(xml_str, con = file, useBytes = TRUE)
     },
     
     #Util & internal methods
