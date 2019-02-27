@@ -20,6 +20,16 @@ Abstract ISO Metadata class used internally by geometa
 \section{Static Methods}{
 
 \describe{
+ \item{\code{getISOStandard(clazz)}}{
+   Inherit the ISO (and/or OGC) standard reference for a given \pkg{geometa} class.
+ }
+ \item{\code{getISOClasses(extended, pretty)}}{
+   Get the list of classes supported by \pkg{geometa}. By default, \code{extended} is
+   set to \code{FALSE} (restrained to \pkg{geometa} environment). If \code{TRUE}, this
+   allows to list eventual classes loaded in your global environment and that extend
+   \pkg{geometa} classes. The argument \code{pretty} gives a the list of classes and 
+   associated ISO/OGC standard information as \code{data.frame}.
+ }
  \item{\code{getISOClassByNode(node)}}{
    Inherit the ISO class matching an XML document or node
  }

@@ -13,6 +13,16 @@
 #'
 #' @section Static Methods:
 #' \describe{
+#'  \item{\code{getISOStandard(clazz)}}{
+#'    Inherit the ISO (and/or OGC) standard reference for a given \pkg{geometa} class.
+#'  }
+#'  \item{\code{getISOClasses(extended, pretty)}}{
+#'    Get the list of classes supported by \pkg{geometa}. By default, \code{extended} is
+#'    set to \code{FALSE} (restrained to \pkg{geometa} environment). If \code{TRUE}, this
+#'    allows to list eventual classes loaded in your global environment and that extend
+#'    \pkg{geometa} classes. The argument \code{pretty} gives a the list of classes and 
+#'    associated ISO/OGC standard information as \code{data.frame}.
+#'  }
 #'  \item{\code{getISOClassByNode(node)}}{
 #'    Inherit the ISO class matching an XML document or node
 #'  }
@@ -1232,6 +1242,68 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
   )                              
 )
 
+ISOAbstractObject$getISOStandard = function(clazz){
+  std <- NA
+  if(is.null(clazz$private_fields)) return(std)
+  if(is.null(clazz$private_fields$xmlNamespacePrefix)) return(std)
+  std <- switch(clazz$private_fields$xmlNamespacePrefix,
+    "GCO" = "ISO 19115-1:2003",
+    "GMD" = "ISO 19115-1:2003",
+    "GMX" = "ISO 19115-1:2003",
+    "GMI" = "ISO 19115-2:2003",
+    "SRV" = "ISO 19119:2005",
+    "GFC" = "ISO 19110:2005",
+    "GML" = "GML 3.2.1 (ISO 19136)",
+    "GMLCOV" = "GML 3.2.1 Coverage (OGC GMLCOV)",
+    "GMLRGRID" = "GML 3.3 Referenceable Grid (OGC GML)",
+    NA
+  )
+  return(std)
+}
+
+ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
+  list_of_classes <- unlist(sapply(search(), ls))
+  list_of_classes <- list_of_classes[sapply(list_of_classes, function(x){
+    clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
+    r6Predicate <- class(clazz)[1]=="R6ClassGenerator"
+    envPredicate <- extended
+    if(r6Predicate & !extended){
+      if(is.environment(clazz$parent_env)){
+        envPredicate <- environmentName(clazz$parent_env)=="geometa"
+      }
+    }
+    includePredicate <- TRUE
+    if(r6Predicate){
+      if(!is.null(clazz$classname)){
+        includePredicate <- !(clazz$classname %in% c("geometaLogger", "INSPIREMetadataValidator",
+          "ISOCodelist", "ISOCodeListValue", "ISOMetadataNamespace", "ISOTimePeriod"))
+      }
+    }
+    return(r6Predicate & envPredicate & includePredicate)
+  })]
+  list_of_classes <- as.vector(list_of_classes)
+  if(pretty){
+    std_info <- do.call("rbind",lapply(list_of_classes, function(x){
+      clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
+      std <- ISOAbstractObject$getISOStandard(clazz)
+      std_info <- data.frame(
+        standard = std,
+        ns_prefix = clazz$private_fields$xmlNamespacePrefix,
+        ns_uri = ISOMetadataNamespace[[clazz$private_fields$xmlNamespacePrefix]]$uri,
+        element = clazz$private_fields$xmlElement
+      )
+      return(std_info)
+    }))
+    
+    list_of_classes <- data.frame(
+      geometa_class = list_of_classes,
+      std_info,
+      stringsAsFactors = FALSE
+    )
+  }
+  return(list_of_classes)
+}
+
 ISOAbstractObject$getISOClassByNode = function(node){
   outClass <- NULL
   if(!is(node, "XMLInternalDocument")) node <- xmlDoc(node)
@@ -1241,11 +1313,7 @@ ISOAbstractObject$getISOClassByNode = function(node){
   if(length(nodeElementNames)>1){
     nodeElementName <- nodeElementNames[2]
   }
-  list_of_classes <- unlist(sapply(search(), ls))
-  list_of_classes <- list_of_classes[sapply(list_of_classes, function(x){
-    clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
-    return(class(clazz)[1]=="R6ClassGenerator")
-  })]
+  list_of_classes <- ISOAbstractObject$getISOClasses(extended = TRUE, pretty = FALSE)
   for(classname in list_of_classes){
     clazz <- try(eval(parse(text=classname)))
     if(nodeElementName %in% clazz$private_fields$xmlElement){
