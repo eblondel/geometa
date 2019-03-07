@@ -46,7 +46,9 @@ ISOTemporalExtent <- R6Class("ISOTemporalExtent",
     
     #setTimeInstant
     setTimeInstant = function(timeInstant){
-      stop("Not yet implemented")
+      if(!is(timeInstant, "GMLTimeInstant")){
+        stop("Value should be an object of class 'GMLTimeInstant'")
+      }
       self$extent = timeInstant
     },
     
