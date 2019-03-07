@@ -6,6 +6,7 @@ cache:
   - packages
   - ccache
 latex: false
+warnings_are_errors: false
 
 apt_packages:
   - libudunits2-dev
