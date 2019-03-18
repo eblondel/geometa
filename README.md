@@ -15,7 +15,9 @@ Please check the [online documentation](https://github.com/eblondel/geometa/wiki
 
 Many thanks to the following organizations that have provided fundings for strenghtening the ``geometa`` package:
 
-<a href="http://www.fao.org"><img src="http://www.fao.org/figis/website/assets/images/templates/shared/faologo/en.png" width="180" height="60"></a>
+<a href="https://www.r-consortium.org"><img src="https://www.r-consortium.org/wp-content/uploads/sites/13/2016/09/RConsortium_Horizontal_Pantone.png" height="60"/></a>
+
+<a href="http://www.fao.org"><img src="http://www.fao.org/figis/website/assets/images/templates/shared/faologo/en.png" height="70"></a>
 
 
 ## Citation
