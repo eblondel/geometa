@@ -14,8 +14,15 @@
 #'
 #' @section Static Methods:
 #' \describe{
+#'  \item{\code{getISOStandardByPrefix(prefix)}}{
+#'    Inherit the ISO (and/or OGC) standard reference for a given standard prefix (e.g. GMD).
+#'    The object returned is a \code{data.frame} containing the specification reference
+#'    and title.
+#'  }
 #'  \item{\code{getISOStandard(clazz)}}{
 #'    Inherit the ISO (and/or OGC) standard reference for a given \pkg{geometa} class.
+#'    The object returned is a \code{data.frame} containing the specification reference
+#'    and title.
 #'  }
 #'  \item{\code{getISOClasses(extended, pretty)}}{
 #'    Get the list of classes supported by \pkg{geometa}. By default, \code{extended} is
@@ -1243,22 +1250,27 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
   )                              
 )
 
+ISOAbstractObject$getStandardByPrefix = function(prefix){
+  std <- switch(prefix,
+    "GCO" = data.frame(specification = "ISO/TS 19103:2005", title = "Geographic Common extensible markup language", stringsAsFactors = FALSE),
+    "GFC" = data.frame(specification = "ISO/TC211 19110:2005", title = "Geographic Information - Methodology for feature cataloguing", stringsAsFactors = FALSE),
+    "GMD" = data.frame(specification = "ISO/TC211 19115-1:2003", title = "Geographic Information - Metadata", stringsAsFactors = FALSE),
+    "GMI" = data.frame(specification = "ISO/TC211 19115-2:2003", title = "Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data", stringsAsFactors = FALSE),
+    "SRV" = data.frame(specification = "ISO/TC211 19119:2005", title = "Geographic Information - Service Metadata", stringsAsFactors = FALSE),
+    "GMX" = data.frame(specification = "ISO/TC211 19139:2007", title = "Geographic Metadata XML Schema", stringsAsFactors = FALSE),
+    "GML" = data.frame(specification = "GML 3.2.1 (ISO 19136)", title = "Geographic Markup Language", stringsAsFactors = FALSE),
+    "GMLCOV" = data.frame(specification = "GML 3.2.1 Coverage (OGC GMLCOV)", title = "OGC GML Coverage Implementation Schema", stringsAsFactors = FALSE),
+    "GMLRGRID" = data.frame(specification = "GML 3.3 Referenceable Grid (OGC GML)", title = "OGC GML Referenceable Grid", stringsAsFactors = FALSE),
+    NA
+  )
+  return(std)
+}
+
 ISOAbstractObject$getISOStandard = function(clazz){
   std <- NA
   if(is.null(clazz$private_fields)) return(std)
   if(is.null(clazz$private_fields$xmlNamespacePrefix)) return(std)
-  std <- switch(clazz$private_fields$xmlNamespacePrefix,
-    "GCO" = "ISO 19115-1:2003",
-    "GMD" = "ISO 19115-1:2003",
-    "GMX" = "ISO 19115-1:2003",
-    "GMI" = "ISO 19115-2:2003",
-    "SRV" = "ISO 19119:2005",
-    "GFC" = "ISO 19110:2005",
-    "GML" = "GML 3.2.1 (ISO 19136)",
-    "GMLCOV" = "GML 3.2.1 Coverage (OGC GMLCOV)",
-    "GMLRGRID" = "GML 3.3 Referenceable Grid (OGC GML)",
-    NA
-  )
+  std <- ISOAbstractObject$getStandardByPrefix(clazz$private_fields$xmlNamespacePrefix)
   return(std)
 }
 
@@ -1287,11 +1299,12 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
     std_info <- do.call("rbind",lapply(list_of_classes, function(x){
       clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
       std <- ISOAbstractObject$getISOStandard(clazz)
-      std_info <- data.frame(
-        standard = std,
+      std_info <- cbind(
+        std,
         ns_prefix = clazz$private_fields$xmlNamespacePrefix,
         ns_uri = ISOMetadataNamespace[[clazz$private_fields$xmlNamespacePrefix]]$uri,
-        element = clazz$private_fields$xmlElement
+        element = clazz$private_fields$xmlElement,
+        stringsAsFactors = FALSE
       )
       return(std_info)
     }))

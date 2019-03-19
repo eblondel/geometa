@@ -20,8 +20,15 @@ Abstract ISO Metadata class used internally by geometa
 \section{Static Methods}{
 
 \describe{
+ \item{\code{getISOStandardByPrefix(prefix)}}{
+   Inherit the ISO (and/or OGC) standard reference for a given standard prefix (e.g. GMD).
+   The object returned is a \code{data.frame} containing the specification reference
+   and title.
+ }
  \item{\code{getISOStandard(clazz)}}{
    Inherit the ISO (and/or OGC) standard reference for a given \pkg{geometa} class.
+   The object returned is a \code{data.frame} containing the specification reference
+   and title.
  }
  \item{\code{getISOClasses(extended, pretty)}}{
    Get the list of classes supported by \pkg{geometa}. By default, \code{extended} is
