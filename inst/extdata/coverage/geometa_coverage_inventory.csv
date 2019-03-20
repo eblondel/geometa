@@ -39,7 +39,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_PresentationFormCode","ISOPresentationForm",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_ResponsibleParty","ISOResponsibleParty",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_RoleCode","ISORole",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Series","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Series","ISOSeries",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Telephone","ISOTelephone",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","Country","ISOCountry",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_AbsoluteExternalPositionalAccuracy","ISOAbsoluteExternalPositionalAccuracy",TRUE
