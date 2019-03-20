@@ -29,6 +29,10 @@ ISOBinary
 }
 }
 
+\examples{
+  bin <- ISOBinary$new(value = "http://someuri")
+ 
+}
 \references{
 ISO/TS 19103:2005 Geographic information -- Conceptual schema language
 }
