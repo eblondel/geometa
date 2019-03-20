@@ -235,7 +235,7 @@
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","UomAlternativeExpression","<missing>",FALSE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","AbstractObject","ISOAbstractObject",TRUE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Angle","ISOAngle",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Binary","<missing>",FALSE
+"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Binary","ISOBinary",TRUE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Boolean","ISOBaseBoolean",TRUE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","CharacterString","ISOBaseCharacterString",TRUE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Date","ISOBaseDate",TRUE
