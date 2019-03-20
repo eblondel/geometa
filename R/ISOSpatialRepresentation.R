@@ -24,7 +24,7 @@
 ISOSpatialRepresentation <- R6Class("ISOSpatialRepresentation",
   inherit = ISOAbstractObject,
   private = list(
-    xmlElement = "MD_SpatialRepresentation",
+    xmlElement = "AbstractMD_SpatialRepresentation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(

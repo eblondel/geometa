@@ -24,7 +24,7 @@
 ISOContentInformation <- R6Class("ISOContentInformation",
   inherit = ISOAbstractObject,
   private = list(
-    xmlElement = "MD_ContentInformation",
+    xmlElement = "AbstractMD_ContentInformation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(

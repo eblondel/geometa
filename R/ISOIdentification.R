@@ -123,7 +123,7 @@
 ISOIdentification <- R6Class("ISOIdentification",
    inherit = ISOAbstractObject,
    private = list(
-     xmlElement = "MD_Identification",
+     xmlElement = "AbstractMD_Identification",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(

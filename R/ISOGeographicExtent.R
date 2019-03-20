@@ -26,7 +26,7 @@
 ISOGeographicExtent <- R6Class("ISOGeographicExtent",
     inherit = ISOAbstractObject,
     private = list(
-      xmlElement = "EX_GeographicExtent",
+      xmlElement = "AbstractEX_GeographicExtent",
       xmlNamespacePrefix = "GMD"
     ),
     public = list(
