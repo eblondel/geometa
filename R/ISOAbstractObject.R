@@ -1255,7 +1255,7 @@ ISOAbstractObject$getStandardByPrefix = function(prefix){
     "GCO" = data.frame(specification = "ISO/TS 19103:2005", title = "Geographic Common extensible markup language", stringsAsFactors = FALSE),
     "GFC" = data.frame(specification = "ISO/TC211 19110:2005", title = "Geographic Information - Methodology for feature cataloguing", stringsAsFactors = FALSE),
     "GMD" = data.frame(specification = "ISO/TC211 19115-1:2003", title = "Geographic Information - Metadata", stringsAsFactors = FALSE),
-    "GMI" = data.frame(specification = "ISO/TC211 19115-2:2003", title = "Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data", stringsAsFactors = FALSE),
+    "GMI" = data.frame(specification = "ISO/TC211 19115-2:2009", title = "Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data", stringsAsFactors = FALSE),
     "SRV" = data.frame(specification = "ISO/TC211 19119:2005", title = "Geographic Information - Service Metadata", stringsAsFactors = FALSE),
     "GMX" = data.frame(specification = "ISO/TC211 19139:2007", title = "Geographic Metadata XML Schema", stringsAsFactors = FALSE),
     "GML" = data.frame(specification = "GML 3.2.1 (ISO 19136)", title = "Geographic Markup Language", stringsAsFactors = FALSE),

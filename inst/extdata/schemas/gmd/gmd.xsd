@@ -7,6 +7,8 @@
 	<!-- ================================== Imports ================================== -->
 	<xs:include schemaLocation="metadataApplication.xsd"/>
 	
+	<!-- 20190320 @eblondel add ISO-19115-2 schemas -->
+	<xs:import namespace="http://www.isotc211.org/2005/gmi" schemaLocation="../gmi/gmi.xsd"/>
 	<!-- 20170706 @eblondel add service metadata and feature catalogue schemas -->
 	<xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="../srv/srv.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gfc" schemaLocation="../gfc/gfc.xsd"/>

@@ -1,6 +1,7 @@
 "Standard","Title","Namespace","Supported","Missing","Coverage"
 "ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC",15,2,88.24
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD",105,27,79.55
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI",0,40,0
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV",7,12,36.84
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX",4,62,6.06
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO",22,0,100
