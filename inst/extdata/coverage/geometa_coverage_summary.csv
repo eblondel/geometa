@@ -1,9 +1,9 @@
-"Standard","Title","Namespace","Supported","Missing","Coverage","coverage_class"
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC",15,2,88.24,4
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD",100,32,75.76,3
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV",7,12,36.84,1
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX",4,62,6.06,0
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO",21,1,95.45,4
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML",62,107,36.69,1
-"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV",1,0,100,5
-"GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID",5,0,100,5
+"Standard","Title","Namespace","Supported","Missing","Coverage"
+"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC",15,2,88.24
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD",100,32,75.76
+"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV",7,12,36.84
+"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX",4,62,6.06
+"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO",21,1,95.45
+"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML",62,107,36.69
+"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV",1,0,100
+"GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID",5,0,100
