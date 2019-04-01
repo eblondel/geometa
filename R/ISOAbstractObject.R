@@ -976,8 +976,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     save = function(file, ...){
       xml <- self$encode(...)
       xml_str <- as(xml, "character")
-      #Encoding(xml_str) <- "bytes"
-      writeChar(xml_str, con = file, useBytes = TRUE)
+      writeBin(xml_str, con = file, useBytes = TRUE)
     },
     
     #Util & internal methods
