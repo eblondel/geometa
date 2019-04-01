@@ -17,9 +17,6 @@ Many thanks to the following organizations that have provided fundings for stren
 
 <a href="https://www.r-consortium.org"><img src="https://www.r-consortium.org/wp-content/uploads/sites/13/2016/09/RConsortium_Horizontal_Pantone.png" height="60"/></a>
 
-<a href="http://www.fao.org"><img src="http://www.fao.org/figis/website/assets/images/templates/shared/faologo/en.png" height="70"></a>
-
-
 ## Citation
 
 We thank in advance people that use ``geometa`` for citing it in their work / publication(s). For this, please use the citation provided at this link [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184892.svg)](https://doi.org/10.5281/zenodo.1184892)
