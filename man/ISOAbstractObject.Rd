@@ -122,6 +122,9 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{setAttr(attrKey, attrValue)}}{
    Set an attribute
  }
+ \item{\code{addFieldAttrs(field, ...)}}{
+   Allows to add one more xlink attributes a field (element property)
+ }
  \item{\code{setId(id, addNS)}}{
    Set an id. By default \code{addNS} is \code{FALSE} (no namespace prefix added).
  }

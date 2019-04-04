@@ -114,6 +114,9 @@
 #'  \item{\code{setAttr(attrKey, attrValue)}}{
 #'    Set an attribute
 #'  }
+#'  \item{\code{addFieldAttrs(field, ...)}}{
+#'    Allows to add one more xlink attributes a field (element property)
+#'  }
 #'  \item{\code{setId(id, addNS)}}{
 #'    Set an id. By default \code{addNS} is \code{FALSE} (no namespace prefix added).
 #'  }
@@ -337,6 +340,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           if(is(fieldObj, "ISOAbstractObject")){
             cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, " "))
             fieldObj$print(depth = depth+1)
+          }else if(is(fieldObj, "ISOAttributes")){
+            attrs <- paste(sapply(names(fieldObj$attrs), function(attrName){paste0(attrName,"=",fieldObj$attrs[[attrName]])}), collapse=",")
+            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, "[",attrs,"]"))
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
               if(is(item, "ISOAbstractObject")){
@@ -347,6 +353,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   clDes <- item$codelistId$entries[item$codelistId$entries$value == clVal,"description"]
                   cat(paste0(": ", clVal, " {",clDes,"}"))
                 }
+              }else if(is(item, "ISOAttributes")){
+                attrs <- paste(sapply(names(item$attrs), function(attrName){paste0(attrName,"=",item$attrs[[attrName]])}), collapse=",")
+                cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, "[",attrs,"]"))
               }else if(is(item, "matrix")){
                 m <- paste(apply(item, 1L, function(x){
                   x <- lapply(x, function(el){
@@ -557,9 +566,17 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             
           }else{
             value <- xmlValue(child)
-            if(value=="") value <- NA
+            isList <- is.list(self$getClass()$public_fields[[fieldName]])
+            if(value==""){
+              value <- ifelse(isList, list(), NA)
+              attrs <- xmlAttrs(child)
+              if(!is.null(attrs)){
+                attr(attrs,"namespaces") <- NULL
+                value <- ISOAttributes$new(attrs)
+              }
+            }
             if(fieldName == "text") fieldName <- "value"
-            self[[fieldName]] <- value
+            self[[fieldName]] <- ifelse(isList, c(self[[fieldName]], value), value)
           }
         }
         
@@ -629,9 +646,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         }
         if(addNS){
           nsdefs <- self$getNamespaceDefinition(recursive = TRUE)
-          if(!("xsi" %in% names(nsdefs))){
-            nsdefs <- c(nsdefs, ISOMetadataNamespace$XSI$getDefinition())
-          }
+          if(!("xsi" %in% names(nsdefs))) nsdefs <- c(nsdefs, ISOMetadataNamespace$XSI$getDefinition())
+          if(!("xlink" %in% names(nsdefs))) nsdefs <- c(nsdefs, ISOMetadataNamespace$XLINK$getDefinition())
           nsdefs <- nsdefs[order(names(nsdefs))]
           rootXML <- xmlOutputDOM(
             tag = self$element,
@@ -724,7 +740,16 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
               nodeValue <- NULL
-              if(is(item, "matrix")){
+              if(length(item)==0) item <- NA
+              if(is(item, "ISOAttributes")){
+                emptyNodeAttrs <- item$attrs
+                emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = emptyNodeAttrs)
+                rootXML$addNode(emptyNode$value())
+              }else if(is.na(item)){
+                emptyNodeAttrs <- c("gco:nilReason" = "missing")
+                emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = emptyNodeAttrs)
+                rootXML$addNode(emptyNode$value())
+              }else if(is(item, "matrix")){
                 matrix_NA <- all(is.na(item))
                 if(matrix_NA){
                   emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId)
@@ -844,7 +869,11 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             }
           }else{
             if(length(fieldObj)==0) fieldObj <- NA
-            if(is.na(fieldObj)){
+            if(is(fieldObj, "ISOAttributes")){
+              emptyNodeAttrs <- fieldObj$attrs
+              emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = emptyNodeAttrs)
+              rootXML$addNode(emptyNode$value())
+            }else if(is.na(fieldObj)){
               emptyNodeAttrs <- c("gco:nilReason" = "missing")
               emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = emptyNodeAttrs)
               rootXML$addNode(emptyNode$value())
@@ -1170,6 +1199,20 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #setAttr
     setAttr = function(attrKey, attrValue){
       self$attrs[[attrKey]] <- attrValue
+    },
+    
+    #addFieldAttrs
+    addFieldAttrs = function(field, ...){
+      hasfield <- field %in% names(self$getClass()$public_fields)
+      if(hasfield){
+        if(is.list(self$getClass()$public_fields[[field]])){
+          self[[field]] <- c(self[[field]], ISOAttributes$new(...))
+        }else{
+          self[[field]] <- ISOAttributes$new(...)
+        }
+      }else{
+        stop(sprintf("Field '%s' is not a property of class '%s'", field, self$getClassName()))
+      }
     },
     
     #setId

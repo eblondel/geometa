@@ -48,6 +48,22 @@ test_that("encoding",{
   
 })
 
+test_that("encoding - with empty sources / hrefs",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  md <- ISOProcessStep$new()
+  md$setDescription("description")
+  md$addFieldAttrs("source", href = "http://somelink")
+  xml <- md$encode()
+  
+  #decoding
+  md2 <- ISOProcessStep$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+  
+})
+
 test_that("encoding - i18n",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()
