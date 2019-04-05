@@ -61,7 +61,22 @@ test_that("encoding - with empty sources / hrefs",{
   xml2 <- md2$encode()
   
   expect_true(ISOAbstractObject$compare(md, md2))
+})
+
+test_that("encoding - with empty sources / hrefs",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  md <- ISOProcessStep$new()
+  md$setDescription("description")
+  md$addFieldAttrs("source", "xlink:href" = "http://mywebsite.org/source1", "xlink:title" = "My source file 1")
+  md$addFieldAttrs("source", "xlink:href" = "http://mywebsite.org/source2", "xlink:title" = "My source file 2")
+  xml <- md$encode()
   
+  #decoding
+  md2 <- ISOProcessStep$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
 })
 
 test_that("encoding - i18n",{

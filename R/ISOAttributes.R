@@ -26,13 +26,6 @@ ISOAttributes <- R6Class("ISOAttributes",
      initialize = function(...){
        simpleAttrs <- c(...)
        class(simpleAttrs) <- "list"
-       xlinkAttrs <- c("href","role","arcrole","title","show","actuate")
-       assert.xlinkAttr <- names(simpleAttrs) %in% xlinkAttrs
-       if(length(which(!assert.xlinkAttr))>0){
-         stop(sprintf("Attributes [%s] are not xlink attributes!",
-                      paste(names(simpleAttrs)[which(!assert.xlinkAttr)], collapse=",")))
-       }
-       names(simpleAttrs) <- paste("xlink", names(simpleAttrs), sep=":")
        self$attrs <- simpleAttrs
      }
    )                        

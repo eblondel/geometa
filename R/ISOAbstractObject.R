@@ -571,12 +571,16 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               value <- ifelse(isList, list(), NA)
               attrs <- xmlAttrs(child)
               if(!is.null(attrs)){
-                attr(attrs,"namespaces") <- NULL
+                attrNs <- attr(attrs,"namespaces")
+                if(!is.null(attrNs)){
+                  attr(attrs,"namespaces") <- NULL
+                  names(attrs) <- paste(attrNs, names(attrs), sep=":")
+                }
                 value <- ISOAttributes$new(attrs)
               }
             }
             if(fieldName == "text") fieldName <- "value"
-            self[[fieldName]] <- ifelse(isList, c(self[[fieldName]], value), value)
+            self[[fieldName]] <- if(is.list(self[[fieldName]])) c(self[[fieldName]], value) else value
           }
         }
         
@@ -745,7 +749,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 emptyNodeAttrs <- item$attrs
                 emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = emptyNodeAttrs)
                 rootXML$addNode(emptyNode$value())
-              }else if(is.na(item)){
+              }else if(suppressWarnings(all(is.na(item)))){
                 emptyNodeAttrs <- c("gco:nilReason" = "missing")
                 emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = emptyNodeAttrs)
                 rootXML$addNode(emptyNode$value())
