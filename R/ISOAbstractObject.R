@@ -1007,9 +1007,15 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     
     #save
     save = function(file, ...){
+      #encode as xml
       xml <- self$encode(...)
       xml_str <- as(xml, "character")
+      #write file with writeBin to overcome writeChar size limitation
       writeBin(xml_str, con = file, useBytes = TRUE)
+      #read file to replace C-style zero-terminated string
+      r = readBin(file, raw(), file.info(file)$size)
+      r[r==as.raw(0)] = as.raw(0x20) ## replace with 0x20 = <space>
+      writeBin(r, file)
     },
     
     #Util & internal methods
