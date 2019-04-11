@@ -28,6 +28,22 @@ test_that("encoding - with dates",{
   expect_true(ISOAbstractObject$compare(md, md2))
 })
 
+test_that("encoding - with year+month",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  #encoding
+  md <- GMLTimePeriod$new(beginPosition = "2000-01", endPosition = "2015-02")
+  
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- GMLTimePeriod$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+})
+
 test_that("encoding - with years",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()

@@ -68,7 +68,7 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
     setBeginPosition = function(beginPosition){
       beginPos <- beginPosition
       if(is(beginPos,"numeric")) beginPos <- as(beginPos, "character")
-      if(!(is(beginPos, "character") & nchar(beginPos)==4)){
+      if(!(is(beginPos, "character") & nchar(beginPos) %in% c(4,7))){
         if(!all(class(beginPos)==c("POSIXct","POSIXt")) | is(beginPos, "Date")){
           stop("For a date, the value should be of class ('POSIXct','POSIXt') or 'Date'")
         }
@@ -81,7 +81,7 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
     setEndPosition = function(endPosition){
       endPos <- endPosition
       if(is(endPos,"numeric")) endPos <- as(endPos, "character")
-      if(!(is(endPos, "character") & nchar(endPos)==4)){
+      if(!(is(endPos, "character") & nchar(endPos) %in% c(4,7))){
         if(!all(class(endPos)==c("POSIXct","POSIXt")) | is(endPos, "Date")){
           stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
         }
@@ -95,9 +95,23 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       
       start <- self$beginPosition$value
       end <- self$endPosition$value
-      if(nchar(start)==4 & nchar(end)==4){
+      if(nchar(start)==4 && nchar(end)==4){
         years <- length(as.numeric(start):as.numeric(end))
         months <- 0; days <- 0; hours <- 0; mins <- 0; secs <- 0;
+      }else if(nchar(start)==7 && nchar(end)==7){
+        isLeapYear = function(year){ return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0)) }
+        startYear <- as.numeric(substr(start, 1, 4))
+        startMonth <- as.numeric(substr(start,6,7))
+        startDate <- as.Date(paste(start,"01",sep="-"))
+        endYear <- as.numeric(substr(end, 1, 4))
+        endMonth <- as.numeric(substr(end,6,7))
+        endDate <- as.Date(paste(end,ifelse(isLeapYear(endYear)&&endMonth==2,"29","28"),sep="-"))
+        years.seq <- seq(startDate, endDate, by = "years")
+        years <- length(years.seq)-1
+        months.start <- years.seq[length(years.seq)]
+        months.seq <- seq(months.start, endDate, by = "months")
+        months <- length(months.seq)-1
+        days <- 0; hours <- 0; mins <- 0; secs <- 0;
       }else{
         years.seq <- seq(start, end, by = "years")
         years <- length(years.seq)-1
