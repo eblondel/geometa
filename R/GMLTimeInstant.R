@@ -45,10 +45,14 @@ GMLTimeInstant <- R6Class("GMLTimeInstant",
      
      #setTimePosition
      setTimePosition = function(timePosition){
-       if(!all(class(timePosition)==c("POSIXct","POSIXt")) | is(timePosition, "Date")){
-         stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
+       timePos <- timePosition
+       if(is(timePos, "numeric")) timePos <- as(timePos, "character")
+       if(!(is(timePos, "character") & nchar(timePos)==4)){
+         if(!all(class(timePos)==c("POSIXct","POSIXt")) | is(timePos, "Date")){
+           stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
+         }
        }
-       self$timePosition <- GMLElement$create("timePosition", value = timePosition)
+       self$timePosition <- GMLElement$create("timePosition", value = timePos)
      }
    )                        
 )

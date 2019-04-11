@@ -66,19 +66,27 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
     
     #setBeginPosition
     setBeginPosition = function(beginPosition){
-      if(!all(class(beginPosition)==c("POSIXct","POSIXt")) | is(beginPosition, "Date")){
-        stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
+      beginPos <- beginPosition
+      if(is(beginPos,"numeric")) beginPos <- as(beginPos, "character")
+      if(!(is(beginPos, "character") & nchar(beginPos)==4)){
+        if(!all(class(beginPos)==c("POSIXct","POSIXt")) | is(beginPos, "Date")){
+          stop("For a date, the value should be of class ('POSIXct','POSIXt') or 'Date'")
+        }
       }
-      self$beginPosition <- GMLElement$create("beginPosition", value = beginPosition)
+      self$beginPosition <- GMLElement$create("beginPosition", value = beginPos)
       if(!is.null(self$endPosition)) self$computeInterval()
     },
     
     #setEndPosition
     setEndPosition = function(endPosition){
-      if(!all(class(endPosition)==c("POSIXct","POSIXt")) | is(endPosition, "Date")){
-        stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
+      endPos <- endPosition
+      if(is(endPos,"numeric")) endPos <- as(endPos, "character")
+      if(!(is(endPos, "character") & nchar(endPos)==4)){
+        if(!all(class(endPos)==c("POSIXct","POSIXt")) | is(endPos, "Date")){
+          stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
+        }
       }
-      self$endPosition <- GMLElement$create("endPosition", value = endPosition)
+      self$endPosition <- GMLElement$create("endPosition", value = endPos)
       if(!is.null(self$beginPosition)) self$computeInterval()
     },
     
@@ -87,23 +95,28 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       
       start <- self$beginPosition$value
       end <- self$endPosition$value
-      years.seq <- seq(start, end, by = "years")
-      years <- length(years.seq)-1
-      months.start <- years.seq[length(years.seq)]
-      months.seq <- seq(months.start, end, by = "months")
-      months <- length(months.seq)-1
-      days.start <- months.seq[length(months.seq)]
-      days.seq <- seq(days.start, end, by = "DSTdays")
-      days <- length(days.seq)-1
-      hours.start <- days.seq[length(days.seq)]
-      hours.seq <- seq(hours.start, end, by = "hours")
-      hours <- length(hours.seq)-1
-      mins.start <- hours.seq[length(hours.seq)]
-      mins.seq <- seq(mins.start, end, by = "mins")
-      mins <- length(mins.seq)-1
-      secs.start <- mins.seq[length(mins.seq)]
-      secs.seq <- seq(secs.start, end, by = "secs")
-      secs <- length(secs.seq)-1
+      if(nchar(start)==4 & nchar(end)==4){
+        years <- length(as.numeric(start):as.numeric(end))
+        months <- 0; days <- 0; hours <- 0; mins <- 0; secs <- 0;
+      }else{
+        years.seq <- seq(start, end, by = "years")
+        years <- length(years.seq)-1
+        months.start <- years.seq[length(years.seq)]
+        months.seq <- seq(months.start, end, by = "months")
+        months <- length(months.seq)-1
+        days.start <- months.seq[length(months.seq)]
+        days.seq <- seq(days.start, end, by = "DSTdays")
+        days <- length(days.seq)-1
+        hours.start <- days.seq[length(days.seq)]
+        hours.seq <- seq(hours.start, end, by = "hours")
+        hours <- length(hours.seq)-1
+        mins.start <- hours.seq[length(hours.seq)]
+        mins.seq <- seq(mins.start, end, by = "mins")
+        mins <- length(mins.seq)-1
+        secs.start <- mins.seq[length(mins.seq)]
+        secs.seq <- seq(secs.start, end, by = "secs")
+        secs <- length(secs.seq)-1
+      }
       isoduration <- GMLTimePeriod$computeISODuration(years, months, days, 
                                                       hours, mins, secs)           
       self$setId(isoduration, addNS = TRUE)

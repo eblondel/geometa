@@ -9,7 +9,7 @@ require(XML)
 
 context("GMLTimeInstant")
 
-test_that("encoding",{
+test_that("encoding - with dates",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()
   #encoding
@@ -24,5 +24,20 @@ test_that("encoding",{
   xml2 <- md2$encode()
   
   expect_true(ISOAbstractObject$compare(md, md2))
+})
+
+test_that("encoding - with years",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+  #encoding
+  md <- GMLTimeInstant$new(timePosition = 2019)
   
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- GMLTimeInstant$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
 })
