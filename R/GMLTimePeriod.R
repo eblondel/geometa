@@ -56,11 +56,11 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
     endPosition = NULL,
     #+ duration [0..1]: character
     duration = NULL,
-    initialize = function(xml = NULL, beginPosition, endPosition){
+    initialize = function(xml = NULL, beginPosition = NULL, endPosition = NULL){
       super$initialize(xml = xml)
       if(is.null(xml)){
-        self$setBeginPosition(beginPosition)
-        self$setEndPosition(endPosition)
+        if(!is.null(beginPosition)) self$setBeginPosition(beginPosition)
+        if(!is.null(endPosition)) self$setEndPosition(endPosition)
       }
     },
     

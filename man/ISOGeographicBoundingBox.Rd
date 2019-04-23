@@ -26,6 +26,18 @@ ISOGeographicBoundingBox
  \item{\code{new(xml, minx, miny, maxx, maxy, bbox)}}{
    This method is used to instantiate an ISOGeographicBoundingBox
  }
+ \item{\code{setWestBoundLongitude(minx)}}{
+   Set the west bound longitude.
+ }
+ \item{\code{setEastBoundLongitude(minx)}}{
+   Set the west bound longitude.
+ }
+ \item{\code{setSouthBoundLatitude(miny)}}{
+   Set the south bound latitude.
+ }
+ \item{\code{setNorthBoundLatitude(maxy)}}{
+   Set the north bound latitude.
+ }
 }
 }
 
