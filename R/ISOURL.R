@@ -14,6 +14,9 @@
 #'  \item{\code{new(xml,value)}}{
 #'    This method is used to instantiate an ISOURL
 #'  }
+#'  \item{\code{setUrl(url)}}{
+#'    Set the url
+#'  }
 #' }
 #' 
 #' @note Class used by geometa internal XML decoder/encoder
@@ -31,11 +34,15 @@ ISOURL <- R6Class("ISOURL",
   ),
   public = list(
     value = NA,
-    initialize = function(xml = NULL, value){
+    initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml)
       if(is.null(xml)){
         self$value = value
       }
+    },
+    
+    setUrl = function(url){
+      self$value <- url
     }
   )                        
 )

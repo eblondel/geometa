@@ -29,6 +29,9 @@ Class used by geometa internal XML decoder/encoder
  \item{\code{new(xml,value)}}{
    This method is used to instantiate an ISOURL
  }
+ \item{\code{setUrl(url)}}{
+   Set the url
+ }
 }
 }
 
