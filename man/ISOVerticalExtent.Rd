@@ -20,6 +20,15 @@ ISOVerticalExtent
  \item{\code{new(xml)}}{
    This method is used to instantiate an ISOVerticalExtent
  }
+ \item{\code{setMinimumValue(minimumValue)}}{
+   Sets the minimum value
+ }
+ \item{\code{setMaximumValue(maximumValue)}}{
+   Sets the maximum value
+ }
+ \item{\code{setUnitOfMeasure(uom)}}{
+   Sets the unit of measure
+ }
 }
 }
 

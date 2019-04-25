@@ -12,6 +12,15 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an ISOVerticalExtent
 #'  }
+#'  \item{\code{setMinimumValue(minimumValue)}}{
+#'    Sets the minimum value
+#'  }
+#'  \item{\code{setMaximumValue(maximumValue)}}{
+#'    Sets the maximum value
+#'  }
+#'  \item{\code{setUnitOfMeasure(uom)}}{
+#'    Sets the unit of measure
+#'  }
 #' }
 #' 
 #' @examples
@@ -51,6 +60,11 @@ ISOVerticalExtent <- R6Class("ISOVerticalExtent",
     #setMaximumValue
     setMaximumValue = function(maximumValue){
       self$maximumValue = maximumValue
+    },
+    
+    #setUnitOfMeasure
+    setUnitOfMeasure = function(uom){
+      self$unitOfMeasure <- uom
     }
    
   )                                          

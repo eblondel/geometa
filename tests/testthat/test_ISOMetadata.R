@@ -188,6 +188,11 @@ test_that("encoding/decoding",{
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
   extent$setGeographicElement(bbox)
+  vert <- ISOVerticalExtent$new()
+  vert$setMinimumValue(0)
+  vert$setMaximumValue(500)
+  vert$setUnitOfMeasure("m")
+  extent$setVerticalElement()
   ident$setExtent(extent)
   
   #add keywords
