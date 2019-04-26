@@ -98,7 +98,7 @@ test_that("encoding/decoding",{
   
   #adding a point of contact
   rp <- ISOResponsibleParty$new()
-  rp$setIndividualName("someone")
+  rp$setIndividualName("John Who")
   rp$setOrganisationName("somewhere")
   rp$setPositionName("someposition")
   rp$setRole("pointOfContact")
@@ -192,7 +192,7 @@ test_that("encoding/decoding",{
   vert$setMinimumValue(0)
   vert$setMaximumValue(500)
   vert$setUnitOfMeasure("m")
-  extent$setVerticalElement()
+  extent$setVerticalElement(vert)
   ident$setExtent(extent)
   
   #add keywords

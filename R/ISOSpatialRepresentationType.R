@@ -35,7 +35,7 @@ ISOSpatialRepresentationType <- R6Class("ISOSpatialRepresentationType",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     initialize = function(xml = NULL, value, description){
+     initialize = function(xml = NULL, value = NULL, description = NULL){
        super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
                         addCodeSpaceAttr = FALSE)
      }
