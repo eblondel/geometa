@@ -60,29 +60,31 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          stop(sprintf("No ISO codelist for identifier '%s'", id))
        }
        self$codelistId = cl
-       clEntry <- cl$entries[cl$entries$value == value,]
        clValue <- ""
        clName <- NA
        clDescription <- ""
        clCodeSpace <- ""
-       if(nrow(clEntry)==0){
-         warning(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
-         clValue <- value
-         clCodeSpace <- cl$codeSpace
-         if(!is.null(description)){
-           setValue <- TRUE
-           clName <- description
-           clDescription <- description
+       if(!is.null(value)){
+         clEntry <- cl$entries[cl$entries$value == value,]
+         if(nrow(clEntry)==0){
+           warning(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
+           clValue <- value
+           clCodeSpace <- cl$codeSpace
+           if(!is.null(description)){
+             setValue <- TRUE
+             clName <- description
+             clDescription <- description
+             self$valueDescription <- clDescription
+           }
+         }else{
+           clCodeSpace <- cl$codeSpace
+           clEntry <- clEntry[1L,]
+           clValue <- clEntry$value
+           clName <- clEntry$name
+           clDescription <- ifelse(!is.na(clName), clEntry$name, clEntry$description)
+           if(setValueDescription) clDescription <- clEntry$description
            self$valueDescription <- clDescription
          }
-       }else{
-         clCodeSpace <- cl$codeSpace
-         clEntry <- clEntry[1L,]
-         clValue <- clEntry$value
-         clName <- clEntry$name
-         clDescription <- ifelse(!is.na(clName), clEntry$name, clEntry$description)
-         if(setValueDescription) clDescription <- clEntry$description
-         self$valueDescription <- clDescription
        }
        
        isLocalFile <- !grepl("^http", cl$refFile) & !grepl("^https", cl$refFile)
