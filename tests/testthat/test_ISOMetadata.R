@@ -214,6 +214,16 @@ test_that("encoding/decoding",{
   th2$addDate(d)
   kwds2$setThesaurusName(th2)
   ident$addKeywords(kwds2)
+  kwds3 <- ISOKeywords$new()
+  kwds3$addKeyword("Dinophysis sp")
+  kwds3$addKeyword("Prorocentrum lima")
+  kwds3$addKeyword("Gambierdiscus toxicus")
+  kwds3$setKeywordType("theme")
+  th3 <- ISOCitation$new()
+  th3$setTitle("Taxonomy")
+  th3$addDate(d)
+  kwds3$setThesaurusName(th3)
+  ident$addKeywords(kwds3)
   
   #supplementalInformation
   ident$setSupplementalInformation("some additional information")
