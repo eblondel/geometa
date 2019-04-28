@@ -35,7 +35,7 @@ ISODateType <- R6Class("ISODateType",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     initialize = function(xml = NULL, value, description = NULL){
+     initialize = function(xml = NULL, value = NULL, description = NULL){
        super$initialize(xml = xml, id = "CI_DateTypeCode", value = value,
                         description = description)
      }
