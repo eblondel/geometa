@@ -60,10 +60,12 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          stop(sprintf("No ISO codelist for identifier '%s'", id))
        }
        self$codelistId = cl
+       clCodeSpace <- cl$codeSpace
+       
        clValue <- ""
        clName <- NA
        clDescription <- ""
-       clCodeSpace <- ""
+       
        if(!is.null(value)){
          clEntry <- cl$entries[cl$entries$value == value,]
          if(nrow(clEntry)==0){
@@ -81,10 +83,9 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          clEntry <- cl$entries[1,]
        }
        
-       if(nrow(clEntry)>0){
-         clCodeSpace <- cl$codeSpace
+       if(!is.null(value) & nrow(clEntry)>0){
          clEntry <- clEntry[1L,]
-         if(!is.null(value)) clValue <- clEntry$value
+         clValue <- clEntry$value
          clName <- clEntry$name
          clDescription <- ifelse(!is.na(clName), clEntry$name, clEntry$description)
          if(setValueDescription) clDescription <- clEntry$description
