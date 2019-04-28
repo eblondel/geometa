@@ -131,7 +131,7 @@ test_that("encoding/decoding",{
   d1$setDateType("creation")
   ct$addDate(d1)
   d2 <- ISODate$new()
-  d2$setDate(ISOdate(2015, 2, 1, 1))
+  d2$setDate(ISOdate(2015, 3, 31, 1))
   d2$setDateType("publication")
   ct$addDate(d2)
   ct$setEdition("1.0")
