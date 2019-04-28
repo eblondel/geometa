@@ -35,7 +35,7 @@ ISORole <- R6Class("ISORole",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    initialize = function(xml = NULL, value){
+    initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = TRUE)
     }
   )                        
