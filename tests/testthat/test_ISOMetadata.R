@@ -9,6 +9,8 @@ require(testthat)
 context("ISOMetadata")
 
 test_that("encoding/decoding",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md = ISOMetadata$new()
   md$setFileIdentifier("my-metadata-identifier")
@@ -24,7 +26,7 @@ test_that("encoding/decoding",{
   #--------------------
   for(i in 1:3){
     rp <- ISOResponsibleParty$new()
-    rp$setIndividualName(paste0("someone",i))
+    rp$setIndividualName(paste0("Firstname",i," Lastname",i))
     rp$setOrganisationName("somewhere")
     rp$setPositionName(paste0("someposition",i))
     rp$setRole("pointOfContact")
@@ -186,13 +188,21 @@ test_that("encoding/decoding",{
   
   #adding extent
   extent <- ISOExtent$new()
+  #geographic element
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
   extent$setGeographicElement(bbox)
+  #vertical element
   vert <- ISOVerticalExtent$new()
   vert$setMinimumValue(0)
   vert$setMaximumValue(500)
   vert$setUnitOfMeasure("m")
   extent$setVerticalElement(vert)
+  #temporal element
+  te <- ISOTemporalExtent$new()
+  start <- ISOdate(2000, 1, 12, 12, 59, 45)
+  end <- ISOdate(2010, 8, 22, 13, 12, 43)
+  tp <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
+  te$setTimePeriod(tp)
   ident$setExtent(extent)
   
   #add keywords
