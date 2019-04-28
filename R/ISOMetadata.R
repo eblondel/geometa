@@ -484,7 +484,7 @@ ISOMetadata <- R6Class("ISOMetadata",
      #+ contact [1..*] : ISOResponsibleParty
      contact = list(),
      #+ dateStamp : POSIXct/POSIXt
-     dateStamp = NULL,
+     dateStamp = Sys.time(),
      #+ metadataStandardName [0..1] : character
      metadataStandardName = NULL,
      #+ metadataStandardVersion [0..1] : character
