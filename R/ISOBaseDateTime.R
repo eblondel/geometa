@@ -31,7 +31,7 @@ ISOBaseDateTime <- R6Class("ISOBaseDateTime",
   ),
   public = list(
     value = NA,
-    initialize = function(xml = NULL, value){
+    initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml)
       if(is.null(xml)){
         self$value = value
