@@ -203,6 +203,7 @@ test_that("encoding/decoding",{
   end <- ISOdate(2010, 8, 22, 13, 12, 43)
   tp <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
   te$setTimePeriod(tp)
+  extent$setTemporalElement(te)
   ident$setExtent(extent)
   
   #add keywords
