@@ -76,15 +76,19 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
              clDescription <- description
              self$valueDescription <- clDescription
            }
-         }else{
-           clCodeSpace <- cl$codeSpace
-           clEntry <- clEntry[1L,]
-           clValue <- clEntry$value
-           clName <- clEntry$name
-           clDescription <- ifelse(!is.na(clName), clEntry$name, clEntry$description)
-           if(setValueDescription) clDescription <- clEntry$description
-           self$valueDescription <- clDescription
          }
+       }else{
+         clEntry <- cl$entries[1,]
+       }
+       
+       if(nrow(clEntry)>0){
+         clCodeSpace <- cl$codeSpace
+         clEntry <- clEntry[1L,]
+         if(!is.null(value)) clValue <- clEntry$value
+         clName <- clEntry$name
+         clDescription <- ifelse(!is.na(clName), clEntry$name, clEntry$description)
+         if(setValueDescription) clDescription <- clEntry$description
+         self$valueDescription <- clDescription
        }
        
        isLocalFile <- !grepl("^http", cl$refFile) & !grepl("^https", cl$refFile)
