@@ -14,17 +14,29 @@ apt_packages:
   - libgeos-dev
   - libspatialite-dev
   - libgdal-dev
+  - libnetcdf-dev # for ncdf4
+  - netcdf-bin #for ncdf4
+  - librdf0-dev #for eml
+  - libv8-dev #for eml
+  - libjq-dev #for eml
 
 r:
   #- oldrel
   - release
   - devel
+  
+r_github_packages:
+  - ropensci/jqr
+  - ropensci/jsonld
+  - ropensci/emld
+  - ropensci/EML
 
 r_packages:
   - devtools
   - R6
   - XML
   - sf
+  - ncdf4
   - testthat
   - covr
 
