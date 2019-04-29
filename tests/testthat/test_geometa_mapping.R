@@ -6,15 +6,17 @@
 require(geometa, quietly = TRUE)
 require(testthat)
 require(XML)
-require(EML)
-require(emld)
-require(ncdf4)
 
 context("geometa_mapping")
 
 test_that("encoding",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()
+  
+  #packages
+  require(EML)
+  require(emld)
+  require(ncdf4)
 
   #md object
   #encoding
