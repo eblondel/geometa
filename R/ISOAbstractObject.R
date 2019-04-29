@@ -5,6 +5,7 @@
 #' @importFrom R6 R6Class
 #' @importFrom methods is
 #' @importFrom methods as
+#' @importFrom utils read.csv
 #' @import XML
 #' @import httr
 #' @export

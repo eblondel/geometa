@@ -25,6 +25,9 @@ r_packages:
   - R6
   - XML
   - sf
+  - ncdf4
+  - EML
+  - emld
   - testthat
   - covr
 
