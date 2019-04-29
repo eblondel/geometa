@@ -19,6 +19,12 @@ r:
   #- oldrel
   - release
   - devel
+  
+r_github_packages:
+  - ropensci/jqr
+  - ropensci/jsonld
+  - ropensci/emld
+  - ropensci/EML
 
 r_packages:
   - devtools
@@ -26,9 +32,6 @@ r_packages:
   - XML
   - sf
   - ncdf4
-  - emld
-  - jqr
-  - EML
   - testthat
   - covr
 
