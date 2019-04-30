@@ -24,6 +24,7 @@
   
   #mappings
   assign(".geometa.mappings", new.env(), envir = asNamespace(pkgname))
+  #mapping rules
   mappings_file <- system.file("extdata/mappings", "geometa_mapping.csv", package = "geometa")
   registerMappings(utils::read.csv(mappings_file, stringsAsFactors = FALSE, na.strings = ""))
   

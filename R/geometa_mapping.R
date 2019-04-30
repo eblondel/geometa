@@ -1,4 +1,40 @@
-#pivot_format
+#' pivot_format
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords metadata convert mapping
+#' @return Object of \code{\link{R6Class}} for modelling a mapping format
+#' @format \code{\link{R6Class}} object.
+#'
+#' @field id
+#' @field pkg
+#' @field reader
+#' @field checker
+#' @field constructor
+#'
+#' @section Methods:
+#' \describe{
+#'  \item{\code{new(id, pkg, reader, checker, constructor)}}{
+#'    This method is used to instantiate a pivot_format, given a unique \code{id},
+#'    the name of package used (for information only). A format is then defined by
+#'    string expressions (using \code{sprintf} formatting) to read metadata properties
+#'    (\code{reader}), one for checking existence of properties (\code{checker}), and an
+#'    expression to create metadata objects (\code{constructor}). In case the \code{constructor}
+#'    is NULL, then no conversion to this metadata format will be possible.
+#'  }
+#' }
+#' 
+#' @examples 
+#'   #example on how geometa format is defined as pivot format
+#'   pivot_format$new(
+#'     id = "geometa", pkg = "geometa",
+#'     reader = "%s[[%s]]", checker = "!is.null(%s[[%s]])",
+#'     constructor = "ISOMetadata$new"
+#'   )
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
 pivot_format <- R6Class("pivot_format",
   public = list(
     id = NULL,
@@ -35,15 +71,41 @@ pivot_converter <- R6Class("pivot_converter",
   )                           
 )
 
-list_metadata_formats <- function(){
-  formats <- list(
+#' @name registerMappingFormat
+#' @aliases registerMappingFormat
+#' @title registerMappingFormat
+#' @export
+#' @description \code{registerMappingFormat} allows to register a new mapping
+#' format in \pkg{geometa}
+#' 
+#' @usage registerMappingFormat(mapping_format)
+#' 
+#' @param mapping_format object of class \code{pivot_format}
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+registerMappingFormat <- function(mapping_format){
+  if(!(is(mapping_format,"pivot_format"))){
+    stop("The mapping format should be an object of class 'pivot_format'")
+  }
+  currentFormats <- getMappingFormats(pretty = FALSE)
+  if(any(sapply(currentFormats, function(x){x$id == mapping_format$id}))){
+    stop(sprintf("There is already a format registered for id '%s'", mapping_format$id))
+  }
+  .geometa.mappings$formats <- c(.geometa.mappings$formats, mapping_format)
+}
+
+#'setMappingFormats
+#'@export
+setMappingFormats <- function(){
+  .geometa.mappings$formats <- list(
     pivot_format$new(
       id = "geometa", pkg = "geometa", 
       reader = "%s[[%s]]", checker = "!is.null(%s[[%s]])", 
       constructor = "ISOMetadata$new"
     ),
     pivot_format$new(
-      id = "eml", pkg = "EML", 
+      id = "eml", pkg = "EML/emld", 
       reader = "%s[[%s]]", checker = "!is.null(%s[[%s]])",
       constructor = "eml$eml"
     ),
@@ -53,7 +115,37 @@ list_metadata_formats <- function(){
       constructor = NULL
     )
   )
-  return(formats)
+}
+
+#' @name getMappingFormats
+#' @aliases getMappingFormats
+#' @title getMappingFormats
+#' @export
+#' @description \code{getMappingFormats} gets the mapping formats registered in \pkg{geometa}
+#' 
+#' @usage getMappingFormats()
+#' 
+#' @param pretty by default \code{TRUE} to return the list of formats as \code{data.frame}. Set
+#' to \code{FALSE} to return a list of \code{pivot_format} objects
+#' 
+#' @examples             
+#'   getMappingFormats()
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+getMappingFormats <- function(pretty = TRUE){
+  out <- .geometa.mappings$formats
+  if(pretty){
+    out <- do.call("rbind",lapply(out,function(mapping_format){
+      out_format <- data.frame(
+        id = mapping_format$id, pkg = mapping_format$pkg,
+        from = !is.null(mapping_format$reader), 
+        to = !is.null(mapping_format$constructor),
+        stringsAsFactors = FALSE
+      )
+    }))
+  }
+  return(out)
 }
 
 
@@ -597,7 +689,10 @@ apply_format_mapping <- function(mapping, obj, out, verbose = FALSE){
 #convert_metadata
 convert_metadata <- function(obj, from, to, mappings, verbose = FALSE){
   
-  available_metadata_formats <- list_metadata_formats()
+  available_metadata_formats <- getMappingFormats(pretty = FALSE)
+  if(length(available_metadata_formats)==0) setMappingFormats()
+  available_metadata_formats <- getMappingFormats(pretty = FALSE)
+  
   format_ids <- sapply(available_metadata_formats, function(x){x$id})
   if(!(from %in% format_ids))
     stop(sprintf("The source format '%s' is not among known formats. Check the list of possible formats with list_metadata_formats()", from))
