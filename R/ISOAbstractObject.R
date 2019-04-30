@@ -1342,7 +1342,7 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
     if(r6Predicate){
       if(!is.null(clazz$classname)){
         includePredicate <- !(clazz$classname %in% c("geometaLogger", "INSPIREMetadataValidator",
-          "ISOCodelist", "ISOCodeListValue", "ISOMetadataNamespace", "ISOTimePeriod"))
+          "ISOCodelist", "ISOCodeListValue", "ISOMetadataNamespace", "ISOTimePeriod","ISOAttributes"))
       }
     }
     return(r6Predicate & envPredicate & includePredicate)
