@@ -141,7 +141,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_StandardOrderProcess","ISOStandardOrderProcess",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_TopicCategoryCode","ISOTopicCategory",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_TopologyLevelCode","ISOTopologyLevel",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Usage","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Usage","ISOUsage",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_VectorSpatialRepresentation","ISOVectorSpatialRepresentation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","PT_FreeText","ISOFreeText",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","PT_Locale","ISOLocale",TRUE
