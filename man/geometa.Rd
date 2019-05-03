@@ -4,7 +4,6 @@
 \name{geometa}
 \alias{geometa}
 \alias{geometa-package}
-\alias{geometa-package}
 \title{Tools for Reading and Writing ISO/OGC Geographic Metadata}
 \description{
 Provides facilities to handle reading and writing of geographic metadata 

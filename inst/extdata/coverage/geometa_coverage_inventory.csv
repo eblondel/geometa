@@ -20,7 +20,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Element","ISODataQualityAbstractElement",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_LogicalConsistency","ISOAbstractLogicalConsistency",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_PositionalAccuracy","ISOAbstractPositionalAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Result","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Result","ISOAbstractResult",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_TemporalAccuracy","ISOAbstractTemporalAccuracy",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_ThematicAccuracy","ISOAbstractThematicAccuracy",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDS_Aggregate","<missing>",FALSE
@@ -55,7 +55,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_GriddedDataPositionalAccuracy","ISOGriddedDataPositionalAccuracy",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_NonQuantitativeAttributeAccuracy","ISONonQuantitativeAttributeAccuracy",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeAttributeAccuracy","ISOQuantitativeAttributeAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeResult","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeResult","ISOQuantitativeResult",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_RelativeInternalPositionalAccuracy","ISORelativeInternalPositionalAccuracy",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_Scope","ISOScope",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TemporalConsistency","ISOTemporalConsistency",TRUE

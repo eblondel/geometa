@@ -46,7 +46,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOConformanceResult <- R6Class("ISOConformanceResult",
-  inherit = ISOAbstractObject,
+  inherit = ISOAbstractResult,
   private = list(
       xmlElement = "DQ_ConformanceResult",
       xmlNamespacePrefix = "GMD"

@@ -16,4 +16,4 @@ License: MIT + file LICENSE
 URL: https://github.com/eblondel/geometa/wiki
 BugReports: https://github.com/eblondel/geometa/issues
 LazyLoad: yes
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
