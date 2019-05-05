@@ -34,7 +34,7 @@ ISOPixelOrientation
   values <- ISOPixelOrientation$values(labels = TRUE)
   
   #PixelOrientation
-  PixelOrientation <- ISOPixelOrientation$new(value = "rain")
+  PixelOrientation <- ISOPixelOrientation$new(value = "center")
 
 }
 \references{
