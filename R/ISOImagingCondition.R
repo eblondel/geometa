@@ -24,7 +24,7 @@
 #'   ImagingCondition <- ISOImagingCondition$new(value = "rain")
 #' 
 #' @references 
-#'   ISO 19119:2005 - Geographic information -- Services
+#'   ISO 19115:2003 - Geographic information -- Metadata
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
