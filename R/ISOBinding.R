@@ -30,7 +30,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOBinding <- R6Class("ISOBinding",
-    inherit = ISOCarrierOfCharacteristics,
+    inherit = ISOAbstractCarrierOfCharacteristics,
     private = list(
       xmlElement = "FC_Binding",
       xmlNamespacePrefix = "GFC"

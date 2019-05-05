@@ -14,26 +14,11 @@ Object of \code{\link{R6Class}} for modelling an ISOCarrierOfCharacteristics
 \description{
 ISOCarrierOfCharacteristics
 }
-\section{Fields}{
-
-\describe{
-\item{\code{constrainedBy}}{}
-}}
-
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, defaults)}}{
    This method is used to instantiate an ISOCarrierOfCharacteristics
- }
- \item{\code{setFeatureType(featureType)}}{
-   Set a feature type, object of class \code{ISOFeatureType}
- }
- \item{\code{addConstraint(constraint)}}{
-   Add constraint, object of class \code{ISOConstraint}
- }
- \item{\code{delConstraint(constraint)}}{
-   Deletes constraint, object of class \code{ISOConstraint}
  }
 }
 }

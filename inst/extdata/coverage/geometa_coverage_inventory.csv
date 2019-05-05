@@ -1,6 +1,6 @@
 "specification","title","ns_prefix","element","geometa_class","in_geometa"
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_CarrierOfCharacteristics","<missing>",FALSE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_PropertyType","<missing>",FALSE
+"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_CarrierOfCharacteristics","ISOAbstractCarrierOfCharacteristics",TRUE
+"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_PropertyType","ISOAbstractPropertyType",TRUE
 "ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_AssociationRole","ISOAssociationRole",TRUE
 "ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_Binding","ISOBinding",TRUE
 "ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_BoundAssociationRole","ISOBoundAssociationRole",TRUE
