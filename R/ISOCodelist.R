@@ -156,6 +156,7 @@ setISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MD_ImagingConditionCode"),
     ISOCodelist$new(gmxCL, "MD_MaintenanceFrequencyCode"),
     ISOCodelist$new(gmxCL, "MD_ObligationCode"),
+    ISOCodelist$new(gmxCL, "MD_PixelOrientationCode"),
     ISOCodelist$new(gmxCL, "MD_ProgressCode"),
     ISOCodelist$new(gmxCL, "MD_RestrictionCode"),
     ISOCodelist$new(gmxCL, "MD_SpatialRepresentationTypeCode"),
