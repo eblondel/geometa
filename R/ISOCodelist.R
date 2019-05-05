@@ -153,6 +153,7 @@ setISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MD_DimensionNameTypeCode"),
     ISOCodelist$new(gmxCL, "MD_GeometricObjectTypeCode"),
     ISOCodelist$new(gmxCL, "MD_KeywordTypeCode"),
+    ISOCodelist$new(gmxCL, "MD_ImagingConditionCode"),
     ISOCodelist$new(gmxCL, "MD_MaintenanceFrequencyCode"),
     ISOCodelist$new(gmxCL, "MD_ObligationCode"),
     ISOCodelist$new(gmxCL, "MD_ProgressCode"),
