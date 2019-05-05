@@ -119,7 +119,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_LegalConstraints","ISOLegalConstraints",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MaintenanceFrequencyCode","ISOMaintenanceFrequency",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MaintenanceInformation","ISOMaintenanceInformation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Medium","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Medium","ISOMedium",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumFormatCode","ISOMediumFormat",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumNameCode","ISOMediumName",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Metadata","ISOMetadata",TRUE
