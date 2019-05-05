@@ -249,16 +249,16 @@ ISOFeatureType <- R6Class("ISOFeatureType",
      
      #addCharacteristic
      addCharacteristic = function(characteristic){
-       if(!is(characteristic, "ISOCarrierOfCharacteristics")){
-         stop("The argument should be an object of class extending 'ISOCarrierOfCharacteristics'")
+       if(!is(characteristic, "ISOAbstractCarrierOfCharacteristics")){
+         stop("The argument should be an object of class extending 'ISOAbstractCarrierOfCharacteristics'")
        }
        return(self$addListElement("carrierOfCharacteristics", characteristic))
      },
      
      #delCharacteristic
      delCharacteristic = function(characteristic){
-       if(!is(characteristic, "ISOPropertyType")){
-         stop("The argument should be an object of class extending 'ISOCarrierOfCharacteristics'")
+       if(!is(characteristic, "ISOAbstractCarrierOfCharacteristics")){
+         stop("The argument should be an object of class extending 'ISOAbstractCarrierOfCharacteristics'")
        }
        return(self$delListElement("carrierOfCharacteristics", characteristic))
      }
