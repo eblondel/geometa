@@ -62,7 +62,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TemporalValidity","ISOTemporalValidity",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_ThematicClassificationCorrectness","ISOThematicClassificationCorrectness",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TopologicalConsistency","ISOTopologicalConsistency",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Association","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Association","ISOAssociation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_AssociationTypeCode","ISOAssociationType",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_DataSet","ISODataSet",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Initiative","ISOInitiative",TRUE
