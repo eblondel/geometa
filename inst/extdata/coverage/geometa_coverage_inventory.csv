@@ -126,7 +126,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MetadataExtensionInformation","ISOMetadataExtensionInformation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ObligationCode","ISOObligation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_PixelOrientationCode","ISOPixelOrientation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_PortrayalCatalogueReference","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_PortrayalCatalogueReference","ISOPortrayalCatalogueReference",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ProgressCode","ISOStatus",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_RangeDimension","ISORangeDimension",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ReferenceSystem","ISOReferenceSystem",TRUE
