@@ -1,16 +1,16 @@
-#' ISOSeries
+#' ISOSensor
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO Series
-#' @return Object of \code{\link{R6Class}} for modelling an ISOSeries
+#' @keywords ISO Sensor
+#' @return Object of \code{\link{R6Class}} for modelling an ISOSensor
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOSeries
+#'    This method is used to instantiate an ISOSensor
 #'  }
 #' }
 #' 
@@ -22,11 +22,11 @@
 #'  \item{\code{delComposedOf(composedOf)}}{
 #'    Deletes a dataset, object of class \code{ISODataSet}
 #'  }
-#'  \item{\code{addSeriesMetadata(metadata)}}{
-#'    Adds a series metadata, object of class \code{ISOMetadata}
+#'  \item{\code{addSensorMetadata(metadata)}}{
+#'    Adds a Sensor metadata, object of class \code{ISOMetadata}
 #'  }
-#'  \item{\code{delSeriesMetadata(metadata)}}{
-#'    Deletes a series metadata, object of class \code{ISOMetadata}
+#'  \item{\code{delSensorMetadata(metadata)}}{
+#'    Deletes a Sensor metadata, object of class \code{ISOMetadata}
 #'  }
 #'  \item{\code{addSubset(subset)}}{
 #'    Adds a subset, object that inherits from \code{ISOAbstractAggregate}
@@ -47,10 +47,10 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOSeries <- R6Class("ISOSeries",
- inherit = ISOAbstractAggregate,
+ISOSensor <- R6Class("ISOSensor",
+ inherit = ISOSeries,
  private = list(
-   xmlElement = "DS_Series",
+   xmlElement = "DS_Sensor",
    xmlNamespacePrefix = "GMD"
  ),
  public = list(

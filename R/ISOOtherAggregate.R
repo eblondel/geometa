@@ -1,16 +1,16 @@
-#' ISOSeries
+#' ISOOtherAggregate
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO Series
-#' @return Object of \code{\link{R6Class}} for modelling an ISOSeries
+#' @keywords ISO other aggregate
+#' @return Object of \code{\link{R6Class}} for modelling an ISOOtherAggregate
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOSeries
+#'    This method is used to instantiate an ISOOtherAggregate
 #'  }
 #' }
 #' 
@@ -47,15 +47,15 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOSeries <- R6Class("ISOSeries",
- inherit = ISOAbstractAggregate,
- private = list(
-   xmlElement = "DS_Series",
-   xmlNamespacePrefix = "GMD"
- ),
- public = list(
-   initialize = function(xml = NULL){
-     super$initialize(xml = xml)
-   }
- )                        
+ISOOtherAggregate <- R6Class("ISOOtherAggregate",
+    inherit = ISOAbstractAggregate,
+    private = list(
+      xmlElement = "DS_OtherAggregate",
+      xmlNamespacePrefix = "GMD"
+    ),
+    public = list(
+      initialize = function(xml = NULL){
+        super$initialize(xml = xml)
+      }
+    )                        
 )

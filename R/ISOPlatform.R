@@ -1,16 +1,16 @@
-#' ISOSeries
+#' ISOPlatform
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO Series
-#' @return Object of \code{\link{R6Class}} for modelling an ISOSeries
+#' @keywords ISO platform
+#' @return Object of \code{\link{R6Class}} for modelling an ISOPlatform
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOSeries
+#'    This method is used to instantiate an ISOPlatform
 #'  }
 #' }
 #' 
@@ -22,11 +22,11 @@
 #'  \item{\code{delComposedOf(composedOf)}}{
 #'    Deletes a dataset, object of class \code{ISODataSet}
 #'  }
-#'  \item{\code{addSeriesMetadata(metadata)}}{
-#'    Adds a series metadata, object of class \code{ISOMetadata}
+#'  \item{\code{addPlatformMetadata(metadata)}}{
+#'    Adds a Platform metadata, object of class \code{ISOMetadata}
 #'  }
-#'  \item{\code{delSeriesMetadata(metadata)}}{
-#'    Deletes a series metadata, object of class \code{ISOMetadata}
+#'  \item{\code{delPlatformMetadata(metadata)}}{
+#'    Deletes a Platform metadata, object of class \code{ISOMetadata}
 #'  }
 #'  \item{\code{addSubset(subset)}}{
 #'    Adds a subset, object that inherits from \code{ISOAbstractAggregate}
@@ -47,15 +47,15 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOSeries <- R6Class("ISOSeries",
- inherit = ISOAbstractAggregate,
- private = list(
-   xmlElement = "DS_Series",
+ISOPlatform <- R6Class("ISOPlatform",
+  inherit = ISOSeries,
+  private = list(
+   xmlElement = "DS_Platform",
    xmlNamespacePrefix = "GMD"
- ),
- public = list(
+  ),
+  public = list(
    initialize = function(xml = NULL){
      super$initialize(xml = xml)
    }
- )                        
+  )                        
 )

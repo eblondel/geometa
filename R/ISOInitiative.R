@@ -1,16 +1,16 @@
-#' ISOSeries
+#' ISOInitiative
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO Series
-#' @return Object of \code{\link{R6Class}} for modelling an ISOSeries
+#' @keywords ISO initiative
+#' @return Object of \code{\link{R6Class}} for modelling an ISOInitiative
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOSeries
+#'    This method is used to instantiate an ISOInitiative
 #'  }
 #' }
 #' 
@@ -47,10 +47,10 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOSeries <- R6Class("ISOSeries",
+ISOInitiative <- R6Class("ISOInitiative",
  inherit = ISOAbstractAggregate,
  private = list(
-   xmlElement = "DS_Series",
+   xmlElement = "DS_Initiative",
    xmlNamespacePrefix = "GMD"
  ),
  public = list(
