@@ -91,6 +91,7 @@ ISOCodelist <- R6Class("ISOCodelist",
             clDictXML <<- XML::xmlDoc(x)
           }
         }))
+        if(is.null(clDictXML)) return(NULL)
         
         #codelist identification
         idXML <- XML::getNodeSet(clDictXML, "//gml:identifier",
@@ -151,6 +152,7 @@ setISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MD_CoverageContentTypeCode"),
     ISOCodelist$new(gmxCL, "MD_DatatypeCode"),
     ISOCodelist$new(gmxCL, "MD_DimensionNameTypeCode"),
+    ISOCodelist$new(gmxCL, "MD_DistributionUnits"),
     ISOCodelist$new(gmxCL, "MD_GeometricObjectTypeCode"),
     ISOCodelist$new(gmxCL, "MD_KeywordTypeCode"),
     ISOCodelist$new(gmxCL, "MD_ImagingConditionCode"),
