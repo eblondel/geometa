@@ -32,10 +32,10 @@ ISOLocalisedCharacterString <- R6Class("ISOLocalisedCharacterString",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    initialize = function(xml = NULL, locale, value){
+    initialize = function(xml = NULL, locale = NULL, value){
       super$initialize(xml = xml, value = value)
       if(is.null(xml)){
-        self$attrs[["locale"]] <- paste0("#",locale)
+        if(!is.null(locale)) self$attrs[["locale"]] <- paste0("#",locale)
       }
     }
   )                        
