@@ -108,7 +108,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Format","ISOFormat",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_GeometricObjects","ISOGeometricObjects",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_GeometricObjectTypeCode","ISOGeometricObjectType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georectified","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georectified","ISOGeorectified",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georeferenceable","ISOGeoreferenceable",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_GridSpatialRepresentation","ISOGridSpatialRepresentation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Identifier","ISOMetaIdentifier",TRUE
