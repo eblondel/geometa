@@ -27,9 +27,9 @@ ISOFeatureType
 
 \item{\code{aliases}}{[\code{\link{ISOLocalName}}]}
 
-\item{\code{inheritsFrom}}{[NOT SUPPORTED]}
+\item{\code{inheritsFrom}}{[\code{\link{ISOInheritanceRelation}}]}
 
-\item{\code{inheritsTo}}{[NOT SUPPORTED]}
+\item{\code{inheritsTo}}{[\code{\link{ISOInheritanceRelation}}]}
 
 \item{\code{featureCatalogue}}{[\code{\link{ISOFeatureCatalogue}}]}
 
@@ -65,6 +65,18 @@ ISOFeatureType
  }
  \item{\code{delAlias(alias)}}{
    Deletes alias name
+ }
+ \item{\code{addInheritsFrom(rel)}}{
+   Adds a relation (from) as object of class \code{ISOInheritanceRelation}
+ }
+ \item{\code{delInheritsFrom(rel)}}{
+   Deletes a relation (from) as object of class \code{ISOInheritanceRelation}
+ }
+ \item{\code{addInheritsTo(rel)}}{
+   Adds a relation (to) as object of class \code{ISOInheritanceRelation}
+ }
+ \item{\code{delInheritsTo(rel)}}{
+   Deletes a relation (to) as object of class \code{ISOInheritanceRelation}
  }
  \item{\code{setFeatureCatalogue(fc)}}{
    Sets a feature catalogue, object of class \code{ISOFeatureCatalogue}

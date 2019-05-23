@@ -12,8 +12,8 @@
 #' @field code [\code{\link{character}}]
 #' @field isAbstract [\code{\link{logical}}]
 #' @field aliases [\code{\link{ISOLocalName}}]
-#' @field inheritsFrom [NOT SUPPORTED]
-#' @field inheritsTo [NOT SUPPORTED]
+#' @field inheritsFrom [\code{\link{ISOInheritanceRelation}}]
+#' @field inheritsTo [\code{\link{ISOInheritanceRelation}}]
 #' @field featureCatalogue [\code{\link{ISOFeatureCatalogue}}]
 #' @field constrainedBy [\code{\link{ISOConstraints}}]
 #' @field definitionReference [\code{\link{ISODefinitionReference}}]
@@ -43,6 +43,18 @@
 #'  }
 #'  \item{\code{delAlias(alias)}}{
 #'    Deletes alias name
+#'  }
+#'  \item{\code{addInheritsFrom(rel)}}{
+#'    Adds a relation (from) as object of class \code{ISOInheritanceRelation}
+#'  }
+#'  \item{\code{delInheritsFrom(rel)}}{
+#'    Deletes a relation (from) as object of class \code{ISOInheritanceRelation}
+#'  }
+#'  \item{\code{addInheritsTo(rel)}}{
+#'    Adds a relation (to) as object of class \code{ISOInheritanceRelation}
+#'  }
+#'  \item{\code{delInheritsTo(rel)}}{
+#'    Deletes a relation (to) as object of class \code{ISOInheritanceRelation}
 #'  }
 #'  \item{\code{setFeatureCatalogue(fc)}}{
 #'    Sets a feature catalogue, object of class \code{ISOFeatureCatalogue}
@@ -135,9 +147,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
      isAbstract = FALSE,
      #+ aliases [0..*]: ISOLocalName
      aliases = list(),
-     #+ inheritsFrom [0..*]: ?
+     #+ inheritsFrom [0..*]: ISOInheritanceRelation
      inheritsFrom = list(),
-     #+ inheritsTo [0..*]: ?
+     #+ inheritsTo [0..*]: ISOInheritanceRelation
      inheritsTo = list(),
      #+ featureCatalogue: ISOFeatureCatalogue
      featureCatalogue = NA,
@@ -199,20 +211,32 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$delListElement("aliases", alias))
      },
      
-     addInheritsFrom = function(){
-       stop("Method not yet supported in geometa!")
+     addInheritsFrom = function(rel){
+       if(!is(rel, "ISOInheritanceRelation")){
+         stop("Argument value should be an object of class 'ISOInheritanceRelation'")
+       }
+       return(self$addListElement("inheritsFrom", rel))
      },
      
-     delInheritsFrom = function(){
-       stop("Method not yet supported in geometa!")
+     delInheritsFrom = function(rel){
+       if(!is(rel, "ISOInheritanceRelation")){
+         stop("Argument value should be an object of class 'ISOInheritanceRelation'")
+       }
+       return(self$delListElement("inheritsFrom", rel))
      },
      
-     addInheritsTo = function(){
-       stop("Method not yet supported in geometa!")
+     addInheritsTo = function(rel){
+       if(!is(rel, "ISOInheritanceRelation")){
+         stop("Argument value should be an object of class 'ISOInheritanceRelation'")
+       }
+       return(self$addListElement("inheritsTo", rel))
      },
      
-     delInheritsTo = function(){
-       stop("Method not yet supported in geometa!")
+     delInheritsTo = function(rel){
+       if(!is(rel, "ISOInheritanceRelation")){
+         stop("Argument value should be an object of class 'ISOInheritanceRelation'")
+       }
+       return(self$delListElement("inheritsTo", rel))
      },
      
      #setFeatureCatalogue
