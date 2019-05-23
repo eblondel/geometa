@@ -14,12 +14,6 @@ Object of \code{\link{R6Class}} for modelling an ISOElementSequence
 \description{
 ISOElementSequence
 }
-\section{Fields}{
-
-\describe{
-\item{\code{attributeType}}{}
-}}
-
 \note{
 This class is used internally by geometa to deal with simple type not
 handled by proper class element. e.g. \code{name} property of \code{ISOParameter}

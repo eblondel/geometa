@@ -7,12 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO DistributionUnits
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
-#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value, description)}}{
-#'    This method is used to instantiate an ISODistributionUnits
+#'    This method is used to instantiate an \code{\link{ISODistributionUnits}}
 #'  }
 #' }
 #' 

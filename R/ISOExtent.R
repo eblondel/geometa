@@ -7,38 +7,38 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Extent
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field geographicElement
-#' @field temporalElement
-#' @field verticalElement
+#' @field geographicElement [\code{\link{ISOGeographicExtent}}] geographic extent(s)
+#' @field temporalElement [\code{\link{ISOTemporalExtent}}] temporal extent(s)
+#' @field verticalElement [\code{\link{ISOVerticalExtent}}] vertical extent(s)
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOExtent
+#'    This method is used to instantiate an \code{\link{ISOExtent}}
 #'  }
 #'  \item{\code{addGeographicElement(extent)}}{
-#'    Adds an object extending \code{ISOGeographicExtent}
+#'    Adds an object extending \code{\link{ISOGeographicExtent}}
 #'  }
 #'  \item{\code{setGeographicElement(extent)}}{
-#'    Sets an object extending \code{ISOGeographicExtent}
+#'    Sets an object extending \code{\link{ISOGeographicExtent}}
 #'  }
 #'  \item{\code{delGeographicElement(extent)}}{
-#'    Deletes an object extending \code{ISOGeographicExtent}
+#'    Deletes an object extending \code{\link{ISOGeographicExtent}}
 #'  }
 #'  \item{\code{addTemporalElement(extent)}}{
-#'    Adds an object extending \code{ISOTemporalExtent}
+#'    Adds an object extending \code{\link{ISOTemporalExtent}}
 #'  }
 #'  \item{\code{setTemporalElement(extent)}}{
-#'    Sets an object extending \code{ISOTemporalExtent}
+#'    Sets an object extending \code{\link{ISOTemporalExtent}}
 #'  }
 #'  \item{\code{delTemporalElement(extent)}}{
-#'    Deletes an object extending \code{ISOTemporalExtent}
+#'    Deletes an object extending \code{\link{ISOTemporalExtent}}
 #'  }
 #'  \item{\code{addVerticalElement(extent)}}{
-#'    Adds an object extending \code{ISOVerticalExtent}
+#'    Adds an object extending \code{\link{ISOVerticalExtent}}
 #'  }
 #'  \item{\code{setVerticalElement(extent)}}{
-#'    Sets an object extending \code{ISOVerticalExtent}
+#'    Sets an object extending \code{\link{ISOVerticalExtent}}
 #'  }
 #'  \item{\code{delVerticalElement(extent)}}{
 #'    Deletes an object extending \code{ISOVerticalExtent}

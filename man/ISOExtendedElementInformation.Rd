@@ -17,14 +17,38 @@ ISOExtendedElementInformation
 \section{Fields}{
 
 \describe{
-\item{\code{source}}{}
+\item{\code{name}}{[\code{\link{character}}]}
+
+\item{\code{shortName}}{[\code{\link{character}}]}
+
+\item{\code{domainCode}}{[\code{\link{integer}}]}
+
+\item{\code{definition}}{[\code{\link{character}}]}
+
+\item{\code{obligation}}{[\code{\link{ISOObligation}}]}
+
+\item{\code{condition}}{[\code{\link{character}}]}
+
+\item{\code{dataType}}{[\code{\link{ISODataType}}]}
+
+\item{\code{maximumOccurrence}}{[\code{\link{character}}]}
+
+\item{\code{domainValue}}{[\code{\link{character}}]}
+
+\item{\code{parentEntity}}{[\code{\link{character}}]}
+
+\item{\code{rule}}{[\code{\link{character}}]}
+
+\item{\code{rationale}}{[\code{\link{character}}]}
+
+\item{\code{source}}{[\code{\link{ISOResponsibleParty}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOExtendedElementInformation
+   This method is used to instantiate an \code{\link{ISOExtendedElementInformation}}
  }
  \item{\code{setName(name, locales)}}{
    Sets the element name, object of class \code{Character}. Locale names 
@@ -42,7 +66,7 @@ ISOExtendedElementInformation
    can be specified as \code{list} with the \code{locales} argument.
  }
  \item{\code{setObligation(obligation)}}{
-   Sets an obligation, as object of class \code{character} or class \code{ISOObligation}. 
+   Sets an obligation, as object of class \code{character} or class \code{\link{ISOObligation}}. 
    If an object of class "character" is specified, it must match the accepted
    obligation values \code{ISOObligation$values()}.
  }
@@ -51,7 +75,7 @@ ISOExtendedElementInformation
    can be specified as \code{list} with the \code{locales} argument.
  }
  \item{\code{setDatatype(dataType)}}{
-   Sets the element datatype, as object of class \code{character} or class \code{ISODatatype}.
+   Sets the element datatype, as object of class \code{character} or class \code{\link{ISODatatype}}.
    If an object of class "character" is specified, it must match the accepted
    datatype values \code{ISODatatype$values()}.
  }
@@ -82,10 +106,10 @@ ISOExtendedElementInformation
    nothing will be deleted.
  }
  \item{addSource(source)}{
-   Adds a source, object of class \code{ISOResponsibleParty}
+   Adds a source, object of class \code{\link{ISOResponsibleParty}}
  }
  \item{delSource(source)}{
-   Deletes a source, object of class \code{ISOResponsibleParty}
+   Deletes a source, object of class \code{\link{ISOResponsibleParty}}
  }
 }
 }

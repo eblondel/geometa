@@ -17,29 +17,33 @@ ISODistribution
 \section{Fields}{
 
 \describe{
-\item{\code{transferOptions}}{}
+\item{\code{distributionFormat}}{[\code{\link{ISOFormat}}]}
+
+\item{\code{distributor}}{[\code{\link{ISODistributor}}]}
+
+\item{\code{transferOptions}}{[\code{\link{ISODigitalTransferOptions}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISODistribution
+   This method is used to instantiate an \code{\link{ISODistribution}}
  }
  \item{\code{addFormat(format)}}{
-   Adds a distribution format, object of class \code{ISOFormat}
+   Adds a distribution format, object of class \code{\link{ISOFormat}}
  }
  \item{\code{delFormat(format)}}{
-   Deletes a distribution format, object of class \code{ISOFormat}
+   Deletes a distribution format, object of class \code{\link{ISOFormat}}
  }
  \item{\code{addDistributor(distributor)}}{
-   Adds a distributor, object of class \code{ISODistributor}
+   Adds a distributor, object of class \code{\link{ISODistributor}}
  }
  \item{\code{delDistributor(distributor)}}{
-   Deletes a distributor, object of class \code{ISODistributor}
+   Deletes a distributor, object of class \code{\link{ISODistributor}}
  }
  \item{\code{setDigitalTransferOptions(options)}}{
-   Sets the digital transfer options
+   Sets the digital transfer options, object of class \code{\link{ISODigitalTransferOptions}}
  }
 }
 }

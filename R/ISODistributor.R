@@ -7,22 +7,22 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISODistributor
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field distributorContact
-#' @field distributorFormat
+#' @field distributorContact [\code{\link{ISOResponsibleParty}}]
+#' @field distributorFormat [\code{\link{ISOFormat}}]
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISODistributor
+#'    This method is used to instantiate an \code{\link{ISODistributor}}
 #'  }
 #'  \item{\code{setContact(contact)}}{
-#'    Sets the contact \code{ISOResponsibleParty}
+#'    Sets the contact \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{addFormat(format)}}{
-#'    Adds a distributor format \code{ISOFormat}
+#'    Adds a distributor format \code{\link{ISOFormat}}
 #'  }
 #'  \item{\code{delFormat(format)}}{
-#'    Deletes a distributor format \code{ISOFormat}
+#'    Deletes a distributor format \code{\link{ISOFormat}}
 #'  }
 #' }
 #' 

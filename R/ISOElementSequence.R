@@ -7,9 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOElementSequence
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field aName
-#' @field attributeType
-#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, ...)}}{
