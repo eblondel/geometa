@@ -17,7 +17,9 @@ ISOFeatureOperation
 \section{Fields}{
 
 \describe{
-\item{\code{formalDefinition}}{}
+\item{\code{signature}}{[\code{\link{character}}]}
+
+\item{\code{formalDefinition}}{[\code{\link{character}}]}
 }}
 
 \section{Methods}{

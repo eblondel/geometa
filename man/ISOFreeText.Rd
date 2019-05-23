@@ -17,7 +17,7 @@ ISOFreeText
 \section{Fields}{
 
 \describe{
-\item{\code{textGroup}}{}
+\item{\code{textGroup}}{[\code{\link{ISOLocalisedCharacterString}}]}
 }}
 
 \section{Methods}{
@@ -27,10 +27,10 @@ ISOFreeText
    This method is used to instantiate an ISOFreeText
  }
  \item{\code{addTextGroup(textGroup)}}{
-   Add a text group, object of class \code{ISOLocalisedCharacterString}
+   Add a text group, object of class \code{\link{ISOLocalisedCharacterString}}
  }
  \item{\code{delTextGroup(textGroup)}}{
-   Deletes a text group, object of class \code{ISOLocalisedCharacterString}
+   Deletes a text group, object of class \code{\link{ISOLocalisedCharacterString}}
  }
 }
 }

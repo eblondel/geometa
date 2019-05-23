@@ -7,15 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFeatureCatalogue
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field complianceCode
-#' @field language
-#' @field includedWithDataset
-#' @field featureCatalogueCitation
+#' @field complianceCode [\code{\link{logical}}]
+#' @field language [\code{\link{ISOLanguage}}]
+#' @field includedWithDataset [\code{\link{logical}}]
+#' @field featureCatalogueCitation [\code{\link{ISOCitation}}]
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOFeatureCatalogueDescription
+#'    This method is used to instantiate an \code{\link{ISOFeatureCatalogueDescription}}
 #'  }
 #'  \item{\code{setComplianceCode(compliance)}}{
 #'    Sets the compliance. TRUE if compliant, FALSE otherwise
@@ -30,11 +30,11 @@
 #'    Sets TRUE if included with dataset, FALSE otherwise
 #'  }
 #'  \item{\code{addFeatureCatalogueCitation(citation)}}{
-#'   Adds an object of class \code{ISOCitation} referencing the link
+#'   Adds an object of class \code{\link{ISOCitation}} referencing the link
 #'   to Feature Catalogue
 #'  }
 #'  \item{\code{delFeatureCatalogueCitation(citation)}}{
-#'   Deletes an object of class \code{ISOCitation} referencing the link
+#'   Deletes an object of class \code{\link{ISOCitation}} referencing the link
 #'   to Feature Catalogue
 #'  }
 #' }

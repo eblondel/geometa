@@ -7,32 +7,32 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFeatureAttribute
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field code
-#' @field valueMeasurementUnit
-#' @field valueType
-#' @field listedValue
+#' @field code [\code{\link{character}}]
+#' @field valueMeasurementUnit [\code{\link{GMLUnitDefinition}}]
+#' @field valueType [\code{\link{character}}]
+#' @field listedValue [\code{\link{ISOListedValue}}]
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOFeatureAttribute
+#'    This method is used to instantiate an \code{\link{ISOFeatureAttribute}}
 #'  }
 #'  \item{\code{setCode(code, locales)}}{
 #'    Sets the code. Locale names can be specified as \code{list}
 #'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{setValueMeasurementUnit(uom)}}{
-#'    Sets the value measurement unit, an object of class \code{GMLUnitDefinition}
+#'    Sets the value measurement unit, an object of class \code{\link{GMLUnitDefinition}}
 #'  }
 #'  \item{\code{setValueType(typeName, locales)}}{
 #'    Sets the value type. Locale names can be specified as \code{list}
 #'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{addListedValue(value)}}{
-#'    Adds a listed value (object of class \code{ISOListedValue})
+#'    Adds a listed value (object of class \code{\link{ISOListedValue})}
 #'  }
 #'  \item{\code{delListedValue(value)}}{
-#'   Deletes a listed value (object of class \code{ISOListedValue})
+#'   Deletes a listed value (object of class \code{\link{ISOListedValue})}
 #'  }
 #' }
 #' 

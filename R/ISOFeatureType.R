@@ -7,17 +7,17 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO FeatureType
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field typeName
-#' @field definition
-#' @field code
-#' @field isAbstract
-#' @field aliases
-#' @field inheritsFrom
-#' @field inheritsTo
-#' @field featureCatalogue
-#' @field constrainedBy
-#' @field definitionReference
-#' @field carrierOfCharacteristics
+#' @field typeName [\code{\link{ISOLocalName}}]
+#' @field definition [\code{\link{character}}]
+#' @field code [\code{\link{character}}]
+#' @field isAbstract [\code{\link{logical}}]
+#' @field aliases [\code{\link{ISOLocalName}}]
+#' @field inheritsFrom [NOT SUPPORTED]
+#' @field inheritsTo [NOT SUPPORTED]
+#' @field featureCatalogue [\code{\link{ISOFeatureCatalogue}}]
+#' @field constrainedBy [\code{\link{ISOConstraints}}]
+#' @field definitionReference [\code{\link{ISODefinitionReference}}]
+#' @field carrierOfCharacteristics [\code{\link{ISOCarrierOfCharacteristics}}]
 #'
 #' @section Methods:
 #' \describe{

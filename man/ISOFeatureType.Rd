@@ -17,7 +17,27 @@ ISOFeatureType
 \section{Fields}{
 
 \describe{
-\item{\code{carrierOfCharacteristics}}{}
+\item{\code{typeName}}{[\code{\link{ISOLocalName}}]}
+
+\item{\code{definition}}{[\code{\link{character}}]}
+
+\item{\code{code}}{[\code{\link{character}}]}
+
+\item{\code{isAbstract}}{[\code{\link{logical}}]}
+
+\item{\code{aliases}}{[\code{\link{ISOLocalName}}]}
+
+\item{\code{inheritsFrom}}{[NOT SUPPORTED]}
+
+\item{\code{inheritsTo}}{[NOT SUPPORTED]}
+
+\item{\code{featureCatalogue}}{[\code{\link{ISOFeatureCatalogue}}]}
+
+\item{\code{constrainedBy}}{[\code{\link{ISOConstraints}}]}
+
+\item{\code{definitionReference}}{[\code{\link{ISODefinitionReference}}]}
+
+\item{\code{carrierOfCharacteristics}}{[\code{\link{ISOCarrierOfCharacteristics}}]}
 }}
 
 \section{Methods}{

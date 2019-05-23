@@ -17,7 +17,17 @@ ISOFormat
 \section{Fields}{
 
 \describe{
-\item{\code{fileDecompressionTechnique}}{}
+\item{\code{name}}{[\code{\link{character}}]}
+
+\item{\code{version}}{[\code{\link{character}}]}
+
+\item{\code{amendmentNumber}}{[\code{\link{character}}]}
+
+\item{\code{specification}}{[\code{\link{character}}]}
+
+\item{\code{fileDecompressionTechnique}}{[\code{\link{character}}]}
+
+\item{\code{formatDistributor}}{[\code{\link{ISODistributor}}]}
 }}
 
 \section{Methods}{

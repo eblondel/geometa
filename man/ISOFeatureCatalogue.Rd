@@ -17,10 +17,16 @@ ISOFeatureCatalogue
 \section{Fields}{
 
 \describe{
-\item{\code{name}}{}
+\item{\code{producer}}{[\code{\link{ISOResponsibleParty}}]}
+
+\item{\code{functionalLanguage}}{[\code{\link{ISOLanguage}}]}
+
+\item{\code{featureType}}{[\code{\link{ISOFeatureType}}]}
+
+\item{\code{definitionSource}}{[\code{\link{ISODefinitionSource}}]}
 }}
 
-\section{Inherited Methods from \code{ISOAbstractCatalogue}}{
+\section{Methods inherited from \code{\link{ISOAbstractCatalogue}}}{
 
 \describe{
  \item{\code{setName(name, locales)}}{

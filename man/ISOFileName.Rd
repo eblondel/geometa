@@ -18,7 +18,7 @@ ISOFileName
 
 \describe{
  \item{\code{new(xml, file, name)}}{
-   This method is used to instantiate an ISOFileName
+   This method is used to instantiate an \code{\link{ISOFileName}}
  }
 }
 }

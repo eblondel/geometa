@@ -7,9 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO FeatureCatalogue
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field name
+#' @field producer [\code{\link{ISOResponsibleParty}}]
+#' @field functionalLanguage [\code{\link{ISOLanguage}}]
+#' @field featureType [\code{\link{ISOFeatureType}}]
+#' @field definitionSource [\code{\link{ISODefinitionSource}}]
 #'
-#' @section Inherited Methods from \code{ISOAbstractCatalogue}:
+#' @section Methods inherited from \code{\link{ISOAbstractCatalogue}}:
 #' \describe{
 #'  \item{\code{setName(name, locales)}}{
 #'    Sets the name. Locale names can be specified as \code{list}
