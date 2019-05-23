@@ -134,7 +134,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Resolution","ISOResolution",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_RestrictionCode","ISORestriction",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeCode","ISOHierarchyLevel",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeDescription","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeDescription","ISOScopeDescription",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_SecurityConstraints","ISOSecurityConstraints",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ServiceIdentification","ISOServiceIdentification",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_SpatialRepresentationTypeCode","ISOSpatialRepresentationType",TRUE

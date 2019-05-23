@@ -336,7 +336,7 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
 #' 
 #' @examples
 #'   #encoding
-#'   md <- ISOServiceIdentification$new()
+#'   md <- ISOSRVServiceIdentification$new()
 #'   md$setAbstract("abstract")
 #'   md$setPurpose("purpose")
 #'
