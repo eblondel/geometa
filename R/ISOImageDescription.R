@@ -71,13 +71,13 @@
 #'    Sets \code{TRUE} if radiometric calibration data is available, \code{FALSE} otherwise
 #'  }
 #'  \item{\code{setCameraCalibrationInformationAvailability(cameraCalibrationInformationAvailability)}}{
-#'    Sets \code{TRUE if camera calibration information is available, \code{FALSE} otherwise}
+#'    Sets \code{TRUE} if camera calibration information is available, \code{FALSE} otherwise
 #'  }
 #'  \item{\code{setFilmDistortionInformationAvailability(filmDistortionInformationAvailability)}}{
-#'    Sets \code{TRUE if film distortion information is available, \code{FALSE} otherwise}
+#'    Sets \code{TRUE} if film distortion information is available, \code{FALSE} otherwise
 #'  }
 #'  \item{\code{setLensDistortionInformationAvailability(lensDistortionInformationAvailability)}}{
-#'    Sets \code{TRUE if lens distortion information is available, \code{FALSE} otherwise}
+#'    Sets \code{TRUE} if lens distortion information is available, \code{FALSE} otherwise
 #'  }
 #' }
 #' 

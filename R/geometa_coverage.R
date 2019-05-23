@@ -53,7 +53,7 @@ get_schemalocation_url <- function(schemaLocation, baseURL){
     b$path = sprintf("%s%s%s", bdir, sep, schemaLocation)
     # handle .. in the path and try to collapse these.
     if(simplify && grepl("..", b$path, fixed = TRUE))
-      b$path = simplifyPath(b$path)
+      b$path = XML:::simplifyPath(b$path)
     
     return(as(b, "character"))         
   } else

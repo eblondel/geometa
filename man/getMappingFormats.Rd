@@ -4,7 +4,7 @@
 \alias{getMappingFormats}
 \title{getMappingFormats}
 \usage{
-getMappingFormats()
+getMappingFormats(pretty)
 }
 \arguments{
 \item{pretty}{by default \code{TRUE} to return the list of formats as \code{data.frame}. Set

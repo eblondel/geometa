@@ -123,7 +123,7 @@ setMappingFormats <- function(){
 #' @export
 #' @description \code{getMappingFormats} gets the mapping formats registered in \pkg{geometa}
 #' 
-#' @usage getMappingFormats()
+#' @usage getMappingFormats(pretty)
 #' 
 #' @param pretty by default \code{TRUE} to return the list of formats as \code{data.frame}. Set
 #' to \code{FALSE} to return a list of \code{pivot_format} objects
