@@ -7,13 +7,21 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Georectified
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Inherited methods from \code{ISOGridSpatialRepresentation}:
+#' @field checkPointAvailability [\code{\link{logical}}]
+#' @field checkPointDescription [\code{\link{character}}]
+#' @field cornerPoints [\code{\link{GMLPoint}}]
+#' @field centerPoint [\code{\link{GMLPoint}}]
+#' @field pointInPixel [\code{\link{ISOPixelOrientation}}]
+#' @field transformationDimensionDescription [\code{\link{character}}]
+#' @field transformationDimensionMapping [\code{\link{character}}]
+#'
+#' @section Inherited methods from \code{\link{ISOGridSpatialRepresentation}}:
 #' \describe{
 #'  \item{\code{setNumberOfDimensions}}{
 #'    Sets the number of dimensions (value of class \code{integer})
 #'  }
 #'  \item{\code{addDimension(dimension)}}{
-#'    Adds a dimension. Object of class \code{ISODimension}
+#'    Adds a dimension. Object of class \code{\link{ISODimension}}
 #'  }
 #'  \item{\code{delDimension(dimension)}}{
 #'    Deletes a dimension;
@@ -26,15 +34,14 @@
 #'    Sets the transformation parameter availability
 #'  }
 #'  \item{\code{setPixelOrientation(pixelOrientation)}}{
-#'    Sets the point in pixel orientation, object of class 'character' or 'ISOPixelOrientation'
+#'    Sets the point in pixel orientation, object of class 'character' or \code{\link{ISOPixelOrientation}}
 #'  }
-#'  
 #' }
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOGeorectified
+#'    This method is used to instantiate an \code{\link{ISOGeorectified}}
 #'  }
 #'  \item{\code{setCheckPointAvailability(availability)}}{
 #'    Set checkpoint availability, object of class 'logical' (TRUE/FALSE)

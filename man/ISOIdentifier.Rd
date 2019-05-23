@@ -17,7 +17,9 @@ ISOIdentifier
 \section{Fields}{
 
 \describe{
-\item{\code{code}}{}
+\item{\code{authority}}{[\code{\link{ISOCitation}}] authority}
+
+\item{\code{code}}{[\code{\link{character}}] code}
 }}
 
 \note{
@@ -27,10 +29,10 @@ Abstract ISO class
 
 \describe{
  \item{\code{new(xml, code, codeSpace)}}{
-   This method is used to instantiate an ISOIdentifier
+   This method is used to instantiate an \code{\link{ISOIdentifier}}
  }
  \item{\code{setAuthority(authority)}}{
-   Sets an authority object of class \code{ISOCitation}
+   Sets an authority object of class \code{\link{ISOCitation}}
  }
 }
 }

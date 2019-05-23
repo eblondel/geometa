@@ -7,12 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOListedValue
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field code
+#' @field label [\code{\link{character}}] label
+#' @field code [\code{\link{character}}] code
+#' @field definition [\code{\link{character}}] definition
+#' @field definitionReference [\code{\link{ISODefinitionReference}}] definition reference
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOListedValue
+#'    This method is used to instantiate an \code{\link{ISOListedValue}}
 #'  }
 #'  \item{\code{setLabel(label, locales)}}{
 #'    Sets the label. Locale names can be specified as \code{list}
@@ -27,7 +30,7 @@
 #'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{setDefinitionReference(definitionReference)}}{
-#'    Sets the definition reference
+#'    Sets the definition reference, object of class \code{\link{ISODefinitionReference}}
 #'  }
 #' }
 #' 

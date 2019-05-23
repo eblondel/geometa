@@ -10,7 +10,7 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, type, name)}}{
-#'    This method is used to instantiate an ISOMimeFileType
+#'    This method is used to instantiate an \code{\link{ISOMimeFileType}}
 #'  }
 #' }
 #' 
@@ -24,18 +24,18 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMimeFileType <- R6Class("ISOMimeFileType",
-                       inherit = ISOAbstractObject,
-                       private = list(
-                         xmlElement = "MimeFileType",
-                         xmlNamespacePrefix = "GMX"
-                       ),
-                       public = list(
-                         initialize = function(xml = NULL, type = NULL, name = NULL){
-                           super$initialize(xml = xml)
-                           if(!is.null(type) & !is.null(name)){
-                            self$attrs$type <- type
-                            self$value <- name
-                           }
-                         }
-                       )                        
+     inherit = ISOAbstractObject,
+     private = list(
+       xmlElement = "MimeFileType",
+       xmlNamespacePrefix = "GMX"
+     ),
+     public = list(
+       initialize = function(xml = NULL, type = NULL, name = NULL){
+         super$initialize(xml = xml)
+         if(!is.null(type) & !is.null(name)){
+          self$attrs$type <- type
+          self$value <- name
+         }
+       }
+     )                        
 )

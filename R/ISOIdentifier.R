@@ -7,16 +7,16 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Identifier
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field authority
-#' @field code
+#' @field authority [\code{\link{ISOCitation}}] authority
+#' @field code [\code{\link{character}}] code
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, code, codeSpace)}}{
-#'    This method is used to instantiate an ISOIdentifier
+#'    This method is used to instantiate an \code{\link{ISOIdentifier}}
 #'  }
 #'  \item{\code{setAuthority(authority)}}{
-#'    Sets an authority object of class \code{ISOCitation}
+#'    Sets an authority object of class \code{\link{ISOCitation}}
 #'  }
 #' }
 #' 

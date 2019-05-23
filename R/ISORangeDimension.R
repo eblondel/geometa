@@ -7,8 +7,8 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISORangeDimension
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field sequenceIdentifier
-#' @field descriptor
+#' @field sequenceIdentifier [\code{\link{ISOMemberName}}] sequence identifier
+#' @field descriptor [\code{\link{character}}] description
 #' 
 #' @section Methods:
 #' \describe{

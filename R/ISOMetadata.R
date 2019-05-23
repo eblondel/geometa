@@ -8,30 +8,30 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field fileIdentifier
-#' @field language 
-#' @field characterSet
-#' @field parentIdentifier
-#' @field hierarchyLevel
-#' @field hierarchyLevelName
-#' @field contact
-#' @field dateStamp
-#' @field metadataStandardName
-#' @field metadataStandardVersion
-#' @field dataSetURI
-#' @field spatialRepresentationInfo
-#' @field referenceSystemInfo
-#' @field metadataExtensionInfo
-#' @field identificationInfo
-#' @field contentInfo
-#' @field distributionInfo
-#' @field dataQualityInfo
-#' @field metadataMaintenance
+#' @field fileIdentifier [\code{\link{character}}] metadata file identifier
+#' @field language [\code{\link{ISOLanguage}}|\code{\link{character}}] metadata language code
+#' @field characterSet [\code{\link{ISOCharacterSet}}|\code{\link{character}}] character set
+#' @field parentIdentifier [\code{\link{character}}] parent metadata identifier
+#' @field hierarchyLevel [\code{\link{ISOHierarchyLevel}}|\code{\link{character}}] hierarchy level
+#' @field hierarchyLevelName [\code{\link{character}}] hierarchy level name
+#' @field contact [\code{\link{ISOResponsibleParty}}] contact(s)
+#' @field dateStamp [\code{\link{POSIXt}}] datestamp
+#' @field metadataStandardName [\code{\link{character}}] metadata standard name
+#' @field metadataStandardVersion [\code{\link{character}}] metadata standard version
+#' @field dataSetURI [\code{\link{character}}] dataset URI
+#' @field spatialRepresentationInfo [\code{\link{ISOSpatialRepresentation}}] the spatial representation
+#' @field referenceSystemInfo [\code{\link{ISOReferenceSystem}}] the reference system
+#' @field metadataExtensionInfo [\code{\link{ISOMetadataExtensionInformation}}] metadata extension
+#' @field identificationInfo [\code{\link{ISOIdentification}}] identification information
+#' @field contentInfo [\code{\link{ISOFeatureCatalogueDescription}}|\code{\link{ISOCoverageDescription}}] content description
+#' @field distributionInfo [\code{\link{ISODistribution}}] distribution information
+#' @field dataQualityInfo [\code{\link{ISODataQuality}}] data quality
+#' @field metadataMaintenance [\code{\link{ISOMaintenanceInformation}}] maintenance info
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOMetadata
+#'    This method is used to instantiate an \code{\link{ISOMetadata}}
 #'  }
 #'  \item{\code{setFileIdentifier(fileIdentifier)}}{
 #'    Sets the file identifier
@@ -82,7 +82,7 @@
 #'    Adds a locale, object of class \code{ISOLocale}
 #'  }
 #'  \item{\code{delLocale(locale)}}{
-#'    Deletes a locale, object of class \code{ISOLocale)
+#'    Deletes a locale, object of class \code{ISOLocale}
 #'  }
 #'  \item{\code{addSpatialRepresentationInfo(spatialRepresentationInfo)}}{
 #'    Adds a spatial representation
@@ -118,12 +118,12 @@
 #'    Deletes a data identification
 #'  }
 #'  \item{\code{addContentInfo(contentInfo)}}{
-#'    Adds a content info, either an object of class \code{ISOCoverageDescription} 
-#'    for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
+#'    Adds a content info, either an object of class \code{\link{ISOCoverageDescription}}
+#'    for coverage data, or \code{\link{ISOFeatureCatalogueDescription}} for vector data.
 #'  }
 #'  \item{\code{delContentInfo(contentInfo)}}{
-#'    Deletes a content info, either an object of class \code{ISOCoverageDescription} 
-#'    for coverage data, or \code{ISOFeatureCatalogueDescription} for vector data.
+#'    Deletes a content info, either an object of class \code{\link{ISOCoverageDescription}} 
+#'    for coverage data, or \code{\link{ISOFeatureCatalogueDescription}} for vector data.
 #'  }
 #'  \item{\code{setDistributionInfo(distributionInfo)}}{
 #'    Sets the distribution

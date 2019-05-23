@@ -17,26 +17,32 @@ ISOGridSpatialRepresentation
 \section{Fields}{
 
 \describe{
-\item{\code{transformationParameterAvailability}}{}
+\item{\code{numberOfDimensions}}{[\code{\link{integer}}] number of dimensions}
+
+\item{\code{axisDimensionProperties}}{[\code{\link{ISODimension}}] dimension(s)}
+
+\item{\code{cellGeometry}}{[\code{\link{ISOCellGeometry}}]}
+
+\item{\code{transformationParameterAvailability}}{[\code{\link{logical}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOGridSpatialRepresentation
+   This method is used to instantiate an \code{\link{ISOGridSpatialRepresentation}}
  }
  \item{\code{setNumberOfDimensions}}{
    Sets the number of dimensions (value of class \code{integer})
  }
  \item{\code{addDimension(dimension)}}{
-   Adds a dimension. Object of class \code{ISODimension}
+   Adds a dimension. Object of class \code{\link{ISODimension}}
  }
  \item{\code{delDimension(dimension)}}{
    Deletes a dimension;
  }
  \item{\code{setCellGeometry(cellGeometry)}}{
-   Sets the cell geometry. Object of class \code{ISOCellGeometry} or any value
+   Sets the cell geometry. Object of class \code{\link{ISOCellGeometry}} or any value
    from \code{ISOCellGeometry$values()}
  }
  \item{\code{setTransformationParameterAvailability(availability)}}{

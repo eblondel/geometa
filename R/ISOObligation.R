@@ -7,12 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Obligation
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
-#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value, description)}}{
-#'    This method is used to instantiate an ISOObligation
+#'    This method is used to instantiate an \code{\link{ISOObligation}}
 #'  }
 #' }
 #' 
@@ -29,17 +27,17 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOObligation <- R6Class("ISOObligation",
-                       inherit = ISOCodeListValue,
-                       private = list(
-                         xmlElement = "MD_ObligationCode",
-                         xmlNamespacePrefix = "GMD"
-                       ),
-                       public = list(
-                         initialize = function(xml = NULL, value, description = NULL){
-                           super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
-                                            addCodeListAttrs = FALSE, addCodeSpaceAttr = FALSE)
-                         }
-                       )                        
+   inherit = ISOCodeListValue,
+   private = list(
+     xmlElement = "MD_ObligationCode",
+     xmlNamespacePrefix = "GMD"
+   ),
+   public = list(
+     initialize = function(xml = NULL, value, description = NULL){
+       super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
+                        addCodeListAttrs = FALSE, addCodeSpaceAttr = FALSE)
+     }
+   )                        
 )
 
 ISOObligation$values <- function(labels = FALSE){

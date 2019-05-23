@@ -17,17 +17,17 @@ ISORepresentativeFraction
 \section{Fields}{
 
 \describe{
-\item{\code{denominator}}{}
+\item{\code{denominator}}{[\code{\link{integer}}] denominator}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, denominator)}}{
-   This method is used to instantiate an ISORepresentativeFraction
+   This method is used to instantiate an \code{\link{ISORepresentativeFraction}}
  }
  \item{\code{setDenominator(denominator)}}{
-   Sets the denominator
+   Sets the denominator, object of class \code{integer}
  }
 }
 }

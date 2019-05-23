@@ -7,10 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO SecurityConstraints
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field classification
-#' @field userNote
-#' @field classificationSystem
-#' @field handlingDescription
+#' @field classification [\code{\link{ISOClassification}}] security classifciation
+#' @field userNote [\code{\link{character}}] user note
+#' @field classificationSystem [\code{\link{character}}] classification system
+#' @field handlingDescription [\code{\link{character}}] description
 #'
 #' @section Methods:
 #' \describe{
@@ -18,7 +18,7 @@
 #'    This method is used to instantiate an ISOSecurityConstraints
 #'  }
 #'  \item{\code{setClassification(classification)}}{
-#'    Adds a classification, as object of class "character" or class \code{ISOClassification}.
+#'    Adds a classification, as object of class "character" or class \code{\link{ISOClassification}}.
 #'    If an object of class "character" is specified, it must match the accepted
 #'    values given by \code{ISOClassification$values()}.
 #'  }

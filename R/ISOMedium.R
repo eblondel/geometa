@@ -7,20 +7,20 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Citation
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field name
-#' @field density
-#' @field densityUnits
-#' @field volumes
-#' @field mediumFormat
-#' @field mediumNode
+#' @field name [\code{\link{ISOMediumName}}|\code{\link{character}}] name
+#' @field density [\code{\link{numeric}}] density
+#' @field densityUnits \code{\link{character}} density unit
+#' @field volumes [\code{\link{integer}}] volumes
+#' @field mediumFormat [\code{\link{ISOMediumFormat}}|\code{\link{character}}] format
+#' @field mediumNode \code{\link{character}} note
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOMedium
+#'    This method is used to instantiate an \code{\link{ISOMedium}}
 #'  }
 #'  \item{\code{setName(name)}}{
-#'    Set the medium name, object of class 'character' or 'ISOMediumName'
+#'    Set the medium name, object of class 'character' or \code{\link{ISOMediumName}}
 #'  }
 #'  \item{\code{addDensity(density)}}{
 #'    Adds a density
@@ -35,10 +35,10 @@
 #'    Set volumes
 #'  }
 #'  \item{\code{addMediumFormat(mediumFormat)}}{
-#'    Adds a medium format, object of class 'character' or 'ISOMediumFormat'
+#'    Adds a medium format, object of class 'character' or \code{\link{ISOMediumFormat}}
 #'  }
 #'  \item{\code{delMediumFormat(mediumFormat)}}{
-#'    Deletes a medium format, object of class 'character' or 'ISOMediumFormat'
+#'    Deletes a medium format, object of class 'character' or \code{\link{ISOMediumFormat}}
 #'  }
 #'  \item{\code{setMediumNote(mediumNote, locales)}}{
 #'    Set a medium note. Locale names can be specified as \code{list} with 

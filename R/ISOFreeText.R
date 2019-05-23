@@ -7,7 +7,7 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO FreeText
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field textGroup
+#' @field textGroup [\code{\link{ISOLocalisedCharacterString}}]
 #'
 #' @section Methods:
 #' \describe{
@@ -15,10 +15,10 @@
 #'    This method is used to instantiate an ISOFreeText
 #'  }
 #'  \item{\code{addTextGroup(textGroup)}}{
-#'    Add a text group, object of class \code{ISOLocalisedCharacterString}
+#'    Add a text group, object of class \code{\link{ISOLocalisedCharacterString}}
 #'  }
 #'  \item{\code{delTextGroup(textGroup)}}{
-#'    Deletes a text group, object of class \code{ISOLocalisedCharacterString}
+#'    Deletes a text group, object of class \code{\link{ISOLocalisedCharacterString}}
 #'  }
 #' }
 #' 

@@ -17,14 +17,14 @@ ISOMaintenanceInformation
 \section{Fields}{
 
 \describe{
-\item{\code{maintenanceAndUpdateFrequency}}{}
+\item{\code{maintenanceAndUpdateFrequency}}{[\code{\link{ISOMaintenanceFrequency}}|\code{\link{character}}] frequency}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOMaintenanceInformation
+   This method is used to instantiate an \code{\link{ISOMaintenanceInformation}}
  }
  \item{\code{setMaintenanceFrequency(frequency)}}{
    Sets the maintenance and update frequency

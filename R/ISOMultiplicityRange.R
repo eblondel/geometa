@@ -7,12 +7,13 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO MultiplicityRange
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
+#' @field lower [\code{\link{integer}}] lower value
+#' @field upper [\code{\link{integer}}] upper value
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, lower, upper)}}{
-#'    This method is used to instantiate an ISOMultiplicityRange
+#'    This method is used to instantiate an \code{\link{ISOMultiplicityRange}}
 #'  }
 #' }
 #' 

@@ -17,7 +17,15 @@ pivot_format
 \section{Fields}{
 
 \describe{
-\item{\code{constructor}}{}
+\item{\code{id}}{(character) format identifier}
+
+\item{\code{pkg}}{(character) package(s) required for the format}
+
+\item{\code{reader}}{(function) handler used for reading a property}
+
+\item{\code{checker}}{(function) handler used for checking a property value}
+
+\item{\code{constructor}}{(function) handler used for object construction}
 }}
 
 \section{Methods}{

@@ -17,14 +17,14 @@ ISOTypeName
 \section{Fields}{
 
 \describe{
-\item{\code{aName}}{}
+\item{\code{aName}}{[\code{\link{character}}] the type name}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, aName)}}{
-   This method is used to instantiate an ISOTypeName
+   This method is used to instantiate an \code{\link{ISOTypeName}}
  }
  \item{\code{setName(aName, locales)}}{
    Sets the aName. Locale names can be specified as \code{list}

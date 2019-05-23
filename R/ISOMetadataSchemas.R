@@ -10,7 +10,7 @@
 #' @param xsdFile the schema XSD file
 #' 
 #' @examples             
-#'   registerISOMetadataSchema(xsdFile = "http://www.isotc211.org/2005/gmd/gmd.xsd)
+#'   registerISOMetadataSchema(xsdFile = "http://www.isotc211.org/2005/gmd/gmd.xsd")
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #

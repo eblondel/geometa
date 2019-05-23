@@ -14,17 +14,11 @@ Object of \code{\link{R6Class}} for modelling an ISOImagingCondition
 \description{
 ISOImagingCondition
 }
-\section{Fields}{
-
-\describe{
-\item{\code{value}}{}
-}}
-
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value, description)}}{
-   This method is used to instantiate an ISOImagingCondition
+   This method is used to instantiate an \code{\link{ISOImagingCondition}}
  }
 }
 }

@@ -21,7 +21,7 @@ abstract class
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOSpatialRepresentation
+   This method is used to instantiate an \code{\link{ISOSpatialRepresentation}}
  }
 }
 }

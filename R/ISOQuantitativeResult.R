@@ -7,12 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO QuantitativeResult
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field result
+#' @field valueType [\code{\link{ISORecordtype}}] record type
+#' @field valueUnit [\code{\link{GMLUnitDefinition}}] unit
+#' @field errorStatistic [\code{\link{character}}] error statistic
+#' @field value [\code{\link{ISORecord}}] record(s)
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOQuantitativeResult
+#'  \item{\code{new(xml)}}{
+#'    This method is used to instantiate an \code{\link{ISOQuantitativeResult}}
 #'  }
 #'  \item{\code{setValueType(valueType)}}{
 #'    Sets value type

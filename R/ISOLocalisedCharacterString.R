@@ -7,12 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO LocalisedCharacterString
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
-#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, locale, value)}}{
-#'    This method is used to instantiate an ISOLocalisedCharacterString
+#'    This method is used to instantiate an \code{\link{ISOLocalisedCharacterString}}
 #'  }
 #' }
 #' 

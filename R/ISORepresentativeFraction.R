@@ -7,15 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO RepresentativeFraction
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field denominator
+#' @field denominator [\code{\link{integer}}] denominator
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, denominator)}}{
-#'    This method is used to instantiate an ISORepresentativeFraction
+#'    This method is used to instantiate an \code{\link{ISORepresentativeFraction}}
 #'  }
 #'  \item{\code{setDenominator(denominator)}}{
-#'    Sets the denominator
+#'    Sets the denominator, object of class \code{integer}
 #'  }
 #' }
 #' 

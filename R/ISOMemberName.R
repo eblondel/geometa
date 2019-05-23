@@ -7,13 +7,13 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOMemberName
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field aName
-#' @field attributeType
+#' @field aName [\code{\link{character}}] member name
+#' @field attributeType [\code{\link{ISOTypeName}}|\code{\link{character}}] attribute type
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, aName, attributeType)}}{
-#'    This method is used to instantiate an ISOMemberName
+#'    This method is used to instantiate an \code{\link{ISOMemberName}}
 #'  }
 #'  \item{\code{setName(aName)}}{
 #'    Set the aName, object of class \code{character}. Locale names can be specified 

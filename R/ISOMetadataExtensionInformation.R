@@ -7,22 +7,22 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO MetadataExtensionInformation
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field extensionOnLineResource
-#' @field extendedElementInformation
+#' @field extensionOnLineResource [\code{\link{ISOOnlineResource}}] online resource
+#' @field extendedElementInformation [\code{\link{ISOExtendedElementInformation}}] extended element(s)
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOMetadataExtensionInformation
+#'    This method is used to instantiate an \code{\link{ISOMetadataExtensionInformation}}
 #'  }
 #'  \item{\code{setOnlineResource(onlineResource)}}{
-#'    Sets an online resource (object of class \code{ISOOnlineResource})
+#'    Sets an online resource (object of class \code{\link{ISOOnlineResource}})
 #'  }
 #'  \item{\code{addElement(element)}}{
-#'    Adds an element (object of class \code{ISOExtendedElementInformation})
+#'    Adds an element (object of class \code{\link{ISOExtendedElementInformation}})
 #'  }
 #'  \item{\code{delElement(element)}}{
-#'    Deletes an element (object of class \code{ISOExtendedElementInformation})
+#'    Deletes an element (object of class \code{\link{ISOExtendedElementInformation}})
 #'  }
 #' }
 #' 

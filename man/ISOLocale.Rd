@@ -17,7 +17,11 @@ ISOLocale
 \section{Fields}{
 
 \describe{
-\item{\code{characterEncoding}}{}
+\item{\code{languageCode}}{[\code{\link{ISOLanguage}}|\code{\link{character}}] language code}
+
+\item{\code{country}}{[\code{\link{ISOCountry}}|\code{\link{character}}] country code}
+
+\item{\code{characterEncoding}}{[\code{\link{ISOCharacterSet}}|\code{\link{character}}] character encoding}
 }}
 
 \section{Methods}{
@@ -31,15 +35,15 @@ ISOLocale
  }
  \item{\code{setLanguage(language)}}{
    Set the language, object of class "character" (language code), or object of
-   class \code{ISOLanguage}.
+   class \code{\link{ISOLanguage}}.
  }
  \item{\code{setCountry(country)}}{
    Set the country, object of class "character" (country code), or object of class
-   \code{ISOCountry}.
+   \code{\link{ISOCountry}}.
  }
  \item{\code{setCharacterSet(charset)}}{
    Set the character encoding, object of class "character" (encoding code), or object
-   of class \code{ISOCharacterSet}.
+   of class \code{\link{ISOCharacterSet}}.
  }
 }
 }

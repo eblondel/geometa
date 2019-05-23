@@ -17,14 +17,14 @@ ISOScopedName
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{value}}{[\code{\link{character}}] scope name}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISOScopedName
+   This method is used to instantiate an \code{\link{ISOScopedName}}
  }
 }
 }

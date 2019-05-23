@@ -7,11 +7,11 @@
 #' @return Object of \code{\link{R6Class}} for modelling a mapping format
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field id
-#' @field pkg
-#' @field reader
-#' @field checker
-#' @field constructor
+#' @field id (character) format identifier
+#' @field pkg (character) package(s) required for the format
+#' @field reader (function) handler used for reading a property
+#' @field checker (function) handler used for checking a property value
+#' @field constructor (function) handler used for object construction
 #'
 #' @section Methods:
 #' \describe{

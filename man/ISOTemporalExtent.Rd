@@ -14,17 +14,23 @@ Object of \code{\link{R6Class}} for modelling an ISO TemporalExtent
 \description{
 ISOTemporalExtent
 }
+\section{Fields}{
+
+\describe{
+\item{\code{extent}}{[\code{\link{GMLTimeInstant}}|\code{\link{GMLTimePeriod}}] the temporal extent (instant or period)}
+}}
+
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOTemporalExtent
+   This method is used to instantiate an \code{\link{ISOTemporalExtent}}
  }
  \item{\code{setTimeInstant(timeInstant)}}{
-   Sets a time instant
+   Sets a time instant, object of class \code{\link{GMLTimeInstant}}
  }
  \item{\code{setTimePeriod(timePeriod)}}{
-   Sets a time period
+   Sets a time period, object of class \code{\link{GMLTimePeriod}}
  }
 }
 }

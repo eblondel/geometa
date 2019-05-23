@@ -14,17 +14,11 @@ Object of \code{\link{R6Class}} for modelling an ISO HierarchyLevel
 \description{
 ISOHierarchyLevel
 }
-\section{Fields}{
-
-\describe{
-\item{\code{value}}{}
-}}
-
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value, description)}}{
-   This method is used to instantiate an ISOHierarchyLevel
+   This method is used to instantiate an \code{\link{ISOHierarchyLevel}}
  }
 }
 }

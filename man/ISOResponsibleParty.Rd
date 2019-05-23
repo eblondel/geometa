@@ -17,7 +17,15 @@ ISOResponsibleParty
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{individualName}}{[\code{\link{character}}] Individual name}
+
+\item{\code{organisationName}}{[\code{\link{character}}] Organization name}
+
+\item{\code{positionName}}{[\code{\link{character}}] Position name}
+
+\item{\code{contactInfo}}{[\code{\link{ISOContact}}] contact information}
+
+\item{\code{role}}{[\code{\link{ISORole}}] role}
 }}
 
 \section{Methods}{
@@ -39,11 +47,11 @@ ISOResponsibleParty
    with the \code{locales} argument.
  }
  \item{\code{setContactInfo(contactInfo)}}{
-   Set the contact info, should be an object of class \code{ISOContact}
+   Set the contact info, should be an object of class \code{\link{ISOContact}}
  }
  \item{\code{setRole(role)}}{
    Set the role, either an object of class "character" (among values
-   available in \code{ISORole$values()}) or an object of class \code{ISORole}.
+   available in \code{ISORole$values()}) or an object of class \code{\link{ISORole}}.
  }
 }
 }

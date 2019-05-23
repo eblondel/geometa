@@ -7,12 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ReferenceSystem
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field referenceSystemIdentifier
+#' @field referenceSystemIdentifier [\code{\link{ISOReferenceIdentifier}}] the reference system identifier
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, value)}}{
-#'    This method is used to instantiate an ISOReferenceSystem
+#'    This method is used to instantiate an \code{\link{ISOReferenceSystem}}
 #'  }
 #'  \item{\code{setReferenceSystemIdentifier(code, codeSpace)}}{
 #'    Sets the reference system identifier

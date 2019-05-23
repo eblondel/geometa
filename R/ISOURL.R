@@ -7,12 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOURL
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
+#' @field value [\code{\link{character}}] the url
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOURL
+#'    This method is used to instantiate an \code{\link{ISOURL}}
 #'  }
 #'  \item{\code{setUrl(url)}}{
 #'    Set the url

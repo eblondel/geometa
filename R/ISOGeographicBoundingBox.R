@@ -7,15 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO GeographicBoundingBox
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field westBoundLongitude
-#' @field eastBoundLongitude
-#' @field southBoundLatitude
-#' @field northBoundLatitude
+#' @field westBoundLongitude [\code{\link{numeric}}]
+#' @field eastBoundLongitude [\code{\link{numeric}}]
+#' @field southBoundLatitude [\code{\link{numeric}}]
+#' @field northBoundLatitude [\code{\link{numeric}}]
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, minx, miny, maxx, maxy, bbox)}}{
-#'    This method is used to instantiate an ISOGeographicBoundingBox
+#'    This method is used to instantiate an \code{\link{ISOGeographicBoundingBox}}
 #'  }
 #'  \item{\code{setWestBoundLongitude(minx)}}{
 #'    Set the west bound longitude.

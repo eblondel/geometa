@@ -17,14 +17,16 @@ ISOTelephone
 \section{Fields}{
 
 \describe{
-\item{\code{facsimile}}{}
+\item{\code{voice}}{[\code{\link{character}}] phone number}
+
+\item{\code{facsimile}}{[\code{\link{character}}] facsimile number}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISOTelephone
+   This method is used to instantiate an \code{\link{ISOTelephone}}
  }
  \item{\code{setVoice(voice, locales)}}{
    Set voice phone number. Locale numbers can be specified as \code{list}

@@ -7,28 +7,30 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Lineage
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field statement
+#' @field statement [\code{\link{character}}] statement
+#' @field processStep [\code{\link{ISOProcessStep}}] process step(s)
+#' @field source [\code{\link{ISOSource}}] source(s)
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOLineage
+#'    This method is used to instantiate an \code{\link{ISOLineage}}
 #'  }
 #'  \item{\code{setStatement(statement, locales)}}{
 #'    Sets the statement. Locale names can be specified as \code{list}
 #'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{addProcessStep(processStep)}}{
-#'    Adds a process step (object of class \code{ISOProcessStep})
+#'    Adds a process step (object of class \code{\link{ISOProcessStep}})
 #'  }
 #'  \item{\code{delProcessStep(processStep)}}{
-#'    Deletes a process step
+#'    Deletes a process step, object of class \code{\link{ISOProcessStep}}
 #'  }
 #'  \item{\code{addSource(source)}}{
-#'    Adds a source (object of class \code{ISOSource})
+#'    Adds a source (object of class \code{\link{ISOSource}})
 #'  }
 #'  \item{\code{delSource(source)}}{
-#'    Deletes a source
+#'    Deletes a source (object of class \code{\link{ISOSource}})
 #'  }
 #' }
 #' 

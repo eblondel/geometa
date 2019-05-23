@@ -17,17 +17,41 @@ ISOIdentification
 \section{Fields}{
 
 \describe{
-\item{\code{resourceConstraints}}{}
+\item{\code{citation}}{[\code{\link{ISOCitation}}] citation}
+
+\item{\code{abstract}}{[\code{\link{character}}] abstract}
+
+\item{\code{purpose}}{[\code{\link{character}}] purpose}
+
+\item{\code{credit}}{[\code{\link{credit}}] credit}
+
+\item{\code{status}}{[\code{\link{ISOStatus}}] status}
+
+\item{\code{pointOfContact}}{[\code{\link{ISOResponsibleParty}}] point(s) of contact}
+
+\item{\code{resourceMaintenance}}{[\code{\link{ISOMaintenanceInformation}}] maintenance information}
+
+\item{\code{graphicOverview}}{[\code{\link{ISOBrowseGraphic}}] graphic overview(s)}
+
+\item{\code{resourceFormat}}{[\code{\link{ISOFormat}}] format(s)}
+
+\item{\code{descriptiveKeywords}}{[\code{\link{ISOKeywords}}] keyword(s)}
+
+\item{\code{resourceConstraints}}{[\code{\link{ISOConstraints}}] constraint(s)}
+
+\item{\code{resourceSpecificUsage}}{[\code{\link{ISOUsage}}] usage(s)}
+
+\item{\code{aggregationInfo}}{[\code{\link{ISOAggregateInformation}}] aggregate information}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, element, namespace, defaults)}}{
-   This method is used to instantiate an ISOIdentification
+   This method is used to instantiate an \code{\link{ISOIdentification}}
  }
  \item{\code{setCitation(citation)}}{
-   Sets an object of class \code{ISOCitation}
+   Sets an object of class \code{\link{ISOCitation}}
  }
  \item{\code{setAbstract(abstract, locales)}}{
    Sets an abstract (object of class "character"). Locale names can be 
@@ -46,74 +70,74 @@ ISOIdentification
    specified as \code{list} with the \code{locales} argument.
  }
  \item{\code{addStatus(status)}}{
-   Adds a status, as object of class "character" or class \code{ISOStatus}. If
+   Adds a status, as object of class "character" or class \code{\link{ISOStatus}}. If
    an object of class "character" is specified, it must match the accepted
    progress status values \code{ISOStatus$values()}.
  }
  \item{\code{delStatus(status)}}{
-   Deletes a status, as object of class "character" or class \code{ISOStatus}. If
+   Deletes a status, as object of class "character" or class \code{\link{ISOStatus}}. If
    an object of class "character" is specified, it must match the accepted
    progress status values \code{ISOStatus$values()}.
  }
  \item{\code{addPointOfContact(pointOfContact)}}{
-   Adds an object of class \code{ISOResponsibleParty}
+   Adds an object of class \code{\link{ISOResponsibleParty}}
  }
  \item{\code{delPointOfContact(pointOfContact)}}{
-   Deletes an object of class \code{ISOResponsibleParty}
+   Deletes an object of class \code{\link{ISOResponsibleParty}}
  }
  \item{\code{addResourceMaintenance(resourceMaintenance)}}{
    Adds a resource maintenance information as object of class 
-   \code{ISOMaintenanceInformation}.
+   \code{\link{ISOMaintenanceInformation}}.
  }
  \item{\code{setResourceMaintenance(resourceMaintenance)}}{
    Sets a resource maintenance information as object of class 
-   \code{ISOMaintenanceInformation}.
+   \code{\link{ISOMaintenanceInformation}}.
  }
  \item{\code{delResourceMaintenance(resourceMaintenance)}}{
    Deletes a resource maintenance information as object of class 
-   \code{ISOMaintenanceInformation}.
+   \code{\link{ISOMaintenanceInformation}}.
  }
  \item{\code{addGraphicOverview(graphicOverview)}}{
-   Adds an object of class \code{ISOBrowseGraphic}
+   Adds an object of class \code{\link{ISOBrowseGraphic}}
  }
  \item{\code{setGraphicOverview(graphicOverview)}}{
-   Sets an object of class \code{ISOBrowseGraphic}
+   Sets an object of class \code{\link{ISOBrowseGraphic}}
  }
  \item{\code{delGraphicOverview(graphicOverview)}}{
-   Deletes an object of class \code{ISOBrowseGraphic}
+   Deletes an object of class \code{\link{ISOBrowseGraphic}}
  }
  \item{\code{addFormat(format)}}{
-   Adds a resource format, object of class \code{ISOFormat}
+   Adds a resource format, object of class \code{\link{ISOFormat}}
  }
  \item{\code{delFormat(format)}}{
-   Deletes a resource format, object of class \code{ISOFormat}
+   Deletes a resource format, object of class \code{\link{ISOFormat}}
  }
  \item{\code{addKeywords(keywords)}}{
-   Adds a set of keywords as object of class \code{ISOKeywords}
+   Adds a set of keywords as object of class \code{\link{ISOKeywords}}
  }
  \item{\code{setKeywords(keywords)}}{
-   Sets a set of keywords as object of class \code{ISOKeywords}
+   Sets a set of keywords as object of class \code{\link{ISOKeywords}}
  }
  \item{\code{delKeywords(keywords)}}{
-   Deletes a set of keywords as object of class \code{ISOKeywords}
+   Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
  }
  \item{\code{addResourceConstraints(resourceConstraints)}}{
-   Adds an object extending \code{ISOConstraints}, either an object of class
-   \code{ISOLegalConstraints} or \code{ISOSecurityConstraints}
+   Adds an object extending \code{\link{ISOConstraints}}, either an object of class
+   \code{\link{ISOLegalConstraints}} or \code{\link{ISOSecurityConstraints}}
  }
  \item{\code{setResourceConstraints(resourceConstraints)}}{
-   Sets an object extending \code{ISOConstraints}, either an object of class
-   \code{ISOLegalConstraints} or \code{ISOSecurityConstraints}
+   Sets an object extending \code{\link{ISOConstraints}}, either an object of class
+   \code{\link{ISOLegalConstraints}} or \code{\link{ISOSecurityConstraints}}
  }
  \item{\code{delResourceConstraints(resourceConstraints)}}{
-   Deletes an object extending \code{ISOConstraints}, either an object of class
-   \code{ISOLegalConstraints} or \code{ISOSecurityConstraints}
+   Deletes an object extending \code{\link{ISOConstraints}}, either an object of class
+   \code{\link{ISOLegalConstraints}} or \code{\link{ISOSecurityConstraints}}
  }
  \item{\code{addAggregateInformation(aggregateInfo)}}{
-   Adds an object of class \code{ISOAggregateInformation}
+   Adds an object of class \code{\link{ISOAggregateInformation}}
  }
  \item{\code{delAggregateInformation(aggregateInfo)}}{
-   Deletes an object of class \code{ISOAggregateInformation}
+   Deletes an object of class \code{\link{ISOAggregateInformation}}
  }
 }
 }

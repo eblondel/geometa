@@ -17,17 +17,25 @@ ISOOnlineResource
 \section{Fields}{
 
 \describe{
-\item{\code{function}}{}
+\item{\code{linkage}}{[\code{\link{ISOURL}}] linkage}
+
+\item{\code{protocol}}{[\code{\link{character}}] protocol}
+
+\item{\code{name}}{[\code{\link{character}}] name}
+
+\item{\code{description}}{[\code{\link{character}}] description}
+
+\item{\code{function}}{[\code{\link{ISOOnLineFunction}}] online function}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOOnlineResource
+   This method is used to instantiate an \code{\link{ISOOnlineResource}}
  }
  \item{\code{setLinkage(linkage)}}{
-   Sets the linkage (URL), an object of class \code{character} or \code{ISOURL}
+   Sets the linkage (URL), an object of class \code{character} or \code{\link{ISOURL}}
  }
  \item{\code{setProtocol(protocol, locales)}}{
    Sets the protocol. Locale names can be specified as \code{list}
@@ -42,7 +50,8 @@ ISOOnlineResource
    with the \code{locales} argument.
  }
  \item{\code{setOnLineFunction(onLineFunction)}}{
-   Sets the online function
+   Sets the online function, object of class \code{\link{ISOOnLineFunction}} 
+   or \code{character}
  }
 }
 }

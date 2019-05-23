@@ -7,8 +7,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling a ISO set of keywords
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field keyword
-#' @field type
+#' @field keyword [\code{\link{character}}] keyword(s)
+#' @field type [\code{\link{ISOKeywordType}}] keyword type
+#' @field thesaurusName [\code{\link{ISOCitation}}] thesaurus citation
 #'
 #' @section Methods:
 #' \describe{

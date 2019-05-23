@@ -7,15 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO StandardOrderProcess
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field fees
-#' @field plannedAvailableDateTime
-#' @field orderingInstructions
-#' @field turnaround
+#' @field fees [\code{\link{character}}]
+#' @field plannedAvailableDateTime [\code{\link{POSIXt}}] the datetime
+#' @field orderingInstructions [\code{\link{character}}] ordering instructions
+#' @field turnaround [\code{\link{character}}] turnaround
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOStandardOrderProcess
+#'    This method is used to instantiate an \code{\link{ISOStandardOrderProcess}}
 #'  }
 #'  \item{\code{setFees(fees, locales)}}{
 #'    Sets fees, object of class \code{character}. Locale names can be specified 

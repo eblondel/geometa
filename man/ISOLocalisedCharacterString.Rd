@@ -14,17 +14,11 @@ Object of \code{\link{R6Class}} for modelling an ISO LocalisedCharacterString
 \description{
 ISOLocalisedCharacterString
 }
-\section{Fields}{
-
-\describe{
-\item{\code{value}}{}
-}}
-
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, locale, value)}}{
-   This method is used to instantiate an ISOLocalisedCharacterString
+   This method is used to instantiate an \code{\link{ISOLocalisedCharacterString}}
  }
 }
 }

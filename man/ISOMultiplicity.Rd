@@ -17,14 +17,14 @@ ISOMultiplicity
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{range}}{[\code{\link{ISOMultiplicityRange}}] multiplicity range}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, lower, upper)}}{
-   This method is used to instantiate an ISOMultiplicity. The range is specified
+   This method is used to instantiate an \code{\link{ISOMultiplicity}}. The range is specified
    by two arguments \code{lower} and \code{upper}.
  }
 }

@@ -18,7 +18,7 @@ ISOScopeDescription
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOScopeDescription
+   This method is used to instantiate an \code{\link{ISOScopeDescription}}
  }
  \item{\code{addAttribute(attribute)}}{
    Adds an attribute

@@ -7,13 +7,13 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Telephone
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field voice
-#' @field facsimile
+#' @field voice [\code{\link{character}}] phone number
+#' @field facsimile [\code{\link{character}}] facsimile number
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOTelephone
+#'    This method is used to instantiate an \code{\link{ISOTelephone}}
 #'  }
 #'  \item{\code{setVoice(voice, locales)}}{
 #'    Set voice phone number. Locale numbers can be specified as \code{list}

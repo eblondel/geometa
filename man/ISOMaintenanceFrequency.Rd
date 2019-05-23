@@ -14,17 +14,11 @@ Object of \code{\link{R6Class}} for modelling an ISO MaintenanceFrequency
 \description{
 ISOMaintenanceFrequency
 }
-\section{Fields}{
-
-\describe{
-\item{\code{value}}{}
-}}
-
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value, description)}}{
-   This method is used to instantiate an ISOMaintenanceFrequency
+   This method is used to instantiate an \code{\link{ISOMaintenanceFrequency}}
  }
 }
 }

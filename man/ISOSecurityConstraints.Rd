@@ -17,7 +17,13 @@ ISOSecurityConstraints
 \section{Fields}{
 
 \describe{
-\item{\code{handlingDescription}}{}
+\item{\code{classification}}{[\code{\link{ISOClassification}}] security classifciation}
+
+\item{\code{userNote}}{[\code{\link{character}}] user note}
+
+\item{\code{classificationSystem}}{[\code{\link{character}}] classification system}
+
+\item{\code{handlingDescription}}{[\code{\link{character}}] description}
 }}
 
 \section{Methods}{
@@ -27,7 +33,7 @@ ISOSecurityConstraints
    This method is used to instantiate an ISOSecurityConstraints
  }
  \item{\code{setClassification(classification)}}{
-   Adds a classification, as object of class "character" or class \code{ISOClassification}.
+   Adds a classification, as object of class "character" or class \code{\link{ISOClassification}}.
    If an object of class "character" is specified, it must match the accepted
    values given by \code{ISOClassification$values()}.
  }

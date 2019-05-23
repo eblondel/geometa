@@ -17,7 +17,15 @@ ISOGeoreferenceable
 \section{Fields}{
 
 \describe{
-\item{\code{parameterCitation}}{}
+\item{\code{controlPointAvailability}}{[\code{\link{logical}}]}
+
+\item{\code{orientationParameterAvailability}}{[\code{\link{logical}}]}
+
+\item{\code{orientationParameterDescription}}{[\code{\link{character}}]}
+
+\item{\code{georeferencedParameters}}{[\code{\link{ISORecord}}]}
+
+\item{\code{parameterCitation}}{[\code{\link{ISOcitation}}]}
 }}
 
 \section{Inherited Methods}{
@@ -27,13 +35,13 @@ ISOGeoreferenceable
    Sets the number of dimensions (value of class \code{integer})
  }
  \item{\code{addDimension(dimension)}}{
-   Adds a dimension. Object of class \code{ISODimension}
+   Adds a dimension. Object of class \code{\link{ISODimension}}
  }
  \item{\code{delDimension(dimension)}}{
-   Deletes a dimension;
+   Deletes a dimension
  }
  \item{\code{setCellGeometry(cellGeometry)}}{
-   Sets the cell geometry. Object of class \code{ISOCellGeometry} or any value
+   Sets the cell geometry. Object of class \code{\link{ISOCellGeometry}} or any value
    from \code{ISOCellGeometry$values()}
  }
  \item{\code{setTransformationParameterAvailability(availability)}}{
@@ -46,7 +54,7 @@ ISOGeoreferenceable
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOGeoreferenceable
+   This method is used to instantiate an \code{\link{ISOGeoreferenceable}}
  }
  \item{\code{setControlPointAvailability(availability)}}{
    Sets the control point availability. TRUE/FALSE
@@ -59,13 +67,13 @@ ISOGeoreferenceable
     as \code{list} with the \code{locales} argument.
  }
  \item{\code{setGeoreferencedParameters(record)}}{
-   Sets the georeferenced parameter (object of class \code{ISORecord})
+   Sets the georeferenced parameter (object of class \code{\link{ISORecord}})
  }
  \item{\code{addParameterCitation(citation)}}{
-   Adds a parameter citation
+   Adds a parameter citation, object of class \code{\link{ISOCitation}}
  }
  \item{\code{delParameterCitation(citation)}}{
-   Deletes a parameter citation
+   Deletes a parameter citation, object of class \code{\link{ISOCitation}}
  }
 }
 }

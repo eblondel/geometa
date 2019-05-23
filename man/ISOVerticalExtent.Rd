@@ -14,20 +14,35 @@ Object of \code{\link{R6Class}} for modelling an ISO VerticalExtent
 \description{
 ISOVerticalExtent
 }
+\section{Fields}{
+
+\describe{
+\item{\code{minimalValue}}{[\code{\link{numeric}}] the minimum value for the vertical extent}
+
+\item{\code{maximalValue}}{[\code{\link{numeric}}] the maximum value for the vertical extent}
+
+\item{\code{unitOfMeasure}}{[\code{\link{character}}] the unit of measure}
+
+\item{\code{verticalCRS}}{[\code{\link{GMLVerticalCRS}}] the vertical CRS}
+}}
+
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOVerticalExtent
+   This method is used to instantiate an \code{\link{ISOVerticalExtent}}
  }
  \item{\code{setMinimumValue(minimumValue)}}{
-   Sets the minimum value
+   Sets the minimum value, object of class \code{\link{numeric}}
  }
  \item{\code{setMaximumValue(maximumValue)}}{
-   Sets the maximum value
+   Sets the maximum value, object of class \code{\link{numeric}}
  }
  \item{\code{setUnitOfMeasure(uom)}}{
-   Sets the unit of measure
+   Sets the unit of measure, object of class \code{\link{character}}
+ }
+ \item{\code{setVerticalCRS(verticalCRS)}}{
+   Sets the vertical CRS, object of class \code{\link{GMLVerticalCRS}}
  }
 }
 }

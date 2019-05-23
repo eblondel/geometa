@@ -7,11 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFormat
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field name
-#' @field version
-#' @field amendmentNumber
-#' @field specification
-#' @field fileDecompressionTechnique
+#' @field name [\code{\link{character}}]
+#' @field version [\code{\link{character}}]
+#' @field amendmentNumber [\code{\link{character}}]
+#' @field specification [\code{\link{character}}]
+#' @field fileDecompressionTechnique [\code{\link{character}}]
+#' @field formatDistributor [\code{\link{ISODistributor}}]
 #'
 #' @section Methods:
 #' \describe{

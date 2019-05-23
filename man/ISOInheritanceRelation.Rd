@@ -17,14 +17,22 @@ ISOInheritanceRelation
 \section{Fields}{
 
 \describe{
-\item{\code{supertype}}{}
+\item{\code{name}}{[\code{\link{character}}] name}
+
+\item{\code{description}}{[\code{\link{character}}] description}
+
+\item{\code{uniqueInstance}}{[\code{\link{logical}}]}
+
+\item{\code{subtype}}{[\code{\link{ISOFeatureType}}] subtype}
+
+\item{\code{supertype}}{[\code{\link{ISOFeatureType}}] supertype}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, defaults)}}{
-   This method is used to instantiate an ISOInheritanceRelation
+   This method is used to instantiate an \code{\link{ISOInheritanceRelation}}
  }
  \item{\code{setName(name, locales)}}{
    Set name of inheritance relation. Locale names can be specified
@@ -38,10 +46,10 @@ ISOInheritanceRelation
    Set \code{TRUE} if it's a unique instance, \code{FALSE} otherwise
  }
  \item{\code{setSubtype(featureType)}}{
-   Set subtype, object of class \code{ISOFeatureType}
+   Set subtype, object of class \code{\link{ISOFeatureType}}
  }
  \item{\code{setSupertype(featureType)}}{
-   Set supertype, object of class \code{ISOFeatureType}
+   Set supertype, object of class \code{\link{ISOFeatureType}}
  }
 }
 }

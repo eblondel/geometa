@@ -7,9 +7,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Locale
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field languageCode
-#' @field country
-#' @field characterEncoding
+#' @field languageCode [\code{\link{ISOLanguage}}|\code{\link{character}}] language code
+#' @field country [\code{\link{ISOCountry}}|\code{\link{character}}] country code
+#' @field characterEncoding [\code{\link{ISOCharacterSet}}|\code{\link{character}}] character encoding
 #'
 #' @section Methods:
 #' \describe{
@@ -21,15 +21,15 @@
 #'  }
 #'  \item{\code{setLanguage(language)}}{
 #'    Set the language, object of class "character" (language code), or object of
-#'    class \code{ISOLanguage}.
+#'    class \code{\link{ISOLanguage}}.
 #'  }
 #'  \item{\code{setCountry(country)}}{
 #'    Set the country, object of class "character" (country code), or object of class
-#'    \code{ISOCountry}.
+#'    \code{\link{ISOCountry}}.
 #'  }
 #'  \item{\code{setCharacterSet(charset)}}{
 #'    Set the character encoding, object of class "character" (encoding code), or object
-#'    of class \code{ISOCharacterSet}.
+#'    of class \code{\link{ISOCharacterSet}}.
 #'  }
 #' }
 #' 

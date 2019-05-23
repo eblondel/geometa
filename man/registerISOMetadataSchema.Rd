@@ -13,6 +13,11 @@ registerISOMetadataSchema(xsdFile)
 \code{registerISOMetadataSchema} allows to register a new schema
 in \pkg{geometa}
 }
+\examples{
+            
+  registerISOMetadataSchema(xsdFile = "http://www.isotc211.org/2005/gmd/gmd.xsd")
+
+}
 \author{
 Emmanuel Blondel, \email{emmanuel.blondel1@gmail.com}
 }

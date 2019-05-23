@@ -6,13 +6,11 @@
 #' @keywords ISO meta identifier
 #' @return Object of \code{\link{R6Class}} for modelling an ISO MetaIdentifier
 #' @format \code{\link{R6Class}} object.
-#' 
-#' 
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, code)}}{
-#'    This method is used to instantiate an ISOMetaIdentifier
+#'    This method is used to instantiate an \code{\link{ISOMetaIdentifier}}
 #'  }
 #' }
 #' 

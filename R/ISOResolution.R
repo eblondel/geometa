@@ -7,13 +7,13 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Resolution
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field equivalentScale
-#' @field distance
+#' @field equivalentScale [\code{\link{ISORepresentativeFraction}}] equivalent scale
+#' @field distance [\code{\link{ISODistance}}] distance
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an ISOResolution
+#'    This method is used to instantiate an \code{\link{ISOResolution}}
 #'  }
 #'  \item{\code{setEquivalentScale(equivalentScale)}}{
 #'    Set equivalent scale. By setting an equivalent scale, the value

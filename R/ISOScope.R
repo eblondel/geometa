@@ -7,15 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Scope
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field level
+#' @field level [\code{\link{ISOHierarchyLevel}}] the scope/hierarchy level
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOScope
+#'    This method is used to instantiate an \code{\link{ISOScope}}
 #'  }
 #'  \item{\code{setLevel(level)}}{
-#'    Sets the scope level
+#'    Sets the scope level, object of class 'character' or \code{\link{ISOHierarchyLevel}}
 #'  }
 #' }
 #' 

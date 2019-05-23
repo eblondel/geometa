@@ -14,17 +14,11 @@ Object of \code{\link{R6Class}} for modelling an ISO progress status
 \description{
 ISOStatus
 }
-\section{Fields}{
-
-\describe{
-\item{\code{value}}{}
-}}
-
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value, description)}}{
-   This method is used to instantiate an ISOStatus
+   This method is used to instantiate an \code{\link{ISOStatus}}
  }
 }
 }

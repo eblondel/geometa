@@ -7,7 +7,7 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISORecordType
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
+#' @field value [\code{\link{character}}] record type
 #'
 #' @section Methods:
 #' \describe{

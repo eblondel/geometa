@@ -7,10 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Inherited methods:
+#' @section Methods inherited from \code{\link{ISOIdentification}}:
 #' \describe{
 #'  \item{\code{setCitation(citation)}}{
-#'    Sets an object of class \code{ISOCitation}
+#'    Sets an object of class \code{\link{ISOCitation}}
 #'  }
 #'  \item{\code{setAbstract(abstract, locales)}}{
 #'    Sets an abstract (object of class "character"). Locale names can be 
@@ -29,56 +29,56 @@
 #'    specified as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{addStatus(status)}}{
-#'    Adds a status, as object of class "character" or class \code{ISOStatus}. If
+#'    Adds a status, as object of class "character" or class \code{\link{ISOStatus}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    progress status values \code{ISOStatus$values()}.
 #'  }
 #'  \item{\code{delStatus(status)}}{
-#'    Deletes a status, as object of class "character" or class \code{ISOStatus}. If
+#'    Deletes a status, as object of class "character" or class \code{\link{ISOStatus}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    progress status values \code{ISOStatus$values()}.
 #'  }
 #'  \item{\code{addPointOfContact(pointOfContact)}}{
-#'    Adds an object of class \code{ISOResponsibleParty}
+#'    Adds an object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{delPointOfContact(pointOfContact)}}{
-#'    Deletes an object of class \code{ISOResponsibleParty}
+#'    Deletes an object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{addResourceMaintenance(resourceMaintenance)}}{
 #'    Adds a resource maintenance information as object of class 
-#'    \code{ISOMaintenanceInformation}.
+#'    \code{\link{ISOMaintenanceInformation}}.
 #'  }
 #'  \item{\code{setResourceMaintenance(resourceMaintenance)}}{
 #'    Sets a resource maintenance information as object of class 
-#'    \code{ISOMaintenanceInformation}.
+#'    \code{\link{ISOMaintenanceInformation}}.
 #'  }
 #'  \item{\code{delResourceMaintenance(resourceMaintenance)}}{
 #'    Deletes a resource maintenance information as object of class 
-#'    \code{ISOMaintenanceInformation}.
+#'    \code{\link{ISOMaintenanceInformation}}.
 #'  }
 #'  \item{\code{addGraphicOverview(graphicOverview)}}{
-#'    Adds an object of class \code{ISOBrowseGraphic}
+#'    Adds an object of class \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{setGraphicOverview(graphicOverview)}}{
-#'    Sets an object of class \code{ISOBrowseGraphic}
+#'    Sets an object of class \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{delGraphicOverview(graphicOverview)}}{
-#'    Deletes an object of class \code{ISOBrowseGraphic}
+#'    Deletes an object of class \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{addKeywords(keywords)}}{
-#'    Adds a set of keywords as object of class \code{ISOKeywords}
+#'    Adds a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{setKeywords(keywords)}}{
-#'    Sets a set of keywords as object of class \code{ISOKeywords}
+#'    Sets a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{delKeywords(keywords)}}{
-#'    Deletes a set of keywords as object of class \code{ISOKeywords}
+#'    Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Adds an object of class \code{ISOLegalConstraints}
+#'    Adds an object of class \code{\link{ISOLegalConstraints}}
 #'  }
 #'  \item{\code{setResourceConstraints(resourceConstraints)}}{
-#'    Sets an object of class \code{ISOLegalConstraints}
+#'    Sets an object of class \code{\link{ISOLegalConstraints}}
 #'  }
 #'  \item{\code{addResourceConstraints(resourceConstraints)}}{
 #'    Deletes an object of class \code{ISOLegalConstraints}
@@ -184,21 +184,21 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @field serviceType
-#' @field serviceTypeVersion
-#' @field accessProperties
-#' @field restrictions
-#' @field keywords
-#' @field extent
-#' @field coupledResource
-#' @field couplingType
-#' @field containsOperations
-#' @field operatesOn
+#' @field serviceType [\code{\link{character}}] the service type
+#' @field serviceTypeVersion [\code{\link{character}}] the service type version(s)
+#' @field accessProperties [\code{\link{ISOStandardOrderProcess}}] the access properties
+#' @field restrictions [\code{\link{ISOConstraints}}] restrictions applied to service
+#' @field keywords [\code{\link{ISOKeywords}}] service keywords
+#' @field extent [\code{\link{ISOextent}}] service extent
+#' @field coupledResource [\code{\link{ISOCoupledResource}}] the coupled resource
+#' @field couplingType [\code{\link{ISOCouplingType}}] the coupling type
+#' @field containsOperations [\code{\link{ISOOperationMetadata}}] the operation metadata
+#' @field operatesOn [\code{\link{ISODataIdentification}}] data identification on which service operates
 #'
-#' @section Inherited methods:
+#' @section Methods inherited from \code{\link{ISOServiceIdentification}}:
 #' \describe{
 #'  \item{\code{setCitation(citation)}}{
-#'    Sets an object of class \code{ISOCitation}
+#'    Sets an object of class \code{\link{ISOCitation}}
 #'  }
 #'  \item{\code{setAbstract(abstract, locales)}}{
 #'    Sets an abstract (object of class "character"). Locale names can be 
@@ -217,66 +217,66 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
 #'    specified as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{addStatus(status)}}{
-#'    Adds a status, as object of class "character" or class \code{ISOStatus}. If
+#'    Adds a status, as object of class "character" or class \code{\link{ISOStatus}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    progress status values \code{ISOStatus$values()}.
 #'  }
 #'  \item{\code{delStatus(status)}}{
-#'    Deletes a status, as object of class "character" or class \code{ISOStatus}. If
+#'    Deletes a status, as object of class "character" or class \code{\link{ISOStatus}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    progress status values \code{ISOStatus$values()}.
 #'  }
 #'  \item{\code{addPointOfContact(pointOfContact)}}{
-#'    Adds an object of class \code{ISOResponsibleParty}
+#'    Adds an object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{delPointOfContact(pointOfContact)}}{
-#'    Deletes an object of class \code{ISOResponsibleParty}
+#'    Deletes an object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{addResourceMaintenance(resourceMaintenance)}}{
 #'    Adds a resource maintenance information as object of class 
-#'    \code{ISOMaintenanceInformation}.
+#'    \code{\link{ISOMaintenanceInformation}}.
 #'  }
 #'  \item{\code{setResourceMaintenance(resourceMaintenance)}}{
 #'    Sets a resource maintenance information as object of class 
-#'    \code{ISOMaintenanceInformation}.
+#'    \code{\link{ISOMaintenanceInformation}}.
 #'  }
 #'  \item{\code{delResourceMaintenance(resourceMaintenance)}}{
 #'    Deletes a resource maintenance information as object of class 
-#'    \code{ISOMaintenanceInformation}.
+#'    \code{\link{ISOMaintenanceInformation}}.
 #'  }
 #'  \item{\code{addGraphicOverview(graphicOverview)}}{
-#'    Adds an object of class \code{ISOBrowseGraphic}
+#'    Adds an object of class \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{setGraphicOverview(graphicOverview)}}{
-#'    Sets an object of class \code{ISOBrowseGraphic}
+#'    Sets an object of class \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{delGraphicOverview(graphicOverview)}}{
-#'    Deletes an object of class \code{ISOBrowseGraphic}
+#'    Deletes an object of class \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{addKeywords(keywords)}}{
-#'    Adds a set of keywords as object of class \code{ISOKeywords}
+#'    Adds a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{setKeywords(keywords)}}{
-#'    Sets a set of keywords as object of class \code{ISOKeywords}
+#'    Sets a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{delKeywords(keywords)}}{
-#'    Deletes a set of keywords as object of class \code{ISOKeywords}
+#'    Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Adds an object of class \code{ISOLegalConstraints}
+#'    Adds an object of class \code{\link{ISOLegalConstraints}}
 #'  }
 #'  \item{\code{setResourceConstraints(resourceConstraints)}}{
-#'    Sets an object of class \code{ISOLegalConstraints}
+#'    Sets an object of class \code{\link{ISOLegalConstraints}}
 #'  }
 #'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Deletes an object of class \code{ISOLegalConstraints}
+#'    Deletes an object of class \code{\link{ISOLegalConstraints}}
 #'  }
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOSRVServiceIdentification
+#'    This method is used to instantiate an \code{\link{ISOSRVServiceIdentification}}
 #'  }
 #'  \item{\code{setServiceType(serviceType)}}{
 #'    Set the type of service
@@ -288,49 +288,49 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
 #'    Deletes a service type version
 #'  }
 #'  \item{\code{setAccessProperties(accesProperties)}}{
-#'    Sets the access properties, as object of class  \code{ISOStandardOrderProcess}
+#'    Sets the access properties, as object of class  \code{\link{ISOStandardOrderProcess}}
 #'  }
 #'  \item{\code{setRestrictions(restrictions)}}{
-#'    Sets the restrictions associated to the service, as object of class \code{ISOConstraints}
+#'    Sets the restrictions associated to the service, as object of class \code{\link{ISOConstraints}}
 #'  }
 #'  \item{\code{addKeywords(keywords)}}{
-#'    Adds a set of keywords as object of class \code{ISOKeywords}
+#'    Adds a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{setKeywords(keywords)}}{
-#'    Sets a set of keywords as object of class \code{ISOKeywords}
+#'    Sets a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{delKeywords(keywords)}}{
-#'    Deletes a set of keywords as object of class \code{ISOKeywords}
+#'    Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{addExtent(extent)}}{
-#'    Adds an object of class \code{ISOExtent}.
+#'    Adds an object of class \code{\link{ISOExtent}}.
 #'  }
 #'  \item{\code{setExtent(extent)}}{
-#'    Sets an object of class \code{ISOExtent}.
+#'    Sets an object of class \code{\link{ISOExtent}}.
 #'  }
 #'  \item{\code{delExtent(extent)}}{
-#'    Deletes an object of class \code{ISOExtent}.
+#'    Deletes an object of class \code{\link{ISOExtent}}.
 #'  }
-#'  \item{\code{addCoupledResource(resource)}}{{
-#'    Adds a coupled resource, object of class \code{ISOCoupledResource}
+#'  \item{\code{addCoupledResource(resource)}}{
+#'    Adds a coupled resource, object of class \code{\link{ISOCoupledResource}}
 #'  }
 #'  \item{\code{delCoupledResource(resource)}}{
-#'    Deletes a coupled resource, object of class \code{ISOCoupledResource}
+#'    Deletes a coupled resource, object of class \code{\link{ISOCoupledResource}}
 #'  }
 #'  \item{\code{setCouplingType(couplingType)}}{
 #'    Set the coupling type, object of class \code{character} values among following: "loose" "mixed" "tight"
 #'  }
 #'  \item{\code{addOperationMetadata(operationMetadata)}}{
-#'    Adds operation metadata, object of class \code{ISOOperationMetadata}
+#'    Adds operation metadata, object of class \code{\link{ISOOperationMetadata}}
 #'  }
 #'  \item{\code{delOperationMetadata(operationMetadata)}}{
-#'    Deletes operation metadata, object of class \code{ISOOperationMetadata}
+#'    Deletes operation metadata, object of class \code{\link{ISOOperationMetadata}}
 #'  }
 #'  \item{\code{addOperatesOn(dataIdentification)}}{
-#'    Adds an operates on relationship, object of class \code{ISODataIdentification}
+#'    Adds an operates on relationship, object of class \code{\link{ISODataIdentification}}
 #'  }
 #'  \item{\code{delOperatesOn(dataIdentification)}}{
-#'    Deletes an operates on relationship, object of class \code{ISODataIdentification}
+#'    Deletes an operates on relationship, object of class \code{\link{ISODataIdentification}}
 #'  }
 #' }
 #' 

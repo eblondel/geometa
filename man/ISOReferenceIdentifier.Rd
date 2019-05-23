@@ -14,11 +14,19 @@ Object of \code{\link{R6Class}} for modelling an ISO ReferenceIdentifier
 \description{
 ISOReferenceIdentifier
 }
+\section{Fields}{
+
+\describe{
+\item{\code{codeSpace}}{[\code{\link{character}}] codespace}
+
+\item{\code{version}}{[\code{\link{character}}] version}
+}}
+
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, code, codeSpace)}}{
-   This method is used to instantiate an ISOReferenceIdentifier
+   This method is used to instantiate an \code{\link{ISOReferenceIdentifier}}
  }
  \item{\code{setCodeSpace(codeSpace)}}{
    Sets a codeSpace

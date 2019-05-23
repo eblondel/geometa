@@ -17,7 +17,7 @@ ISOLocalName
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{value}}{[\code{\link{character}}] local name}
 }}
 
 \section{Methods}{

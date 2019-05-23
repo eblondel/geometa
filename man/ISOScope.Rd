@@ -17,17 +17,17 @@ ISOScope
 \section{Fields}{
 
 \describe{
-\item{\code{level}}{}
+\item{\code{level}}{[\code{\link{ISOHierarchyLevel}}] the scope/hierarchy level}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOScope
+   This method is used to instantiate an \code{\link{ISOScope}}
  }
  \item{\code{setLevel(level)}}{
-   Sets the scope level
+   Sets the scope level, object of class 'character' or \code{\link{ISOHierarchyLevel}}
  }
 }
 }

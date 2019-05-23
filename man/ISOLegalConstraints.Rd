@@ -17,32 +17,36 @@ ISOLegalConstraints
 \section{Fields}{
 
 \describe{
-\item{\code{otherConstraints}}{}
+\item{\code{accessConstraints}}{[\code{\link{ISORestriction}}] access constraint(s)}
+
+\item{\code{useConstraints}}{[\code{\link{ISORestriction}}] use constraint(s)}
+
+\item{\code{otherConstraints}}{[\code{\link{character}}] other constraint(s)}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOLegalConstraints
+   This method is used to instantiate an \code{\link{ISOLegalConstraints}}
  }
  \item{\code{addAccessConstraint(constraint)}}{
-   Adds an access constraint, as object of class "character" or class \code{ISORestriction}.
+   Adds an access constraint, as object of class "character" or class \code{\link{ISORestriction}}.
    If an object of class "character" is specified, it must match the accepted
    values given by \code{ISORestriction$values()}.
  }
  \item{\code{delAccessConstraint(constraint)}}{
-   Deletes an access constraint, as object of class "character" or class \code{ISORestriction}.
+   Deletes an access constraint, as object of class "character" or class \code{\link{ISORestriction}}.
    If an object of class "character" is specified, it must match the accepted
    values given by \code{ISORestriction$values()}.
  }
  \item{\code{addUseConstraint(constraint)}}{
-   Adds a use constraint, as object of class "character" or class \code{ISORestriction}.
+   Adds a use constraint, as object of class "character" or class \code{\link{ISORestriction}}.
    If an object of class "character" is specified, it must match the accepted
    values given by \code{ISORestriction$values()}.
  }
  \item{\code{delUseConstraint(constraint)}}{
-   Deletes a use constraint, as object of class "character" or class \code{ISORestriction}.
+   Deletes a use constraint, as object of class "character" or class \code{\link{ISORestriction}}.
    If an object of class "character" is specified, it must match the accepted
    values given by \code{ISORestriction$values()}.
  }

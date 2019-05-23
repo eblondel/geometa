@@ -7,7 +7,11 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ResponsibleParty
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
+#' @field individualName [\code{\link{character}}] Individual name
+#' @field organisationName [\code{\link{character}}] Organization name
+#' @field positionName [\code{\link{character}}] Position name
+#' @field contactInfo [\code{\link{ISOContact}}] contact information
+#' @field role [\code{\link{ISORole}}] role
 #'
 #' @section Methods:
 #' \describe{
@@ -27,11 +31,11 @@
 #'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{setContactInfo(contactInfo)}}{
-#'    Set the contact info, should be an object of class \code{ISOContact}
+#'    Set the contact info, should be an object of class \code{\link{ISOContact}}
 #'  }
 #'  \item{\code{setRole(role)}}{
 #'    Set the role, either an object of class "character" (among values
-#'    available in \code{ISORole$values()}) or an object of class \code{ISORole}.
+#'    available in \code{ISORole$values()}) or an object of class \code{\link{ISORole}}.
 #'  }
 #' }
 #' 

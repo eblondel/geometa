@@ -17,7 +17,7 @@ ISORecord
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{value}}{[\code{\link{character}}] record}
 }}
 
 \section{Methods}{

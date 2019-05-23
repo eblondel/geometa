@@ -7,12 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOPortrayalCatalogueReference
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field portrayalCatalogueCitation
+#' @field portrayalCatalogueCitation [\code{\link{ISOCitation}}] the catalogue citation
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOPortrayalCatalogueReference
+#'    This method is used to instantiate an \code{\link{ISOPortrayalCatalogueReference}}
 #'  }
 #'  \item{\code{addCitation(citation)}}{
 #'    Add citation, object of class \code{ISOCitation}

@@ -17,40 +17,50 @@ ISOSource
 \section{Fields}{
 
 \describe{
-\item{\code{sourceStep}}{}
+\item{\code{description}}{[\code{\link{character}}] source description}
+
+\item{\code{scaleDenominator}}{[\code{\link{ISORepresentativeFraction}}] sale denominator}
+
+\item{\code{sourceReferenceSystem}}{[\code{\link{ISOReferenceSystem}}] source reference system}
+
+\item{\code{sourceCitation}}{[\code{\link{ISOCitation}}] the source citation}
+
+\item{\code{sourceExtent}}{[\code{\link{ISOExtent}}] the source extent(s)}
+
+\item{\code{sourceStep}}{[\code{\link{ISOProcessStep}}] the source process step(s)}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOSource
+   This method is used to instantiate an \code{\link{ISOSource}}
  }
  \item{\code{setDescription(description, locales)}}{
    Sets the source description. Locale names can be specified as \code{list}
    with the \code{locales} argument.
  }
  \item{\code{setScaleDenominator(denominator)}}{
-   Sets the scale denominator (object of class \code{ISORepresentativeFraction} or
+   Sets the scale denominator (object of class \code{\link{ISORepresentativeFraction}} or
    an integer value or other value coercable to integer)
  }
  \item{\code{setReferenceSystem(referenceSystem)}}{
-   Sets the source reference system (object of class \code{ISOReferenceSystem})
+   Sets the source reference system (object of class \code{\link{ISOReferenceSystem}})
  }
  \item{\code{setCitation(citation)}}{
-   Sets the source citation (object of class \code{ISOCitation})
+   Sets the source citation (object of class \code{\link{ISOCitation}})
  }
  \item{\code{addExtent(extent)}}{
-   Adds the source extent (object of class \code{ISOExtent})
+   Adds the source extent (object of class \code{\link{ISOExtent}})
  }
  \item{\code{delExtent(extent)}}{
-   Deletes a source extent
+   Deletes a source extent (object of class \code{\link{ISOExtent}})
  }
  \item{\code{addProcessStep(processStep)}}{
-   Adds a source process step (object of class \code{ISOProcessStep})
+   Adds a source process step (object of class \code{\link{ISOProcessStep}})
  }
  \item{\code{delProcessStep(processStep)}}{
-   Deletes a source processStep
+   Deletes a source processStep(object of class \code{\link{ISOProcessStep}})
  }
 }
 }

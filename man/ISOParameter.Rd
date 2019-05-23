@@ -17,22 +17,32 @@ ISOParameter
 \section{Fields}{
 
 \describe{
-\item{\code{valueType}}{}
+\item{\code{name}}{[\code{\link{character}}] name}
+
+\item{\code{direction}}{[\code{\link{ISOParameterDirection}}] direction}
+
+\item{\code{description}}{[\code{\link{character}}] description}
+
+\item{\code{optionality}}{[\code{\link{logical}}] parameter optionality}
+
+\item{\code{repeatability}}{[\code{\link{logical}}] parameter repeatability}
+
+\item{\code{valueType}}{[\code{\link{ISOTypeName}}|\code{\link{character}}] value type}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOParameter
+   This method is used to instantiate an \code{\link{ISOParameter}}
  }
  \item{\code{setName(name, attributeType, locales)}}{
-   Sets the parameter name (\code{character}) and attributeType (\code{ISOTypeName} 
+   Sets the parameter name (\code{character}) and attributeType (\code{\link{ISOTypeName}}
    or \code{character}). Locale names can be specified as \code{list} with the 
    \code{locales} argument.
  }
  \item{\code{setDirection(direction)}}{
-   Sets the direction, an object of class \code{ISOParameterDirection} or any
+   Sets the direction, an object of class \code{\link{ISOParameterDirection}} or any
    \code{character} value among \code{ISOParameterDirection$values()}
  }
  \item{\code{setDescription(description, locales)}}{
@@ -46,7 +56,7 @@ ISOParameter
    Set whether the parameter is repeatable (\code{TRUE}), \code{FALSE} otherwise
  }
  \item{\code{setValueType(valueType, locales)}}{
-   Sets the type of parameter value, object of class \code{ISOTypeName} or \code{character}
+   Sets the type of parameter value, object of class \code{\link{ISOTypeName}} or \code{character}
    Locale names can be specified as \code{list} with the \code{locales} argument.
  }
 }

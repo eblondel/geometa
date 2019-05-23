@@ -17,7 +17,9 @@ ISORangeDimension
 \section{Fields}{
 
 \describe{
-\item{\code{descriptor}}{}
+\item{\code{sequenceIdentifier}}{[\code{\link{ISOMemberName}}] sequence identifier}
+
+\item{\code{descriptor}}{[\code{\link{character}}] description}
 }}
 
 \section{Methods}{

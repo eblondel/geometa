@@ -7,8 +7,8 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFeatureOperation
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field signature
-#' @field formalDefinition
+#' @field signature [\code{\link{character}}]
+#' @field formalDefinition [\code{\link{character}}]
 #'
 #' @section Methods:
 #' \describe{

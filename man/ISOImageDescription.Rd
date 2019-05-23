@@ -17,25 +17,47 @@ ISOImageDescription
 \section{Fields}{
 
 \describe{
-\item{\code{lensDistortionInformationAvailability}}{}
+\item{\code{illuminationElevationAngle}}{[\code{\link{numeric}}]}
+
+\item{\code{illuminationAzimuthAngle}}{[\code{\link{numeric}}]}
+
+\item{\code{imagingCondition}}{[\code{\link{ISOImagingCondition}}]}
+
+\item{\code{imageQualityCode}}{[\code{\link{ISOMetaIdentifier}}]}
+
+\item{\code{cloudCoverPercentage}}{[\code{\link{numeric}}]}
+
+\item{\code{processingLevelCode}}{[\code{\link{ISOMetaidentifier}}]}
+
+\item{\code{compressionGenerationQuantity}}{[\code{\link{integer}}]}
+
+\item{\code{triangulationIndicator}}{[\code{\link{logical}}]}
+
+\item{\code{radiometricCalibrationDataAvailability}}{[\code{\link{logical}}]}
+
+\item{\code{cameraCalibrationInformationAvailability}}{[\code{\link{logical}}]}
+
+\item{\code{filmDistortionInformationAvailability}}{[\code{\link{logical}}]}
+
+\item{\code{lensDistortionInformationAvailability}}{[\code{\link{logical}}]}
 }}
 
-\section{Inherited methods from \code{ISOCoverageDescription}}{
+\section{Inherited methods from \code{\link{ISOCoverageDescription}}}{
 
 \describe{
  \item{\code{setAttributeDescription}}{
-   Sets the attribute description, as object of class \code{ISORecordType} or
+   Sets the attribute description, as object of class \code{\link{ISORecordType}} or
    \code{character}
  }
  \item{\code{setContentType(contentType)}}{
-   Sets the content Type, as object of class \code{ISOCoverageContentType} or
+   Sets the content Type, as object of class \code{\link{ISOCoverageContentType}} or
    any \code{character} value listed in \code{ISOCoverageContentType$values()}
  }
  \item{\code{addDimension(dimension)}}{
-   Adds a dimension, object of class (or subclass of) \code{ISORangeDimension}
+   Adds a dimension, object of class (or subclass of) \code{\link{ISORangeDimension}}
  }
  \item{\code{delDimension(dimension)}}{
-   Deletes a dimension, object of class (or subclass of) \code{ISORangeDimension}
+   Deletes a dimension, object of class (or subclass of) \code{\link{ISORangeDimension}}
  }
 }
 }
@@ -44,7 +66,7 @@ ISOImageDescription
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOImageDescription
+   This method is used to instantiate an \code{\link{ISOImageDescription}}
  }
  \item{\code{setIlluminationElevationAngle(illuminationElevationAngle)}}{
    Sets the illumination elevation angle
@@ -53,7 +75,7 @@ ISOImageDescription
    Sets the illumination azimuth angle
  }
  \item{\code{setImagingCondition(imagingCondition)}}{
-   Sets the imaging condition, object of class 'character' or 'ISOImagingCondition'
+   Sets the imaging condition, object of class 'character' or \code{\link{ISOImagingCondition}}
  }
  \item{\code{setImageQualityCode(code)}}{
    Sets an image quality code

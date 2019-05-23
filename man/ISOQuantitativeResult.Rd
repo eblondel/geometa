@@ -17,14 +17,20 @@ ISOQuantitativeResult
 \section{Fields}{
 
 \describe{
-\item{\code{result}}{}
+\item{\code{valueType}}{[\code{\link{ISORecordtype}}] record type}
+
+\item{\code{valueUnit}}{[\code{\link{GMLUnitDefinition}}] unit}
+
+\item{\code{errorStatistic}}{[\code{\link{character}}] error statistic}
+
+\item{\code{value}}{[\code{\link{ISORecord}}] record(s)}
 }}
 
 \section{Methods}{
 
 \describe{
- \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISOQuantitativeResult
+ \item{\code{new(xml)}}{
+   This method is used to instantiate an \code{\link{ISOQuantitativeResult}}
  }
  \item{\code{setValueType(valueType)}}{
    Sets value type

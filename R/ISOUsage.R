@@ -7,30 +7,30 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Usage
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field specificUsage
-#' @field usageDateTime
-#' @field userDeterminedLimitations
-#' @field userContactInfo
+#' @field specificUsage [\code{\link{character}}] a text giving a specific usage
+#' @field usageDateTime [\code{\link{POSIXt}}] the datetime of the usage
+#' @field userDeterminedLimitations [\code{\link{character}}] limitations determined by user
+#' @field userContactInfo [\code{\link{ISOResponsibleParty}}] the user contact
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOUsage
+#'    This method is used to instantiate an \code{\link{ISOUsage}}
 #'  }
 #'  \item{\code{setSpecificUsage(specificUsage, locales)}}{
-#'    Set the specific usage
+#'    Set the specific usage, as \code{\link{character}} object. 
 #'  }
 #'  \item{\code{setUsageDateTime(usageDateTime)}}{
-#'    Set the usage date time, object of class \code{POSIXt}
+#'    Set the usage date time, object of class \code{\link{POSIXt}}
 #'  }
 #'  \item{\code{setUserDeterminedLimitations(userDeterminedLimitations, locales)}}{
 #'    Set the limitations determined by user
 #'  }
 #'  \item{\code{addUserContact(contact)}}{
-#'    Adds user contact, object of class \code{ISOResponsibleParty}
+#'    Adds user contact, object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{delUserContact(contact)}}{
-#'    Deletes user contact, object of class \code{ISOResponsibleParty}
+#'    Deletes user contact, object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #' }
 #' 

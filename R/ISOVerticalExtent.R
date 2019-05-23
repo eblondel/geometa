@@ -7,19 +7,27 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO VerticalExtent
 #' @format \code{\link{R6Class}} object.
 #'
+#' @field minimalValue [\code{\link{numeric}}] the minimum value for the vertical extent
+#' @field maximalValue [\code{\link{numeric}}] the maximum value for the vertical extent
+#' @field unitOfMeasure [\code{\link{character}}] the unit of measure
+#' @field verticalCRS [\code{\link{GMLVerticalCRS}}] the vertical CRS
+#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOVerticalExtent
+#'    This method is used to instantiate an \code{\link{ISOVerticalExtent}}
 #'  }
 #'  \item{\code{setMinimumValue(minimumValue)}}{
-#'    Sets the minimum value
+#'    Sets the minimum value, object of class \code{\link{numeric}}
 #'  }
 #'  \item{\code{setMaximumValue(maximumValue)}}{
-#'    Sets the maximum value
+#'    Sets the maximum value, object of class \code{\link{numeric}}
 #'  }
 #'  \item{\code{setUnitOfMeasure(uom)}}{
-#'    Sets the unit of measure
+#'    Sets the unit of measure, object of class \code{\link{character}}
+#'  }
+#'  \item{\code{setVerticalCRS(verticalCRS)}}{
+#'    Sets the vertical CRS, object of class \code{\link{GMLVerticalCRS}}
 #'  }
 #' }
 #' 
@@ -47,7 +55,8 @@ ISOVerticalExtent <- R6Class("ISOVerticalExtent",
     maximumValue = NULL,
     #+ unitOfMeasure [1..1]: character
     unitOfMeasure = NULL,
-    #+ verticalCRS [1..1]: TODO
+    #+ verticalCRS [1..1]: GMLVerticalCRS
+    verticalCRS = NA,
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
@@ -65,6 +74,14 @@ ISOVerticalExtent <- R6Class("ISOVerticalExtent",
     #setUnitOfMeasure
     setUnitOfMeasure = function(uom){
       self$unitOfMeasure <- uom
+    },
+    
+    #setVerticalCRS
+    setVerticalCRS = function(verticalCRS){
+      if(!is(verticalCRS)){
+        stop("The argument should be an object of class 'GMLVerticalCRS'")
+      }
+      self$verticalCRS <- verticalCRS
     }
    
   )                                          

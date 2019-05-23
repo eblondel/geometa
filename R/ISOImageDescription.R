@@ -7,41 +7,41 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOImageDescription
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field illuminationElevationAngle
-#' @field illuminationAzimuthAngle
-#' @field imagingCondition
-#' @field imageQualityCode
-#' @field cloudCoverPercentage
-#' @field processingLevelCode
-#' @field compressionGenerationQuantity
-#' @field triangulationIndicator
-#' @field radiometricCalibrationDataAvailability
-#' @field cameraCalibrationInformationAvailability
-#' @field filmDistortionInformationAvailability
-#' @field lensDistortionInformationAvailability
+#' @field illuminationElevationAngle [\code{\link{numeric}}]
+#' @field illuminationAzimuthAngle [\code{\link{numeric}}]
+#' @field imagingCondition [\code{\link{ISOImagingCondition}}]
+#' @field imageQualityCode [\code{\link{ISOMetaIdentifier}}]
+#' @field cloudCoverPercentage [\code{\link{numeric}}]
+#' @field processingLevelCode [\code{\link{ISOMetaidentifier}}]
+#' @field compressionGenerationQuantity [\code{\link{integer}}]
+#' @field triangulationIndicator [\code{\link{logical}}]
+#' @field radiometricCalibrationDataAvailability [\code{\link{logical}}]
+#' @field cameraCalibrationInformationAvailability [\code{\link{logical}}]
+#' @field filmDistortionInformationAvailability [\code{\link{logical}}]
+#' @field lensDistortionInformationAvailability [\code{\link{logical}}]
 #' 
-#' @section Inherited methods from \code{ISOCoverageDescription}:
+#' @section Inherited methods from \code{\link{ISOCoverageDescription}}:
 #' \describe{
 #'  \item{\code{setAttributeDescription}}{
-#'    Sets the attribute description, as object of class \code{ISORecordType} or
+#'    Sets the attribute description, as object of class \code{\link{ISORecordType}} or
 #'    \code{character}
 #'  }
 #'  \item{\code{setContentType(contentType)}}{
-#'    Sets the content Type, as object of class \code{ISOCoverageContentType} or
+#'    Sets the content Type, as object of class \code{\link{ISOCoverageContentType}} or
 #'    any \code{character} value listed in \code{ISOCoverageContentType$values()}
 #'  }
 #'  \item{\code{addDimension(dimension)}}{
-#'    Adds a dimension, object of class (or subclass of) \code{ISORangeDimension}
+#'    Adds a dimension, object of class (or subclass of) \code{\link{ISORangeDimension}}
 #'  }
 #'  \item{\code{delDimension(dimension)}}{
-#'    Deletes a dimension, object of class (or subclass of) \code{ISORangeDimension}
+#'    Deletes a dimension, object of class (or subclass of) \code{\link{ISORangeDimension}}
 #'  }
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOImageDescription
+#'    This method is used to instantiate an \code{\link{ISOImageDescription}}
 #'  }
 #'  \item{\code{setIlluminationElevationAngle(illuminationElevationAngle)}}{
 #'    Sets the illumination elevation angle
@@ -50,7 +50,7 @@
 #'    Sets the illumination azimuth angle
 #'  }
 #'  \item{\code{setImagingCondition(imagingCondition)}}{
-#'    Sets the imaging condition, object of class 'character' or 'ISOImagingCondition'
+#'    Sets the imaging condition, object of class 'character' or \code{\link{ISOImagingCondition}}
 #'  }
 #'  \item{\code{setImageQualityCode(code)}}{
 #'    Sets an image quality code

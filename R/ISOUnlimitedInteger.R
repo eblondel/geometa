@@ -7,12 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO UnlimitedInteger
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
+#' @field value [\code{\link{integer}}|\code{\link{numeric}}] the integer
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOUnlimitedInteger
+#'    This method is used to instantiate an \code{\link{ISOUnlimitedInteger}}
 #'  }
 #' }
 #' 

@@ -18,7 +18,7 @@ ISOMimeFileType
 
 \describe{
  \item{\code{new(xml, type, name)}}{
-   This method is used to instantiate an ISOMimeFileType
+   This method is used to instantiate an \code{\link{ISOMimeFileType}}
  }
 }
 }

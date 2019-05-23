@@ -18,7 +18,7 @@ ISOMetaIdentifier
 
 \describe{
  \item{\code{new(xml, code)}}{
-   This method is used to instantiate an ISOMetaIdentifier
+   This method is used to instantiate an \code{\link{ISOMetaIdentifier}}
  }
 }
 }

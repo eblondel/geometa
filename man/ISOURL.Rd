@@ -17,7 +17,7 @@ ISOURL
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{value}}{[\code{\link{character}}] the url}
 }}
 
 \note{
@@ -27,7 +27,7 @@ Class used by geometa internal XML decoder/encoder
 
 \describe{
  \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISOURL
+   This method is used to instantiate an \code{\link{ISOURL}}
  }
  \item{\code{setUrl(url)}}{
    Set the url

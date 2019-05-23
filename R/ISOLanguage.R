@@ -7,12 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Language
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
-#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value, description)}}{
-#'    This method is used to instantiate an ISOLanguage
+#'    This method is used to instantiate an \code{\link{ISOLanguage}}
 #'  }
 #' }
 #' 

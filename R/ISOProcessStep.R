@@ -7,15 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ProcessStep
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field description
-#' @field rationale
-#' @field dateTime
-#' @field processor
+#' @field description [\code{\link{character}}] process step description
+#' @field rationale [\code{\link{character}}] rationale
+#' @field dateTime [\code{\link{POSIXt}}] dateTime of the process ste
+#' @field processor [\code{\link{ISOResponsibleParty}}] party responsible of the process step
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOProcessStep
+#'    This method is used to instantiate an \code{\link{ISOProcessStep}}
 #'  }
 #'  \item{\code{setDescription(description, locales)}}{
 #'    Sets the process step description. Locale names can be specified as \code{list}
@@ -29,13 +29,13 @@
 #'    Sets the date time
 #'  }
 #'  \item{addProcessor(processor)}{
-#'    Adds a processor (object of class \code{ISOResponsibleParty})
+#'    Adds a processor (object of class \code{\link{ISOResponsibleParty}})
 #'  }
 #'  \item{delProcessor(processor)}{
 #'   Deletes a processor
 #'  }
 #'  \item{addSource(source)}{
-#'    Adds a source (object of class \code{ISOSource})
+#'    Adds a source (object of class \code{\link{ISOSource}})
 #'  }
 #'  \item{delSource(source)}{
 #'   Deletes a source

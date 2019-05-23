@@ -17,23 +17,25 @@ ISOMetadataExtensionInformation
 \section{Fields}{
 
 \describe{
-\item{\code{extendedElementInformation}}{}
+\item{\code{extensionOnLineResource}}{[\code{\link{ISOOnlineResource}}] online resource}
+
+\item{\code{extendedElementInformation}}{[\code{\link{ISOExtendedElementInformation}}] extended element(s)}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOMetadataExtensionInformation
+   This method is used to instantiate an \code{\link{ISOMetadataExtensionInformation}}
  }
  \item{\code{setOnlineResource(onlineResource)}}{
-   Sets an online resource (object of class \code{ISOOnlineResource})
+   Sets an online resource (object of class \code{\link{ISOOnlineResource}})
  }
  \item{\code{addElement(element)}}{
-   Adds an element (object of class \code{ISOExtendedElementInformation})
+   Adds an element (object of class \code{\link{ISOExtendedElementInformation}})
  }
  \item{\code{delElement(element)}}{
-   Deletes an element (object of class \code{ISOExtendedElementInformation})
+   Deletes an element (object of class \code{\link{ISOExtendedElementInformation}})
  }
 }
 }

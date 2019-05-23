@@ -14,17 +14,11 @@ Object of \code{\link{R6Class}} for modelling an ISO Role
 \description{
 ISORole
 }
-\section{Fields}{
-
-\describe{
-\item{\code{value}}{}
-}}
-
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISORole
+   This method is used to instantiate an \code{\link{ISORole}}
  }
 }
 }

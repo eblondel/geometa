@@ -14,30 +14,44 @@ Object of \code{\link{R6Class}} for modelling an ISO LocaleContainer
 \description{
 ISOLocaleContainer
 }
+\section{Fields}{
+
+\describe{
+\item{\code{description}}{[\code{\link{character}}] description}
+
+\item{\code{locale}}{[\code{\link{ISOLocale}}] locale}
+
+\item{\code{date}}{[\code{\link{ISODate}}] date(s)}
+
+\item{\code{responsibleParty}}{[\code{\link{ISOResponsibleParty}}] responsible party}
+
+\item{\code{localisedString}}{[\code{\link{character}}] localised string(s)}
+}}
+
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOLocaleContainer
+   This method is used to instantiate an \code{\link{ISOLocaleContainer}}
  }
  \item{\code{setDescription(description, locales)}}{
    Sets the process step description. Locale names can be specified as \code{list}
    with the \code{locales} argument.
  }
  \item{\code{setLocale(locale)}}{
-   Sets the locale, object of class \code{ISOLocale}
+   Sets the locale, object of class \code{\link{ISOLocale}}
  }
  \item{\code{addDate(date)}}{
-   Add a date, object of class \code{ISODate}
+   Add a date, object of class \code{\link{ISODate}}
  }
  \item{\code{delDate(date)}}{
-   Deletes a date, object of class \code{ISODate}
+   Deletes a date, object of class \code{\link{ISODate}}
  }
  \item{\code{addResponsibleParty(responsibleParty)}}{
-   Add a responsible party, object of class \code{ISOResponsibleParty}
+   Add a responsible party, object of class \code{\link{ISOResponsibleParty}}
  }
  \item{\code{delResponsibleParty(responsibleParty)}}{
-   Deletes a responsible party, object of class \code{ISOResponsibleParty}
+   Deletes a responsible party, object of class \code{\link{ISOResponsibleParty}}
  }
  \item{\code{addLocalisedString(string)}}{
    Adds a localised string

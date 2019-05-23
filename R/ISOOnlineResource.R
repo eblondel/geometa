@@ -7,19 +7,19 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Online Resource
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field linkage
-#' @field protocol
-#' @field name
-#' @field description
-#' @field function
+#' @field linkage [\code{\link{ISOURL}}] linkage
+#' @field protocol [\code{\link{character}}] protocol
+#' @field name [\code{\link{character}}] name
+#' @field description [\code{\link{character}}] description
+#' @field function [\code{\link{ISOOnLineFunction}}] online function
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOOnlineResource
+#'    This method is used to instantiate an \code{\link{ISOOnlineResource}}
 #'  }
 #'  \item{\code{setLinkage(linkage)}}{
-#'    Sets the linkage (URL), an object of class \code{character} or \code{ISOURL}
+#'    Sets the linkage (URL), an object of class \code{character} or \code{\link{ISOURL}}
 #'  }
 #'  \item{\code{setProtocol(protocol, locales)}}{
 #'    Sets the protocol. Locale names can be specified as \code{list}
@@ -34,7 +34,8 @@
 #'    with the \code{locales} argument.
 #'  }
 #'  \item{\code{setOnLineFunction(onLineFunction)}}{
-#'    Sets the online function
+#'    Sets the online function, object of class \code{\link{ISOOnLineFunction}} 
+#'    or \code{character}
 #'  }
 #' }
 #' 

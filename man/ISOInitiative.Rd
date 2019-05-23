@@ -18,7 +18,7 @@ ISOInitiative
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOInitiative
+   This method is used to instantiate an \code{\link{ISOInitiative}}
  }
 }
 }

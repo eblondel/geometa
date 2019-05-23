@@ -17,7 +17,11 @@ ISOKeywords
 \section{Fields}{
 
 \describe{
-\item{\code{type}}{}
+\item{\code{keyword}}{[\code{\link{character}}] keyword(s)}
+
+\item{\code{type}}{[\code{\link{ISOKeywordType}}] keyword type}
+
+\item{\code{thesaurusName}}{[\code{\link{ISOCitation}}] thesaurus citation}
 }}
 
 \section{Methods}{

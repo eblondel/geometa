@@ -17,14 +17,16 @@ ISOGeometricObjects
 \section{Fields}{
 
 \describe{
-\item{\code{geometricObjectCount}}{}
+\item{\code{geometricObjectType}}{[\code{\link{ISOGeometricObjectType}}]}
+
+\item{\code{geometricObjectCount}}{[\code{\link{integer}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOGeometricObjects
+   This method is used to instantiate an \code{\link{ISOGeometricObjects}}
  }
  \item{\code{setGeometricObjectType(geometricObjectType)}}{
    Sets the type of geometric object

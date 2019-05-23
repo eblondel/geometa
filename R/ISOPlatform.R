@@ -10,35 +10,35 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOPlatform
+#'    This method is used to instantiate an \code{\link{ISOPlatform}}
 #'  }
 #' }
 #' 
-#' @section Inherited methods from \code{ISOAbstractAggregate}:
+#' @section Inherited methods from \code{\link{ISOAbstractAggregate}}:
 #' \describe{
 #'  \item{\code{addComposedOf(composedOf)}}{
-#'    Adds a dataset, object of class \code{ISODataSet}
+#'    Adds a dataset, object of class \code{\link{ISODataSet}}
 #'  }
 #'  \item{\code{delComposedOf(composedOf)}}{
-#'    Deletes a dataset, object of class \code{ISODataSet}
+#'    Deletes a dataset, object of class \code{\link{ISODataSet}}
 #'  }
-#'  \item{\code{addPlatformMetadata(metadata)}}{
-#'    Adds a Platform metadata, object of class \code{ISOMetadata}
+#'  \item{\code{addSeriesMetadata(metadata)}}{
+#'    Adds a series metadata, object of class \code{\link{ISOMetadata}}
 #'  }
-#'  \item{\code{delPlatformMetadata(metadata)}}{
-#'    Deletes a Platform metadata, object of class \code{ISOMetadata}
+#'  \item{\code{delSeriesMetadata(metadata)}}{
+#'    Deletes a series metadata, object of class \code{\link{ISOMetadata}}
 #'  }
 #'  \item{\code{addSubset(subset)}}{
-#'    Adds a subset, object that inherits from \code{ISOAbstractAggregate}
+#'    Adds a subset, object that inherits from \code{\link{ISOAbstractAggregate}}
 #'  }
 #'  \item{\code{delSubset(subset)}}{
-#'    Deletes a subset, object that inherits from \code{ISOAbstractAggregate}
+#'    Deletes a subset, object that inherits from \code{\link{ISOAbstractAggregate}}
 #'  }
 #'  \item{\code{addSuperset(superset)}}{
-#'    Adds a superset, object that inherits from \code{ISOAbstractAggregate}
+#'    Adds a superset, object that inherits from \code{\link{ISOAbstractAggregate}}
 #'  }
 #'  \item{\code{delSuperset(superset)}}{
-#'    Deletes a superset, object that inherits from \code{ISOAbstractAggregate}
+#'    Deletes a superset, object that inherits from \code{\link{ISOAbstractAggregate}}
 #'  }
 #' }
 #'    
