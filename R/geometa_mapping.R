@@ -760,24 +760,61 @@ registerMappings <- function(x){
 
 #setters
 
-setAs("ISOMetadata", "emld", function(from){
-  out_eml <- convert_metadata(from, from = "geometa", to = "eml", 
-                              mappings = .geometa.mappings$rules, verbose = FALSE)
-  out_emld <- emld::as_emld(out_eml)
-  return(out_emld)
-})
+#' Convert foreign metadata object to an \code{\link{ISOMetadata}} object
+#'
+#' Convert foreign metadata object to an \code{\link{ISOMetadata}} object
+#' @param x object to convert
+#' @param ... further arguments
+#' @name as_ISOMetadata
+#' @export
+as_ISOMetadata = function(x, ...) UseMethod("as_ISOMetadata")
 
-setAs("emld", "ISOMetadata", function(from){
+#' @name as_ISOMetadata
+#' @export
+as_ISOMetadata.emld <- function(from){
+  if(!requireNamespace("EML", quietly = TRUE))
+    stop("package EML required, please install it first")
+  if(!requireNamespace("emld", quietly = TRUE))
+    stop("package emld required, please install it first")
   in_from <- from
   class(in_from) <- "list"
   out_md <- convert_metadata(in_from, from = "eml", to = "geometa", 
                              mappings = .geometa.mappings$rules, verbose = FALSE)
   return(out_md)
-})
+}
 
-setAs("ncdf4", "ISOMetadata", function(from){
+#' @name as_ISOMetadata
+#' @export
+as_ISOMetadata.ncdf4 <- function(from){
+  if(!requireNamespace("ncdf4", quietly = TRUE))
+    stop("package ncdf4 required, please install it first")
   out_md <- convert_metadata(from, from = "eml", to = "geometa", 
                              mappings = .geometa.mappings$rules, verbose = FALSE)
   return(out_md)
-})
+}
 
+#' @name as
+#' @rdname coerce-methods
+#' @aliases coerce,emld,ISOMetadata-method
+setAs("emld", "ISOMetadata", function(from) as_ISOMetadata(from))
+
+
+#' @name as
+#' @rdname coerce-methods
+#' @aliases coerce,ncdf4,ISOMetadata-method
+setAs("ncdf4", "ISOMetadata", function(from) as_ISOMetadata(from))
+
+
+#' @name as
+#' @rdname coerce-methods
+#' @aliases coerce,ISOMetadata,emld-method
+setAs("ISOMetadata", "emld", function(from){
+  if(!requireNamespace("EML", quietly = TRUE))
+    stop("package EML required, please install it first")
+  if(!requireNamespace("emld", quietly = TRUE))
+    stop("package emld required, please install it first")
+  out_eml <- convert_metadata(from, from = "geometa", to = "eml", 
+                              mappings = .geometa.mappings$rules, verbose = FALSE)
+  out_emld <- emld::as_emld(out_eml)
+  return(out_emld)
+})
