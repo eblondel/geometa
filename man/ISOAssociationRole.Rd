@@ -45,7 +45,7 @@ ISOAssociationRole
    Sets \code{TRUE} if navigable, \code{FALSE} otherwise
  }
  \item{code{setRelation(relation)}}{
-   Sets an object of class \code{\link{ISOFeatureAssocation}} as relation
+   Sets an object of class \code{\link{ISOFeatureAssociation}} as relation
  }
  \item{\code{addRolePlayer(rolePlayer)}}{
    Adds a role player, object of class \code{\link{ISOFeatureType}}

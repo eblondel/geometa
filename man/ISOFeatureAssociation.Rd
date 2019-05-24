@@ -17,7 +17,7 @@ ISOFeatureAssociation
 \section{Fields}{
 
 \describe{
-\item{\code{roleName}}{}
+\item{\code{roleName}}{[\code{\link{ISOAssociationRole}}] association role(s)}
 }}
 
 \section{Methods}{

@@ -27,7 +27,7 @@ ISODataIdentification
 
 \item{\code{topicCategory}}{[\code{\link{ISOTopicCategory}}] topic categorie(s)}
 
-\item{\code{environmentDescription}}{[\code{\link{environmentDescription}}] environment description}
+\item{\code{environmentDescription}}{[\code{\link{character}}] environment description}
 
 \item{\code{extent}}{[\code{\link{ISOExtent}}] extent(s)}
 
@@ -141,7 +141,7 @@ ISODataIdentification
  \item{\code{addSpatialResolution(resolution)}}{
    Adds a spatial resolution, object of class \code{\link{ISOResolution}}
  }
- \item{\Code{delSpatialResolution(resolution)}}{
+ \item{\code{delSpatialResolution(resolution)}}{
    Deletes a spatial resolution, object of class\code{\link{ISOResolution}}
  }
  \item{\code{addLanguage(locale)}}{

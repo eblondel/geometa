@@ -376,11 +376,11 @@ get_pivot_source_object <- function(mapping, obj, verbose = FALSE){
       if(!is.environment(from_obj_list)) from_obj_list <- from_obj_list[!sapply(from_obj_list, is.null)]
       if(length(from_obj_list)==0) from_obj_list <- NULL
       if(!is.null(item$attrs$item)) from_obj_list <- list(from_obj_list[[item$attrs$item]])
-      if(length(from_obj_list)==1 | (item$islist & !is.null(item$attrs$element) & length(from_obj_list)>0)) from_obj_list <- from_obj_list[[1]] #if a list et présence d'un filtre
+      if(length(from_obj_list)==1 | (item$islist & !is.null(item$attrs$element) & length(from_obj_list)>0)) from_obj_list <- from_obj_list[[1]]
       from_obj <<- from_obj_list
     }
   }))
-  if(is.null(from_obj)) return(NULL) #the value we try to find doesn't exist, we stop here
+  if(is.null(from_obj)) return(NULL) #the value we try to find does not exist, we stop here
   return(from_obj)
 }
 

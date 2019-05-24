@@ -7,7 +7,7 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFeatureAssociation
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @field roleName
+#' @field roleName [\code{\link{ISOAssociationRole}}] association role(s)
 #'
 #' @section Methods:
 #' \describe{

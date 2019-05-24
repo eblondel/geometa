@@ -13,7 +13,7 @@
 #' @field evaluationMethodType [\code{\link{ISOEvaluationMethodType}}] measure evaluation method type
 #' @field evaluationMethodDescription [\code{\link{character}}] measure evaluation method description
 #' @field evaluationProcedure [\code{\link{character}}] evaluation procedure
-#' @field dateTime [\code{\link{ISODateTime}}] dateTime
+#' @field dateTime [\code{\link{POSIXt}}] dateTime
 #' @field result [\code{\link{ISOConformanceResult}}] conformance result(s)
 #'
 #' @section Methods:

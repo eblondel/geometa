@@ -29,7 +29,7 @@ ISODataQualityAbstractElement
 
 \item{\code{evaluationProcedure}}{[\code{\link{character}}] evaluation procedure}
 
-\item{\code{dateTime}}{[\code{\link{ISODateTime}}] dateTime}
+\item{\code{dateTime}}{[\code{\link{POSIXt}}] dateTime}
 
 \item{\code{result}}{[\code{\link{ISOConformanceResult}}] conformance result(s)}
 }}

@@ -18,7 +18,7 @@ test_that("encoding",{
   tp <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
   md$setTimePeriod(tp)
   spatialExtent <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  md$setSpatialExtent(spatialExtent)
+  md$addSpatialExtent(spatialExtent)
   
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")

@@ -12,7 +12,7 @@
 #' @field language [\code{\link{ISOLanguage}}] locale language(s)
 #' @field characterSet [\code{\link{ISOCharacterSet}}] character set
 #' @field topicCategory [\code{\link{ISOTopicCategory}}] topic categorie(s)
-#' @field environmentDescription [\code{\link{environmentDescription}}] environment description
+#' @field environmentDescription [\code{\link{character}}] environment description
 #' @field extent [\code{\link{ISOExtent}}] extent(s)
 #' @field supplementalInformation [\code{\link{character}}] supplemental information
 #' 
@@ -120,7 +120,7 @@
 #'  \item{\code{addSpatialResolution(resolution)}}{
 #'    Adds a spatial resolution, object of class \code{\link{ISOResolution}}
 #'  }
-#'  \item{\Code{delSpatialResolution(resolution)}}{
+#'  \item{\code{delSpatialResolution(resolution)}}{
 #'    Deletes a spatial resolution, object of class\code{\link{ISOResolution}}
 #'  }
 #'  \item{\code{addLanguage(locale)}}{
