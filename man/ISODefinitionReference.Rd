@@ -17,21 +17,23 @@ ISODefinitionReference
 \section{Fields}{
 
 \describe{
-\item{\code{definitionSource}}{}
+\item{\code{sourceIdentifier}}{[\code{\link{character}}] source identifier}
+
+\item{\code{definitionSource}}{[\code{\link{ISODefinitionSource}}] definition source}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISODefinitionReference
+   This method is used to instantiate an \code{\link{ISODefinitionReference}}
  }
  \item{\code{setSourceIdentifier(identifier)}}{
    Sets the source identifier as object of class \code{character}
  }
  \item{\code{setDefinitionSource(source)}}{
-   Sets the definition source as object of class \code{ISODefinitionSource} or
-   directly using a \code{ISOCitation}
+   Sets the definition source as object of class \code{\link{ISODefinitionSource}} or
+   directly using a \code{\link{ISOCitation}}
  }
 }
 }

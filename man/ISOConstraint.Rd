@@ -17,14 +17,14 @@ ISOConstraint
 \section{Fields}{
 
 \describe{
-\item{\code{formalDefinition}}{}
+\item{\code{description}}{[\code{\link{character}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, description)}}{
-   This method is used to instantiate an ISOConstraint
+   This method is used to instantiate an \code{\link{ISOConstraint}}
  }
  \item{\code{setDescription(description, locales)}}{
    Sets the description. Locale names can be specified 

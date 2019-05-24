@@ -7,12 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO UnlimitedInteger
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
+#' @field value [\code{\link{character}}] binary
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOBinary
+#'    This method is used to instantiate an \code{\link{ISOBinary}}
 #'  }
 #' }
 #' 

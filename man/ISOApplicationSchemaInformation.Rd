@@ -14,14 +14,32 @@ Object of \code{\link{R6Class}} for modelling an ISO ApplicationSchemaInformatio
 \description{
 ISOApplicationSchemaInformation
 }
+\section{Fields}{
+
+\describe{
+\item{\code{name}}{[\code{\link{ISOCitation}}]}
+
+\item{\code{schemaLanguage}}{[\code{\link{character}}]}
+
+\item{\code{constraintLanguage}}{[\code{\link{character}}]}
+
+\item{\code{schemaAscii}}{[\code{\link{character}}]}
+
+\item{\code{graphicsFile}}{[\code{\link{ISOBinary}}]}
+
+\item{\code{softwareDevelopmentFile}}{[\code{\link{ISOBinary}}]}
+
+\item{\code{softwareDevelopmentFileFormat}}{[\code{\link{character}}]}
+}}
+
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOApplicationSchemaInformation
+   This method is used to instantiate an \code{\link{ISOApplicationSchemaInformation}}
  }
  \item{\code{setName(name)}}{
-   Sets name, object of class \code{ISOCitation}
+   Sets name, object of class \code{\link{ISOCitation}}
  }
  \item{\code{setSchemaLanguage(schemaLanguage)}}{
    Sets schema language

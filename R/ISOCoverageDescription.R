@@ -7,9 +7,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOCoverageDescription
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field attributeDescription
-#' @field contentType
-#' @field dimension
+#' @field attributeDescription [\code{\link{ISORecordType}}] attribute description
+#' @field contentType [\code{\link{character}}] content type
+#' @field dimension [\code{\link{ISORangeDimension}}] range dimension(s)
 #' 
 #' @section Methods:
 #' \describe{

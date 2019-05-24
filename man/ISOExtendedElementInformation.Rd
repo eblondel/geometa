@@ -29,7 +29,7 @@ ISOExtendedElementInformation
 
 \item{\code{condition}}{[\code{\link{character}}]}
 
-\item{\code{dataType}}{[\code{\link{ISODataType}}]}
+\item{\code{dataType}}{[\code{\link{ISODateType}}]}
 
 \item{\code{maximumOccurrence}}{[\code{\link{character}}]}
 

@@ -17,7 +17,7 @@ ISOConceptualConsistency
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISOConceptualConsistency
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOConceptualConsistency
+   This method is used to instantiate an \code{\link{ISOConceptualConsistency}}
  }
 }
 }

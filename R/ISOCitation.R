@@ -7,18 +7,19 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Citation
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field title
-#' @field alternateTitle
-#' @field date
-#' @field edition
-#' @field editionDate
-#' @field identifier
-#' @field presentationForm
+#' @field title [\code{\link{character}}] title
+#' @field alternateTitle [\code{\link{character}}] alternateTitle
+#' @field date [\code{\link{ISODate}}] the citation date with date type
+#' @field edition [\code{\link{character}}] citation edition
+#' @field editionDate [\code{\link{Date}}|\code{\link{POSIXt}}] date or date/time of edition
+#' @field identifier [\code{\link{ISOMetaIdentifier}}] identifier
+#' @field citedResponsibleParty [\code{\link{ISOResponsibleParty}}] responsible party
+#' @field presentationForm [\code{\link{ISOPresentationForm}}] presentation form
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOCitation
+#'    This method is used to instantiate an \code{\link{ISOCitation}}
 #'  }
 #'  \item{\code{setTitle(title, locales)}}{
 #'    Sets the title. Locale names can be specified as \code{list}
@@ -37,17 +38,17 @@
 #'  \item{\code{setEditionDate(editionDate)}}{
 #'    Sets the edition date, either an ISODate object containing date and dateType or
 #'    a simple R date "POSIXct"/"POSIXt" object. For thesaurus citations, an ISODate
-#'    should be used while for the general citation of \code{ISODataIdentification},
+#'    should be used while for the general citation of \code{\link{ISODataIdentification}},
 #'    a simple R date should be used.
 #'  }
 #'  \item{\code{setIdentifier(identifier)}}{
-#'    Sets the identifier as object of class 'ISOMetaIdentifier'
+#'    Sets the identifier as object of class \code{\link{ISOMetaIdentifier}}
 #'  }
 #'  \item{\code{seCitedResponsibleParty(rp)}}{
-#'    Sets the cited responsiblep party
+#'    Sets the cited responsiblep party, object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{setPresentationForm}}{
-#'    Sets the presentation form
+#'    Sets the presentation form, object of class \code{\link{ISOPresentationForm}}
 #'  }
 #' }
 #' 

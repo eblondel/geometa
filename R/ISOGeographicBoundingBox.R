@@ -7,10 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO GeographicBoundingBox
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field westBoundLongitude [\code{\link{numeric}}]
-#' @field eastBoundLongitude [\code{\link{numeric}}]
-#' @field southBoundLatitude [\code{\link{numeric}}]
-#' @field northBoundLatitude [\code{\link{numeric}}]
+#' @field westBoundLongitude [\code{\link{numeric}}] west longitude
+#' @field eastBoundLongitude [\code{\link{numeric}}] east longitude
+#' @field southBoundLatitude [\code{\link{numeric}}] south latitude
+#' @field northBoundLatitude [\code{\link{numeric}}] north latitude
 #'
 #' @section Methods:
 #' \describe{

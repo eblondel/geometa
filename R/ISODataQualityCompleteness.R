@@ -9,13 +9,13 @@
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAbstractCompleteness
+#'    This method is used to instantiate an \code{\link{ISOAbstractCompleteness}}
 #'  }
 #' }
 #'   
@@ -44,13 +44,13 @@ ISOAbstractCompleteness <- R6Class("ISOAbstractCompleteness",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOCompletenessOmission
+#'    This method is used to instantiate an \code{\link{ISOCompletenessOmission}}
 #'  }
 #' }
 #' 
@@ -104,13 +104,13 @@ ISOCompletenessOmission <- R6Class("ISOCompletenessOmission",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOCompletenessCommission
+#'    This method is used to instantiate an \code{\link{ISOCompletenessCommission}}
 #'  }
 #' }
 #' 

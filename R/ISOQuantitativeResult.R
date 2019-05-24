@@ -7,7 +7,7 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO QuantitativeResult
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field valueType [\code{\link{ISORecordtype}}] record type
+#' @field valueType [\code{\link{ISORecordType}}] record type
 #' @field valueUnit [\code{\link{GMLUnitDefinition}}] unit
 #' @field errorStatistic [\code{\link{character}}] error statistic
 #' @field value [\code{\link{ISORecord}}] record(s)

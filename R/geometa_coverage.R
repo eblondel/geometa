@@ -22,6 +22,25 @@ setAs("URI", "character",
         }
       })
 
+#simplifyPath
+simplifyPath <- function (path) 
+{
+  els = strsplit(path, "/")[[1]]
+  GoOn = TRUE
+  els = els[els != "."]
+  while (GoOn && length(i <- which(els == ".."))) {
+    i = min(i)
+    if (length(i) == 1 && i == 1) 
+      break
+    if (all(els[seq(1, i)] == "..")) 
+      break
+    if (i == 2 && els[1] == "..") 
+      break
+    els = els[-c(i, i - 1L)]
+  }
+  paste(els, collapse = "/")
+}
+
 #get_schemalocation_url
 get_schemalocation_url <- function(schemaLocation, baseURL){
   sep <- "/"; simplify <- TRUE;
@@ -53,7 +72,7 @@ get_schemalocation_url <- function(schemaLocation, baseURL){
     b$path = sprintf("%s%s%s", bdir, sep, schemaLocation)
     # handle .. in the path and try to collapse these.
     if(simplify && grepl("..", b$path, fixed = TRUE))
-      b$path = XML:::simplifyPath(b$path)
+      b$path = simplifyPath(b$path)
     
     return(as(b, "character"))         
   } else

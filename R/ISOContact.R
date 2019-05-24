@@ -7,9 +7,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Contact
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field phone
-#' @field address
-#' @field onlineResource
+#' @field phone [\code{\link{ISOTelephone}}] phone
+#' @field address [\code{\link{ISOAddress}}] address
+#' @field onlineResource [\code{\link{ISOOnlineResource}}] online resource
 #'
 #' @section Methods:
 #' \describe{

@@ -17,7 +17,7 @@ ISOTemporalValidity
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISOTemporalValidity
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOTemporalValidity
+   This method is used to instantiate an \code{\link{ISOTemporalValidity}}
  }
 }
 }

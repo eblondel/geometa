@@ -9,13 +9,13 @@
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAbstractLogicalConsistency
+#'    This method is used to instantiate an \code{\link{ISOAbstractLogicalConsistency}}
 #'  }
 #' }
 #'   
@@ -44,13 +44,13 @@ ISOAbstractLogicalConsistency <- R6Class("ISOAbstractLogicalConsistency",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOTopologicalConsistency
+#'    This method is used to instantiate an \code{\link{ISOTopologicalConsistency}}
 #'  }
 #' }
 #' 
@@ -104,13 +104,13 @@ ISOTopologicalConsistency <- R6Class("ISOTopologicalConsistency",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOFormatConsistency
+#'    This method is used to instantiate an \code{\link{ISOFormatConsistency}}
 #'  }
 #' }
 #' 
@@ -164,13 +164,13 @@ ISOFormatConsistency <- R6Class("ISOFormatConsistency",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISODomainConsistency
+#'    This method is used to instantiate an \code{\link{ISODomainConsistency}}
 #'  }
 #' }
 #' 
@@ -224,13 +224,13 @@ ISODomainConsistency <- R6Class("ISODomainConsistency",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOConceptualConsistency
+#'    This method is used to instantiate an \code{\link{ISOConceptualConsistency}}
 #'  }
 #' }
 #' 

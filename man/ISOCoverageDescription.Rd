@@ -17,7 +17,11 @@ ISOCoverageDescription
 \section{Fields}{
 
 \describe{
-\item{\code{dimension}}{}
+\item{\code{attributeDescription}}{[\code{\link{ISORecordType}}] attribute description}
+
+\item{\code{contentType}}{[\code{\link{character}}] content type}
+
+\item{\code{dimension}}{[\code{\link{ISORangeDimension}}] range dimension(s)}
 }}
 
 \section{Methods}{

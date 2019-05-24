@@ -17,7 +17,7 @@ ISOTemporalConsistency
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISOTemporalConsistency
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOTemporalConsistency
+   This method is used to instantiate an \code{\link{ISOTemporalConsistency}}
  }
 }
 }

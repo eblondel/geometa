@@ -17,7 +17,7 @@ ISOAbstractLogicalConsistency
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISOAbstractLogicalConsistency
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOAbstractLogicalConsistency
+   This method is used to instantiate an \code{\link{ISOAbstractLogicalConsistency}}
  }
 }
 }

@@ -7,17 +7,17 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO codelist
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field id
-#' @field refFile
-#' @field codeSpace
-#' @field identifier
-#' @field description
-#' @field entries
+#' @field id [\code{\link{character}}] codelist id
+#' @field refFile [\code{\link{character}}] reference XML file
+#' @field codeSpace [\code{\link{character}}] codelist codeSpace
+#' @field identifier [\code{\link{character}}] codelist identifier
+#' @field description [\code{\link{character}}] codelist description
+#' @field entries [\code{\link{data.frame}}] the list of codelist entries
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(refFile, id)}}{
-#'    This method is used to instantiate an ISOCodelist
+#'    This method is used to instantiate an \code{\link{ISOCodelist}}
 #'  }
 #' }
 #' 

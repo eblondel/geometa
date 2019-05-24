@@ -17,7 +17,7 @@ ISOAbsoluteExternalPositionalAccuracy
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISOAbsoluteExternalPositionalAccuracy
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOAbsoluteExternalPositionalAccuracy
+   This method is used to instantiate an \code{\link{ISOAbsoluteExternalPositionalAccuracy}}
  }
 }
 }

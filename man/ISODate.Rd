@@ -17,14 +17,16 @@ ISODate
 \section{Fields}{
 
 \describe{
-\item{\code{dateType}}{}
+\item{\code{date}}{[\code{\link{ISOBaseDate}}] the date}
+
+\item{\code{dateType}}{[\code{\link{ISODateType}}] the date type}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISODate
+   This method is used to instantiate an \code{\link{ISODate}}
  }
  \item{\code{setDate(date)}}{
    Sets the date

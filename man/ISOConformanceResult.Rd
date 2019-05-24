@@ -17,17 +17,21 @@ ISOConformanceResult
 \section{Fields}{
 
 \describe{
-\item{\code{result}}{}
+\item{\code{specification}}{[\code{\link{ISOCitation}}] specification citation}
+
+\item{\code{explanation}}{[\code{\link{character}}] explanation about conformance}
+
+\item{\code{pass}}{[\code{\link{logical}}] if the conformance is passing or not}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISOConformanceResult
+   This method is used to instantiate an \code{\link{ISOConformanceResult}}
  }
  \item{\code{setSpecification(specification)}}{
-   Sets the specification (an ISOCitation object)
+   Sets the specification (an \code{\link{ISOCitation}} object)
  }
  \item{\code{setExplanation(explanation, locales)}}{
    Sets the explanation. Locale names can be specified as \code{list}

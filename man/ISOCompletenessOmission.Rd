@@ -17,7 +17,7 @@ ISOCompletenessOmission
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISOCompletenessOmission
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOCompletenessOmission
+   This method is used to instantiate an \code{\link{ISOCompletenessOmission}}
  }
 }
 }

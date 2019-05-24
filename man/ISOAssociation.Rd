@@ -18,7 +18,7 @@ ISOAssociation
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOAssociation
+   This method is used to instantiate an \code{\link{ISOAssociation}}
  }
 }
 }

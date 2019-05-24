@@ -10,7 +10,7 @@
 #' @field citation [\code{\link{ISOCitation}}] citation
 #' @field abstract [\code{\link{character}}] abstract
 #' @field purpose [\code{\link{character}}] purpose
-#' @field credit [\code{\link{credit}}] credit
+#' @field credit [\code{\link{character}}] credit
 #' @field status [\code{\link{ISOStatus}}] status
 #' @field pointOfContact [\code{\link{ISOResponsibleParty}}] point(s) of contact
 #' @field resourceMaintenance [\code{\link{ISOMaintenanceInformation}}] maintenance information

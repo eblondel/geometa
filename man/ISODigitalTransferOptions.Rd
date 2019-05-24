@@ -17,14 +17,18 @@ ISODigitalTransferOptions
 \section{Fields}{
 
 \describe{
-\item{\code{onLine}}{}
+\item{\code{unitsOfDistribution}}{[\code{\link{character}}] units of distribution}
+
+\item{\code{transferSize}}{[\code{\link{character}}] transfer size}
+
+\item{\code{onLine}}{[\code{\link{ISOOnlineResource}}] online resource(s)}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISODigitalTransferOptions
+   This method is used to instantiate an \code{\link{ISODigitalTransferOptions}}
  }
  \item{\code{setUnitsOfDistribution(unit)}}{
    Sets the units of distribution
@@ -33,13 +37,13 @@ ISODigitalTransferOptions
    Sets the transfer Size
  }
  \item{\code{addOnlineResource(onlineResource)}}{
-   Adds an object of class \code{ISOOnlineResource}
+   Adds an object of class \code{\link{ISOOnlineResource}}
  }
  \item{\code{setOnlineResource(onlineResource)}}{
-   Sets an object of class \code{ISOOnlineResource}
+   Sets an object of class \code{\link{ISOOnlineResource}}
  }
  \item{\code{delOnlineResource(onlineResource)}}{
-   Deletes an object of class \code{ISOOnlineResource}
+   Deletes an object of class \code{\link{ISOOnlineResource}}
  }
 }
 }

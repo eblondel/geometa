@@ -17,17 +17,25 @@ ISOAssociationRole
 \section{Fields}{
 
 \describe{
-\item{\code{rolePlayer}}{}
+\item{\code{type}}{[\code{\link{ISORoleType}}]}
+
+\item{\code{isOrdered}}{[\code{\link{logical}}]}
+
+\item{\code{isNavigable}}{[\code{\link{logical}}]}
+
+\item{\code{relation}}{[\code{\link{ISOFeatureAssociation}}]}
+
+\item{\code{rolePlayer}}{[\code{\link{ISOFeatureType}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOAssociationRole
+   This method is used to instantiate an \code{\link{ISOAssociationRole}}
  }
  \item{\code{setRoleType(roleType)}}{
-   Sets the role type, object of class \code{ISORoleType} or any \code{character}
+   Sets the role type, object of class \code{\link{ISORoleType}} or any \code{character}
    value among \code{ISORoleType$values()}.
  }
  \item{\code{setIsOrdered(isOrdered)}}{
@@ -37,13 +45,13 @@ ISOAssociationRole
    Sets \code{TRUE} if navigable, \code{FALSE} otherwise
  }
  \item{code{setRelation(relation)}}{
-   Sets an object of class \code{ISOFeatureAssocation} as relation
+   Sets an object of class \code{\link{ISOFeatureAssocation}} as relation
  }
  \item{\code{addRolePlayer(rolePlayer)}}{
-   Adds a role player, object of class \code{ISOFeatureType}
+   Adds a role player, object of class \code{\link{ISOFeatureType}}
  }
  \item{\code{delRolePlayer(rolePlayer)}}{
-   Deletes a role player, object of class \code{ISOFeatureType}
+   Deletes a role player, object of class \code{\link{ISOFeatureType}}
  }
 }
 }

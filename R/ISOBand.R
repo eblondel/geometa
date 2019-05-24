@@ -7,19 +7,19 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOBand
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field maxValue
-#' @field minValue
-#' @field units
-#' @field peakResponse
-#' @field bitsPerValue
-#' @field toneGradation
-#' @field scaleFactor
-#' @field offset
+#' @field maxValue [\code{\link{numeric}}]
+#' @field minValue [\code{\link{numeric}}]
+#' @field units [\code{\link{GMLUnitDefinition}}]
+#' @field peakResponse [\code{\link{numeric}}]
+#' @field bitsPerValue [\code{\link{integer}}]
+#' @field toneGradation [\code{\link{integer}}]
+#' @field scaleFactor [\code{\link{numeric}}]
+#' @field offset [\code{\link{numeric}}]
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOBand
+#'    This method is used to instantiate an \code{\link{ISOBand}}
 #'  }
 #'  \item{\code{setMaxValue(maxValue)}}{
 #'    Sets the maximum value
@@ -28,7 +28,7 @@
 #'    Sets the minimum value
 #'  }
 #'  \item{\code{setUnits(units)}}{
-#'    Sets the unit, object of class \code{GMLUnitDefinition}
+#'    Sets the unit, object of class \code{\link{GMLUnitDefinition}}
 #'  }
 #'  \item{\code{setPeakResponse(peakResponse)}}{
 #'    Sets the peak response
@@ -84,7 +84,7 @@ ISOBand <- R6Class("ISOBand",
      maxValue = NULL,
      #+ minValue [0..1] : numeric
      minValue = NULL,
-     #+ units [0..1] : ISOUomLength
+     #+ units [0..1] : GMLUnitDefinition
      units = NULL,
      #+ peakResponse [0..1] : numeric
      peakResponse = NULL,

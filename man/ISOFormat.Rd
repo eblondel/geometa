@@ -17,17 +17,17 @@ ISOFormat
 \section{Fields}{
 
 \describe{
-\item{\code{name}}{[\code{\link{character}}]}
+\item{\code{name}}{[\code{\link{character}}] format name}
 
-\item{\code{version}}{[\code{\link{character}}]}
+\item{\code{version}}{[\code{\link{character}}] format version}
 
-\item{\code{amendmentNumber}}{[\code{\link{character}}]}
+\item{\code{amendmentNumber}}{[\code{\link{character}}] format amendment number}
 
-\item{\code{specification}}{[\code{\link{character}}]}
+\item{\code{specification}}{[\code{\link{character}}] format specification}
 
-\item{\code{fileDecompressionTechnique}}{[\code{\link{character}}]}
+\item{\code{fileDecompressionTechnique}}{[\code{\link{character}}] technique for file decompression}
 
-\item{\code{formatDistributor}}{[\code{\link{ISODistributor}}]}
+\item{\code{formatDistributor}}{[\code{\link{ISODistributor}}] format distributor}
 }}
 
 \section{Methods}{

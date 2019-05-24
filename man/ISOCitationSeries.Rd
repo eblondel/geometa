@@ -17,7 +17,11 @@ ISOCitationSeries
 \section{Fields}{
 
 \describe{
-\item{\code{page}}{}
+\item{\code{name}}{[\code{\link{character}}] citation series name}
+
+\item{\code{issueIdentification}}{[\code{\link{character}}] issue identification number}
+
+\item{\code{page}}{[\code{\link{character}}] page}
 }}
 
 \section{Methods}{

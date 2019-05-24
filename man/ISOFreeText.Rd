@@ -17,7 +17,7 @@ ISOFreeText
 \section{Fields}{
 
 \describe{
-\item{\code{textGroup}}{[\code{\link{ISOLocalisedCharacterString}}]}
+\item{\code{textGroup}}{[\code{\link{ISOLocalisedCharacterString}}] localised string(s)}
 }}
 
 \section{Methods}{

@@ -7,15 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISODefinitionSource
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field source
+#' @field source [\code{\link{ISOCitation}}] source citation
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, source)}}{
-#'    This method is used to instantiate an ISODefinitionSource
+#'    This method is used to instantiate an \code{\link{ISODefinitionSource}}
 #'  }
 #'  \item{\code{setSource(source)}}{
-#'    Sets the source as object of class \code{ISOCitation}
+#'    Sets the source as object of class \code{\link{ISOCitation}}
 #'  }
 #' }
 #' 

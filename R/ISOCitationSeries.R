@@ -7,9 +7,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOCitationSeries
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field name
-#' @field issueIdentification
-#' @field page
+#' @field name [\code{\link{character}}] citation series name
+#' @field issueIdentification [\code{\link{character}}] issue identification number
+#' @field page [\code{\link{character}}] page
 #'
 #' @section Methods:
 #' \describe{

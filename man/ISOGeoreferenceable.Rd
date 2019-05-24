@@ -25,7 +25,7 @@ ISOGeoreferenceable
 
 \item{\code{georeferencedParameters}}{[\code{\link{ISORecord}}]}
 
-\item{\code{parameterCitation}}{[\code{\link{ISOcitation}}]}
+\item{\code{parameterCitation}}{[\code{\link{ISOCitation}}]}
 }}
 
 \section{Inherited Methods}{

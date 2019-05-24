@@ -7,14 +7,14 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISODataQualityAbstractElement
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field nameOfMeasure
-#' @field measureIdentification
-#' @field measureDescription
-#' @field evaluationMethodType
-#' @field evaluationMethodDescription
-#' @field evaluationProcedure
-#' @field dateTime
-#' @field result
+#' @field nameOfMeasure [\code{\link{character}}] measure name
+#' @field measureIdentification [\code{\link{ISOMetaIdentifier}}] measure identification
+#' @field measureDescription [\code{\link{character}}] measure description
+#' @field evaluationMethodType [\code{\link{ISOEvaluationMethodType}}] measure evaluation method type
+#' @field evaluationMethodDescription [\code{\link{character}}] measure evaluation method description
+#' @field evaluationProcedure [\code{\link{character}}] evaluation procedure
+#' @field dateTime [\code{\link{ISODateTime}}] dateTime
+#' @field result [\code{\link{ISOConformanceResult}}] conformance result(s)
 #'
 #' @section Methods:
 #' \describe{

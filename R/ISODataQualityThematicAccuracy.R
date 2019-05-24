@@ -9,13 +9,13 @@
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAbstractThematicAccuracy
+#'    This method is used to instantiate an \code{\link{ISOAbstractThematicAccuracy}}
 #'  }
 #' }
 #'   
@@ -44,13 +44,13 @@ ISOAbstractThematicAccuracy <- R6Class("ISOAbstractThematicAccuracy",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOQuantitativeAttributeAccuracy
+#'    This method is used to instantiate an \code{\link{ISOQuantitativeAttributeAccuracy}}
 #'  }
 #' }
 #' 
@@ -104,13 +104,13 @@ ISOQuantitativeAttributeAccuracy <- R6Class("ISOQuantitativeAttributeAccuracy",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISONonQuantitativeAttributeAccuracy
+#'    This method is used to instantiate an \code{\link{ISONonQuantitativeAttributeAccuracy}}
 #'  }
 #' }
 #' 
@@ -164,13 +164,13 @@ ISONonQuantitativeAttributeAccuracy <- R6Class("ISONonQuantitativeAttributeAccur
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOThematicClassificationCorrectness
+#'    This method is used to instantiate an \code{\link{ISOThematicClassificationCorrectness}}
 #'  }
 #' }
 #' 

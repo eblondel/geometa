@@ -17,13 +17,13 @@ ISOGeographicBoundingBox
 \section{Fields}{
 
 \describe{
-\item{\code{westBoundLongitude}}{[\code{\link{numeric}}]}
+\item{\code{westBoundLongitude}}{[\code{\link{numeric}}] west longitude}
 
-\item{\code{eastBoundLongitude}}{[\code{\link{numeric}}]}
+\item{\code{eastBoundLongitude}}{[\code{\link{numeric}}] east longitude}
 
-\item{\code{southBoundLatitude}}{[\code{\link{numeric}}]}
+\item{\code{southBoundLatitude}}{[\code{\link{numeric}}] south latitude}
 
-\item{\code{northBoundLatitude}}{[\code{\link{numeric}}]}
+\item{\code{northBoundLatitude}}{[\code{\link{numeric}}] north latitude}
 }}
 
 \section{Methods}{

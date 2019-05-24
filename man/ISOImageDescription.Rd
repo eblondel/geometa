@@ -27,7 +27,7 @@ ISOImageDescription
 
 \item{\code{cloudCoverPercentage}}{[\code{\link{numeric}}]}
 
-\item{\code{processingLevelCode}}{[\code{\link{ISOMetaidentifier}}]}
+\item{\code{processingLevelCode}}{[\code{\link{ISOMetaIdentifier}}]}
 
 \item{\code{compressionGenerationQuantity}}{[\code{\link{integer}}]}
 

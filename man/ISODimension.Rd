@@ -17,14 +17,18 @@ ISODimension
 \section{Fields}{
 
 \describe{
-\item{\code{resolution}}{}
+\item{\code{dimensionName}}{[\code{\link{ISODimensionNameType}}] dimension name}
+
+\item{\code{dimensionSize}}{[\code{\link{integer}}] dimension size}
+
+\item{\code{resolution}}{[\code{\link{ISOMeasure}}] resolution}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISODimension
+   This method is used to instantiate an \code{\link{ISODimension}}
  }
  \item{\code{setName(name)}}{
    Sets the dimension name. Object of class \code{ISODimensionNameType} or
@@ -34,8 +38,8 @@ ISODimension
    Sets the dimension size, object of class \code{integer}
  }
  \item{\code{setResolution(resolution)}}{
-  Sets the resolution ie. object of class \code{ISOMeasure} or any subclass
-  \code{ISOLength}, \code{ISODistance}, \code{ISOAngle}, \code{ISOScale}
+  Sets the resolution ie. object of class \code{\link{ISOMeasure}} or any subclass
+  \code{\link{ISOLength}}, \code{\link{ISODistance}}, \code{\link{ISOAngle}}, \code{\link{ISOScale}}
  }
 }
 }

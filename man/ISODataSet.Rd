@@ -14,23 +14,31 @@ Object of \code{\link{R6Class}} for modelling an ISODataSet
 \description{
 ISODataSet
 }
+\section{Fields}{
+
+\describe{
+\item{\code{has}}{[\code{\link{ISOMetadata}}] associated metadata}
+
+\item{\code{partOf}}{[\code{\link{ISOAbstractAggregate}}] part of other aggregate(s)}
+}}
+
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISODataSet
+   This method is used to instantiate an \code{\link{ISODataSet}}
  }
  \item{\code{addHas(metadata)}}{
-   Adds a metadata, object of class \code{ISOMetadata}
+   Adds a metadata, object of class \\code{\link{ISOMetadata}}
  }
  \item{\code{delHas(metadata)}}{
-   Deletes a metadata, object of class \code{ISOMetadata}
+   Deletes a metadata, object of class \code{\link{ISOMetadata}}
  }
  \item{\code{addPartOf(partOf)}}{
-   Adds a partOf element, object that inherits from \code{ISOAbstractAggregate}
+   Adds a partOf element, object that inherits from \code{\link{ISOAbstractAggregate}}
  }
  \item{\code{delPartOf(partOf)}}{
-   Deletes a partOf element, object that inherits from \code{ISOAbstractAggregate}
+   Deletes a partOf element, object that inherits from \code{\link{ISOAbstractAggregate}}
  }
 }
 }

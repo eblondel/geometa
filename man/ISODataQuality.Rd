@@ -17,14 +17,18 @@ ISODataQuality
 \section{Fields}{
 
 \describe{
-\item{\code{lineage}}{}
+\item{\code{scope}}{[\code{\link{ISOScope}}] scope}
+
+\item{\code{report}}{[\code{\link{ISODomainConsistency}}] report}
+
+\item{\code{lineage}}{[\code{\link{ISOLineage}}] lineage information}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISODataQuality
+   This method is used to instantiate an \code{\link{ISODataQuality}}
  }
  \item{\code{setScope(scope)}}{
    Sets the scope

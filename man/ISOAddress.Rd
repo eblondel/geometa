@@ -17,14 +17,22 @@ ISOAddress
 \section{Fields}{
 
 \describe{
-\item{\code{electronicMailAddress}}{}
+\item{\code{deliveryPoint}}{[\code{\link{character}}]}
+
+\item{\code{city}}{[\code{\link{character}}]}
+
+\item{\code{postalCode}}{[\code{\link{character}}]}
+
+\item{\code{country}}{[\code{\link{ISOCountry}}]}
+
+\item{\code{electronicMailAddress}}{[\code{\link{character}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOAddress
+   This method is used to instantiate an \code{\link{ISOAddress}}
  }
  \item{\code{setDeliveryPoint(deliveryPoint, locales)}}{
    Sets the delivery point. Locale names can be specified as \code{list}

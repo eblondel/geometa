@@ -10,7 +10,7 @@
 #' @section Abstract Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOContentInformation
+#'    This method is used to instantiate an \code{\link{ISOContentInformation}}
 #'  }
 #' }
 #' 

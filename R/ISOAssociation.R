@@ -6,11 +6,11 @@
 #' @keywords ISO association
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAssociation
 #' @format \code{\link{R6Class}} object.
-#'
+#' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAssociation
+#'    This method is used to instantiate an \code{\link{ISOAssociation}}
 #'  }
 #' }
 #' 
@@ -26,10 +26,6 @@ ISOAssociation <- R6Class("ISOAssociation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    specificUsage = NULL,
-    usageDateTime = NULL,
-    userDeterminedLimitations = NULL,
-    userContactInfo = list(),
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     }

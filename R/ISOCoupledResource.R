@@ -7,13 +7,13 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOCoupledResource
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field operationName
-#' @field identifier
+#' @field operationName [\code{\link{character}}] operation name
+#' @field identifier [\code{\link{character}}] identifier
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOCoupledResource
+#'    This method is used to instantiate an \code{\link{ISOCoupledResource}}
 #'  }
 #'  \item{\code{setOperationName(operationName, locales)}}{
 #'    Set the operation name. Locale names can be specified 

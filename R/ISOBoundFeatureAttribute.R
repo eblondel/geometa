@@ -7,15 +7,15 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOBoundFeatureAttribute
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field valueType
+#' @field valueType [\code{\link{ISOTypeName}}] value type
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an ISOBoundFeatureAttribute
+#'    This method is used to instantiate an \code{\link{ISOBoundFeatureAttribute}}
 #'  }
 #'  \item{\code{setTypeName(typeName)}}{
-#'    Set typeName, object of class \code{ISOTypeName} or \code{character}
+#'    Set typeName, object of class \code{\link{ISOTypeName}} or \code{character}
 #'  }
 #' }
 #'  

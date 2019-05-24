@@ -17,20 +17,26 @@ ISOAggregateInformation
 \section{Fields}{
 
 \describe{
-\item{\code{initiativeType}}{}
+\item{\code{aggregateDataSetName}}{[\code{\link{ISOCitation}}]}
+
+\item{\code{aggregateDataSetIdentifier}}{[\code{\link{ISOMetaIdentifier}}]}
+
+\item{\code{associationType}}{[\code{\link{ISOAssociationType}}]}
+
+\item{\code{initiativeType}}{[\code{\link{ISOInitiativeType}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOAggregateInformation
+   This method is used to instantiate an \code{\link{ISOAggregateInformation}}
  }
  \item{\code{setAggregateDataSetName(datasetName)}}{
-   Sets aggregate dataset name, as an object of class \code{ISOCitation}
+   Sets aggregate dataset name, as an object of class \code{\link{ISOCitation}}
  }
  \item{\code{setAggregateDataSetIdentifier(datasetIdentifier)}}{
-   Sets aggregate dataset identifier, as an object of class \code{ISOMetaIdentifier}
+   Sets aggregate dataset identifier, as an object of class \code{\link{ISOMetaIdentifier}}
  }
  \item{\code{setAssociationType(associationType)}}{
    Sets the association type

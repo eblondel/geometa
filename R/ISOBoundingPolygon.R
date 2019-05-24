@@ -7,12 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO BoundingPolygon
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field polygon
+#' @field polygon [\code{\link{GMLAbstractGeometry}}] a (list of) geometrie(s)
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, sfg)}}{
-#'    This method is used to instantiate an ISOBoundingPolygon
+#'    This method is used to instantiate an \code{\link{ISOBoundingPolygon}}
 #'  }
 #' }
 #' 

@@ -7,14 +7,14 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO DataQuality
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field scope
-#' @field report
-#' @field lineage
+#' @field scope [\code{\link{ISOScope}}] scope
+#' @field report [\code{\link{ISODomainConsistency}}] report
+#' @field lineage [\code{\link{ISOLineage}}] lineage information
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISODataQuality
+#'    This method is used to instantiate an \code{\link{ISODataQuality}}
 #'  }
 #'  \item{\code{setScope(scope)}}{
 #'    Sets the scope

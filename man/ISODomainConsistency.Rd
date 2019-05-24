@@ -17,7 +17,7 @@ ISODomainConsistency
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISODomainConsistency
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISODomainConsistency
+   This method is used to instantiate an \code{\link{ISODomainConsistency}}
  }
 }
 }

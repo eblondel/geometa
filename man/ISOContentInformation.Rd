@@ -21,7 +21,7 @@ Abstract class. Used internally by \pkg{geometa}
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOContentInformation
+   This method is used to instantiate an \code{\link{ISOContentInformation}}
  }
 }
 }

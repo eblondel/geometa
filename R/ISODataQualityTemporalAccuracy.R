@@ -9,13 +9,13 @@
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAbstractTemporalAccuracy
+#'    This method is used to instantiate an \code{\link{ISOAbstractTemporalAccuracy}}
 #'  }
 #' }
 #'   
@@ -44,13 +44,13 @@ ISOAbstractTemporalAccuracy <- R6Class("ISOAbstractTemporalAccuracy",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOTemporalValidity
+#'    This method is used to instantiate an \code{\link{ISOTemporalValidity}}
 #'  }
 #' }
 #' 
@@ -104,13 +104,13 @@ ISOTemporalValidity <- R6Class("ISOTemporalValidity",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOTemporalConsistency
+#'    This method is used to instantiate an \code{\link{ISOTemporalConsistency}}
 #'  }
 #' }
 #' 
@@ -164,13 +164,13 @@ ISOTemporalConsistency <- R6Class("ISOTemporalConsistency",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAccuracyOfATimeMeasurement
+#'    This method is used to instantiate an \code{\link{ISOAccuracyOfATimeMeasurement}}
 #'  }
 #' }
 #' 

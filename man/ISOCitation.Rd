@@ -17,14 +17,28 @@ ISOCitation
 \section{Fields}{
 
 \describe{
-\item{\code{presentationForm}}{}
+\item{\code{title}}{[\code{\link{character}}] title}
+
+\item{\code{alternateTitle}}{[\code{\link{character}}] alternateTitle}
+
+\item{\code{date}}{[\code{\link{ISODate}}] the citation date with date type}
+
+\item{\code{edition}}{[\code{\link{character}}] citation edition}
+
+\item{\code{editionDate}}{[\code{\link{Date}}|\code{\link{POSIXt}}] date or date/time of edition}
+
+\item{\code{identifier}}{[\code{\link{ISOMetaIdentifier}}] identifier}
+
+\item{\code{citedResponsibleParty}}{[\code{\link{ISOResponsibleParty}}] responsible party}
+
+\item{\code{presentationForm}}{[\code{\link{ISOPresentationForm}}] presentation form}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOCitation
+   This method is used to instantiate an \code{\link{ISOCitation}}
  }
  \item{\code{setTitle(title, locales)}}{
    Sets the title. Locale names can be specified as \code{list}
@@ -43,17 +57,17 @@ ISOCitation
  \item{\code{setEditionDate(editionDate)}}{
    Sets the edition date, either an ISODate object containing date and dateType or
    a simple R date "POSIXct"/"POSIXt" object. For thesaurus citations, an ISODate
-   should be used while for the general citation of \code{ISODataIdentification},
+   should be used while for the general citation of \code{\link{ISODataIdentification}},
    a simple R date should be used.
  }
  \item{\code{setIdentifier(identifier)}}{
-   Sets the identifier as object of class 'ISOMetaIdentifier'
+   Sets the identifier as object of class \code{\link{ISOMetaIdentifier}}
  }
  \item{\code{seCitedResponsibleParty(rp)}}{
-   Sets the cited responsiblep party
+   Sets the cited responsiblep party, object of class \code{\link{ISOResponsibleParty}}
  }
  \item{\code{setPresentationForm}}{
-   Sets the presentation form
+   Sets the presentation form, object of class \code{\link{ISOPresentationForm}}
  }
 }
 }

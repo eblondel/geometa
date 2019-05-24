@@ -17,7 +17,13 @@ ISOCodeListValue
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{codelistId}}{[\code{\link{character}}] codelist identifier}
+
+\item{\code{attrs}}{[\code{\link{list}}] list of codelist attributes}
+
+\item{\code{value}}{[\code{\link{character}}] codelist value}
+
+\item{\code{valueDescription}}{[\code{\link{character}}] codelist value description}
 }}
 
 \note{

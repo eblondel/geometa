@@ -6,9 +6,12 @@
 #' @keywords ISO code element
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata codelist element
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value
-#'
+#' 
+#' @field codelistId [\code{\link{character}}] codelist identifier
+#' @field attrs [\code{\link{list}}] list of codelist attributes
+#' @field value [\code{\link{character}}] codelist value
+#' @field valueDescription [\code{\link{character}}] codelist value description
+#' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, id, value, description, addCodeListAttrs, addCodeSpaceAttr, setValue)}}{

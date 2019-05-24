@@ -23,7 +23,7 @@ ISOIdentification
 
 \item{\code{purpose}}{[\code{\link{character}}] purpose}
 
-\item{\code{credit}}{[\code{\link{credit}}] credit}
+\item{\code{credit}}{[\code{\link{character}}] credit}
 
 \item{\code{status}}{[\code{\link{ISOStatus}}] status}
 

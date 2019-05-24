@@ -7,19 +7,19 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAssociationRole
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field type
-#' @field isOrdered
-#' @field isNavigable
-#' @field relation
-#' @field rolePlayer
+#' @field type [\code{\link{ISORoleType}}]
+#' @field isOrdered [\code{\link{logical}}]
+#' @field isNavigable [\code{\link{logical}}]
+#' @field relation [\code{\link{ISOFeatureAssociation}}]
+#' @field rolePlayer [\code{\link{ISOFeatureType}}]
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAssociationRole
+#'    This method is used to instantiate an \code{\link{ISOAssociationRole}}
 #'  }
 #'  \item{\code{setRoleType(roleType)}}{
-#'    Sets the role type, object of class \code{ISORoleType} or any \code{character}
+#'    Sets the role type, object of class \code{\link{ISORoleType}} or any \code{character}
 #'    value among \code{ISORoleType$values()}.
 #'  }
 #'  \item{\code{setIsOrdered(isOrdered)}}{
@@ -29,13 +29,13 @@
 #'    Sets \code{TRUE} if navigable, \code{FALSE} otherwise
 #'  }
 #'  \item{code{setRelation(relation)}}{
-#'    Sets an object of class \code{ISOFeatureAssocation} as relation
+#'    Sets an object of class \code{\link{ISOFeatureAssocation}} as relation
 #'  }
 #'  \item{\code{addRolePlayer(rolePlayer)}}{
-#'    Adds a role player, object of class \code{ISOFeatureType}
+#'    Adds a role player, object of class \code{\link{ISOFeatureType}}
 #'  }
 #'  \item{\code{delRolePlayer(rolePlayer)}}{
-#'    Deletes a role player, object of class \code{ISOFeatureType}
+#'    Deletes a role player, object of class \code{\link{ISOFeatureType}}
 #'  }
 #' }
 #'  

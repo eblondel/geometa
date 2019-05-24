@@ -7,16 +7,16 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Address
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field deliveryPoint
-#' @field city
-#' @field postalCode
-#' @field country
-#' @field electronicMailAddress
+#' @field deliveryPoint [\code{\link{character}}]
+#' @field city [\code{\link{character}}]
+#' @field postalCode [\code{\link{character}}]
+#' @field country [\code{\link{ISOCountry}}]
+#' @field electronicMailAddress [\code{\link{character}}]
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAddress
+#'    This method is used to instantiate an \code{\link{ISOAddress}}
 #'  }
 #'  \item{\code{setDeliveryPoint(deliveryPoint, locales)}}{
 #'    Sets the delivery point. Locale names can be specified as \code{list}

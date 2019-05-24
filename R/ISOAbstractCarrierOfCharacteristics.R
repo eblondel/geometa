@@ -7,22 +7,22 @@
 #' @return Object of \code{\link{R6Class}} for modelling an abstract ISOCarrierOfCharacteristics
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field featureType
-#' @field constrainedBy
+#' @field featureType [\code{\link{ISOFeatureType}}]
+#' @field constrainedBy [\code{\link{ISOConstraint}}]
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an ISOCarrierOfCharacteristics
+#'    This method is used to instantiate an \code{\link{ISOAbstractCarrierOfCharacteristics}}
 #'  }
 #'  \item{\code{setFeatureType(featureType)}}{
-#'    Set a feature type, object of class \code{ISOFeatureType}
+#'    Set a feature type, object of class \code{\link{ISOFeatureType}}
 #'  }
 #'  \item{\code{addConstraint(constraint)}}{
-#'    Add constraint, object of class \code{ISOConstraint}
+#'    Add constraint, object of class \code{\link{ISOConstraint}}
 #'  }
 #'  \item{\code{delConstraint(constraint)}}{
-#'    Deletes constraint, object of class \code{ISOConstraint}
+#'    Deletes constraint, object of class \code{\link{ISOConstraint}}
 #'  }
 #' }
 #' 

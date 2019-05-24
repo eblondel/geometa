@@ -17,17 +17,17 @@ ISOBoundAssociationRole
 \section{Fields}{
 
 \describe{
-\item{\code{rolePlayer}}{}
+\item{\code{rolePlayer}}{[\code{\link{ISOFeatureType}}] feature type}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, defaults)}}{
-   This method is used to instantiate an ISOBoundAssociationRole
+   This method is used to instantiate an \code{\link{ISOBoundAssociationRole}}
  }
  \item{\code{setFeatureType(featureType)}}{
-   Set feature type, object of class \code{ISOFeatureType}
+   Set feature type, object of class \code{\link{ISOFeatureType}}
  }
 }
 }

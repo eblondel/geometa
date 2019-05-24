@@ -27,7 +27,7 @@ ISOSRVServiceIdentification
 
 \item{\code{keywords}}{[\code{\link{ISOKeywords}}] service keywords}
 
-\item{\code{extent}}{[\code{\link{ISOextent}}] service extent}
+\item{\code{extent}}{[\code{\link{ISOExtent}}] service extent(s)}
 
 \item{\code{coupledResource}}{[\code{\link{ISOCoupledResource}}] the coupled resource}
 

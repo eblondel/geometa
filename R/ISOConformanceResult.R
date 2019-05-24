@@ -7,15 +7,17 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ConformanceResult
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field result
+#' @field specification [\code{\link{ISOCitation}}] specification citation
+#' @field explanation [\code{\link{character}}] explanation about conformance
+#' @field pass [\code{\link{logical}}] if the conformance is passing or not
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOConformanceResult
+#'    This method is used to instantiate an \code{\link{ISOConformanceResult}}
 #'  }
 #'  \item{\code{setSpecification(specification)}}{
-#'    Sets the specification (an ISOCitation object)
+#'    Sets the specification (an \code{\link{ISOCitation}} object)
 #'  }
 #'  \item{\code{setExplanation(explanation, locales)}}{
 #'    Sets the explanation. Locale names can be specified as \code{list}

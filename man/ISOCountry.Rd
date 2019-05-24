@@ -14,17 +14,11 @@ Object of \code{\link{R6Class}} for modelling an ISO Country
 \description{
 ISOCountry
 }
-\section{Fields}{
-
-\describe{
-\item{\code{value}}{}
-}}
-
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISOCountry
+   This method is used to instantiate an \code{\link{ISOCountry}}
  }
 }
 }

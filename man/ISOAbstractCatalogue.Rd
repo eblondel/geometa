@@ -17,14 +17,22 @@ ISOAbstractCatalogue
 \section{Fields}{
 
 \describe{
-\item{\code{versionDate}}{}
+\item{\code{name}}{[\code{\link{character}}]}
+
+\item{\code{scope}}{[\code{\link{character}}]}
+
+\item{\code{fieldOfApplication}}{[\code{\link{character}}]}
+
+\item{\code{versionNumber}}{[\code{\link{character}}]}
+
+\item{\code{versionDate}}{[\code{\link{character}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOAbstractCatalogue
+   This method is used to instantiate an \code{\link{ISOAbstractCatalogue}}
  }
  \item{\code{setName(name, locales)}}{
    Sets the name. Locale names can be specified as \code{list}

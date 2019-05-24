@@ -14,12 +14,6 @@ Object of \code{\link{R6Class}} for modelling an ISO Distance measure
 \description{
 ISODistance
 }
-\section{Fields}{
-
-\describe{
-\item{\code{value}}{}
-}}
-
 \section{Methods}{
 
 \describe{

@@ -17,7 +17,11 @@ ISOContact
 \section{Fields}{
 
 \describe{
-\item{\code{onlineResource}}{}
+\item{\code{phone}}{[\code{\link{ISOTelephone}}] phone}
+
+\item{\code{address}}{[\code{\link{ISOAddress}}] address}
+
+\item{\code{onlineResource}}{[\code{\link{ISOOnlineResource}}] online resource}
 }}
 
 \section{Methods}{

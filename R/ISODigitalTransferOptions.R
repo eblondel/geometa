@@ -7,12 +7,14 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO DigitalTransferOptions
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field onLine
+#' @field unitsOfDistribution [\code{\link{character}}] units of distribution
+#' @field transferSize [\code{\link{character}}] transfer size
+#' @field onLine [\code{\link{ISOOnlineResource}}] online resource(s)
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISODigitalTransferOptions
+#'    This method is used to instantiate an \code{\link{ISODigitalTransferOptions}}
 #'  }
 #'  \item{\code{setUnitsOfDistribution(unit)}}{
 #'    Sets the units of distribution
@@ -21,13 +23,13 @@
 #'    Sets the transfer Size
 #'  }
 #'  \item{\code{addOnlineResource(onlineResource)}}{
-#'    Adds an object of class \code{ISOOnlineResource}
+#'    Adds an object of class \code{\link{ISOOnlineResource}}
 #'  }
 #'  \item{\code{setOnlineResource(onlineResource)}}{
-#'    Sets an object of class \code{ISOOnlineResource}
+#'    Sets an object of class \code{\link{ISOOnlineResource}}
 #'  }
 #'  \item{\code{delOnlineResource(onlineResource)}}{
-#'    Deletes an object of class \code{ISOOnlineResource}
+#'    Deletes an object of class \code{\link{ISOOnlineResource}}
 #'  }
 #' }
 #' 

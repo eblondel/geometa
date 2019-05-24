@@ -7,12 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO abstract Constraints
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field useLimitation
+#' @field useLimitation [\code{\link{character}}] use limitation
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOLegalConstraints
+#'    This method is used to instantiate an \code{\link{ISOLegalConstraints}}
 #'  }
 #'  \item{\code{addUseLimitation(useLimitation, locales)}}{
 #'    Adds a use limitation. Locale names can be specified 

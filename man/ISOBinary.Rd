@@ -17,14 +17,14 @@ ISOBinary
 \section{Fields}{
 
 \describe{
-\item{\code{value}}{}
+\item{\code{value}}{[\code{\link{character}}] binary}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml,value)}}{
-   This method is used to instantiate an ISOBinary
+   This method is used to instantiate an \code{\link{ISOBinary}}
  }
 }
 }

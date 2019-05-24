@@ -7,13 +7,21 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ApplicationSchemaInformation
 #' @format \code{\link{R6Class}} object.
 #'
+#' @field name [\code{\link{ISOCitation}}]
+#' @field schemaLanguage [\code{\link{character}}]
+#' @field constraintLanguage [\code{\link{character}}]
+#' @field schemaAscii [\code{\link{character}}]
+#' @field graphicsFile [\code{\link{ISOBinary}}]
+#' @field softwareDevelopmentFile [\code{\link{ISOBinary}}]
+#' @field softwareDevelopmentFileFormat [\code{\link{character}}]
+#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOApplicationSchemaInformation
+#'    This method is used to instantiate an \code{\link{ISOApplicationSchemaInformation}}
 #'  }
 #'  \item{\code{setName(name)}}{
-#'    Sets name, object of class \code{ISOCitation}
+#'    Sets name, object of class \code{\link{ISOCitation}}
 #'  }
 #'  \item{\code{setSchemaLanguage(schemaLanguage)}}{
 #'    Sets schema language

@@ -7,19 +7,19 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO DataIdentification
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field spatialRepresentationType
-#' @field spatialResolution
-#' @field language
-#' @field characterSet
-#' @field topicCategory
-#' @field environmentDescription
-#' @field extent
-#' @field supplementalInformation
+#' @field spatialRepresentationType [\code{\link{ISOSpatialRepresentationType}}] spatial representation type
+#' @field spatialResolution [\code{\link{ISOResolution}}] spatial resolution(s)
+#' @field language [\code{\link{ISOLanguage}}] locale language(s)
+#' @field characterSet [\code{\link{ISOCharacterSet}}] character set
+#' @field topicCategory [\code{\link{ISOTopicCategory}}] topic categorie(s)
+#' @field environmentDescription [\code{\link{environmentDescription}}] environment description
+#' @field extent [\code{\link{ISOExtent}}] extent(s)
+#' @field supplementalInformation [\code{\link{character}}] supplemental information
 #' 
 #' @section Inherited methods:
 #' \describe{
 #'  \item{\code{setCitation(citation)}}{
-#'    Sets an object of class \code{ISOCitation}
+#'    Sets an object of class \code{\link{ISOCitation}}
 #'  }
 #'  \item{\code{setAbstract(abstract, locales)}}{
 #'    Sets an abstract (object of class "character"). Locale names can be 
@@ -38,92 +38,98 @@
 #'    specified as \code{list} with the \code{locales} argument.
 #'  }
 #'  \item{\code{addStatus(status)}}{
-#'    Adds a status, as object of class "character" or class \code{ISOStatus}. If
+#'    Adds a status, as object of class "character" or class \code{\link{ISOStatus}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    progress status values \code{ISOStatus$values()}.
 #'  }
 #'  \item{\code{delStatus(status)}}{
-#'    Deletes a status, as object of class "character" or class \code{ISOStatus}. If
+#'    Deletes a status, as object of class "character" or class \code{\link{ISOStatus}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    progress status values \code{ISOStatus$values()}.
 #'  }
 #'  \item{\code{addPointOfContact(pointOfContact)}}{
-#'    Adds an object of class \code{ISOResponsibleParty}
+#'    Adds an object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{delPointOfContact(pointOfContact)}}{
-#'    Deletes an object of class \code{ISOResponsibleParty}
+#'    Deletes an object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{addResourceMaintenance(resourceMaintenance)}}{
 #'    Adds a resource maintenance information as object of class 
-#'    \code{ISOMaintenanceInformation}.
+#'    \code{\link{ISOMaintenanceInformation}}.
 #'  }
 #'  \item{\code{setResourceMaintenance(resourceMaintenance)}}{
 #'    Sets a resource maintenance information as object of class 
-#'    \code{ISOMaintenanceInformation}.
+#'    \code{\link{ISOMaintenanceInformation}}.
 #'  }
 #'  \item{\code{delResourceMaintenance(resourceMaintenance)}}{
 #'    Deletes a resource maintenance information as object of class 
-#'    \code{ISOMaintenanceInformation}.
+#'    \code{\link{ISOMaintenanceInformation}}.
 #'  }
 #'  \item{\code{addGraphicOverview(graphicOverview)}}{
-#'    Adds an object of class \code{ISOBrowseGraphic}
+#'    Adds an object of class \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{setGraphicOverview(graphicOverview)}}{
-#'    Sets an object of class \code{ISOBrowseGraphic}
+#'    Sets an object of class \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{delGraphicOverview(graphicOverview)}}{
-#'    Deletes an object of class \code{ISOBrowseGraphic}
+#'    Deletes an object of class \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{addKeywords(keywords)}}{
-#'    Adds a set of keywords as object of class \code{ISOKeywords}
+#'    Adds a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{setKeywords(keywords)}}{
-#'    Sets a set of keywords as object of class \code{ISOKeywords}
+#'    Sets a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{delKeywords(keywords)}}{
-#'    Deletes a set of keywords as object of class \code{ISOKeywords}
+#'    Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
 #'  }
 #'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Adds an object of class \code{ISOLegalConstraints}
+#'    Adds an object of class \code{\link{ISOLegalConstraints}}
 #'  }
 #'  \item{\code{setResourceConstraints(resourceConstraints)}}{
-#'    Sets an object of class \code{ISOLegalConstraints}
+#'    Sets an object of class \code{\link{ISOLegalConstraints}}
 #'  }
 #'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Deletes an object of class \code{ISOLegalConstraints}
+#'    Deletes an object of class \code{\link{ISOLegalConstraints}}
 #'  }
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISODataIdentification
+#'    This method is used to instantiate an \code{\link{ISODataIdentification}}
 #'  }
 #'  \item{\code{addSpatialRepresentationType(spatialRepresentationType)}}{
 #'    Adds a spatial representation type, as object of class "character" or class
-#'    \code{ISOSpatialRepresentationType}. If an object of class "character" is 
+#'    \code{\link{ISOSpatialRepresentationType}}. If an object of class "character" is 
 #'    specified, it must match the accepted values listed by 
 #'    \code{ISOSpatialRepresentationType$values()}.
 #'  }
 #'  \item{\code{setSpatialRepresentationType(spatialRepresentationType)}}{
 #'    Sets a spatial representation type, as object of class "character" or class
-#'    \code{ISOSpatialRepresentationType}. If an object of class "character" is 
+#'    \code{\link{ISOSpatialRepresentationType}}. If an object of class "character" is 
 #'    specified, it must match the accepted values listed by 
 #'    \code{ISOSpatialRepresentationType$values()}.
 #'  }
 #'  \item{\code{delSpatialRepresentationType(spatialRepresentationType)}}{
 #'    Deletes a spatial representation type, as object of class "character" or class
-#'    \code{ISOSpatialRepresentationType}. If an object of class "character" is 
+#'    \code{\link{ISOSpatialRepresentationType}}. If an object of class "character" is 
 #'    specified, it must match the accepted values listed by 
 #'    \code{ISOSpatialRepresentationType$values()}.
 #'  }
+#'  \item{\code{addSpatialResolution(resolution)}}{
+#'    Adds a spatial resolution, object of class \code{\link{ISOResolution}}
+#'  }
+#'  \item{\Code{delSpatialResolution(resolution)}}{
+#'    Deletes a spatial resolution, object of class\code{\link{ISOResolution}}
+#'  }
 #'  \item{\code{addLanguage(locale)}}{
-#'    Adds a language, as object of class "character" or class \code{ISOLanguage}. If
+#'    Adds a language, as object of class "character" or class \code{\link{ISOLanguage}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    language values \code{ISOLanguage$values()}.
 #'  }
 #'  \item{\code{setLanguage(locale)}}{
-#'    Sets a language, as object of class "character" or class \code{ISOLanguage}. If
+#'    Sets a language, as object of class "character" or class \code{\link{ISOLanguage}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    language values \code{ISOLanguage$values()}.
 #'  }
@@ -133,32 +139,32 @@
 #'    language values \code{ISOLanguage$values()}.
 #'  }
 #'  \item{\code{addCharacterSet(charset)}}{
-#'    Adds a character set, as object of class "character" or class \code{ISOCharacterSet}. If
+#'    Adds a character set, as object of class "character" or class \code{\link{ISOCharacterSet}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    charset values \code{ISOCharacterSet$values()}.
 #'  }
 #'  \item{\code{setCharacterSet(charset)}}{
-#'    Sets a character set, as object of class "character" or class \code{ISOCharacterSet}. If
+#'    Sets a character set, as object of class "character" or class \code{\link{ISOCharacterSet}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    charset values \code{ISOCharacterSet$values()}.
 #'  }
 #'  \item{\code{delCharacterSet(charset)}}{
-#'    Deletes a character set, as object of class "character" or class \code{ISOCharacterSet}. If
+#'    Deletes a character set, as object of class "character" or class \code{\link{ISOCharacterSet}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    charset values \code{ISOCharacterSet$values()}.
 #'  }
 #'  \item{\code{addTopicCategory(topicCategory)}}{
-#'    Adds a character set, as object of class "character" or class \code{ISOTopicCategory}. If
+#'    Adds a character set, as object of class "character" or class \code{\link{ISOTopicCategory}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    topic category values \code{ISOTopicCategory$values()}.
 #'  }
 #'  \item{\code{setTopicCategory(topicCategory)}}{
-#'    Sets a character set, as object of class "character" or class \code{ISOTopicCategory}. If
+#'    Sets a character set, as object of class "character" or class \code{\link{ISOTopicCategory}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    topic category values \code{ISOTopicCategory$values()}.
 #'  }
 #'  \item{\code{delTopicCategory(topicCategory)}}{
-#'    Deletes a character set, as object of class "character" or class \code{ISOTopicCategory}. If
+#'    Deletes a character set, as object of class "character" or class \code{\link{ISOTopicCategory}}. If
 #'    an object of class "character" is specified, it must match the accepted
 #'    topic category values \code{ISOTopicCategory$values()}.
 #'  }
@@ -166,13 +172,13 @@
 #'    Sets the environment description
 #'  }
 #'  \item{\code{addExtent(extent)}}{
-#'    Adds an object of class \code{ISOExtent}.
+#'    Adds an object of class \code{\link{ISOExtent}}.
 #'  }
 #'  \item{\code{setExtent(extent)}}{
-#'    Sets an object of class \code{ISOExtent}.
+#'    Sets an object of class \code{\link{ISOExtent}}.
 #'  }
 #'  \item{\code{delExtent(extent)}}{
-#'    Deletes an object of class \code{ISOExtent}.
+#'    Deletes an object of class \code{\link{ISOExtent}}.
 #'  }
 #'  \item{\code{setSupplementalInformation(supplementalInformation, locales)}}{
 #'    Sets supplemental information (object of class "character"). Locale names can be 

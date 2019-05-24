@@ -17,7 +17,7 @@ ISONonQuantitativeAttributeAccuracy
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISONonQuantitativeAttributeAccuracy
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISONonQuantitativeAttributeAccuracy
+   This method is used to instantiate an \code{\link{ISONonQuantitativeAttributeAccuracy}}
  }
 }
 }

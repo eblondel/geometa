@@ -17,14 +17,18 @@ ISOBrowseGraphic
 \section{Fields}{
 
 \describe{
-\item{\code{fileType}}{}
+\item{\code{fileName}}{[\code{\link{character}}] file name}
+
+\item{\code{fileDescription}}{[\code{\link{character}}] file description}
+
+\item{\code{fileType}}{[\code{\link{character}}] file type}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, fileName, fileDescription, fileType)}}{
-   This method is used to instantiate an ISOBrowseGraphic
+   This method is used to instantiate an \code{\link{ISOBrowseGraphic}}
  }
  \item{\code{setFileName(fileName, locales)}}{
    Set file name. Locale names can be specified 

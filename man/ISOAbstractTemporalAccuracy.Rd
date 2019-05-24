@@ -17,7 +17,7 @@ ISOAbstractTemporalAccuracy
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISOAbstractTemporalAccuracy
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOAbstractTemporalAccuracy
+   This method is used to instantiate an \code{\link{ISOAbstractTemporalAccuracy}}
  }
 }
 }

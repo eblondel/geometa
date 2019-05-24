@@ -11,7 +11,7 @@
 #' @field orientationParameterAvailability [\code{\link{logical}}]
 #' @field orientationParameterDescription [\code{\link{character}}]
 #' @field georeferencedParameters [\code{\link{ISORecord}}]
-#' @field parameterCitation [\code{\link{ISOcitation}}]
+#' @field parameterCitation [\code{\link{ISOCitation}}]
 #'
 #' @section Inherited Methods:
 #' \describe{

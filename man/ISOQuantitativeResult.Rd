@@ -17,7 +17,7 @@ ISOQuantitativeResult
 \section{Fields}{
 
 \describe{
-\item{\code{valueType}}{[\code{\link{ISORecordtype}}] record type}
+\item{\code{valueType}}{[\code{\link{ISORecordType}}] record type}
 
 \item{\code{valueUnit}}{[\code{\link{GMLUnitDefinition}}] unit}
 

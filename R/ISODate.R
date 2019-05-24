@@ -7,13 +7,13 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Date
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field date
-#' @field dateType
+#' @field date [\code{\link{ISOBaseDate}}] the date
+#' @field dateType [\code{\link{ISODateType}}] the date type
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISODate
+#'    This method is used to instantiate an \code{\link{ISODate}}
 #'  }
 #'  \item{\code{setDate(date)}}{
 #'    Sets the date

@@ -17,7 +17,17 @@ ISOCodelist
 \section{Fields}{
 
 \describe{
-\item{\code{entries}}{}
+\item{\code{id}}{[\code{\link{character}}] codelist id}
+
+\item{\code{refFile}}{[\code{\link{character}}] reference XML file}
+
+\item{\code{codeSpace}}{[\code{\link{character}}] codelist codeSpace}
+
+\item{\code{identifier}}{[\code{\link{character}}] codelist identifier}
+
+\item{\code{description}}{[\code{\link{character}}] codelist description}
+
+\item{\code{entries}}{[\code{\link{data.frame}}] the list of codelist entries}
 }}
 
 \note{
@@ -27,7 +37,7 @@ Class used by geometa internal codelist XML decoder/encoder
 
 \describe{
  \item{\code{new(refFile, id)}}{
-   This method is used to instantiate an ISOCodelist
+   This method is used to instantiate an \code{\link{ISOCodelist}}
  }
 }
 }

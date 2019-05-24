@@ -17,20 +17,28 @@ ISOAbstractPropertyType
 \section{Fields}{
 
 \describe{
-\item{\code{featureCatalogue}}{}
+\item{\code{memberName}}{[\code{\link{ISOLocalName}}]}
+
+\item{\code{definition}}{[\code{\link{character}}]}
+
+\item{\code{cardinality}}{[\code{\link{ISOMultiplicity}}]}
+
+\item{\code{definitionReference}}{[\code{\link{ISODefinitionReference}}]}
+
+\item{\code{featureCatalogue}}{[\code{\link{ISOFeatureCatalogue}}]}
 }}
 
-\section{Inherited methods from \code{ISOAbstractCarrierOfCharacteristics}}{
+\section{Methods inherited from \code{\link{ISOAbstractCarrierOfCharacteristics}}}{
 
 \describe{
  \item{\code{setFeatureType(featureType)}}{
-   Sets a feature type, object of class \code{ISOFeatureType}
+   Sets a feature type, object of class \code{\link{ISOFeatureType}}
  }
  \item{\code{addConstraint(constraint)}}{
-   Adds a constraint, object of class \code{ISOConstraint} or \code{character}
+   Adds a constraint, object of class \code{\link{ISOConstraint}} or \code{character}
  }
  \item{\code{delConstraint(constraint)}}{
-   Deletes a constraint, object of class \code{ISOConstraint} or \code{character}
+   Deletes a constraint, object of class \code{\link{ISOConstraint}} or \code{character}
  }
 }
 }
@@ -39,10 +47,10 @@ ISOAbstractPropertyType
 
 \describe{
  \item{\code{new(xml, defaults)}}{
-   This method is used to instantiate an ISOAbstractPropertyType
+   This method is used to instantiate an \code{\link{ISOAbstractPropertyType}}
  }
  \item{\code{setMemberName(memberName)}}{
-   Sets the member name. Object of class \code{ISOLocalName} or \code{"character"}
+   Sets the member name. Object of class \code{\link{ISOLocalName}} or \code{"character"}
  }
  \item{\code{setDefinition(definition, locales)}}{
    Sets the definition. Locale names can be specified as \code{list}
@@ -52,10 +60,10 @@ ISOAbstractPropertyType
    Sets the cardinality boundaries lower and upper of class \code{numeric}
  }
  \item{\code{setDefinitionReference(definitionReference)}}{
-   Sets the definition Reference, object of class \code{ISODefinitionReference}
+   Sets the definition Reference, object of class \code{\link{ISODefinitionReference}}
  }
  \item{\code{setFeatureCatalogue(featureCatalogue)}}{
-   Sets a feature catalogue, object of class \code{ISOFeatureCatalogue}
+   Sets a feature catalogue, object of class \code{\link{ISOFeatureCatalogue}}
  }
 }
 }

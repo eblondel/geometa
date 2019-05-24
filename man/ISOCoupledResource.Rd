@@ -17,14 +17,16 @@ ISOCoupledResource
 \section{Fields}{
 
 \describe{
-\item{\code{identifier}}{}
+\item{\code{operationName}}{[\code{\link{character}}] operation name}
+
+\item{\code{identifier}}{[\code{\link{character}}] identifier}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOCoupledResource
+   This method is used to instantiate an \code{\link{ISOCoupledResource}}
  }
  \item{\code{setOperationName(operationName, locales)}}{
    Set the operation name. Locale names can be specified 

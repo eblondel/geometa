@@ -7,16 +7,16 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbstracCatalogue
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field name
-#' @field scope
-#' @field fieldOfApplication
-#' @field versionNumber
-#' @field versionDate
+#' @field name [\code{\link{character}}]
+#' @field scope [\code{\link{character}}]
+#' @field fieldOfApplication [\code{\link{character}}]
+#' @field versionNumber [\code{\link{character}}]
+#' @field versionDate [\code{\link{character}}]
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAbstractCatalogue
+#'    This method is used to instantiate an \code{\link{ISOAbstractCatalogue}}
 #'  }
 #'  \item{\code{setName(name, locales)}}{
 #'    Sets the name. Locale names can be specified as \code{list}

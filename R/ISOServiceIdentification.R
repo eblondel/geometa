@@ -189,7 +189,7 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
 #' @field accessProperties [\code{\link{ISOStandardOrderProcess}}] the access properties
 #' @field restrictions [\code{\link{ISOConstraints}}] restrictions applied to service
 #' @field keywords [\code{\link{ISOKeywords}}] service keywords
-#' @field extent [\code{\link{ISOextent}}] service extent
+#' @field extent [\code{\link{ISOExtent}}] service extent(s)
 #' @field coupledResource [\code{\link{ISOCoupledResource}}] the coupled resource
 #' @field couplingType [\code{\link{ISOCouplingType}}] the coupling type
 #' @field containsOperations [\code{\link{ISOOperationMetadata}}] the operation metadata

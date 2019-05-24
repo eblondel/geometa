@@ -10,7 +10,7 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, name, ...)}}{
-#'    This method is used to instantiate an ISOAnchor
+#'    This method is used to instantiate an \code{\link{ISOAnchor}}
 #'  }
 #' }
 #' 

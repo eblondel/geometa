@@ -17,7 +17,21 @@ ISODataQualityAbstractElement
 \section{Fields}{
 
 \describe{
-\item{\code{result}}{}
+\item{\code{nameOfMeasure}}{[\code{\link{character}}] measure name}
+
+\item{\code{measureIdentification}}{[\code{\link{ISOMetaIdentifier}}] measure identification}
+
+\item{\code{measureDescription}}{[\code{\link{character}}] measure description}
+
+\item{\code{evaluationMethodType}}{[\code{\link{ISOEvaluationMethodType}}] measure evaluation method type}
+
+\item{\code{evaluationMethodDescription}}{[\code{\link{character}}] measure evaluation method description}
+
+\item{\code{evaluationProcedure}}{[\code{\link{character}}] evaluation procedure}
+
+\item{\code{dateTime}}{[\code{\link{ISODateTime}}] dateTime}
+
+\item{\code{result}}{[\code{\link{ISOConformanceResult}}] conformance result(s)}
 }}
 
 \section{Methods}{

@@ -17,17 +17,17 @@ ISOBoundFeatureAttribute
 \section{Fields}{
 
 \describe{
-\item{\code{valueType}}{}
+\item{\code{valueType}}{[\code{\link{ISOTypeName}}] value type}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, defaults)}}{
-   This method is used to instantiate an ISOBoundFeatureAttribute
+   This method is used to instantiate an \code{\link{ISOBoundFeatureAttribute}}
  }
  \item{\code{setTypeName(typeName)}}{
-   Set typeName, object of class \code{ISOTypeName} or \code{character}
+   Set typeName, object of class \code{\link{ISOTypeName}} or \code{character}
  }
 }
 }

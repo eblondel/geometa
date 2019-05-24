@@ -7,7 +7,7 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO FreeText
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field textGroup [\code{\link{ISOLocalisedCharacterString}}]
+#' @field textGroup [\code{\link{ISOLocalisedCharacterString}}] localised string(s)
 #'
 #' @section Methods:
 #' \describe{

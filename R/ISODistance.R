@@ -7,8 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Distance measure
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
-#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value, uom, useUomURI)}}{

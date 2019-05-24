@@ -7,14 +7,14 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO BrowseGraphic
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field fileName
-#' @field fileDescription
-#' @field fileType
+#' @field fileName [\code{\link{character}}] file name
+#' @field fileDescription [\code{\link{character}}] file description
+#' @field fileType [\code{\link{character}}] file type
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml, fileName, fileDescription, fileType)}}{
-#'    This method is used to instantiate an ISOBrowseGraphic
+#'    This method is used to instantiate an \code{\link{ISOBrowseGraphic}}
 #'  }
 #'  \item{\code{setFileName(fileName, locales)}}{
 #'    Set file name. Locale names can be specified 

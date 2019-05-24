@@ -17,7 +17,7 @@ ISOBoundingPolygon
 \section{Fields}{
 
 \describe{
-\item{\code{polygon}}{}
+\item{\code{polygon}}{[\code{\link{GMLAbstractGeometry}}] a (list of) geometrie(s)}
 }}
 
 \note{
@@ -27,7 +27,7 @@ Experimental
 
 \describe{
  \item{\code{new(xml, sfg)}}{
-   This method is used to instantiate an ISOBoundingPolygon
+   This method is used to instantiate an \code{\link{ISOBoundingPolygon}}
  }
 }
 }

@@ -9,13 +9,13 @@
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAbstractPositionalAccuracy
+#'    This method is used to instantiate an \code{\link{ISOAbstractPositionalAccuracy}}
 #'  }
 #' }
 #'   
@@ -44,13 +44,13 @@ ISOAbstractPositionalAccuracy <- R6Class("ISOAbstractPositionalAccuracy",
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAbsoluteExternalPositionalAccuracy
+#'    This method is used to instantiate an \code{\link{ISOAbsoluteExternalPositionalAccuracy}}
 #'  }
 #' }
 #' 
@@ -104,13 +104,13 @@ ISOAbsoluteExternalPositionalAccuracy <- R6Class("ISOAbsoluteExternalPositionalA
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISORelativeInternalPositionalAccuracy
+#'    This method is used to instantiate an \code{\link{ISORelativeInternalPositionalAccuracy}}
 #'  }
 #' }
 #' 
@@ -164,13 +164,13 @@ ISORelativeInternalPositionalAccuracy <- R6Class("ISORelativeInternalPositionalA
 #'
 #' @section Inherited methods:
 #' \describe{
-#'   from \code{ISODataQualityAbstractElement}
+#'   from \code{\link{ISODataQualityAbstractElement}}
 #' }
 #' 
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOGriddedDataPositionalAccuracy
+#'    This method is used to instantiate an \code{\link{ISOGriddedDataPositionalAccuracy}}
 #'  }
 #' }
 #' 

@@ -17,21 +17,23 @@ ISOBinding
 \section{Fields}{
 
 \describe{
-\item{\code{globalProperty}}{}
+\item{\code{description}}{[\code{\link{character}}] description}
+
+\item{\code{globalProperty}}{[\code{\link{ISOPropertyType}}] property type}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml, defaults)}}{
-   This method is used to instantiate an ISOBinding
+   This method is used to instantiate an \code{\link{ISOBinding}}
  }
  \item{\code{setDescription(description, locales)}}{
    Set description of inheritance relation. Locale names can be specified 
    as \code{list} with the \code{locales} argument.
  }
  \item{\code{setPropertyType(propertyType)}}{
-   Set global property, object of class \code{ISOPropertyType}
+   Set global property, object of class \code{\link{ISOPropertyType}}
  }
 }
 }

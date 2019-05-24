@@ -7,21 +7,21 @@
 #' @return Object of \code{\link{R6Class}} for modelling a ISO AggregateInformation
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field aggregateDataSetName
-#' @field aggregateDataSetIdentifier
-#' @field associationType
-#' @field initiativeType
+#' @field aggregateDataSetName [\code{\link{ISOCitation}}]
+#' @field aggregateDataSetIdentifier [\code{\link{ISOMetaIdentifier}}]
+#' @field associationType [\code{\link{ISOAssociationType}}]
+#' @field initiativeType [\code{\link{ISOInitiativeType}}]
 #'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAggregateInformation
+#'    This method is used to instantiate an \code{\link{ISOAggregateInformation}}
 #'  }
 #'  \item{\code{setAggregateDataSetName(datasetName)}}{
-#'    Sets aggregate dataset name, as an object of class \code{ISOCitation}
+#'    Sets aggregate dataset name, as an object of class \code{\link{ISOCitation}}
 #'  }
 #'  \item{\code{setAggregateDataSetIdentifier(datasetIdentifier)}}{
-#'    Sets aggregate dataset identifier, as an object of class \code{ISOMetaIdentifier}
+#'    Sets aggregate dataset identifier, as an object of class \code{\link{ISOMetaIdentifier}}
 #'  }
 #'  \item{\code{setAssociationType(associationType)}}{
 #'    Sets the association type

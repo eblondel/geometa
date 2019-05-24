@@ -17,14 +17,28 @@ ISOBand
 \section{Fields}{
 
 \describe{
-\item{\code{offset}}{}
+\item{\code{maxValue}}{[\code{\link{numeric}}]}
+
+\item{\code{minValue}}{[\code{\link{numeric}}]}
+
+\item{\code{units}}{[\code{\link{GMLUnitDefinition}}]}
+
+\item{\code{peakResponse}}{[\code{\link{numeric}}]}
+
+\item{\code{bitsPerValue}}{[\code{\link{integer}}]}
+
+\item{\code{toneGradation}}{[\code{\link{integer}}]}
+
+\item{\code{scaleFactor}}{[\code{\link{numeric}}]}
+
+\item{\code{offset}}{[\code{\link{numeric}}]}
 }}
 
 \section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOBand
+   This method is used to instantiate an \code{\link{ISOBand}}
  }
  \item{\code{setMaxValue(maxValue)}}{
    Sets the maximum value
@@ -33,7 +47,7 @@ ISOBand
    Sets the minimum value
  }
  \item{\code{setUnits(units)}}{
-   Sets the unit, object of class \code{GMLUnitDefinition}
+   Sets the unit, object of class \code{\link{GMLUnitDefinition}}
  }
  \item{\code{setPeakResponse(peakResponse)}}{
    Sets the peak response

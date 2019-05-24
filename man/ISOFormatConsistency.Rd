@@ -17,7 +17,7 @@ ISOFormatConsistency
 \section{Inherited methods}{
 
 \describe{
-  from \code{ISODataQualityAbstractElement}
+  from \code{\link{ISODataQualityAbstractElement}}
 }
 }
 
@@ -25,7 +25,7 @@ ISOFormatConsistency
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOFormatConsistency
+   This method is used to instantiate an \code{\link{ISOFormatConsistency}}
  }
 }
 }
