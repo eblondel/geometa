@@ -760,18 +760,8 @@ registerMappings <- function(x){
 
 #setters
 
-#' Convert foreign metadata object to an \code{\link{ISOMetadata}} object
-#'
-#' Convert foreign metadata object to an \code{\link{ISOMetadata}} object
-#' @param x object to convert
-#' @param ... further arguments
-#' @name as_ISOMetadata
-#' @export
-as_ISOMetadata = function(x, ...) UseMethod("as_ISOMetadata")
-
-#' @name as_ISOMetadata
-#' @export
-as_ISOMetadata.emld <- function(from){
+setOldClass("emld")
+setAs("emld", "ISOMetadata", function(from){
   if(!requireNamespace("EML", quietly = TRUE))
     stop("package EML required, please install it first")
   if(!requireNamespace("emld", quietly = TRUE))
@@ -781,36 +771,17 @@ as_ISOMetadata.emld <- function(from){
   out_md <- convert_metadata(in_from, from = "eml", to = "geometa", 
                              mappings = .geometa.mappings$rules, verbose = FALSE)
   return(out_md)
-}
+})
 
-#' @name as_ISOMetadata
-#' @export
-as_ISOMetadata.ncdf4 <- function(from){
+setOldClass("ncdf4")
+setAs("ncdf4", "ISOMetadata", function(from){
   if(!requireNamespace("ncdf4", quietly = TRUE))
     stop("package ncdf4 required, please install it first")
   out_md <- convert_metadata(from, from = "eml", to = "geometa", 
                              mappings = .geometa.mappings$rules, verbose = FALSE)
   return(out_md)
-}
+})
 
-setOldClass("emld")
-#' @name as
-#' @rdname coerce-methods
-#' @aliases coerce,emld,ISOMetadata-method
-setAs("emld", "ISOMetadata", function(from) as_ISOMetadata(from))
-
-
-
-setOldClass("ncdf4")
-#' @name as
-#' @rdname coerce-methods
-#' @aliases coerce,ncdf4,ISOMetadata-method
-setAs("ncdf4", "ISOMetadata", function(from) as_ISOMetadata(from))
-
-
-#' @name as
-#' @rdname coerce-methods
-#' @aliases coerce,ISOMetadata,emld-method
 setAs("ISOMetadata", "emld", function(from){
   if(!requireNamespace("EML", quietly = TRUE))
     stop("package EML required, please install it first")
