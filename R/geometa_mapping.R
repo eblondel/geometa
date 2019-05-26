@@ -793,12 +793,15 @@ as_ISOMetadata.ncdf4 <- function(from){
   return(out_md)
 }
 
+setOldClass("emld")
 #' @name as
 #' @rdname coerce-methods
 #' @aliases coerce,emld,ISOMetadata-method
 setAs("emld", "ISOMetadata", function(from) as_ISOMetadata(from))
 
 
+
+setOldClass("ncdf4")
 #' @name as
 #' @rdname coerce-methods
 #' @aliases coerce,ncdf4,ISOMetadata-method
