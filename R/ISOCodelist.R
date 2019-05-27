@@ -135,6 +135,9 @@ setISOCodelists <- function(){
   ML_gmxCL <- "ML_gmxCodelists.xml"
   gmxCL <- "gmxCodelists.xml"
   codelists <- list(
+    #ISO 19110:2005 codelists
+    ISOCodelist$new(gmxCL, "FC_RoleType"),
+    #ISO 19115-1:2003 Codelists
     ISOCodelist$new(gmxCL, "CI_DateTypeCode"),
     ISOCodelist$new(gmxCL, "CI_PresentationFormCode"),
     ISOCodelist$new(gmxCL, "CI_RoleCode"),
@@ -144,7 +147,6 @@ setISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "DQ_EvaluationMethodTypeCode"),
     ISOCodelist$new(gmxCL, "DS_AssociationTypeCode"),
     ISOCodelist$new(gmxCL, "DS_InitiativeTypeCode"),
-    ISOCodelist$new(gmxCL, "FC_RoleType"),
     ISOCodelist$new(langCL, "LanguageCode"),
     ISOCodelist$new(gmxCL, "MD_CellGeometryCode"),
     ISOCodelist$new(ML_gmxCL, "MD_CharacterSetCode"),
@@ -166,9 +168,22 @@ setISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MD_SpatialRepresentationTypeCode"),
     ISOCodelist$new(gmxCL, "MD_TopicCategoryCode"),
     ISOCodelist$new(gmxCL, "MD_TopologyLevelCode"),
-    ISOCodelist$new(gmxCL, "MX_ScopeCode"),
+    #ISO 19115-2:2009 codelists
+    ISOCodelist$new(gmxCL, "MI_BandDefinition"),
+    ISOCodelist$new(gmxCL, "MI_ContextCode"),
+    ISOCodelist$new(gmxCL, "MI_GeometryTypeCode"),
+    ISOCodelist$new(gmxCL, "MI_ObjectiveTypeCode"),
+    ISOCodelist$new(gmxCL, "MI_OperationTypeCode"),
+    ISOCodelist$new(gmxCL, "MI_PolarizationOrientationCode"),
+    ISOCodelist$new(gmxCL, "MI_PriorityCode"),
+    ISOCodelist$new(gmxCL, "MI_SequenceCode"),
+    ISOCodelist$new(gmxCL, "MI_TransferFunctionTypeCode"),
+    ISOCodelist$new(gmxCL, "MI_TriggerCode"),
+    #ISO 19119:2005 codelists
     ISOCodelist$new(gmxCL, "SV_CouplingType"),
-    ISOCodelist$new(gmxCL, "SV_ParameterDirection")
+    ISOCodelist$new(gmxCL, "SV_ParameterDirection"),
+    #ISO 19139:2007 codelists
+    ISOCodelist$new(gmxCL, "MX_ScopeCode")
   )
   names(codelists) <- sapply(codelists, function(cl){cl$id})
   .geometa.iso$codelists <- codelists
