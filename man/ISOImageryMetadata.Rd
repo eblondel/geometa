@@ -488,7 +488,7 @@ ISOImageryMetadata
 
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+ISO 19115-2:2009 - Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
