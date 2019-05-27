@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/eblondel/geometa.svg?branch=master)](https://travis-ci.org/eblondel/geometa)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/geometa)](https://cran.r-project.org/package=geometa)
 [![cran checks](https://cranchecks.info/badges/worst/geometa)](https://cran.r-project.org/web/checks/check_results_geometa.html)
-[![Github_Status_Badge](https://img.shields.io/badge/Github-0.5-blue.svg)](https://github.com/eblondel/geometa)
+[![Github_Status_Badge](https://img.shields.io/badge/Github-0.6-blue.svg)](https://github.com/eblondel/geometa)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184892.svg)](https://doi.org/10.5281/zenodo.1184892)
 
 **Tools for Reading and Writing ISO/OGC Geographic Metadata**
@@ -30,7 +30,7 @@ We thank in advance people that use ``geometa`` for citing it in their work / pu
 |:------------------------------------|:-----------------------------------------------------------------------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------|---------:|-------:|
 |ISO/TC211 19110:2005                 |Geographic Information - Methodology for feature cataloguing                        |GFC       |[![ISO/TC211 19110:2005](https://img.shields.io/badge/-100%25-4a4ea8.svg)](https://github.com/eblondel/geometa)                 |        17|       0|
 |ISO/TC211 19115-1:2003               |Geographic Information - Metadata                                                   |GMD       |[![ISO/TC211 19115-1:2003](https://img.shields.io/badge/-100%25-4a4ea8.svg)](https://github.com/eblondel/geometa)               |       132|       0|
-|ISO/TC211 19115-2:2009               |Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data |GMI       |[![ISO/TC211 19115-2:2009](https://img.shields.io/badge/-0%25-ad0f0f.svg)](https://github.com/eblondel/geometa)                 |         0|      40|
+|ISO/TC211 19115-2:2009               |Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data |GMI       |[![ISO/TC211 19115-2:2009](https://img.shields.io/badge/-2%25-ad0f0f.svg)](https://github.com/eblondel/geometa)                 |         1|      39|
 |ISO/TC211 19119:2005                 |Geographic Information - Service Metadata                                           |SRV       |[![ISO/TC211 19119:2005](https://img.shields.io/badge/-37%25-ff0c0c.svg)](https://github.com/eblondel/geometa)                  |         7|      12|
 |ISO/TC211 19139:2007                 |Geographic Metadata XML Schema                                                      |GMX       |[![ISO/TC211 19139:2007](https://img.shields.io/badge/-6%25-ad0f0f.svg)](https://github.com/eblondel/geometa)                   |         4|      62|
 |ISO/TS 19103:2005                    |Geographic Common extensible markup language                                        |GCO       |[![ISO/TS 19103:2005](https://img.shields.io/badge/-100%25-4a4ea8.svg)](https://github.com/eblondel/geometa)                    |        22|       0|
