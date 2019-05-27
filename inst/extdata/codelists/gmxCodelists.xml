@@ -7,7 +7,7 @@
 <!-- Edit: 20100730 Darmel, added 'referenceInformation', 'auxilliaryData', and 'dataQuality' to === MD_CoverageContentTypeCode === --> 
 <!-- Edit: 20100730 Darmel, added 'scienceParty' to === CI_RoleCode ===  --> 
 <!-- Edit: 20100730 Darmel, replaced 'wha' with 'who' in CI_RoleCode codelist item 'processor'  --> 
-<!-- Edit: 20100730 Darmel, added === MI_BandDefinition ===, === MI_ContextCode ===, === MI_GeometryTypeCode ===, === MI_ObjectiveTypeCode ===, === MI_OperationTypeCode ===, === MI_PolarizationOrientationCode ===, === MI_PriorityCode ===, === MI_SequenceCode ===, === MI_TransferFunctionTypeCode ===, and === MI_TriggerCode === from ISO 19115-2 -->
+<!-- Edit: 20100730 Darmel, added === MI_BandDefinition ===, === MI_ContextCode ===, === MI_GeometryTypeCode ===, === MI_ObjectiveTypeCode ===, === MI_OperationTypeCode ===, === MI_PolarisationOrientationCode ===, === MI_PriorityCode ===, === MI_SequenceCode ===, === MI_TransferFunctionTypeCode ===, and === MI_TriggerCode === from ISO 19115-2 -->
 <!-- Edit: 20100811 Darmel, added 'dataCenter', 'project', 'instrument', and 'platform' to === MD_KeywordTypeCode === --> 
 <!-- Edit: 20100819 Darmel, added 'modelResult' to === MD_CoverageContentTypeCode ===--> 
 <!-- Edit: Nov 28, 2011 Anna Milan, changed scienceParty to collaborator to match ISO 19115-1 revisions. Added dataResolution to keyword type codes.--> 
@@ -2507,44 +2507,44 @@
       </codeEntry>
     </CodeListDictionary>
   </codelistItem>
-  <!--=== MI_PolarizationOrientationCode ===-->
+  <!--=== MI_PolarisationOrientationCode ===-->
   <codelistItem>
-    <CodeListDictionary gml:id="MI_PolarizationOrientationCode">
-      <gml:description>polarization of the antenna relative to the waveform</gml:description>
-      <gml:identifier codeSpace="ISOTC211/19115-2">MI_PolarizationOrientationCode</gml:identifier>
+    <CodeListDictionary gml:id="MI_PolarisationOrientationCode">
+      <gml:description>Polarisation of the antenna relative to the waveform</gml:description>
+      <gml:identifier codeSpace="ISOTC211/19115-2">MI_PolarisationOrientationCode</gml:identifier>
       <codeEntry>
-        <CodeDefinition gml:id="MI_PolarizationOrientationCode_horizontal">
-          <gml:description>polarization of the sensor oriented in the horizontal plane in realtion to the swath direction</gml:description>
+        <CodeDefinition gml:id="MI_PolarisationOrientationCode_horizontal">
+          <gml:description>Polarisation of the sensor oriented in the horizontal plane in realtion to the swath direction</gml:description>
           <gml:identifier codeSpace="ISOTC211/19115-2">horizontal</gml:identifier>
         </CodeDefinition>
       </codeEntry>
       <codeEntry>
-        <CodeDefinition gml:id="MI_PolarizationOrientationCode_vertical">
-          <gml:description>polarization of the sensor oriented in the vertical plane in realtion to the swath direction</gml:description>
+        <CodeDefinition gml:id="MI_PolarisationOrientationCode_vertical">
+          <gml:description>Polarisation of the sensor oriented in the vertical plane in realtion to the swath direction</gml:description>
           <gml:identifier codeSpace="ISOTC211/19115-2">vertical</gml:identifier>
         </CodeDefinition>
       </codeEntry>
       <codeEntry>
-        <CodeDefinition gml:id="MI_PolarizationOrientationCode_leftCircular">
-          <gml:description>polarization of the sensor oriented in the left circular plane in realtion to the swath direction</gml:description>
+        <CodeDefinition gml:id="MI_PolarisationOrientationCode_leftCircular">
+          <gml:description>Polarisation of the sensor oriented in the left circular plane in realtion to the swath direction</gml:description>
           <gml:identifier codeSpace="ISOTC211/19115-2">leftCircular</gml:identifier>
         </CodeDefinition>
       </codeEntry>
       <codeEntry>
-        <CodeDefinition gml:id="MI_PolarizationOrientationCode_rightCircular">
-          <gml:description>polarization of the sensor oriented in the right circular plane in realtion to the swath direction</gml:description>
+        <CodeDefinition gml:id="MI_PolarisationOrientationCode_rightCircular">
+          <gml:description>Polarisation of the sensor oriented in the right circular plane in realtion to the swath direction</gml:description>
           <gml:identifier codeSpace="ISOTC211/19115-2">rightCircular</gml:identifier>
         </CodeDefinition>
       </codeEntry>
       <codeEntry>
-        <CodeDefinition gml:id="MI_PolarizationOrientationCode_theta">
-          <gml:description>polarization of the sensor oriented in the angle between +90 deg and 0 deg parallel to swath direction</gml:description>
+        <CodeDefinition gml:id="MI_PolarisationOrientationCode_theta">
+          <gml:description>Polarisation of the sensor oriented in the angle between +90 deg and 0 deg parallel to swath direction</gml:description>
           <gml:identifier codeSpace="ISOTC211/19115-2">theta</gml:identifier>
         </CodeDefinition>
       </codeEntry>
       <codeEntry>
-        <CodeDefinition gml:id="MI_PolarizationOrientationCode_phi">
-          <gml:description>polarization of the sensor oriented in the angle between +90 deg and 0 deg perpendicular to swath direction</gml:description>
+        <CodeDefinition gml:id="MI_PolarisationOrientationCode_phi">
+          <gml:description>Polarisation of the sensor oriented in the angle between +90 deg and 0 deg perpendicular to swath direction</gml:description>
           <gml:identifier codeSpace="ISOTC211/19115-2">phi</gml:identifier>
         </CodeDefinition>
       </codeEntry>
