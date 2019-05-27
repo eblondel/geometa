@@ -174,7 +174,7 @@ setISOCodelists <- function(){
     ISOCodelist$new(gmxCL, "MI_GeometryTypeCode"),
     ISOCodelist$new(gmxCL, "MI_ObjectiveTypeCode"),
     ISOCodelist$new(gmxCL, "MI_OperationTypeCode"),
-    ISOCodelist$new(gmxCL, "MI_PolarizationOrientationCode"),
+    ISOCodelist$new(gmxCL, "MI_PolarisationOrientationCode"),
     ISOCodelist$new(gmxCL, "MI_PriorityCode"),
     ISOCodelist$new(gmxCL, "MI_SequenceCode"),
     ISOCodelist$new(gmxCL, "MI_TransferFunctionTypeCode"),
