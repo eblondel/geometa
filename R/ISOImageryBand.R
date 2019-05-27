@@ -25,11 +25,11 @@
 #'  \item{\code{setNominalSpatialResolution(resolution)}}{
 #'    Set the nominal spatial reosolution, object of class \code{numeric}
 #'  }
-#'  \ìtem{\code{setTransmittedPolarisation(polarisation)}}{
+#'  \item{\code{setTransmittedPolarisation(polarisation)}}{
 #'    Set the transmitted polarisation, object of class \code{\link{ISOImageryPolarisationOrientation}}
 #'    or \code{character} among values returned by \code{ISOImageryPolarisationOrientation$values()}
 #'  }
-#'  \ìtem{\code{setDetectedPolarisation(polarisation)}}{
+#'  \item{\code{setDetectedPolarisation(polarisation)}}{
 #'    Set the detected polarisation, object of class \code{\link{ISOImageryPolarisationOrientation}}
 #'    or \code{character} among values returned by \code{ISOImageryPolarisationOrientation$values()}
 #'  }
