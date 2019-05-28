@@ -24,7 +24,7 @@
 #' 
 #' @examples
 #'    #create coverage description
-#'    md <- ISOCoverageDescription$new()
+#'    md <- ISOImageryCoverageDescription$new()
 #'    md$setAttributeDescription("test")
 #'    md$setContentType("modelResult")
 #'    
