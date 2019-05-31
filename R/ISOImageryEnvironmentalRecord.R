@@ -41,8 +41,11 @@
 #'    md$setMeterologicalConditions("some conditions")
 #'    xml <- md$encode()
 #' 
+#' @references 
+#'   ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
+#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
-#'
+#' 
 ISOImageryEnvironmentalRecord <- R6Class("ISOImageryEnvironmentalRecord",
   inherit = ISOAbstractObject,
   private = list(
