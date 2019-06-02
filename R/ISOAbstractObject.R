@@ -1456,9 +1456,10 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
 #' @description \code{\link{cacheISOClasses}} allows to cache the list of
 #' \pkg{geometa} classes or extended. This is especially required to fasten
 #' the decoding of metadata elements from an XML file. It is called internally
-#' by \pkg{geometa} at package load time and each time the function \code{\link{readISO19139}}
-#' function is called to integrate eventually new classes added by user to extend
-#' \pkg{geometa} model (case of ISO profiles).
+#' by \pkg{geometa} the first function \code{\link{getISOClasses()}} is called 
+#' and each time the function \code{\link{readISO19139}} function is called to 
+#' integrate eventually new classes added by user to extend \pkg{geometa} model 
+#' (case of ISO profiles).
 #' 
 #' @usage cacheISOClasses()
 #' 

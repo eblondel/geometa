@@ -18,9 +18,6 @@
   #set ISO codelists
   setISOCodelists()
   
-  #list of cached class constructors
-  cacheISOClasses()
-  
   #Auto serial GML Id variable
   assign(".geometa.gml", new.env(), envir = asNamespace(pkgname))
   .geometa.gml$serialId <- 1L
