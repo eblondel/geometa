@@ -1485,6 +1485,6 @@ cacheISOClasses <- function(){
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 getISOClasses <- function(){
-  if(is.null(.geometa.iso$classes)) cacheISOClasses()
+  if(length(.geometa.iso$classes)==0) cacheISOClasses()
   return(.geometa.iso$classes)
 }
