@@ -1382,7 +1382,7 @@ ISOAbstractObject$getISOClassByNode = function(node){
     nodeElementName <- nodeElementNames[2]
   }
   
-  list_of_classes <- .geometa.iso$classes
+  list_of_classes <- getISOClasses()
   if(is.null(list_of_classes))
     list_of_classes <- ISOAbstractObject$getISOClasses(extended = TRUE, pretty = FALSE)
    
@@ -1469,4 +1469,21 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
 #
 cacheISOClasses <- function(){
   .geometa.iso$classes <- ISOAbstractObject$getISOClasses(extended = TRUE, pretty = FALSE)
+}
+
+#' @name getISOClasses
+#' @aliases getISOClasses
+#' @title getISOClasses
+#' @export
+#' @description get the list of cached ISO classes
+#' 
+#' @usage getISOClasses()
+#' 
+#' @examples             
+#'   getISOClasses()
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+getISOClasses <- function(){
+  return(.geometa.iso$classes)
 }
