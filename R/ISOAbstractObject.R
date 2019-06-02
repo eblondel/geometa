@@ -1381,7 +1381,11 @@ ISOAbstractObject$getISOClassByNode = function(node){
   if(length(nodeElementNames)>1){
     nodeElementName <- nodeElementNames[2]
   }
-  list_of_classes <- ISOAbstractObject$getISOClasses(extended = TRUE, pretty = FALSE)
+  
+  list_of_classes <- .geometa.iso$classes
+  if(is.null(list_of_classes))
+    list_of_classes <- ISOAbstractObject$getISOClasses(extended = TRUE, pretty = FALSE)
+   
   for(classname in list_of_classes){
     clazz <- try(eval(parse(text=classname)))
     if(nodeElementName %in% clazz$private_fields$xmlElement){
@@ -1443,4 +1447,26 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
     text2 <- as.character(metadataElement2)
   }
   return(text1 == text2)
+}
+
+#' @name cacheISOClasses
+#' @aliases cacheISOClasses
+#' @title cacheISOClasses
+#' @export
+#' @description \code{\link{cacheISOClasses}} allows to cache the list of
+#' \pkg{geometa} classes or extended. This is especially required to fasten
+#' the decoding of metadata elements from an XML file. It is called internally
+#' by \pkg{geometa} at package load time and each time the function \code{\link{readISO19139}}
+#' function is called to integrate eventually new classes added by user to extend
+#' \pkg{geometa} model (case of ISO profiles).
+#' 
+#' @usage cacheISOClasses()
+#' 
+#' @examples             
+#'   cacheISOClasses()
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+cacheISOClasses <- function(){
+  .geometa.iso$classes <- ISOAbstractObject$getISOClasses(extended = TRUE, pretty = FALSE)
 }

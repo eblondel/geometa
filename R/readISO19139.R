@@ -24,6 +24,9 @@
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #'    
 readISO19139 <- function(file = NULL, url = NULL, raw = FALSE){
+  
+  cacheISOClasses()
+  
   if(is.null(file) & is.null(url)){
     stop("Please provide at least a metadata file or url")
   }

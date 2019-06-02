@@ -22,6 +22,11 @@
   assign(".geometa.gml", new.env(), envir = asNamespace(pkgname))
   .geometa.gml$serialId <- 1L
   
+  #create a namespace for class constructor caching
+  assign(".geometa.classes", new.env(), envir = asNamespace(pkgname))
+  #list of cached class constructors
+  cacheISOClasses()
+  
   #mappings
   assign(".geometa.mappings", new.env(), envir = asNamespace(pkgname))
   #mapping rules
