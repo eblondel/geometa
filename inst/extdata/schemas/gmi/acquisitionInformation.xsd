@@ -174,7 +174,7 @@ xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/
 					<xs:element name="priority" type="gmi:MI_PriorityCode_PropertyType"/>
 					<xs:element name="requestedDate" type="gmi:MI_RequestedDate_PropertyType"/>
 					<xs:element name="expiryDate" type="gco:DateTime_PropertyType"/>
-					<xs:element name="satisifiedPlan" type="gmi:MI_Plan_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="satisfiedPlan" type="gmi:MI_Plan_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
