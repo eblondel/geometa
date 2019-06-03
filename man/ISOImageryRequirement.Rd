@@ -50,17 +50,17 @@ ISOImageryRequirement
    Adds a requestor, object of class \code{\link{ISOResponsibleParty}}
  }
  \item{\code{delRequestor(requestor)}}{
-   Deletes a requestor, object of class \code{\link{ISOresponsibleParty}}
+   Deletes a requestor, object of class \code{\link{ISOResponsibleParty}}
  }
  \item{\code{addRecipient(recipient)}}{
    Adds a recipient, object of class \code{\link{ISOResponsibleParty}}
  }
  \item{\code{delRecipient(recipient)}}{
-   Deletes a recipient, object of class \code{\link{ISOresponsibleParty}}
+   Deletes a recipient, object of class \code{\link{ISOResponsibleParty}}
  }
  \item{\code{setPriority(priority)}}{
-   Set the priority, object of class \code{\link{ISOPriority}}, or an object
-   of class 'character' among values given by \code{ISOPriority$values()}.
+   Set the priority, object of class \code{\link{ISOImageryPriority}}, or an object
+   of class 'character' among values given by \code{ISOImageryPriority$values()}.
  }
  \item{\code{setRequestedDate(date)}}{
    Set requested date, object of class \code{\link{ISOImageryRequestedDate}}

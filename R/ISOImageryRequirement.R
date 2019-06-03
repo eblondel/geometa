@@ -31,17 +31,17 @@
 #'    Adds a requestor, object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{delRequestor(requestor)}}{
-#'    Deletes a requestor, object of class \code{\link{ISOresponsibleParty}}
+#'    Deletes a requestor, object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{addRecipient(recipient)}}{
 #'    Adds a recipient, object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{delRecipient(recipient)}}{
-#'    Deletes a recipient, object of class \code{\link{ISOresponsibleParty}}
+#'    Deletes a recipient, object of class \code{\link{ISOResponsibleParty}}
 #'  }
 #'  \item{\code{setPriority(priority)}}{
-#'    Set the priority, object of class \code{\link{ISOPriority}}, or an object
-#'    of class 'character' among values given by \code{ISOPriority$values()}.
+#'    Set the priority, object of class \code{\link{ISOImageryPriority}}, or an object
+#'    of class 'character' among values given by \code{ISOImageryPriority$values()}.
 #'  }
 #'  \item{\code{setRequestedDate(date)}}{
 #'    Set requested date, object of class \code{\link{ISOImageryRequestedDate}}
@@ -139,16 +139,22 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
    ),
    public = list(
      
-     #+ type [0..1]: ISOImageryGeometryType
-     type = NULL,
-     #+ status [1..1]: ISOProgress
-     status = NULL,
      #+ citation [1..1]: ISOCitation
      citation = NULL,
-     #+ operation [0..*]: ISOImageryOperation
-     operation = list(),
-     #+ satisfiedRequirement [0..*]: ISOImageryRequirement
-     satisfiedRequirement = list(),
+     #+ identifier [1..1]: ISOMetaIdentifier
+     identifier = NULL,
+     #+ requestor [0..*]: ISOResponsibleParty
+     requestor = list(),
+     #+ recipient [0..*]: ISOResponsibleParty
+     recipient =list(),
+     #priority [1..1]: ISOImageryPriority
+     priority = NULL,
+     #requestedDate [1..1]: ISOImageryRequestedDate
+     requestedDate = NULL,
+     #expiryDate [1..1]: POSIXt
+     expiryDate = NULL,
+     #+ satisfiedPlan [0..*]: ISOImageryPlan
+     satisfiedPlan = list(),
      
      initialize = function(xml = NULL){
        super$initialize(xml = xml)

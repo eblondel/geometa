@@ -107,8 +107,8 @@ ISOImageryPlan <- R6Class("ISOImageryPlan",
      citation = NULL,
      #+ operation [0..*]: ISOImageryOperation
      operation = list(),
-     #+ satisfiedPlan [0..*]: ISOImageryPlan
-     satisfiedPlan = list(),
+     #+ satisfiedRequirement [0..*]: ISOImageryRequirement
+     satisfiedRequirement = list(),
      
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
