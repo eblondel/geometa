@@ -61,7 +61,7 @@ ISOImageryPlatform
 }
 
 \examples{
-   md <- ISOImageryPlatform$new()
+   md <- ISOImageryInstrument$new()
    md$setIdentifier("identifier")
    md$setType("type")
    md$setDescription("description")
