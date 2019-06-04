@@ -97,12 +97,12 @@
 #'    address2$setCity("thecity2")
 #'    address2$setPostalCode("111")
 #'    address2$setCountry("France")
-#'    address2$setEmail("someone2@theorg.org")
+#'    address2$setEmail("someone2@@theorg.org")
 #'    contact2$setAddress(address2)
 #'    contact2$setOnlineResource(res)
 #'    rp2$setContactInfo(contact2)
-
-#citation
+#'    
+#'    #citation
 #'    ct <- ISOCitation$new()
 #'    ct$setTitle("sometitle")
 #'    d <- ISODate$new()

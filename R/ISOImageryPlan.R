@@ -63,7 +63,7 @@
 #'    address1$setCity("thecity1")
 #'    address1$setPostalCode("111")
 #'    address1$setCountry("France")
-#'    address1$setEmail("someone1@theorg.org")
+#'    address1$setEmail("someone1@@theorg.org")
 #'    contact1$setAddress(address1)
 #'    res <- ISOOnlineResource$new()
 #'    res$setLinkage("http://www.somewhereovertheweb.org")

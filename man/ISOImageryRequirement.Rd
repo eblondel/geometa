@@ -121,6 +121,8 @@ ISOImageryRequirement
    contact2$setAddress(address2)
    contact2$setOnlineResource(res)
    rp2$setContactInfo(contact2)
+   
+   #citation
    ct <- ISOCitation$new()
    ct$setTitle("sometitle")
    d <- ISODate$new()
