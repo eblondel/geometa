@@ -264,7 +264,7 @@
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalCS","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalDatum","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_Aggregate","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataFile","<missing>",FALSE
+"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataFile","ISODataFile",TRUE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataSet","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_ScopeCode","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_SupportFile","<missing>",FALSE

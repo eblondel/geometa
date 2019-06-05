@@ -12,6 +12,22 @@
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an \code{\link{ISOImageryCoverageResult}}
 #'  }
+#'  \item{\code{setSpatialRepresentationType(spatialRepresentationType)}}{
+#'    Set the spatial representation type, object of class \code{\link{ISOSpatialRepresentationType}},
+#'    or 'character' among values given by \code{ISOSpatialRepresentationType$values()} or any free text.
+#'  }
+#'  \item{\code{setResultFile(resultFile)}}{
+#'    Set the result data file, object of class \code{\link{ISODataFile}}.
+#'  }
+#'  \item{\code{setResultSpatialRepresentation(spatialRepresentation)}}{
+#'    Set the spatial representation, object of class \code{\link{ISOSpatialRepresentation}}.
+#'  }
+#'  \item{\code{setResultCoverageDescription(coverageDescription)}}{
+#'    Set the coverage description, object of class \code{\link{ISOCoverageDescription}}
+#'  }
+#'  \item{\code{setResultFormat(format)}}{
+#'    Set the result format, object of class \code{\link{ISOFormat}}
+#'  }
 #' }
 #' 
 #'  @section Methods inherited from \code{\link{ISOAbstractResult}}:
@@ -31,8 +47,64 @@ ISOImageryCoverageResult <- R6Class("ISOImageryCoverageResult",
     xmlNamespacePrefix = "GMI"
   ),
   public = list(
+    
+    #+ spatialRepresentationType [1..1] : ISOSpatialRepresentationType
+    spatialRepresentationType = NULL,
+    #+ resultFile [1..1]: ISODataFile
+    resultFile = NULL,
+    #+ resultSpatialRepresentation  [1..1]: ISOSpatialRepresentation
+    resultSpatialRepresentation = NULL,
+    #+ resultContentDescription [1..1]: ISOCoverageDescription
+    resultContentDescription = NULL,
+    #+ resultFormat [1..1]: ISOFormat
+    resultFormat = NULL,
+    
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
+    },
+    
+    #setSpatialRepresentationType
+    setSpatialRepresentationType = function(spatialRepresentationType){
+      if(is(spatialRepresentationType, "character")){
+        spatialRepresentationType <- ISOSpatialRepresentationType$new(value = spatialRepresentationType)
+      }else{
+        if(!is(spatialRepresentationType, "ISOSpatialRepresentationType")){
+          stop("The argument should be an object of class 'character' or 'ISOSpatialRepresentationType'")
+        }
+      }
+      self$spatialRepresentationType <- spatialRepresentationType
+    },
+    
+    #setResultFile
+    setResultFile = function(resultFile){
+      if(!is(resultFile, "ISODataFile")){
+        stop("The argument should be an object of class 'ISODataFile'")
+      }
+      self$resultFile <- resultFile
+    },
+    
+    #setResultSpatialRepresentation
+    setResultSpatialRepresentation = function(spatialRepresentation){
+      if(!is(spatialRepresentation, "ISOSpatialRepresentation")){
+        stop("The argument should be an object of class 'ISOSpatialRepresentation'")
+      }
+      self$resultSpatialRepresentation <- spatialRepresentation
+    },
+    
+    #setResultCoverageDescription
+    setResultCoverageDescription = function(coverageDescription){
+      if(!is(coverageDescription, "ISOCoverageDescription")){
+        stop("The argument should be an object of class 'ISOCoverageDescription")
+      }
+      self$coverageDescription <- coverageDescription
+    },
+    
+    #setResultFormat
+    setResultFormat = function(format){
+      if(!is(format, "ISOFormat")){
+        stop("The argument should be an object of class 'ISOFormat'")
+      }
+      self$resultFormat <- format
     }
   )                        
 )

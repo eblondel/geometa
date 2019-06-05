@@ -20,6 +20,22 @@ ISOImageryCoverageResult
  \item{\code{new(xml)}}{
    This method is used to instantiate an \code{\link{ISOImageryCoverageResult}}
  }
+ \item{\code{setSpatialRepresentationType(spatialRepresentationType)}}{
+   Set the spatial representation type, object of class \code{\link{ISOSpatialRepresentationType}},
+   or 'character' among values given by \code{ISOSpatialRepresentationType$values()} or any free text.
+ }
+ \item{\code{setResultFile(resultFile)}}{
+   Set the result data file, object of class \code{\link{ISODataFile}}.
+ }
+ \item{\code{setResultSpatialRepresentation(spatialRepresentation)}}{
+   Set the spatial representation, object of class \code{\link{ISOSpatialRepresentation}}.
+ }
+ \item{\code{setResultCoverageDescription(coverageDescription)}}{
+   Set the coverage description, object of class \code{\link{ISOCoverageDescription}}
+ }
+ \item{\code{setResultFormat(format)}}{
+   Set the result format, object of class \code{\link{ISOFormat}}
+ }
 }
 
  @section Methods inherited from \code{\link{ISOAbstractResult}}:
