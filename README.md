@@ -26,13 +26,67 @@ We thank in advance people that use ``geometa`` for citing it in their work / pu
 
 ## Metadata standards coverage
 
+> #coverage summary
+> stds <- unique(cov$specification)
+> stds <- stds[order(stds)]
+> cov_summary <- do.call("rbind", lapply(stds, function(std){
++     cov_std <- cov[cov$specification == std,]
++     cov_std_per <- round(nrow(cov_std[cov_std$in_geometa,]) / nrow(cov_std) * 100,2)
++     cov_std_in <- nrow(cov_std[cov_std$in_geometa,])
++     cov_std_out <- nrow(cov_std[!cov_std$in_geometa,])
++     cov_out <- data.frame(
++         Standard = std,
++         Title = cov_std$title[1],
++         Namespace = cov_std$ns_prefix[1],
++         Supported = cov_std_in,
++         Missing = cov_std_out,
++         Coverage = cov_std_per,
++         stringsAsFactors = FALSE
++     )
++     return(cov_out)
++ }))
+> cov_summary$coverage_class <- floor(cov_summary$Coverage/20)
+> row.names(cov_summary) <- cov_summary$Standard
+> 
+> cov_summary <- rbind(
++     cov_summary[startsWith(cov_summary$Standard, "ISO"),],
++     cov_summary[startsWith(cov_summary$Standard, "GML"),]
++ )
+> 
+> #cov_summary_md (for README)
+> cov_summary_md <- cov_summary
+> cov_summary_md$Coverage <- sapply(1:nrow(cov_summary_md), function(i){
++     cov <- cov_summary_md[i,]
++     sprintf("[![%1$s](%2$s)](%3$s)",
++             row.names(cov),
++             URLencode(gsub("PERCENT","%",sprintf("https://img.shields.io/badge/%1$s-%2$sPERCENT-%3$s.svg",
++                                                  "",round(cov$Coverage),
++                                                  switch(as.character(cov$coverage_class),
++                                                         "0" = "ad0f0f",
++                                                         "1" = "ff0c0c",
++                                                         "2" = "f9ae2c",
++                                                         "3" = "f2eb24",
++                                                         "4" = "33cc7a",
++                                                         "5" = "4a4ea8"
++                                                  )))
++             ),
++             "https://github.com/eblondel/geometa"
++     )
++ })
+> cov_summary_md$coverage_class <- NULL
+> cov_summary_md$Standard <- row.names(cov_summary_md) 
+> cov_summary_md <- cov_summary_md[,c("Standard","Title","Namespace","Coverage","Supported","Missing")]
+> row.names(cov_summary_md) <- NULL
+> kable(cov_summary_md, format = "markdown")
+
+
 |Standard                             |Title                                                                               |Namespace |Coverage                                                                                                                        | Supported| Missing|
 |:------------------------------------|:-----------------------------------------------------------------------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------|---------:|-------:|
-|ISO/TC211 19110:2005                 |Geographic Information - Methodology for feature cataloguing                        |GFC       |[![ISO/TC211 19110:2005](https://img.shields.io/badge/-100%25-4a4ea8.svg)](https://github.com/eblondel/geometa)                 |        17|       0|
-|ISO/TC211 19115-1:2003               |Geographic Information - Metadata                                                   |GMD       |[![ISO/TC211 19115-1:2003](https://img.shields.io/badge/-100%25-4a4ea8.svg)](https://github.com/eblondel/geometa)               |       132|       0|
-|ISO/TC211 19115-2:2009               |Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data |GMI       |[![ISO/TC211 19115-2:2009](https://img.shields.io/badge/-65%25-f2eb24.svg)](https://github.com/eblondel/geometa)                |        26|      14|
+|ISO/TC211 19110:2005                 |Geographic Information - Methodology for feature cataloguing                        |GFC       |[![ISO/TC211 19110:2005](https://img.shields.io/badge/-88%25-33cc7a.svg)](https://github.com/eblondel/geometa)                  |        15|       2|
+|ISO/TC211 19115-1:2003               |Geographic Information - Metadata                                                   |GMD       |[![ISO/TC211 19115-1:2003](https://img.shields.io/badge/-80%25-f2eb24.svg)](https://github.com/eblondel/geometa)                |       105|      27|
+|ISO/TC211 19115-2:2009               |Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data |GMI       |[![ISO/TC211 19115-2:2009](https://img.shields.io/badge/-0%25-ad0f0f.svg)](https://github.com/eblondel/geometa)                 |         0|      40|
 |ISO/TC211 19119:2005                 |Geographic Information - Service Metadata                                           |SRV       |[![ISO/TC211 19119:2005](https://img.shields.io/badge/-37%25-ff0c0c.svg)](https://github.com/eblondel/geometa)                  |         7|      12|
-|ISO/TC211 19139:2007                 |Geographic Metadata XML Schema                                                      |GMX       |[![ISO/TC211 19139:2007](https://img.shields.io/badge/-8%25-ad0f0f.svg)](https://github.com/eblondel/geometa)                   |         5|      61|
+|ISO/TC211 19139:2007                 |Geographic Metadata XML Schema                                                      |GMX       |[![ISO/TC211 19139:2007](https://img.shields.io/badge/-6%25-ad0f0f.svg)](https://github.com/eblondel/geometa)                   |         4|      62|
 |ISO/TS 19103:2005                    |Geographic Common extensible markup language                                        |GCO       |[![ISO/TS 19103:2005](https://img.shields.io/badge/-100%25-4a4ea8.svg)](https://github.com/eblondel/geometa)                    |        22|       0|
 |GML 3.2.1 (ISO 19136)                |Geographic Markup Language                                                          |GML       |[![GML 3.2.1 (ISO 19136)](https://img.shields.io/badge/-37%25-ff0c0c.svg)](https://github.com/eblondel/geometa)                 |        62|     107|
 |GML 3.2.1 Coverage (OGC GMLCOV)      |OGC GML Coverage Implementation Schema                                              |GMLCOV    |[![GML 3.2.1 Coverage (OGC GMLCOV)](https://img.shields.io/badge/-100%25-4a4ea8.svg)](https://github.com/eblondel/geometa)      |         1|       0|
