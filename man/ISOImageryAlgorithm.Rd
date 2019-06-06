@@ -78,8 +78,6 @@ ISOImageryAlgorithm
    ct$setPresentationForm("mapDigital")
    ct$setCitedResponsibleParty(rp1)
    md$setCitation(ct)
-   
-   md$setIdentifier("identifier")
    md$setDescription("some description")
    
    xml <- md$encode()
