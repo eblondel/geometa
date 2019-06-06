@@ -1,6 +1,6 @@
 "specification","title","ns_prefix","element","geometa_class","in_geometa"
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_CarrierOfCharacteristics","<missing>",FALSE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_PropertyType","<missing>",FALSE
+"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_CarrierOfCharacteristics","ISOAbstractCarrierOfCharacteristics",TRUE
+"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_PropertyType","ISOAbstractPropertyType",TRUE
 "ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_AssociationRole","ISOAssociationRole",TRUE
 "ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_Binding","ISOBinding",TRUE
 "ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_BoundAssociationRole","ISOBoundAssociationRole",TRUE
@@ -20,15 +20,15 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Element","ISODataQualityAbstractElement",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_LogicalConsistency","ISOAbstractLogicalConsistency",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_PositionalAccuracy","ISOAbstractPositionalAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Result","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Result","ISOAbstractResult",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_TemporalAccuracy","ISOAbstractTemporalAccuracy",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_ThematicAccuracy","ISOAbstractThematicAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDS_Aggregate","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDS_Aggregate","ISOAbstractAggregate",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractEX_GeographicExtent","ISOGeographicExtent",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractMD_ContentInformation","ISOContentInformation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractMD_Identification","ISOIdentification",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractMD_SpatialRepresentation","ISOSpatialRepresentation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractRS_ReferenceSystem","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractRS_ReferenceSystem","ISOAbstractReferenceSystem",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Address","ISOAddress",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Citation","ISOCitation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Contact","ISOContact",TRUE
@@ -39,7 +39,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_PresentationFormCode","ISOPresentationForm",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_ResponsibleParty","ISOResponsibleParty",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_RoleCode","ISORole",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Series","ISOSeries",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Series","ISOCitationSeries",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Telephone","ISOTelephone",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","Country","ISOCountry",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_AbsoluteExternalPositionalAccuracy","ISOAbsoluteExternalPositionalAccuracy",TRUE
@@ -55,24 +55,24 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_GriddedDataPositionalAccuracy","ISOGriddedDataPositionalAccuracy",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_NonQuantitativeAttributeAccuracy","ISONonQuantitativeAttributeAccuracy",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeAttributeAccuracy","ISOQuantitativeAttributeAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeResult","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeResult","ISOQuantitativeResult",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_RelativeInternalPositionalAccuracy","ISORelativeInternalPositionalAccuracy",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_Scope","ISOScope",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TemporalConsistency","ISOTemporalConsistency",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TemporalValidity","ISOTemporalValidity",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_ThematicClassificationCorrectness","ISOThematicClassificationCorrectness",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TopologicalConsistency","ISOTopologicalConsistency",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Association","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Association","ISOAssociation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_AssociationTypeCode","ISOAssociationType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_DataSet","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Initiative","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_DataSet","ISODataSet",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Initiative","ISOInitiative",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_InitiativeTypeCode","ISOInitiativeType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_OtherAggregate","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Platform","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_ProductionSeries","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Sensor","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Series","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_StereoMate","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_OtherAggregate","ISOOtherAggregate",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Platform","ISOPlatform",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_ProductionSeries","ISOProductionSeries",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Sensor","ISOSensor",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Series","ISOSeries",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_StereoMate","ISOStereoMate",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_BoundingPolygon","ISOBoundingPolygon",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_Extent","ISOExtent",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_GeographicBoundingBox","ISOGeographicBoundingBox",TRUE
@@ -86,7 +86,7 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","LI_Source","ISOSource",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","LocalisedCharacterString","ISOLocalisedCharacterString",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_AggregateInformation","ISOAggregateInformation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ApplicationSchemaInformation","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ApplicationSchemaInformation","ISOApplicationSchemaInformation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Band","ISOBand",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_BrowseGraphic","ISOBrowseGraphic",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_CellGeometryCode","ISOCellGeometry",TRUE
@@ -101,32 +101,32 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Dimension","ISODimension",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_DimensionNameTypeCode","ISODimensionNameType",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Distribution","ISODistribution",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_DistributionUnits","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_DistributionUnits","ISODistributionUnits",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Distributor","ISODistributor",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ExtendedElementInformation","ISOExtendedElementInformation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_FeatureCatalogueDescription","ISOFeatureCatalogueDescription",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Format","ISOFormat",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_GeometricObjects","ISOGeometricObjects",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_GeometricObjectTypeCode","ISOGeometricObjectType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georectified","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georectified","ISOGeorectified",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georeferenceable","ISOGeoreferenceable",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_GridSpatialRepresentation","ISOGridSpatialRepresentation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Identifier","ISOMetaIdentifier",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ImageDescription","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ImagingConditionCode","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ImageDescription","ISOImageDescription",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ImagingConditionCode","ISOImagingCondition",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Keywords","ISOKeywords",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_KeywordTypeCode","ISOKeywordType",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_LegalConstraints","ISOLegalConstraints",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MaintenanceFrequencyCode","ISOMaintenanceFrequency",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MaintenanceInformation","ISOMaintenanceInformation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Medium","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumFormatCode","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumNameCode","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Medium","ISOMedium",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumFormatCode","ISOMediumFormat",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumNameCode","ISOMediumName",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Metadata","ISOMetadata",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MetadataExtensionInformation","ISOMetadataExtensionInformation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ObligationCode","ISOObligation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_PixelOrientationCode","<missing>",FALSE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_PortrayalCatalogueReference","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_PixelOrientationCode","ISOPixelOrientation",TRUE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_PortrayalCatalogueReference","ISOPortrayalCatalogueReference",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ProgressCode","ISOStatus",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_RangeDimension","ISORangeDimension",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ReferenceSystem","ISOReferenceSystem",TRUE
@@ -134,60 +134,60 @@
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Resolution","ISOResolution",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_RestrictionCode","ISORestriction",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeCode","ISOHierarchyLevel",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeDescription","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeDescription","ISOScopeDescription",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_SecurityConstraints","ISOSecurityConstraints",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ServiceIdentification","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ServiceIdentification","ISOServiceIdentification",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_SpatialRepresentationTypeCode","ISOSpatialRepresentationType",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_StandardOrderProcess","ISOStandardOrderProcess",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_TopicCategoryCode","ISOTopicCategory",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_TopologyLevelCode","ISOTopologyLevel",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Usage","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Usage","ISOUsage",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_VectorSpatialRepresentation","ISOVectorSpatialRepresentation",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","PT_FreeText","ISOFreeText",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","PT_Locale","ISOLocale",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","PT_LocaleContainer","<missing>",FALSE
+"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","PT_LocaleContainer","ISOLocaleContainer",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","RS_Identifier","ISOReferenceIdentifier",TRUE
 "ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","URL","ISOURL",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","AbstractMI_GeolocationInformation","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Algorithm","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_NominalResolution","<missing>",FALSE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Algorithm","ISOImageryAlgorithm",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_NominalResolution","ISOImageryNominalResolution",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Processing","<missing>",FALSE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_ProcessStep","<missing>",FALSE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_ProcessStepReport","<missing>",FALSE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Source","<missing>",FALSE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_AcquisitionInformation","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Band","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_BandDefinition","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ContextCode","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_CoverageDescription","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_EnvironmentalRecord","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Event","<missing>",FALSE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Band","ISOImageryBand",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_BandDefinition","ISOImageryBandDefinition",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ContextCode","ISOImageryContext",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_CoverageDescription","ISOImageryCoverageDescription",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_EnvironmentalRecord","ISOImageryEnvironmentalRecord",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Event","ISOImageryEvent",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GCP","<missing>",FALSE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GCPCollection","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GeometryTypeCode","<missing>",FALSE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GeometryTypeCode","ISOImageryGeometryType",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georectified","<missing>",FALSE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georeferenceable","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ImageDescription","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Instrument","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Metadata","<missing>",FALSE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ImageDescription","ISOImageryImageDescription",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Instrument","ISOImageryInstrument",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Metadata","ISOImageryMetadata",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Objective","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ObjectiveTypeCode","<missing>",FALSE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ObjectiveTypeCode","ISOImageryObjectiveType",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Operation","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_OperationTypeCode","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Plan","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Platform","<missing>",FALSE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_OperationTypeCode","ISOImageryOperationType",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Plan","ISOImageryPlan",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Platform","ISOImageryPlatform",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PlatformPass","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PolarisationOrientationCode","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PriorityCode","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_RangeElementDescription","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_RequestedDate","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Requirement","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_SensorTypeCode","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_SequenceCode","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_TransferFunctionTypeCode","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_TriggerCode","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","QE_CoverageResult","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","QE_Usability","<missing>",FALSE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PolarisationOrientationCode","ISOImageryPolarisationOrientation",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PriorityCode","ISOImageryPriority",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_RangeElementDescription","ISOImageryRangeElementDescription",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_RequestedDate","ISOImageryRequestedDate",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Requirement","ISOImageryRequirement",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_SensorTypeCode","ISOImagerySensorType",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_SequenceCode","ISOImagerySequence",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_TransferFunctionTypeCode","ISOImageryTransferFunctionType",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_TriggerCode","ISOImageryTrigger",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","QE_CoverageResult","ISOImageryCoverageResult",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","QE_Usability","ISOImageryUsability",TRUE
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","DCPList","ISODCPList",TRUE
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_CoupledResource","ISOCoupledResource",TRUE
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_CouplingType","ISOCouplingType",TRUE
@@ -204,7 +204,7 @@
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_Port","<missing>",FALSE
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_PortSpecification","<missing>",FALSE
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_Service","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceIdentification","ISOServiceIdentification",TRUE
+"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceIdentification","ISOSRVServiceIdentification",TRUE
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceSpecification","<missing>",FALSE
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceType","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","AbstractCT_Catalogue","ISOAbstractCatalogue",TRUE
@@ -264,7 +264,7 @@
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalCS","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalDatum","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_Aggregate","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataFile","<missing>",FALSE
+"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataFile","ISODataFile",TRUE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataSet","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_ScopeCode","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_SupportFile","<missing>",FALSE
