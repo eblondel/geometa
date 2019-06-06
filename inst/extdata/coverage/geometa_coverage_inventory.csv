@@ -151,7 +151,7 @@
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","AbstractMI_GeolocationInformation","<missing>",FALSE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Algorithm","ISOImageryAlgorithm",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_NominalResolution","ISOImageryNominalResolution",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Processing","<missing>",FALSE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Processing","ISOImageryProcessing",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_ProcessStep","<missing>",FALSE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_ProcessStepReport","<missing>",FALSE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Source","<missing>",FALSE
