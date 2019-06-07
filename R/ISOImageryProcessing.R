@@ -160,7 +160,7 @@ ISOImageryProcessing <- R6Class("ISOImageryProcessing",
        if(!is.null(locales)){
          procedureDescription <- self$createLocalisedProperty(procedureDescription, locales)
        }
-       self$procedurePescription <- procedureDescription
+       self$procedureDescription <- procedureDescription
      },
      
      #addDocumentation
