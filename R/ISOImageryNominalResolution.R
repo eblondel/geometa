@@ -23,6 +23,16 @@
 #'  }
 #' }
 #' 
+#' @examples
+#'   #encoding
+#'   dq <- ISOImageryNominalResolution$new()
+#'   d <- ISODistance$new(value = 1, uom = "m", useUomURI = TRUE)
+#'   dq$setScanningResolution(d)
+#'   dq$setGroundResolution(d)
+#'   
+#'   #xml
+#'   xml <- dq$encode()
+#' 
 #' @references 
 #'   ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
 #' 

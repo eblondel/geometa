@@ -34,7 +34,7 @@ ISOImageryProcessing
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOImageryPlatform}}
+   This method is used to instantiate an \code{\link{ISOImageryProcessing}}
  }
  \item{\code{setIdentifier(identifier)}}{
    Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
