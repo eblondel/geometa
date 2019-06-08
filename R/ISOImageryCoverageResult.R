@@ -7,6 +7,12 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery coverage result
 #' @format \code{\link{R6Class}} object.
 #'
+#' @field spatialRepresentationType [\code{\link{ISOSpatialRepresentationType}}]
+#' @field resultFile [\code{\link{ISODataFile}}]
+#' @field resultSpatialRepresentation [\code{\link{ISOSpatialRepresentation}}]
+#' @field resultContentDescription [\code{\link{ISOCoverageDescription}}]
+#' @field resultFormat [\code{\link{ISOFormat}}]
+#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{

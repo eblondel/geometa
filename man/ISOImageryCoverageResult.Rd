@@ -14,6 +14,20 @@ Object of \code{\link{R6Class}} for modelling an ISO imagery coverage result
 \description{
 ISOImageryCoverageResult
 }
+\section{Fields}{
+
+\describe{
+\item{\code{spatialRepresentationType}}{[\code{\link{ISOSpatialRepresentationType}}]}
+
+\item{\code{resultFile}}{[\code{\link{ISODataFile}}]}
+
+\item{\code{resultSpatialRepresentation}}{[\code{\link{ISOSpatialRepresentation}}]}
+
+\item{\code{resultContentDescription}}{[\code{\link{ISOCoverageDescription}}]}
+
+\item{\code{resultFormat}}{[\code{\link{ISOFormat}}]}
+}}
+
 \section{Methods}{
 
 \describe{
