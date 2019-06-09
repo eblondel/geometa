@@ -17,51 +17,27 @@ ISOImageryMetadata
 \section{Fields}{
 
 \describe{
-\item{\code{fileIdentifier}}{[\code{\link{character}}] metadata file identifier}
-
-\item{\code{language}}{[\code{\link{ISOLanguage}}|\code{\link{character}}] metadata language code}
-
-\item{\code{characterSet}}{[\code{\link{ISOCharacterSet}}|\code{\link{character}}] character set}
-
-\item{\code{parentIdentifier}}{[\code{\link{character}}] parent metadata identifier}
-
-\item{\code{hierarchyLevel}}{[\code{\link{ISOHierarchyLevel}}|\code{\link{character}}] hierarchy level}
-
-\item{\code{hierarchyLevelName}}{[\code{\link{character}}] hierarchy level name}
-
-\item{\code{contact}}{[\code{\link{ISOResponsibleParty}}] contact(s)}
-
-\item{\code{dateStamp}}{[\code{\link{POSIXt}}] datestamp}
-
-\item{\code{metadataStandardName}}{[\code{\link{character}}] metadata standard name}
-
-\item{\code{metadataStandardVersion}}{[\code{\link{character}}] metadata standard version}
-
-\item{\code{dataSetURI}}{[\code{\link{character}}] dataset URI}
-
-\item{\code{spatialRepresentationInfo}}{[\code{\link{ISOSpatialRepresentation}}] the spatial representation}
-
-\item{\code{referenceSystemInfo}}{[\code{\link{ISOReferenceSystem}}] the reference system}
-
-\item{\code{metadataExtensionInfo}}{[\code{\link{ISOMetadataExtensionInformation}}] metadata extension}
-
-\item{\code{identificationInfo}}{[\code{\link{ISOIdentification}}] identification information}
-
-\item{\code{contentInfo}}{[\code{\link{ISOFeatureCatalogueDescription}}|\code{\link{ISOCoverageDescription}}] content description}
-
-\item{\code{distributionInfo}}{[\code{\link{ISODistribution}}] distribution information}
-
-\item{\code{dataQualityInfo}}{[\code{\link{ISODataQuality}}] data quality}
-
-\item{\code{metadataMaintenance}}{[\code{\link{ISOMaintenanceInformation}}] maintenance info}
+\item{\code{acquisitionInformation}}{[\code{list} of \code{\link{ISOImageryAcquisitionInformation}}]}
 }}
 
-\section{Methods (substitute of \code{ISOMetadata})}{
+\section{Methods}{
 
 \describe{
  \item{\code{new(xml)}}{
    This method is used to instantiate an \code{\link{ISOImageryMetadata}}
  }
+ \item{\code{addAcquisitionInfo(acquisitionInfo)}}{
+   Add acquisition information, object of class \code{\link{ISOImageryAcquisitionInformation}}
+ }
+ \item{\code{delAcquisitionInfo(acquisitionInfo)}}{
+   Deletes acquisition information, object of class \code{\link{ISOImageryAcquisitionInformation}}
+ }
+}
+}
+
+\section{Methods inherited from of \code{ISOMetadata})}{
+
+\describe{
  \item{\code{setFileIdentifier(fileIdentifier)}}{
    Sets the file identifier
  }

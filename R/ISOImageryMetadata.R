@@ -8,31 +8,23 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Imagery Metadata
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field fileIdentifier [\code{\link{character}}] metadata file identifier
-#' @field language [\code{\link{ISOLanguage}}|\code{\link{character}}] metadata language code
-#' @field characterSet [\code{\link{ISOCharacterSet}}|\code{\link{character}}] character set
-#' @field parentIdentifier [\code{\link{character}}] parent metadata identifier
-#' @field hierarchyLevel [\code{\link{ISOHierarchyLevel}}|\code{\link{character}}] hierarchy level
-#' @field hierarchyLevelName [\code{\link{character}}] hierarchy level name
-#' @field contact [\code{\link{ISOResponsibleParty}}] contact(s)
-#' @field dateStamp [\code{\link{POSIXt}}] datestamp
-#' @field metadataStandardName [\code{\link{character}}] metadata standard name
-#' @field metadataStandardVersion [\code{\link{character}}] metadata standard version
-#' @field dataSetURI [\code{\link{character}}] dataset URI
-#' @field spatialRepresentationInfo [\code{\link{ISOSpatialRepresentation}}] the spatial representation
-#' @field referenceSystemInfo [\code{\link{ISOReferenceSystem}}] the reference system
-#' @field metadataExtensionInfo [\code{\link{ISOMetadataExtensionInformation}}] metadata extension
-#' @field identificationInfo [\code{\link{ISOIdentification}}] identification information
-#' @field contentInfo [\code{\link{ISOFeatureCatalogueDescription}}|\code{\link{ISOCoverageDescription}}] content description
-#' @field distributionInfo [\code{\link{ISODistribution}}] distribution information
-#' @field dataQualityInfo [\code{\link{ISODataQuality}}] data quality
-#' @field metadataMaintenance [\code{\link{ISOMaintenanceInformation}}] maintenance info
+#' @field acquisitionInformation [\code{list} of \code{\link{ISOImageryAcquisitionInformation}}]
 #'
-#' @section Methods (substitute of \code{ISOMetadata}):
+#' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{
 #'    This method is used to instantiate an \code{\link{ISOImageryMetadata}}
 #'  }
+#'  \item{\code{addAcquisitionInfo(acquisitionInfo)}}{
+#'    Add acquisition information, object of class \code{\link{ISOImageryAcquisitionInformation}}
+#'  }
+#'  \item{\code{delAcquisitionInfo(acquisitionInfo)}}{
+#'    Deletes acquisition information, object of class \code{\link{ISOImageryAcquisitionInformation}}
+#'  }
+#' }
+#' 
+#' @section Methods inherited from of \code{ISOMetadata}):
+#' \describe{
 #'  \item{\code{setFileIdentifier(fileIdentifier)}}{
 #'    Sets the file identifier
 #'  }
@@ -462,353 +454,32 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryMetadata <- R6Class("ISOImageryMetadata",
-  inherit = ISOAbstractObject,
+  inherit = ISOMetadata,
   private = list(
     document = TRUE,
     xmlElement = "MI_Metadata",
     xmlNamespacePrefix = "GMI"
   ),
   public = list(
-     #+ fileIdentifier [0..1] : character
-     fileIdentifier = NULL,
-     #+ language [0..1] : character
-     language = NULL,
-     #+ characterSet [0..1] : ISOCharacterSet = "utf8"
-     characterSet = NULL,
-     #+ parentIdentifier [0..1] : character
-     parentIdentifier = NULL,
-     #+ hierarchyLevel [0..*] : ISOHierarchyLevel = "dataset"
-     hierarchyLevel = list(),
-     #+ hierarchyLevelName [0..*] : character
-     hierarchyLevelName = list(),
-     #+ contact [1..*] : ISOResponsibleParty
-     contact = list(),
-     #+ dateStamp : POSIXct/POSIXt
-     dateStamp = Sys.time(),
-     #+ metadataStandardName [0..1] : character
-     metadataStandardName = NULL,
-     #+ metadataStandardVersion [0..1] : character
-     metadataStandardVersion = NULL,
-     #+ dataSetURI [0..1] : character
-     dataSetURI = NULL,
-     #+ locale [0..*]: ISOLocale
-     locale = list(),
-     #+ spatialRepresentationInfo [0..*]: ISOSpatialRepresentation
-     spatialRepresentationInfo = list(),
-     #+ referenceSystemInfo [0..*]: ISOReferenceSystem
-     referenceSystemInfo = list(),
-     #+ metadataExtensionInfo [0..*]: ISOMetadataExtensionInformation
-     metadataExtensionInfo = list(),
-     #+ identificationInfo [1..*]: ISOIdentification
-     identificationInfo = list(),
-     #+ contentInfo [0..*]
-     contentInfo = list(),
-     #+ distributionInfo [0..1] : ISODistribution
-     distributionInfo = NULL,
-     #+ dataQualityInfo [0..*]: ISODataQuality
-     dataQualityInfo = list(),
-     #+ metadataMaintenance [0..1]: ISOMaintenanceInformation
-     metadataMaintenance = NULL,
-     
-     #unsupported sets (to implement)
-     #----------------
-     #+ portrayalCatalogueInfo [0..*]
-     portrayalCatalogueInfo = list(), #TODO
-     #+ applicationSchemaInfo [0..*]
-     applicationSchemaInformation = list(), #TODO
      
      initialize = function(xml = NULL){
-       
-       #default values
-       defaults <- list(
-         characterSet = ISOCharacterSet$new(value = "utf8"),
-         hierarchyLevel = ISOHierarchyLevel$new(value = "dataset")
-       )
-       
-       if(!is.null(xml)){
-         #in case of CSW GetRecordByIdResponse
-         rootName <- xmlName(xmlRoot(xml))
-         if(rootName == "GetRecordByIdResponse"){
-           xml <- xmlChildren(xmlChildren(xml)[[1]])[[1]]
-         }
-       }
-       super$initialize(xml = xml, defaults = defaults)
-     },
-     
-     #MD_Metadata
-     #--------------------------------------------------------------------------
-     
-     #setFileIdentifier
-     setFileIdentifier = function(fileIdentifier){
-       self$fileIdentifier <- fileIdentifier
-     },
-
-     #setLanguage
-     setLanguage = function(locale){
-       if(is(locale, "character")){
-         locale <- ISOLanguage$new(value = locale)
-       }
-       self$language <- locale
-     },
-
-     #setCharacterSet
-     setCharacterSet = function(charset){
-       if(is(charset, "character")){
-         charset <- ISOCharacterSet$new(value = charset)
-       }
-       self$characterSet <- charset
-     },
-     
-     #setParentIdentifier
-     setParentIdentifier = function(parentIdentifier){
-       self$parentIdentifier <- parentIdentifier
-     },
-     
-     #addHierarchyLevel
-     addHierarchyLevel = function(level){
-       if(!is(level, "ISOHierarchyLevel")){
-         level <- ISOHierarchyLevel$new(value = level)
-       }
-       return(self$addListElement("hierarchyLevel", level))
-     },
-     
-     #setHierarchyLevel
-     setHierarchyLevel = function(level){
-       self$hierarchyLevel <- list()
-       self$addHierarchyLevel(level)
-     },
-
-     #delHierarchyLevel
-     delHierarchyLevel = function(level){
-       if(!is(level, "ISOHierarchyLevel")){
-         level <- ISOHierarchyLevel$new(value = level)
-       }
-       return(self$delListElement("hierarchyLevel", level))
+       super$initialize(xml = xml)
      },
     
-     #addHierarchyLevelName
-     addHierarchyLevelName = function(levelName){
-       return(self$addListElement("hierarchyLevelName", levelName))
-     },
-
-     #delHierarchyLevelName
-     delHierarchyLevelName = function(levelName){
-       return(self$delListElement("hierarchyLevelName", levelName))
-     },
-     
-     #addContact
-     addContact = function(contact){
-       if(!is(contact,"ISOResponsibleParty")){
-         stop("The argument should be a 'ISOResponsibleParty' object")
+     #addAcquisitionInfo
+     addAcquisitionInfo = function(acquisitionInfo){
+       if(!is(acquisitionInfo, "ISOImageryAcquisitionInformation")){
+         stop("The argument should be an object of class 'ISOImageryAcquisitionInformation")
        }
-       return(self$addListElement("contact", contact))
+       return(self$addListElement("acquisitionInformation", acquisitionInfo))
      },
      
-     #delContact
-     delContact = function(contact){
-       if(!is(contact,"ISOResponsibleParty")){
-         stop("The argument should be a 'ISOResponsibleParty' object")
+     #delAcquisitionInfo
+     delAcquisitionInfo = function(acquisitionInfo){
+       if(!is(acquisitionInfo, "ISOImageryAcquisitionInformation")){
+         stop("The argument should be an object of class 'ISOImageryAcquisitionInformation")
        }
-       return(self$delListElement("contact", contact))
-     },
-     
-     
-     #setDateStamp
-     setDateStamp = function(date){
-       self$dateStamp = date
-     },
-     
-     #setMetadataStandardName
-     setMetadataStandardName = function(name){
-       if(!is(name, "character")) name <- as.character(name)
-       self$metadataStandardName <- name
-     },
-     
-     #setMetadataStandardVersion
-     setMetadataStandardVersion = function(version){
-       if(!is(version, "character")) version <- as.character(version)
-       self$metadataStandardVersion <- version
-     },
-     
-     #setDataSetURI
-     setDataSetURI = function(dataSetURI){
-       self$dataSetURI = dataSetURI
-     },
-     
-     #addLocale
-     addLocale = function(locale){
-       if(!is(locale,"ISOLocale")){
-         stop("The argument should be a 'ISOLocale' object")  
-       }
-       return(self$addListElement("locale", locale))
-     },
-     
-     #delLocale
-     delLocale = function(locale){
-       if(!is(locale,"ISOLocale")){
-         stop("The argument should be a 'ISOLocale' object")  
-       }
-       return(self$delListElement("locale", locale))
-     },
-     #MD_SpatialRepresentation
-     #--------------------------------------------------------------------------
-     
-     #addSpatialRepresentationInfo
-     addSpatialRepresentationInfo = function(spatialRepresentationInfo){
-       if(!is(spatialRepresentationInfo,"ISOSpatialRepresentation")){
-         stop("The argument should be a 'ISOSpatialRepresentation' object")
-       }
-       return(self$addListElement("spatialRepresentationInfo", spatialRepresentationInfo))
-     },
-     
-     #setSpatialRepresentationInfo
-     setSpatialRepresentationInfo = function(spatialRepresentationInfo){
-       self$spatialRepresentationInfo = list()
-       return(self$addSpatialRepresentationInfo(spatialRepresentationInfo))
-     },
-     
-     #delSpatialRepresentationInfo
-     delSpatialRepresentationInfo = function(spatialRepresentationInfo){
-       if(!is(spatialRepresentationInfo,"ISOSpatialRepresentation")){
-         stop("The argument should be a 'ISOSpatialRepresentation' object")
-       }
-       return(self$delListElement("spatialRepresentationInfo", spatialRepresentationInfo))
-     },
-     
-     #MD_ReferenceSystem
-     #--------------------------------------------------------------------------
-     
-     #addReferenceSystemInfo
-     addReferenceSystemInfo = function(referenceSystemInfo){
-       if(!is(referenceSystemInfo, "ISOReferenceSystem")){
-         stop("The argument should be a 'ISOReferenceSystem' object")  
-       }
-       return(self$addListElement("referenceSystemInfo", referenceSystemInfo))
-     },
-     
-     #setReferenceSystemInfo
-     setReferenceSystemInfo = function(referenceSystemInfo){
-       self$referenceSystemInfo <- list()
-       return(self$addReferenceSystemInfo(referenceSystemInfo))
-     },
-     
-     #delReferenceSystemInfo
-     delReferenceSystemInfo = function(referenceSystemInfo){
-       if(!is(referenceSystemInfo, "ISOReferenceSystem")){
-         stop("The argument should be a 'ISOReferenceSystem' object")  
-       }
-       return(self$delListElement("referenceSystemInfo", referenceSystemInfo))
-     },
-     
-     #MD_MetadataExtensionInformation
-     #--------------------------------------------------------------------------
-     
-     #addMetadataExtensionInfo
-     addMetadataExtensionInfo = function(metadataExtensionInfo){
-       if(!is(metadataExtensionInfo, "ISOMetadataExtensionInformation")){
-         stop("The argument should be a 'ISOMetadataExtensionInformation' object")  
-       }
-       return(self$addListElement("metadataExtensionInfo", metadataExtensionInfo))
-     },
-     
-     #delMetadataExtensionInfo
-     delMetadataExtensionInfo = function(metadataExtensionInfo){
-       if(!is(metadataExtensionInfo, "ISOMetadataExtensionInformation")){
-         stop("The argument should be a 'ISOMetadataExtensionInformation' object")  
-       }
-       return(self$delListElement("metadataExtensionInfo", metadataExtensionInfo))
-     },
-     
-     #MD_Identification
-     #--------------------------------------------------------------------------
-     
-     #addIdentificationInfo
-     addIdentificationInfo = function(identificationInfo){
-       if(!inherits(identificationInfo,"ISOIdentification")){
-         stop("The argument should be an object of class 'ISODataIdentification' or 'ISOServiceIdentification")
-       }
-       return(self$addListElement("identificationInfo", identificationInfo))
-     },
-     
-     #setIdentificationInfo
-     setIdentificationInfo = function(identificationInfo){
-       self$identificationInfo = list()
-       return(self$addIdentificationInfo(identificationInfo))
-     },
-     
-     #delIdentificationInfo
-     delIdentificationInfo = function(identificationInfo){
-       if(!inherits(identificationInfo,"ISOIdentification")){
-         stop("The argument should be an object of class 'ISODataIdentification' or 'ISOServiceIdentification")
-       }
-       return(self$delListElement("identificationInfo", identificationInfo))
-     },
-     
-     #MD_Distribution
-     #--------------------------------------------------------------------------
-     
-     #setDistributionInfo
-     setDistributionInfo = function(distributionInfo){
-       if(!is(distributionInfo,"ISODistribution")){
-         stop("The argument should be a 'ISODistribution' object")
-       }
-       self$distributionInfo = distributionInfo
-     },
-     
-     #DQ_DataQuality
-     #--------------------------------------------------------------------------     
-     
-     #addDataQualityInfo
-     addDataQualityInfo = function(dataQualityInfo){
-       if(!is(dataQualityInfo,"ISODataQuality")){
-         stop("The argument should be a 'ISODataQuality' object")
-       }
-       return(self$addListElement("dataQualityInfo", dataQualityInfo))
-     },
-     
-     #setDataQualityInfo
-     setDataQualityInfo = function(dataQualityInfo){
-       self$dataQualityInfo = list()
-       return(self$addDataQualityInfo(dataQualityInfo))
-     },
-     
-     #delDataQualityInfo
-     delDataQualityInfo = function(dataQualityInfo){
-       if(!is(dataQualityInfo,"ISODataQuality")){
-         stop("The argument should be a 'ISODataQuality' object")
-       }
-       return(self$delListElement("dataQualityInfo", dataQualityInfo))
-     },
-     
-     #MD_MaintenanceInformation
-     #-------------------------------------------------------------------------- 
-     
-     #setMetadataMaintenance
-     setMetadataMaintenance = function(metadataMaintenance){
-       if(!is(metadataMaintenance,"ISOMaintenanceInformation")){
-         stop("The argument should be a 'ISOMaintenanceInformation' object")
-       }
-       self$metadataMaintenance <- metadataMaintenance
-     },
-     
-     #MD_ContentInformation
-     #--------------------------------------------------------------------------     
-     
-     #addContentInfo
-     addContentInfo = function(contentInfo){
-       if(!is(contentInfo,"ISOContentInformation")){
-         stop("The argument should be a 'ISOContentInformation' object")
-       }
-       return(self$addListElement("contentInfo", contentInfo))
-     },
-     
-     #delContentInfo
-     delContentInfo = function(contentInfo){
-       if(!is(contentInfo,"ISOContentInformation")){
-         stop("The argument should be a 'ISOContentInformation' object")
-       }
-       return(self$delListElement("contentInfo", contentInfo))
+       return(self$delListElement("acquisitionInformation", acquisitionInfo))
      }
-     
   )                        
 )
