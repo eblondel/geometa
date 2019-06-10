@@ -461,7 +461,10 @@ ISOImageryMetadata <- R6Class("ISOImageryMetadata",
     xmlNamespacePrefix = "GMI"
   ),
   public = list(
-     
+    
+     #+ acquisitionInformation [0..*]: ISOImageryAcquisitionInformation  
+     acquisitionInformation = list(),
+    
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
