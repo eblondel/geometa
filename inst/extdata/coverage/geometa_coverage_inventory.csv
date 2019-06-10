@@ -165,8 +165,8 @@
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GCP","ISOImageryGCP",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GCPCollection","ISOImageryGCPCollection",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GeometryTypeCode","ISOImageryGeometryType",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georectified","<missing>",FALSE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georeferenceable","<missing>",FALSE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georectified","ISOImageryGeorectified",TRUE
+"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georeferenceable","ISOImageryGeoreferencerable",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ImageDescription","ISOImageryImageDescription",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Instrument","ISOImageryInstrument",TRUE
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Metadata","ISOImageryMetadata",TRUE
