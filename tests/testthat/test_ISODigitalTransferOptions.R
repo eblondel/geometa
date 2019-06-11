@@ -29,7 +29,7 @@ test_that("encoding",{
   
 })
 
-test_that("encoding - i18n",{)
+test_that("encoding - i18n",{
   #encoding
   md <- ISODigitalTransferOptions$new()  
   or <- ISOOnlineResource$new()
