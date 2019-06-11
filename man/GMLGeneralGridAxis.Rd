@@ -17,7 +17,13 @@ GMLGeneralGridAxis
 \section{Fields}{
 
 \describe{
-\item{\code{sequenceRule}}{}
+\item{\code{offsetVector}}{[\code{\link{GMLElement}}]}
+
+\item{\code{coefficients}}{[\code{\link{GMLElement}}]}
+
+\item{\code{gridAxesSpanned}}{[\code{\link{GMLElement}}]}
+
+\item{\code{sequenceRule}}{[\code{\link{GMLElement}}]}
 }}
 
 \note{

@@ -17,7 +17,11 @@ GMLDerivedCRS
 \section{Fields}{
 
 \describe{
-\item{\code{coordinateSystem}}{}
+\item{\code{baseCRS}}{[\code{\link{GMLElement}}]}
+
+\item{\code{derivedCRSType}}{[\code{\link{GMLElement}}]}
+
+\item{\code{coordinateSystem}}{[\code{\link{GMLElement}}]}
 }}
 
 \section{Methods}{

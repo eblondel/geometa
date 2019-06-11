@@ -17,7 +17,13 @@ GMLAbstractCoordinateOperation
 \section{Fields}{
 
 \describe{
-\item{\code{targetCRS}}{}
+\item{\code{operationVersion}}{[\code{\link{GMLElement}}]}
+
+\item{\code{coordinateOperationAccuracy}}{[\code{\link{GMLElement}}]}
+
+\item{\code{sourceCRS}}{[\code{\link{GMLElement}}]}
+
+\item{\code{targetCRS}}{[\code{\link{GMLElement}}]}
 }}
 
 \section{Methods}{

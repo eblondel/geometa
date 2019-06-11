@@ -17,7 +17,11 @@ GMLConventionalUnit
 \section{Fields}{
 
 \describe{
-\item{\code{derivationUnitTerm}}{}
+\item{\code{conversionToPreferredUnit}}{[\code{\link{GMLElement}}]}
+
+\item{\code{roughConversionToPreferredUnit}}{[\code{\link{GMLElement}}]}
+
+\item{\code{derivationUnitTerm}}{[\code{\link{GMLElement}}]}
 }}
 
 \section{Methods}{

@@ -17,7 +17,11 @@ GMLTimePeriod
 \section{Fields}{
 
 \describe{
-\item{\code{duration}}{}
+\item{\code{beginPosition}}{[\code{\link{POSIXt}}]}
+
+\item{\code{endPosition}}{[\code{\link{POSIXt}}]}
+
+\item{\code{duration}}{[\code{\link{character}}]}
 }}
 
 \section{Methods}{

@@ -7,10 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLGeodeticCRS
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field ellipsoidalCS
-#' @field cartesianCS
-#' @field sphericalCS
-#' @field geodeticDatum
+#' @field ellipsoidalCS [\code{\link{GMLEllipsoidalCS}}]
+#' @field cartesianCS [\code{\link{GMLCartesianCS}}]
+#' @field sphericalCS [\code{\link{GMLSphericalCS}}]
+#' @field geodeticDatum [\code{\link{GMLGeodeticDatum}}]
 #'
 #' @section Methods:
 #' \describe{
@@ -53,7 +53,7 @@ GMLGeodeticCRS <- R6Class("GMLGeodeticCRS",
     cartesianCS = NULL,
     #+ sphericalCS [1..1]: GMLSphericalCS
     sphericalCS = NULL,
-    #+ geodeticDatum [1..1]: GMGeodeticDatum
+    #+ geodeticDatum [1..1]: GMLGeodeticDatum
     geodeticDatum = NULL,
     
     #setEllipsoidalCS

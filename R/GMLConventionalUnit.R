@@ -7,9 +7,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GML derived unit
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field conversionToPreferredUnit
-#' @field roughConversionToPreferredUnit
-#' @field derivationUnitTerm
+#' @field conversionToPreferredUnit [\code{\link{GMLElement}}]
+#' @field roughConversionToPreferredUnit [\code{\link{GMLElement}}]
+#' @field derivationUnitTerm [\code{\link{GMLElement}}]
 #'
 #' @section Methods:
 #' \describe{

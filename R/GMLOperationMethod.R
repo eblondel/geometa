@@ -7,11 +7,11 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLOperationMethod
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field formulaCitation
-#' @field formula
-#' @field sourceDimensions
-#' @field targetDimensions
-#' @field parameter
+#' @field formulaCitation [\code{\link{ISOCitation}}]
+#' @field formula [\code{\link{GMLElement}}]
+#' @field sourceDimensions [\code{\link{GMLElement}}]
+#' @field targetDimensions [\code{\link{GMLElement}}]
+#' @field parameter [\code{list} of [\code{\link{GMLOperationParameter}} or \code{\link{GMLOperationParameterGroup}}]]
 #'
 #' @section Inherited methods:
 #' \describe{

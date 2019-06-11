@@ -17,7 +17,15 @@ GMLOperationMethod
 \section{Fields}{
 
 \describe{
-\item{\code{parameter}}{}
+\item{\code{formulaCitation}}{[\code{\link{ISOCitation}}]}
+
+\item{\code{formula}}{[\code{\link{GMLElement}}]}
+
+\item{\code{sourceDimensions}}{[\code{\link{GMLElement}}]}
+
+\item{\code{targetDimensions}}{[\code{\link{GMLElement}}]}
+
+\item{\code{parameter}}{[\code{list} of [\code{\link{GMLOperationParameter}} or \code{\link{GMLOperationParameterGroup}}]]}
 }}
 
 \section{Inherited methods}{

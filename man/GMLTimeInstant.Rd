@@ -17,7 +17,7 @@ GMLTimeInstant
 \section{Fields}{
 
 \describe{
-\item{\code{timePosition}}{}
+\item{\code{timePosition}}{[\code{\link{numeric}}|\code{\link{character}}|\code{\link{Date}}|\code{\link{POSIXt}}]}
 }}
 
 \section{Methods}{

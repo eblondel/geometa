@@ -7,9 +7,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GML abstract GML
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field descriptionReference
-#' @field identifier
-#' @field name
+#' @field descriptionReference [\code{\link{GMLElement}}]
+#' @field identifier [\code{\link{GMLElement}}]
+#' @field name [\code{\link{GMLElement}}]
 #'
 #' @section Methods:
 #' \describe{

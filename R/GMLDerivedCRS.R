@@ -7,9 +7,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLDerivedCRS
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field baseCRS
-#' @field derivedCRSType
-#' @field coordinateSystem
+#' @field baseCRS [\code{\link{GMLElement}}]
+#' @field derivedCRSType [\code{\link{GMLElement}}]
+#' @field coordinateSystem [\code{\link{GMLElement}}]
 #'
 #' @section Methods:
 #' \describe{

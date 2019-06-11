@@ -17,7 +17,13 @@ GMLGeodeticCRS
 \section{Fields}{
 
 \describe{
-\item{\code{geodeticDatum}}{}
+\item{\code{ellipsoidalCS}}{[\code{\link{GMLEllipsoidalCS}}]}
+
+\item{\code{cartesianCS}}{[\code{\link{GMLCartesianCS}}]}
+
+\item{\code{sphericalCS}}{[\code{\link{GMLSphericalCS}}]}
+
+\item{\code{geodeticDatum}}{[\code{\link{GMLGeodeticDatum}}]}
 }}
 
 \section{Methods}{

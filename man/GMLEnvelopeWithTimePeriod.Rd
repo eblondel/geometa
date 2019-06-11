@@ -17,7 +17,9 @@ GMLEnvelopeWithTimePeriod
 \section{Fields}{
 
 \describe{
-\item{\code{endPosition}}{}
+\item{\code{beginPosition}}{[\code{\link{GMLElement}}]}
+
+\item{\code{endPosition}}{[\code{\link{GMLElement}}]}
 }}
 
 \section{Methods}{

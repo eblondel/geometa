@@ -17,7 +17,9 @@ GMLParameterValueGroup
 \section{Fields}{
 
 \describe{
-\item{\code{group}}{}
+\item{\code{parameterValue}}{[\code{\link{GMLParameterValue}}]}
+
+\item{\code{group}}{[\code{\link{GMLOperationParameterGroup}}]}
 }}
 
 \section{Methods}{

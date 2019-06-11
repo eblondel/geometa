@@ -7,10 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GML GeneralGridAxis
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field offsetVector
-#' @field coefficients
-#' @field gridAxesSpanned
-#' @field sequenceRule
+#' @field offsetVector [\code{\link{GMLElement}}]
+#' @field coefficients [\code{\link{GMLElement}}]
+#' @field gridAxesSpanned [\code{\link{GMLElement}}]
+#' @field sequenceRule [\code{\link{GMLElement}}]
 #'
 #' @section Methods:
 #' \describe{

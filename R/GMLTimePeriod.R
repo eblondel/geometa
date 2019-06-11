@@ -7,9 +7,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLTimePeriod
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field beginPosition
-#' @field endPosition
-#' @field duration
+#' @field beginPosition [\code{\link{POSIXt}}]
+#' @field endPosition [\code{\link{POSIXt}}]
+#' @field duration [\code{\link{character}}]
 #'
 #' @section Methods:
 #' \describe{
