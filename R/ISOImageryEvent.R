@@ -62,7 +62,7 @@
 #'    md$setIdentifier("event_1")
 #'    md$setTrigger("manual")
 #'    md$setContext("pass")
-#'    md$setSequence("instantaneaous")
+#'    md$setSequence("instantaneous")
 #'    md$setTime(Sys.time())
 #'  
 #'    xml <- md$encode()
