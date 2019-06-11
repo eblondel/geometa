@@ -9,8 +9,6 @@ require(testthat)
 context("ISOFileName")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOFileName$new(file = "someuri", name = "filename")
   xml <- md$encode()

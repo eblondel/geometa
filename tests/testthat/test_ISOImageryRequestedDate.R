@@ -9,8 +9,6 @@ require(testthat)
 context("ISOImageryRequestedDate")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOImageryRequestedDate$new()
   md$setRequestedDateOfCollection(Sys.time())

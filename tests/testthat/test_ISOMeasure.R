@@ -9,8 +9,6 @@ require(testthat)
 context("ISOMeasure")
 
 test_that("ISOMeasure",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOMeasure$new(value = 1, uom = "m", useUomURI = TRUE)
   xml <- md$encode()

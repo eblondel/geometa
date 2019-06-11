@@ -51,7 +51,7 @@ ISOImageryGCP <- R6Class("ISOImageryGCP",
  public = list(
    geographicCoordinates = matrix(NA_real_, 1, 2),
    initialize = function(xml = NULL){
-     super$initialize(xml = xml)
+     super$initialize(xml = xml, wrap = TRUE)
    },
    
    #setGeographicCoordinates

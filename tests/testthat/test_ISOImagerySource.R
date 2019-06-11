@@ -9,8 +9,6 @@ require(testthat)
 context("ISOImagerySource")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOImagerySource$new()
   md$setProcessedLevel("identifier")

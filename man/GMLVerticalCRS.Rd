@@ -17,7 +17,9 @@ GMLVerticalCRS
 \section{Fields}{
 
 \describe{
-\item{\code{verticalDatum}}{}
+\item{\code{verticalCS}}{[\code{\link{GMLVerticalCS}}]}
+
+\item{\code{verticalDatum}}{[code{\link{GMLVerticalDatum}}]}
 }}
 
 \section{Methods}{

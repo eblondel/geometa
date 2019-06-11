@@ -7,8 +7,8 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GML unit definition
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field quantityTypeReference
-#' @field catalogSymbol
+#' @field quantityTypeReference [\code{\link{character}}]
+#' @field catalogSymbol [\code{\link{character}}]
 #'
 #' @section Methods:
 #' \describe{

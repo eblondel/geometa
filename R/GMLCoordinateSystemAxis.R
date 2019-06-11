@@ -7,11 +7,11 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLCoordinateSystemAxis
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field axisAbbrev
-#' @field axisDirection
-#' @field minimumValue
-#' @field maximumValue
-#' @field rangeMeaning
+#' @field axisAbbrev [\code{\link{GMLElement}}]
+#' @field axisDirection [\code{\link{GMLElement}}]
+#' @field minimumValue [\code{\link{GMLElement}}]
+#' @field maximumValue [\code{\link{GMLElement}}]
+#' @field rangeMeaning [\code{\link{GMLElement}}]
 #'
 #' @section Methods:
 #' \describe{

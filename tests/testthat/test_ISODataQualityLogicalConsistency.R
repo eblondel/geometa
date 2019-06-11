@@ -9,8 +9,6 @@ require(testthat)
 context("ISOLogicalConsistency")
 
 test_that("ISOAbstractLogicalConsistency",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOAbstractLogicalConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -44,8 +42,6 @@ test_that("ISOAbstractLogicalConsistency",{
 })
 
 test_that("ISOTopologicalConsistency",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOTopologicalConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -79,8 +75,6 @@ test_that("ISOTopologicalConsistency",{
 })
 
 test_that("ISOFormatConsistency",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOFormatConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -114,8 +108,6 @@ test_that("ISOFormatConsistency",{
 })
 
 test_that("ISODomainConsistency",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISODomainConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -149,8 +141,6 @@ test_that("ISODomainConsistency",{
 })
 
 test_that("ISOConceptualConsistency",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOConceptualConsistency$new()
   dq$addNameOfMeasure("measure")

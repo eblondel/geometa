@@ -17,7 +17,9 @@ GMLEnvelope
 \section{Fields}{
 
 \describe{
-\item{\code{upperCorner}}{}
+\item{\code{lowerCorner}}{[\code{\link{matrix}}]}
+
+\item{\code{upperCorner}}{[\code{\link{matrix}}]}
 }}
 
 \note{

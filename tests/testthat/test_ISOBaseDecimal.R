@@ -9,8 +9,6 @@ require(testthat)
 context("ISOBaseDecimal")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOBaseDecimal$new(value = 11.40)
   expect_is(md, "ISOBaseDecimal")

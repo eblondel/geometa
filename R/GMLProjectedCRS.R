@@ -7,8 +7,8 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLProjectedCRS
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field baseGeodeticCRS
-#' @field cartesianCS
+#' @field baseGeodeticCRS [\code{\link{GMLGeodeticCRS}}]
+#' @field cartesianCS [\code{\link{GMLCartesianCS}}]
 #'
 #' @section Methods:
 #' \describe{

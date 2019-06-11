@@ -7,8 +7,8 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLVerticalCRS
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field verticalCS
-#' @field verticalDatum
+#' @field verticalCS [\code{\link{GMLVerticalCS}}]
+#' @field verticalDatum [code{\link{GMLVerticalDatum}}]
 #'
 #' @section Methods:
 #' \describe{

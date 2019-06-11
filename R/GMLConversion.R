@@ -7,8 +7,8 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLConversion
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field method
-#' @field parameterValue
+#' @field method  [\code{\link{GMLElement}}]
+#' @field parameterValue [\code{list} of \code{\link{GMLAbstractGeneralParameterValue}}]
 #'
 #' @section Inherited methods:
 #' \describe{

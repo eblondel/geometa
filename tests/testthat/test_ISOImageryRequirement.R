@@ -9,8 +9,6 @@ require(testthat)
 context("ISOImageryRequirement")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOImageryRequirement$new()
   md$setIdentifier("identifier")

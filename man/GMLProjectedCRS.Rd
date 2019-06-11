@@ -17,7 +17,9 @@ GMLProjectedCRS
 \section{Fields}{
 
 \describe{
-\item{\code{cartesianCS}}{}
+\item{\code{baseGeodeticCRS}}{[\code{\link{GMLGeodeticCRS}}]}
+
+\item{\code{cartesianCS}}{[\code{\link{GMLCartesianCS}}]}
 }}
 
 \section{Methods}{

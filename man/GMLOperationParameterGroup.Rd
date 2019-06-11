@@ -17,7 +17,9 @@ GMLOperationParameterGroup
 \section{Fields}{
 
 \describe{
-\item{\code{parameter}}{}
+\item{\code{maximumOccurs}}{[\code{\link{GMLElement}}]}
+
+\item{\code{parameter}}{[\code{\link{GMLOperationParameter}}|\code{\link{GMLOperationParameterGroup}}]}
 }}
 
 \section{Inherited methods}{

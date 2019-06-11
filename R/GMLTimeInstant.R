@@ -7,7 +7,7 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLTimeInstant
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field timePosition
+#' @field timePosition [\code{\link{numeric}}|\code{\link{character}}|\code{\link{Date}}|\code{\link{POSIXt}}]
 #'
 #' @section Methods:
 #' \describe{

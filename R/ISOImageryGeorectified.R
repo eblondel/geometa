@@ -37,7 +37,7 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOImageryGeorectified <- R6Class("ISOImageGeorectified",
+ISOImageryGeorectified <- R6Class("ISOImageryGeorectified",
    inherit = ISOGeorectified,
    private = list(
      xmlElement = "MI_Georectified",
@@ -53,17 +53,17 @@ ISOImageryGeorectified <- R6Class("ISOImageGeorectified",
      },
 
      #addCheckPoint
-     addcheckPoint = function(sfg = NULL, m = NULL){
-       checkPoint <- ISOImageryGCP$new()
-       checkPoint$setGeographicCoordinates(sfg = sfg, m = m)
-       return(self$addListElement("checkPoint", checkPoint))
+     addCheckPoint = function(sfg = NULL, m = NULL){
+       gcp<- ISOImageryGCP$new()
+       gcp$setGeographicCoordinates(sfg = sfg, m = m)
+       return(self$addListElement("checkPoint", gcp))
      },
      
      #delCheckPoint
-     delcheckPoint = function(sfg = NULL, m = NULL){
-       checkPoint <- ISOImageryGCP$new()
-       checkPoint$setGeographicCoordinates(sfg = sfg, m = m)
-       return(self$delListElement("checkPoint", checkPoint))
+     delCheckPoint = function(sfg = NULL, m = NULL){
+       gcp<- ISOImageryGCP$new()
+       gcp$setGeographicCoordinates(sfg = sfg, m = m)
+       return(self$delListElement("checkPoint", gcp))
      }
      
    )                        

@@ -17,7 +17,9 @@ GMLTemporalCRS
 \section{Fields}{
 
 \describe{
-\item{\code{temporalDatum}}{}
+\item{\code{timeCS}}{[\code{\link{GMLTimeCS}}]}
+
+\item{\code{temporalDatum}}{[\code{\link{GMLTemporalDatum}}]}
 }}
 
 \section{Methods}{

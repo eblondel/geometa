@@ -9,8 +9,6 @@ require(testthat)
 context("ISOMimeFileType")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOMimeFileType$new(type = "somemimetype", name = "Mime type name")
   xml <- md$encode()

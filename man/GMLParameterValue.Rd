@@ -17,7 +17,9 @@ GMLParameterValue
 \section{Fields}{
 
 \describe{
-\item{\code{operationParameter}}{}
+\item{\code{value}}{[\code{\link{GMLElement}}]}
+
+\item{\code{operationParameter}}{[\code{\link{GMLOperationParameter}}]}
 }}
 
 \section{Methods}{

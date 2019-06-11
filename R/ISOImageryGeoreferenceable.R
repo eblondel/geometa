@@ -1,10 +1,10 @@
-#' ISOImageryGeoreferencerable
+#' ISOImageryGeoreferenceable
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO imagery Georeferencerable
-#' @return Object of \code{\link{R6Class}} for modelling an ISO imagery Georeferencerable
+#' @keywords ISO imagery Georeferenceable
+#' @return Object of \code{\link{R6Class}} for modelling an ISO imagery Georeferenceable
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field geolocationInformation [\code{list} of \code{\link{ISOImageryAbstractGeolocationInformation}}]
@@ -12,7 +12,7 @@
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryGeoreferencerable}}
+#'    This method is used to instantiate an \code{\link{ISOImageryGeoreferenceable}}
 #'  }
 #'  \item{\code{addGeolocationInformation(geolocationInformation)}}{
 #'    Adds a geolocation information, an object of class \code{\link{ISOImageryAbstractGeolocationInformation}}
@@ -37,8 +37,8 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOImageryGeoreferencerable <- R6Class("ISOImageryGeoreferencerable",
-  inherit = ISOGeoreferencerable,
+ISOImageryGeoreferenceable <- R6Class("ISOImageryGeoreferenceable",
+  inherit = ISOGeoreferenceable,
   private = list(
     xmlElement = "MI_Georeferenceable",
     xmlNamespacePrefix = "GMI"

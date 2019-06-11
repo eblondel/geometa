@@ -10,10 +10,8 @@ require(testthat)
 context("ISOImageryGeorecrified")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
-  md <- ISOImageryGeorecrified$new()
+  md <- ISOImageryGeorectified$new()
   md$setNumberOfDimensions(1)
   md$setTransformationParameterAvailability(FALSE)
   dim1 <- ISODimension$new()
@@ -36,7 +34,7 @@ test_that("encoding",{
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  md2 <- ISOImageryGeorecrified$new(xml = xml)
+  md2 <- ISOImageryGeorectified$new(xml = xml)
   xml2 <- md2$encode()
   
   expect_true(ISOAbstractObject$compare(md, md2))

@@ -9,8 +9,6 @@ require(testthat)
 context("ISOReal")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOBaseReal$new(value = 11.40)
   expect_is(md, "ISOBaseReal")

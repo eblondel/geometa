@@ -7,8 +7,8 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GML envelope with time period
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field beginPosition
-#' @field endPosition
+#' @field beginPosition [\code{\link{GMLElement}}]
+#' @field endPosition [\code{\link{GMLElement}}]
 #'
 #' @section Methods:
 #' \describe{

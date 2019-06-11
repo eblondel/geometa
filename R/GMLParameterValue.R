@@ -7,8 +7,8 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GML parameter value
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
-#' @field operationParameter
+#' @field value [\code{\link{GMLElement}}]
+#' @field operationParameter [\code{\link{GMLOperationParameter}}]
 #' 
 #' @section Methods:
 #' \describe{

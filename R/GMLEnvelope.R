@@ -7,8 +7,8 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GML envelope
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field lowerCorner
-#' @field upperCorner
+#' @field lowerCorner [\code{\link{matrix}}]
+#' @field upperCorner [\code{\link{matrix}}]
 #'
 #' @section Methods:
 #' \describe{

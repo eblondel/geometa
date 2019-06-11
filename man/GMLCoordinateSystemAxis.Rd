@@ -17,7 +17,15 @@ GMLCoordinateSystemAxis
 \section{Fields}{
 
 \describe{
-\item{\code{rangeMeaning}}{}
+\item{\code{axisAbbrev}}{[\code{\link{GMLElement}}]}
+
+\item{\code{axisDirection}}{[\code{\link{GMLElement}}]}
+
+\item{\code{minimumValue}}{[\code{\link{GMLElement}}]}
+
+\item{\code{maximumValue}}{[\code{\link{GMLElement}}]}
+
+\item{\code{rangeMeaning}}{[\code{\link{GMLElement}}]}
 }}
 
 \section{Methods}{

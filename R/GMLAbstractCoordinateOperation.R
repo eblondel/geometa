@@ -7,10 +7,10 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLAbstractCoordinateOperation
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field operationVersion
-#' @field coordinateOperationAccuracy
-#' @field sourceCRS
-#' @field targetCRS
+#' @field operationVersion [\code{\link{GMLElement}}]
+#' @field coordinateOperationAccuracy [\code{\link{GMLElement}}]
+#' @field sourceCRS [\code{\link{GMLElement}}]
+#' @field targetCRS [\code{\link{GMLElement}}]
 #'
 #' @section Methods:
 #' \describe{

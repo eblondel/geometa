@@ -9,8 +9,6 @@ require(testthat)
 context("ISOQuantitativeResult")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOQuantitativeResult$new()
   md$setValueType("string")

@@ -17,7 +17,9 @@ GMLUnitDefinition
 \section{Fields}{
 
 \describe{
-\item{\code{catalogSymbol}}{}
+\item{\code{quantityTypeReference}}{[\code{\link{character}}]}
+
+\item{\code{catalogSymbol}}{[\code{\link{character}}]}
 }}
 
 \section{Methods}{

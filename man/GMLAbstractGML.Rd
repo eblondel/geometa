@@ -17,7 +17,11 @@ GMLAbstractGML
 \section{Fields}{
 
 \describe{
-\item{\code{name}}{}
+\item{\code{descriptionReference}}{[\code{\link{GMLElement}}]}
+
+\item{\code{identifier}}{[\code{\link{GMLElement}}]}
+
+\item{\code{name}}{[\code{\link{GMLElement}}]}
 }}
 
 \note{
