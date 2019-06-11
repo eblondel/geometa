@@ -4,6 +4,7 @@
 # Description: Unit tests for ISOImageryPlatformPass.R
 #=======================
 require(geometa, quietly = TRUE)
+require(sf)
 require(testthat)
 
 context("ISOImageryPlatformPass")
