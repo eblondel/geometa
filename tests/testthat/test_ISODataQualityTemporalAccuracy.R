@@ -9,8 +9,6 @@ require(testthat)
 context("ISODataQualityTemporalAccuracy")
 
 test_that("ISOAbstractTemporalAccuracy",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOAbstractTemporalAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -44,8 +42,6 @@ test_that("ISOAbstractTemporalAccuracy",{
 })
 
 test_that("ISOTemporalValidity",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOTemporalValidity$new()
   dq$addNameOfMeasure("measure")
@@ -79,8 +75,6 @@ test_that("ISOTemporalValidity",{
 })
 
 test_that("ISOTemporalConsistency",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOTemporalConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -114,8 +108,6 @@ test_that("ISOTemporalConsistency",{
 })
 
 test_that("ISOAccuracyOfATimeMeasurement",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOAccuracyOfATimeMeasurement$new()
   dq$addNameOfMeasure("measure")

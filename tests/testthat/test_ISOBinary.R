@@ -9,8 +9,6 @@ require(testthat)
 context("ISOBinary")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOBinary$new(value = "http://someuri")
   expect_is(md, "ISOBinary")

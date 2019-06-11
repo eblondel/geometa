@@ -9,8 +9,6 @@ require(testthat)
 context("ISODate")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISODate$new()
   d <- ISOBaseDate$new(value = ISOdate(2015, 1, 1, 1))

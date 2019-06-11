@@ -10,8 +10,6 @@ require(testthat)
 context("ISOBoundingPolygon")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   outer = matrix(c(0,0,10,0,10,10,0,10,0,0),ncol=2, byrow=TRUE)
   hole1 = matrix(c(1,1,1,2,2,2,2,1,1,1),ncol=2, byrow=TRUE)

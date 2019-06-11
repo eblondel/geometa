@@ -9,8 +9,6 @@ require(testthat)
 context("ISODimension")
 
 test_that("ISODimension",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISODimension$new()
   name <- ISODimensionNameType$new(value = "row")

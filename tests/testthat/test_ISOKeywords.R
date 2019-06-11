@@ -9,8 +9,6 @@ require(testthat)
 context("ISOKeywords")
 
 test_that("encoding - with keywords as character string",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOKeywords$new()
   md$addKeyword("keyword1")
@@ -68,8 +66,6 @@ test_that("encoding - with keywords as anchors",{
 })
 
 test_that("encoding - i18n - with keywords as character string",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOKeywords$new()
   md$addKeyword(

@@ -9,8 +9,6 @@ require(testthat)
 context("ISOFormat")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOFormat$new()
   md$setName("name")
@@ -29,8 +27,6 @@ test_that("encoding",{
 })
 
 test_that("encoding -i18n",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOFormat$new()
   md$setName(

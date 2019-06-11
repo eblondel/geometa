@@ -9,8 +9,6 @@ require(testthat)
 context("ISOProcessStep")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   md <- ISOProcessStep$new()
   md$setDescription("description")
   md$setRationale("rationale")
@@ -49,8 +47,6 @@ test_that("encoding",{
 })
 
 test_that("encoding - with empty sources / hrefs",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   md <- ISOProcessStep$new()
   md$setDescription("description")
   md$addFieldAttrs("source", href = "http://somelink")

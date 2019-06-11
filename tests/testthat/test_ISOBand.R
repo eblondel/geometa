@@ -9,8 +9,6 @@ require(testthat)
 context("ISOBand")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOBand$new()
   md$setSequenceIdentifier(ISOMemberName$new(aName = "name", attributeType = "type"))

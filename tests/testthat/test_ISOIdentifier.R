@@ -9,8 +9,6 @@ require(testthat)
 context("ISOIdentifier")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOIdentifier$new(code = "identifier")
   expect_is(md, "ISOIdentifier")

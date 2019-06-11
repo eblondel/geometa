@@ -9,8 +9,6 @@ require(testthat)
 context("ISOMetadata")
 
 test_that("encoding/decoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md = ISOMetadata$new()
   md$setFileIdentifier("my-metadata-identifier")
@@ -339,8 +337,6 @@ test_that("encoding/decoding",{
 })
 
 test_that("encoding/decoding - i18n",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md = ISOMetadata$new()
   md$setFileIdentifier("my-metadata-identifier")

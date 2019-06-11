@@ -9,8 +9,6 @@ require(testthat)
 context("ISODigitalTransferOptions")
 
 test_that("encoding",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISODigitalTransferOptions$new()  
   or <- ISOOnlineResource$new()
@@ -31,9 +29,7 @@ test_that("encoding",{
   
 })
 
-test_that("encoding - i18n",{
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
+test_that("encoding - i18n",{)
   #encoding
   md <- ISODigitalTransferOptions$new()  
   or <- ISOOnlineResource$new()
