@@ -1,12 +1,12 @@
-# test_ISOLineage.R
+# test_ISOLocaleContainer.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOLineage.R
+# Description: Unit tests for ISOLocaleContainer.R
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISOLineage")
+context("ISOLocaleContainer")
 
 test_that("encoding",{
   #encoding
