@@ -39,8 +39,7 @@ ISODate
 
 \examples{
   md <- ISODate$new()
-  d <- ISOBaseDate$new(value = ISOdate(2015, 1, 1, 1))
-  md$setDate(d)
+  md$setDate(ISOdate(2015, 1, 1, 1))
   md$setDateType("publication")
   xml <- md$encode()
 

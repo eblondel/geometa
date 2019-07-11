@@ -19,7 +19,7 @@ ISOMetadata
 \describe{
 \item{\code{fileIdentifier}}{[\code{\link{character}}] metadata file identifier}
 
-\item{\code{language}}{[\code{\link{ISOLanguage}}|\code{\link{character}}] metadata language code}
+\item{\code{language}}{[\code{\link{ISOLanguage}}|\code{\link{character}}] metadata language coded}
 
 \item{\code{characterSet}}{[\code{\link{ISOCharacterSet}}|\code{\link{character}}] character set}
 
@@ -31,7 +31,7 @@ ISOMetadata
 
 \item{\code{contact}}{[\code{\link{ISOResponsibleParty}}] contact(s)}
 
-\item{\code{dateStamp}}{[\code{\link{POSIXt}}] datestamp}
+\item{\code{dateStamp}}{[\code{\link{Date}}|\code{\link{POSIXt}}] datestamp}
 
 \item{\code{metadataStandardName}}{[\code{\link{character}}] metadata standard name}
 
