@@ -558,6 +558,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               #xmlNamespacePrefix <- "GML"
               #if(startsWith(nsPrefix,"gml")) xmlNamespacePrefix <- toupper(nsPrefix)
               xmlNamespacePrefix <- self$getClass()$private_fields$xmlNamespacePrefix
+              if(is.null(xmlNamespacePrefix)) xmlNamespacePrefix <- "GML"
               gmlElem <- GMLElement$new(element = fieldName, xmlNamespacePrefix = xmlNamespacePrefix)
               gmlElem$decode(xml = childElement)
               if(is(self[[fieldName]], "list")){
