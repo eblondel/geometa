@@ -50,8 +50,8 @@ ISODate <- R6Class("ISODate",
      
      #setDate
      setDate = function(date){
-       if(!is(date, "ISOBaseDate")){
-         date <- ISOBaseDate$new(value = date)
+       if(!(is(date, "Date") | is(date, "POSIXt"))){
+         stop("The date should be either a 'Date' or 'POSIXt' object")
        }
        self$date = date
      },

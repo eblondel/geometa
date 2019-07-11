@@ -687,6 +687,7 @@ apply_format_mapping <- function(mapping, obj, out, verbose = FALSE){
 
 
 #convert_metadata
+#'@export
 convert_metadata <- function(obj, from, to, mappings, verbose = FALSE){
   
   available_metadata_formats <- getMappingFormats(pretty = FALSE)
@@ -695,9 +696,9 @@ convert_metadata <- function(obj, from, to, mappings, verbose = FALSE){
   
   format_ids <- sapply(available_metadata_formats, function(x){x$id})
   if(!(from %in% format_ids))
-    stop(sprintf("The source format '%s' is not among known formats. Check the list of possible formats with list_metadata_formats()", from))
+    stop(sprintf("The source format '%s' is not among known formats. Check the list of possible formats with getMappingFormats(pretty = TRUE)", from))
   if(!(to %in% format_ids))
-    stop(sprintf("The target format '%s' is not among known formats. Check the list of possible formats with list_metadata_formats()", to))
+    stop(sprintf("The target format '%s' is not among known formats. Check the list of possible formats with getMappingFormats(pretty = TRUE)", to))
   
   format_from <- available_metadata_formats[sapply(available_metadata_formats, function(x){x$id == from})][[1]]
   format_to <- available_metadata_formats[sapply(available_metadata_formats, function(x){x$id == to})][[1]]
@@ -756,6 +757,21 @@ registerMappings <- function(x){
     stop("The object containing the mapping rules should be a 'data.frame'")
   }
   .geometa.mappings$rules <- x
+}
+
+#' @name getMappings
+#' @aliases getMappings
+#' @title getMappings
+#' @export
+#' @description List the mappings rules to convert from/to other metadata formats (currently 
+#' EML/emld objects and NetCDF-CF/ncdf4 objects)
+#' 
+#' @return x a \code{data.frame} containing the metadata mapping rules
+#'
+getMappings <- function(x){
+  available_metadata_formats <- getMappingFormats(pretty = FALSE)
+  if(length(available_metadata_formats)==0) setMappingFormats()
+  return(.geometa.mappings$rules)
 }
 
 #setters
