@@ -326,7 +326,7 @@ ISOImageryMetadata
      )
    )
    inspire_date <- ISODate$new()
-   inspire_date$setDate("2008-06-01")
+   inspire_date$setDate(as.Date("2008-06-01"))
    inspire_date$setDateType("publication")
    th$addDate(inspire_date)
    inspire_kwd$setThesaurusName(th)
