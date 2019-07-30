@@ -19,7 +19,7 @@ ISOCitation
 \describe{
 \item{\code{title}}{[\code{\link{character}}] title}
 
-\item{\code{alternateTitle}}{[\code{\link{character}}] alternateTitle}
+\item{\code{alternateTitle}}{[list of \code{\link{character}}] alternateTitle}
 
 \item{\code{date}}{[\code{\link{ISODate}}] the citation date with date type}
 
@@ -27,11 +27,21 @@ ISOCitation
 
 \item{\code{editionDate}}{[\code{\link{Date}}|\code{\link{POSIXt}}] date or date/time of edition}
 
-\item{\code{identifier}}{[\code{\link{ISOMetaIdentifier}}] identifier}
+\item{\code{identifier}}{[list of \code{\link{ISOMetaIdentifier}}] identifier}
 
-\item{\code{citedResponsibleParty}}{[\code{\link{ISOResponsibleParty}}] responsible party}
+\item{\code{citedResponsibleParty}}{[list of \code{\link{ISOResponsibleParty}}] responsible party}
 
-\item{\code{presentationForm}}{[\code{\link{ISOPresentationForm}}] presentation form}
+\item{\code{presentationForm}}{[list of \code{\link{ISOPresentationForm}}] presentation form}
+
+\item{\code{series}}{[\code{link{ISOCitationSeries}}] series}
+
+\item{\code{otherCitationDetails}}{[\code{\link{character}}] other citation details}
+
+\item{\code{collectiveTitle}}{[\code{\link{character}}] collective title}
+
+\item{\code{ISBN}}{[\code{\link{character}}] ISBN}
+
+\item{\code{ISSN}}{[\code{\link{character}}] ISSN}
 }}
 
 \section{Methods}{
@@ -46,6 +56,14 @@ ISOCitation
  }
  \item{\code{setAlternateTitle(alternateTitle, locales)}}{
    Sets an alternate title. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
+ }
+ \item{\code{addAlternateTitle(alternateTitle, locales)}}{
+   Adds an alternate title. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
+ }
+ \item{\code{delAlternateTitle(alternateTitle, locales)}}{
+   Adds an alternate title. Locale names can be specified as \code{list}
    with the \code{locales} argument.
  }
  \item{\code{addDate(date)}}{
@@ -63,11 +81,40 @@ ISOCitation
  \item{\code{setIdentifier(identifier)}}{
    Sets the identifier as object of class \code{\link{ISOMetaIdentifier}}
  }
+ \item{\code{addIdentifier(identifier)}}{
+   Adds an identifier as object of class \code{\link{ISOMetaIdentifier}}
+ }
+ \item{\code{delIdentifier(identifier)}}{
+   Deletes an identifier as object of class \code{\link{ISOMetaIdentifier}}
+ }
  \item{\code{seCitedResponsibleParty(rp)}}{
    Sets the cited responsiblep party, object of class \code{\link{ISOResponsibleParty}}
  }
- \item{\code{setPresentationForm}}{
+ \item{\code{setPresentationForm(presentationForm)}}{
    Sets the presentation form, object of class \code{\link{ISOPresentationForm}}
+ }
+ \item{\code{addPresentationForm(presentationForm)}}{
+   Adds a presentation form, object of class \code{\link{ISOPresentationForm}}
+ }
+ \item{\code{delPresentationForm(presentationForm)}}{
+   Deletes a presentation form, object of class \code{\link{ISOPresentationForm}}
+ }
+ \item{\code{setSeries(series)}}{
+   Set series, object of class \code{\link{ISOCitationSeries}}
+ }
+ \item{\code{setOtherCitationDetails(otherCitationDetails, locales)}}{
+   Set other citation details. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
+ }
+ \item{\code{setCollectiveTitle(collectiveTitle, locales)}}{
+   Set collective title. Locale names can be specified as \code{list}
+   with the \code{locales} argument.
+ }
+ \item{\code{setISBN(isbn)}}{
+   Set the ISBN
+ }
+ \item{\code{setISSN(issn)}}{
+   Set the ISSN
  }
 }
 }
