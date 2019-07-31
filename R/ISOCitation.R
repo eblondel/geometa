@@ -328,7 +328,7 @@ ISOCitation<- R6Class("ISOCitation",
       if(is(presentationForm, "character")){
         presentationForm <- ISOPresentationForm$new(value = presentationForm)
       }
-      self$addListElement("presentationForm", presentationForm)
+      return(self$addListElement("presentationForm", presentationForm))
     },
     
     #delPresentationForm
@@ -336,7 +336,7 @@ ISOCitation<- R6Class("ISOCitation",
       if(is(presentationForm, "character")){
         presentationForm <- ISOPresentationForm$new(value = presentationForm)
       }
-      self$delListElement("presentationForm", presentationForm)
+      return(self$delListElement("presentationForm", presentationForm))
     },
     
     #setSeries
