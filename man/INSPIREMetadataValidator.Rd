@@ -20,6 +20,10 @@ INSPIREMetadataValidator
  \item{\code{new()}}{
    This method is used to instantiate an INSPIRE Metadata validator
  }
+ \item{\code{uploadFile(path)}}{
+   Upload a XML metadata file to INSPIRE web-service. Method called internally through
+   \code{getValidationReport}.
+ }
  \item{\code{getValidationReport(obj, file, raw)}}{
    Get validation report for a metadata specified either as R object of class
    \code{ISOMetadata} (from \pkg{geometa} package) or \code{XMLInternalNode} 
@@ -39,7 +43,7 @@ INSPIREMetadataValidator
 
 }
 \references{
-INSPIRE Geoportal Metadata Validator Web Service (http://inspire-geoportal.ec.europa.eu/validator2/html/usingaswebservice.html)
+INSPIRE Reference Validator Web Service (http://inspire.ec.europa.eu/validator/swagger-ui.html)
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
