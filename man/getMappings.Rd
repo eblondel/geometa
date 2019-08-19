@@ -4,10 +4,10 @@
 \alias{getMappings}
 \title{getMappings}
 \usage{
-getMappings(x)
+getMappings()
 }
 \value{
-x a \code{data.frame} containing the metadata mapping rules
+a \code{data.frame} containing the metadata mapping rules
 }
 \description{
 List the mappings rules to convert from/to other metadata formats (currently 

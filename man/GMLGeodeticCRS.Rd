@@ -23,7 +23,7 @@ GMLGeodeticCRS
 
 \item{\code{sphericalCS}}{[\code{\link{GMLSphericalCS}}]}
 
-\item{\code{geodeticDatum}}{[\code{\link{GMLGeodeticDatum}}]}
+\item{\code{geodeticDatum}}{[\code{GMLGeodeticDatum}]}
 }}
 
 \section{Methods}{

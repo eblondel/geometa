@@ -686,8 +686,37 @@ apply_format_mapping <- function(mapping, obj, out, verbose = FALSE){
 } 
 
 
-#convert_metadata
-#'@export
+#' @name convert_metadata
+#' @aliases convert_metadata
+#' @title convert_metadata
+#' @export
+#' @description \code{convert_metadata} is a tentative generic metadata converter to
+#' convert from one source object, represented in a source metadata object model in R
+#' (eg eml) to a target metadata object, represented in another target metadata object
+#' model (eg \pkg{geometa} \code{\link{ISOMetadata}}). This function relies on a list of
+#' mapping rules defined to operate from the source metadata object to the target metadata 
+#' object. This list of mapping rules is provided in a tabular format. A version is embedded 
+#' in \pkg{geometa} and can be returned with \code{\link{getMappings()}}.
+#' 
+#' @usage convert_metadata(obj, from, to, mappings, verbose)
+#' 
+#' @param obj a metadata object given in one of the mapping formats known by \pkg{geometa}.
+#' The object should be a valid \code{id} as listed by \code{\link{getMappingFormats}}, supported
+#' as source format (\code{from} is \code{TRUE}).
+#' @param from a valid mapping format id (see \code{\link{getMappingFormats}}) that indicates the metadata
+#' model / format used for the argument \code{obj}
+#' @param to a valid mapping format id (see \code{\link{getMappingFormats}}) to convert to
+#' @param mappings a \code{data.frame} giving the reference mapping rules to convert metadata object.
+#' This \code{data.frame} is by default the output of \code{\link{getMappings}}.
+#' @param verbose print debugging messages. Default is \code{FALSE}
+#' @return an metadata object in the model specified as \code{to} argument
+#' 
+#' @note This function is mainly used internally in \code{as} generic methods to convert from one 
+#' metadata format to another.  It is exported for extension to user custom metadata formats or for
+#' debugging purpose. This converter is still experimental.
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
 convert_metadata <- function(obj, from, to, mappings, verbose = FALSE){
   
   available_metadata_formats <- getMappingFormats(pretty = FALSE)
@@ -766,9 +795,11 @@ registerMappings <- function(x){
 #' @description List the mappings rules to convert from/to other metadata formats (currently 
 #' EML/emld objects and NetCDF-CF/ncdf4 objects)
 #' 
-#' @return x a \code{data.frame} containing the metadata mapping rules
+#' @usage getMappings()
+#' 
+#' @return a \code{data.frame} containing the metadata mapping rules
 #'
-getMappings <- function(x){
+getMappings <- function(){
   available_metadata_formats <- getMappingFormats(pretty = FALSE)
   if(length(available_metadata_formats)==0) setMappingFormats()
   return(.geometa.mappings$rules)

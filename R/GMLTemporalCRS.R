@@ -8,7 +8,7 @@
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field timeCS [\code{\link{GMLTimeCS}}]
-#' @field temporalDatum [\code{\link{GMLTemporalDatum}}]
+#' @field temporalDatum [\code{GMLTemporalDatum}]
 #'
 #' @section Methods:
 #' \describe{

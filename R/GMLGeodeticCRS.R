@@ -10,7 +10,7 @@
 #' @field ellipsoidalCS [\code{\link{GMLEllipsoidalCS}}]
 #' @field cartesianCS [\code{\link{GMLCartesianCS}}]
 #' @field sphericalCS [\code{\link{GMLSphericalCS}}]
-#' @field geodeticDatum [\code{\link{GMLGeodeticDatum}}]
+#' @field geodeticDatum [\code{GMLGeodeticDatum}]
 #'
 #' @section Methods:
 #' \describe{

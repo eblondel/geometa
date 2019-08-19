@@ -8,7 +8,7 @@
 #' @format \code{\link{R6Class}} object.
 #'
 #' @field verticalCS [\code{\link{GMLVerticalCS}}]
-#' @field verticalDatum [code{\link{GMLVerticalDatum}}]
+#' @field verticalDatum [code{GMLVerticalDatum}]
 #'
 #' @section Methods:
 #' \describe{
