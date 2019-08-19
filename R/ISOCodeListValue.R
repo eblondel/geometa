@@ -108,6 +108,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
            
        isLocalFile <- !grepl("^http", cl$refFile) & !grepl("^https", cl$refFile)
        clUrl <- paste(cl$refFile, id, sep="#")
+       clUrl <- gsub("ML_", "", clUrl)
        if(isLocalFile) clUrl <- paste(getGeometaOption("codelistUrl"), clUrl, sep="/")
        if(id == "LanguageCode"){
          langUrlOp <- getGeometaOption("languageUrl")

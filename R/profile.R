@@ -3,7 +3,7 @@
   assign(".geometa.options", new.env(), envir= asNamespace(pkgname))
   .geometa.options$languageUrl = "http://www.loc.gov/standards/iso639-2/"
   .geometa.options$schemaBaseUrl = "http://www.isotc211.org/2005/resources"
-  .geometa.options$codelistUrl <- paste(.geometa.options$schemaBaseUrl, "Codelist", sep="/")
+  .geometa.options$codelistUrl <- "http://standards.iso.org/iso/19139/resources"
   .geometa.options$internalCodelists <- TRUE
   
   #hidden objects
