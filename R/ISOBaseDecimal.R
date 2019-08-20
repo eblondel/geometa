@@ -27,7 +27,16 @@ ISOBaseDecimal <- R6Class("ISOBaseDecimal",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "Decimal",
-     xmlNamespacePrefix = "GCO"
+     xmlNamespacePrefix = "GCO",
+     
+     #decimal places
+     decimalplaces = function(x) {
+        if ((x %% 1) != 0) {
+           nchar(strsplit(sub('0+$', '', as.character(x)), ".", fixed=TRUE)[[1]][[2]])
+        } else {
+           return(0)
+        }
+     }
    ),
    public = list(
      value = NA,
@@ -36,6 +45,9 @@ ISOBaseDecimal <- R6Class("ISOBaseDecimal",
        if(is.null(xml)){
          if(!is(value, "double")){
            value <- as.double(value)
+         }
+         if(private$decimalplaces(value)==0){
+            value <- sprintf("%.2f", value)
          }
          self$value = value
        }
