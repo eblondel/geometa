@@ -31,7 +31,7 @@ convert from one source object, represented in a source metadata object model in
 model (eg \pkg{geometa} \code{\link{ISOMetadata}}). This function relies on a list of
 mapping rules defined to operate from the source metadata object to the target metadata 
 object. This list of mapping rules is provided in a tabular format. A version is embedded 
-in \pkg{geometa} and can be returned with \code{\link{getMappings()}}.
+in \pkg{geometa} and can be returned with \code{\link{getMappings}}.
 }
 \note{
 This function is mainly used internally in \code{as} generic methods to convert from one 

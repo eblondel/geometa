@@ -13,11 +13,6 @@ to \code{FALSE} to return a list of \code{pivot_format} objects}
 \description{
 \code{getMappingFormats} gets the mapping formats registered in \pkg{geometa}
 }
-\examples{
-            
-  getMappingFormats()
-
-}
 \author{
 Emmanuel Blondel, \email{emmanuel.blondel1@gmail.com}
 }
