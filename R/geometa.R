@@ -12,7 +12,7 @@
 #'    Package: \tab geometa\cr
 #'    Type: \tab Package\cr
 #'    Version: \tab 0.6-0\cr
-#'    Date: \tab 2019-08-19\cr
+#'    Date: \tab 2019-08-28\cr
 #'    License: \tab MIT\cr
 #'    LazyLoad: \tab yes\cr
 #'  }
