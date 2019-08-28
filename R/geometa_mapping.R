@@ -45,6 +45,11 @@ pivot_format <- R6Class("pivot_format",
     initialize = function(id, pkg, reader = NULL, checker = NULL, constructor = NULL){
       self$id <- id
       self$pkg <- pkg
+      if(pkg != "geometa"){
+        if(!eval(parse(text = sprintf("require(\"%s\")", pkg)))){
+          stop(sprintf("Package '%s' is required for metadata mapping", pkg))
+        }
+      }
       self$reader <- reader
       self$checker <- checker
       if(!is.null(constructor)){
@@ -105,7 +110,7 @@ setMappingFormats <- function(){
       constructor = "ISOMetadata$new"
     ),
     pivot_format$new(
-      id = "eml", pkg = "EML/emld", 
+      id = "eml", pkg = "EML", 
       reader = "%s[[%s]]", checker = "!is.null(%s[[%s]])",
       constructor = "eml$eml"
     ),
@@ -127,9 +132,6 @@ setMappingFormats <- function(){
 #' 
 #' @param pretty by default \code{TRUE} to return the list of formats as \code{data.frame}. Set
 #' to \code{FALSE} to return a list of \code{pivot_format} objects
-#' 
-#' @examples             
-#'   getMappingFormats()
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
@@ -696,7 +698,7 @@ apply_format_mapping <- function(mapping, obj, out, verbose = FALSE){
 #' model (eg \pkg{geometa} \code{\link{ISOMetadata}}). This function relies on a list of
 #' mapping rules defined to operate from the source metadata object to the target metadata 
 #' object. This list of mapping rules is provided in a tabular format. A version is embedded 
-#' in \pkg{geometa} and can be returned with \code{\link{getMappings()}}.
+#' in \pkg{geometa} and can be returned with \code{\link{getMappings}}.
 #' 
 #' @usage convert_metadata(obj, from, to, mappings, verbose)
 #' 
