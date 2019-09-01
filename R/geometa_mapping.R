@@ -826,7 +826,7 @@ setOldClass("ncdf4")
 setAs("ncdf4", "ISOMetadata", function(from){
   if(!requireNamespace("ncdf4", quietly = TRUE))
     stop("package ncdf4 required, please install it first")
-  out_md <- convert_metadata(from, from = "eml", to = "geometa", 
+  out_md <- convert_metadata(from, from = "ncdf", to = "geometa", 
                              mappings = .geometa.mappings$rules, verbose = FALSE)
   return(out_md)
 })
