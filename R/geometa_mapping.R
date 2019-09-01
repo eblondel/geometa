@@ -818,7 +818,7 @@ setAs("emld", "ISOMetadata", function(from){
   in_from <- from
   class(in_from) <- "list"
   out_md <- convert_metadata(in_from, from = "eml", to = "geometa", 
-                             mappings = .geometa.mappings$rules, verbose = FALSE)
+                             mappings = getMappings(), verbose = FALSE)
   return(out_md)
 })
 
@@ -827,7 +827,7 @@ setAs("ncdf4", "ISOMetadata", function(from){
   if(!requireNamespace("ncdf4", quietly = TRUE))
     stop("package ncdf4 required, please install it first")
   out_md <- convert_metadata(from, from = "ncdf", to = "geometa", 
-                             mappings = .geometa.mappings$rules, verbose = FALSE)
+                             mappings = getMappings(), verbose = FALSE)
   return(out_md)
 })
 
@@ -837,7 +837,7 @@ setAs("ISOMetadata", "emld", function(from){
   if(!requireNamespace("emld", quietly = TRUE))
     stop("package emld required, please install it first")
   out_eml <- convert_metadata(from, from = "geometa", to = "eml", 
-                              mappings = .geometa.mappings$rules, verbose = FALSE)
+                              mappings = getMappings(), verbose = FALSE)
   out_emld <- emld::as_emld(out_eml)
   return(out_emld)
 })
