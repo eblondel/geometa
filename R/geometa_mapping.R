@@ -383,6 +383,19 @@ get_pivot_source_object <- function(mapping, obj, verbose = FALSE){
     }
   }))
   if(is.null(from_obj)) return(NULL) #the value we try to find does not exist, we stop here
+  if(!is.null(names(from_obj))){
+    if("value" %in% names(from_obj)) from_obj <- from_obj$value
+  }else{
+    if(is.list(from_obj)){
+      from_obj <- lapply(from_obj, function(from_obj_item){
+        out_obj <- from_obj_item
+        if(!is.null(names(from_obj_item))){
+          if("value" %in% names(from_obj_item)) out_obj <- from_obj_item$value
+        }
+        return(out_obj)
+      })
+    }
+  }
   return(from_obj)
 }
 
