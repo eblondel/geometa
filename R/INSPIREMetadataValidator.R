@@ -155,7 +155,9 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       }))
       result_status <- aggregate(.~status, data = result_status, FUN = sum)
       failed <- result_status[result_status$status=="FAILED", "Freq"]
+      if(length(failed)==0) failed <- "0"
       passed <- result_status[result_status$status=="PASSED", "Freq"]
+      if(length(passed)==0) passed <- "0"
       completeness <- passed / sum(result_status$Freq) * 100
       report <- list(
         "Status" = resp$testRuns$TestRun$status,
