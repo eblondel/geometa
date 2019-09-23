@@ -645,9 +645,10 @@ feed_pivot_target_data <- function(mapping, out_obj, out, verbose = FALSE){
         }else{
           if(verbose) cat("Filling an existing a list of elements...\n")
           out_item_previous <- try(eval(parse(text=paste0("out",last_previous))), silent = TRUE)
-          eval(parse(text = paste0("out",last_previous," <- lapply(1:length(out_item_previous), function(k){
-                                   out_item_new <- out_item_previous[[k]]
-                                   out_item_new[[\"",item$field,"\"]] <- out_obj_item[[k]][[\"",item$field,"\"]] #here we take the first list element (~ item$field)
+          items_nb <- max(c(length(out_item_previous), length(out_obj_item)))
+          eval(parse(text = paste0("out",last_previous," <- lapply(1:items_nb, function(k){
+                                   if(k <= length(out_item_previous)) out_item_new <- out_item_previous[[k]] else out_item_new <- list()
+                                   if(k <= length(out_obj_item)) out_item_new[[\"",item$field,"\"]] <- out_obj_item[[k]][[\"",item$field,"\"]] #here we take the first list element (~ item$field)
                                    return(out_item_new)
         })")))
 				}
