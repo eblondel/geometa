@@ -217,10 +217,10 @@ test_that("encoding",{
   kwds3$addKeyword("Prorocentrum lima")
   kwds3$addKeyword("Gambierdiscus toxicus")
   kwds3$setKeywordType("theme")
-  #th3 <- ISOCitation$new()
-  #th3$setTitle(ISOAnchor$new(name = "Taxonomy", href = "http://somelink/taxonomy"))
-  #th3$addDate(d1)
-  #kwds3$setThesaurusName(th3)
+  th3 <- ISOCitation$new()
+  th3$setTitle(ISOAnchor$new(name = "Taxonomy", href = "http://somelink/taxonomy"))
+  th3$addDate(d1)
+  kwds3$setThesaurusName(th3)
   ident$addKeywords(kwds3)
   
   #supplementalInformation

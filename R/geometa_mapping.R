@@ -349,9 +349,6 @@ get_pivot_source_object <- function(mapping, obj, verbose = FALSE){
             to = "$" #not needed here
           )
           from_element_obj <- get_pivot_source_object(element_mapping, x)
-          print(from_element_obj)
-          print(item$attrs$element$key)
-          print(item$attrs$element$value)
           if(!is.null(from_element_obj)){
             if(from_element_obj != item$attrs$element$value){
               return(NULL)
