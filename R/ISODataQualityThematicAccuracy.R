@@ -41,9 +41,7 @@ ISOAbstractThematicAccuracy <- R6Class("ISOAbstractThematicAccuracy",
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{
@@ -101,9 +99,7 @@ ISOQuantitativeAttributeAccuracy <- R6Class("ISOQuantitativeAttributeAccuracy",
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{
@@ -161,9 +157,7 @@ ISONonQuantitativeAttributeAccuracy <- R6Class("ISONonQuantitativeAttributeAccur
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{

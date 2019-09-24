@@ -41,9 +41,7 @@ ISOAbstractCompleteness <- R6Class("ISOAbstractCompleteness",
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{
@@ -101,9 +99,7 @@ ISOCompletenessOmission <- R6Class("ISOCompletenessOmission",
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{

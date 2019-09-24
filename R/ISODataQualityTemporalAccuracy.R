@@ -41,9 +41,7 @@ ISOAbstractTemporalAccuracy <- R6Class("ISOAbstractTemporalAccuracy",
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{
@@ -101,9 +99,7 @@ ISOTemporalValidity <- R6Class("ISOTemporalValidity",
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{
@@ -161,9 +157,7 @@ ISOTemporalConsistency <- R6Class("ISOTemporalConsistency",
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{

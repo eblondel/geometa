@@ -41,9 +41,7 @@ ISOAbstractPositionalAccuracy <- R6Class("ISOAbstractPositionalAccuracy",
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{
@@ -101,9 +99,7 @@ ISOAbsoluteExternalPositionalAccuracy <- R6Class("ISOAbsoluteExternalPositionalA
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{
@@ -161,9 +157,7 @@ ISORelativeInternalPositionalAccuracy <- R6Class("ISORelativeInternalPositionalA
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{\link{ISODataQualityAbstractElement}}
-#' }
+#' from \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @section Methods:
 #' \describe{

@@ -16,9 +16,7 @@ ISONonQuantitativeAttributeAccuracy
 }
 \section{Inherited methods}{
 
-\describe{
-  from \code{\link{ISODataQualityAbstractElement}}
-}
+from \code{\link{ISODataQualityAbstractElement}}
 }
 
 \section{Methods}{
