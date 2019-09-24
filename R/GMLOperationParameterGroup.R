@@ -11,9 +11,7 @@
 #' @field parameter [\code{\link{GMLOperationParameter}}|\code{\link{GMLOperationParameterGroup}}]
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{GMLAbstractGeneralOperationParameter}
-#' }
+#' from \code{GMLAbstractGeneralOperationParameter}
 #' 
 #' @section Methods:
 #' \describe{

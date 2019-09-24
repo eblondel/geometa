@@ -14,9 +14,7 @@
 #' @field parameter [\code{list} of [\code{\link{GMLOperationParameter}} or \code{\link{GMLOperationParameterGroup}}]]
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{GMLDefinition}
-#' }
+#' from \code{GMLDefinition}
 #' 
 #' @section Methods:
 #' \describe{

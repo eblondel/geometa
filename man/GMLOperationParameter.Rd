@@ -16,9 +16,7 @@ GMLOperationParameter
 }
 \section{Inherited methods}{
 
-\describe{
-  \code{GMLAbstractGeneralOperationParameter}
-}
+from \code{GMLAbstractGeneralOperationParameter}
 }
 
 \section{Methods}{

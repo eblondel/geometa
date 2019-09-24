@@ -51,11 +51,11 @@ ISOImageryCoverageResult
    Set the result format, object of class \code{\link{ISOFormat}}
  }
 }
-
- @section Methods inherited from \code{\link{ISOAbstractResult}}:
-\describe{
- See methods description at \code{\link{ISOAbstractResult}}
 }
+
+\section{Methods inherited from \code{\link{ISOAbstractResult}}}{
+
+See methods description at \code{\link{ISOAbstractResult}}
 }
 
 \references{

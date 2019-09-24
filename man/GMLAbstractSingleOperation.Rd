@@ -16,9 +16,7 @@ GMLAbstractSingleOperation
 }
 \section{Inherited methods}{
 
-\describe{
-  from \code{GMLAbstractCoordinateOperation}
-}
+from \code{GMLAbstractCoordinateOperation}
 }
 
 \section{Methods}{

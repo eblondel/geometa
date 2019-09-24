@@ -11,9 +11,7 @@
 #' @field parameterValue [\code{list} of \code{\link{GMLAbstractGeneralParameterValue}}]
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{GMLAbstractCoordinateOperation}
-#' }
+#' from \code{GMLAbstractCoordinateOperation}
 #' 
 #' @section Methods:
 #' \describe{

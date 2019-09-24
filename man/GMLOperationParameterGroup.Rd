@@ -24,9 +24,7 @@ GMLOperationParameterGroup
 
 \section{Inherited methods}{
 
-\describe{
-  from \code{GMLAbstractGeneralOperationParameter}
-}
+from \code{GMLAbstractGeneralOperationParameter}
 }
 
 \section{Methods}{

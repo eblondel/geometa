@@ -8,9 +8,7 @@
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   \code{GMLAbstractGeneralOperationParameter}
-#' }
+#' from \code{GMLAbstractGeneralOperationParameter}
 #' 
 #' @section Methods:
 #' \describe{

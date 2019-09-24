@@ -36,10 +36,8 @@
 #'  }
 #' }
 #' 
-#'  @section Methods inherited from \code{\link{ISOAbstractResult}}:
-#' \describe{
-#'  See methods description at \code{\link{ISOAbstractResult}}
-#' }  
+#' @section Methods inherited from \code{\link{ISOAbstractResult}}:
+#' See methods description at \code{\link{ISOAbstractResult}}
 #' 
 #' @references 
 #'   ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data

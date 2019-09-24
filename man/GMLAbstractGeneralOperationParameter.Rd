@@ -22,9 +22,7 @@ GMLAbstractGeneralOperationParameter
 
 \section{Inherited methods}{
 
-\describe{
-  from \code{GMLDefinition}
-}
+from \code{GMLDefinition}
 }
 
 \section{Methods}{

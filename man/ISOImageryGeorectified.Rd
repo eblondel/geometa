@@ -37,16 +37,12 @@ ISOImageryGeorectified
 
 \section{Methods inherited from \code{\link{ISOGridSpatialRepresentation}}}{
 
-\describe{
-   See \code{\link{ISOGridSpatialRepresentation}}
-}
+See \code{\link{ISOGridSpatialRepresentation}}
 }
 
 \section{Methods inherited from \code{\link{ISOGeorectified}}}{
 
-\describe{
-   See \code{\link{ISOGeorectified}}
-}
+See \code{\link{ISOGeorectified}}
 }
 
 \references{

@@ -8,9 +8,7 @@
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Inherited methods:
-#' \describe{
-#'   from \code{GMLAbstractCoordinateOperation}
-#' }
+#' from \code{GMLAbstractCoordinateOperation}
 #' 
 #' @section Methods:
 #' \describe{
