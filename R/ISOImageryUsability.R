@@ -14,10 +14,8 @@
 #'  }
 #' }
 #' 
-#'  @section Methods inherited from \code{\link{ISODataQualityAbstractElement}}:
-#' \describe{
-#'  See methods description at \code{\link{ISODataQualityAbstractElement}}
-#' }  
+#' @section Methods inherited from \code{\link{ISODataQualityAbstractElement}}:
+#' See methods description at \code{\link{ISODataQualityAbstractElement}}
 #' 
 #' @references 
 #'   ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data

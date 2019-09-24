@@ -26,7 +26,7 @@
 #' See \code{\link{ISOGridSpatialRepresentation}}
 #'
 #' @section Methods inherited from \code{\link{ISOGeoreferenceable}}:
-#'See \code{\link{ISOGeoreferenceable}}
+#' See \code{\link{ISOGeoreferenceable}}
 #'
 #' @references 
 #'   ISO 19115-2:2009 - Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data

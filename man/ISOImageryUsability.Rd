@@ -21,11 +21,11 @@ ISOImageryUsability
    This method is used to instantiate an \code{\link{ISOImageryUsability}}
  }
 }
-
- @section Methods inherited from \code{\link{ISODataQualityAbstractElement}}:
-\describe{
- See methods description at \code{\link{ISODataQualityAbstractElement}}
 }
+
+\section{Methods inherited from \code{\link{ISODataQualityAbstractElement}}}{
+
+See methods description at \code{\link{ISODataQualityAbstractElement}}
 }
 
 \references{

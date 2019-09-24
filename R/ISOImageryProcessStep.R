@@ -33,10 +33,8 @@
 #'  }
 #' }
 #' 
-#'  @section Methods inherited from \code{\link{ISOProcessStep}}:
-#' \describe{
-#'  See methods description at \code{\link{ISOProcessStep}}
-#' }
+#' @section Methods inherited from \code{\link{ISOProcessStep}}:
+#' See methods description at \code{\link{ISOProcessStep}}
 #' 
 #' @examples 
 #'    ps <- ISOImageryProcessStep$new()
