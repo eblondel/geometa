@@ -1,15 +1,17 @@
-# test_ISOBoundingPolygon.R
+# test_ISOUsage.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOBoundingPolygon.R
+# Description: Unit tests for ISOBUsage.R
 #=======================
 require(geometa, quietly = TRUE)
 require(sf)
 require(testthat)
 
-context("ISOBoundingPolygon")
+context("ISOUsage")
 
 test_that("encoding",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOUsage$new()
   md$setSpecificUsage("some usage")

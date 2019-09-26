@@ -9,6 +9,8 @@ require(testthat)
 context("ISODistributor")
 
 test_that("encoding",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISODistributor$new()
   rp <- ISOResponsibleParty$new()
@@ -55,6 +57,8 @@ test_that("encoding",{
 })
 
 test_that("encoding - i18n",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISODistributor$new()
   rp <- ISOResponsibleParty$new()

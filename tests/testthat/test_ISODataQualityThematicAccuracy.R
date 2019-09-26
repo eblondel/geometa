@@ -9,6 +9,8 @@ require(testthat)
 context("ISODataQualityThematicAccuracy")
 
 test_that("ISOAbstractThematicAccuracy",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   dq <- ISOAbstractThematicAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -42,6 +44,8 @@ test_that("ISOAbstractThematicAccuracy",{
 })
 
 test_that("ISOQuantitativeAttributeAccuracy",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   dq <- ISOQuantitativeAttributeAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -75,6 +79,8 @@ test_that("ISOQuantitativeAttributeAccuracy",{
 })
 
 test_that("ISONonQuantitativeAttributeAccuracy",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   dq <- ISONonQuantitativeAttributeAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -108,6 +114,8 @@ test_that("ISONonQuantitativeAttributeAccuracy",{
 })
 
 test_that("ISOThematicClassificationCorrectness",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   dq <- ISOThematicClassificationCorrectness$new()
   dq$addNameOfMeasure("measure")

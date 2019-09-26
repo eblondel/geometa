@@ -9,6 +9,8 @@ require(testthat)
 context("ISOLineage")
 
 test_that("encoding",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   lineage <- ISOLineage$new()
   lineage$setStatement("statement")
@@ -77,6 +79,8 @@ test_that("encoding",{
 })
 
 test_that("encoding - i18n",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   lineage <- ISOLineage$new()
   lineage$setStatement(

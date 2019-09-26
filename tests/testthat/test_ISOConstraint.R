@@ -9,6 +9,8 @@ require(testthat)
 context("ISOConstraint")
 
 test_that("encoding",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   md <- ISOConstraint$new()
   md$setDescription("description1")
   expect_equal(md$description, "description1")
@@ -27,6 +29,8 @@ test_that("encoding",{
 })
 
 test_that("encoding - i18n",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   md <- ISOConstraint$new()
   md$setDescription(
     "description",

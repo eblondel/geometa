@@ -9,6 +9,8 @@ require(testthat)
 context("ISOImageryGeoreferenceable")
 
 test_that("encoding",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encodidng
   md <- ISOImageryGeoreferenceable$new()
   #inherited methods from ISOGridSpatialRepresentation

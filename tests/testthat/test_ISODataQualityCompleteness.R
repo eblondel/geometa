@@ -9,6 +9,8 @@ require(testthat)
 context("ISOCompleteness")
 
 test_that("ISOAbstractCompleteness",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   dq <- ISOAbstractCompleteness$new()
   dq$addNameOfMeasure("measure")
@@ -42,6 +44,8 @@ test_that("ISOAbstractCompleteness",{
 })
 
 test_that("ISOCompletenessOmission",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   dq <- ISOCompletenessOmission$new()
   dq$addNameOfMeasure("measure")
@@ -75,6 +79,8 @@ test_that("ISOCompletenessOmission",{
 })
 
 test_that("ISOCompletenessOmission - i18n",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   dq <- ISOCompletenessOmission$new()
   dq$addNameOfMeasure(
@@ -159,6 +165,8 @@ test_that("ISOCompletenessOmission - i18n",{
 })
 
 test_that("ISOCompletenessCommission",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   dq <- ISOCompletenessCommission$new()
   dq$addNameOfMeasure("measure")
@@ -192,6 +200,8 @@ test_that("ISOCompletenessCommission",{
 })
 
 test_that("ISOCompletenessCommission - i18n",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   dq <- ISOCompletenessCommission$new()
   dq$addNameOfMeasure(
