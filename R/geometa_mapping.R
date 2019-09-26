@@ -337,6 +337,14 @@ get_pivot_source_object <- function(mapping, obj, verbose = FALSE){
         if(!item$islist && suppressWarnings(is.na(item_obj))){
           return(NULL)
         }
+      
+        #manage list of wrapped objects from which value has to be extracted (eg. ISOAnchors)
+        if(is.list(item_obj)){
+          item_obj <- lapply(item_obj, function(x){
+            if(is(x,"character")) return(x)
+            if("value" %in% names(x)) if(!is.null(x$value)) return(x$value) else return(x)
+          })
+        }
         
         #management of attributes
         if(!is.null(item$attrs$element)){

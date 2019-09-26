@@ -195,8 +195,8 @@ test_that("encoding",{
   
   #add keywords
   kwds1 <- ISOKeywords$new()
-  kwds1$addKeyword("keyword1")
-  kwds1$addKeyword("keyword2")
+  kwds1$addKeyword(ISOAnchor$new(name = "keyword1", href = "http://somelink/general1/keyword1"))
+  kwds1$addKeyword(ISOAnchor$new(name = "keyword2", href = "http://somelink/general1/keyword2"))
   kwds1$setKeywordType("theme")
   th1 <- ISOCitation$new()
   th1$setTitle(ISOAnchor$new(name = "General1", href = "http://somelink/general1"))
@@ -204,8 +204,8 @@ test_that("encoding",{
   kwds1$setThesaurusName(th1)
   ident$addKeywords(kwds1)
   kwds2 <- ISOKeywords$new()
-  kwds2$addKeyword("keyword1")
-  kwds2$addKeyword("keyword2")
+  kwds2$addKeyword(ISOAnchor$new(name = "keyword1", href = "http://somelink/general1/keyword1"))
+  kwds2$addKeyword(ISOAnchor$new(name = "keyword2", href = "http://somelink/general1/keyword2"))
   kwds2$setKeywordType("theme")
   th2 <- ISOCitation$new()
   th2$setTitle(ISOAnchor$new(name = "General2", href = "http://somelink/general2"))
