@@ -9,6 +9,7 @@ require(testthat)
 context("ISOImageryMetadata")
 
 test_that("encoding/decoding",{
+  testthat::skip_on_cran()
   #encoding
   md = ISOImageryMetadata$new()
   md$setFileIdentifier("my-metadata-identifier")
@@ -614,6 +615,7 @@ test_that("encoding/decoding",{
 })
 
 test_that("encoding/decoding - i18n",{
+  testthat::skip_on_cran()
   #encoding
   md = ISOImageryMetadata$new()
   md$setFileIdentifier("my-metadata-identifier")

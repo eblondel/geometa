@@ -9,6 +9,8 @@ require(testthat)
 context("ISOLocalisedCharacterString")
 
 test_that("encoding - i18n - EN",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOLocalisedCharacterString$new(locale = "en", value = "summary")
   expect_is(md, "ISOLocalisedCharacterString")
@@ -23,6 +25,8 @@ test_that("encoding - i18n - EN",{
 })
 
 test_that("encoding - i18n - FR",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOLocalisedCharacterString$new(locale = "en", value = "résumé")
   expect_is(md, "ISOLocalisedCharacterString")
@@ -37,6 +41,8 @@ test_that("encoding - i18n - FR",{
 })
 
 test_that("encoding - i18n - ES",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOLocalisedCharacterString$new(locale = "en", value = "resumen")
   expect_is(md, "ISOLocalisedCharacterString")
@@ -51,6 +57,8 @@ test_that("encoding - i18n - ES",{
 })
 
 test_that("encoding - i18n - AR",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOLocalisedCharacterString$new(locale = "en", value = "ملخص")
   expect_is(md, "ISOLocalisedCharacterString")
@@ -65,6 +73,8 @@ test_that("encoding - i18n - AR",{
 })
 
 test_that("encoding - i18n - RU",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
   #encoding
   md <- ISOLocalisedCharacterString$new(locale = "en", value = "резюме")
   expect_is(md, "ISOLocalisedCharacterString")

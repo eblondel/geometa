@@ -29,8 +29,6 @@ test_that("ISOImageryRangeElementDescription",{
 test_that("ISOImageryRangeElementDescription - i18n",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOImageryRangeElementDescription$new()
   md$setName(

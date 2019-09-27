@@ -66,8 +66,6 @@ test_that("encoding - with empty sources / hrefs",{
 test_that("encoding - with empty sources / hrefs",{
   testthat::skip_on_cran()
   testthat::skip_on_travis()
-  testthat::skip_on_cran()
-  testthat::skip_on_travis()
   md <- ISOProcessStep$new()
   md$setDescription("description")
   md$addFieldAttrs("source", "xlink:href" = "http://mywebsite.org/source1", "xlink:title" = "My source file 1")
