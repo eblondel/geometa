@@ -22,9 +22,9 @@ test_that("encoding",{
   md$setEdition("1.0")
   md$setEditionDate(ISOdate(2015, 1, 1, 1))
   expect_error(md$setEditionDate("wrong date type"))
-  md$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-  expect_error(md$setIdentifier("wrong identifier type"))
-  md$setPresentationForm("mapDigital")
+  md$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+  expect_error(md$addIdentifier("wrong identifier type"))
+  md$addPresentationForm("mapDigital")
   
   #adding a cited responsible party
   rp <- ISOResponsibleParty$new()
@@ -49,8 +49,8 @@ test_that("encoding",{
   res$setName("somename")
   contact$setOnlineResource(res)
   rp$setContactInfo(contact)
-  md$setCitedResponsibleParty(rp)
-  expect_error(md$setCitedResponsibleParty("wrong party type"))
+  md$addCitedResponsibleParty(rp)
+  expect_error(md$addCitedResponsibleParty("wrong party type"))
   
   expect_is(md, "ISOCitation")
   xml <- md$encode()
@@ -88,9 +88,9 @@ test_that("encoding - i18n",{
   md$setEdition("1.0")
   md$setEditionDate(ISOdate(2015, 1, 1, 1))
   expect_error(md$setEditionDate("wrong date type"))
-  md$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-  expect_error(md$setIdentifier("wrong identifier type"))
-  md$setPresentationForm("mapDigital")
+  md$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+  expect_error(md$addIdentifier("wrong identifier type"))
+  md$addPresentationForm("mapDigital")
   
   #adding a cited responsible party
   rp <- ISOResponsibleParty$new()
@@ -231,8 +231,8 @@ test_that("encoding - i18n",{
     ))
   contact$setOnlineResource(res)
   rp$setContactInfo(contact)
-  md$setCitedResponsibleParty(rp)
-  expect_error(md$setCitedResponsibleParty("wrong party type"))
+  md$addCitedResponsibleParty(rp)
+  expect_error(md$addCitedResponsibleParty("wrong party type"))
   
   expect_is(md, "ISOCitation")
   xml <- md$encode()

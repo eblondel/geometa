@@ -100,8 +100,8 @@
 #'  md$setTitle("sometitle")
 #'  md$setEdition("1.0")
 #'  md$setEditionDate(ISOdate(2015,1,1))
-#'  md$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-#'  md$setPresentationForm("mapDigital")
+#'  md$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+#'  md$addPresentationForm("mapDigital")
 #'  
 #'  #add a cited responsible party
 #'  rp <- ISOResponsibleParty$new()
@@ -126,7 +126,7 @@
 #'  res$setName("somename")
 #'  contact$setOnlineResource(res)
 #'  rp$setContactInfo(contact)
-#'  md$setCitedResponsibleParty(rp)
+#'  md$addCitedResponsibleParty(rp)
 #'  xml <- md$encode()
 #'  
 #' @references 

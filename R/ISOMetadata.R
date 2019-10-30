@@ -244,9 +244,9 @@
 #'    ct$addDate(d)
 #'    ct$setEdition("1.0")
 #'    ct$setEditionDate(as.Date(ISOdate(2015, 1, 1, 1)))
-#'    ct$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-#'    ct$setPresentationForm("mapDigital")
-#'    ct$setCitedResponsibleParty(rp)
+#'    ct$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+#'    ct$addPresentationForm("mapDigital")
+#'    ct$addCitedResponsibleParty(rp)
 #'    ident$setCitation(ct)
 #'    
 #'    #graphic overview
@@ -440,7 +440,7 @@
 #'    rp = ISOResponsibleParty$new()
 #'    rp$setRole("publisher")
 #'    rp$setContactInfo(contact)
-#'    cit$setCitedResponsibleParty(rp)
+#'    cit$addCitedResponsibleParty(rp)
 #'    fcd$addFeatureCatalogueCitation(cit)
 #'    md$addContentInfo(fcd)
 #'    

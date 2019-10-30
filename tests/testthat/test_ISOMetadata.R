@@ -1026,7 +1026,6 @@ test_that("encoding/decoding - i18n",{
   
   md$addContentInfo(fcd)
   
-  
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   

@@ -252,9 +252,9 @@ ISODataIdentification
    ct$addDate(d)
    ct$setEdition("1.0")
    ct$setEditionDate(ISOdate(2015, 1, 1, 1))
-   ct$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-   ct$setPresentationForm("mapDigital")
-   ct$setCitedResponsibleParty(rp)
+   ct$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+   ct$addPresentationForm("mapDigital")
+   ct$addCitedResponsibleParty(rp)
    md$setCitation(ct)
    
    #graphic overview

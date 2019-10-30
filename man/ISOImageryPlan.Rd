@@ -96,9 +96,9 @@ ISOImageryPlan
    ct$addDate(d)
    ct$setEdition("1.0")
    ct$setEditionDate(ISOdate(2015,1,1))
-   ct$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-   ct$setPresentationForm("mapDigital")
-   ct$setCitedResponsibleParty(rp1)
+   ct$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+   ct$addPresentationForm("mapDigital")
+   ct$addCitedResponsibleParty(rp1)
    md$setCitation(ct)
    xml <- md$encode()
 

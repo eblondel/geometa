@@ -65,9 +65,9 @@ test_that("encoding",{
   cit$setEdition("1.0")
   cit$setEditionDate(ISOdate(2015, 1, 1, 1))
   expect_error(cit$setEditionDate("wrong date type"))
-  cit$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-  expect_error(cit$setIdentifier("wrong identifier type"))
-  cit$setPresentationForm("mapDigital")
+  cit$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+  expect_error(cit$addIdentifier("wrong identifier type"))
+  cit$addPresentationForm("mapDigital")
   
   #adding a cited responsible party
   rp <- ISOResponsibleParty$new()
@@ -92,7 +92,7 @@ test_that("encoding",{
   res$setName("somename")
   contact$setOnlineResource(res)
   rp$setContactInfo(contact)
-  cit$setCitedResponsibleParty(rp)
+  cit$addCitedResponsibleParty(rp)
   method$setFormulaCitation(cit)
   
   gml$setIdentifier("conversion", "codespace")
