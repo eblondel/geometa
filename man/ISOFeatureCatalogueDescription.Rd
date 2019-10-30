@@ -44,11 +44,11 @@ ISOFeatureCatalogueDescription
  \item{\code{setIncludedWithDataset(include)}}{
    Sets TRUE if included with dataset, FALSE otherwise
  }
- \item{\code{addFeatureCatalogueCitation(citation)}}{
+ \item{\code{addFeatureCatalogueCitation(citation, uuid)}}{
   Adds an object of class \code{\link{ISOCitation}} referencing the link
   to Feature Catalogue
  }
- \item{\code{delFeatureCatalogueCitation(citation)}}{
+ \item{\code{delFeatureCatalogueCitation(citation, uuid)}}{
   Deletes an object of class \code{\link{ISOCitation}} referencing the link
   to Feature Catalogue
  }

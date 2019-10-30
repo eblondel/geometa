@@ -29,11 +29,11 @@
 #'  \item{\code{setIncludedWithDataset(include)}}{
 #'    Sets TRUE if included with dataset, FALSE otherwise
 #'  }
-#'  \item{\code{addFeatureCatalogueCitation(citation)}}{
+#'  \item{\code{addFeatureCatalogueCitation(citation, uuid)}}{
 #'   Adds an object of class \code{\link{ISOCitation}} referencing the link
 #'   to Feature Catalogue
 #'  }
-#'  \item{\code{delFeatureCatalogueCitation(citation)}}{
+#'  \item{\code{delFeatureCatalogueCitation(citation, uuid)}}{
 #'   Deletes an object of class \code{\link{ISOCitation}} referencing the link
 #'   to Feature Catalogue
 #'  }
@@ -112,7 +112,8 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
      },
      
      #addFeatureCatalogueCitation
-     addFeatureCatalogueCitation = function(citation){
+     addFeatureCatalogueCitation = function(citation, uuid = NULL){
+       if(!is.null(uuid)) citation$parentAttrs <- list(uuidref = uuid)
        if(!is(citation, "ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation")
        }
@@ -120,7 +121,8 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
      },
      
      #delFeatureCatalogueCitation
-     delFeatureCatalogueCitation = function(citation){
+     delFeatureCatalogueCitation = function(citation, uuid = NULL){
+       if(!is.null(uuid)) citation$parentAttrs <- list(uuidref = uuid)
        if(!is(citation, "ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation")
        }
