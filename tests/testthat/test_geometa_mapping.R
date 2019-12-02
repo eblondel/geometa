@@ -318,7 +318,9 @@ test_that("encoding",{
   expect_true(ISOAbstractObject$compare(test_ogc, test_ogc2))
   #with NetCDF-CF
   nc <- ncdf4::nc_open("http://gsics.eumetsat.int/thredds/dodsC/DemoLevel1B25Km/W_XX-EUMETSAT-Darmstadt,SURFACE+SATELLITE,METOPA+ASCAT_C_EUMP_20131231231800_37368_eps_o_125_l1.nc")
-  test_ogc_cf <- as(nc, "ISOMetadata")
-  expect_is(test_ogc_cf, "ISOMetadata")
+  test_ogc1_cf <- as(nc, "ISOMetadata")
+  expect_is(test_ogc1_cf, "ISOMetadata")
+  test_ogc2_cf <- as(nc, "ISOImageryMetadata")
+  expect_is(test_ogc2_cf, "ISOImageryMetadata")
   
 })
