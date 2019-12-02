@@ -105,9 +105,14 @@ registerMappingFormat <- function(mapping_format){
 setMappingFormats <- function(){
   .geometa.mappings$formats <- list(
     pivot_format$new(
-      id = "geometa", pkg = "geometa", 
+      id = "geometa|iso-19115-1", pkg = "geometa", 
       reader = "%s[[%s]]", checker = "!is.null(%s[[%s]])", 
       constructor = "ISOMetadata$new"
+    ),
+    pivot_format$new(
+      id = "geometa|iso-19115-2", pkg = "geometa", 
+      reader = "%s[[%s]]", checker = "!is.null(%s[[%s]])", 
+      constructor = "ISOImageryMetadata$new"
     ),
     pivot_format$new(
       id = "eml", pkg = "EML", 
@@ -115,7 +120,7 @@ setMappingFormats <- function(){
       constructor = "eml$eml"
     ),
     pivot_format$new(
-      id = "ncdf", pkg = "ncdf4", 
+      id = "ncdf4", pkg = "ncdf4", 
       reader = "ncatt_get(%s,0,%s)$value", checker = "ncatt_get(%s,0,%s)$hasatt",
       constructor = NULL
     )
@@ -757,6 +762,8 @@ convert_metadata <- function(obj, from, to, mappings, verbose = FALSE){
   
   format_from <- available_metadata_formats[sapply(available_metadata_formats, function(x){x$id == from})][[1]]
   format_to <- available_metadata_formats[sapply(available_metadata_formats, function(x){x$id == to})][[1]]
+  from <- tolower(format_from$pkg)
+  to <- tolower(format_to$pkg)
   if(is.null(format_to$constructor))
     stop("The format '%s' cannot be used as target because no constructor is defined", to)
   out_constructor <- eval(parse(text=format_to$constructor))
@@ -841,7 +848,7 @@ setAs("emld", "ISOMetadata", function(from){
     stop("package emld required, please install it first")
   in_from <- from
   class(in_from) <- "list"
-  out_md <- convert_metadata(in_from, from = "eml", to = "geometa", 
+  out_md <- convert_metadata(in_from, from = "eml", to = "geometa|iso-19115-1", 
                              mappings = getMappings(), verbose = FALSE)
   return(out_md)
 })
@@ -850,7 +857,14 @@ setOldClass("ncdf4")
 setAs("ncdf4", "ISOMetadata", function(from){
   if(!requireNamespace("ncdf4", quietly = TRUE))
     stop("package ncdf4 required, please install it first")
-  out_md <- convert_metadata(from, from = "ncdf", to = "geometa", 
+  out_md <- convert_metadata(from, from = "ncdf4", to = "geometa|iso-19115-1", 
+                             mappings = getMappings(), verbose = FALSE)
+  return(out_md)
+})
+setAs("ncdf4", "ISOImageryMetadata", function(from){
+  if(!requireNamespace("ncdf4", quietly = TRUE))
+    stop("package ncdf4 required, please install it first")
+  out_md <- convert_metadata(from, from = "ncdf4", to = "geometa|iso-19115-2", 
                              mappings = getMappings(), verbose = FALSE)
   return(out_md)
 })
@@ -860,7 +874,7 @@ setAs("ISOMetadata", "emld", function(from){
     stop("package EML required, please install it first")
   if(!requireNamespace("emld", quietly = TRUE))
     stop("package emld required, please install it first")
-  out_eml <- convert_metadata(from, from = "geometa", to = "eml", 
+  out_eml <- convert_metadata(from, from = "geometa|iso-19115-1", to = "eml", 
                               mappings = getMappings(), verbose = FALSE)
   out_emld <- emld::as_emld(out_eml)
   return(out_emld)

@@ -1,4 +1,4 @@
-geometa,ncdf,eml,ncdf_to_geometa,eml_to_geometa,geometa_to_eml,note
+geometa,ncdf4,eml,ncdf_to_geometa,eml_to_geometa,geometa_to_eml,note
 $fileIdentifier,$id,$packageId,ok,ok,ok,
 $contact*/ISOResponsibleParty$individualName[$role/ISORole$value=pointOfContact|item=1|sep= |index=1],,$dataset/$contact/$individualName/$givenName,?,ok,ok,
 $contact*/ISOResponsibleParty$individualName[$role/ISORole$value=pointOfContact|item=1|sep= |index=2],,$dataset/$contact/$individualName/$surName,?,ok,ok,
