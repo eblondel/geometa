@@ -178,6 +178,7 @@ for(i in 1:3){
     ))
   contact$setOnlineResource(res)
   rp$setContactInfo(contact)
+  md$addContact(rp)
 }
 
 #VectorSpatialRepresentation
@@ -386,7 +387,7 @@ ct$addDate(d)
 ct$setEdition("1.0")
 ct$setEditionDate(ISOdate(2015,1,1))
 ct$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-ct$setPresentationForm("mapDigital")
+ct$addPresentationForm("mapDigital")
 ct$addCitedResponsibleParty(rp)
 ident$setCitation(ct)
 
