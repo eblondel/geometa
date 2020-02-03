@@ -38,18 +38,17 @@ readISO19139 <- function(file = NULL, url = NULL, raw = FALSE){
       stop("The URL resource is unavailable")
     }
     doc <- content(req, as = "text", encoding = encoding)
-    raw_xml <- XML::xmlParse(doc, encoding = encoding)
+    raw_xml <- XML::xmlParse(doc, encoding = encoding, addFinalizer = FALSE)
   }else{
     raw_xml <- suppressWarnings(readLines(file, encoding = encoding))
     raw_xml <- paste0(raw_xml, collapse="") 
     if(Encoding(raw_xml) != "UTF-8") Encoding(raw_xml) <- "UTF-8"
     if(Encoding(raw_xml) == "unknown"){
-      raw_xml <- XML::xmlParse(raw_xml, error = function (msg, ...) {})
+      raw_xml <- XML::xmlParse(raw_xml, error = function (msg, ...) {}, addFinalizer = FALSE)
     }else{
       raw_xml <- XML::xmlParse(raw_xml, encoding = Encoding(raw_xml), 
-                               error = function (msg, ...) {})
+                               error = function (msg, ...) {}, addFinalizer = FALSE)
     }
-    
   }
   
   out <- NULL
