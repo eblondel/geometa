@@ -155,6 +155,7 @@
 #'
 ISOAbstractObject <- R6Class("ISOAbstractObject",
   inherit = geometaLogger,
+  cloneable = FALSE,
   private = list(
     xmlElement = "AbstractObject",
     xmlNamespacePrefix = "GCO",
@@ -407,10 +408,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       
       #remove comments if any (in case of document)
       if(is(xml, "XMLInternalDocument")){
-        children <- xmlChildren(xml, encoding = private$encoding)
+        children <- xmlChildren(xml, encoding = private$encoding, addFinalizer = FALSE)
         xml <- children[names(children) != "comment"][[1]]
       }
-      xml_children <- xmlChildren(xml, encoding = private$encoding)
+      xml_children <- xmlChildren(xml, encoding = private$encoding, addFinalizer = FALSE)
       for(child in xml_children){
         fieldName <- xmlName(child)
         
@@ -441,7 +442,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             parentAttrs <- as.list(xmlAttrs(child, TRUE, FALSE))
             if(length(parentAttrs)>0) parentAttrs <- parentAttrs[names(parentAttrs) != "xsi:type"]
             if(length(parentAttrs)==0) parentAttrs <- NULL
-            children <- xmlChildren(child, encoding = private$encoding)
+            children <- xmlChildren(child, encoding = private$encoding, addFinalizer = FALSE)
             if(length(children)>0){
               if(length(children)==1){
                 childroot <- children[[1]]
@@ -588,6 +589,12 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 if(!is.null(attrNs)){
                   attr(attrs,"namespaces") <- NULL
                   names(attrs) <- paste(attrNs, names(attrs), sep=":")
+                  #control mal-formed attributes (starting with :)
+                  names(attrs) <- lapply(names(attrs), function(x){
+                    out <- x 
+                    if(startsWith(x,":")) out <- substr(x, 2, nchar(x))
+                    return(out)
+                  })
                 }
                 value <- ISOAttributes$new(attrs)
               }
@@ -705,7 +712,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             fieldObjXml <- fieldObj$encode(addNS = FALSE, validate = FALSE,
                                            resetSerialID = FALSE, setSerialID = setSerialID)
             if(is(fieldObj, "ISOElementSequence")){
-              fieldObjXml.children <- xmlChildren(fieldObjXml)
+              fieldObjXml.children <- xmlChildren(fieldObjXml, addFinalizer = FALSE)
       			  hasLocales <- FALSE
       				if(!is.null(fieldObj[["_internal_"]])){
         				if(any(sapply(fieldObj[["_internal_"]],function(x){class(x)[1]})=="ISOFreeText")){
@@ -805,7 +812,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 nodeValueXml <- nodeValue$encode(addNS = FALSE, validate = FALSE,
                                                  resetSerialID = FALSE, setSerialID = setSerialID)
                 if(is(item, "ISOElementSequence")){
-                  nodeValueXml.children <- xmlChildren(nodeValueXml)
+                  nodeValueXml.children <- xmlChildren(nodeValueXml, addFinalizer = FALSE)
 
                   hasLocales <- FALSE
                   if(!is.null(item[["_internal_"]])){
