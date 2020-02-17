@@ -67,7 +67,7 @@ ISODistribution <- R6Class("ISODistribution",
      #+ distributor [0..*]: ISODistributor
      distributor = list(),
      #+ transferOptions [0..*]: ISODigitalTransferOptions
-     transferOptions = NULL,
+     transferOptions = list(),
     
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
