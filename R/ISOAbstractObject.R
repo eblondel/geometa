@@ -200,7 +200,19 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       newvalue <- value
       #datetime types
       if(regexpr(pattern = "^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})$", value)>0){
-        newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = ifelse(endsWith(value,"Z"),"UTC",""))
+        if(endsWith(value, "Z")){
+          newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = "UTC")
+        }else{
+          if(nchar(value)==25){
+            utc_offset <- substr(value, 20, 25)
+            value <- unlist(strsplit(value, utc_offset))[1]
+            utc_offset <- gsub(":", "", utc_offset)
+            value <- paste0(value, utc_offset)
+            #TODO find a way to fetch "tzone" attribute -not solved for now
+            newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = "")
+          }
+        }
+        
       }else if(regexpr(pattern = "^(\\d{4})-(\\d{2})-(\\d{2})$", value)>0){
         newvalue <- as.Date(as.POSIXct(strptime(value, "%Y-%m-%d"), tz = "UTC"))
       }
@@ -211,8 +223,18 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       #datetime types
       if(suppressWarnings(all(class(value)==c("POSIXct","POSIXt")))){
         tz <- attr(value, "tzone")
-        value <- format(value,"%Y-%m-%dT%H:%M:%S")
-        if(length(tz)>0) if(tz=="UTC") value <- paste0(value,"Z")
+        if(length(tz)>0){
+          if(tz=="UTC"){
+            value <- format(value,"%Y-%m-%dT%H:%M:%S")
+            value <- paste0(value,"Z")
+          }else{
+            utc_offset <- format(value, "%z")
+            utc_offset <- paste0(substr(utc_offset,1,3),":",substr(utc_offset,4,5))
+            value <- paste0(format(value,"%Y-%m-%dT%H:%M:%S"), utc_offset)
+          }
+        }else{
+          value <- format(value,"%Y-%m-%dT%H:%M:%S")
+        }
       }else if(class(value)[1] == "Date"){
         value <- format(value,"%Y-%m-%d")
       }
