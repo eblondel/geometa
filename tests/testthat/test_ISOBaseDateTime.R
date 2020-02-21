@@ -23,3 +23,21 @@ test_that("encoding",{
   expect_true(ISOAbstractObject$compare(md, md2))
   
 })
+
+test_that("encoding - datetime in UTC",{
+  #encoding
+  date <- ISOdate(2015, 1, 1, 1)
+  attr(date, "tzone") <- "UTC"
+  md <- ISOBaseDateTime$new(value = date)
+  expect_is(md, "ISOBaseDateTime")
+  expect_equal(md$value, date)
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOBaseDateTime$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+  
+})
