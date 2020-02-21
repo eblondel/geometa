@@ -212,7 +212,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       if(suppressWarnings(all(class(value)==c("POSIXct","POSIXt")))){
         tz <- attr(value, "tzone")
         value <- format(value,"%Y-%m-%dT%H:%M:%S")
-        if(tz=="UTC") value <- paste0(value,"Z")
+        if(length(tz)>0) if(tz=="UTC") value <- paste0(value,"Z")
       }else if(class(value)[1] == "Date"){
         value <- format(value,"%Y-%m-%d")
       }
