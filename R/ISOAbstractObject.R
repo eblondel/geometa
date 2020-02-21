@@ -224,11 +224,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       if(suppressWarnings(all(class(value)==c("POSIXct","POSIXt")))){
         tz <- attr(value, "tzone")
         if(length(tz)>0){
-<<<<<<< HEAD
           if(tz %in% c("UTC","GMT")){
-=======
-          if(tz=="UTC"){
->>>>>>> b4fb290cdef7d210e91537aabbac51f6f20b2901
             value <- format(value,"%Y-%m-%dT%H:%M:%S")
             value <- paste0(value,"Z")
           }else{
