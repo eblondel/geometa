@@ -40,9 +40,19 @@ ISOUnlimitedInteger <- R6Class("ISOUnlimitedInteger",
           }
           self$value = value
           self$attrs[["isInfinite"]] <- tolower(as.character(is.infinite(value)))
+          if(is.infinite(value)){
+            self$value <- NULL
+            self$attrs[["xsi:nil"]] <- "true"
+          }
         }else{
           isInf <- xmlGetAttr(xml, "isInfinite")
           self$attrs[["isInfinite"]] <- isInf
+          if(as.logical(isInf)==TRUE){
+            self$value <- NULL
+            self$attrs[["xsi:nil"]] <- "true"
+          }else{
+            self$attrs[["xsi:nil"]] <- NULL
+          }
         }
       }
     )                        
