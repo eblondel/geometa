@@ -70,7 +70,7 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
      fieldOfApplication = list(),
      #+ versionNumber [1..1]: character
      versionNumber = NULL,
-     #+ versionDate [1..1]: character
+     #+ versionDate [1..1]: Date/Posix
      versionDate = NULL,
      
      initialize = function(xml = NULL){
