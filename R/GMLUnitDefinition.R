@@ -70,3 +70,52 @@ GMLUnitDefinition <- R6Class("GMLUnitDefinition",
      }
    )
 )
+
+GMLUnitDefinition$buildFrom = function(x, by = "symbol", unitsystem = "udunits2"){
+   out <- NULL
+   if(unitsystem == "udunits2"){
+      units_df <- units::valid_udunits()
+      unit <- units_df[units_df[,by] == x,]
+      if(nrow(unit)==0) return(NULL)
+      unitType <- unit$source_xml
+      unitClass <- switch(unitType,
+         "base" = GMLBaseUnit,
+         "derived" = GMLDerivedUnit,
+         "accepted" = GMLConventionalUnit,
+         "common" = GMLConventionalUnit
+      )
+      unitBaseUri <- paste0("https://mmisw.org/ont/mmi/udunits2-", unitType)
+      unitUri <- paste(unitBaseUri, unit$name_singular, sep="/")
+      
+      gmlunit <- unitClass$new()
+      gmlunit$setIdentifier(unit$symbol, unitUri)
+      gmlunit$setCatalogSymbol(unit$symbol)
+      gmlunit$addName(unit$name_singular)
+      if(unit$definition != "") gmlunit$setDescription(unit$definition)
+      if(unitType == "base") gmlunit$setUnitsSystem(unitsystem)
+      if(unitType != "base"){
+         def <- unit$def
+         def_unit <-  gsub("\\.", " ", gsub("/", " ",gsub("\\^", "-", def)))
+         def_unit_obj <- as_units(def_unit, implicit_exponents = TRUE)
+         def_unit_attrs <- attributes(def_unit_obj)$units
+         
+         if(unitType == "derived"){
+            if(length(def_unit_attrs$denominator)>0){
+               denominators <- as.list(table(def_unit_attrs$denominator))
+               for(uom in names(denominators)){
+                  gmlunit$addDerivationUnitTerm(uom, exponent = denominators[[uom]])
+               }
+            }
+         }else{
+            base_units_df <- units_df[units_df$source_xml == "base",]
+            def <- unit$def
+            def_unit <-  gsub("\\.", " ", gsub("/", " ",gsub("\\^", "-", def)))
+            def_unit_comps <- unlist(strsplit(def_unit, " "))
+         }
+      }
+      
+      out <- gmlunit
+      
+   }
+   return(out)
+}

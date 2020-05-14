@@ -16,6 +16,9 @@
 #'  \item{\code{new(xml, element, attrs, defaults)}}{
 #'    This method is used to instantiate a GML abstract GML
 #'  }
+#'  \item{\code{setDescription(description)}}{
+#'    Set the description
+#'  }
 #'  \item{\code{setDescriptionReference(descriptionReference)}}{
 #'    Set the descriptionReference
 #'  }
@@ -49,6 +52,8 @@ GMLAbstractGML <- R6Class("GMLAbstractGML",
    public = list(
      #+ metaDataProperty [0..*] 
      metaDataProperty = list(),
+     #+ description [0..1]
+     description = NULL,
      #+ descriptionReference [0..1]: character
      descriptionReference = NULL,
      #+ identifier [0..1]: character
@@ -58,6 +63,11 @@ GMLAbstractGML <- R6Class("GMLAbstractGML",
      initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = element, attrs = attrs, defaults = defaults, wrap = wrap)
+     },
+     
+     #setDescription
+     setDescription = function(description){
+        self$description <- GMLElement$create("description", value = description)
      },
 
      #setDescriptionReference

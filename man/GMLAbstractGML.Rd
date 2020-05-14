@@ -33,6 +33,9 @@ Class used internally by geometa
  \item{\code{new(xml, element, attrs, defaults)}}{
    This method is used to instantiate a GML abstract GML
  }
+ \item{\code{setDescription(description)}}{
+   Set the description
+ }
  \item{\code{setDescriptionReference(descriptionReference)}}{
    Set the descriptionReference
  }
