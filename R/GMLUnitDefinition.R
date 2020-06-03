@@ -73,6 +73,10 @@ GMLUnitDefinition <- R6Class("GMLUnitDefinition",
 
 GMLUnitDefinition$buildFrom = function(x, by = "symbol", unitsystem = "udunits2"){
    out <- NULL
+   
+   if(!requireNamespace("units", quietly = TRUE)) 
+      stop("Package 'units' is required.")
+   
    if(unitsystem == "udunits2"){
       units_df <- units::valid_udunits()
       unit <- units_df[units_df[,by] == x,]
