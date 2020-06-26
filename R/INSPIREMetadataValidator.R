@@ -41,7 +41,7 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
   inherit = geometaLogger,
   private = list(
     host = "http://inspire.ec.europa.eu",
-    endpoint = "validator/v2"
+    endpoint = "validator"
   ),
   public = list(
     url = NULL,
