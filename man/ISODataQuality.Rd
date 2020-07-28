@@ -4,9 +4,8 @@
 \name{ISODataQuality}
 \alias{ISODataQuality}
 \title{ISODataQuality}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODataQuality
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO DataQuality

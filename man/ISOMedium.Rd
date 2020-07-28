@@ -4,9 +4,8 @@
 \name{ISOMedium}
 \alias{ISOMedium}
 \title{ISOMedium}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOMedium
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Citation

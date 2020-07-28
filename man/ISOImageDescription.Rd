@@ -4,9 +4,8 @@
 \name{ISOImageDescription}
 \alias{ISOImageDescription}
 \title{ISOImageDescription}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageDescription
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOImageDescription

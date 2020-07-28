@@ -4,9 +4,8 @@
 \name{GMLParameterValueGroup}
 \alias{GMLParameterValueGroup}
 \title{GMLParameterValueGroup}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLParameterValueGroup
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML parameter value group

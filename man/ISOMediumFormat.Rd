@@ -4,9 +4,8 @@
 \name{ISOMediumFormat}
 \alias{ISOMediumFormat}
 \title{ISOMediumFormat}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOMediumFormat
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOMediumFormat

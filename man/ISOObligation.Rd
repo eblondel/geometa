@@ -4,9 +4,8 @@
 \name{ISOObligation}
 \alias{ISOObligation}
 \title{ISOObligation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOObligation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Obligation

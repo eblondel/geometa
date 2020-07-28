@@ -4,9 +4,8 @@
 \name{ISOImageryProcessStepReport}
 \alias{ISOImageryProcessStepReport}
 \title{ISOImageryProcessStepReport}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryProcessStepReport
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery ProcessStepReport

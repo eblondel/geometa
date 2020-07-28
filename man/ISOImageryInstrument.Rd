@@ -4,9 +4,8 @@
 \name{ISOImageryInstrument}
 \alias{ISOImageryInstrument}
 \title{ISOImageryPlatform}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryInstrument
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery platform

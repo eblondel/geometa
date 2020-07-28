@@ -4,9 +4,8 @@
 \name{GMLCompoundCRS}
 \alias{GMLCompoundCRS}
 \title{GMLCompoundCRS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLCompoundCRS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLCompoundCRS

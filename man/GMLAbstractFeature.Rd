@@ -4,9 +4,8 @@
 \name{GMLAbstractFeature}
 \alias{GMLAbstractFeature}
 \title{GMLAbstractFeature}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractFeature
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML abstract feature

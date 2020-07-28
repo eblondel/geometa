@@ -4,9 +4,8 @@
 \name{GMLCylindricalCS}
 \alias{GMLCylindricalCS}
 \title{GMLCylindricalCS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLCylindricalCS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLCylindricalCS

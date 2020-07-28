@@ -4,9 +4,8 @@
 \name{GMLAbstractGeneralConversion}
 \alias{GMLAbstractGeneralConversion}
 \title{GMLAbstractGeneralConversion}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractGeneralConversion
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLAbstractGeneralConversion

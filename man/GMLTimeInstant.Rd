@@ -4,9 +4,8 @@
 \name{GMLTimeInstant}
 \alias{GMLTimeInstant}
 \title{GMLTimeInstant}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLTimeInstant
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLTimeInstant

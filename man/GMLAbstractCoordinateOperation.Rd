@@ -4,9 +4,8 @@
 \name{GMLAbstractCoordinateOperation}
 \alias{GMLAbstractCoordinateOperation}
 \title{GMLAbstractCoordinateOperation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractCoordinateOperation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLAbstractCoordinateOperation

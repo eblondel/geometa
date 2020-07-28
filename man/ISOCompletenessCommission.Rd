@@ -4,9 +4,8 @@
 \name{ISOCompletenessCommission}
 \alias{ISOCompletenessCommission}
 \title{ISOCompletenessCommission}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOCompletenessCommission
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOCompletenessCommission

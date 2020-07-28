@@ -4,9 +4,8 @@
 \name{ISODigitalTransferOptions}
 \alias{ISODigitalTransferOptions}
 \title{ISODigitalTransferOptions}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODigitalTransferOptions
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO DigitalTransferOptions

@@ -4,9 +4,8 @@
 \name{GMLPolygon}
 \alias{GMLPolygon}
 \title{GMLPoint}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLPolygon
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML point

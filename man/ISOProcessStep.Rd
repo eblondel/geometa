@@ -4,9 +4,8 @@
 \name{ISOProcessStep}
 \alias{ISOProcessStep}
 \title{ISOProcessStep}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOProcessStep
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO ProcessStep

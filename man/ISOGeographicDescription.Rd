@@ -4,9 +4,8 @@
 \name{ISOGeographicDescription}
 \alias{ISOGeographicDescription}
 \title{ISOGeographicDescription}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOGeographicDescription
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO GeographicDescription

@@ -4,9 +4,8 @@
 \name{ISOTemporalConsistency}
 \alias{ISOTemporalConsistency}
 \title{ISOTemporalConsistency}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOTemporalConsistency
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOTemporalConsistency

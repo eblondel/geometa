@@ -4,9 +4,8 @@
 \name{GMLReferenceableGridByArray}
 \alias{GMLReferenceableGridByArray}
 \title{GMLReferenceableGridByArray}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLReferenceableGridByArray
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML ReferenceableGridByArray

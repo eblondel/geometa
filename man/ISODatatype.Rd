@@ -4,9 +4,8 @@
 \name{ISODatatype}
 \alias{ISODatatype}
 \title{ISODatatype}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODatatype
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Datatype

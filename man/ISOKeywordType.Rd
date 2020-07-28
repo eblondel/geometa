@@ -4,9 +4,8 @@
 \name{ISOKeywordType}
 \alias{ISOKeywordType}
 \title{ISOKeywordType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOKeywordType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO KeywordType

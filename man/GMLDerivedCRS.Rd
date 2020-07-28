@@ -4,9 +4,8 @@
 \name{GMLDerivedCRS}
 \alias{GMLDerivedCRS}
 \title{GMLDerivedCRS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLDerivedCRS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLDerivedCRS

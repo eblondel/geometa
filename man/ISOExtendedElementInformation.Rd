@@ -4,9 +4,8 @@
 \name{ISOExtendedElementInformation}
 \alias{ISOExtendedElementInformation}
 \title{ISOExtendedElementInformation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOExtendedElementInformation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO ExtendedElementInformation

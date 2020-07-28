@@ -4,9 +4,8 @@
 \name{ISOURL}
 \alias{ISOURL}
 \title{ISOURL}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOURL
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOURL

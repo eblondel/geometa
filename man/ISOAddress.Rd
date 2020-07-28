@@ -4,9 +4,8 @@
 \name{ISOAddress}
 \alias{ISOAddress}
 \title{ISOAddress}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAddress
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Address

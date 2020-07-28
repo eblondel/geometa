@@ -4,9 +4,8 @@
 \name{ISOTopologicalConsistency}
 \alias{ISOTopologicalConsistency}
 \title{ISOTopologicalConsistency}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOTopologicalConsistency
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOTopologicalConsistency

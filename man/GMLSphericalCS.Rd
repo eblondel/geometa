@@ -4,9 +4,8 @@
 \name{GMLSphericalCS}
 \alias{GMLSphericalCS}
 \title{GMLSphericalCS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLSphericalCS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLSphericalCS

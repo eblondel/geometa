@@ -4,9 +4,8 @@
 \name{ISOAssociationType}
 \alias{ISOAssociationType}
 \title{ISOAssociationType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAssociationType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO AssociationType

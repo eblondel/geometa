@@ -4,9 +4,8 @@
 \name{ISOCodeListValue}
 \alias{ISOCodeListValue}
 \title{ISOCodeListValue}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOCodeListValue
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Metadata codelist element

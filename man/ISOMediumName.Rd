@@ -4,9 +4,8 @@
 \name{ISOMediumName}
 \alias{ISOMediumName}
 \title{ISOMediumName}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOMediumName
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOMediumName

@@ -4,9 +4,8 @@
 \name{GMLParameterValue}
 \alias{GMLParameterValue}
 \title{GMLParameterValue}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLParameterValue
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML parameter value

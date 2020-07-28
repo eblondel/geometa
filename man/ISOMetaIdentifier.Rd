@@ -4,9 +4,8 @@
 \name{ISOMetaIdentifier}
 \alias{ISOMetaIdentifier}
 \title{ISOMetaIdentifier}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOMetaIdentifier
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO MetaIdentifier

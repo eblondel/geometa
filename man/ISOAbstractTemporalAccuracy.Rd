@@ -4,9 +4,8 @@
 \name{ISOAbstractTemporalAccuracy}
 \alias{ISOAbstractTemporalAccuracy}
 \title{ISOAbstractTemporalAccuracy}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAbstractTemporalAccuracy
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOAbstractTemporalAccuracy

@@ -4,9 +4,8 @@
 \name{ISOCouplingType}
 \alias{ISOCouplingType}
 \title{ISOCouplingType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOCouplingType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOCouplingType

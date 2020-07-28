@@ -4,9 +4,8 @@
 \name{GMLOperationMethod}
 \alias{GMLOperationMethod}
 \title{GMLOperationMethod}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLOperationMethod
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLOperationMethod

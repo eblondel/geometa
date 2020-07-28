@@ -4,9 +4,8 @@
 \name{GMLRectifiedGrid}
 \alias{GMLRectifiedGrid}
 \title{GMLRectifiedGrid}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLRectifiedGrid
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML rectified grid

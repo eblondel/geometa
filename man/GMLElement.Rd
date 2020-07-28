@@ -4,9 +4,8 @@
 \name{GMLElement}
 \alias{GMLElement}
 \title{GMLElement}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLElement
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML element

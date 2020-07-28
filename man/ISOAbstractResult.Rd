@@ -4,9 +4,8 @@
 \name{ISOAbstractResult}
 \alias{ISOAbstractResult}
 \title{ISOAbstractResult}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAbstractResult
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Result

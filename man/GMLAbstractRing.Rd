@@ -4,9 +4,8 @@
 \name{GMLAbstractRing}
 \alias{GMLAbstractRing}
 \title{GMLAbstractRing}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractRing
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML abstract ring

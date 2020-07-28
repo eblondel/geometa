@@ -4,9 +4,8 @@
 \name{ISOTopicCategory}
 \alias{ISOTopicCategory}
 \title{ISOTopicCategory}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOTopicCategory
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO TopicCategory

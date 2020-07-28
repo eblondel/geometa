@@ -4,9 +4,8 @@
 \name{ISODomainConsistency}
 \alias{ISODomainConsistency}
 \title{ISODomainConsistency}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODomainConsistency
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISODomainConsistency

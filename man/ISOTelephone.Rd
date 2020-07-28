@@ -4,9 +4,8 @@
 \name{ISOTelephone}
 \alias{ISOTelephone}
 \title{ISOTelephone}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOTelephone
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Telephone

@@ -4,9 +4,8 @@
 \name{ISODate}
 \alias{ISODate}
 \title{ISODate}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODate
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Date

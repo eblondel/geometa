@@ -4,9 +4,8 @@
 \name{ISOVerticalExtent}
 \alias{ISOVerticalExtent}
 \title{ISOVerticalExtent}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOVerticalExtent
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO VerticalExtent

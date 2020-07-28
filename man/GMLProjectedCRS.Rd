@@ -4,9 +4,8 @@
 \name{GMLProjectedCRS}
 \alias{GMLProjectedCRS}
 \title{GMLProjectedCRS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLProjectedCRS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLProjectedCRS

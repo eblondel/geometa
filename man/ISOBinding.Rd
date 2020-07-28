@@ -4,9 +4,8 @@
 \name{ISOBinding}
 \alias{ISOBinding}
 \title{ISOBinding}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOBinding
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOBinding

@@ -4,9 +4,8 @@
 \name{ISOGeoreferenceable}
 \alias{ISOGeoreferenceable}
 \title{ISOGeoreferenceable}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOGeoreferenceable
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Georeferenceable

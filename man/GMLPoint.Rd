@@ -4,9 +4,8 @@
 \name{GMLPoint}
 \alias{GMLPoint}
 \title{GMLPoint}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLPoint
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML point

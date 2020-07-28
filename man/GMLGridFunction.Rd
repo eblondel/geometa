@@ -4,9 +4,8 @@
 \name{GMLGridFunction}
 \alias{GMLGridFunction}
 \title{GMLGridFunction}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLGridFunction
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML grid function

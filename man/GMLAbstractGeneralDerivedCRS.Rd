@@ -4,9 +4,8 @@
 \name{GMLAbstractGeneralDerivedCRS}
 \alias{GMLAbstractGeneralDerivedCRS}
 \title{GMLAbstractGeneralDerivedCRS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractGeneralDerivedCRS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLAbstractGeneralDerivedCRS

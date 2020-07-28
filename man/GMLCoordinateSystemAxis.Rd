@@ -4,9 +4,8 @@
 \name{GMLCoordinateSystemAxis}
 \alias{GMLCoordinateSystemAxis}
 \title{GMLCoordinateSystemAxis}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLCoordinateSystemAxis
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLCoordinateSystemAxis

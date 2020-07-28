@@ -4,9 +4,8 @@
 \name{ISOConstraint}
 \alias{ISOConstraint}
 \title{ISOConstraint}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOConstraint
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOConstraint

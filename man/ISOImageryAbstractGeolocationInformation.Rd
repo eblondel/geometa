@@ -4,9 +4,8 @@
 \name{ISOImageryAbstractGeolocationInformation}
 \alias{ISOImageryAbstractGeolocationInformation}
 \title{ISOImageryAbstractGeolocationInformation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryAbstractGeolocationInformation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOimagery geolocation information

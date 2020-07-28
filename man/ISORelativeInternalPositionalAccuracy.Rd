@@ -4,9 +4,8 @@
 \name{ISORelativeInternalPositionalAccuracy}
 \alias{ISORelativeInternalPositionalAccuracy}
 \title{ISORelativeInternalPositionalAccuracy}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISORelativeInternalPositionalAccuracy
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISORelativeInternalPositionalAccuracy

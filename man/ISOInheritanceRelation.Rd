@@ -4,9 +4,8 @@
 \name{ISOInheritanceRelation}
 \alias{ISOInheritanceRelation}
 \title{ISOInheritanceRelation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOInheritanceRelation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOInheritanceRelation

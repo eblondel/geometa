@@ -4,9 +4,8 @@
 \name{ISOFormatConsistency}
 \alias{ISOFormatConsistency}
 \title{ISOFormatConsistency}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOFormatConsistency
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOFormatConsistency

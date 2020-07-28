@@ -4,9 +4,8 @@
 \name{ISODistributionUnits}
 \alias{ISODistributionUnits}
 \title{ISODistributionUnits}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODistributionUnits
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO DistributionUnits

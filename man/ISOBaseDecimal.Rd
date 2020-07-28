@@ -4,9 +4,8 @@
 \name{ISOBaseDecimal}
 \alias{ISOBaseDecimal}
 \title{ISOBaseDecimal}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOBaseDecimal
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Decimal

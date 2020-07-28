@@ -4,9 +4,8 @@
 \name{ISOImageryEvent}
 \alias{ISOImageryEvent}
 \title{ISOImageryEvent}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryEvent
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery event

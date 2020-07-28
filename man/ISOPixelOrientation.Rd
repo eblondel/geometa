@@ -4,9 +4,8 @@
 \name{ISOPixelOrientation}
 \alias{ISOPixelOrientation}
 \title{ISOPixelOrientation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOPixelOrientation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOPixelOrientation

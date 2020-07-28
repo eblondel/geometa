@@ -4,9 +4,8 @@
 \name{GMLUnitDefinition}
 \alias{GMLUnitDefinition}
 \title{GMLUnitDefinition}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLUnitDefinition
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML unit definition

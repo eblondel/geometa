@@ -4,9 +4,8 @@
 \name{ISOLineage}
 \alias{ISOLineage}
 \title{ISOLineage}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOLineage
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Lineage

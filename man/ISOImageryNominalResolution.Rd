@@ -4,9 +4,8 @@
 \name{ISOImageryNominalResolution}
 \alias{ISOImageryNominalResolution}
 \title{ISOImageryNominalResolution}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryNominalResolution
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery nominal resolution

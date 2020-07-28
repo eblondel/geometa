@@ -4,9 +4,8 @@
 \name{ISOAbstractReferenceSystem}
 \alias{ISOAbstractReferenceSystem}
 \title{ISOAbstractReferenceSystem}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAbstractReferenceSystem
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO abstract RS Reference system

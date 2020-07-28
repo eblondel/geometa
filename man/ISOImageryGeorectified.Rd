@@ -4,9 +4,8 @@
 \name{ISOImageryGeorectified}
 \alias{ISOImageryGeorectified}
 \title{ISOImageryGeorectified}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryGeorectified
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO image Georectified

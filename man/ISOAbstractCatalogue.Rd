@@ -4,9 +4,8 @@
 \name{ISOAbstractCatalogue}
 \alias{ISOAbstractCatalogue}
 \title{ISOAbstractCatalogue}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAbstractCatalogue
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOAbstracCatalogue

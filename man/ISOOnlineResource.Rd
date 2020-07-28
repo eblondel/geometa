@@ -4,9 +4,8 @@
 \name{ISOOnlineResource}
 \alias{ISOOnlineResource}
 \title{ISOOnlineResource}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOOnlineResource
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Online Resource

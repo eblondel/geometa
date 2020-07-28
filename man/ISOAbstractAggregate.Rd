@@ -4,9 +4,8 @@
 \name{ISOAbstractAggregate}
 \alias{ISOAbstractAggregate}
 \title{ISOAbstractAggregate}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAbstractAggregate
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOAbstractAggregate

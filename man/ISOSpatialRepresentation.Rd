@@ -4,9 +4,8 @@
 \name{ISOSpatialRepresentation}
 \alias{ISOSpatialRepresentation}
 \title{ISOSpatialRepresentation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOSpatialRepresentation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO abstract SpatialRepresentation

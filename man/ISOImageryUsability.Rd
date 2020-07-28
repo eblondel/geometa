@@ -4,9 +4,8 @@
 \name{ISOImageryUsability}
 \alias{ISOImageryUsability}
 \title{ISOImageryUsability}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryUsability
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery usability

@@ -4,9 +4,8 @@
 \name{GMLOperationParameter}
 \alias{GMLOperationParameter}
 \title{GMLOperationParameter}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLOperationParameter
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLOperationParameter

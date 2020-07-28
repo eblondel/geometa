@@ -4,9 +4,8 @@
 \name{GMLTimePeriod}
 \alias{GMLTimePeriod}
 \title{GMLTimePeriod}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLTimePeriod
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLTimePeriod

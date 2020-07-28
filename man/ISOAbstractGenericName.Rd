@@ -4,9 +4,8 @@
 \name{ISOAbstractGenericName}
 \alias{ISOAbstractGenericName}
 \title{ISOAbstractGenericName}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAbstractGenericName
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO abstract GenericName

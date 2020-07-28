@@ -4,9 +4,8 @@
 \name{ISOStandardOrderProcess}
 \alias{ISOStandardOrderProcess}
 \title{ISOStandardOrderProcess}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOStandardOrderProcess
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO StandardOrderProcess

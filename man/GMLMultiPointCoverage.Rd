@@ -4,9 +4,8 @@
 \name{GMLMultiPointCoverage}
 \alias{GMLMultiPointCoverage}
 \title{GMLMultiPointCoverage}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLMultiPointCoverage
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML multipoint coverage

@@ -4,9 +4,8 @@
 \name{GMLMultiCurveCoverage}
 \alias{GMLMultiCurveCoverage}
 \title{GMLMultiCurveCoverage}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLMultiCurveCoverage
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML multicurve coverage

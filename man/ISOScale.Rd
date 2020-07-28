@@ -4,9 +4,8 @@
 \name{ISOScale}
 \alias{ISOScale}
 \title{ISOScale}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOScale
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOScale measure

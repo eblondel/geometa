@@ -4,9 +4,8 @@
 \name{ISOImageryOperationType}
 \alias{ISOImageryOperationType}
 \title{ISOImageryOperationType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryOperationType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Imagery Operation type

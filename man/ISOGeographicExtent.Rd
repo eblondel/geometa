@@ -4,9 +4,8 @@
 \name{ISOGeographicExtent}
 \alias{ISOGeographicExtent}
 \title{ISOGeographicExtent}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOGeographicExtent
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO abstract geographicExtent

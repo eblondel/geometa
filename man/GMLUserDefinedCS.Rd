@@ -4,9 +4,8 @@
 \name{GMLUserDefinedCS}
 \alias{GMLUserDefinedCS}
 \title{GMLUserDefinedCS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLUserDefinedCS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLUserDefinedCS

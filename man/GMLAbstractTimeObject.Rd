@@ -4,9 +4,8 @@
 \name{GMLAbstractTimeObject}
 \alias{GMLAbstractTimeObject}
 \title{GMLAbstractTimeObject}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractTimeObject
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML AbstractTimeObject

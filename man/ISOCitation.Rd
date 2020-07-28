@@ -4,9 +4,8 @@
 \name{ISOCitation}
 \alias{ISOCitation}
 \title{ISOCitation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOCitation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Citation

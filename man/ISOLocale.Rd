@@ -4,9 +4,8 @@
 \name{ISOLocale}
 \alias{ISOLocale}
 \title{ISOLocale}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOLocale
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Locale

@@ -4,9 +4,8 @@
 \name{GMLAbstractSingleOperation}
 \alias{GMLAbstractSingleOperation}
 \title{GMLAbstractSingleOperation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractSingleOperation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLAbstractSingleOperation

@@ -4,9 +4,8 @@
 \name{ISODCPList}
 \alias{ISODCPList}
 \title{ISODCPList}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODCPList
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO DCPList

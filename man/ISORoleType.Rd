@@ -4,9 +4,8 @@
 \name{ISORoleType}
 \alias{ISORoleType}
 \title{ISORoleType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISORoleType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO RoleType

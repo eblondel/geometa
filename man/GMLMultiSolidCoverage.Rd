@@ -4,9 +4,8 @@
 \name{GMLMultiSolidCoverage}
 \alias{GMLMultiSolidCoverage}
 \title{GMLMultiSolidCoverage}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLMultiSolidCoverage
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML multisolid coverage

@@ -4,9 +4,8 @@
 \name{ISOListedValue}
 \alias{ISOListedValue}
 \title{ISOListedValue}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOListedValue
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOListedValue

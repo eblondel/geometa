@@ -4,9 +4,8 @@
 \name{ISOBaseDateTime}
 \alias{ISOBaseDateTime}
 \title{ISOBaseDateTime}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOBaseDateTime
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO DateTime

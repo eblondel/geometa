@@ -4,9 +4,8 @@
 \name{GMLBaseUnit}
 \alias{GMLBaseUnit}
 \title{GMLBaseUnit}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLBaseUnit
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML base unit

@@ -4,9 +4,8 @@
 \name{ISOGridSpatialRepresentation}
 \alias{ISOGridSpatialRepresentation}
 \title{ISOGridSpatialRepresentation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOGridSpatialRepresentation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO GridSpatialRepresentation

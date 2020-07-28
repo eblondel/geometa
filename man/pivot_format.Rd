@@ -4,9 +4,8 @@
 \name{pivot_format}
 \alias{pivot_format}
 \title{pivot_format}
-\format{\code{\link{R6Class}} object.}
-\usage{
-pivot_format
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling a mapping format

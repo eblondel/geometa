@@ -4,9 +4,8 @@
 \name{ISOBoundFeatureAttribute}
 \alias{ISOBoundFeatureAttribute}
 \title{ISOBoundFeatureAttribute}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOBoundFeatureAttribute
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOBoundFeatureAttribute

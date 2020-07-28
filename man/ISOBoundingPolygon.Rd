@@ -4,9 +4,8 @@
 \name{ISOBoundingPolygon}
 \alias{ISOBoundingPolygon}
 \title{ISOBoundingPolygon}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOBoundingPolygon
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO BoundingPolygon

@@ -4,9 +4,8 @@
 \name{ISOBand}
 \alias{ISOBand}
 \title{ISOBand}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOBand
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOBand

@@ -4,9 +4,8 @@
 \name{ISOUsage}
 \alias{ISOUsage}
 \title{ISOUsage}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOUsage
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Usage

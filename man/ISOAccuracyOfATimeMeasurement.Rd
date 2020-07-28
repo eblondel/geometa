@@ -4,9 +4,8 @@
 \name{ISOAccuracyOfATimeMeasurement}
 \alias{ISOAccuracyOfATimeMeasurement}
 \title{ISOAccuracyOfATimeMeasurement}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAccuracyOfATimeMeasurement
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOAccuracyOfATimeMeasurement

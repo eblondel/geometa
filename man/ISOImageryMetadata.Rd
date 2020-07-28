@@ -4,9 +4,8 @@
 \name{ISOImageryMetadata}
 \alias{ISOImageryMetadata}
 \title{ISOImageryMetadata}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryMetadata
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Imagery Metadata

@@ -4,9 +4,8 @@
 \name{ISOBaseReal}
 \alias{ISOBaseReal}
 \title{ISOBaseReal}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOBaseReal
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Real

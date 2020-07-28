@@ -4,9 +4,8 @@
 \name{ISORepresentativeFraction}
 \alias{ISORepresentativeFraction}
 \title{ISORepresentativeFraction}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISORepresentativeFraction
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO RepresentativeFraction

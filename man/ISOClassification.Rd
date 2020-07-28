@@ -4,9 +4,8 @@
 \name{ISOClassification}
 \alias{ISOClassification}
 \title{ISOClassification}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOClassification
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Classification

@@ -4,9 +4,8 @@
 \name{ISOMetadataExtensionInformation}
 \alias{ISOMetadataExtensionInformation}
 \title{ISOMetadataExtensionInformation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOMetadataExtensionInformation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO MetadataExtensionInformation

@@ -4,9 +4,8 @@
 \name{GMLReferenceableGridByVectors}
 \alias{GMLReferenceableGridByVectors}
 \title{GMLReferenceableGridByVectors}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLReferenceableGridByVectors
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML ReferenceableGridByVectors

@@ -4,9 +4,8 @@
 \name{ISOGeometricObjectType}
 \alias{ISOGeometricObjectType}
 \title{ISOGeometricObjectType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOGeometricObjectType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO GeometricObjectType

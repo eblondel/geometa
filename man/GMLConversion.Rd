@@ -4,9 +4,8 @@
 \name{GMLConversion}
 \alias{GMLConversion}
 \title{GMLConversion}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLConversion
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLConversion

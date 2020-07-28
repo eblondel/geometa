@@ -4,9 +4,8 @@
 \name{GMLPolarCS}
 \alias{GMLPolarCS}
 \title{GMLPolarCS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLPolarCS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLPolarCS

@@ -4,9 +4,8 @@
 \name{ISOServiceIdentification}
 \alias{ISOServiceIdentification}
 \title{ISOServiceIdentification}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOServiceIdentification
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification

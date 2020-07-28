@@ -4,9 +4,8 @@
 \name{ISORestriction}
 \alias{ISORestriction}
 \title{ISOHierarchyLevel}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISORestriction
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Restriction

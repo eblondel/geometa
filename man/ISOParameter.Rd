@@ -4,9 +4,8 @@
 \name{ISOParameter}
 \alias{ISOParameter}
 \title{ISOParameter}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOParameter
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOParameter

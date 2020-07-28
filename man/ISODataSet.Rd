@@ -4,9 +4,8 @@
 \name{ISODataSet}
 \alias{ISODataSet}
 \title{ISODataSet}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODataSet
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISODataSet

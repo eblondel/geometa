@@ -4,9 +4,8 @@
 \name{ISOImageryAlgorithm}
 \alias{ISOImageryAlgorithm}
 \title{ISOImageryAlgorithm}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryAlgorithm
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery algorithm

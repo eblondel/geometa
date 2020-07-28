@@ -4,9 +4,8 @@
 \name{GMLLinearCS}
 \alias{GMLLinearCS}
 \title{GMLLinearCS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLLinearCS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLLinearCS

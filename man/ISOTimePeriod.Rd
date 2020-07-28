@@ -4,9 +4,8 @@
 \name{ISOTimePeriod}
 \alias{ISOTimePeriod}
 \title{ISOTimePeriod}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOTimePeriod
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLTimePeriod

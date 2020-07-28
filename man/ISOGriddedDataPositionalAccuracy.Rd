@@ -4,9 +4,8 @@
 \name{ISOGriddedDataPositionalAccuracy}
 \alias{ISOGriddedDataPositionalAccuracy}
 \title{ISOGriddedDataPositionalAccuracy}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOGriddedDataPositionalAccuracy
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOGriddedDataPositionalAccuracy

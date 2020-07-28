@@ -4,9 +4,8 @@
 \name{GMLConventionalUnit}
 \alias{GMLConventionalUnit}
 \title{GMLConventionalUnit}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLConventionalUnit
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML derived unit

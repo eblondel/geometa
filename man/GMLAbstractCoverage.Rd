@@ -4,9 +4,8 @@
 \name{GMLAbstractCoverage}
 \alias{GMLAbstractCoverage}
 \title{GMLAbstractCoverage}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractCoverage
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML abstract coverage

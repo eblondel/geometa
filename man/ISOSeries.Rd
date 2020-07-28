@@ -4,9 +4,8 @@
 \name{ISOSeries}
 \alias{ISOSeries}
 \title{ISOSeries}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOSeries
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOSeries

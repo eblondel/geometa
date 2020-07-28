@@ -4,9 +4,8 @@
 \name{ISOImageryPlatformPass}
 \alias{ISOImageryPlatformPass}
 \title{ISOImageryPlatformPass}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryPlatformPass
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery PlatformPass

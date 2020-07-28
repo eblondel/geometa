@@ -4,9 +4,8 @@
 \name{ISOGeographicBoundingBox}
 \alias{ISOGeographicBoundingBox}
 \title{ISOGeographicBoundingBox}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOGeographicBoundingBox
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO GeographicBoundingBox

@@ -4,9 +4,8 @@
 \name{ISOImageryRequirement}
 \alias{ISOImageryRequirement}
 \title{ISOImageryRequirement}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryRequirement
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery requirement

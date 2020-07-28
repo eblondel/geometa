@@ -4,9 +4,8 @@
 \name{GMLAbstractTimeGeometricPrimitive}
 \alias{GMLAbstractTimeGeometricPrimitive}
 \title{GMLAbstractTimeGeometricPrimitive}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractTimeGeometricPrimitive
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO GML abstract temporal primitive

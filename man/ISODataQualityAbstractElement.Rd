@@ -4,9 +4,8 @@
 \name{ISODataQualityAbstractElement}
 \alias{ISODataQualityAbstractElement}
 \title{ISODataQualityAbstractElement}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODataQualityAbstractElement
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISODataQualityAbstractElement

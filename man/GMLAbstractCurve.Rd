@@ -4,9 +4,8 @@
 \name{GMLAbstractCurve}
 \alias{GMLAbstractCurve}
 \title{GMLAbstractCurve}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractCurve
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML abstract curve

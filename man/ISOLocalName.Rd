@@ -4,9 +4,8 @@
 \name{ISOLocalName}
 \alias{ISOLocalName}
 \title{ISOLocalName}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOLocalName
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO LocalName

@@ -4,9 +4,8 @@
 \name{ISOCoupledResource}
 \alias{ISOCoupledResource}
 \title{ISOCoupledResource}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOCoupledResource
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOCoupledResource

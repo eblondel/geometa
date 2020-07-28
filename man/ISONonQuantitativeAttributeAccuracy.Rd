@@ -4,9 +4,8 @@
 \name{ISONonQuantitativeAttributeAccuracy}
 \alias{ISONonQuantitativeAttributeAccuracy}
 \title{ISONonQuantitativeAttributeAccuracy}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISONonQuantitativeAttributeAccuracy
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISONonQuantitativeAttributeAccuracy

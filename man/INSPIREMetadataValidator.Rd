@@ -4,9 +4,8 @@
 \name{INSPIREMetadataValidator}
 \alias{INSPIREMetadataValidator}
 \title{INSPIREMetadataValidator}
-\format{\code{\link{R6Class}} object.}
-\usage{
-INSPIREMetadataValidator
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for setting an INSPIREMetadataValidator

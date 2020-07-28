@@ -4,9 +4,8 @@
 \name{geometaLogger}
 \alias{geometaLogger}
 \title{geometaLogger}
-\format{\code{\link{R6Class}} object.}
-\usage{
-geometaLogger
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling a simple logger

@@ -4,9 +4,8 @@
 \name{ISOImageryRequestedDate}
 \alias{ISOImageryRequestedDate}
 \title{ISOImageryRequestedDate}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryRequestedDate
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery requested date

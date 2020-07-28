@@ -4,9 +4,8 @@
 \name{ISOResponsibleParty}
 \alias{ISOResponsibleParty}
 \title{ISOResponsibleParty}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOResponsibleParty
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO ResponsibleParty

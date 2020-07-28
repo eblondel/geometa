@@ -4,9 +4,8 @@
 \name{ISODistribution}
 \alias{ISODistribution}
 \title{ISODistribution}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODistribution
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Distribution

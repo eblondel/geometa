@@ -4,9 +4,8 @@
 \name{ISOStatus}
 \alias{ISOStatus}
 \title{ISOStatus}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOStatus
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO progress status

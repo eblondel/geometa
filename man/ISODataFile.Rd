@@ -4,9 +4,8 @@
 \name{ISODataFile}
 \alias{ISODataFile}
 \title{ISODataFile}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISODataFile
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO DataFile

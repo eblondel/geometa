@@ -4,9 +4,8 @@
 \name{ISOImagerySequence}
 \alias{ISOImagerySequence}
 \title{ISOImagerySequence}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImagerySequence
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery sequence

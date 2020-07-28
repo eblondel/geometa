@@ -4,9 +4,8 @@
 \name{ISOCoverageContentType}
 \alias{ISOCoverageContentType}
 \title{ISOCoverageContentType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOCoverageContentType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO CoverageContentType

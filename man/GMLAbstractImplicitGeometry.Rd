@@ -4,9 +4,8 @@
 \name{GMLAbstractImplicitGeometry}
 \alias{GMLAbstractImplicitGeometry}
 \title{GMLAbstractImplicitGeometry}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractImplicitGeometry
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML abstract implicit Geometry

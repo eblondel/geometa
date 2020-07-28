@@ -4,9 +4,8 @@
 \name{ISOAngle}
 \alias{ISOAngle}
 \title{ISOAngle}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAngle
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOAngle measure

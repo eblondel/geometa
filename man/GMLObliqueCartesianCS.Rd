@@ -4,9 +4,8 @@
 \name{GMLObliqueCartesianCS}
 \alias{GMLObliqueCartesianCS}
 \title{GMLObliqueCartesianCS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLObliqueCartesianCS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLObliqueCartesianCS

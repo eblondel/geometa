@@ -4,9 +4,8 @@
 \name{ISOConceptualConsistency}
 \alias{ISOConceptualConsistency}
 \title{ISOConceptualConsistency}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOConceptualConsistency
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOConceptualConsistency

@@ -4,9 +4,8 @@
 \name{ISOInitiativeType}
 \alias{ISOInitiativeType}
 \title{ISOInitiativeType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOInitiativeType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO InitiativeType

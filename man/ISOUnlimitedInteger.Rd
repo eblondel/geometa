@@ -4,9 +4,8 @@
 \name{ISOUnlimitedInteger}
 \alias{ISOUnlimitedInteger}
 \title{ISOUnlimitedInteger}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOUnlimitedInteger
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO UnlimitedInteger

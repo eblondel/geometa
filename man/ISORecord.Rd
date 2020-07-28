@@ -4,9 +4,8 @@
 \name{ISORecord}
 \alias{ISORecord}
 \title{ISORecord}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISORecord
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISORecord

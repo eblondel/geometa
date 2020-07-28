@@ -4,9 +4,8 @@
 \name{ISOAbstractObject}
 \alias{ISOAbstractObject}
 \title{ISOAbstractObject}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAbstractObject
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Metadata Element

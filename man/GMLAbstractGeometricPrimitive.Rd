@@ -4,9 +4,8 @@
 \name{GMLAbstractGeometricPrimitive}
 \alias{GMLAbstractGeometricPrimitive}
 \title{GMLAbstractGeometricPrimitive}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractGeometricPrimitive
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML abstract Geometric Primitive

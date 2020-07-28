@@ -4,9 +4,8 @@
 \name{ISOBoundAssociationRole}
 \alias{ISOBoundAssociationRole}
 \title{ISOBoundAssociationRole}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOBoundAssociationRole
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOBoundAssociationRole

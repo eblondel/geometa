@@ -4,9 +4,8 @@
 \name{ISOCarrierOfCharacteristics}
 \alias{ISOCarrierOfCharacteristics}
 \title{ISOCarrierOfCharacteristics}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOCarrierOfCharacteristics
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOCarrierOfCharacteristics

@@ -4,9 +4,8 @@
 \name{GMLRectifiedGridCoverage}
 \alias{GMLRectifiedGridCoverage}
 \title{GMLRectifiedGridCoverage}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLRectifiedGridCoverage
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML rectified grid coverage

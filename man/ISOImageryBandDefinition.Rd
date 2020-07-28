@@ -4,9 +4,8 @@
 \name{ISOImageryBandDefinition}
 \alias{ISOImageryBandDefinition}
 \title{ISOImageryBandDefinition}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryBandDefinition
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Imagery Band definition

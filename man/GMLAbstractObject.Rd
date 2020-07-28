@@ -4,9 +4,8 @@
 \name{GMLAbstractObject}
 \alias{GMLAbstractObject}
 \title{GMLAbstractObject}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractObject
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML abstract object

@@ -4,9 +4,8 @@
 \name{GMLAbstractDiscreteCoverage}
 \alias{GMLAbstractDiscreteCoverage}
 \title{GMLAbstractDiscreteCoverage}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractDiscreteCoverage
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML abstract discrete coverage

@@ -4,9 +4,8 @@
 \name{ISOFeatureAttribute}
 \alias{ISOFeatureAttribute}
 \title{ISOFeatureAttribute}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOFeatureAttribute
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOFeatureAttribute

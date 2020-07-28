@@ -4,9 +4,8 @@
 \name{ISOMimeFileType}
 \alias{ISOMimeFileType}
 \title{ISOMimeFileType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOMimeFileType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO MimeFileType

@@ -4,9 +4,8 @@
 \name{ISOPropertyType}
 \alias{ISOPropertyType}
 \title{ISOPropertyType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOPropertyType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOPropertyType

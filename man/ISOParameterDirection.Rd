@@ -4,9 +4,8 @@
 \name{ISOParameterDirection}
 \alias{ISOParameterDirection}
 \title{ISOParameterDirection}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOParameterDirection
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOParameterDirection

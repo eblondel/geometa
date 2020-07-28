@@ -4,9 +4,8 @@
 \name{ISOImageryProcessing}
 \alias{ISOImageryProcessing}
 \title{ISOImageryProcessing}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryProcessing
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery processing

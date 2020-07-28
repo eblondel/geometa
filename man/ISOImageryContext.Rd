@@ -4,9 +4,8 @@
 \name{ISOImageryContext}
 \alias{ISOImageryContext}
 \title{ISOImageryContext}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryContext
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Imagery Context

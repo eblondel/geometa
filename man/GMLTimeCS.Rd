@@ -4,9 +4,8 @@
 \name{GMLTimeCS}
 \alias{GMLTimeCS}
 \title{GMLTimeCS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLTimeCS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLTimeCS

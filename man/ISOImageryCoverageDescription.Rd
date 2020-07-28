@@ -4,9 +4,8 @@
 \name{ISOImageryCoverageDescription}
 \alias{ISOImageryCoverageDescription}
 \title{ISOImageryCoverageDescription}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryCoverageDescription
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery image description

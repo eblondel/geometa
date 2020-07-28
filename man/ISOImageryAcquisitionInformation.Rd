@@ -4,9 +4,8 @@
 \name{ISOImageryAcquisitionInformation}
 \alias{ISOImageryAcquisitionInformation}
 \title{ISOImageryAcquisitionInformation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryAcquisitionInformation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO Imagery AcquisitionInformation

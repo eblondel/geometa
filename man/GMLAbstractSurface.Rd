@@ -4,9 +4,8 @@
 \name{GMLAbstractSurface}
 \alias{GMLAbstractSurface}
 \title{GMLAbstractSurface}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractSurface
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GML abstract surface

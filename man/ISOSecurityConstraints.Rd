@@ -4,9 +4,8 @@
 \name{ISOSecurityConstraints}
 \alias{ISOSecurityConstraints}
 \title{ISOSecurityConstraints}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOSecurityConstraints
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO SecurityConstraints

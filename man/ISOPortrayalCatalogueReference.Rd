@@ -4,9 +4,8 @@
 \name{ISOPortrayalCatalogueReference}
 \alias{ISOPortrayalCatalogueReference}
 \title{ISOPortrayalCatalogueReference}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOPortrayalCatalogueReference
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOPortrayalCatalogueReference

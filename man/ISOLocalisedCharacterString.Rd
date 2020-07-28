@@ -4,9 +4,8 @@
 \name{ISOLocalisedCharacterString}
 \alias{ISOLocalisedCharacterString}
 \title{ISOLocalisedCharacterString}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOLocalisedCharacterString
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO LocalisedCharacterString

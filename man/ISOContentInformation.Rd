@@ -4,9 +4,8 @@
 \name{ISOContentInformation}
 \alias{ISOContentInformation}
 \title{ISOContentInformation}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOContentInformation
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOContentInformation

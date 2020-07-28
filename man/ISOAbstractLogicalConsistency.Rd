@@ -4,9 +4,8 @@
 \name{ISOAbstractLogicalConsistency}
 \alias{ISOAbstractLogicalConsistency}
 \title{ISOAbstractLogicalConsistency}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOAbstractLogicalConsistency
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOAbstractLogicalConsistency

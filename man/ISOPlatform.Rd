@@ -4,9 +4,8 @@
 \name{ISOPlatform}
 \alias{ISOPlatform}
 \title{ISOPlatform}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOPlatform
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISOPlatform

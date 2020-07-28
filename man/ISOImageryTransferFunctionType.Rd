@@ -4,9 +4,8 @@
 \name{ISOImageryTransferFunctionType}
 \alias{ISOImageryTransferFunctionType}
 \title{ISOImageryTransferFunctionType}
-\format{\code{\link{R6Class}} object.}
-\usage{
-ISOImageryTransferFunctionType
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an ISO imagery transfer function type

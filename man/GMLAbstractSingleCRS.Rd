@@ -4,9 +4,8 @@
 \name{GMLAbstractSingleCRS}
 \alias{GMLAbstractSingleCRS}
 \title{GMLAbstractSingleCRS}
-\format{\code{\link{R6Class}} object.}
-\usage{
-GMLAbstractSingleCRS
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an GMLAbstractSingleCRS
