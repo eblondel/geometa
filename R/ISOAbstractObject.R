@@ -438,7 +438,6 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       xml_children <- xmlChildren(xml, encoding = private$encoding, addFinalizer = FALSE)
       for(child in xml_children){
         fieldName <- xmlName(child)
-        
         childElement <- child
         nsPrefix <- ""
         fNames <- unlist(strsplit(fieldName, ":"))
@@ -1437,7 +1436,7 @@ ISOAbstractObject$getISOClassByNode = function(node){
     if(nodeElementName %in% clazz$private_fields$xmlElement){
       geometa_inherits <- FALSE
       superclazz <- clazz
-      while(!geometa_inherits){
+      while(!geometa_inherits && !is.null(superclazz)){
         clazz_fields <- names(superclazz)
         if(!is.null(clazz_fields)) if(length(clazz_fields)>0) if("parent_env" %in% clazz_fields){
           if(environmentName(superclazz$parent_env)=="geometa"){
