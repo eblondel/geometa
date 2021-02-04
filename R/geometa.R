@@ -11,8 +11,8 @@
 #'  \tabular{ll}{
 #'    Package: \tab geometa\cr
 #'    Type: \tab Package\cr
-#'    Version: \tab 0.6-3\cr
-#'    Date: \tab 2020-08-04\cr
+#'    Version: \tab 0.6-4\cr
+#'    Date: \tab 2021-02-04\cr
 #'    License: \tab MIT\cr
 #'    LazyLoad: \tab yes\cr
 #'  }
