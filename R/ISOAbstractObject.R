@@ -203,12 +203,12 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         if(endsWith(value, "Z")){
           newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = "UTC")
         }else{
-          if(nchar(value)==25){
-            utc_offset <- substr(value, 20, 25)
-            value <- unlist(strsplit(value, utc_offset))[1]
-            utc_offset <- gsub(":", "", utc_offset)
-            value <- paste0(value, utc_offset)
+          if(regexpr(pattern = "[[:space:]]", value)){
+            splits <- unlist(strsplit(value, " "))
+            value <- splits[1]
             #TODO find a way to fetch "tzone" attribute -not solved for now
+            newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = "")
+          }else{
             newvalue <- as.POSIXct(strptime(value, "%Y-%m-%dT%H:%M:%S"), tz = "")
           }
         }
