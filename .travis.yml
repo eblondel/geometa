@@ -8,6 +8,7 @@ latex: false
 warnings_are_errors: false
 
 apt_packages:
+  - libcurl4-openssl-dev
   - libudunits2-dev
   - libproj-dev
   - libgeos-dev
