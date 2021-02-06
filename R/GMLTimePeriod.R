@@ -93,6 +93,10 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
     #computeInterval
     computeInterval = function(){
       
+      if(self$beginPosition$value > self$endPosition$value){
+        stop("GMLTimePeriod - 'beginPosition' should be before the 'endPosition'!")
+      }
+      
       start <- self$beginPosition$value
       end <- self$endPosition$value
       if(nchar(start)==4 && nchar(end)==4){

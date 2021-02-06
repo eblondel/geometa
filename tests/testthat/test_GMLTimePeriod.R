@@ -16,6 +16,7 @@ test_that("encoding - with dates",{
   start <- ISOdate(2000, 1, 12, 12, 59, 45)
   end <- ISOdate(2010, 8, 22, 13, 12, 43)
   expect_error(ISOTimePeriod$new(beginPosition = start, endPosition = end))
+  expect_error(GMLTimePeriod$new(beginPosition = end, endPosition = start))
   md <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
   
   xml <- md$encode()
