@@ -42,7 +42,7 @@ INSPIREMetadataValidator
 
 }
 \references{
-INSPIRE Reference Validator Web Service (http://inspire.ec.europa.eu/validator/swagger-ui.html)
+INSPIRE Reference Validator Web Service (https://inspire.ec.europa.eu/validator/swagger-ui.html)
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

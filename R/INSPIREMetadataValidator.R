@@ -33,7 +33,7 @@
 #'  }
 #' 
 #' @references 
-#'   INSPIRE Reference Validator Web Service (http://inspire.ec.europa.eu/validator/swagger-ui.html)
+#'   INSPIRE Reference Validator Web Service (https://inspire.ec.europa.eu/validator/swagger-ui.html)
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -51,7 +51,7 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
         stop("The INSPIRE metadata validator requires the installation of 'httr' package")
       }
       self$url <- paste(private$host, private$endpoint, sep = "/")
-      ping <- status_code(GET(paste(self$url, "status", sep = "/")))
+      ping <- status_code(HEAD(paste(self$url, "status", sep = "/")))
       self$running <- if(ping==200) TRUE else FALSE
     },
     
