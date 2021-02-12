@@ -7,7 +7,12 @@ cache:
 latex: false
 warnings_are_errors: false
 
+before_install:
+  - sudo apt-get remove libcurl3-gnutls
+
 apt_packages:
+  - libcurl4-openssl-dev
+  - libcurl3-nss
   - libudunits2-dev
   - libproj-dev
   - libgeos-dev
@@ -34,6 +39,8 @@ r_github_packages:
 
 r_packages:
   - devtools
+  - curl
+  - httr
   - R6
   - XML
   - sf
