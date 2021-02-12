@@ -20,7 +20,7 @@ apt_packages:
   - libgdal-dev
   - libnetcdf-dev # for ncdf4
   - netcdf-bin #for ncdf4
-  - libraptor2-dev #for librdf0-dev
+  #- libraptor2-dev #for librdf0-dev
   - librasqal3-dev #for librdf0-dev
   - librdf0-dev #for eml
   - libv8-dev #for eml
