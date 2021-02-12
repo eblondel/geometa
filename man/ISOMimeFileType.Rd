@@ -19,6 +19,12 @@ ISOMimeFileType
  \item{\code{new(xml, type, name)}}{
    This method is used to instantiate an \code{\link{ISOMimeFileType}}
  }
+ \item{\code{setName(name)}}{
+   Set name
+ }
+ \item{\code{setType(type)}}{
+  Set type
+ }
 }
 }
 

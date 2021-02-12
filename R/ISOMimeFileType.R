@@ -12,6 +12,12 @@
 #'  \item{\code{new(xml, type, name)}}{
 #'    This method is used to instantiate an \code{\link{ISOMimeFileType}}
 #'  }
+#'  \item{\code{setName(name)}}{
+#'    Set name
+#'  }
+#'  \item{\code{setType(type)}}{
+#'   Set type
+#'  }
 #' }
 #' 
 #' @examples
@@ -36,6 +42,36 @@ ISOMimeFileType <- R6Class("ISOMimeFileType",
           self$attrs$type <- type
           self$value <- name
          }
+       },
+       
+       #setName
+       setName = function(name){
+         self$value <- name
+       },
+       
+       #setType
+       setType = function(type){
+         self$attrs$type <- type
        }
      )                        
 )
+
+ISOMimeFileType$buildFrom = function(ext, add_iana_uri = TRUE){
+
+  mime1 <- data.frame(mime::mimemap)
+  mime1 <- data.frame(ext = row.names(mime1), mime = as.character(mime1[,1L]),
+                      stringsAsFactors = FALSE)
+  mime2 <- data.frame(mime:::mimeextra)
+  mime2 <- data.frame(ext = row.names(mime2), mime = as.character(mime2[,1L]),
+                      stringsAsFactors = FALSE)
+  mime.list <- rbind(mime1, mime2)
+  
+  mime.sel <- mime.list[mime.list$ext == ext,]
+  if(nrow(mime.sel)==0) return(NULL)
+  
+  mft <- ISOMimeFileType$new()
+  mft$setType(mime.sel$mime)
+  mft$setName(mime.sel$mime)
+  
+  return(mft)
+}
