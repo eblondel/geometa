@@ -51,7 +51,7 @@ ISODimension <- R6Class("ISODimension",
    public = list(
      #+ dimensionName [1..1]: ISODimensionNameType
      dimensionName = NULL,
-     #+ dimensionSize [1..1]: ISODimensionSize
+     #+ dimensionSize [1..1]: integer
      dimensionSize = NULL,
      #+ resolution [0..1]: ISOMeasure or subclass
      resolution = NULL,
