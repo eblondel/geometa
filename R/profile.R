@@ -8,6 +8,7 @@
   
   #hidden objects
   assign(".geometa.iso", new.env(), envir= asNamespace(pkgname))
+  assign(".geometa.iana", new.env(), envir= asNamespace(pkgname))
   
   #set ISO metadata namespaces
   setISOMetadataNamespaces()
@@ -17,6 +18,9 @@
   
   #set ISO codelists
   setISOCodelists()
+  
+  #set IANA Mime Types
+  setIANAMimeTypes()
   
   #Auto serial GML Id variable
   assign(".geometa.gml", new.env(), envir = asNamespace(pkgname))

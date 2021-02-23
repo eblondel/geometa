@@ -101,7 +101,7 @@ ISOFormat <- R6Class("ISOFormat",
       
       #setSpecification
       setSpecification = function(specification, locales = NULL){
-        self$specification <- as.character(specification)
+        self$specification <- specification
         if(!is.null(locales)){
           self$specification <- self$createLocalisedProperty(specification, locales)
         }
@@ -129,3 +129,21 @@ ISOFormat <- R6Class("ISOFormat",
       }
     )                        
 )
+
+ISOFormat$buildFrom = function(mimetype){
+  
+  mimetypes = getIANAMimeTypes()
+  mime = mimetypes[mimetypes$name == mimetype,]
+  
+  format = ISOFormat$new()
+  format$setVersion(NA)
+  if(nrow(mime)>0){
+    format$setName(ISOAnchor$new(name = mimetype, href = mime$uri))
+    if(!is.na(mime$rfc)){
+      format$setSpecification(ISOAnchor$new(name = toupper(mime$rfc), href = mime$rfc_uri))
+    }
+  }else{
+    format$setName(mimetype)
+  }
+  return(format)
+}
