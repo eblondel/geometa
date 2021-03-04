@@ -2,7 +2,7 @@ Package: geometa
 Type: Package
 Title: Tools for Reading and Writing ISO/OGC Geographic Metadata
 Version: 0.6-4
-Date: 2021-02-04
+Date: 2021-03-04
 Authors@R: c(person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")))
 Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Description: Provides facilities to handle reading and writing of geographic metadata 
