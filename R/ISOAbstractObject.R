@@ -686,7 +686,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           nsURI = rootNamespaces
         )
       }else{
-        wrapperAttrs <- self$parentAttrs
+        wrapperAttrs <- self$attrs
         if(self$isNull){
           wrapperAttrs <- self$attrs
           if(length(wrapperAttrs)>1) wrapperAttrs <- wrapperAttrs[names(wrapperAttrs)!="gco:nilReason"]
@@ -744,7 +744,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       			  }
               if(self$wrap){
                 wrapperAttrs <- self$parentAttrs
-                if(hasLocales) wrapperAttrs <- freeTextAttr
+                if(hasLocales) wrapperAttrs <- c(wrapperAttrs, freeTextAttr)
                 wrapperNode <- xmlOutputDOM(
                   tag = field,
                   nameSpace = namespaceId, 
