@@ -48,7 +48,7 @@ GMLTimeInstant <- R6Class("GMLTimeInstant",
        timePos <- timePosition
        if(is(timePos, "numeric")) timePos <- as(timePos, "character")
        if(!(is(timePos, "character") & nchar(timePos)%in%c(4,7))){
-         if(!all(class(timePos)==c("POSIXct","POSIXt")) | is(timePos, "Date")){
+         if(!is(timePos,"POSIXt") && !is(timePos, "Date")){
            stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
          }
        }
