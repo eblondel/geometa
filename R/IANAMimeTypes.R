@@ -4,6 +4,12 @@ setIANAMimeTypes <- function(){
   packageStartupMessage("Loading IANA mime types...")
   
   ianaUrl = "https://www.iana.org/assignments/media-types"
+  ping <- try(httr::HEAD(ianaUrl), silent = TRUE)
+  if(is(ping,"try-error")){
+    packageStartupMessage("IANA website not reachable, skipping IANA mime types loading...")
+    return(FALSE)
+  }
+  
   ianaNs = "http://www.iana.org/assignments"
   xml = xmlParse(httr::content(httr::GET(paste0(ianaUrl, "/media-types.xml")), "text")) 
   xml_records = getNodeSet(xml, "//ns:record", namespaces = c(ns = ianaNs))
