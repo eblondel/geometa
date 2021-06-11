@@ -70,7 +70,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCoverageDescription <- R6Class("ISOCoverageDescription",
-   inherit = ISOAbstractObject,
+   inherit = ISOContentInformation,
    private = list(
      xmlElement = "MD_CoverageDescription",
      xmlNamespacePrefix = "GMD"
