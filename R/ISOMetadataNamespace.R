@@ -36,7 +36,7 @@ ISOMetadataNamespace <- R6Class("ISOMetadataNamespace",
 ISOMetadataNamespace$GCO = ISOMetadataNamespace$new("gco", "http://www.isotc211.org/2005/gco")
 ISOMetadataNamespace$GFC = ISOMetadataNamespace$new("gfc", "http://www.isotc211.org/2005/gfc")
 ISOMetadataNamespace$GMD = ISOMetadataNamespace$new("gmd", "http://www.isotc211.org/2005/gmd")
-ISOMetadataNamespace$GMI = ISOMetadataNamespace$new("gmi", "http://standards.iso.org/iso/19115/-2/gmi/1.0")
+ISOMetadataNamespace$GMI = ISOMetadataNamespace$new("gmi", "http://www.isotc211.org/2005/gmi") #http://standards.iso.org/iso/19115/-2/gmi/1.0
 ISOMetadataNamespace$GMX = ISOMetadataNamespace$new("gmx", "http://www.isotc211.org/2005/gmx")
 ISOMetadataNamespace$GTS = ISOMetadataNamespace$new("gts", "http://www.isotc211.org/2005/gts")
 ISOMetadataNamespace$SRV = ISOMetadataNamespace$new("srv", "http://www.isotc211.org/2005/srv")
