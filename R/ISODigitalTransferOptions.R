@@ -31,6 +31,15 @@
 #'  \item{\code{delOnlineResource(onlineResource)}}{
 #'    Deletes an object of class \code{\link{ISOOnlineResource}}
 #'  }
+#'  \item{\code{addOfflineResource(offlineResource)}}{
+#'    Adds an object of class \code{\link{ISOMedium}}
+#'  }
+#'  \item{\code{setOfflineResource(offlineResource)}}{
+#'    Sets an object of class \code{\link{ISOMedium}}
+#'  }
+#'  \item{\code{delOfflineResource(offlineResource)}}{
+#'    Deletes an object of class \code{\link{ISOMedium}}
+#'  }
 #' }
 #' 
 #' @examples 
@@ -64,7 +73,7 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
      #+ onLine [0..*]: ISOOnlineResource
      onLine = list(),
      #+ offLine [0..1]: MD_Medium
-     offLine = NULL, #TODO
+     offLine = list(),
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
@@ -99,7 +108,30 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
          stop("The argument should be a 'ISOOnlineResource' object")
        }
        return(self$delListElement("onLine", onlineResource))
+     },
+     
+     #addOfflineResource
+     addOfflineResource = function(offlineResource){
+        if(!is(offlineResource, "ISOMedium")){
+           stop("The argument should be a 'ISOMedium' object")
+        }
+        return(self$addListElement("offLine", offlineResource))
+     },
+     
+     #setOfflineResource
+     setOfflineResource = function(offlineResource){
+        self$offLine <- list()
+        return(self$addOfflineResource(offlineResource))
+     },
+     
+     #delOfflineResource
+     delOfflineResource = function(offlineResource){
+        if(!is(offlineResource, "ISOMedium")){
+           stop("The argument should be a 'ISOMedium' object")
+        }
+        return(self$delListElement("offLine", offlineResource))
      }
+     
      
    )                        
 )
