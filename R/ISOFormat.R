@@ -137,10 +137,14 @@ ISOFormat$buildFrom = function(mimetype){
   
   format = ISOFormat$new()
   format$setVersion(NA)
-  if(nrow(mime)>0){
-    format$setName(ISOAnchor$new(name = mimetype, href = mime$uri))
-    if(!is.na(mime$rfc)){
-      format$setSpecification(ISOAnchor$new(name = toupper(mime$rfc), href = mime$rfc_uri))
+  if(!is.null(mime)){
+    if(nrow(mime)>0){
+      format$setName(ISOAnchor$new(name = mimetype, href = mime$uri))
+      if(!is.na(mime$rfc)){
+        format$setSpecification(ISOAnchor$new(name = toupper(mime$rfc), href = mime$rfc_uri))
+      }
+    }else{
+      format$setName(mimetype)
     }
   }else{
     format$setName(mimetype)
