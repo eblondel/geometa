@@ -44,6 +44,15 @@ ISODigitalTransferOptions
  \item{\code{delOnlineResource(onlineResource)}}{
    Deletes an object of class \code{\link{ISOOnlineResource}}
  }
+ \item{\code{addOfflineResource(offlineResource)}}{
+   Adds an object of class \code{\link{ISOMedium}}
+ }
+ \item{\code{setOfflineResource(offlineResource)}}{
+   Sets an object of class \code{\link{ISOMedium}}
+ }
+ \item{\code{delOfflineResource(offlineResource)}}{
+   Deletes an object of class \code{\link{ISOMedium}}
+ }
 }
 }
 
