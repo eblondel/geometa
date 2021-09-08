@@ -223,7 +223,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       #datetime types
       if(suppressWarnings(all(class(value)==c("POSIXct","POSIXt")))){
         tz <- attr(value, "tzone")
-        if(length(tz)>0){
+        if(length(tz)>1){
           if(tz %in% c("UTC","GMT")){
             value <- format(value,"%Y-%m-%dT%H:%M:%S")
             value <- paste0(value,"Z")
@@ -577,8 +577,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 }
               }else{
                 #xmlNamespacePrefix <- "GML"
-                #if(startsWith(nsPrefix,"gml")) xmlNamespacePrefix <- toupper(nsPrefix)
                 xmlNamespacePrefix <- self$getClass()$private_fields$xmlNamespacePrefix
+                if(startsWith(nsPrefix,"gml")) xmlNamespacePrefix <- toupper(nsPrefix)
+                if(is.null(xmlNamespacePrefix)) xmlNamespacePrefix <- "GML"
                 gmlElem <- GMLElement$new(element = fieldName, xmlNamespacePrefix = xmlNamespacePrefix)
                 gmlElem$decode(xml = childElement)
                 if(is(self[[fieldName]], "list")){
@@ -591,6 +592,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               #xmlNamespacePrefix <- "GML"
               #if(startsWith(nsPrefix,"gml")) xmlNamespacePrefix <- toupper(nsPrefix)
               xmlNamespacePrefix <- self$getClass()$private_fields$xmlNamespacePrefix
+              if(startsWith(nsPrefix,"gml")) xmlNamespacePrefix <- toupper(nsPrefix)
               if(is.null(xmlNamespacePrefix)) xmlNamespacePrefix <- "GML"
               gmlElem <- GMLElement$new(element = fieldName, xmlNamespacePrefix = xmlNamespacePrefix)
               gmlElem$decode(xml = childElement)
