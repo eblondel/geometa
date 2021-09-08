@@ -14,8 +14,9 @@ context("geometa_mapping")
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
-
+  
+  if(FALSE){
+  
   #md object
   #encoding
   md = ISOMetadata$new()
@@ -322,5 +323,7 @@ test_that("encoding",{
   expect_is(test_ogc1_cf, "ISOMetadata")
   test_ogc2_cf <- as(nc, "ISOImageryMetadata")
   expect_is(test_ogc2_cf, "ISOImageryMetadata")
+  
+  }
   
 })
