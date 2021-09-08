@@ -10,7 +10,6 @@ context("ISOTemporalExtent")
 
 test_that("encoding - with GMLTimeInstant",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   te <- ISOTemporalExtent$new()
   time <- ISOdate(2000, 1, 12, 12, 59, 45)
@@ -30,7 +29,6 @@ test_that("encoding - with GMLTimeInstant",{
 
 test_that("encoding - with GMLTimePeriod",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   te <- ISOTemporalExtent$new()
   start <- ISOdate(2000, 1, 12, 12, 59, 45)

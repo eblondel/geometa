@@ -135,9 +135,9 @@ test_that("encoding/decoding",{
   ct$addDate(d2)
   ct$setEdition("1.0")
   ct$setEditionDate(as.Date(ISOdate(2015, 1, 1, 1)))
-  ct$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-  ct$setPresentationForm("mapDigital")
-  ct$setCitedResponsibleParty(rp)
+  ct$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+  ct$addPresentationForm("mapDigital")
+  ct$addCitedResponsibleParty(rp)
   ident$setCitation(ct)
   
   #graphic overview
@@ -281,7 +281,7 @@ test_that("encoding/decoding",{
   result <- ISOConformanceResult$new()
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -308,7 +308,7 @@ test_that("encoding/decoding",{
   fcd$setIncludedWithDataset(FALSE)
   cit = ISOCitation$new()
   cit$setTitle("title")
-  cit$setAlternateTitle("alternate title")
+  cit$addAlternateTitle("alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015,1,1))
   d$setDateType("creation")
@@ -732,9 +732,9 @@ test_that("encoding/decoding - i18n",{
   ct$addDate(d)
   ct$setEdition("1.0")
   ct$setEditionDate(ISOdate(2015,1,1))
-  ct$setIdentifier(ISOMetaIdentifier$new(code = "identifier"))
-  ct$setPresentationForm("mapDigital")
-  ct$setCitedResponsibleParty(rp)
+  ct$addIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+  ct$addPresentationForm("mapDigital")
+  ct$addCitedResponsibleParty(rp)
   ident$setCitation(ct)
   
   #graphic overview
@@ -937,7 +937,7 @@ test_that("encoding/decoding - i18n",{
       RU="название спецификации",
       ZH="规范的标题"
     ))
-  spec$setAlternateTitle(
+  spec$addAlternateTitle(
     "specification alternate title",
     locales = list(
       EN="specification alternate title",
@@ -1000,7 +1000,7 @@ test_that("encoding/decoding - i18n",{
       RU="название спецификации",
       ZH="规范的标题"
     ))
-  cit$setAlternateTitle(
+  cit$addAlternateTitle(
     "specification alternate title",
     locales = list(
       EN="specification alternate title",

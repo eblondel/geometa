@@ -10,7 +10,6 @@ context("ISOGeoreferenceable")
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encodidng
   md <- ISOGeoreferenceable$new()
   #inherited methods from ISOGridSpatialRepresentation
@@ -30,7 +29,7 @@ test_that("encoding",{
   md$setGeoreferencedParameters("record")
   ct <- ISOCitation$new()
   ct$setTitle("citation")
-  ct$setAlternateTitle("alternate title")
+  ct$addAlternateTitle("alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015,1,1))
   d$setDateType("revision")

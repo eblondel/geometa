@@ -10,7 +10,6 @@ context("ISODataQualityThematicAccuracy")
 
 test_that("ISOAbstractThematicAccuracy",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOAbstractThematicAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -22,7 +21,7 @@ test_that("ISOAbstractThematicAccuracy",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -45,7 +44,6 @@ test_that("ISOAbstractThematicAccuracy",{
 
 test_that("ISOQuantitativeAttributeAccuracy",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOQuantitativeAttributeAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -57,7 +55,7 @@ test_that("ISOQuantitativeAttributeAccuracy",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -80,7 +78,6 @@ test_that("ISOQuantitativeAttributeAccuracy",{
 
 test_that("ISONonQuantitativeAttributeAccuracy",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISONonQuantitativeAttributeAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -92,7 +89,7 @@ test_that("ISONonQuantitativeAttributeAccuracy",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -115,7 +112,6 @@ test_that("ISONonQuantitativeAttributeAccuracy",{
 
 test_that("ISOThematicClassificationCorrectness",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOThematicClassificationCorrectness$new()
   dq$addNameOfMeasure("measure")
@@ -127,7 +123,7 @@ test_that("ISOThematicClassificationCorrectness",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")

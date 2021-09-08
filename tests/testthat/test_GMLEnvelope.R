@@ -11,7 +11,6 @@ context("GMLEnvelope")
 
 test_that("GMLEnvelope",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   m <- matrix(c(-180,180,-90, 90), nrow = 2, ncol = 2, byrow = TRUE,
                  dimnames = list(c("x", "y"), c("min","max")))
@@ -27,7 +26,6 @@ test_that("GMLEnvelope",{
 
 test_that("GMLEnvelope - Rasdaman ad-hoc spatio-temporal envelope (invalid GML)",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   start= format(Sys.time(), "%Y-%m-%dT%H:%M:%S")
   Sys.sleep(5)

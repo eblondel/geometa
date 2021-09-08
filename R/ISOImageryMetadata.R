@@ -353,7 +353,7 @@
 #'    result <- ISOConformanceResult$new()
 #'    spec <- ISOCitation$new()
 #'    spec$setTitle("Data Quality check")
-#'    spec$setAlternateTitle("This is is some data quality check report")
+#'    spec$addAlternateTitle("This is is some data quality check report")
 #'    d <- ISODate$new()
 #'    d$setDate(ISOdate(2015, 1, 1, 1))
 #'    d$setDateType("publication")

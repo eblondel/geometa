@@ -11,7 +11,6 @@ context("GMLAbstractGeometricAggregate")
 
 test_that("GMLMultiPoint",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   pts = matrix(1:10, 5, 2)
   mp = st_multipoint(pts)
@@ -27,7 +26,6 @@ test_that("GMLMultiPoint",{
 
 test_that("GMLMultiCurve",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   outer = matrix(c(0,0,10,0,10,10,0,10,0,0),ncol=2, byrow=TRUE)
   hole1 = matrix(c(1,1,1,2,2,2,2,1,1,1),ncol=2, byrow=TRUE)
@@ -46,7 +44,6 @@ test_that("GMLMultiCurve",{
 
 test_that("GMLMultiSurface",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   outer = matrix(c(0,0,10,0,10,10,0,10,0,0),ncol=2, byrow=TRUE)
   hole1 = matrix(c(1,1,1,2,2,2,2,1,1,1),ncol=2, byrow=TRUE)

@@ -10,7 +10,6 @@ context("ISODataQualityPositionalAccuracy")
 
 test_that("ISOAbstractPositionalAccuracy",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOAbstractPositionalAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -22,7 +21,7 @@ test_that("ISOAbstractPositionalAccuracy",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -45,7 +44,6 @@ test_that("ISOAbstractPositionalAccuracy",{
 
 test_that("ISORelativeInternalPositionalAccuracy",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISORelativeInternalPositionalAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -57,7 +55,7 @@ test_that("ISORelativeInternalPositionalAccuracy",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -80,7 +78,6 @@ test_that("ISORelativeInternalPositionalAccuracy",{
 
 test_that("ISOGriddedDataPositionalAccuracy",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOGriddedDataPositionalAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -92,7 +89,7 @@ test_that("ISOGriddedDataPositionalAccuracy",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -115,7 +112,6 @@ test_that("ISOGriddedDataPositionalAccuracy",{
 
 test_that("ISOAbsoluteExternalPositionalAccuracy",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOAbsoluteExternalPositionalAccuracy$new()
   dq$addNameOfMeasure("measure")
@@ -127,7 +123,7 @@ test_that("ISOAbsoluteExternalPositionalAccuracy",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")

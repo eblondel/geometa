@@ -10,7 +10,6 @@ context("ISOImageryNominalResolution")
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOImageryNominalResolution$new()
   d <- ISODistance$new(value = 1, uom = "m", useUomURI = TRUE)

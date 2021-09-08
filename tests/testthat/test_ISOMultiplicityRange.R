@@ -10,7 +10,6 @@ context("ISOMultiplicityRange")
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOMultiplicityRange$new(lower = 1, upper = 1)
   expect_is(md, "ISOMultiplicityRange")

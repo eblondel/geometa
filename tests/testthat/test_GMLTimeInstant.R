@@ -11,7 +11,6 @@ context("GMLTimeInstant")
 
 test_that("encoding - with dates",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   time <- ISOdate(2000, 1, 12, 12, 59, 45)
   md <- GMLTimeInstant$new(timePosition = time)
@@ -28,7 +27,6 @@ test_that("encoding - with dates",{
 
 test_that("encoding - with year+month",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- GMLTimeInstant$new(timePosition = "2019-02")
   
@@ -44,7 +42,6 @@ test_that("encoding - with year+month",{
 
 test_that("encoding - with year",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- GMLTimeInstant$new(timePosition = 2019)
   

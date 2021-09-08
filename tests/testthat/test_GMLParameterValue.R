@@ -12,7 +12,6 @@ context("GMLParameterValue")
 test_that("encoding - value",{
   
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   gml <- GMLParameterValue$new()
@@ -35,7 +34,6 @@ test_that("encoding - value",{
 
 test_that("encoding - stringValue",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   gml <- GMLParameterValue$new()
   gml$setStringValue("test")
@@ -57,7 +55,6 @@ test_that("encoding - stringValue",{
 
 test_that("encoding - integerValue",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   gml <- GMLParameterValue$new()
   gml$setIntegerValue(1L)
@@ -79,7 +76,6 @@ test_that("encoding - integerValue",{
 
 test_that("encoding - booleanValue",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   gml <- GMLParameterValue$new()
   gml$setBooleanValue(TRUE)
@@ -101,7 +97,6 @@ test_that("encoding - booleanValue",{
 
 test_that("encoding - valueFile",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   gml <- GMLParameterValue$new()
   gml$setValueFile("http://somelink")

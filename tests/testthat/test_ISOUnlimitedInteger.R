@@ -10,7 +10,6 @@ context("ISOUnlimitedInteger")
 
 test_that("encoding - finite number",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOUnlimitedInteger$new(value = 19L)
   expect_is(md, "ISOUnlimitedInteger")
@@ -28,7 +27,6 @@ test_that("encoding - finite number",{
 
 test_that("encoding - infinite number",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOUnlimitedInteger$new(value = Inf)
   expect_is(md, "ISOUnlimitedInteger")

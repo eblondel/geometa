@@ -10,7 +10,6 @@ context("ISORepresentativeFraction")
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISORepresentativeFraction$new(denominator = 1L)
   xml <- md$encode()

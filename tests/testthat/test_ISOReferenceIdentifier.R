@@ -10,7 +10,6 @@ context("ISOReferenceIdentifier")
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
   expect_is(md, "ISOReferenceIdentifier")

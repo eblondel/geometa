@@ -10,7 +10,6 @@ context("ISOResolution")
 
 test_that("encoding/decoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOResolution$new()
   md$setDistance(ISODistance$new(value = 1, uom = "m", useUomURI = TRUE))

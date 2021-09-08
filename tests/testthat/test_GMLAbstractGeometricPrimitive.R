@@ -11,7 +11,6 @@ context("GMLAbstractGeometricPrimitive")
 
 test_that("GMLPoint",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   pt <- st_point(c(1,1)) 
   md <- GMLPoint$new(sfg = pt)
@@ -26,7 +25,6 @@ test_that("GMLPoint",{
 
 test_that("GMLLineString",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   ls = st_linestring(matrix(1:10, 5, 2))
   md <- GMLLineString$new(sfg = ls)
@@ -42,7 +40,6 @@ test_that("GMLLineString",{
 
 test_that("GMLPolygon",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   outer = matrix(c(0,0,10,0,10,10,0,10,0,0),ncol=2, byrow=TRUE)
   hole1 = matrix(c(1,1,1,2,2,2,2,1,1,1),ncol=2, byrow=TRUE)

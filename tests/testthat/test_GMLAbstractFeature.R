@@ -11,7 +11,6 @@ context("GMLAbstractFeature")
 
 test_that("GMLAbstractFeature",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   md <- GMLAbstractFeature$new()

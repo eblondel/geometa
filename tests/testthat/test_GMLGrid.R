@@ -11,7 +11,6 @@ context("GMLGrid")
 
 test_that("GMLGrid - with axisLabels",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   md <- GMLGrid$new()
@@ -29,7 +28,6 @@ test_that("GMLGrid - with axisLabels",{
 
 test_that("GMLGrid - with axisName",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   md <- GMLGrid$new()

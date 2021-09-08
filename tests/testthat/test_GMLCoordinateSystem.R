@@ -11,7 +11,6 @@ context("GMLCoordinateSystem")
 
 test_that("GMLAbstractCoordinateSystem",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLAbstractCoordinateSystem$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -24,7 +23,6 @@ test_that("GMLAbstractCoordinateSystem",{
 
 test_that("GMLEllipsoidalCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLEllipsoidalCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -49,7 +47,6 @@ test_that("GMLEllipsoidalCS",{
 
 test_that("GMLCartesianCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLCartesianCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -74,7 +71,6 @@ test_that("GMLCartesianCS",{
 
 test_that("GMLVerticalCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLVerticalCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -99,7 +95,6 @@ test_that("GMLVerticalCS",{
 
 test_that("GMLTimeCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLTimeCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -124,7 +119,6 @@ test_that("GMLTimeCS",{
 
 test_that("GMLLinearCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLLinearCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -149,7 +143,6 @@ test_that("GMLLinearCS",{
 
 test_that("GMLUserDefinedCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLUserDefinedCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -174,7 +167,6 @@ test_that("GMLUserDefinedCS",{
 
 test_that("GMLSphericalCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLSphericalCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -199,7 +191,6 @@ test_that("GMLSphericalCS",{
 
 test_that("GMLPolarCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLPolarCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -224,7 +215,6 @@ test_that("GMLPolarCS",{
 
 test_that("GMLCylindricalCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLCylindricalCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -249,7 +239,6 @@ test_that("GMLCylindricalCS",{
 
 test_that("GMLAffineCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLAffineCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -274,7 +263,6 @@ test_that("GMLAffineCS",{
 
 test_that("GMLTemporalCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLTemporalCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")
@@ -299,7 +287,6 @@ test_that("GMLTemporalCS",{
 
 test_that("GMLObliqueCartesianCS",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   gml <- GMLObliqueCartesianCS$new(id = "ID1")
   gml$setIdentifier("identifier", "codespace")

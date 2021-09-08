@@ -10,7 +10,6 @@ context("ISOKeywords")
 
 test_that("encoding - with keywords as character string",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOKeywords$new()
   md$addKeyword("keyword1")
@@ -20,7 +19,7 @@ test_that("encoding - with keywords as character string",{
   expect_is(md$type, "ISOKeywordType")
   th <- ISOCitation$new()
   th$setTitle("General")
-  th$setAlternateTitle("General")
+  th$addAlternateTitle("General")
   d <- ISODate$new()
   d$setDate(ISOdate(2015,1,1))
   d$setDateType("revision")
@@ -40,7 +39,6 @@ test_that("encoding - with keywords as character string",{
 
 test_that("encoding - with keywords as anchors",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOKeywords$new()
   md$addKeyword(ISOAnchor$new(name = "keyword1", href = "http://myvocabulary.geometa/keyword1"))
@@ -50,7 +48,7 @@ test_that("encoding - with keywords as anchors",{
   expect_is(md$type, "ISOKeywordType")
   th <- ISOCitation$new()
   th$setTitle("General")
-  th$setAlternateTitle("General")
+  th$addAlternateTitle("General")
   d <- ISODate$new()
   d$setDate(ISOdate(2015,1,1))
   d$setDateType("revision")
@@ -70,7 +68,6 @@ test_that("encoding - with keywords as anchors",{
 
 test_that("encoding - i18n - with keywords as character string",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOKeywords$new()
   md$addKeyword(
@@ -107,7 +104,7 @@ test_that("encoding - i18n - with keywords as character string",{
       RU = "генеральный",
       ZH = "一般"
     ))
-  th$setAlternateTitle(
+  th$addAlternateTitle(
     "General",
     locales =list(
       EN = "General",
@@ -136,7 +133,6 @@ test_that("encoding - i18n - with keywords as character string",{
 
 test_that("encoding - i18n - with keywords as anchors",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOKeywords$new()
   md$addKeyword(
@@ -173,7 +169,7 @@ test_that("encoding - i18n - with keywords as anchors",{
       RU = "генеральный",
       ZH = "一般"
     ))
-  th$setAlternateTitle(
+  th$addAlternateTitle(
     "General",
     locales =list(
       EN = "General",

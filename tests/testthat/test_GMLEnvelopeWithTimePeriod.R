@@ -12,7 +12,6 @@ context("GMLEnvelopeWithTimePeriod")
 
 test_that("GMLEnvelopeWithTimePeriod",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   m <- matrix(c(-180,180,-90, 90), nrow = 2, ncol = 2, byrow = TRUE,
               dimnames = list(c("x", "y"), c("min","max")))

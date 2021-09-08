@@ -12,7 +12,6 @@ context("GMLReferenceableGrid")
 test_that("GMLAbstractReferenceableGrid",{
   
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   md <- GMLAbstractReferenceableGrid$new()
@@ -31,7 +30,6 @@ test_that("GMLAbstractReferenceableGrid",{
 test_that("GMLReferenceableGridByVectors",{
   
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   md <- GMLReferenceableGridByVectors$new()

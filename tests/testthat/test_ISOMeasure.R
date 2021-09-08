@@ -10,7 +10,6 @@ context("ISOMeasure")
 
 test_that("ISOMeasure",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOMeasure$new(value = 1, uom = "m", useUomURI = TRUE)
   xml <- md$encode()
@@ -24,7 +23,6 @@ test_that("ISOMeasure",{
 
 test_that("ISOLength",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOLength$new(value = 1, uom = "m", useUomURI = TRUE)
   xml <- md$encode()
@@ -38,7 +36,6 @@ test_that("ISOLength",{
 
 test_that("ISODistance",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISODistance$new(value = 1, uom = "m", useUomURI = TRUE)
   xml <- md$encode()
@@ -52,7 +49,6 @@ test_that("ISODistance",{
 
 test_that("ISOAngle",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOAngle$new(value = 1, uom = "angleunit", useUomURI = TRUE)
   xml <- md$encode()
@@ -66,7 +62,6 @@ test_that("ISOAngle",{
 
 test_that("ISOScale",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOScale$new(value = 1, uom = "scaleunit", useUomURI = TRUE)
   xml <- md$encode()

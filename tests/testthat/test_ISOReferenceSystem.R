@@ -10,7 +10,6 @@ context("ISOReferenceSystem")
 
 test_that("encoding/decoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISOReferenceSystem$new()
   rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")

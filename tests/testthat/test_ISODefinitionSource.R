@@ -10,14 +10,13 @@ context("ISODefinitionSource")
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- ISODefinitionSource$new()
   citation <- ISOCitation$new()
   citation$setTitle("title")
   citation <- ISOCitation$new()
   citation$setTitle("title")
-  citation$setAlternateTitle("alternate title")
+  citation$addAlternateTitle("alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2017,1,1))
   d$setDateType("creation")

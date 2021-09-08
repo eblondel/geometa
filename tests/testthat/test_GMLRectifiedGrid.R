@@ -12,7 +12,6 @@ context("GMLRectifiedGrid")
 test_that("GMLRectifiedGrid",{
   
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   md <- GMLRectifiedGrid$new()

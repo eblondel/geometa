@@ -12,7 +12,6 @@ context("GMLAstractGeneralOperationParameter")
 test_that("GMLAbstractGeneralOperationParameter",{
   
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   gml <- GMLAbstractGeneralOperationParameter$new()
@@ -34,7 +33,6 @@ test_that("GMLAbstractGeneralOperationParameter",{
 test_that("GMLOperationParameter",{
   
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   gml <- GMLOperationParameter$new()
@@ -56,7 +54,6 @@ test_that("GMLOperationParameter",{
 test_that("GMLOperationParameterGroup",{
   
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   gml <- GMLOperationParameterGroup$new()

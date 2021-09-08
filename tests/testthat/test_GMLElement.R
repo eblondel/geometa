@@ -11,7 +11,6 @@ context("GMLElement")
 
 test_that("GML Element",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   
   #encoding
   gml1 <- GMLElement$new(element = "tag1")

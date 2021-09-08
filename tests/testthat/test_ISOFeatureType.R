@@ -10,7 +10,6 @@ context("ISOFeatureType")
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #featuretype
   md <- ISOFeatureType$new()
   md$setTypeName("typeName")
@@ -71,7 +70,6 @@ test_that("encoding",{
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #featuretype
   md <- ISOFeatureType$new()
   md$setTypeName("typeName")

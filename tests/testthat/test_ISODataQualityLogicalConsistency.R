@@ -10,7 +10,6 @@ context("ISOLogicalConsistency")
 
 test_that("ISOAbstractLogicalConsistency",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOAbstractLogicalConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -22,7 +21,7 @@ test_that("ISOAbstractLogicalConsistency",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -45,7 +44,6 @@ test_that("ISOAbstractLogicalConsistency",{
 
 test_that("ISOTopologicalConsistency",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOTopologicalConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -57,7 +55,7 @@ test_that("ISOTopologicalConsistency",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -80,7 +78,6 @@ test_that("ISOTopologicalConsistency",{
 
 test_that("ISOFormatConsistency",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOFormatConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -92,7 +89,7 @@ test_that("ISOFormatConsistency",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -115,7 +112,6 @@ test_that("ISOFormatConsistency",{
 
 test_that("ISODomainConsistency",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISODomainConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -127,7 +123,7 @@ test_that("ISODomainConsistency",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")
@@ -150,7 +146,6 @@ test_that("ISODomainConsistency",{
 
 test_that("ISOConceptualConsistency",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   dq <- ISOConceptualConsistency$new()
   dq$addNameOfMeasure("measure")
@@ -162,7 +157,7 @@ test_that("ISOConceptualConsistency",{
   dq$setDateTime(ISOdate(2015,1,1,12,10,49))
   spec <- ISOCitation$new()
   spec$setTitle("specification title")
-  spec$setAlternateTitle("specification alternate title")
+  spec$addAlternateTitle("specification alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015, 1, 1, 1))
   d$setDateType("publication")

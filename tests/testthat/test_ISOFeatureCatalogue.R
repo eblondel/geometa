@@ -10,7 +10,6 @@ context("ISOFeatureCatalogue")
 
 test_that("encoding",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   fc <- ISOFeatureCatalogue$new(uuid = "my-fc-identifier")
   fc$setName("name")
@@ -30,7 +29,7 @@ test_that("encoding",{
 
   cit <- ISOCitation$new()
   cit$setTitle("some citation title")
-  cit$setAlternateTitle("alternate title")
+  cit$addAlternateTitle("alternate title")
   d <- ISODate$new()
   d$setDate(ISOdate(2015,1,1))
   d$setDateType("creation")
@@ -100,7 +99,6 @@ test_that("encoding",{
 
 test_that("encoding - i18n",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   fc <- ISOFeatureCatalogue$new(uuid = "my-fc-identifier")
   fc$setName(

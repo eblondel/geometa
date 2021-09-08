@@ -11,7 +11,6 @@ context("GMLTimePeriod")
 
 test_that("encoding - with dates",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   start <- ISOdate(2000, 1, 12, 12, 59, 45)
   end <- ISOdate(2010, 8, 22, 13, 12, 43)
@@ -31,7 +30,6 @@ test_that("encoding - with dates",{
 
 test_that("encoding - with year+month",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- GMLTimePeriod$new(beginPosition = "2000-01", endPosition = "2015-02")
   
@@ -47,7 +45,6 @@ test_that("encoding - with year+month",{
 
 test_that("encoding - with years",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
   #encoding
   md <- GMLTimePeriod$new(beginPosition = 2000, endPosition = 2010)
   
