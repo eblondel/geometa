@@ -22,7 +22,7 @@ test_that("encoding",{
   
   cit <- ISOCitation$new()
   cit$setTitle("sometitle") 
-  cit$setAlternateTitle("somealternatetitle") #and more citation properties...
+  cit$addAlternateTitle("somealternatetitle") #and more citation properties...
   d <- ISODate$new()
   d$setDate(ISOdate(2015,1,1))
   d$setDateType("creation")
