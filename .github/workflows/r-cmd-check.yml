@@ -40,4 +40,4 @@ jobs:
       - name: Check R package
         uses: r-lib/actions/check-r-package@check-r-package
         with:
-          artifact-name: ${{ matrix.config.os }}_r-${{ matrix.config.r }}_geoserver-${{matrix.config.geoserver}}-results
+          artifact-name: ${{ matrix.config.os }}_r-${{ matrix.config.r }}-results
