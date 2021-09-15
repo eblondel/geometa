@@ -15,7 +15,7 @@ encoded using the ISO 19139 (XML) standard.
    Package: \tab geometa\cr
    Type: \tab Package\cr
    Version: \tab 0.6-4\cr
-   Date: \tab 2021-09-08\cr
+   Date: \tab 2021-09-15\cr
    License: \tab MIT\cr
    LazyLoad: \tab yes\cr
  }
