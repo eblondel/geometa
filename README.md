@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/eblondel/geometa/actions/workflows/r-cmd-check.yml/badge.svg?branch=master)](https://github.com/eblondel/geometa/actions/workflows/r-cmd-check.yml)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/geometa)](https://cran.r-project.org/package=geometa)
 [![cran checks](https://cranchecks.info/badges/worst/geometa)](https://cran.r-project.org/web/checks/check_results_geometa.html)
-[![Github_Status_Badge](https://img.shields.io/badge/Github-0.6--4-blue.svg)](https://github.com/eblondel/geometa)
+[![Github_Status_Badge](https://img.shields.io/badge/Github-0.6--5-blue.svg)](https://github.com/eblondel/geometa)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184892.svg)](https://doi.org/10.5281/zenodo.1184892)
 
 **Tools for Reading and Writing ISO/OGC Geographic Metadata**

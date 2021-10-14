@@ -106,14 +106,14 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
           "Content-Type" = "application/json"
         ),
         body = jsonlite::toJSON(list(
-          label = unbox("Test run for ISO/TC 19139:2007 based INSPIRE metadata records."),
+          label = jsonlite::unbox("Test run for ISO/TC 19139:2007 based INSPIRE metadata records."),
           executableTestSuiteIds = "EID59692c11-df86-49ad-be7f-94a1e1ddd8da",
           arguments = list(
-            files_to_test = unbox(".*"),
-            tests_to_execute = unbox(".*")
+            files_to_test = jsonlite::unbox(".*"),
+            tests_to_execute = jsonlite::unbox(".*")
           ),
           testObject = list(
-            id = unbox(unlist(strsplit(uploaded$testObject$id, "EID"))[2])
+            id = jsonlite::unbox(unlist(strsplit(uploaded$testObject$id, "EID"))[2])
           )
         ), auto_unbox = FALSE)
       )
@@ -148,12 +148,19 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       resp <- jsonlite::read_json(resp$ref)
       resp <- resp$EtfItemCollection
       
+      
       sections <- resp$referencedItems$testTaskResults$TestTaskResult$testModuleResults$TestModuleResult$testCaseResults$TestCaseResult
+      if(is.null(sections)){
+        errorMsg <- "Error while creating INSPIRE validation  Test run!"
+        self$INFO(errorMsg)
+        stop(errorMsg)
+      }
       result_status <- do.call("rbind", lapply(sections, function(section){
         status <- sapply(section$testStepResults$TestStepResult$testAssertionResults$TestAssertionResult, function(x){x$status})
         status <- as.data.frame(table(status), stringsAsFactors =  FALSE)
         return(status)
       }))
+
       result_status <- aggregate(.~status, data = result_status, FUN = sum)
       failed <- result_status[result_status$status=="FAILED", "Freq"]
       if(length(failed)==0) failed <- "0"
