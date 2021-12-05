@@ -971,7 +971,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         compliant <- self$validate(xml = out, strict = strict, inspire = inspire)
       }
       if(self$isDocument()){
-        if(!inspire || is.null(compliant$INSPIRE)){
+        if(!inspire){
           header_comments <- private$xmlComments(compliant)
         }else{
           header_comments <- private$xmlComments(compliant$ISO, compliant$INSPIRE)
@@ -1037,17 +1037,11 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       
       if(inspire){
         inspireValidator <- INSPIREMetadataValidator$new()
-        if(!inspireValidator$running){
-          self$WARN("INSPIRE Reference validator web-service is currently down. Skipping INSPIRE validation")
-          inspire <- FALSE
-        }
-        if(inspire){
-          inspireReport <- inspireValidator$getValidationReport(obj = self)
-          isValid <- list(
-            ISO = isValid,
-            INSPIRE = inspireReport
-          )
-        }
+        inspireReport <- inspireValidator$getValidationReport(obj = self)
+        isValid <- list(
+          ISO = isValid,
+          INSPIRE = inspireReport
+        )
       }
       
       return(isValid)
