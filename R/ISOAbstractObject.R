@@ -971,7 +971,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         compliant <- self$validate(xml = out, strict = strict, inspire = inspire)
       }
       if(self$isDocument()){
-        if(!inspire){
+        if(!inspire || is.null(compliant$INSPIRE)){
           header_comments <- private$xmlComments(compliant)
         }else{
           header_comments <- private$xmlComments(compliant$ISO, compliant$INSPIRE)

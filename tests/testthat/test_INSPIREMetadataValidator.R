@@ -18,8 +18,12 @@ test_that("inspire - metadata validator",{
   
   inspireValidator <- INSPIREMetadataValidator$new()
   inspireReport <- inspireValidator$getValidationReport(obj = md, raw = TRUE)
-  expect_is(inspireReport, "list")
-  expect_equal(names(inspireReport), c("Status","Completeness","Test Run ID","Log", "Ref URI", "HTML Report", "raw"))
+  if(inspireValidator$running){
+    expect_is(inspireReport, "list")
+    expect_equal(names(inspireReport), c("Status","Completeness","Test Run ID","Log", "Ref URI", "HTML Report", "raw"))
+  }else{
+    expect_null(inspireReport)
+  }
 })
 
 test_that("inspire - metadata validator 'encode' shortcut",{
