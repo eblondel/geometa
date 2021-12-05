@@ -27,6 +27,25 @@ test_that("encoding",{
   
 })
 
+test_that("encoding - with mime file type",{
+  testthat::skip_on_cran()
+  #encoding
+  md <- ISOOnlineResource$new()
+  md$setLinkage("http://somelink")
+  md$setName(ISOMimeFileType$new(type = "text/csv", name = "myfile.csv"))
+  md$setDescription("description")
+  md$setProtocol("protocol")
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOOnlineResource$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+  
+})
+
 test_that("encoding - i18n",{
   testthat::skip_on_cran()
   #encoding

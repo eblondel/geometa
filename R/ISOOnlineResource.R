@@ -83,7 +83,6 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     
     #setName
     setName = function(name, locales = NULL){
-      if(!is(name, "character")) name <- as.character(name)
       self$name <- name
       if(!is.null(locales)){
         self$name <- self$createLocalisedProperty(name, locales)
