@@ -57,6 +57,12 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
     
     #uploadFile
     uploadFile = function(path){
+      
+      if(!self$running){
+        self$WARN("The INSPIRE online metadata validator is not running at that time! Please retry later...")
+        return(NULL)
+      }
+      
       req <- POST(
         sprintf("%s/TestObjects?action=upload", self$url),
         body = list(fileupload = httr::upload_file(path = path)),
@@ -68,12 +74,18 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
         stop(errMsg)
       }
       out <- content(req)
+        
       return(out)
     },
     
     #getValidationReport
     getValidationReport = function(obj = NULL, file = NULL, raw = FALSE){
-      
+
+      if(!self$running){
+        self$WARN("The INSPIRE online metadata validator is not running at that time! Please retry later...")
+        return(NULL)
+      }
+            
       #check args & read data
       xml_file <- NULL
       if(!is.null(obj)){
