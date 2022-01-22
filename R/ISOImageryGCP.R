@@ -57,7 +57,7 @@ ISOImageryGCP <- R6Class("ISOImageryGCP",
    #setGeographicCoordinates
    setGeographicCoordinates = function(sfg = NULL, m = NULL){
      if(!is.null(sfg)){
-       if(!is(sfg, c("sfg","POINT"))) stop("Input 'sfg' object should be a 'point'")
+       if(!all(sapply(c("sfg","POINT"), function(x){is(sfg, x)}))) stop("Input 'sfg' object should be a 'point'")
        m <- as.matrix(sfg)
      }else if(!is.null(m)){
        if(!is.matrix(m)){
