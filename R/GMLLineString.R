@@ -37,7 +37,7 @@ GMLLineString <- R6Class("GMLLineString",
     initialize = function(xml = NULL, sfg){
       super$initialize(xml, element = private$xmlElement, wrap = TRUE)
       if(is.null(xml)){
-        if(!is(sfg, c("sfg","XY","LINESTRING"))) stop("Input 'sfg' object should be a 'linestring'")
+        if(!all(sapply(c("sfg","XY", "LINESTRING"), function(x){is(sfg, x)}))) stop("Input 'sfg' object should be a 'linestring'")
         m <- as.matrix(sfg)
         self$posList <- m
         self$setAttr("srsDimension", as.character(dim(m)[2]))

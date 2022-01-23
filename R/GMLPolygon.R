@@ -38,7 +38,7 @@ GMLPolygon <- R6Class("GMLPolygon",
     initialize = function(xml = NULL, sfg){
       super$initialize(xml, element = private$xmlElement, wrap = TRUE)
       if(is.null(xml)){
-        if(!is(sfg, c("sfg","XY","POLYGON"))) stop("Input 'sfg' object should be a 'polygon'")
+        if(!all(sapply(c("sfg","XY", "POLYGON"), function(x){is(sfg, x)}))) stop("Input 'sfg' object should be a 'polygon'")
         rings <- sfg
         class(rings) <- "list"
         self$exterior <- GMLLinearRing$new(m=rings[[1]])

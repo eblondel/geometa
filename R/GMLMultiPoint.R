@@ -44,7 +44,7 @@ GMLMultiPoint <- R6Class("GMLMultiPoint",
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)
        if(is.null(xml)){
          if(!is.null(sfg)){
-           if(!is(sfg, c("sfg","XY","MULTIPOINT"))) stop("Input 'sfg' object should be a 'multipoint'")
+           if(!all(sapply(c("sfg","XY", "MULTIPOINT"), function(x){is(sfg, x)}))) stop("Input 'sfg' object should be a 'multipoint'")
            coords.list <- sfg
            class(coords.list) <- "matrix"
            for(i in 1:dim(coords.list)[1]){

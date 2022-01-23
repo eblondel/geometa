@@ -45,7 +45,7 @@ GMLMultiSurface <- R6Class("GMLMultiSurface",
       super$initialize(xml, element = private$xmlElement, wrap = TRUE)
       if(is.null(xml)){
         if(!is.null(sfg)){
-          if(!is(sfg, c("sfg","XY","MULTIPOLYGON"))) stop("Input 'sfg' object should be a 'multipolygon'")
+          if(!all(sapply(c("sfg","XY", "MULTIPOLYGON"), function(x){is(sfg, x)}))) stop("Input 'sfg' object should be a 'multipolygon'")
           coords.list <- sfg
           class(coords.list) <- "list"
           for(coords in coords.list){

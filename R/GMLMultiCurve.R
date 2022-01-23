@@ -45,7 +45,7 @@ GMLMultiCurve <- R6Class("GMLMultiCurve",
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)
        if(is.null(xml)){
          if(!is.null(sfg)){
-           if(!is(sfg, c("sfg","XY","MULTILINESTRING"))) stop("Input 'sfg' object should be a 'multilinestring'")
+           if(!all(sapply(c("sfg","XY", "MULTILINESTRING"), function(x){is(sfg, x)}))) stop("Input 'sfg' object should be a 'multilinestring'")
            coords.list <- sfg
            class(coords.list) <- "list"
            for(coords in coords.list){
