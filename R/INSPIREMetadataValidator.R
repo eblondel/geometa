@@ -61,7 +61,7 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       
       private$keyring_backend <- keyring:::known_backends[[keyring_backend]]$new()
       private$keyring_service <- paste0("geometa@", self$url)
-      private$keyring_backend$set_with_value(private$keyring_service, username = "geometa_inspire_validator", password = if(is.null(apiKey)) "" else apiKey)
+      if(!is.null(apiKey)) private$keyring_backend$set_with_value(private$keyring_service, username = "geometa_inspire_validator", password = apiKey)
       
       ping <- status_code(HEAD(paste(self$url, "status", sep = "/")))
       self$running <- if(ping==200) TRUE else FALSE
@@ -124,12 +124,14 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       
       #post metadata XML to INSPIRE web-service
       self$INFO("Sending metadata file to INSPIRE metadata validation web-service...")
+      apiKey <- try(private$keyring_backend$get(service = private$keyring_service, username = "geometa_inspire_validator"), silent = TRUE)
+      if(is(apiKey, "try-error")) apiKey <- NULL
       req <- httr::POST(
         url = sprintf("%s/TestRuns", self$url),
         httr::add_headers(
           "User-Agent" = paste("geometa/",as.character(packageVersion("geometa")),sep=""),
           "Content-Type" = "application/json",
-          "X-API-key" = private$keyring_backend$get(service = private$keyring_service, username = "geometa_inspire_validator")
+          "X-API-key" = apiKey
         ),
         body = jsonlite::toJSON(list(
           label = jsonlite::unbox("Test run for ISO/TC 19139:2007 based INSPIRE metadata records."),

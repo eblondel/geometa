@@ -16,13 +16,19 @@ md <- ISOMetadata$new(xml = xml)
 test_that("inspire - metadata validator",{
   testthat::skip_on_cran()
   
-  inspireValidator <- INSPIREMetadataValidator$new(apiKey = Sys.getenv("INSPIRE_API_KEY"))
-  inspireReport <- inspireValidator$getValidationReport(obj = md, raw = TRUE)
-  if(inspireValidator$running){
-    expect_is(inspireReport, "list")
-    expect_equal(names(inspireReport), c("Status","Completeness","Test Run ID","Log", "Ref URI", "HTML Report", "raw"))
+  apiKey <- Sys.getenv("INSPIRE_API_KEY")
+  if(nzchar(apiKey)){
+    inspireValidator <- INSPIREMetadataValidator$new(apiKey = apiKey)
+    inspireReport <- inspireValidator$getValidationReport(obj = md, raw = TRUE)
+    if(inspireValidator$running){
+      expect_is(inspireReport, "list")
+      expect_equal(names(inspireReport), c("Status","Completeness","Test Run ID","Log", "Ref URI", "HTML Report", "raw"))
+    }else{
+      expect_null(inspireReport)
+    }
   }else{
-    expect_null(inspireReport)
+    inspireValidator <- INSPIREMetadataValidator$new(apiKey = apiKey)
+    expect_error(inspireValidator$getValidationReport(obj = md, raw = TRUE))
   }
 })
 
