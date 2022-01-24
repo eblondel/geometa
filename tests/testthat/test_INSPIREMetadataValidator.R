@@ -34,10 +34,18 @@ test_that("inspire - metadata validator",{
 
 test_that("inspire - metadata validator 'encode' shortcut",{
   testthat::skip_on_cran()
-  xml <- md$encode(inspire = TRUE, inspireApiKey = Sys.getenv("INSPIRE_API_KEY"))
+  apiKey <- Sys.getenv("INSPIRE_API_KEY")
+  if(nzchar(apiKey)){
+    inspireValidator <- INSPIREMetadataValidator$new(apiKey = apiKey)
+    xml <- md$encode(inspire = TRUE, inspireValidator = inspireValidator)
+  }
 })
 
 test_that("inspire - metadata validator 'save' shortcut",{
   testthat::skip_on_cran()
-  md$save("my-metadata.xml", inspire = TRUE, inspireApiKey = Sys.getenv("INSPIRE_API_KEY"))
+  apiKey <- Sys.getenv("INSPIRE_API_KEY")
+  if(nzchar(apiKey)){
+    inspireValidator <- INSPIREMetadataValidator$new(apiKey = apiKey)
+    md$save("my-metadata.xml", inspire = TRUE, inspireValidator = inspireValidator)
+  }
 })

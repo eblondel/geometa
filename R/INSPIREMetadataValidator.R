@@ -9,10 +9,11 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(apiKey)}}{
+#'  \item{\code{new(url, apiKey)}}{
 #'    This method is used to instantiate an INSPIRE Metadata validator. To check 
 #'    metadata with the INSPIRE metadata validator, a user API key is now required, 
-#'    and should be specified with the \code{apiKey}.
+#'    and should be specified with the \code{apiKey}. By default, the \code{url} will be
+#'    the INSPIRE production service \url{https://inspire.ec.europa.eu/validator/v2}
 #'    
 #'    The \code{keyring_backend} can be set to use a different backend for storing 
 #'    the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
@@ -20,6 +21,9 @@
 #'  \item{\code{uploadFile(path)}}{
 #'    Upload a XML metadata file to INSPIRE web-service. Method called internally through
 #'    \code{getValidationReport}.
+#'  }
+#'  \item{\code{getAPIKey()}}{
+#'    Get the API user key
 #'  }
 #'  \item{\code{getValidationReport(obj, file, raw)}}{
 #'    Get validation report for a metadata specified either as R object of class
@@ -48,20 +52,18 @@
 INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
   inherit = geometaLogger,
   private = list(
-    host = "https://inspire.ec.europa.eu",
-    endpoint = "validator/v2",
     keyring_backend = NULL,
     keyring_service = NULL
   ),
   public = list(
-    url = NULL,
+    url = "https://inspire.ec.europa.eu/validator/v2",
     running = FALSE,
-    initialize = function(apiKey = NULL, keyring_backend = 'env'){
+    initialize = function(url = "https://inspire.ec.europa.eu/validator/v2",
+                          apiKey, keyring_backend = 'env'){
       if(!require("httr")){
         stop("The INSPIRE metadata validator requires the installation of 'httr' package")
       }
-      self$url <- paste(private$host, private$endpoint, sep = "/")
-      
+      self$url <- url
       private$keyring_backend <- keyring:::known_backends[[keyring_backend]]$new()
       private$keyring_service <- paste0("geometa@", self$url)
       if(!is.null(apiKey)) private$keyring_backend$set_with_value(private$keyring_service, username = "geometa_inspire_validator", password = apiKey)
@@ -92,6 +94,13 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       out <- content(req)
         
       return(out)
+    },
+    
+    #getAPIKey
+    getAPIKey = function(){
+      apiKey <- try(private$keyring_backend$get(service = private$keyring_service, username = "geometa_inspire_validator"), silent = TRUE)
+      if(is(apiKey, "try-error")) apiKey <- NULL
+      return(apiKey)
     },
     
     #getValidationReport
@@ -127,14 +136,13 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       
       #post metadata XML to INSPIRE web-service
       self$INFO("Sending metadata file to INSPIRE metadata validation web-service...")
-      apiKey <- try(private$keyring_backend$get(service = private$keyring_service, username = "geometa_inspire_validator"), silent = TRUE)
-      if(is(apiKey, "try-error")) apiKey <- NULL
+      
       req <- httr::POST(
         url = sprintf("%s/TestRuns", self$url),
         httr::add_headers(
           "User-Agent" = paste("geometa/",as.character(packageVersion("geometa")),sep=""),
           "Content-Type" = "application/json",
-          "X-API-key" = apiKey
+          "X-API-key" = self$getAPIKey()
         ),
         body = jsonlite::toJSON(list(
           label = jsonlite::unbox("Test run for ISO/TC 19139:2007 based INSPIRE metadata records."),

@@ -60,7 +60,7 @@ Abstract ISO Metadata class used internally by geometa
  \item{\code{decode(xml)}}{
    Decodes a ISOMetadata* R6 object from XML representation
  }
- \item{\code{encode(addNS, validate, strict, inspire, inspireApiKey, resetSerialID, setSerialID, encoding)}}{
+ \item{\code{encode(addNS, validate, strict, inspire, inspireValidator, resetSerialID, setSerialID, encoding)}}{
    Encodes a ISOMetadata* R6 object to XML representation. By default, namespace
    definition will be added to XML root (\code{addNS = TRUE}), and validation
    of object will be performed (\code{validate = TRUE}) prior to its XML encoding.
@@ -73,16 +73,18 @@ Abstract ISO Metadata class used internally by geometa
    (recommended value).
    Setting \code{inspire} to TRUE (default FALSE), the metadata will be checked with
    the INSPIRE metadata validator (online web-service provided by INSPIRE). To check 
-   metadata with the INSPIRE metadata validator, a user API key is now required, and should 
-   be specified with the \code{inspireApiKey}.
+   metadata with the INSPIRE metadata validator, setting an INSPIRE metadata validator 
+   is now required, and should be specified with the \code{inspireValidator}. See 
+   \code{\link{INSPIREMetadataValidator}} for more details
  }
- \item{\code{validate(xml, strict, inspire, inspireApiKey)}}{
+ \item{\code{validate(xml, strict, inspire, inspireValidator)}}{
    Validates the encoded XML against ISO 19139 XML schemas. If \code{strict} is
    \code{TRUE}, a error will be raised. Default is \code{FALSE}.
    Setting \code{inspire} to\code{TRUE} (default \code{FALSE}), the metadata will be 
    checked with the INSPIRE metadata validator (online web-service provided by INSPIRE).
-   To check metadata with the INSPIRE metadata validator, a user API key is now required, 
-   and should be specified with the \code{inspireApiKey}.
+   To check metadata with the INSPIRE metadata validator, setting an INSPIRE metadata validator 
+   is now required, and should be specified with the \code{inspireValidator}. See 
+   \code{\link{INSPIREMetadataValidator}} for more details
  }
  \item{\code{save(file, ...)}}{
    Saves the current metadata object XML representation to a file. This utility
