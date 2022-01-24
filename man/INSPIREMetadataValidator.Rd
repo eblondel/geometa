@@ -41,8 +41,11 @@ INSPIREMetadataValidator
 
 \examples{
  \donttest{
-  inspireValidator <- INSPIREMetadataValidator$new(apiKey = "<your_api_key>")
-  inspireReport <- inspireValidator$getValidationReport(obj = ISOMetadata$new())
+  apiKey <- ""
+  if(nzchar(apiKey)){
+    inspireValidator <- INSPIREMetadataValidator$new(apiKey = apiKey)
+    inspireReport <- inspireValidator$getValidationReport(obj = ISOMetadata$new())
+  }
  }
 
 }
