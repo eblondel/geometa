@@ -16,8 +16,13 @@ INSPIREMetadataValidator
 \section{Methods}{
 
 \describe{
- \item{\code{new()}}{
-   This method is used to instantiate an INSPIRE Metadata validator
+ \item{\code{new(apiKey)}}{
+   This method is used to instantiate an INSPIRE Metadata validator. To check 
+   metadata with the INSPIRE metadata validator, a user API key is now required, 
+   and should be specified with the \code{apiKey}.
+   
+   The \code{keyring_backend} can be set to use a different backend for storing 
+   the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
  }
  \item{\code{uploadFile(path)}}{
    Upload a XML metadata file to INSPIRE web-service. Method called internally through
@@ -36,7 +41,7 @@ INSPIREMetadataValidator
 
 \examples{
  \donttest{
-  inspireValidator <- INSPIREMetadataValidator$new()
+  inspireValidator <- INSPIREMetadataValidator$new(apiKey = "<your_api_key>")
   inspireReport <- inspireValidator$getValidationReport(obj = ISOMetadata$new())
  }
 

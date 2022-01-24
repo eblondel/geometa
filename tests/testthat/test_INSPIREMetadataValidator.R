@@ -16,7 +16,7 @@ md <- ISOMetadata$new(xml = xml)
 test_that("inspire - metadata validator",{
   testthat::skip_on_cran()
   
-  inspireValidator <- INSPIREMetadataValidator$new()
+  inspireValidator <- INSPIREMetadataValidator$new(apiKey = Sys.getenv("INSPIRE_API_KEY"))
   inspireReport <- inspireValidator$getValidationReport(obj = md, raw = TRUE)
   if(inspireValidator$running){
     expect_is(inspireReport, "list")
@@ -28,10 +28,10 @@ test_that("inspire - metadata validator",{
 
 test_that("inspire - metadata validator 'encode' shortcut",{
   testthat::skip_on_cran()
-  xml <- md$encode(inspire = TRUE)
+  xml <- md$encode(inspire = TRUE, inspireApiKey = Sys.getenv("INSPIRE_API_KEY"))
 })
 
 test_that("inspire - metadata validator 'save' shortcut",{
   testthat::skip_on_cran()
-  md$save("my-metadata.xml", inspire = TRUE)
+  md$save("my-metadata.xml", inspire = TRUE, inspireApiKey = Sys.getenv("INSPIRE_API_KEY"))
 })

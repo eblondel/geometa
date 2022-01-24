@@ -9,8 +9,13 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new()}}{
-#'    This method is used to instantiate an INSPIRE Metadata validator
+#'  \item{\code{new(apiKey)}}{
+#'    This method is used to instantiate an INSPIRE Metadata validator. To check 
+#'    metadata with the INSPIRE metadata validator, a user API key is now required, 
+#'    and should be specified with the \code{apiKey}.
+#'    
+#'    The \code{keyring_backend} can be set to use a different backend for storing 
+#'    the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
 #'  }
 #'  \item{\code{uploadFile(path)}}{
 #'    Upload a XML metadata file to INSPIRE web-service. Method called internally through
@@ -28,7 +33,7 @@
 #' 
 #' @examples
 #'  \donttest{
-#'   inspireValidator <- INSPIREMetadataValidator$new()
+#'   inspireValidator <- INSPIREMetadataValidator$new(apiKey = "<your_api_key>")
 #'   inspireReport <- inspireValidator$getValidationReport(obj = ISOMetadata$new())
 #'  }
 #' 
@@ -41,18 +46,26 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
   inherit = geometaLogger,
   private = list(
     host = "https://inspire.ec.europa.eu",
-    endpoint = "validator/v2"
+    endpoint = "validator/v2",
+    keyring_backend = NULL,
+    keyring_service = NULL
   ),
   public = list(
     url = NULL,
     running = FALSE,
-    initialize = function(){
+    initialize = function(apiKey = NULL, keyring_backend = 'env'){
       if(!require("httr")){
         stop("The INSPIRE metadata validator requires the installation of 'httr' package")
       }
       self$url <- paste(private$host, private$endpoint, sep = "/")
+      
+      private$keyring_backend <- keyring:::known_backends[[keyring_backend]]$new()
+      private$keyring_service <- paste0("geometa@", self$url)
+      private$keyring_backend$set_with_value(private$keyring_service, username = "geometa_inspire_validator", password = if(is.null(apiKey)) "" else apiKey)
+      
       ping <- status_code(HEAD(paste(self$url, "status", sep = "/")))
       self$running <- if(ping==200) TRUE else FALSE
+      
     },
     
     #uploadFile
@@ -115,7 +128,8 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
         url = sprintf("%s/TestRuns", self$url),
         httr::add_headers(
           "User-Agent" = paste("geometa/",as.character(packageVersion("geometa")),sep=""),
-          "Content-Type" = "application/json"
+          "Content-Type" = "application/json",
+          "X-API-key" = private$keyring_backend$get(service = private$keyring_service, username = "geometa_inspire_validator")
         ),
         body = jsonlite::toJSON(list(
           label = jsonlite::unbox("Test run for ISO/TC 19139:2007 based INSPIRE metadata records."),
@@ -132,7 +146,8 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       
       resp <- NULL
       if(httr::status_code(req)!=201){
-        errorMsg <- "Error while creating INSPIRE validation  Test run!"
+        errorMsg <- sprintf("Error while creating INSPIRE validation test run: Error %s (%s)", 
+                            httr::status_code(req), httr::message_for_status(req))
         self$INFO(errorMsg)
         stop(errorMsg)
       }else{

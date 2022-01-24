@@ -10,7 +10,7 @@ Description: Provides facilities to handle reading and writing of geographic met
  and encoded using the ISO 19139 (XML) standard. It includes also a facility to check
  the validity of ISO 19139 XML encoded metadata.
 Depends: R (>= 3.3.0)
-Imports: methods, R6, XML, httr, jsonlite
+Imports: methods, R6, XML, httr, jsonlite, keyring
 Suggests: sf, ncdf4, EML, emld, units, udunits2, testthat, roxygen2
 License: MIT + file LICENSE
 URL: https://github.com/eblondel/geometa/wiki
