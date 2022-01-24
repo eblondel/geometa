@@ -36,7 +36,6 @@ jobs:
           extra-packages: |
             sf
             units
-            udunits2
             ncdf4
             jqr
             jsonld
