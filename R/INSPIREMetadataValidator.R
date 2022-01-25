@@ -13,7 +13,7 @@
 #'    This method is used to instantiate an INSPIRE Metadata validator. To check 
 #'    metadata with the INSPIRE metadata validator, a user API key is now required, 
 #'    and should be specified with the \code{apiKey}. By default, the \code{url} will be
-#'    the INSPIRE production service \url{https://inspire.ec.europa.eu/validator/v2}
+#'    the INSPIRE production service \url{https://inspire.ec.europa.eu/validator/swagger-ui.html}
 #'    
 #'    The \code{keyring_backend} can be set to use a different backend for storing 
 #'    the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
