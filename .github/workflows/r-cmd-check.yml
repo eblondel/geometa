@@ -18,9 +18,8 @@ jobs:
           - {os: ubuntu-20.04,   r: '4.0.5', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
     
     env:
-        #INSPIRE_API_KEY: ${{ secrets.INSPIRE_API_KEY }}
-        #waiting for receiving API key from INSPIRE team
-        INSPIRE_API_KEY: ''
+        INSPIRE_API_ENDPOINT: ${{ secrets.INSPIRE_API_ENDPOINT }}
+        INSPIRE_API_KEY: ${{ secrets.INSPIRE_API_KEY }}
     
     steps:
       - uses: actions/checkout@v2

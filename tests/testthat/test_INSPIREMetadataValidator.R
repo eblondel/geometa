@@ -18,7 +18,7 @@ test_that("inspire - metadata validator",{
   
   apiKey <- Sys.getenv("INSPIRE_API_KEY")
   if(nzchar(apiKey)){
-    inspireValidator <- INSPIREMetadataValidator$new(apiKey = apiKey)
+    inspireValidator <- INSPIREMetadataValidator$new(url = Sys.getenv("INSPIRE_API_ENDPOINT"), apiKey = apiKey)
     inspireReport <- inspireValidator$getValidationReport(obj = md, raw = TRUE)
     if(inspireValidator$running){
       expect_is(inspireReport, "list")
@@ -27,7 +27,7 @@ test_that("inspire - metadata validator",{
       expect_null(inspireReport)
     }
   }else{
-    inspireValidator <- INSPIREMetadataValidator$new(apiKey = apiKey)
+    inspireValidator <- INSPIREMetadataValidator$new(url = Sys.getenv("INSPIRE_API_ENDPOINT"), apiKey = apiKey)
     expect_error(inspireValidator$getValidationReport(obj = md, raw = TRUE))
   }
 })
@@ -36,7 +36,7 @@ test_that("inspire - metadata validator 'encode' shortcut",{
   testthat::skip_on_cran()
   apiKey <- Sys.getenv("INSPIRE_API_KEY")
   if(nzchar(apiKey)){
-    inspireValidator <- INSPIREMetadataValidator$new(apiKey = apiKey)
+    inspireValidator <- INSPIREMetadataValidator$new(url = Sys.getenv("INSPIRE_API_ENDPOINT"), apiKey = apiKey)
     xml <- md$encode(inspire = TRUE, inspireValidator = inspireValidator)
   }
 })
@@ -45,7 +45,7 @@ test_that("inspire - metadata validator 'save' shortcut",{
   testthat::skip_on_cran()
   apiKey <- Sys.getenv("INSPIRE_API_KEY")
   if(nzchar(apiKey)){
-    inspireValidator <- INSPIREMetadataValidator$new(apiKey = apiKey)
+    inspireValidator <- INSPIREMetadataValidator$new(url = Sys.getenv("INSPIRE_API_ENDPOINT"), apiKey = apiKey)
     md$save("my-metadata.xml", inspire = TRUE, inspireValidator = inspireValidator)
   }
 })
