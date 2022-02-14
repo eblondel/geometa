@@ -71,10 +71,9 @@ GMLEnvelope <- R6Class("GMLEnvelope",
       super$decode(xml)
       #backward compatibility in case of GML < 3
       children <- xmlChildren(xml)
-      if(length(children) == 2 && names(children)[[1]]=="pos"){
-         self$lowerCorner <- t(as.matrix(as.numeric(unlist(strsplit(xmlValue(children[[1]]), " ")))))
-         self$upperCorner <- t(as.matrix(as.numeric(unlist(strsplit(xmlValue(children[[2]]), " ")))))
-      }
+      children <- children[names(children)=="pos"]
+      self$lowerCorner <- t(as.matrix(as.numeric(unlist(strsplit(xmlValue(children[[1]]), " ")))))
+      self$upperCorner <- t(as.matrix(as.numeric(unlist(strsplit(xmlValue(children[[2]]), " ")))))
    }
  )
 )
