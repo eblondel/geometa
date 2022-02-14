@@ -59,8 +59,10 @@ GMLEnvelopeWithTimePeriod <- R6Class("GMLEnvelopeWithTimePeriod",
         #backward compatibility in case of GML < 3
         children <- xmlChildren(xml)
         children <- children[names(children)=="timePosition"]
-        self$beginPosition <- as.POSIXct(strptime(unlist(strsplit(xmlValue(children[[1]]), " ")), "%Y-%m-%dT%H:%M:%S"), tz = "") 
-        self$endPosition <- as.POSIXct(strptime(unlist(strsplit(xmlValue(children[[2]]), " ")), "%Y-%m-%dT%H:%M:%S"), tz = "")
+        if(length(children)>0){
+          self$beginPosition <- as.POSIXct(strptime(unlist(strsplit(xmlValue(children[[1]]), " ")), "%Y-%m-%dT%H:%M:%S"), tz = "") 
+          self$endPosition <- as.POSIXct(strptime(unlist(strsplit(xmlValue(children[[2]]), " ")), "%Y-%m-%dT%H:%M:%S"), tz = "")
+        }
      },
      
      #setBeginPosition
