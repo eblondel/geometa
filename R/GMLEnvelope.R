@@ -64,6 +64,17 @@ GMLEnvelope <- R6Class("GMLEnvelope",
        if(!is.null(srsName)) self$setAttr("srsName", srsName)
        self$setAttr("srsDimension", as.character(dim(bbox)[1]))
      }
+   },
+   
+   #decode
+   decode = function(xml){
+      super$decode(xml)
+      #backward compatibility in case of GML < 3
+      children <- xmlChildren(xml)
+      if(length(children) == 2 && names(children)[[1]]=="pos"){
+         self$lowerCorner <- t(as.matrix(as.numeric(unlist(strsplit(xmlValue(children[[1]]), " ")))))
+         self$upperCorner <- t(as.matrix(as.numeric(unlist(strsplit(xmlValue(children[[2]]), " ")))))
+      }
    }
  )
 )
