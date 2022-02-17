@@ -30,7 +30,7 @@ GMLGridEnvelope <- R6Class("GMLGridEnvelope",
      #'@description This method is used to instantiate a GML envelope. The argument 'bbox'
      #'    should be a matrix of dim 2,2 giving the x/y min/max values of a bouding box,
      #'    as returned by \code{bbox} function in package \pkg{sp}
-     #'@param xml object of class \link{XMLInternalNode-Class} from \pkg{XML}
+     #'@param xml object of class \code{XMLInternalNode-class} from \pkg{XML}
      #'@param bbox object of class \code{matrix}
      initialize = function(xml = NULL, bbox){
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)

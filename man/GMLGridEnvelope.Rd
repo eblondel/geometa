@@ -8,7 +8,7 @@
 \code{\link{R6Class}} object.
 }
 \arguments{
-\item{xml}{object of class \link{XMLInternalNode-Class} from \pkg{XML}}
+\item{xml}{object of class \code{XMLInternalNode-class} from \pkg{XML}}
 
 \item{bbox}{object of class \code{matrix}}
 }
