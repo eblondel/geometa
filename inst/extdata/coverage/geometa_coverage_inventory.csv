@@ -391,7 +391,7 @@
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeographicCRS","<missing>",FALSE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeometricComplex","<missing>",FALSE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Grid","GMLGrid",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GridEnvelope","<missing>",FALSE
+"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GridEnvelope","GMLGridEnvelope",TRUE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GridFunction","GMLGridFunction",TRUE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ImageCRS","<missing>",FALSE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ImageDatum","<missing>",FALSE
