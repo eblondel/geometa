@@ -29,11 +29,8 @@ ISOAbstractGenericName <- R6Class("ISOAbstractGenericName",
   ),
   public = list(
     value = NA,
-    initialize = function(xml = NULL, value){
-      super$initialize(xml = xml)
-      if(is.null(xml)){
-        self$value = value
-      }
+    initialize = function(xml = NULL, value, codeSpace = NULL){
+      super$initialize(xml = NULL, value, codeSpace = NULL)
     }
   )                        
 )
