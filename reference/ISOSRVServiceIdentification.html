@@ -341,7 +341,6 @@
 <span class="r-in"></span>
 <span class="r-in">  <span class="co">#specific elements to service identification</span></span>
 <span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setServiceType</span><span class="op">(</span><span class="st">"Fishery data harmonization process"</span><span class="op">)</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml = xml):</span> argument "value" is missing, with no default</span>
 <span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">addServiceTypeVersion</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in">  <span class="va">orderProcess</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOStandardOrderProcess.html">ISOStandardOrderProcess</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
@@ -470,8 +469,7 @@
 <span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">addOperationMetadata</span><span class="op">(</span><span class="va">wpsOp</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in">  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/srv}serviceTypeVersion': This element is not expected. Expected is one of ( {http://www.isotc211.org/2005/gmd}resourceConstraints, {http://www.isotc211.org/2005/gmd}aggregationInfo, {http://www.isotc211.org/2005/srv}serviceType ) at line 204. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOSRVServiceIdentification' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISOSRVServiceIdentification' is VALID according to ISO 19139 XML schemas! </span>
 <span class="r-in">   </span>
 </code></pre></div>
     </div>

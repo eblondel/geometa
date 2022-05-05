@@ -180,14 +180,13 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"> <span class="co">#featuretype</span></span>
 <span class="r-in"> <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">setTypeName</span><span class="op">(</span><span class="st">"typeName"</span><span class="op">)</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml = xml):</span> argument "value" is missing, with no default</span>
 <span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">setDefinition</span><span class="op">(</span><span class="st">"definition"</span><span class="op">)</span></span>
 <span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">setCode</span><span class="op">(</span><span class="st">"code"</span><span class="op">)</span></span>
 <span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">setIsAbstract</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">addAlias</span><span class="op">(</span><span class="st">"alias1"</span><span class="op">)</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml = xml):</span> argument "value" is missing, with no default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">addAlias</span><span class="op">(</span><span class="st">"alias2"</span><span class="op">)</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml = xml):</span> argument "value" is missing, with no default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"> </span>
 <span class="r-in"> <span class="co">#add feature attributes</span></span>
 <span class="r-in"> <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span>
@@ -225,9 +224,10 @@
 <span class="r-in">   <span class="co">#add feature attribute as carrierOfCharacteristic</span></span>
 <span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">addCharacteristic</span><span class="op">(</span><span class="va">fat</span><span class="op">)</span></span>
 <span class="r-in"> <span class="op">}</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml = xml):</span> argument "value" is missing, with no default</span>
 <span class="r-in"> <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gfc}definition': This element is not expected. Expected is ( {http://www.isotc211.org/2005/gfc}typeName ) at line 2. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.opengis.net/gml/3.2}BaseUnit', attribute '{http://www.opengis.net/gml/3.2}id': 'ID%' is not a valid value of the atomic type 'xs:ID' at line 47. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.opengis.net/gml/3.2}BaseUnit', attribute '{http://www.opengis.net/gml/3.2}id': 'ID%' is not a valid value of the atomic type 'xs:ID' at line 118. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.opengis.net/gml/3.2}BaseUnit', attribute '{http://www.opengis.net/gml/3.2}id': 'ID%' is not a valid value of the atomic type 'xs:ID' at line 189. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOFeatureType' is INVALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"> </span>
 </code></pre></div>
