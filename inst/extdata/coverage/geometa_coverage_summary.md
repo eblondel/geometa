@@ -1,31 +1,3 @@
-# geometa
-
-[![Build Status](https://github.com/eblondel/geometa/actions/workflows/r-cmd-check.yml/badge.svg?branch=master)](https://github.com/eblondel/geometa/actions/workflows/r-cmd-check.yml)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/geometa)](https://cran.r-project.org/package=geometa)
-[![cran checks](https://cranchecks.info/badges/worst/geometa)](https://cran.r-project.org/web/checks/check_results_geometa.html)
-[![Github_Status_Badge](https://img.shields.io/badge/Github-0.7-blue.svg)](https://github.com/eblondel/geometa)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184892.svg)](https://doi.org/10.5281/zenodo.1184892)
-
-**Tools for Reading and Writing ISO/OGC Geographic Metadata**
-
-``geometa`` provides facilities to manipulate geographic metadata defined with OGC/ISO 19115 and 19139 (XML) standards, including an API to create in R representations of geographic metadata, as defined in the above standards, and write it to XML, or even to read an XML metadata into R.
-
-Please check the [online documentation](https://github.com/eblondel/geometa/wiki) for more details!
-
-## Sponsors
-
-Many thanks to the following organizations that have provided fundings for strenghtening the ``geometa`` package:
-
-<a href="https://www.r-consortium.org"><img src="https://www.r-consortium.org/wp-content/uploads/sites/13/2016/09/RConsortium_Horizontal_Pantone.png" width="200"/></a>
-
-For geometa sponsoring/funding new developments, enhancements, support requests, please contact me by [e-mail](mailto:emmanuel.blondel1@gmail.com)
-
-## Citation
-
-We thank in advance people that use ``geometa`` for citing it in their work / publication(s). For this, please use the citation provided at this link [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184892.svg)](https://doi.org/10.5281/zenodo.1184892)
-
-## Metadata standards coverage
-
 |Standard                             |Title                                                                               |Namespace |Coverage                                                                                                                        | Supported| Missing|
 |:------------------------------------|:-----------------------------------------------------------------------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------|---------:|-------:|
 |ISO/TC211 19110:2005                 |Geographic Information - Methodology for feature cataloguing                        |GFC       |[![ISO/TC211 19110:2005](https://img.shields.io/badge/-100%25-4a4ea8.svg)](https://github.com/eblondel/geometa)                 |        17|       0|
