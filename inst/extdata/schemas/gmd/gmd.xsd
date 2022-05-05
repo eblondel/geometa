@@ -14,6 +14,8 @@
 	<xs:import namespace="http://www.isotc211.org/2005/gfc" schemaLocation="../gfc/gfc.xsd"/>
 	<!-- 20180910 @eblondel add GML 3.3. referenceableGrid.xsd inc for validation -->
 	<xs:import namespace="http://www.opengis.net/gml/3.3/rgrid" schemaLocation="../gmlrgrid/referenceableGrid.xsd"/>
+	<!-- 20220217 @eblondel add SWE schemas for validation -->
+	<xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="../sweCommon/swe.xsd"/>
 	<!-- ########################################################################### -->
 	<!-- ########################################################################### -->
 	<!-- ================================== Classes ================================= -->

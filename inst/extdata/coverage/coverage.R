@@ -26,7 +26,8 @@ row.names(cov_summary) <- cov_summary$Standard
 
 cov_summary <- rbind(
   cov_summary[startsWith(cov_summary$Standard, "ISO"),],
-  cov_summary[startsWith(cov_summary$Standard, "GML"),]
+  cov_summary[startsWith(cov_summary$Standard, "GML"),],
+  cov_summary[startsWith(cov_summary$Standard, "SWE"),]
 )
 cov_summary$coverage_class <- NULL
 write.csv(cov_summary, file = file.path(getwd(), "inst/extdata/coverage/geometa_coverage_summary.csv"),

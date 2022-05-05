@@ -255,7 +255,8 @@ geometa_coverage <- function(){
   elements <- elements[with(elements,order(specification, ns_prefix, element)),c("specification", "title", "ns_prefix", "element", "geometa_class", "in_geometa")]
   elements <- rbind(
     elements[startsWith(elements$specification, "ISO"),],
-    elements[startsWith(elements$specification, "GML"),]
+    elements[startsWith(elements$specification, "GML"),],
+    elements[startsWith(elements$specification, "SWE"),]
   )
   elements <- elements[!is.na(elements$specification),]
   return(elements)

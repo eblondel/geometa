@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOAbstractGenericName <- R6Class("ISOAbstractGenericName",
-  inherit = ISOAbstractObject,
+  inherit = GMLCodeType,
   private = list(
     xmlElement = "AbstractGenericName",
     xmlNamespacePrefix = "GCO"
