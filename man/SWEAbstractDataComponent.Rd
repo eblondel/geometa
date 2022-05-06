@@ -32,7 +32,7 @@
 Object of \code{\link{R6Class}} for modelling an SWS Abstract data component
 }
 \description{
-Initializes an object of class \link{SWSAbstractDataComponent}
+Initializes an object of class \link{SWEAbstractDataComponent}
 
 Set definition
 

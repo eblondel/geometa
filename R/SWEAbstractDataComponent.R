@@ -32,7 +32,7 @@ SWEAbstractDataComponent <- R6Class("SWEAbstractDataComponent",
     #'@field identifier identifier
     identifier = NULL,
     
-    #'@description Initializes an object of class \link{SWSAbstractDataComponent}
+    #'@description Initializes an object of class \link{SWEAbstractDataComponent}
     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     #'@param element element
     #'@param attrs attrs
