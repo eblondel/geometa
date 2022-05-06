@@ -24,7 +24,7 @@ GMLCodeType <- R6Class("GMLCodeType",
   public = list(
     value = NA,
     attrs = list(),
-    initialize = function(xml = NULL, value, codeSpace = NULL){
+    initialize = function(xml = NULL, value = NULL, codeSpace = NULL){
       super$initialize(xml = xml)
       if(is.null(xml)){
         self$value = value
