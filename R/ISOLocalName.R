@@ -29,7 +29,7 @@ ISOLocalName <- R6Class("ISOLocalName",
     ),
     public = list(
       value = NA,
-      initialize = function(xml = NULL, value){
+      initialize = function(xml = NULL, value = NULL){
         super$initialize(xml = xml, value = value)
       }
     )                        
