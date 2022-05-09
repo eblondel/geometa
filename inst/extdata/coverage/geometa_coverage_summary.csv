@@ -4,8 +4,8 @@
 "ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI",40,0,100
 "ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV",7,12,36.84
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX",5,62,7.46
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO",24,0,100
+"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO",23,0,100
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML",63,106,37.28
 "GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV",1,0,100
 "GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID",5,0,100
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE",2,28,6.67
+"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE",3,27,10

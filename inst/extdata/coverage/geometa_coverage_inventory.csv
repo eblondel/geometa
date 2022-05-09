@@ -275,7 +275,6 @@
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","UomAlternativeExpression","<missing>",FALSE
 "ISO/TC211 19139:2007","Geographic Metadata XML Schema - Geographic Temporal Schema (GTS)","GTS","TM_PeriodDuration","<missing>",FALSE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","AbstractObject","ISOAbstractObject",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","AbstractObject","ISOAbstractObject",TRUE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Angle","ISOAngle",TRUE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Binary","ISOBinary",TRUE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Boolean","ISOBaseBoolean",TRUE
@@ -476,7 +475,7 @@
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractDataComponent","SWEAbstractDataComponent",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractEncoding","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractObject","SWEAbstractObject",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSimpleComponent","<missing>",FALSE
+"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSimpleComponent","SWEAbstractSimpleComponent",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWE","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWEIdentifiable","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedTimes","<missing>",FALSE
