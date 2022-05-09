@@ -487,7 +487,6 @@
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","CategoryRange","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Component","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Count","SWECount",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Count","SWECount",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","CountRange","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataArray","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataChoice","<missing>",FALSE
@@ -497,7 +496,7 @@
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","NilValues","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Quantity","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","QuantityRange","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Text","<missing>",FALSE
+"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Text","SWEText",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TextEncoding","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Time","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TimeRange","<missing>",FALSE

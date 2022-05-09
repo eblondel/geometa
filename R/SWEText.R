@@ -1,10 +1,10 @@
-#' SWECount
+#' SWEText
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO SWE
-#' @return Object of \code{\link{R6Class}} for modelling an SWE Count
+#' @return Object of \code{\link{R6Class}} for modelling an SWE Text
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @references 
@@ -12,10 +12,10 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-SWECount <- R6Class("SWECount",
+SWEText <- R6Class("SWEText",
   inherit = SWEAbstractSimpleComponent,
   private = list(
-    xmlElement = "Count",
+    xmlElement = "Text",
     xmlNamespacePrefix = "SWE"
   ),
   public = list(
@@ -26,7 +26,7 @@ SWECount <- R6Class("SWECount",
     #'@field value  value
     value = NULL,
     
-    #'@description Initializes an object of class \link{SWECount}
+    #'@description Initializes an object of class \link{SWEText}
     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     #'@param constraint constraint
     #'@param value value
