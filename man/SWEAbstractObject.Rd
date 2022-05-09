@@ -19,7 +19,7 @@
 \item{wrap}{wrap}
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an GML abstract object
+Object of \code{\link{R6Class}} for modelling an SWE abstract object
 }
 \description{
 Initializes an object of class \link{SWEAbstractObject}

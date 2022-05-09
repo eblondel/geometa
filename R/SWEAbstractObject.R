@@ -4,7 +4,7 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO GML
-#' @return Object of \code{\link{R6Class}} for modelling an GML abstract object
+#' @return Object of \code{\link{R6Class}} for modelling an SWE abstract object
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @note Class used internally by geometa
@@ -29,7 +29,7 @@ SWEAbstractObject <- R6Class("SWEAbstractObject",
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element, namespace = private$xmlNamespacePrefix, 
                         attrs = attrs, defaults = defaults,
-                        wrap = wrap)
+                        wrap = wrap, value_as_field = TRUE)
      }
    )                        
 )

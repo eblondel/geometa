@@ -168,7 +168,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     xmlNamespacePrefix = "GCO",
     encoding = options("encoding"),
     document = FALSE,
-    system_fields = c("wrap", "valueDescription",
+    system_fields = c("wrap", "value_as_field", "valueDescription",
                       "element", "namespace", "defaults", "attrs", "printAttrs", "parentAttrs",
                       "codelistId", "measureType", "isNull", "anyElement"),
     xmlComments = function(isoCompliant = NA, inspireReport = NULL){
@@ -319,11 +319,12 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     printAttrs = list(),
     parentAttrs = NULL,
     value = NULL,
+    value_as_field = FALSE,
     isNull = FALSE,
     anyElement = FALSE,
     initialize = function(xml = NULL, element = NULL, namespace = NULL,
                           attrs = list(), defaults = list(),
-                          wrap = TRUE){
+                          wrap = TRUE, value_as_field = FALSE){
       if(!is.null(element)){ private$xmlElement <- element }
       if(!is.null(namespace)){ private$xmlNamespacePrefix <- toupper(namespace)}
       self$element = private$xmlElement
@@ -331,6 +332,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       self$attrs = attrs
       self$defaults = defaults
       self$wrap = wrap
+      self$value_as_field = value_as_field
       if(!is.null(xml)){
         self$decode(xml)
       }
@@ -934,10 +936,19 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               emptyNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = emptyNodeAttrs)
               rootXML$addNode(emptyNode$value())
             }else{
-              if(field == "value"|| field == "_internal_"){
+              if((field == "value"|| field == "_internal_")){
                 if(is.logical(fieldObj)) fieldObj <- tolower(as.character(is.logical(fieldObj)))
                 fieldObj <- private$fromComplexTypes(fieldObj)
-                rootXML$addNode(xmlTextNode(fieldObj))
+                if(field == "value" && self$value_as_field){
+                  wrapperNode <- xmlOutputDOM(
+                    tag = field,
+                    nameSpace = namespaceId
+                  )
+                  wrapperNode$addNode(xmlTextNode(fieldObj))
+                  rootXML$addNode(wrapperNode$value())
+                }else{
+                  rootXML$addNode(xmlTextNode(fieldObj))
+                }
               }else{
                 dataObj <- self$wrapBaseElement(field, fieldObj)
                 if(!is.null(dataObj)){

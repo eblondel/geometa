@@ -4,7 +4,7 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO SWE
-#' @return Object of \code{\link{R6Class}} for modelling an SWS Abstract simple component
+#' @return Object of \code{\link{R6Class}} for modelling an SWE Abstract simple component
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @references 

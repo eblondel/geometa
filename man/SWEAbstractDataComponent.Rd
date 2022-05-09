@@ -29,7 +29,7 @@
 \item{identifier}{identifier}
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an SWS Abstract data component
+Object of \code{\link{R6Class}} for modelling an SWE Abstract data component
 }
 \description{
 Initializes an object of class \link{SWEAbstractDataComponent}

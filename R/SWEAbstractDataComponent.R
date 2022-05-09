@@ -4,7 +4,7 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO SWE
-#' @return Object of \code{\link{R6Class}} for modelling an SWS Abstract data component
+#' @return Object of \code{\link{R6Class}} for modelling an SWE Abstract data component
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @note Class used internally by geometa
