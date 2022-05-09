@@ -10,6 +10,12 @@
 \arguments{
 \item{xml}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
 
+\item{updatable}{updatable}
+
+\item{optional}{optional}
+
+\item{definition}{definition}
+
 \item{constraint}{constraint}
 
 \item{value}{value}

@@ -23,12 +23,12 @@ SWEAbstractSimpleComponent <- R6Class("SWEAbstractSimpleComponent",
     #'@description Initializes an object of class \link{SWEAbstractSimpleComponent}
     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     #'@param element element
-    #'@param attrs attrs
-    #'@param defaults defaults
-    #'@param wrap wrap
-    initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), wrap = TRUE){
+    #'@param updatable updatable
+    #'@param optional optional
+    #'@param definition definition
+    initialize = function(xml = NULL, element = NULL, updatable = NULL, optional = FALSE, definition = NULL){
       if(is.null(element)) element <- private$xmlElement
-      super$initialize(xml, element = element, attrs = attrs, defaults = defaults, wrap = wrap)
+      super$initialize(xml, element = element, updatable = updatable, optional = optional, definition = definition)
     }
   )                        
 )

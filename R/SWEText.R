@@ -30,8 +30,14 @@ SWEText <- R6Class("SWEText",
     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     #'@param constraint constraint
     #'@param value value
-    initialize = function(xml = NULL, constraint = NULL, value = NULL){
-      super$initialize(xml, element = private$xmlElement)
+    #'@param updatable updatable
+    #'@param optional optional
+    #'@param definition definition
+    initialize = function(xml = NULL, 
+                          constraint = NULL, value = NULL,
+                          updatable = NULL, optional = FALSE, definition = NULL){
+      super$initialize(xml, element = private$xmlElement,
+                       updatable = updatable, optional = optional, definition = definition)
       if(is.null(xml)){
         self$constraint <- constraint
         self$value <- value
@@ -39,13 +45,13 @@ SWEText <- R6Class("SWEText",
     },
     
     #'@description setConstraint
-    #'@param constraint
+    #'@param constraint constraint
     setConstraint = function(constraint){
       self$constraint <- constraint
     },
     
     #'@description setValue
-    #'@param value
+    #'@param value value
     setValue = function(value){
       self$value <- value
     }

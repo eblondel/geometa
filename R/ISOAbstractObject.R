@@ -918,7 +918,16 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               }), collapse = " ")
               txtNode <- xmlTextNode(mts)
               if(field == "value"){
-                rootXML$addNode(txtNode)
+                if(field == "value" && self$value_as_field){
+                  wrapperNode <- xmlOutputDOM(
+                    tag = field,
+                    nameSpace = namespaceId
+                  )
+                  wrapperNode$addNode(txtNode)
+                  rootXML$addNode(wrapperNode$value())
+                }else{
+                  rootXML$addNode(txtNode)
+                }
               }else{
                 wrapperNode <- xmlOutputDOM(tag = field, nameSpace = namespaceId)
                 wrapperNode$addNode(txtNode)

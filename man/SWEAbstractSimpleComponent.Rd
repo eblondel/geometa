@@ -12,11 +12,11 @@
 
 \item{element}{element}
 
-\item{attrs}{attrs}
+\item{updatable}{updatable}
 
-\item{defaults}{defaults}
+\item{optional}{optional}
 
-\item{wrap}{wrap}
+\item{definition}{definition}
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an SWE Abstract simple component

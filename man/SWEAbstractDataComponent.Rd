@@ -12,11 +12,9 @@
 
 \item{element}{element}
 
-\item{attrs}{attrs}
+\item{updatable}{updatable}
 
-\item{defaults}{defaults}
-
-\item{wrap}{wrap}
+\item{optional}{optional}
 
 \item{definition}{definition}
 
