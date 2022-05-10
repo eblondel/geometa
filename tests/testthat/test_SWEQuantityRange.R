@@ -7,7 +7,7 @@ require(geometa, quietly = TRUE)
 require(sf)
 require(testthat)
 
-conQuantityRange("SWEQuantityRange")
+context("SWEQuantityRange")
 
 test_that("SWEQuantityRange",{
   testthat::skip_on_cran()
