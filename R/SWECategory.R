@@ -1,10 +1,10 @@
-#' SWEQuantityRange
+#' SWECategory
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO SWE
-#' @return Object of \code{\link{R6Class}} for modelling an SWE QuantityRange
+#' @return Object of \code{\link{R6Class}} for modelling an SWE Category
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @references 
@@ -12,47 +12,48 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-SWEQuantityRange <- R6Class("SWEQuantityRange",
+SWECategory <- R6Class("SWECategory",
    inherit = SWEAbstractSimpleComponent,
    private = list(
-     xmlElement = "QuantityRange",
+     xmlElement = "Category",
      xmlNamespacePrefix = "SWE"
    ),
    public = list(
      
-     #'@field uom uom
-     uom = NULL,
+     #'@field codeSpace codeSpace
+     codeSpace = NULL,
      
      #'@field constraint constraint
      constraint = NULL,
      
-     #'@field value  value
-     value = matrix(NA_real_, 1, 2),
+     #'@field value value
+     value = NA_character_,
      
-     #'@description Initializes an object of class \link{SWEQuantityRange}
+     #'@description Initializes an object of class \link{SWECategory}
      #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
-     #'@param uom uom
+     #'@param codeSpace codeSpace
      #'@param constraint constraint
      #'@param value value
      #'@param updatable updatable
      #'@param optional optional
      #'@param definition definition
      initialize = function(xml = NULL, 
-                           uom = NULL, constraint = NULL, value = NULL,
+                           codeSpace = NULL, constraint = NULL, value = NULL,
                            updatable = NULL, optional = FALSE, definition = NULL){
        super$initialize(xml, element = private$xmlElement,
                         updatable = updatable, optional = optional, definition = definition)
        if(is.null(xml)){
-         self$setUom(uom)
+         self$setCodeSpace(codeSpace)
          self$setConstraint(constraint)
          self$setValue(value)
        }
      },
      
-     #'@description setUom
-     #'@param uom uom
-     setUom = function(uom){
-       self$uom <- uom
+     
+     #'@description setCodeSpace
+     #'@param codeSpace codeSpace
+     setCodeSpace = function(codeSpace){
+       self$codeSpace <- codeSpace
      },
      
      #'@description setConstraint
@@ -64,19 +65,8 @@ SWEQuantityRange <- R6Class("SWEQuantityRange",
      #'@description setValue
      #'@param value value
      setValue = function(value){
-       if(!is.numeric(value)){
-         stop("Values should be numeric")
-       }
-       if(is.vector(value)){
-         if(length(value)!="2"){
-           stop("Vector of values should of length 2")
-         }
-       }else if(is.matrix(value)){
-         if(!all(dim(value)==c(1,2))){
-           stop("Matrix of values should be of dimensions 1,2")
-         }
-       }else{
-         stop("Value should be either a vector or matrix")
+       if(!is.character(value)){
+         stop("Values should be character")
        }
        self$value <- value
      }
