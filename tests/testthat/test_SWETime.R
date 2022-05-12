@@ -3,7 +3,7 @@
 #
 # Description: Unit tests for classes inheriting SWETime.R
 #=======================
-require(geometa, timeuietly = TRUE)
+require(geometa, quietly = TRUE)
 require(sf)
 require(testthat)
 
