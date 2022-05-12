@@ -65,7 +65,7 @@ SWEQuantity <- R6Class("SWEQuantity",
     #'@param value value
     setValue = function(value){
       if(!is.numeric(value)){
-        stop("Values should be numeric")
+        stop("Value should be numeric")
       }
       self$value <- value
     }

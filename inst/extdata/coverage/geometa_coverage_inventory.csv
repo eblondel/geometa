@@ -498,7 +498,7 @@
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","QuantityRange","SWEQuantityRange",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Text","SWEText",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TextEncoding","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Time","<missing>",FALSE
+"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Time","SWETime",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TimeRange","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Vector","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","XMLEncoding","<missing>",FALSE

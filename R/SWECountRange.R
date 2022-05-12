@@ -53,7 +53,7 @@ SWECountRange <- R6Class("SWECountRange",
     #'@description setValue
     #'@param value value
     setValue = function(value){
-      if(!is.integer(value)){
+      if(!is.numeric(value)){
         stop("Values should be integer")
       }
       if(is.vector(value)){

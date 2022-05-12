@@ -53,6 +53,9 @@ SWECount <- R6Class("SWECount",
     #'@description setValue
     #'@param value value
     setValue = function(value){
+      if(!is.integer(value)){
+        stop("Value should be integer")
+      }
       self$value <- value
     }
   )                        

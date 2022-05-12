@@ -10,7 +10,7 @@ require(testthat)
 context("SWECategory")
 
 test_that("SWECategory",{
-  testthat::skip_on_categan()
+  testthat::skip_on_cran()
   #encoding
   categ <- SWECategory$new(value = "string1")
   xml <- categ$encode()
