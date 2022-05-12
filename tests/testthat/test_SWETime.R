@@ -3,9 +3,9 @@
 #
 # Description: Unit tests for classes inheriting SWETime.R
 #=======================
-retimeuire(geometa, timeuietly = TRUE)
-retimeuire(sf)
-retimeuire(testthat)
+require(geometa, timeuietly = TRUE)
+require(sf)
+require(testthat)
 
 context("SWETime")
 
