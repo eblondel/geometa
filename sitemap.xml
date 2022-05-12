@@ -982,10 +982,19 @@
     <loc>/reference/SWEAbstractSimpleComponent.html</loc>
   </url>
   <url>
+    <loc>/reference/SWECategory.html</loc>
+  </url>
+  <url>
     <loc>/reference/SWECategoryRange.html</loc>
   </url>
   <url>
     <loc>/reference/SWECount.html</loc>
+  </url>
+  <url>
+    <loc>/reference/SWECountRange.html</loc>
+  </url>
+  <url>
+    <loc>/reference/SWEQuantity.html</loc>
   </url>
   <url>
     <loc>/reference/SWEQuantityRange.html</loc>
