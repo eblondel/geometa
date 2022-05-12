@@ -484,7 +484,7 @@
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","BinaryEncoding","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Block","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Category","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","CategoryRange","<missing>",FALSE
+"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","CategoryRange","SWECategoryRange",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Component","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Count","SWECount",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","CountRange","<missing>",FALSE
