@@ -117,7 +117,7 @@ GMLUnitDefinition$buildFrom = function(x, by = "symbol", unitsystem = "udunits2"
             def_unit_comps <- unlist(strsplit(def_unit, " "))
             base_unit <- base_units_df[base_units_df$symbol %in% def_unit_comps,]
             if(nrow(base_unit)>0){
-               uom = base_unit[1L,]$symbol
+               uom = as.character(base_unit[1L,]$symbol)
                gmlunit$setConversionToPreferredUnit(
                   uom = uom,
                   factor = def_unit_comps[def_unit_comps!= uom][1]
