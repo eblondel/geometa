@@ -19,7 +19,7 @@ $identificationInfo*/ISODataIdentification$supplementalInformation,$comment,$dat
 $identificationInfo*/ISODataIdentification$abstract,$summary,$dataset/$abstract/$markdown,ok,ok,ok,
 $identificationInfo*/ISODataIdentification$purpose,,$dataset/$purpose,?,ok,ok,
 $identificationInfo*/ISODataIdentification$credit,$acknowledgment,$dataset/$acknowledgments,ok,?,?,
-$identificationInfo*/ISODataIdentification$citation/ISOCitation$citedResponsibleParty/ISOResponsibleParty$individualName,$creator_name,,ok,NA,NA,
+$identificationInfo*/ISODataIdentification$citation/ISOCitation$citedResponsibleParty/ISOResponsibleParty$individualName,$creator_name,$ResponsibleParty$individualName,ok,NA,NA,
 $identificationInfo*/ISODataIdentification$citation/ISOCitation$citedResponsibleParty/ISOResponsibleParty$individualName[sep= |index=1],,$dataset/$creator/$individualName/$givenName,NA,ok,ok,
 $identificationInfo*/ISODataIdentification$citation/ISOCitation$citedResponsibleParty/ISOResponsibleParty$individualName[sep= |index=2],,$dataset/$creator/$individualName/$surName,NA,ok,ok,
 $identificationInfo*/ISODataIdentification$citation/ISOCitation$citedResponsibleParty/ISOResponsibleParty$organisationName,$institution,$dataset/$creator/$organizationName,ok,ok,ok,
