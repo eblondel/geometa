@@ -33,7 +33,7 @@ readISO19139 <- function(file = NULL, url = NULL, raw = FALSE){
   encoding <- "UTF-8"
   raw_xml <- NULL
   if(!is.null(url)){
-    req <- httr::GET(url, httr::add_headers("Accept" = "text/xml"))
+    req <- httr::GET(url, httr::add_headers("Accept" = "application/xml"))
     if(httr::status_code(req) != 200){
       stop("The URL resource is unavailable")
     }
