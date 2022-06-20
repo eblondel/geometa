@@ -12,7 +12,7 @@ $contact*/ISOResponsibleParty$contactInfo[$role/ISORole$value=pointOfContact|ite
 $contact*/ISOResponsibleParty$contactInfo[$role/ISORole$value=pointOfContact|item=1]/ISOContact$address/ISOAddress$postalCode,,$dataset/$contact/$address/$postalCode,?,ok,ok,
 $contact*/ISOResponsibleParty$contactInfo[$role/ISORole$value=pointOfContact|item=1]/ISOContact$address/ISOAddress$country,,$dataset/$contact/$address/$country,?,ok,ok,
 $identificationInfo*/ISODataIdentification$citation/ISOCitation$title,$title,$dataset/$title,ok,ok,ok,
-$identificationInfo*/ISODataIdentification$citation/ISOCitation$alternateTitle,$title_short_name,,ok,?,?,
+$identificationInfo*/ISODataIdentification$citation/ISOCitation$alternateTitle,$title_short_name,$dataset/$title,ok,?,?,
 $identificationInfo*/ISODataIdentification$citation/ISOCitation$date*/ISODate$date[$dateType/ISODateType$value=creation|item=1],$date_created,,validation issue,?,?,- catch errors when ambiguous values are retrieved from source
 $identificationInfo*/ISODataIdentification$citation/ISOCitation$date*/ISODate$date[$dateType/ISODateType$value=publication|item=1],$date_issued,$dataset/$pubDate,validation issue,ok,ok,- catch errors when ambiguous values are retrieved from source
 $identificationInfo*/ISODataIdentification$supplementalInformation,$comment,,ok,?,?,
