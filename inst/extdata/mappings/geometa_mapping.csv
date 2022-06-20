@@ -16,7 +16,7 @@ $identificationInfo*/ISODataIdentification$citation/ISOCitation$alternateTitle,$
 $identificationInfo*/ISODataIdentification$citation/ISOCitation$date*/ISODate$date[$dateType/ISODateType$value=creation|item=1],$date_created,,validation issue,?,?,- catch errors when ambiguous values are retrieved from source
 $identificationInfo*/ISODataIdentification$citation/ISOCitation$date*/ISODate$date[$dateType/ISODateType$value=publication|item=1],$date_issued,$dataset/$pubDate,validation issue,ok,ok,- catch errors when ambiguous values are retrieved from source
 $identificationInfo*/ISODataIdentification$supplementalInformation,$comment,$dataset/$additionalInfo,ok,?,?,
-$identificationInfo*/ISODataIdentification$abstract,$summary,$dataset/$abstract/$para,ok,ok,ok,
+$identificationInfo*/ISODataIdentification$abstract,$summary,$dataset/$abstract/$markdown,ok,ok,ok,
 $identificationInfo*/ISODataIdentification$purpose,,$dataset/$purpose,?,ok,ok,
 $identificationInfo*/ISODataIdentification$credit,$acknowledgment,,ok,?,?,
 $identificationInfo*/ISODataIdentification$citation/ISOCitation$citedResponsibleParty/ISOResponsibleParty$individualName,$creator_name,,ok,NA,NA,
