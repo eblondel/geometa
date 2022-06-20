@@ -49,7 +49,7 @@ $identificationInfo*/ISODataIdentification$descriptiveKeywords*/ISOKeywords$keyw
 $identificationInfo*/ISODataIdentification$resourceConstraints*/ISOLegalConstraints$useLimitation[index=1],$license,$dataset/$intellectualRights,ok,ok,ok,
 $identificationInfo*/ISODataIdentification$spatialRepresentationType*/ISOSpatialRepresentationType$attrs/$codeListValue,$netcdf_file_type,,ok,?,?,
 $identificationInfo*/ISODataIdentification$spatialRepresentationType*/ISOSpatialRepresentationType$value,$netcdf_file_type,,ok,?,?,
-$identificationInfo*/ISODataIdentification$spatialRepresentationType*/ISOSpatialRepresentationType$attrs/$codeListValue,$cdm_data_type,,ok,?,?,
+$identificationInfo*/ISODataIdentification$spatialRepresentationType*/ISOSpatialRepresentationType$attrs/$codeListValue,$cdm_data_type,$NonNumericDomainType/$enumeratedDomain/$entityCodeList,ok,?,?,
 $identificationInfo*/ISODataIdentification$spatialRepresentationType*/ISOSpatialRepresentationType$value,$cdm_data_type,,ok,?,?,
 $distributionInfo*/ISODistribution$distributionFormat*/ISOFormat$name,$netcdf_file_type,,ok,?,?,
 $dataQualityInfo*/ISODataQuality$lineage/ISOLineage$statement,$history,,ok,?,?,
