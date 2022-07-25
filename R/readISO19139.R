@@ -41,7 +41,7 @@ readISO19139 <- function(file = NULL, url = NULL, raw = FALSE){
     raw_xml <- XML::xmlParse(doc, encoding = encoding, addFinalizer = FALSE)
   }else{
     raw_xml <- readr::read_lines(file)
-    raw_xml <- paste0(raw_xml, collapse="") 
+    raw_xml <- paste0(raw_xml, collapse="\n") 
     if(Encoding(raw_xml) != "UTF-8") Encoding(raw_xml) <- "UTF-8"
     if(Encoding(raw_xml) == "unknown"){
       raw_xml <- XML::xmlParse(raw_xml, error = function (msg, ...) {}, addFinalizer = FALSE)
