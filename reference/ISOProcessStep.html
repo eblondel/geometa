@@ -124,18 +124,18 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="va">ps</span> <span class="op">&lt;-</span> <span class="va">ISOProcessStep</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">ps</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">ps</span><span class="op">$</span><span class="fu">setRationale</span><span class="op">(</span><span class="st">"rationale"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">ps</span><span class="op">$</span><span class="fu">setDateTime</span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">23</span>, <span class="fl">59</span>, <span class="fl">59</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">rp</span><span class="op">$</span><span class="fu">setIndividualName</span><span class="op">(</span><span class="st">"someone"</span><span class="op">)</span> <span class="co">#and more responsible party properties..</span></span>
-<span class="r-in">  <span class="va">ps</span><span class="op">$</span><span class="fu">addProcessor</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">ps</span> <span class="op">&lt;-</span> <span class="va">ISOProcessStep</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">ps</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">ps</span><span class="op">$</span><span class="fu">setRationale</span><span class="op">(</span><span class="st">"rationale"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">ps</span><span class="op">$</span><span class="fu">setDateTime</span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">23</span>, <span class="fl">59</span>, <span class="fl">59</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setIndividualName</span><span class="op">(</span><span class="st">"someone"</span><span class="op">)</span> <span class="co">#and more responsible party properties..</span></span></span>
+<span class="r-in"><span>  <span class="va">ps</span><span class="op">$</span><span class="fu">addProcessor</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">ps</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">ps</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty': Missing child element(s). Expected is one of ( {http://www.isotc211.org/2005/gmd}organisationName, {http://www.isotc211.org/2005/gmd}positionName, {http://www.isotc211.org/2005/gmd}contactInfo, {http://www.isotc211.org/2005/gmd}role ) at line 12. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOProcessStep' is INVALID according to ISO 19139 XML schemas! </span>
-<span class="r-in">  </span>
+<span class="r-in"><span>  </span></span>
 </code></pre></div>
     </div>
   </div>
@@ -150,7 +150,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

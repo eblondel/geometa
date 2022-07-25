@@ -135,29 +135,29 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="va">src</span> <span class="op">&lt;-</span> <span class="va">ISOSource</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">src</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">src</span><span class="op">$</span><span class="fu">setScaleDenominator</span><span class="op">(</span><span class="fl">1L</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="va">rs</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOReferenceSystem.html">ISOReferenceSystem</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">rsId</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOReferenceIdentifier.html">ISOReferenceIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"4326"</span>, codeSpace <span class="op">=</span> <span class="st">"EPSG"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">rs</span><span class="op">$</span><span class="fu">setReferenceSystemIdentifier</span><span class="op">(</span><span class="va">rsId</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">src</span><span class="op">$</span><span class="fu">setReferenceSystem</span><span class="op">(</span><span class="va">rs</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="va">cit</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cit</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"sometitle"</span><span class="op">)</span> <span class="co">#and more citation properties...</span></span>
-<span class="r-in">  <span class="va">src</span><span class="op">$</span><span class="fu">setCitation</span><span class="op">(</span><span class="va">cit</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="va">extent</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOExtent.html">ISOExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">bbox</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeographicBoundingBox.html">ISOGeographicBoundingBox</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>minx <span class="op">=</span> <span class="op">-</span><span class="fl">180</span>, miny <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, maxx <span class="op">=</span> <span class="fl">180</span>, maxy <span class="op">=</span> <span class="fl">90</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">extent</span><span class="op">$</span><span class="fu">setGeographicElement</span><span class="op">(</span><span class="va">bbox</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">src</span> <span class="op">&lt;-</span> <span class="va">ISOSource</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">src</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">src</span><span class="op">$</span><span class="fu">setScaleDenominator</span><span class="op">(</span><span class="fl">1L</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="va">rs</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOReferenceSystem.html">ISOReferenceSystem</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">rsId</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOReferenceIdentifier.html">ISOReferenceIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"4326"</span>, codeSpace <span class="op">=</span> <span class="st">"EPSG"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">rs</span><span class="op">$</span><span class="fu">setReferenceSystemIdentifier</span><span class="op">(</span><span class="va">rsId</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">src</span><span class="op">$</span><span class="fu">setReferenceSystem</span><span class="op">(</span><span class="va">rs</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="va">cit</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cit</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"sometitle"</span><span class="op">)</span> <span class="co">#and more citation properties...</span></span></span>
+<span class="r-in"><span>  <span class="va">src</span><span class="op">$</span><span class="fu">setCitation</span><span class="op">(</span><span class="va">cit</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="va">extent</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOExtent.html">ISOExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">bbox</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeographicBoundingBox.html">ISOGeographicBoundingBox</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>minx <span class="op">=</span> <span class="op">-</span><span class="fl">180</span>, miny <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, maxx <span class="op">=</span> <span class="fl">180</span>, maxy <span class="op">=</span> <span class="fl">90</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">extent</span><span class="op">$</span><span class="fu">setGeographicElement</span><span class="op">(</span><span class="va">bbox</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">src</span><span class="op">$</span><span class="fu">addExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">src</span><span class="op">$</span><span class="fu">addExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">src</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">src</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmd}CI_Citation': Missing child element(s). Expected is one of ( {http://www.isotc211.org/2005/gmd}alternateTitle, {http://www.isotc211.org/2005/gmd}date ) at line 27. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOSource' is INVALID according to ISO 19139 XML schemas! </span>
-<span class="r-in">  </span>
+<span class="r-in"><span>  </span></span>
 </code></pre></div>
     </div>
   </div>
@@ -172,7 +172,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

@@ -99,17 +99,17 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOImagerySource</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">setProcessedLevel</span><span class="op">(</span><span class="st">"identifier"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">res</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOImageryNominalResolution.html">ISOImageryNominalResolution</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODistance.html">ISODistance</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>value <span class="op">=</span> <span class="fl">1</span>, uom <span class="op">=</span> <span class="st">"m"</span>, useUomURI <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">res</span><span class="op">$</span><span class="fu">setScanningResolution</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">setResolution</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOImagerySource</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setProcessedLevel</span><span class="op">(</span><span class="st">"identifier"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">res</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOImageryNominalResolution.html">ISOImageryNominalResolution</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODistance.html">ISODistance</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>value <span class="op">=</span> <span class="fl">1</span>, uom <span class="op">=</span> <span class="st">"m"</span>, useUomURI <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">res</span><span class="op">$</span><span class="fu">setScanningResolution</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setResolution</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmi}LE_Source': No matching global declaration available for the validation root at line 1. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOImagerySource' is INVALID according to ISO 19139 XML schemas! </span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -124,7 +124,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

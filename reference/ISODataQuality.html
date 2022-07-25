@@ -106,82 +106,82 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="co">#create dataQuality object with a 'dataset' scope</span></span>
-<span class="r-in">  <span class="va">dq</span> <span class="op">&lt;-</span> <span class="va">ISODataQuality</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">scope</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOScope.html">ISOScope</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">scope</span><span class="op">$</span><span class="fu">setLevel</span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">dq</span><span class="op">$</span><span class="fu">setScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="co">#add data quality reports...</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="co">#add a report the data quality</span></span>
-<span class="r-in">  <span class="va">dc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">result</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">spec</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">spec</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"Data Quality check"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">spec</span><span class="op">$</span><span class="fu">addAlternateTitle</span><span class="op">(</span><span class="st">"This is is some data quality check report"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co">#create dataQuality object with a 'dataset' scope</span></span></span>
+<span class="r-in"><span>  <span class="va">dq</span> <span class="op">&lt;-</span> <span class="va">ISODataQuality</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">scope</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOScope.html">ISOScope</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">scope</span><span class="op">$</span><span class="fu">setLevel</span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">dq</span><span class="op">$</span><span class="fu">setScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="co">#add data quality reports...</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="co">#add a report the data quality</span></span></span>
+<span class="r-in"><span>  <span class="va">dc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">spec</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">spec</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"Data Quality check"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">spec</span><span class="op">$</span><span class="fu">addAlternateTitle</span><span class="op">(</span><span class="st">"This is is some data quality check report"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">spec</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">result</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">spec</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">result</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"some explanation about the conformance"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">result</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">dc</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">spec</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">result</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">spec</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">result</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"some explanation about the conformance"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">result</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">dc</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="co">#add INSPIRE reports?</span></span>
-<span class="r-in">  <span class="co">#INSPIRE - interoperability of spatial data sets and services</span></span>
-<span class="r-in">  <span class="va">dc_inspire1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_spec1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_title</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC"</span>,</span>
-<span class="r-in">    <span class="st">"of the European Parliament and of the Council as regards interoperability of spatial data"</span>,</span>
-<span class="r-in">    <span class="st">"sets and services"</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_spec1</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="va">cr_title</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"See the referenced specification"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_date1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2010</span>,<span class="fl">12</span>,<span class="fl">8</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_spec1</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date1</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec1</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">dc_inspire1</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">cr_inspire1</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="co">#add INSPIRE reports?</span></span></span>
+<span class="r-in"><span>  <span class="co">#INSPIRE - interoperability of spatial data sets and services</span></span></span>
+<span class="r-in"><span>  <span class="va">dc_inspire1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_spec1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_title</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"of the European Parliament and of the Council as regards interoperability of spatial data"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"sets and services"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_spec1</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="va">cr_title</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"See the referenced specification"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_date1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2010</span>,<span class="fl">12</span>,<span class="fl">8</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_spec1</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">dc_inspire1</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">cr_inspire1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc_inspire1</span><span class="op">)</span></span>
-<span class="r-in">  <span class="co">#INSPIRE - metadata</span></span>
-<span class="r-in">  <span class="va">dc_inspire2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_spec2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_title2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC"</span>,</span>
-<span class="r-in">    <span class="st">"of the European Parliament and of the Council as regards metadata"</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_spec2</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="va">cr_title2</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"See the referenced specification"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_date2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2008</span>,<span class="fl">12</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire_spec2</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date2</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec2</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">dc_inspire2</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">cr_inspire2</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc_inspire1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="co">#INSPIRE - metadata</span></span></span>
+<span class="r-in"><span>  <span class="va">dc_inspire2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_spec2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_title2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"of the European Parliament and of the Council as regards metadata"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_spec2</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="va">cr_title2</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"See the referenced specification"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_date2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2008</span>,<span class="fl">12</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire_spec2</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date2</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec2</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">dc_inspire2</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">cr_inspire2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc_inspire2</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="co">#add lineage (more example of lineages in ISOLineage documentation)</span></span>
-<span class="r-in">  <span class="va">lineage</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOLineage.html">ISOLineage</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">lineage</span><span class="op">$</span><span class="fu">setStatement</span><span class="op">(</span><span class="st">"statement"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">dq</span><span class="op">$</span><span class="fu">setLineage</span><span class="op">(</span><span class="va">lineage</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="co">#xml</span></span>
-<span class="r-in">  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">dq</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc_inspire2</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="co">#add lineage (more example of lineages in ISOLineage documentation)</span></span></span>
+<span class="r-in"><span>  <span class="va">lineage</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOLineage.html">ISOLineage</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">lineage</span><span class="op">$</span><span class="fu">setStatement</span><span class="op">(</span><span class="st">"statement"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">dq</span><span class="op">$</span><span class="fu">setLineage</span><span class="op">(</span><span class="va">lineage</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="co">#xml</span></span></span>
+<span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">dq</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISODataQuality' is VALID according to ISO 19139 XML schemas! </span>
-<span class="r-in">  </span>
+<span class="r-in"><span>  </span></span>
 </code></pre></div>
     </div>
   </div>
@@ -196,7 +196,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

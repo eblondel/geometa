@@ -203,45 +203,45 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"> <span class="co">#create ISOCitation</span></span>
-<span class="r-in"> <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOCitation</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"sometitle"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">addIdentifier</span><span class="op">(</span><span class="va"><a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"identifier"</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="co">#create ISOCitation</span></span></span>
+<span class="r-in"><span> <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOCitation</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"sometitle"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">addIdentifier</span><span class="op">(</span><span class="va"><a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"identifier"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">addPresentationForm</span><span class="op">(</span><span class="st">"mapDigital"</span><span class="op">)</span></span>
+<span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">addPresentationForm</span><span class="op">(</span><span class="st">"mapDigital"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"> </span>
-<span class="r-in"> <span class="co">#add a cited responsible party</span></span>
-<span class="r-in"> <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">rp</span><span class="op">$</span><span class="fu">setIndividualName</span><span class="op">(</span><span class="st">"someone"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="st">"someposition"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="st">"myphonenumber"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">phone</span><span class="op">$</span><span class="fu">setFacsimile</span><span class="op">(</span><span class="st">"myfacsimile"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">contact</span><span class="op">$</span><span class="fu">setPhone</span><span class="op">(</span><span class="va">phone</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">address</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAddress.html">ISOAddress</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">address</span><span class="op">$</span><span class="fu">setDeliveryPoint</span><span class="op">(</span><span class="st">"theaddress"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">address</span><span class="op">$</span><span class="fu">setCity</span><span class="op">(</span><span class="st">"thecity"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">address</span><span class="op">$</span><span class="fu">setPostalCode</span><span class="op">(</span><span class="st">"111"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">address</span><span class="op">$</span><span class="fu">setCountry</span><span class="op">(</span><span class="st">"France"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">address</span><span class="op">$</span><span class="fu">setEmail</span><span class="op">(</span><span class="st">"someone@theorg.org"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">contact</span><span class="op">$</span><span class="fu">setAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">res</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">res</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://www.somewhereovertheweb.org"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">res</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"somename"</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span>
-<span class="r-in"> <span class="va">md</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span>
+<span class="r-in"><span> </span></span>
+<span class="r-in"><span> <span class="co">#add a cited responsible party</span></span></span>
+<span class="r-in"><span> <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">rp</span><span class="op">$</span><span class="fu">setIndividualName</span><span class="op">(</span><span class="st">"someone"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="st">"someposition"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="st">"myphonenumber"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">phone</span><span class="op">$</span><span class="fu">setFacsimile</span><span class="op">(</span><span class="st">"myfacsimile"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">contact</span><span class="op">$</span><span class="fu">setPhone</span><span class="op">(</span><span class="va">phone</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">address</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAddress.html">ISOAddress</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">address</span><span class="op">$</span><span class="fu">setDeliveryPoint</span><span class="op">(</span><span class="st">"theaddress"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">address</span><span class="op">$</span><span class="fu">setCity</span><span class="op">(</span><span class="st">"thecity"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">address</span><span class="op">$</span><span class="fu">setPostalCode</span><span class="op">(</span><span class="st">"111"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">address</span><span class="op">$</span><span class="fu">setCountry</span><span class="op">(</span><span class="st">"France"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">address</span><span class="op">$</span><span class="fu">setEmail</span><span class="op">(</span><span class="st">"someone@theorg.org"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">contact</span><span class="op">$</span><span class="fu">setAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">res</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">res</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://www.somewhereovertheweb.org"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">res</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"somename"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"> <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span> <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmd}edition': This element is not expected. Expected is one of ( {http://www.isotc211.org/2005/gmd}alternateTitle, {http://www.isotc211.org/2005/gmd}date ) at line 5. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOCitation' is INVALID according to ISO 19139 XML schemas! </span>
-<span class="r-in"> </span>
+<span class="r-in"><span> </span></span>
 </code></pre></div>
     </div>
   </div>
@@ -256,7 +256,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

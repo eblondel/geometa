@@ -101,21 +101,21 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISODataFile</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setFileName</span><span class="op">(</span><span class="va"><a href="ISOFileName.html">ISOFileName</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>file <span class="op">=</span> <span class="st">"someuri"</span>, name <span class="op">=</span> <span class="st">"filename"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setFileDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setFileType</span><span class="op">(</span><span class="va"><a href="ISOMimeFileType.html">ISOMimeFileType</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>type <span class="op">=</span> <span class="st">"somemimetype"</span>, name <span class="op">=</span> <span class="st">"Mime type name"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">addFeatureType</span><span class="op">(</span><span class="st">"feature_type"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISODataFile</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setFileName</span><span class="op">(</span><span class="va"><a href="ISOFileName.html">ISOFileName</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>file <span class="op">=</span> <span class="st">"someuri"</span>, name <span class="op">=</span> <span class="st">"filename"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setFileDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setFileType</span><span class="op">(</span><span class="va"><a href="ISOMimeFileType.html">ISOMimeFileType</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>type <span class="op">=</span> <span class="st">"somemimetype"</span>, name <span class="op">=</span> <span class="st">"Mime type name"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addFeatureType</span><span class="op">(</span><span class="st">"feature_type"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">f</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOFormat.html">ISOFormat</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">f</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"name"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">f</span><span class="op">$</span><span class="fu">setVersion</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">f</span><span class="op">$</span><span class="fu">setAmendmentNumber</span><span class="op">(</span><span class="st">"2"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">f</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="st">"specification"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setFileFormat</span><span class="op">(</span><span class="va">f</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">f</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOFormat.html">ISOFormat</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">f</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"name"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">f</span><span class="op">$</span><span class="fu">setVersion</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">f</span><span class="op">$</span><span class="fu">setAmendmentNumber</span><span class="op">(</span><span class="st">"2"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">f</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="st">"specification"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setFileFormat</span><span class="op">(</span><span class="va">f</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISODataFile' is VALID according to ISO 19139 XML schemas! </span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -130,7 +130,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

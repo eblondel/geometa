@@ -208,368 +208,368 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">    <span class="co">#example 1 - WRITE: Create an ISO metadata and encode it as XML</span></span>
-<span class="r-in">    <span class="co">#######################################################</span></span>
-<span class="r-in">    <span class="va">md</span> <span class="op">=</span> <span class="va">ISOImageryMetadata</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">md</span><span class="op">$</span><span class="fu">setFileIdentifier</span><span class="op">(</span><span class="st">"my-metadata-identifier"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">md</span><span class="op">$</span><span class="fu">setParentIdentifier</span><span class="op">(</span><span class="st">"my-parent-metadata-identifier"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">md</span><span class="op">$</span><span class="fu">setCharacterSet</span><span class="op">(</span><span class="st">"utf8"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">md</span><span class="op">$</span><span class="fu">setLanguage</span><span class="op">(</span><span class="st">"eng"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">md</span><span class="op">$</span><span class="fu">setDateStamp</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">md</span><span class="op">$</span><span class="fu">setMetadataStandardName</span><span class="op">(</span><span class="st">"ISO 19115:2003/19139"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">md</span><span class="op">$</span><span class="fu">setMetadataStandardVersion</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">md</span><span class="op">$</span><span class="fu">setDataSetURI</span><span class="op">(</span><span class="st">"my-dataset-identifier"</span><span class="op">)</span></span>
-<span class="r-in">    </span>
-<span class="r-in">    <span class="co">#add 3 contacts</span></span>
-<span class="r-in">    <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span>
-<span class="r-in">      <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">rp</span><span class="op">$</span><span class="fu">setIndividualName</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"someone"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"someposition"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"myphonenumber"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">phone</span><span class="op">$</span><span class="fu">setFacsimile</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"myfacsimile"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">contact</span><span class="op">$</span><span class="fu">setPhone</span><span class="op">(</span><span class="va">phone</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">address</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAddress.html">ISOAddress</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">address</span><span class="op">$</span><span class="fu">setDeliveryPoint</span><span class="op">(</span><span class="st">"theaddress"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">address</span><span class="op">$</span><span class="fu">setCity</span><span class="op">(</span><span class="st">"thecity"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">address</span><span class="op">$</span><span class="fu">setPostalCode</span><span class="op">(</span><span class="st">"111"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">address</span><span class="op">$</span><span class="fu">setCountry</span><span class="op">(</span><span class="st">"France"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">address</span><span class="op">$</span><span class="fu">setEmail</span><span class="op">(</span><span class="st">"someone@theorg.org"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">contact</span><span class="op">$</span><span class="fu">setAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">res</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">res</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://somelink"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">res</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"someresourcename"</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span>
-<span class="r-in">      <span class="va">md</span><span class="op">$</span><span class="fu">addContact</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span>
-<span class="r-in">   <span class="op">}</span></span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#VectorSpatialRepresentation</span></span>
-<span class="r-in">   <span class="va">vsr</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOVectorSpatialRepresentation.html">ISOVectorSpatialRepresentation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">vsr</span><span class="op">$</span><span class="fu">setTopologyLevel</span><span class="op">(</span><span class="st">"geometryOnly"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">geomObject</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeometricObjects.html">ISOGeometricObjects</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">geomObject</span><span class="op">$</span><span class="fu">setGeometricObjectType</span><span class="op">(</span><span class="st">"surface"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">geomObject</span><span class="op">$</span><span class="fu">setGeometricObjectCount</span><span class="op">(</span><span class="fl">5L</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">vsr</span><span class="op">$</span><span class="fu">setGeometricObjects</span><span class="op">(</span><span class="va">geomObject</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>    <span class="co">#example 1 - WRITE: Create an ISO metadata and encode it as XML</span></span></span>
+<span class="r-in"><span>    <span class="co">#######################################################</span></span></span>
+<span class="r-in"><span>    <span class="va">md</span> <span class="op">=</span> <span class="va">ISOImageryMetadata</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setFileIdentifier</span><span class="op">(</span><span class="st">"my-metadata-identifier"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setParentIdentifier</span><span class="op">(</span><span class="st">"my-parent-metadata-identifier"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setCharacterSet</span><span class="op">(</span><span class="st">"utf8"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setLanguage</span><span class="op">(</span><span class="st">"eng"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setDateStamp</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setMetadataStandardName</span><span class="op">(</span><span class="st">"ISO 19115:2003/19139"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setMetadataStandardVersion</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setDataSetURI</span><span class="op">(</span><span class="st">"my-dataset-identifier"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    </span></span>
+<span class="r-in"><span>    <span class="co">#add 3 contacts</span></span></span>
+<span class="r-in"><span>    <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span></span>
+<span class="r-in"><span>      <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">rp</span><span class="op">$</span><span class="fu">setIndividualName</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"someone"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"someposition"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"myphonenumber"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">phone</span><span class="op">$</span><span class="fu">setFacsimile</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"myfacsimile"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">contact</span><span class="op">$</span><span class="fu">setPhone</span><span class="op">(</span><span class="va">phone</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">address</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAddress.html">ISOAddress</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">address</span><span class="op">$</span><span class="fu">setDeliveryPoint</span><span class="op">(</span><span class="st">"theaddress"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">address</span><span class="op">$</span><span class="fu">setCity</span><span class="op">(</span><span class="st">"thecity"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">address</span><span class="op">$</span><span class="fu">setPostalCode</span><span class="op">(</span><span class="st">"111"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">address</span><span class="op">$</span><span class="fu">setCountry</span><span class="op">(</span><span class="st">"France"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">address</span><span class="op">$</span><span class="fu">setEmail</span><span class="op">(</span><span class="st">"someone@theorg.org"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">contact</span><span class="op">$</span><span class="fu">setAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">res</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">res</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://somelink"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">res</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"someresourcename"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="va">md</span><span class="op">$</span><span class="fu">addContact</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="op">}</span></span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#VectorSpatialRepresentation</span></span></span>
+<span class="r-in"><span>   <span class="va">vsr</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOVectorSpatialRepresentation.html">ISOVectorSpatialRepresentation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">vsr</span><span class="op">$</span><span class="fu">setTopologyLevel</span><span class="op">(</span><span class="st">"geometryOnly"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">geomObject</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeometricObjects.html">ISOGeometricObjects</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">geomObject</span><span class="op">$</span><span class="fu">setGeometricObjectType</span><span class="op">(</span><span class="st">"surface"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">geomObject</span><span class="op">$</span><span class="fu">setGeometricObjectCount</span><span class="op">(</span><span class="fl">5L</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">vsr</span><span class="op">$</span><span class="fu">setGeometricObjects</span><span class="op">(</span><span class="va">geomObject</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">addSpatialRepresentationInfo</span><span class="op">(</span><span class="va">vsr</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addSpatialRepresentationInfo</span><span class="op">(</span><span class="va">vsr</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#ReferenceSystem</span></span>
-<span class="r-in">   <span class="va">rs</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOReferenceSystem.html">ISOReferenceSystem</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rsId</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOReferenceIdentifier.html">ISOReferenceIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"4326"</span>, codeSpace <span class="op">=</span> <span class="st">"EPSG"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rs</span><span class="op">$</span><span class="fu">setReferenceSystemIdentifier</span><span class="op">(</span><span class="va">rsId</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">setReferenceSystemInfo</span><span class="op">(</span><span class="va">rs</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#ReferenceSystem</span></span></span>
+<span class="r-in"><span>   <span class="va">rs</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOReferenceSystem.html">ISOReferenceSystem</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rsId</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOReferenceIdentifier.html">ISOReferenceIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"4326"</span>, codeSpace <span class="op">=</span> <span class="st">"EPSG"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rs</span><span class="op">$</span><span class="fu">setReferenceSystemIdentifier</span><span class="op">(</span><span class="va">rsId</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setReferenceSystemInfo</span><span class="op">(</span><span class="va">rs</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#data identification</span></span>
-<span class="r-in">   <span class="va">ident</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODataIdentification.html">ISODataIdentification</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">setAbstract</span><span class="op">(</span><span class="st">"abstract"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">setPurpose</span><span class="op">(</span><span class="st">"purpose"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addCredit</span><span class="op">(</span><span class="st">"credit1"</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#data identification</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODataIdentification.html">ISODataIdentification</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setAbstract</span><span class="op">(</span><span class="st">"abstract"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setPurpose</span><span class="op">(</span><span class="st">"purpose"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addCredit</span><span class="op">(</span><span class="st">"credit1"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addCredit</span><span class="op">(</span><span class="st">"credit2"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addCredit</span><span class="op">(</span><span class="st">"credit2"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addCredit</span><span class="op">(</span><span class="st">"credit3"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addCredit</span><span class="op">(</span><span class="st">"credit3"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addStatus</span><span class="op">(</span><span class="st">"completed"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addStatus</span><span class="op">(</span><span class="st">"completed"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">setLanguage</span><span class="op">(</span><span class="st">"eng"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setLanguage</span><span class="op">(</span><span class="st">"eng"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">setCharacterSet</span><span class="op">(</span><span class="st">"utf8"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setCharacterSet</span><span class="op">(</span><span class="st">"utf8"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addTopicCategory</span><span class="op">(</span><span class="st">"biota"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addTopicCategory</span><span class="op">(</span><span class="st">"biota"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addTopicCategory</span><span class="op">(</span><span class="st">"oceans"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addTopicCategory</span><span class="op">(</span><span class="st">"oceans"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#adding a point of contact</span></span>
-<span class="r-in">   <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rp</span><span class="op">$</span><span class="fu">setIndividualName</span><span class="op">(</span><span class="st">"someone"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="st">"someposition"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="st">"myphonenumber"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">phone</span><span class="op">$</span><span class="fu">setFacsimile</span><span class="op">(</span><span class="st">"myfacsimile"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">contact</span><span class="op">$</span><span class="fu">setPhone</span><span class="op">(</span><span class="va">phone</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">address</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAddress.html">ISOAddress</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">address</span><span class="op">$</span><span class="fu">setDeliveryPoint</span><span class="op">(</span><span class="st">"theaddress"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">address</span><span class="op">$</span><span class="fu">setCity</span><span class="op">(</span><span class="st">"thecity"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">address</span><span class="op">$</span><span class="fu">setPostalCode</span><span class="op">(</span><span class="st">"111"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">address</span><span class="op">$</span><span class="fu">setCountry</span><span class="op">(</span><span class="st">"France"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">address</span><span class="op">$</span><span class="fu">setEmail</span><span class="op">(</span><span class="st">"someone@theorg.org"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">contact</span><span class="op">$</span><span class="fu">setAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">res</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">res</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://somelink"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">res</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"somename"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addPointOfContact</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#adding a point of contact</span></span></span>
+<span class="r-in"><span>   <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setIndividualName</span><span class="op">(</span><span class="st">"someone"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="st">"someposition"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="st">"myphonenumber"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">phone</span><span class="op">$</span><span class="fu">setFacsimile</span><span class="op">(</span><span class="st">"myfacsimile"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">contact</span><span class="op">$</span><span class="fu">setPhone</span><span class="op">(</span><span class="va">phone</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">address</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAddress.html">ISOAddress</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">address</span><span class="op">$</span><span class="fu">setDeliveryPoint</span><span class="op">(</span><span class="st">"theaddress"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">address</span><span class="op">$</span><span class="fu">setCity</span><span class="op">(</span><span class="st">"thecity"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">address</span><span class="op">$</span><span class="fu">setPostalCode</span><span class="op">(</span><span class="st">"111"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">address</span><span class="op">$</span><span class="fu">setCountry</span><span class="op">(</span><span class="st">"France"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">address</span><span class="op">$</span><span class="fu">setEmail</span><span class="op">(</span><span class="st">"someone@theorg.org"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">contact</span><span class="op">$</span><span class="fu">setAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">res</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">res</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://somelink"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">res</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"somename"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addPointOfContact</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#citation</span></span>
-<span class="r-in">   <span class="va">ct</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ct</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"sometitle"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ct</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ct</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ct</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ct</span><span class="op">$</span><span class="fu">addIdentifier</span><span class="op">(</span><span class="va"><a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"identifier"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#citation</span></span></span>
+<span class="r-in"><span>   <span class="va">ct</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"sometitle"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addIdentifier</span><span class="op">(</span><span class="va"><a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"identifier"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ct</span><span class="op">$</span><span class="fu">addPresentationForm</span><span class="op">(</span><span class="st">"mapDigital"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addPresentationForm</span><span class="op">(</span><span class="st">"mapDigital"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ct</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">setCitation</span><span class="op">(</span><span class="va">ct</span><span class="op">)</span></span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#graphic overview</span></span>
-<span class="r-in">   <span class="va">go1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOBrowseGraphic.html">ISOBrowseGraphic</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
-<span class="r-in">     fileName <span class="op">=</span> <span class="st">"http://wwww.somefile.org/png1"</span>,</span>
-<span class="r-in">     fileDescription <span class="op">=</span> <span class="st">"Map Overview 1"</span>,</span>
-<span class="r-in">     fileType <span class="op">=</span> <span class="st">"image/png"</span></span>
-<span class="r-in">   <span class="op">)</span></span>
-<span class="r-in">   <span class="va">go2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOBrowseGraphic.html">ISOBrowseGraphic</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
-<span class="r-in">     fileName <span class="op">=</span> <span class="st">"http://www.somefile.org/png2"</span>,</span>
-<span class="r-in">     fileDescription <span class="op">=</span> <span class="st">"Map Overview 2"</span>,</span>
-<span class="r-in">     fileType <span class="op">=</span> <span class="st">"image/png"</span></span>
-<span class="r-in">   <span class="op">)</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addGraphicOverview</span><span class="op">(</span><span class="va">go1</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setCitation</span><span class="op">(</span><span class="va">ct</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#graphic overview</span></span></span>
+<span class="r-in"><span>   <span class="va">go1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOBrowseGraphic.html">ISOBrowseGraphic</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+<span class="r-in"><span>     fileName <span class="op">=</span> <span class="st">"http://wwww.somefile.org/png1"</span>,</span></span>
+<span class="r-in"><span>     fileDescription <span class="op">=</span> <span class="st">"Map Overview 1"</span>,</span></span>
+<span class="r-in"><span>     fileType <span class="op">=</span> <span class="st">"image/png"</span></span></span>
+<span class="r-in"><span>   <span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">go2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOBrowseGraphic.html">ISOBrowseGraphic</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+<span class="r-in"><span>     fileName <span class="op">=</span> <span class="st">"http://www.somefile.org/png2"</span>,</span></span>
+<span class="r-in"><span>     fileDescription <span class="op">=</span> <span class="st">"Map Overview 2"</span>,</span></span>
+<span class="r-in"><span>     fileType <span class="op">=</span> <span class="st">"image/png"</span></span></span>
+<span class="r-in"><span>   <span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addGraphicOverview</span><span class="op">(</span><span class="va">go1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addGraphicOverview</span><span class="op">(</span><span class="va">go2</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addGraphicOverview</span><span class="op">(</span><span class="va">go2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#maintenance information</span></span>
-<span class="r-in">   <span class="va">mi</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">mi</span><span class="op">$</span><span class="fu">setMaintenanceFrequency</span><span class="op">(</span><span class="st">"daily"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">setResourceMaintenance</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#maintenance information</span></span></span>
+<span class="r-in"><span>   <span class="va">mi</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">mi</span><span class="op">$</span><span class="fu">setMaintenanceFrequency</span><span class="op">(</span><span class="st">"daily"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setResourceMaintenance</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#adding legal constraints</span></span>
-<span class="r-in">   <span class="va">lc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOLegalConstraints.html">ISOLegalConstraints</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseLimitation</span><span class="op">(</span><span class="st">"limitation1"</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#adding legal constraints</span></span></span>
+<span class="r-in"><span>   <span class="va">lc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOLegalConstraints.html">ISOLegalConstraints</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseLimitation</span><span class="op">(</span><span class="st">"limitation1"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseLimitation</span><span class="op">(</span><span class="st">"limitation2"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseLimitation</span><span class="op">(</span><span class="st">"limitation2"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseLimitation</span><span class="op">(</span><span class="st">"limitation3"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseLimitation</span><span class="op">(</span><span class="st">"limitation3"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#adding security constraints</span></span>
-<span class="r-in">   <span class="va">sc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOSecurityConstraints.html">ISOSecurityConstraints</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">sc</span><span class="op">$</span><span class="fu">setClassification</span><span class="op">(</span><span class="st">"secret"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">sc</span><span class="op">$</span><span class="fu">setUserNote</span><span class="op">(</span><span class="st">"ultra secret"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">sc</span><span class="op">$</span><span class="fu">setClassificationSystem</span><span class="op">(</span><span class="st">"no classification in particular"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">sc</span><span class="op">$</span><span class="fu">setHandlingDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">sc</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#adding security constraints</span></span></span>
+<span class="r-in"><span>   <span class="va">sc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOSecurityConstraints.html">ISOSecurityConstraints</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">sc</span><span class="op">$</span><span class="fu">setClassification</span><span class="op">(</span><span class="st">"secret"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">sc</span><span class="op">$</span><span class="fu">setUserNote</span><span class="op">(</span><span class="st">"ultra secret"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">sc</span><span class="op">$</span><span class="fu">setClassificationSystem</span><span class="op">(</span><span class="st">"no classification in particular"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">sc</span><span class="op">$</span><span class="fu">setHandlingDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">sc</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#adding extent</span></span>
-<span class="r-in">   <span class="va">extent</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOExtent.html">ISOExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">bbox</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeographicBoundingBox.html">ISOGeographicBoundingBox</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>minx <span class="op">=</span> <span class="op">-</span><span class="fl">180</span>, miny <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, maxx <span class="op">=</span> <span class="fl">180</span>, maxy <span class="op">=</span> <span class="fl">90</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">extent</span><span class="op">$</span><span class="fu">setGeographicElement</span><span class="op">(</span><span class="va">bbox</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#adding extent</span></span></span>
+<span class="r-in"><span>   <span class="va">extent</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOExtent.html">ISOExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">bbox</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeographicBoundingBox.html">ISOGeographicBoundingBox</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>minx <span class="op">=</span> <span class="op">-</span><span class="fl">180</span>, miny <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, maxx <span class="op">=</span> <span class="fl">180</span>, maxy <span class="op">=</span> <span class="fl">90</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">extent</span><span class="op">$</span><span class="fu">setGeographicElement</span><span class="op">(</span><span class="va">bbox</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">setExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#add keywords</span></span>
-<span class="r-in">   <span class="va">kwds</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOKeywords.html">ISOKeywords</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">kwds</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword1"</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#add keywords</span></span></span>
+<span class="r-in"><span>   <span class="va">kwds</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOKeywords.html">ISOKeywords</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">kwds</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword1"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">kwds</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword2"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">kwds</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword2"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">kwds</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"General"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">kwds</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addKeywords</span><span class="op">(</span><span class="va">kwds</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">kwds</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"General"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">kwds</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addKeywords</span><span class="op">(</span><span class="va">kwds</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#add an INSPIRE spatial data theme?</span></span>
-<span class="r-in">   <span class="va">inspire_kwd</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOKeywords.html">ISOKeywords</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">anc1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
-<span class="r-in">     name <span class="op">=</span> <span class="st">"Environmental monitoring facilities"</span>,</span>
-<span class="r-in">     href <span class="op">=</span> <span class="st">"http://inspire.ec.europa.eu/theme/ef"</span></span>
-<span class="r-in">   <span class="op">)</span></span>
-<span class="r-in">   <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="va">anc1</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#add an INSPIRE spatial data theme?</span></span></span>
+<span class="r-in"><span>   <span class="va">inspire_kwd</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOKeywords.html">ISOKeywords</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">anc1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+<span class="r-in"><span>     name <span class="op">=</span> <span class="st">"Environmental monitoring facilities"</span>,</span></span>
+<span class="r-in"><span>     href <span class="op">=</span> <span class="st">"http://inspire.ec.europa.eu/theme/ef"</span></span></span>
+<span class="r-in"><span>   <span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="va">anc1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span></span>
-<span class="r-in">     <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
-<span class="r-in">       name <span class="op">=</span> <span class="st">"GEMET - INSPIRE themes, version 1.0"</span>,</span>
-<span class="r-in">       href<span class="op">=</span><span class="st">"http://www.eionet.europa.eu/gemet/inspire_themes"</span></span>
-<span class="r-in">     <span class="op">)</span></span>
-<span class="r-in">   <span class="op">)</span></span>
-<span class="r-in">   <span class="va">inspire_date</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2008-06-01"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">inspire_date</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addKeywords</span><span class="op">(</span><span class="va">inspire_kwd</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span></span></span>
+<span class="r-in"><span>     <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+<span class="r-in"><span>       name <span class="op">=</span> <span class="st">"GEMET - INSPIRE themes, version 1.0"</span>,</span></span>
+<span class="r-in"><span>       href<span class="op">=</span><span class="st">"http://www.eionet.europa.eu/gemet/inspire_themes"</span></span></span>
+<span class="r-in"><span>     <span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">inspire_date</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2008-06-01"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">inspire_date</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addKeywords</span><span class="op">(</span><span class="va">inspire_kwd</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#supplementalInformation</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">setSupplementalInformation</span><span class="op">(</span><span class="st">"some additional information"</span><span class="op">)</span></span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#spatial representation type</span></span>
-<span class="r-in">   <span class="va">ident</span><span class="op">$</span><span class="fu">addSpatialRepresentationType</span><span class="op">(</span><span class="st">"vector"</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#supplementalInformation</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setSupplementalInformation</span><span class="op">(</span><span class="st">"some additional information"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#spatial representation type</span></span></span>
+<span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addSpatialRepresentationType</span><span class="op">(</span><span class="st">"vector"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">setIdentificationInfo</span><span class="op">(</span><span class="va">ident</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setIdentificationInfo</span><span class="op">(</span><span class="va">ident</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#Distribution</span></span>
-<span class="r-in">   <span class="va">distrib</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODistribution.html">ISODistribution</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">dto</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODigitalTransferOptions.html">ISODigitalTransferOptions</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span>  </span>
-<span class="r-in">   <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span>
-<span class="r-in">     <span class="va">or</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">     <span class="va">or</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"http://somelink"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">     <span class="va">or</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">     <span class="va">or</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"description"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">     <span class="va">or</span><span class="op">$</span><span class="fu">setProtocol</span><span class="op">(</span><span class="st">"WWW:LINK-1.0-http--link"</span><span class="op">)</span></span>
-<span class="r-in">     <span class="va">dto</span><span class="op">$</span><span class="fu">addOnlineResource</span><span class="op">(</span><span class="va">or</span><span class="op">)</span></span>
-<span class="r-in">   <span class="op">}</span></span>
-<span class="r-in">   <span class="va">distrib</span><span class="op">$</span><span class="fu">setDigitalTransferOptions</span><span class="op">(</span><span class="va">dto</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#Distribution</span></span></span>
+<span class="r-in"><span>   <span class="va">distrib</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODistribution.html">ISODistribution</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">dto</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODigitalTransferOptions.html">ISODigitalTransferOptions</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span>  </span></span>
+<span class="r-in"><span>   <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span></span>
+<span class="r-in"><span>     <span class="va">or</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>     <span class="va">or</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"http://somelink"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>     <span class="va">or</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"name"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>     <span class="va">or</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"description"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>     <span class="va">or</span><span class="op">$</span><span class="fu">setProtocol</span><span class="op">(</span><span class="st">"WWW:LINK-1.0-http--link"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>     <span class="va">dto</span><span class="op">$</span><span class="fu">addOnlineResource</span><span class="op">(</span><span class="va">or</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="op">}</span></span></span>
+<span class="r-in"><span>   <span class="va">distrib</span><span class="op">$</span><span class="fu">setDigitalTransferOptions</span><span class="op">(</span><span class="va">dto</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">setDistributionInfo</span><span class="op">(</span><span class="va">distrib</span><span class="op">)</span></span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#create dataQuality object with a 'dataset' scope</span></span>
-<span class="r-in">   <span class="va">dq</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODataQuality.html">ISODataQuality</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">scope</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOScope.html">ISOScope</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">scope</span><span class="op">$</span><span class="fu">setLevel</span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">dq</span><span class="op">$</span><span class="fu">setScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">   <span class="co">#add data quality reports...</span></span>
-<span class="r-in">  </span>
-<span class="r-in">   <span class="co">#add a report the data quality</span></span>
-<span class="r-in">   <span class="va">dc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">result</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">spec</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">spec</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"Data Quality check"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">spec</span><span class="op">$</span><span class="fu">addAlternateTitle</span><span class="op">(</span><span class="st">"This is is some data quality check report"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setDistributionInfo</span><span class="op">(</span><span class="va">distrib</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#create dataQuality object with a 'dataset' scope</span></span></span>
+<span class="r-in"><span>   <span class="va">dq</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODataQuality.html">ISODataQuality</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">scope</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOScope.html">ISOScope</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">scope</span><span class="op">$</span><span class="fu">setLevel</span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">dq</span><span class="op">$</span><span class="fu">setScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>   <span class="co">#add data quality reports...</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>   <span class="co">#add a report the data quality</span></span></span>
+<span class="r-in"><span>   <span class="va">dc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">result</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">spec</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">spec</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"Data Quality check"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">spec</span><span class="op">$</span><span class="fu">addAlternateTitle</span><span class="op">(</span><span class="st">"This is is some data quality check report"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">spec</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">result</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">spec</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">result</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"some explanation about the conformance"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">result</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">dc</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">spec</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">result</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">spec</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">result</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"some explanation about the conformance"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">result</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">dc</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">   <span class="co">#add INSPIRE reports?</span></span>
-<span class="r-in">   <span class="co">#INSPIRE - interoperability of spatial data sets and services</span></span>
-<span class="r-in">   <span class="va">dc_inspire1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_spec1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_title1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span></span>
-<span class="r-in">     <span class="st">"Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC"</span>,</span>
-<span class="r-in">     <span class="st">"of the European Parliament and of the Council as regards interoperability of spatial data"</span>,</span>
-<span class="r-in">     <span class="st">"sets and services"</span></span>
-<span class="r-in">   <span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_spec1</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="va">cr_title1</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"See the referenced specification"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_date1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2010</span>,<span class="fl">12</span>,<span class="fl">8</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_spec1</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date1</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec1</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">dc_inspire1</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">cr_inspire1</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>   <span class="co">#add INSPIRE reports?</span></span></span>
+<span class="r-in"><span>   <span class="co">#INSPIRE - interoperability of spatial data sets and services</span></span></span>
+<span class="r-in"><span>   <span class="va">dc_inspire1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_spec1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_title1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>     <span class="st">"Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC"</span>,</span></span>
+<span class="r-in"><span>     <span class="st">"of the European Parliament and of the Council as regards interoperability of spatial data"</span>,</span></span>
+<span class="r-in"><span>     <span class="st">"sets and services"</span></span></span>
+<span class="r-in"><span>   <span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_spec1</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="va">cr_title1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"See the referenced specification"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_date1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2010</span>,<span class="fl">12</span>,<span class="fl">8</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_spec1</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">dc_inspire1</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">cr_inspire1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc_inspire1</span><span class="op">)</span></span>
-<span class="r-in">   <span class="co">#INSPIRE - metadata</span></span>
-<span class="r-in">   <span class="va">dc_inspire2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_spec2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_title2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span></span>
-<span class="r-in">     <span class="st">"COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC"</span>,</span>
-<span class="r-in">     <span class="st">"of the European Parliament and of the Council as regards metadata"</span></span>
-<span class="r-in">   <span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_spec2</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="va">cr_title2</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"See the referenced specification"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_date2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2008</span>,<span class="fl">12</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire_spec2</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date2</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec2</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">dc_inspire2</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">cr_inspire2</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc_inspire1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="co">#INSPIRE - metadata</span></span></span>
+<span class="r-in"><span>   <span class="va">dc_inspire2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODomainConsistency.html">ISODomainConsistency</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOConformanceResult.html">ISOConformanceResult</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_spec2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_title2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>     <span class="st">"COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC"</span>,</span></span>
+<span class="r-in"><span>     <span class="st">"of the European Parliament and of the Council as regards metadata"</span></span></span>
+<span class="r-in"><span>   <span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_spec2</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="va">cr_title2</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"See the referenced specification"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_date2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2008</span>,<span class="fl">12</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire_spec2</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date2</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec2</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">dc_inspire2</span><span class="op">$</span><span class="fu">addResult</span><span class="op">(</span><span class="va">cr_inspire2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc_inspire2</span><span class="op">)</span></span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#add lineage</span></span>
-<span class="r-in">   <span class="va">lineage</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOLineage.html">ISOLineage</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">lineage</span><span class="op">$</span><span class="fu">setStatement</span><span class="op">(</span><span class="st">"statement"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">dq</span><span class="op">$</span><span class="fu">setLineage</span><span class="op">(</span><span class="va">lineage</span><span class="op">)</span></span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">setDataQualityInfo</span><span class="op">(</span><span class="va">dq</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">dq</span><span class="op">$</span><span class="fu">addReport</span><span class="op">(</span><span class="va">dc_inspire2</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#add lineage</span></span></span>
+<span class="r-in"><span>   <span class="va">lineage</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOLineage.html">ISOLineage</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">lineage</span><span class="op">$</span><span class="fu">setStatement</span><span class="op">(</span><span class="st">"statement"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">dq</span><span class="op">$</span><span class="fu">setLineage</span><span class="op">(</span><span class="va">lineage</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setDataQualityInfo</span><span class="op">(</span><span class="va">dq</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#Content Information</span></span>
-<span class="r-in">   <span class="co">#-------------------------</span></span>
-<span class="r-in">   <span class="co">#add a feature catalogue description</span></span>
-<span class="r-in">   <span class="va">fcd</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOFeatureCatalogueDescription.html">ISOFeatureCatalogueDescription</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">fcd</span><span class="op">$</span><span class="fu">setComplianceCode</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">fcd</span><span class="op">$</span><span class="fu">addLanguage</span><span class="op">(</span><span class="st">"eng"</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#Content Information</span></span></span>
+<span class="r-in"><span>   <span class="co">#-------------------------</span></span></span>
+<span class="r-in"><span>   <span class="co">#add a feature catalogue description</span></span></span>
+<span class="r-in"><span>   <span class="va">fcd</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOFeatureCatalogueDescription.html">ISOFeatureCatalogueDescription</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">fcd</span><span class="op">$</span><span class="fu">setComplianceCode</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">fcd</span><span class="op">$</span><span class="fu">addLanguage</span><span class="op">(</span><span class="st">"eng"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">fcd</span><span class="op">$</span><span class="fu">setIncludedWithDataset</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cit</span> <span class="op">=</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cit</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"sometitle"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cit</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cit</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cit</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">contact</span> <span class="op">=</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">fcLink</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">fcLink</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://somelink/featurecatalogue"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">fcLink</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rp</span> <span class="op">=</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"publisher"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">cit</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">fcd</span><span class="op">$</span><span class="fu">setIncludedWithDataset</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cit</span> <span class="op">=</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cit</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"sometitle"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cit</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cit</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cit</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">contact</span> <span class="op">=</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">fcLink</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">fcLink</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://somelink/featurecatalogue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">fcLink</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rp</span> <span class="op">=</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"publisher"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">cit</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">fcd</span><span class="op">$</span><span class="fu">addFeatureCatalogueCitation</span><span class="op">(</span><span class="va">cit</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">fcd</span><span class="op">$</span><span class="fu">addFeatureCatalogueCitation</span><span class="op">(</span><span class="va">cit</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">addContentInfo</span><span class="op">(</span><span class="va">fcd</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addContentInfo</span><span class="op">(</span><span class="va">fcd</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#XML representation of the ISOImageryMetadata</span></span>
-<span class="r-in">   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#XML representation of the ISOImageryMetadata</span></span></span>
+<span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmi}MI_Metadata': No matching global declaration available for the validation root at line 1. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOImageryMetadata' is INVALID according to ISO 19139 XML schemas! </span>
-<span class="r-in">   </span>
-<span class="r-in">   <span class="co">#example 2 - READ: Create an ISO imagery metadata reading from XML</span></span>
-<span class="r-in">   <span class="co">######################################################</span></span>
-<span class="r-in">   <span class="co"># \donttest{</span></span>
-<span class="r-in">   <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="http://www.omegahat.net/RSXML/" class="external-link">XML</a></span><span class="op">)</span></span>
+<span class="r-in"><span>   </span></span>
+<span class="r-in"><span>   <span class="co">#example 2 - READ: Create an ISO imagery metadata reading from XML</span></span></span>
+<span class="r-in"><span>   <span class="co">######################################################</span></span></span>
+<span class="r-in"><span>   <span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>   <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="http://www.omegahat.net/RSXML/" class="external-link">XML</a></span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: XML</span>
-<span class="r-in">   <span class="va">xmlfile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/examples"</span>, <span class="st">"metadata.xml"</span>, package <span class="op">=</span> <span class="st">"geometa"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/XML/man/xmlTreeParse.html" class="external-link">xmlParse</a></span><span class="op">(</span><span class="va">xmlfile</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOImageryMetadata</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="va">xml</span><span class="op">)</span></span>
-<span class="r-in">   <span class="co"># }</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span>   <span class="va">xmlfile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/examples"</span>, <span class="st">"metadata.xml"</span>, package <span class="op">=</span> <span class="st">"geometa"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/XML/man/xmlTreeParse.html" class="external-link">xmlParse</a></span><span class="op">(</span><span class="va">xmlfile</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOImageryMetadata</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="va">xml</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -584,7 +584,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

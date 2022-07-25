@@ -164,46 +164,46 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">   <span class="co">#encoding</span></span>
-<span class="r-in">   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOImageryObjective</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">setIdentifier</span><span class="op">(</span><span class="st">"identifier"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">setPriority</span><span class="op">(</span><span class="st">"urgent"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">addType</span><span class="op">(</span><span class="st">"survey"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>   <span class="co">#encoding</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOImageryObjective</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setIdentifier</span><span class="op">(</span><span class="st">"identifier"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setPriority</span><span class="op">(</span><span class="st">"urgent"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addType</span><span class="op">(</span><span class="st">"survey"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">addFunction</span><span class="op">(</span><span class="st">"my_function"</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addFunction</span><span class="op">(</span><span class="st">"my_function"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">evt</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOImageryEvent.html">ISOImageryEvent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">evt</span><span class="op">$</span><span class="fu">setIdentifier</span><span class="op">(</span><span class="st">"event_1"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">evt</span><span class="op">$</span><span class="fu">setTrigger</span><span class="op">(</span><span class="st">"manual"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">evt</span><span class="op">$</span><span class="fu">setContext</span><span class="op">(</span><span class="st">"pass"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">evt</span><span class="op">$</span><span class="fu">setSequence</span><span class="op">(</span><span class="st">"instantaneous"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">evt</span><span class="op">$</span><span class="fu">setTime</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">addObjectiveOccurance</span><span class="op">(</span><span class="va">evt</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">evt</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOImageryEvent.html">ISOImageryEvent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">evt</span><span class="op">$</span><span class="fu">setIdentifier</span><span class="op">(</span><span class="st">"event_1"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">evt</span><span class="op">$</span><span class="fu">setTrigger</span><span class="op">(</span><span class="st">"manual"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">evt</span><span class="op">$</span><span class="fu">setContext</span><span class="op">(</span><span class="st">"pass"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">evt</span><span class="op">$</span><span class="fu">setSequence</span><span class="op">(</span><span class="st">"instantaneous"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">evt</span><span class="op">$</span><span class="fu">setTime</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addObjectiveOccurance</span><span class="op">(</span><span class="va">evt</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">extent</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOExtent.html">ISOExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">bbox</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeographicBoundingBox.html">ISOGeographicBoundingBox</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>minx <span class="op">=</span> <span class="op">-</span><span class="fl">180</span>, miny <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, maxx <span class="op">=</span> <span class="fl">180</span>, maxy <span class="op">=</span> <span class="fl">90</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">extent</span><span class="op">$</span><span class="fu">setGeographicElement</span><span class="op">(</span><span class="va">bbox</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">extent</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOExtent.html">ISOExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">bbox</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeographicBoundingBox.html">ISOGeographicBoundingBox</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>minx <span class="op">=</span> <span class="op">-</span><span class="fl">180</span>, miny <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, maxx <span class="op">=</span> <span class="fl">180</span>, maxy <span class="op">=</span> <span class="fl">90</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">extent</span><span class="op">$</span><span class="fu">setGeographicElement</span><span class="op">(</span><span class="va">bbox</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">time</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTemporalExtent.html">ISOTemporalExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">start</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2000</span>, <span class="fl">1</span>, <span class="fl">12</span>, <span class="fl">12</span>, <span class="fl">59</span>, <span class="fl">45</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">end</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2010</span>, <span class="fl">8</span>, <span class="fl">22</span>, <span class="fl">13</span>, <span class="fl">12</span>, <span class="fl">43</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">tp</span> <span class="op">&lt;-</span> <span class="va"><a href="GMLTimePeriod.html">GMLTimePeriod</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>beginPosition <span class="op">=</span> <span class="va">start</span>, endPosition <span class="op">=</span> <span class="va">end</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">time</span><span class="op">$</span><span class="fu">setTimePeriod</span><span class="op">(</span><span class="va">tp</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">extent</span><span class="op">$</span><span class="fu">setTemporalElement</span><span class="op">(</span><span class="va">time</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">time</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTemporalExtent.html">ISOTemporalExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">start</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2000</span>, <span class="fl">1</span>, <span class="fl">12</span>, <span class="fl">12</span>, <span class="fl">59</span>, <span class="fl">45</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">end</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2010</span>, <span class="fl">8</span>, <span class="fl">22</span>, <span class="fl">13</span>, <span class="fl">12</span>, <span class="fl">43</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">tp</span> <span class="op">&lt;-</span> <span class="va"><a href="GMLTimePeriod.html">GMLTimePeriod</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>beginPosition <span class="op">=</span> <span class="va">start</span>, endPosition <span class="op">=</span> <span class="va">end</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">time</span><span class="op">$</span><span class="fu">setTimePeriod</span><span class="op">(</span><span class="va">tp</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">extent</span><span class="op">$</span><span class="fu">setTemporalElement</span><span class="op">(</span><span class="va">time</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">vert</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOVerticalExtent.html">ISOVerticalExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">vert</span><span class="op">$</span><span class="fu">setMinimumValue</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">vert</span><span class="op">$</span><span class="fu">setMaximumValue</span><span class="op">(</span><span class="fl">19</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">extent</span><span class="op">$</span><span class="fu">setVerticalElement</span><span class="op">(</span><span class="va">vert</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">vert</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOVerticalExtent.html">ISOVerticalExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">vert</span><span class="op">$</span><span class="fu">setMinimumValue</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">vert</span><span class="op">$</span><span class="fu">setMaximumValue</span><span class="op">(</span><span class="fl">19</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">extent</span><span class="op">$</span><span class="fu">setVerticalElement</span><span class="op">(</span><span class="va">vert</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="fu">addExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="va">sensingInstrument</span> <span class="op">=</span> <span class="cn">NA</span></span>
-<span class="r-in">   <span class="va">md</span><span class="op">$</span><span class="va">pass</span> <span class="op">=</span> <span class="cn">NA</span></span>
-<span class="r-in">   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="va">sensingInstrument</span> <span class="op">=</span> <span class="cn">NA</span></span></span>
+<span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="va">pass</span> <span class="op">=</span> <span class="cn">NA</span></span></span>
+<span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmi}MI_Objective': No matching global declaration available for the validation root at line 1. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOImageryObjective' is INVALID according to ISO 19139 XML schemas! </span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -218,7 +218,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

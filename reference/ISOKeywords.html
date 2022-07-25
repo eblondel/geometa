@@ -112,60 +112,60 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="co">#a basic keyword set</span></span>
-<span class="r-in">  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOKeywords</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword1"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co">#a basic keyword set</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOKeywords</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword1"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword2"</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword2"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"General"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"General"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmd}CI_Citation': Missing child element(s). Expected is one of ( {http://www.isotc211.org/2005/gmd}alternateTitle, {http://www.isotc211.org/2005/gmd}date ) at line 12. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOKeywords' is INVALID according to ISO 19139 XML schemas! </span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="co">#a keyword set with anchors</span></span>
-<span class="r-in">  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOKeywords</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">kwd1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
-<span class="r-in">    name <span class="op">=</span> <span class="st">"keyword1"</span>,</span>
-<span class="r-in">    href <span class="op">=</span> <span class="st">"http://myvocabulary.geometa/keyword1"</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="va">kwd1</span><span class="op">)</span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="co">#a keyword set with anchors</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOKeywords</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">kwd1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    name <span class="op">=</span> <span class="st">"keyword1"</span>,</span></span>
+<span class="r-in"><span>    href <span class="op">=</span> <span class="st">"http://myvocabulary.geometa/keyword1"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="va">kwd1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">kwd2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
-<span class="r-in">    name <span class="op">=</span> <span class="st">"keyword2"</span>,</span>
-<span class="r-in">    href <span class="op">=</span> <span class="st">"http://myvocabulary.geometa/keyword2"</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="va">kwd2</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">kwd2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    name <span class="op">=</span> <span class="st">"keyword2"</span>,</span></span>
+<span class="r-in"><span>    href <span class="op">=</span> <span class="st">"http://myvocabulary.geometa/keyword2"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="va">kwd2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISOKeywords' is VALID according to ISO 19139 XML schemas! </span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="co">#Example for INSPIRE (GEMET Spatial Data Theme)</span></span>
-<span class="r-in">  <span class="va">inspire_kwd</span> <span class="op">&lt;-</span> <span class="va">ISOKeywords</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">anc1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
-<span class="r-in">    name <span class="op">=</span> <span class="st">"Environmental monitoring facilities"</span>,</span>
-<span class="r-in">    href <span class="op">=</span> <span class="st">"http://inspire.ec.europa.eu/theme/ef"</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in">  <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="va">anc1</span><span class="op">)</span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="co">#Example for INSPIRE (GEMET Spatial Data Theme)</span></span></span>
+<span class="r-in"><span>  <span class="va">inspire_kwd</span> <span class="op">&lt;-</span> <span class="va">ISOKeywords</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">anc1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    name <span class="op">=</span> <span class="st">"Environmental monitoring facilities"</span>,</span></span>
+<span class="r-in"><span>    href <span class="op">=</span> <span class="st">"http://inspire.ec.europa.eu/theme/ef"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="va">anc1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span></span>
-<span class="r-in">    <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
-<span class="r-in">     name <span class="op">=</span> <span class="st">"GEMET - INSPIRE themes, version 1.0"</span>,</span>
-<span class="r-in">     href<span class="op">=</span><span class="st">"http://www.eionet.europa.eu/gemet/inspire_themes"</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in">  <span class="va">inspire_date</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2008-06-01"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">inspire_date</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span>
-<span class="r-in">  </span>
+<span class="r-in"><span>  <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+<span class="r-in"><span>     name <span class="op">=</span> <span class="st">"GEMET - INSPIRE themes, version 1.0"</span>,</span></span>
+<span class="r-in"><span>     href<span class="op">=</span><span class="st">"http://www.eionet.europa.eu/gemet/inspire_themes"</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">inspire_date</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2008-06-01"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">inspire_date</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
 </code></pre></div>
     </div>
   </div>
@@ -180,7 +180,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

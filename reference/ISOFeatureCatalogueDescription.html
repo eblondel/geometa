@@ -121,24 +121,24 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOFeatureCatalogueDescription</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setComplianceCode</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">addLanguage</span><span class="op">(</span><span class="st">"eng"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOFeatureCatalogueDescription</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setComplianceCode</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addLanguage</span><span class="op">(</span><span class="st">"eng"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">setIncludedWithDataset</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in">  </span>
-<span class="r-in">  <span class="va">cit</span> <span class="op">=</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">contact</span> <span class="op">=</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">fcLink</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">fcLink</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://somelink/featurecatalogue"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">fcLink</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">rp</span> <span class="op">=</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">cit</span><span class="op">$</span><span class="fu">setCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setIncludedWithDataset</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  </span></span>
+<span class="r-in"><span>  <span class="va">cit</span> <span class="op">=</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">contact</span> <span class="op">=</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">fcLink</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">fcLink</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://somelink/featurecatalogue"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">fcLink</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">rp</span> <span class="op">=</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">cit</span><span class="op">$</span><span class="fu">setCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>'setCitedResponsibleParty' method is deprecated, use 'addCitedResponsibleParty' instead</span>
-<span class="r-in">  <span class="va">md</span><span class="op">$</span><span class="fu">addFeatureCatalogueCitation</span><span class="op">(</span><span class="va">cit</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addFeatureCatalogueCitation</span><span class="op">(</span><span class="va">cit</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"> </span>
+<span class="r-in"><span> </span></span>
 </code></pre></div>
     </div>
   </div>
@@ -153,7 +153,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
