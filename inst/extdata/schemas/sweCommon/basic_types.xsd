@@ -7,7 +7,7 @@
 		To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		</documentation>
 	</annotation>
-	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="../xlink/xlink.xsd"/>
 	<include schemaLocation="swe.xsd"/>
 	<!-- ================================================= -->
 	<element name="AbstractSWE" type="swe:AbstractSWEType" abstract="true">
