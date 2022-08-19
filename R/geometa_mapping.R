@@ -815,7 +815,7 @@ convert_metadata <- function(obj, from, to, mappings, verbose = FALSE){
 #' @param x a \code{data.frame} containing the metadata mapping rules
 #'
 registerMappings <- function(x){
-  if(class(x)!="data.frame"){
+  if(!is(x,"data.frame")){
     stop("The object containing the mapping rules should be a 'data.frame'")
   }
   .geometa.mappings$rules <- x
