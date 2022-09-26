@@ -61,7 +61,7 @@ GMLElement <- R6Class("GMLElement",
               childName <- names(children)[i]
               childElem <- GMLElement$new(element = childName)
               childElem$decode(xml = childXML)
-              if(is(self[[childName]], "list")){
+              if(is(self[[childName]], "list") | !is.null(self[[childName]])){
                 self[[childName]] <- c(self[[childName]], childElem)
               }else{
                 self[[childName]] <- childElem
