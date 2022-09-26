@@ -39,7 +39,7 @@ setValue
 }}
 
 \references{
-OGC Geography Markup Language. https://www.ogc.org/standards/swecommon
+SWE Common Data Model Encoding Standard. https://www.ogc.org/standards/swecommon
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
