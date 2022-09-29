@@ -17,13 +17,23 @@
 \item{optional}{optional}
 
 \item{definition}{definition}
+
+\item{nilValue}{value to set as nil Value. object of class \code{numeric}}
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an SWE Abstract simple component
 }
 \description{
 Initializes an object of class \link{SWEAbstractSimpleComponent}
+
+Set nil value and its reason (optional)
 }
+\section{Fields}{
+
+\describe{
+\item{\code{nilValues}}{nil values}
+}}
+
 \references{
 SWE Common Data Model Encoding Standard. https://www.ogc.org/standards/swecommon
 }
