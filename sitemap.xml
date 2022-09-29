@@ -979,6 +979,9 @@
     <loc>/reference/SWEAbstractObject.html</loc>
   </url>
   <url>
+    <loc>/reference/SWEAbstractSWE.html</loc>
+  </url>
+  <url>
     <loc>/reference/SWEAbstractSimpleComponent.html</loc>
   </url>
   <url>
@@ -995,6 +998,9 @@
   </url>
   <url>
     <loc>/reference/SWEDataRecord.html</loc>
+  </url>
+  <url>
+    <loc>/reference/SWENilValues.html</loc>
   </url>
   <url>
     <loc>/reference/SWEQuantity.html</loc>
