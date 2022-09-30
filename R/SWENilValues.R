@@ -21,13 +21,24 @@ SWENilValues <- R6Class("SWENilValues",
    public = list(
      
      #'@field nilValue nil value
-     nilValue = matrix(NA_real_, 1, 1),
+     nilValue = list(),
      
-     initialize = function(xml = NULL, value = NULL){
+     #'@description Initializes a SWE Nil Values object
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param values vector of numerical values to consider as nil values
+     initialize = function(xml = NULL){
        super$initialize(xml, element = private$xmlElement, 
                         attrs = list(), defaults = list(),
                         wrap = FALSE)
-        if(!is.null(value)) self$nilValue = value
+     },
+     
+     #'@description Adds a nil value with a reason
+     #'@param value value
+     #'@param reason reason
+     addNilValue = function(value, reason){
+        nilValueElem <- SWEElement$create(element = "nilValue", value = value)
+        nilValueElem$setAttr("reason", reason)
+        self$nilValue <- c(self$nilValue, nilValueElem)
      }
    )                        
 )

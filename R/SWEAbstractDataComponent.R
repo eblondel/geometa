@@ -40,7 +40,7 @@ SWEAbstractDataComponent <- R6Class("SWEAbstractDataComponent",
     #'@param definition definition
     initialize = function(xml = NULL, element = NULL, updatable = NULL, optional = FALSE, definition = NULL){
       if(is.null(element)) element <- private$xmlElement
-      super$initialize(xml, element = element, attrs = list(), defaults = list(), wrap = FALSE)
+      super$initialize(xml, element = element, attrs = list(), defaults = list(), wrap = FALSE, value_as_field = TRUE)
       if(!is.null(updatable)) if(is.logical(updatable)) self$setAttr("updatable", tolower(updatable))
       self$setAttr("optional", tolower(optional))
       if(!is.null(definition)) self$setAttr("definition", definition)

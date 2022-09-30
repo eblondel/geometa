@@ -12,7 +12,7 @@ context("SWEQuantity")
 test_that("SWEQuantity",{
   testthat::skip_on_cran()
   #encoding
-  q <- SWEQuantity$new(value = 2.56)
+  q <- SWEQuantity$new(value = 2.56, uom = "m")
   xml <- q$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding

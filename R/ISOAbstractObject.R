@@ -611,7 +611,19 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 self[[fieldName]] <- gmlElem
               }
             }
-            
+           
+          }else if(inherits(self, "SWEAbstractObject")){ 
+            #TODO see how to improve encoding/decoding for GML/SWE objects
+            xmlNamespacePrefix <- self$getClass()$private_fields$xmlNamespacePrefix
+            if(startsWith(nsPrefix,"swe")) xmlNamespacePrefix <- toupper(nsPrefix)
+            if(is.null(xmlNamespacePrefix)) xmlNamespacePrefix <- "SWE"
+            sweElem <- SWEElement$new(element = fieldName, xmlNamespacePrefix = xmlNamespacePrefix)
+            sweElem$decode(xml = childElement)
+            if(is(self[[fieldName]], "list")){
+              self[[fieldName]] <- c(self[[fieldName]], sweElem)
+            }else{
+              self[[fieldName]] <- sweElem
+            }
           }else{
             value <- xmlValue(child)
             isList <- is.list(self$getClass()$public_fields[[fieldName]])

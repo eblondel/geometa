@@ -17,6 +17,8 @@
 \item{defaults}{defaults}
 
 \item{wrap}{wrap}
+
+\item{value_as_field}{whether value should be set as field}
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an SWE abstract object

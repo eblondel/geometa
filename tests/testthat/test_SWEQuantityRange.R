@@ -12,7 +12,7 @@ context("SWEQuantityRange")
 test_that("SWEQuantityRange",{
   testthat::skip_on_cran()
   #encoding
-  qr <- SWEQuantityRange$new(value = matrix(c(0,1),1,2))
+  qr <- SWEQuantityRange$new(value = matrix(c(0,1),1,2), uom = "m")
   xml <- qr$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding

@@ -7,11 +7,22 @@
 \format{
 \code{\link{R6Class}} object.
 }
+\arguments{
+\item{xml}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+
+\item{values}{vector of numerical values to consider as nil values}
+
+\item{value}{value}
+
+\item{reason}{reason}
+}
 \value{
 Object of \code{\link{R6Class}} for modelling an SWE nil values object
 }
 \description{
-SWENilValues
+Initializes a SWE Nil Values object
+
+Adds a nil value with a reason
 }
 \section{Fields}{
 

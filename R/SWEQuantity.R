@@ -52,7 +52,9 @@ SWEQuantity <- R6Class("SWEQuantity",
     #'@description setUom
     #'@param uom uom
     setUom = function(uom){
-      self$uom <- uom
+      uomElem <- SWEElement$create(element = "uom")
+      uomElem$setAttr("code", uom)
+      self$uom <- uomElem
     },
     
     #'@description setConstraint
