@@ -352,14 +352,14 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         (x %in% private$system_fields)
       })]
       
-      cat(sprintf("<%s>", self$getClassName()))
+      if(!inherits(self, "GMLElement") && !inherits(self, "SWEElement")) cat(crayon::white(paste0("<", crayon::underline(self$getClassName()), ">")))
       if(is(self, "ISOCodeListValue")){
         clVal <- self$printAttrs$codeListValue
         clDes <- self$codelistId$entries[self$codelistId$entries$value == clVal,"description"]
         if(length(clDes)==0){
           clDes <- self$valueDescription
         }
-        cat(paste0(": ", clVal, " {",clDes,"}"))
+        cat(paste0(": ", clVal, crayon::cyan(paste0(" {",clDes,"}"))))
       }
       
       for(field in fields){
@@ -376,24 +376,34 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         shift <- "...."
         if(!is.null(fieldObj)){
           if(is(fieldObj, "ISOAbstractObject")){
-            cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, " "))
+            attrs_str <- ""
+            if(length(fieldObj$attrs)>0){
+              attrs <- paste(sapply(names(fieldObj$attrs), function(attrName){paste0(attrName,"=",fieldObj$attrs[[attrName]])}), collapse=",")
+              attrs_str <- paste0("[",attrs,"]")
+            }
+            cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str, " "))
             fieldObj$print(depth = depth+1)
           }else if(is(fieldObj, "ISOAttributes")){
             attrs <- paste(sapply(names(fieldObj$attrs), function(attrName){paste0(attrName,"=",fieldObj$attrs[[attrName]])}), collapse=",")
-            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, "[",attrs,"]"))
+            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), "[",attrs,"]"))
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
               if(is(item, "ISOAbstractObject")){
-                cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, " "))
+                attrs_str <- ""
+                if(length(item$attrs)>0){
+                  attrs <- paste(sapply(names(item$attrs), function(attrName){paste0(attrName,"=",item$attrs[[attrName]])}), collapse=",")
+                  attrs_str <- paste0("[",attrs,"]")
+                }
+                cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str))
                 item$print(depth = depth+1)
                 if(is(item, "ISOCodeListValue")){
                   clVal <- item$printAttrs$codeListValue
                   clDes <- item$codelistId$entries[item$codelistId$entries$value == clVal,"description"]
-                  cat(paste0(": ", clVal, " {",clDes,"}"))
+                  cat(paste0(": ", clVal, crayon::cyan(paste0(" {",clDes,"}"))))
                 }
               }else if(is(item, "ISOAttributes")){
                 attrs <- paste(sapply(names(item$attrs), function(attrName){paste0(attrName,"=",item$attrs[[attrName]])}), collapse=",")
-                cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, "[",attrs,"]"))
+                cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), "[",attrs,"]"))
               }else if(is(item, "matrix")){
                 m <- paste(apply(item, 1L, function(x){
                   x <- lapply(x, function(el){
@@ -408,9 +418,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   })
                   return(paste(x, collapse = " "))
                 }), collapse = " ")
-                cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", m))
+                cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), ": ", crayon::bgWhite(m)))
               }else{
-                cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", item))
+                cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), ": ", crayon::bgWhite(item)))
               }
             }
           }else if (is(fieldObj,"matrix")){
@@ -427,9 +437,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               })
               return(paste(x, collapse = " "))
             }), collapse = " ")
-            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", m))
+            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), ": ", crayon::bgWhite(m)))
           }else{
-            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", fieldObj))
+            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), ": ", crayon::bgWhite(fieldObj)))
           }
         }
       }
