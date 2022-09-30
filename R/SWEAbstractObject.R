@@ -26,7 +26,7 @@ SWEAbstractObject <- R6Class("SWEAbstractObject",
      #'@param defaults defaults
      #'@param wrap wrap
      #'@param value_as_field whether value should be set as field
-     initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), wrap = FALSE,
+     initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), wrap = TRUE,
                            value_as_field = FALSE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element, namespace = private$xmlNamespacePrefix, 

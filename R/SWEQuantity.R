@@ -27,7 +27,7 @@ SWEQuantity <- R6Class("SWEQuantity",
     constraint = NULL,
     
     #'@field value value
-    value = NA_real_,
+    value = NULL,
     
     #'@description Initializes an object of class \link{SWEQuantity}
     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}

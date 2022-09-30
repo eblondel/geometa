@@ -29,7 +29,7 @@ SWENilValues <- R6Class("SWENilValues",
      initialize = function(xml = NULL){
        super$initialize(xml, element = private$xmlElement, 
                         attrs = list(), defaults = list(),
-                        wrap = FALSE)
+                        wrap = TRUE)
      },
      
      #'@description Adds a nil value with a reason
