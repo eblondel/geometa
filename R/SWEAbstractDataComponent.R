@@ -21,8 +21,6 @@ SWEAbstractDataComponent <- R6Class("SWEAbstractDataComponent",
     xmlNamespacePrefix = "SWE"
   ),
   public = list(
-    #'@field definition definition
-    definition = NULL,
     #'@field description description
     description = NULL,
     #'@field label label
@@ -46,16 +44,16 @@ SWEAbstractDataComponent <- R6Class("SWEAbstractDataComponent",
       if(!is.null(definition)) self$setAttr("definition", definition)
     },
     
-    #'@description Set definition
-    #'@param definition definition
-    setDefinition = function(definition){
-      self$definition <- definition
-    },
-    
     #'@description Set description
     #'@param description description
     setDescription = function(description){
-      self$description <- description
+      self$description <- SWEElement$create(element = "description", value = description)
+    },
+    
+    #'@description Set label
+    #'@param label label
+    setLabel = function(label){
+      self$label <- SWEElement$create(element = "label", value = label)
     },
     
     #'@description Adds name
@@ -77,7 +75,7 @@ SWEAbstractDataComponent <- R6Class("SWEAbstractDataComponent",
     #'@description Set identifier
     #'@param identifier identifier
     setIdentifier = function(identifier){
-      self$identifier <- identifier
+      self$identifier <- SWEElement$create(element = "identifier", value = identifier)
     }
   )                        
 )
