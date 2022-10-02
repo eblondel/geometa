@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         config:
-          - {os: ubuntu-20.04,   r: '4.3', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
+          - {os: ubuntu-20.04,   r: '4.2.1', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
     
     env:
         INSPIRE_API_ENDPOINT: ${{ secrets.INSPIRE_API_ENDPOINT }}
