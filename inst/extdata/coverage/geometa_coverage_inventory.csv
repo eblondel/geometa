@@ -477,7 +477,7 @@
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractObject","SWEAbstractObject",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSimpleComponent","SWEAbstractSimpleComponent",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWE","SWEAbstractSWE",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWEIdentifiable","<missing>",FALSE
+"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWEIdentifiable","SWEAbstractSWEIdentifiable",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedTimes","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedTokens","<missing>",FALSE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedValues","<missing>",FALSE

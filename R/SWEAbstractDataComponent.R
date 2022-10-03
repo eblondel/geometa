@@ -15,20 +15,15 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 SWEAbstractDataComponent <- R6Class("SWEAbstractDataComponent",
-  inherit = SWEAbstractObject,
+  inherit = SWEAbstractSWEIdentifiable,
   private = list(
     xmlElement = "AbstractDataComponent",
     xmlNamespacePrefix = "SWE"
   ),
   public = list(
-    #'@field description description
-    description = NULL,
-    #'@field label label
-    label = NULL,
+
     #'@field name name
     name = list(),
-    #'@field identifier identifier
-    identifier = NULL,
     
     #'@description Initializes an object of class \link{SWEAbstractDataComponent}
     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
@@ -42,18 +37,6 @@ SWEAbstractDataComponent <- R6Class("SWEAbstractDataComponent",
       if(!is.null(updatable)) if(is.logical(updatable)) self$setAttr("updatable", tolower(updatable))
       self$setAttr("optional", tolower(optional))
       if(!is.null(definition)) self$setAttr("definition", definition)
-    },
-    
-    #'@description Set description
-    #'@param description description
-    setDescription = function(description){
-      self$description <- SWEElement$create(element = "description", value = description)
-    },
-    
-    #'@description Set label
-    #'@param label label
-    setLabel = function(label){
-      self$label <- SWEElement$create(element = "label", value = label)
     },
     
     #'@description Adds name
@@ -70,12 +53,6 @@ SWEAbstractDataComponent <- R6Class("SWEAbstractDataComponent",
     delName = function(name, codeSpace = NULL){
       name <- GMLCodeType$new(value = name, codeSpace = codeSpace)
       return(self$delListElement("name", name))
-    },
-    
-    #'@description Set identifier
-    #'@param identifier identifier
-    setIdentifier = function(identifier){
-      self$identifier <- SWEElement$create(element = "identifier", value = identifier)
     }
   )                        
 )
