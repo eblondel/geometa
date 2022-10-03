@@ -976,6 +976,9 @@
     <loc>/reference/SWEAbstractDataComponent.html</loc>
   </url>
   <url>
+    <loc>/reference/SWEAbstractEncoding.html</loc>
+  </url>
+  <url>
     <loc>/reference/SWEAbstractObject.html</loc>
   </url>
   <url>
@@ -1015,10 +1018,16 @@
     <loc>/reference/SWEText.html</loc>
   </url>
   <url>
+    <loc>/reference/SWETextEncoding.html</loc>
+  </url>
+  <url>
     <loc>/reference/SWETime.html</loc>
   </url>
   <url>
     <loc>/reference/SWETimeRange.html</loc>
+  </url>
+  <url>
+    <loc>/reference/SWEXMLEncoding.html</loc>
   </url>
   <url>
     <loc>/reference/cacheISOClasses.html</loc>
