@@ -14,7 +14,6 @@ test_that("SWEAbstractDataComponent",{
   #encoding
   adc <- SWEAbstractDataComponent$new()
   adc$addName("test name")
-  adc$setDefinition("definition")
   adc$setDescription("description")
   adc$setIdentifier("identifier")
   xml <- adc$encode()
