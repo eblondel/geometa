@@ -25,7 +25,6 @@ SWENilValues <- R6Class("SWENilValues",
      
      #'@description Initializes a SWE Nil Values object
      #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
-     #'@param values vector of numerical values to consider as nil values
      initialize = function(xml = NULL){
        super$initialize(xml, element = private$xmlElement, 
                         attrs = list(), defaults = list(),

@@ -20,7 +20,9 @@
 
 \item{constraint}{constraint}
 
-\item{value}{value}
+\item{start}{start time}
+
+\item{end}{end time}
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an SWE Time Range

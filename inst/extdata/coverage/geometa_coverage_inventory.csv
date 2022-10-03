@@ -473,7 +473,7 @@
 "GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","ReferenceableGridByTransformation","GMLReferenceableGridByTransformation",TRUE
 "GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","ReferenceableGridByVectors","GMLReferenceableGridByVectors",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractDataComponent","SWEAbstractDataComponent",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractEncoding","<missing>",FALSE
+"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractEncoding","SWEAbstractEncoding",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractObject","SWEAbstractObject",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSimpleComponent","SWEAbstractSimpleComponent",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWE","SWEAbstractSWE",TRUE
@@ -497,8 +497,8 @@
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Quantity","SWEQuantity",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","QuantityRange","SWEQuantityRange",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Text","SWEText",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TextEncoding","<missing>",FALSE
+"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TextEncoding","SWETextEncoding",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Time","SWETime",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TimeRange","SWETimeRange",TRUE
 "SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Vector","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","XMLEncoding","<missing>",FALSE
+"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","XMLEncoding","SWEXMLEncoding",TRUE

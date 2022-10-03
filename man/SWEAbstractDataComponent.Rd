@@ -20,6 +20,8 @@
 
 \item{description}{description}
 
+\item{label}{label}
+
 \item{name}{name}
 
 \item{codeSpace}{codespace}
@@ -32,9 +34,9 @@ Object of \code{\link{R6Class}} for modelling an SWE Abstract data component
 \description{
 Initializes an object of class \link{SWEAbstractDataComponent}
 
-Set definition
-
 Set description
+
+Set label
 
 Adds name
 
@@ -45,8 +47,6 @@ Set identifier
 \section{Fields}{
 
 \describe{
-\item{\code{definition}}{definition}
-
 \item{\code{description}}{description}
 
 \item{\code{label}}{label}
