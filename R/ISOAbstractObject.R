@@ -1551,6 +1551,80 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
   return(text1 == text2)
 }
 
+#' @name getClassesInheriting
+#' @aliases getClassesInheriting
+#' @title getClassesInheriting
+#'
+#' @param classname the name of the superclass for which inheriting sub-classes have to be listed
+#' @param extended whether we want to look at user namespace for third-party sub-classes
+#' @param pretty prettify the output as \code{data.frame}
+
+#' @export
+#' @description get the list of classes inheriting a given super class provided by its name
+#'
+#' @usage getClassesInheriting(classname, extended, pretty)
+#'
+#' @examples
+#'   getClassesInheriting("ISAbstractObject")
+getClassesInheriting <- function(classname, extended = FALSE, pretty = FALSE){
+  list_of_classes <- ls(getNamespaceInfo("geometa", "exports"))
+  if(extended) {
+    search_envs <- search()
+    search_envs <- search_envs[search_envs!="package:geometa"]
+    list_of_other_classes <- unlist(sapply(search_envs, ls))
+    list_of_classes <- c(list_of_classes, list_of_other_classes)
+  }
+  
+  list_of_classes <- list_of_classes[sapply(list_of_classes, function(x){
+    clazz <- try(eval(parse(text=x)),silent=TRUE)
+    if(is(clazz, "try-error")) clazz <- try(eval(parse(text=paste0("geometa::",x))),silent=TRUE)
+    r6Predicate <- class(clazz)[1]=="R6ClassGenerator"
+    if(!r6Predicate) return(FALSE)
+    
+    geometaObjPredicate <- FALSE
+    superclazz <- clazz
+    while(!geometaObjPredicate && !is.null(superclazz)){
+      clazz_fields <- names(superclazz)
+      if(!is.null(clazz_fields)) if(length(clazz_fields)>0){
+        if("get_inherit" %in% clazz_fields){
+          superclazz <- superclazz$get_inherit()
+          geometaPredicate <- FALSE
+          if("parent_env" %in% clazz_fields) geometaPredicate <- environmentName(superclazz$parent_env)=="geometa"
+          geometaObjPredicate <- superclazz$classname == classname && geometaPredicate
+        }else{
+          break
+        }
+      }
+    }
+    return(geometaObjPredicate)
+  })]
+  
+  list_of_classes <- as.vector(list_of_classes)
+  if(pretty){
+    std_infos <- do.call("rbind",lapply(list_of_classes, function(x){
+      clazz <- try(eval(parse(text=x)),silent=TRUE)
+      if(is(clazz,"try-error")) clazz <- try(eval(parse(text=paste0("geometa::",x))),silent=TRUE)
+      print(clazz)
+      std_info <- data.frame(
+        environment = environmentName(clazz$parent_env),
+        ns_prefix = if(!is.null(clazz$private_fields$xmlNamespacePrefix))clazz$private_fields$xmlNamespacePrefix else NA,
+        ns_uri = if(!is.null(clazz$private_fields$xmlNamespacePrefix)) ISOMetadataNamespace[[clazz$private_fields$xmlNamespacePrefix]]$uri else NA,
+        element = if(!is.null(clazz$private_fields$xmlElement)) clazz$private_fields$xmlElement else NA,
+        stringsAsFactors = FALSE
+      )
+      
+      return(std_info)
+    }))
+    
+    list_of_classes <- cbind(
+      class = list_of_classes,
+      std_infos,
+      stringsAsFactors = FALSE
+    )
+  }
+  return(list_of_classes)
+}
+
 #' @name cacheISOClasses
 #' @aliases cacheISOClasses
 #' @title cacheISOClasses
@@ -1571,7 +1645,7 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 cacheISOClasses <- function(){
-  .geometa.iso$classes <- ISOAbstractObject$getISOClasses(extended = TRUE, pretty = FALSE)
+  .geometa.iso$classes <- getClassesInheriting(classname = "ISOAbstractObject", extended = TRUE, pretty = FALSE)
 }
 
 #' @name getISOClasses
