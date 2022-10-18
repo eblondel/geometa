@@ -1228,7 +1228,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     
     #getClass
     getClass = function(){
-      class <- eval(parse(text=self$getClassName()))
+      class <- try(eval(parse(text = self$getClassName())), silent = TRUE)
+      if(is(class, "try-error")) class <- try(eval(parse(text = paste0("geometa::",self$getClassName()))), silent = TRUE)
       return(class)
     },
     
