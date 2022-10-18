@@ -92,8 +92,8 @@
 #'    Gets the namespace definition of the current ISO* class. By default, only
 #'    the namespace definition of the current element is retrieved (\code{recursive = FALSE}).
 #'  }
-#'  \item{\code{getClassName()}}{
-#'    Gets the class name
+#'  \item{\code{getClassName(level)}}{
+#'    Gets the class name. The level of class inheritance. Default is \code{1L}
 #'  }
 #'  \item{\code{getClass()}}{
 #'    Gets the class
@@ -1222,14 +1222,20 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     },
     
     #getClassName
-    getClassName = function(){
-      return(class(self)[1])
+    getClassName = function(level = 1L){
+      return(class(self)[level])
     },
     
     #getClass
     getClass = function(){
       class <- try(eval(parse(text = self$getClassName())), silent = TRUE)
-      if(is(class, "try-error")) class <- try(eval(parse(text = paste0("geometa::",self$getClassName()))), silent = TRUE)
+      level <- 1L
+      class_is_error <- is(class, "try-error")
+      while(class_is_error){
+        class <- try(eval(parse(text = paste0("geometa::",self$getClassName(level)))), silent = TRUE)
+        class_is_error <- is(class, "try-error")
+        if(class_is_error) level <- level + 1
+      }
       return(class)
     },
     
