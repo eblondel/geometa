@@ -441,7 +441,11 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             }), collapse = " ")
             cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), ": ", crayon::bgWhite(m)))
           }else{
-            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), ": ", crayon::bgWhite(fieldObj)))
+            fieldObjP <- fieldObj
+            if(is(fieldObjP,"Date")|is(fieldObjP, "POSIXt")){
+              fieldObjP <- private$fromComplexTypes(fieldObjP)
+            }
+            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), ": ", crayon::bgWhite(fieldObjP)))
           }
         }
       }
