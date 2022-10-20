@@ -1,28 +1,29 @@
 #' setIANAMimeTypes
 #' @export
 setIANAMimeTypes <- function(){
-  packageStartupMessage("Loading IANA mime types...")
+  #packageStartupMessage("Loading IANA mime types...")
   
+  #reference
   ianaUrl = "https://www.iana.org/assignments/media-types"
-  ping <- try(httr::HEAD(ianaUrl), silent = TRUE)
-  if(is(ping,"try-error")){
-    packageStartupMessage("IANA website not reachable, skipping IANA mime types loading...")
-    return(FALSE)
-  }
+  #ping <- try(httr::HEAD(ianaUrl), silent = TRUE)
+  #if(is(ping,"try-error")){
+  #  packageStartupMessage("IANA website not reachable, skipping IANA mime types loading...")
+  #  return(FALSE)
+  #}
   
   ianaNs = "http://www.iana.org/assignments"
-  xml = xmlParse(httr::content(httr::GET(paste0(ianaUrl, "/media-types.xml")), "text")) 
-  xml_records = getNodeSet(xml, "//ns:record", namespaces = c(ns = ianaNs))
+  xml = XML::xmlParse(system.file("extdata/mimetypes", "media-types.xml", package = "geometa", mustWork = TRUE)) 
+  xml_records = XML::getNodeSet(xml, "//ns:record", namespaces = c(ns = ianaNs))
   mimeTypes = do.call("rbind", lapply(xml_records,function(record){
       record_children = xmlChildren(record)
       
-      name = xmlValue(record_children$name)
-      file = xmlValue(record_children$file)
+      name = XML::xmlValue(record_children$name)
+      file = XML::xmlValue(record_children$file)
       if(!is.na(file)) name = file
       rfc = NA
       xrefs = record_children[names(record_children)=="xref"]
-      rfc_xrefs = xrefs[sapply(xrefs, xmlGetAttr, "type")=="rfc"]
-      if(length(rfc_xrefs)) rfc = xmlGetAttr(rfc_xrefs[[1]], "data")
+      rfc_xrefs = xrefs[sapply(xrefs, XML::xmlGetAttr, "type")=="rfc"]
+      if(length(rfc_xrefs)) rfc = XML::xmlGetAttr(rfc_xrefs[[1]], "data")
       
       mimeType = data.frame(
         name = name,
