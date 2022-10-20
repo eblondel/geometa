@@ -18,6 +18,9 @@
 #'    Sets the position (date or date and time of the resource contents), 
 #'    as object of class "POSIXct"/"POSIXt" or "Date"
 #'  }
+#'  \item{\code{getISOFormat}}{
+#'    Get back the ISO format representation for the time instant. Returns an object of class \code{character}
+#'  }
 #' }
 #' 
 #' @examples 
@@ -53,6 +56,30 @@ GMLTimeInstant <- R6Class("GMLTimeInstant",
          }
        }
        self$timePosition <- GMLElement$create("timePosition", value = timePos)
+     },
+     
+     #toISOFormat
+     toISOFormat = function(){
+        value = self$timePosition$value
+        if(suppressWarnings(all(class(value)==c("POSIXct","POSIXt")))){
+           tz <- attr(value, "tzone")
+           if(length(tz)>1){
+              if(tz %in% c("UTC","GMT")){
+                 value <- format(value,"%Y-%m-%dT%H:%M:%S")
+                 value <- paste0(value,"Z")
+              }else{
+                 utc_offset <- format(value, "%z")
+                 utc_offset <- paste0(substr(utc_offset,1,3),":",substr(utc_offset,4,5))
+                 value <- paste0(format(value,"%Y-%m-%dT%H:%M:%S"), utc_offset)
+              }
+           }else{
+              value <- format(value,"%Y-%m-%dT%H:%M:%S")
+           }
+        }else if(class(value)[1] == "Date"){
+           value <- format(value,"%Y-%m-%d")
+        }
+        
+        return(value)
      }
    )                        
 )

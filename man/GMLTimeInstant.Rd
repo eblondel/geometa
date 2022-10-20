@@ -29,6 +29,9 @@ GMLTimeInstant
    Sets the position (date or date and time of the resource contents), 
    as object of class "POSIXct"/"POSIXt" or "Date"
  }
+ \item{\code{getISOFormat}}{
+   Get back the ISO format representation for the time instant. Returns an object of class \code{character}
+ }
 }
 }
 
