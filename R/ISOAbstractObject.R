@@ -8,8 +8,10 @@
 #' @importFrom utils read.csv
 #' @import XML
 #' @import httr
+#' @import readr
 #' @import jsonlite
 #' @import keyring
+#' @import crayon
 #' @export
 #' @keywords ISO metadata element
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
