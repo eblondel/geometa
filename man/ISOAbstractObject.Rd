@@ -96,8 +96,8 @@ Abstract ISO Metadata class used internally by geometa
    Gets the namespace definition of the current ISO* class. By default, only
    the namespace definition of the current element is retrieved (\code{recursive = FALSE}).
  }
- \item{\code{getClassName()}}{
-   Gets the class name
+ \item{\code{getClassName(level)}}{
+   Gets the class name. The level of class inheritance. Default is \code{1L}
  }
  \item{\code{getClass()}}{
    Gets the class
