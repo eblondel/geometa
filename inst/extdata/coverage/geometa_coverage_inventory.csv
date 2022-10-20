@@ -466,7 +466,12 @@
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","VerticalCRS","GMLVerticalCRS",TRUE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","VerticalCS","GMLVerticalCS",TRUE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","VerticalDatum","<missing>",FALSE
+"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","AbstractContinuousCoverage","<missing>",FALSE
 "GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","AbstractCoverage","GMLCOVAbstractCoverage",TRUE
+"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","AbstractDiscreteCoverage","<missing>",FALSE
+"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","Extension","GMLCOVExtension",TRUE
+"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","SimpleMultiPoint","<missing>",FALSE
+"GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","AbstractReferenceableGrid","GMLAbstractReferenceableGrid",TRUE
 "GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","AbstractReferenceableGrid","GMLAbstractReferenceableGrid",TRUE
 "GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","GeneralGridAxis","GMLGeneralGridAxis",TRUE
 "GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","ReferenceableGridByArray","GMLReferenceableGridByArray",TRUE
