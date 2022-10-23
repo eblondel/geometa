@@ -12,23 +12,99 @@ Object of \code{\link{R6Class}} for modelling a simple logger
 }
 \description{
 geometaLogger
+
+geometaLogger
 }
 \note{
 Logger class used internally by geometa
 }
-\section{Abstract Methods}{
-
-\describe{
- \item{\code{INFO(text)}}{
-   Logger to report information. Used internally
- }
- \item{\code{WARN(text)}}{
-   Logger to report warnings. Used internally
- }
- \item{\code{ERROR(text)}}{
-   Logger to report errors. Used internally
- }
-}
-}
-
 \keyword{logger}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-geometaLogger-INFO}{\code{geometaLogger$INFO()}}
+\item \href{#method-geometaLogger-WARN}{\code{geometaLogger$WARN()}}
+\item \href{#method-geometaLogger-ERROR}{\code{geometaLogger$ERROR()}}
+\item \href{#method-geometaLogger-new}{\code{geometaLogger$new()}}
+\item \href{#method-geometaLogger-clone}{\code{geometaLogger$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-geometaLogger-INFO"></a>}}
+\if{latex}{\out{\hypertarget{method-geometaLogger-INFO}{}}}
+\subsection{Method \code{INFO()}}{
+Logger to report information. Used internally
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{geometaLogger$INFO(text)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{text}}{text}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-geometaLogger-WARN"></a>}}
+\if{latex}{\out{\hypertarget{method-geometaLogger-WARN}{}}}
+\subsection{Method \code{WARN()}}{
+Logger to report warnings Used internally
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{geometaLogger$WARN(text)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{text}}{text}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-geometaLogger-ERROR"></a>}}
+\if{latex}{\out{\hypertarget{method-geometaLogger-ERROR}{}}}
+\subsection{Method \code{ERROR()}}{
+Logger to report errors Used internally
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{geometaLogger$ERROR(text)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{text}}{text}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-geometaLogger-new"></a>}}
+\if{latex}{\out{\hypertarget{method-geometaLogger-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{geometaLogger$new()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-geometaLogger-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-geometaLogger-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{geometaLogger$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

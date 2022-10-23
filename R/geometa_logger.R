@@ -5,19 +5,6 @@
 #' @keywords logger
 #' @return Object of \code{\link{R6Class}} for modelling a simple logger
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Abstract Methods:
-#' \describe{
-#'  \item{\code{INFO(text)}}{
-#'    Logger to report information. Used internally
-#'  }
-#'  \item{\code{WARN(text)}}{
-#'    Logger to report warnings. Used internally
-#'  }
-#'  \item{\code{ERROR(text)}}{
-#'    Logger to report errors. Used internally
-#'  }
-#' }
 #' 
 #' @note Logger class used internally by geometa
 #'
@@ -28,10 +15,19 @@ geometaLogger <- R6Class("geometaLogger",
      }
    ),
    public = list(
-     #logger
+     #'@description Logger to report information. Used internally
+     #'@param text text
      INFO = function(text){private$logger("INFO", text)},
+     
+     #'@description Logger to report warnings Used internally
+     #'@param text text
      WARN = function(text){private$logger("WARN", text)},
+     
+     #'@description Logger to report errors Used internally
+     #'@param text text
      ERROR = function(text){private$logger("ERROR", text)},
+     
+     #'@description Initializes object
      initialize = function(){}
    )
 )

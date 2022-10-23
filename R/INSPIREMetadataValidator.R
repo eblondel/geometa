@@ -6,34 +6,6 @@
 #' @keywords INSPIRE metadata validator validation
 #' @return Object of \code{\link{R6Class}} for setting an INSPIREMetadataValidator
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(url, apiKey)}}{
-#'    This method is used to instantiate an INSPIRE Metadata validator. To check 
-#'    metadata with the INSPIRE metadata validator, a user API key is now required, 
-#'    and should be specified with the \code{apiKey}. By default, the \code{url} will be
-#'    the INSPIRE production service \url{https://inspire.ec.europa.eu/validator/swagger-ui.html}
-#'    
-#'    The \code{keyring_backend} can be set to use a different backend for storing 
-#'    the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
-#'  }
-#'  \item{\code{uploadFile(path)}}{
-#'    Upload a XML metadata file to INSPIRE web-service. Method called internally through
-#'    \code{getValidationReport}.
-#'  }
-#'  \item{\code{getAPIKey()}}{
-#'    Get the API user key
-#'  }
-#'  \item{\code{getValidationReport(obj, file, raw)}}{
-#'    Get validation report for a metadata specified either as R object of class
-#'    \code{ISOMetadata} (from \pkg{geometa} package) or \code{XMLInternalNode} 
-#'    (from \pkg{XML} package), or as XML file, providing the path of the XML file
-#'    to be sent to the INSPIRE metadata validator web-service. By default, a summary
-#'    report is returned. To append the raw response of INSPIRE validation web-service
-#'    to the summary report, set \code{raw = TRUE}.
-#'  }
-#' }
 #' 
 #' @examples
 #'  \donttest{
@@ -56,8 +28,21 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
     keyring_service = NULL
   ),
   public = list(
+    #'@field url url of the INSPIRE metadata validator
     url = "https://inspire.ec.europa.eu/validator/v2",
+    #'@field running wether the service is up and running
     running = FALSE,
+    
+    #'@description Method used to instantiate an INSPIRE Metadata validator. To check 
+    #'    metadata with the INSPIRE metadata validator, a user API key is now required, 
+    #'    and should be specified with the \code{apiKey}. By default, the \code{url} will be
+    #'    the INSPIRE production service \url{https://inspire.ec.europa.eu/validator/swagger-ui.html}.
+    #'    
+    #'    The \code{keyring_backend} can be set to use a different backend for storing 
+    #'    the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
+    #'@param url url
+    #'@param apiKey API key
+    #'@param keyring_backend backend name to use with \pkg{keyring} to store API key
     initialize = function(url = "https://inspire.ec.europa.eu/validator/v2",
                           apiKey, keyring_backend = 'env'){
       if(!require("httr")){
@@ -73,7 +58,10 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       
     },
     
-    #uploadFile
+    #'@description Uploads a file. Upload a XML metadata file to INSPIRE web-service. Method called internally through
+    #'    \code{getValidationReport}.
+    #'@param path path
+    #'@return the response from the web-service
     uploadFile = function(path){
       
       if(!self$running){
@@ -96,14 +84,24 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       return(out)
     },
     
-    #getAPIKey
+    #'@description Retrieves the API key
+    #'@return the API key as \link{character}
     getAPIKey = function(){
       apiKey <- try(private$keyring_backend$get(service = private$keyring_service, username = "geometa_inspire_validator"), silent = TRUE)
       if(is(apiKey, "try-error")) apiKey <- NULL
       return(apiKey)
     },
     
-    #getValidationReport
+    #'@description Get validation report for a metadata specified either as R object of class
+    #'    \link{ISOMetadata} (from \pkg{geometa} package) or \link{XMLInternalNode-class} 
+    #'    (from \pkg{XML} package), or as XML file, providing the path of the XML file
+    #'    to be sent to the INSPIRE metadata validator web-service. By default, a summary
+    #'    report is returned. To append the raw response of INSPIRE validation web-service
+    #'    to the summary report, set \code{raw = TRUE}.
+    #'@param obj obj
+    #'@param file file
+    #'@param raw raw
+    #'@return an object of class \link{list}
     getValidationReport = function(obj = NULL, file = NULL, raw = FALSE){
 
       if(!self$running){

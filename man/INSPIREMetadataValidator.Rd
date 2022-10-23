@@ -12,37 +12,9 @@ Object of \code{\link{R6Class}} for setting an INSPIREMetadataValidator
 }
 \description{
 INSPIREMetadataValidator
-}
-\section{Methods}{
 
-\describe{
- \item{\code{new(url, apiKey)}}{
-   This method is used to instantiate an INSPIRE Metadata validator. To check 
-   metadata with the INSPIRE metadata validator, a user API key is now required, 
-   and should be specified with the \code{apiKey}. By default, the \code{url} will be
-   the INSPIRE production service \url{https://inspire.ec.europa.eu/validator/swagger-ui.html}
-   
-   The \code{keyring_backend} can be set to use a different backend for storing 
-   the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
- }
- \item{\code{uploadFile(path)}}{
-   Upload a XML metadata file to INSPIRE web-service. Method called internally through
-   \code{getValidationReport}.
- }
- \item{\code{getAPIKey()}}{
-   Get the API user key
- }
- \item{\code{getValidationReport(obj, file, raw)}}{
-   Get validation report for a metadata specified either as R object of class
-   \code{ISOMetadata} (from \pkg{geometa} package) or \code{XMLInternalNode} 
-   (from \pkg{XML} package), or as XML file, providing the path of the XML file
-   to be sent to the INSPIRE metadata validator web-service. By default, a summary
-   report is returned. To append the raw response of INSPIRE validation web-service
-   to the summary report, set \code{raw = TRUE}.
- }
+INSPIREMetadataValidator
 }
-}
-
 \examples{
  \donttest{
   apiKey <- ""
@@ -63,3 +35,150 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{metadata}
 \keyword{validation}
 \keyword{validator}
+\section{Super class}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{INSPIREMetadataValidator}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{url}}{url of the INSPIRE metadata validator}
+
+\item{\code{running}}{wether the service is up and running}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-INSPIREMetadataValidator-new}{\code{INSPIREMetadataValidator$new()}}
+\item \href{#method-INSPIREMetadataValidator-uploadFile}{\code{INSPIREMetadataValidator$uploadFile()}}
+\item \href{#method-INSPIREMetadataValidator-getAPIKey}{\code{INSPIREMetadataValidator$getAPIKey()}}
+\item \href{#method-INSPIREMetadataValidator-getValidationReport}{\code{INSPIREMetadataValidator$getValidationReport()}}
+\item \href{#method-INSPIREMetadataValidator-clone}{\code{INSPIREMetadataValidator$clone()}}
+}
+}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-INSPIREMetadataValidator-new"></a>}}
+\if{latex}{\out{\hypertarget{method-INSPIREMetadataValidator-new}{}}}
+\subsection{Method \code{new()}}{
+Method used to instantiate an INSPIRE Metadata validator. To check 
+   metadata with the INSPIRE metadata validator, a user API key is now required, 
+   and should be specified with the \code{apiKey}. By default, the \code{url} will be
+   the INSPIRE production service \url{https://inspire.ec.europa.eu/validator/swagger-ui.html}.
+   
+   The \code{keyring_backend} can be set to use a different backend for storing 
+   the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{INSPIREMetadataValidator$new(
+  url = "https://inspire.ec.europa.eu/validator/v2",
+  apiKey,
+  keyring_backend = "env"
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{url}}{url}
+
+\item{\code{apiKey}}{API key}
+
+\item{\code{keyring_backend}}{backend name to use with \pkg{keyring} to store API key}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-INSPIREMetadataValidator-uploadFile"></a>}}
+\if{latex}{\out{\hypertarget{method-INSPIREMetadataValidator-uploadFile}{}}}
+\subsection{Method \code{uploadFile()}}{
+Uploads a file. Upload a XML metadata file to INSPIRE web-service. Method called internally through
+   \code{getValidationReport}.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{INSPIREMetadataValidator$uploadFile(path)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{path}}{path}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+the response from the web-service
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-INSPIREMetadataValidator-getAPIKey"></a>}}
+\if{latex}{\out{\hypertarget{method-INSPIREMetadataValidator-getAPIKey}{}}}
+\subsection{Method \code{getAPIKey()}}{
+Retrieves the API key
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{INSPIREMetadataValidator$getAPIKey()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+the API key as \link{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-INSPIREMetadataValidator-getValidationReport"></a>}}
+\if{latex}{\out{\hypertarget{method-INSPIREMetadataValidator-getValidationReport}{}}}
+\subsection{Method \code{getValidationReport()}}{
+Get validation report for a metadata specified either as R object of class
+   \link{ISOMetadata} (from \pkg{geometa} package) or \link{XMLInternalNode-class} 
+   (from \pkg{XML} package), or as XML file, providing the path of the XML file
+   to be sent to the INSPIRE metadata validator web-service. By default, a summary
+   report is returned. To append the raw response of INSPIRE validation web-service
+   to the summary report, set \code{raw = TRUE}.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{INSPIREMetadataValidator$getValidationReport(
+  obj = NULL,
+  file = NULL,
+  raw = FALSE
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{obj}}{obj}
+
+\item{\code{file}}{file}
+
+\item{\code{raw}}{raw}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+an object of class \link{list}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-INSPIREMetadataValidator-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-INSPIREMetadataValidator-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{INSPIREMetadataValidator$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}
