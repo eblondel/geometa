@@ -6,18 +6,6 @@
 #' @keywords ISO GML base unit definition
 #' @return Object of \code{\link{R6Class}} for modelling an GML base unit
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field unitsSystem
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Base Unit
-#'  }
-#'  \item{\code{setUnitsSystem(unitsSystem)}}{
-#'    Set the unit system
-#'  }
-#' }
 #' 
 #' @examples 
 #'   gml <- GMLBaseUnit$new()
@@ -44,8 +32,13 @@ GMLBaseUnit <- R6Class("GMLBaseUnit",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     #+ unitsSystem [1..1]: character
+     #'@field unitsSystem unitsSystem [1..1]: character
      unitsSystem = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param defaults list of default values
+     #'@param id id
      initialize = function(xml = NULL, defaults = list(), id = NULL){
        super$initialize(xml, defaults)
        if(is.null(xml)){
@@ -53,7 +46,8 @@ GMLBaseUnit <- R6Class("GMLBaseUnit",
        }
      },
      
-     #setUnitsSystem
+     #'@description Set unit system
+     #'@param unitsSystem units system
      setUnitsSystem = function(unitsSystem){
        self$unitsSystem <- GMLElement$create("unitsSystem", href = unitsSystem)
      }

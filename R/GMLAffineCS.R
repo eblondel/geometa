@@ -6,19 +6,8 @@
 #' @keywords ISO GML affine coordinate system
 #' @return Object of \code{\link{R6Class}} for modelling an GMLAffineCS
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Abstract CRS
-#'  }
-#'  \item{\code{addAxis(axis)}}{
-#'    Adds an axis, object of class \code{GMLCoordinateSystemAxis}
-#'  }
-#'  \item{\code{delAxis(axis)}}{
-#'    Deletes an axis, object of class \code{GMLCoordinateSystemAxis}
-#'  }
-#' }
+#' 
+#' @note Experimental
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.

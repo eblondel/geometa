@@ -6,34 +6,6 @@
 #' @keywords ISO time period
 #' @return Object of \code{\link{R6Class}} for modelling an GMLTimePeriod
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field beginPosition [\code{\link{POSIXt}}]
-#' @field endPosition [\code{\link{POSIXt}}]
-#' @field duration [\code{\link{character}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, beginPosition, endPosition)}}{
-#'    This method is used to instantiate an GMLTimePeriod
-#'  }
-#'  \item{\code{setBeginPosition(beginPosition)}}{
-#'    Sets the begin position (beginning date or date and time of the resource 
-#'    contents), as object of class "POSIXct"/"POSIXt" or "Date"
-#'  }
-#'  \item{\code{setEndPosition(endPosition)}}{
-#'    Sets the end position (ending date or date and time of the resource 
-#'    contents), as object of class "POSIXct"/"POSIXt" or "Date"
-#'  }
-#'  \item{\code{computeInterval()}}{
-#'   Computes the ISO interval string and set as GML id
-#'  }
-#'  \item{\code{setId(id)}}{
-#'  Sets the GML id string. 
-#'  }
-#'  \item{\code{setDuration(years, months, days, hours, mins, secs)}}{
-#'    Set duration (Length of time between measurements)
-#'  }
-#' }
 #' 
 #' @examples 
 #'   start <- ISOdate(2000, 1, 12, 12, 59, 45)
@@ -50,12 +22,17 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
-    #+ beginPosition [1]: 'POSIXct','POSIXt'
+    #'@field beginPosition beginPosition [1]: 'POSIXct','POSIXt'
     beginPosition = NULL,
-    #+ endPosition [1]: 'POSIXct','POSIXt'
+    #'@field endPosition endPosition [1]: 'POSIXct','POSIXt'
     endPosition = NULL,
-    #+ duration [0..1]: character
+    #'@field duration duration [0..1]: character
     duration = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param beginPosition object of class \link{numeric}, \link{Date} or \link{POSIXct-class}
+    #'@param endPosition object of class \link{numeric}, \link{Date} or \link{POSIXct-class}
     initialize = function(xml = NULL, beginPosition = NULL, endPosition = NULL){
       super$initialize(xml = xml)
       if(is.null(xml)){
@@ -64,7 +41,8 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       }
     },
     
-    #setBeginPosition
+    #'@description Set begin position
+    #'@param beginPosition object of class \link{numeric}, \link{Date} or \link{POSIXct-class}
     setBeginPosition = function(beginPosition){
       beginPos <- beginPosition
       if(is(beginPos,"numeric")) beginPos <- as(beginPos, "character")
@@ -77,7 +55,8 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       if(!is.null(self$endPosition)) self$computeInterval()
     },
     
-    #setEndPosition
+    #'@description Set end position
+    #'@param endPosition object of class \link{numeric}, \link{Date} or \link{POSIXct-class}
     setEndPosition = function(endPosition){
       endPos <- endPosition
       if(is(endPos,"numeric")) endPos <- as(endPos, "character")
@@ -90,7 +69,8 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       if(!is.null(self$beginPosition)) self$computeInterval()
     },
     
-    #computeInterval
+    #'@description Compute interval (ISO defined duration) and set proper attribute for XML encoding. The
+    #' method calls the static function \code{GMLTimePeriod$computeISODuration}
     computeInterval = function(){
       
       if(self$beginPosition$value > self$endPosition$value){
@@ -140,7 +120,13 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       self$setId(isoduration, addNS = TRUE)
     },
     
-    #setDuration
+    #'@description Set ISO duration
+    #'@param years years
+    #'@param months months
+    #'@param days days
+    #'@param hours hours
+    #'@param mins mins
+    #'@param secs secs
     setDuration = function(years = 0, months = 0, days = 0,
                            hours = 0, mins = 0, secs = 0){
       self$duration <- GMLTimePeriod$computeISODuration(years, months, days,
@@ -161,23 +147,3 @@ GMLTimePeriod$computeISODuration = function(years = 0, months = 0, days = 0,
   if(secs>0) duration <- paste0(duration, secs, "S")
   return(duration)
 }
-
-#' ISOTimePeriod
-#'
-#' @docType class
-#' @importFrom R6 R6Class
-#' @export
-#' @keywords ISO time period
-#' @return Object of \code{\link{R6Class}} for modelling an GMLTimePeriod
-#' @format \code{\link{R6Class}} object.
-#' 
-#' @section Warning: Deprecated class, use \code{GMLTimePeriod} instead
-#' 
-#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
-#' 
-ISOTimePeriod <- R6Class("ISOTimePeriod",
-   private = NULL,
-   public = list(initialize = function(xml = NULL, beginPosition, endPosition){
-    stop("Use of 'ISOTimePeriod' is deprecated, use 'GMLTimePeriod' instead!") 
-   })
-)

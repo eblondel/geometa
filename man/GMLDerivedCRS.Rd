@@ -12,35 +12,9 @@ Object of \code{\link{R6Class}} for modelling an GMLDerivedCRS
 }
 \description{
 GMLDerivedCRS
+
+GMLDerivedCRS
 }
-\section{Fields}{
-
-\describe{
-\item{\code{baseCRS}}{[\code{\link{GMLElement}}]}
-
-\item{\code{derivedCRSType}}{[\code{\link{GMLElement}}]}
-
-\item{\code{coordinateSystem}}{[\code{\link{GMLElement}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml, defaults, id)}}{
-   This method is used to instantiate a GML derived CRS
- }
- \item{\code{setBaseCRS(crs)}}{
-   Sets the base CRS, one object of class inherited from \code{GMLAbstractSingleCRS}
- }
- \item{\code{setDerivedCRSType(type, codeSpace)}}{
-   Sets a derived CRS type
- }
- \item{\code{setCoordinateSystem(cs)}}{
-   Sets the coordinate system
- }
-}
-}
-
 \references{
 ISO 19136:2007 Geographic Information -- Geographic Markup Language.
   http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32554 
@@ -54,3 +28,141 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{crs}
 \keyword{derived}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractGML]{geometa::GMLAbstractGML}} -> \code{\link[geometa:GMLDefinition]{geometa::GMLDefinition}} -> \code{\link[geometa:GMLAbstractCRS]{geometa::GMLAbstractCRS}} -> \code{\link[geometa:GMLAbstractSingleCRS]{geometa::GMLAbstractSingleCRS}} -> \code{\link[geometa:GMLAbstractGeneralDerivedCRS]{geometa::GMLAbstractGeneralDerivedCRS}} -> \code{GMLDerivedCRS}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{baseCRS}}{baseCRS [1..1]: inherited from GMLAbstractSingleCRS}
+
+\item{\code{derivedCRSType}}{derivedCRSType [1..1]: character}
+
+\item{\code{coordinateSystem}}{coordinateSystem [1..1]: inherited from GMLAbstractCoordinateSystem}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-GMLDerivedCRS-setBaseCRS}{\code{GMLDerivedCRS$setBaseCRS()}}
+\item \href{#method-GMLDerivedCRS-setDerivedCRSType}{\code{GMLDerivedCRS$setDerivedCRSType()}}
+\item \href{#method-GMLDerivedCRS-setCoordinateSystem}{\code{GMLDerivedCRS$setCoordinateSystem()}}
+\item \href{#method-GMLDerivedCRS-clone}{\code{GMLDerivedCRS$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="addName"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-addName'><code>geometa::GMLAbstractGML$addName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="delName"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-delName'><code>geometa::GMLAbstractGML$delName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="setDescription"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-setDescription'><code>geometa::GMLAbstractGML$setDescription()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="setDescriptionReference"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-setDescriptionReference'><code>geometa::GMLAbstractGML$setDescriptionReference()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="setIdentifier"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-setIdentifier'><code>geometa::GMLAbstractGML$setIdentifier()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLDefinition" data-id="addRemark"><a href='../../geometa/html/GMLDefinition.html#method-GMLDefinition-addRemark'><code>geometa::GMLDefinition$addRemark()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLDefinition" data-id="delRemark"><a href='../../geometa/html/GMLDefinition.html#method-GMLDefinition-delRemark'><code>geometa::GMLDefinition$delRemark()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCRS" data-id="addScope"><a href='../../geometa/html/GMLAbstractCRS.html#method-GMLAbstractCRS-addScope'><code>geometa::GMLAbstractCRS$addScope()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCRS" data-id="delScope"><a href='../../geometa/html/GMLAbstractCRS.html#method-GMLAbstractCRS-delScope'><code>geometa::GMLAbstractCRS$delScope()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCRS" data-id="initialize"><a href='../../geometa/html/GMLAbstractCRS.html#method-GMLAbstractCRS-initialize'><code>geometa::GMLAbstractCRS$initialize()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGeneralDerivedCRS" data-id="setConversion"><a href='../../geometa/html/GMLAbstractGeneralDerivedCRS.html#method-GMLAbstractGeneralDerivedCRS-setConversion'><code>geometa::GMLAbstractGeneralDerivedCRS$setConversion()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLDerivedCRS-setBaseCRS"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLDerivedCRS-setBaseCRS}{}}}
+\subsection{Method \code{setBaseCRS()}}{
+Set base CRS
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLDerivedCRS$setBaseCRS(crs)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{crs}}{object inheriting class \link{GMLAbstractSingleCRS}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLDerivedCRS-setDerivedCRSType"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLDerivedCRS-setDerivedCRSType}{}}}
+\subsection{Method \code{setDerivedCRSType()}}{
+Set derived CRS type
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLDerivedCRS$setDerivedCRSType(type, codeSpace = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{type}}{type}
+
+\item{\code{codeSpace}}{code space}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLDerivedCRS-setCoordinateSystem"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLDerivedCRS-setCoordinateSystem}{}}}
+\subsection{Method \code{setCoordinateSystem()}}{
+set coordinate system
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLDerivedCRS$setCoordinateSystem(cs)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{cs}}{cs, object inheriting class \link{GMLAbstractCoordinateSystem}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLDerivedCRS-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLDerivedCRS-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLDerivedCRS$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

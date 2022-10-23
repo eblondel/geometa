@@ -6,15 +6,6 @@
 #' @keywords ISO GML Geometric ring
 #' @return Object of \code{\link{R6Class}} for modelling an GML abstract ring
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML abstract ring
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.

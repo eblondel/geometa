@@ -6,30 +6,6 @@
 #' @keywords ISO GML geodetic crs
 #' @return Object of \code{\link{R6Class}} for modelling an GMLGeodeticCRS
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field ellipsoidalCS [\code{\link{GMLEllipsoidalCS}}]
-#' @field cartesianCS [\code{\link{GMLCartesianCS}}]
-#' @field sphericalCS [\code{\link{GMLSphericalCS}}]
-#' @field geodeticDatum [\code{GMLGeodeticDatum}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Abstract single CRS
-#'  }
-#'  \item{\code{setEllipsoidalCS(cs)}}{
-#'    Sets an ellipsoidal CS
-#'  }
-#'  \item{\code{setCartesianCS(cs)}}{
-#'    Sets a cartesian CS
-#'  }
-#'  \item{\code{setSphericalCS(cs)}}{
-#'    Sets a spherical CS
-#'  }
-#'  \item{\code{setGeodeticDatum(datum)}}{
-#'    Sets geodetic datum
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -47,16 +23,17 @@ GMLGeodeticCRS <- R6Class("GMLGeodeticCRS",
   ),
   public = list(
     
-    #+ ellipsoidalCS [1..1]: GMLEllipsoidalCS
+    #'@field ellipsoidalCS ellipsoidalCS [1..1]: GMLEllipsoidalCS
     ellipsoidalCS = NULL,
-    #+ cartesianCS [1..1]: GMLCartesianCS
+    #'@field cartesianCS cartesianCS [1..1]: GMLCartesianCS
     cartesianCS = NULL,
-    #+ sphericalCS [1..1]: GMLSphericalCS
+    #'@field sphericalCS sphericalCS [1..1]: GMLSphericalCS
     sphericalCS = NULL,
-    #+ geodeticDatum [1..1]: GMLGeodeticDatum
+    #'@field geodeticDatum geodeticDatum [1..1]: GMLGeodeticDatum
     geodeticDatum = NULL,
     
-    #setEllipsoidalCS
+    #'@description Set ellipsoidal CS
+    #'@param cs cs, object of class \link{GMLEllipsoidalCS}
     setEllipsoidalCS = function(cs){
       if(!is(cs, "GMLEllipsoidalCS")){
         stop("The argument value should be an object of class 'GMLEllipsoidalCS'")
@@ -66,7 +43,8 @@ GMLGeodeticCRS <- R6Class("GMLGeodeticCRS",
       self$sphericalCS <- NULL
     },
     
-    #setCartesianCS
+    #'@description Set cartesian CS
+    #'@param cs cs, object of class \link{GMLCartesianCS}
     setCartesianCS = function(cs){
       if(!is(cs, "GMLCartesianCS")){
         stop("The argument value should be an object of class 'GMLCartesianCS'")
@@ -76,7 +54,8 @@ GMLGeodeticCRS <- R6Class("GMLGeodeticCRS",
       self$sphericalCS <- NULL
     },
     
-    #setSphericalCS
+    #'@description Set spherical CS
+    #'@param cs cs, object of class \link{GMLSphericalCS}
     setSphericalCS = function(cs){
       if(!is(cs, "GMLSphericalCS")){
         stop("The argument value should be an object of class 'GMLSphericalCS'")
@@ -86,7 +65,8 @@ GMLGeodeticCRS <- R6Class("GMLGeodeticCRS",
       self$cartesianCS <- NULL
     },
     
-    #setGeodeticDatum
+    #'@description Set geodetic datum
+    #'@param datum object of class \link{GMLGeodeticDatum}
     setGeodeticDatum = function(datum){
       if(!is(datum, "GMLGeodeticDatum")){
         stop("The argument value should be an object of class 'GMLGeodeticDatum")

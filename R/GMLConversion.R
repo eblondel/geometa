@@ -6,28 +6,6 @@
 #' @keywords ISO GML conversion
 #' @return Object of \code{\link{R6Class}} for modelling an GMLConversion
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field method  [\code{\link{GMLElement}}]
-#' @field parameterValue [\code{list} of \code{\link{GMLAbstractGeneralParameterValue}}]
-#'
-#' @section Inherited methods:
-#' from \code{GMLAbstractCoordinateOperation}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Conversion
-#'  }
-#'  \item{\code{setMethod(method)}}{
-#'    Sets the method
-#'  }
-#'  \item{\code{addParameterValue(paramValue)}}{
-#'    Adds a parameter value
-#'  }
-#'  \item{\code{delParameterValue(paramValue)}}{
-#'    Deletes a parameter value
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -45,12 +23,13 @@ GMLConversion <- R6Class("GMLConversion",
     ),
     public = list(
       
-      #+ method [1..1]: GMLOperationMethod
+      #'@field method method [1..1]: GMLOperationMethod
       method = NULL,
-      #+ parameterValue [0..*]: GMLParameterValue
+      #'@field parameterValue parameterValue [0..*]: GMLParameterValue
       parameterValue = list(),
       
-      #setMethod
+      #'@description Set method
+      #'@param method method, object of class \link{GMLOperationMethod}
       setMethod = function(method){
         if(!is(method, "GMLOperationMethod")){
           stop("The argument value should be an object of class 'GMLOperationMethod'")
@@ -58,7 +37,9 @@ GMLConversion <- R6Class("GMLConversion",
         self$method <- GMLElement$create("method", method)
       },
       
-      #addParameterValue
+      #'@description Adds parameter value
+      #'@param paramValue parameter value, object class inheriting \link{GMLAbstractGeneralParameterValue}
+      #'@return \code{TRUE} if added, \code{FALSE} otherwise
       addParameterValue = function(paramValue){
         if(!inherits(paramValue, "GMLAbstractGeneralParameterValue")){
           stop("The argument value should be an object of class 'GMLParameterValue' or 'GMLParameterValueGroup'")
@@ -66,7 +47,9 @@ GMLConversion <- R6Class("GMLConversion",
         return(self$addListElement("parameterValue", paramValue))
       },
       
-      #delParameterValue
+      #'@description Deletes parameter value
+      #'@param paramValue parameter value, object class inheriting \link{GMLAbstractGeneralParameterValue}
+      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
       delParameterValue = function(paramValue){
         if(!inherits(paramValue, "GMLAbstractGeneralParameterValue")){
           stop("The argument value should be an object of class 'GMLParameterValue' or 'GMLParameterValueGroup'")

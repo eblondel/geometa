@@ -6,21 +6,6 @@
 #' @keywords ISO GML MultiCurve
 #' @return Object of \code{\link{R6Class}} for modelling an GML multicurve
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field curveMember
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, sfg)}}{
-#'    This method is used to instantiate a GML multicurve
-#'  }
-#'  \item{\code{addCurveMember(curve)}}{
-#'    Add a curve member
-#'  }
-#'  \item{\code{delCurveMember(curve)}}{
-#'    Deletes a curve member
-#'  }
-#' }
 #' 
 #' @note Experimental
 #' 
@@ -39,8 +24,14 @@ GMLMultiCurve <- R6Class("GMLMultiCurve",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field attrs gml attributes
      attrs = list("gml:id" = NA),
+     #'@field curveMember curve members
      curveMember = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param sfg simple feature geometry resulting from \pkg{sf}
      initialize = function(xml = NULL, sfg = NULL){
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)
        if(is.null(xml)){
@@ -56,7 +47,9 @@ GMLMultiCurve <- R6Class("GMLMultiCurve",
        }
      },
      
-     #addCurveMember
+     #'@description Adds curve member
+     #'@param curve curve object of class inheriting \link{GMLAbstractCurve}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addCurveMember = function(curve){
        if(!inherits(curve, "GMLAbstractCurve")){
          stop("Input 'curve' should be an object that inherits 'GMLAbstractCurve'")
@@ -68,7 +61,9 @@ GMLMultiCurve <- R6Class("GMLMultiCurve",
        return(added)
      },
      
-     #delCurveMember
+     #'@description Deletes curve member
+     #'@param curve curve object of class inheriting \link{GMLAbstractCurve}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delCurveMember = function(curve){
        if(!inherits(curve, "GMLAbstractCurve")){
          stop("Input 'curve' should be an object that inherits 'GMLAbstractCurve'")

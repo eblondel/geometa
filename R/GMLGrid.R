@@ -6,25 +6,6 @@
 #' @keywords ISO GML Grid
 #' @return Object of \code{\link{R6Class}} for modelling an GML grid
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML grid
-#'  }
-#'  \item{\code{setGridEnvelope(m)}}{
-#'    Set the grid envelope limits as object.
-#'  }
-#'  \item{\code{setAxislabels(xlabel,ylabel)}}{
-#'    Set the Axis labels
-#'  }
-#'  \item{\code{addAxisName(axisName)}}{
-#'    Adds an axis name
-#'  }
-#'  \item{\code{delAxisName(axisName)}}{
-#'    Deletes an axis name
-#'  }
-#' }
 #' 
 #' @note Class used internally by geometa
 #' 
@@ -43,9 +24,20 @@ GMLGrid <- R6Class("GMLGrid",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+      
+     #'@field limits limits
      limits = NULL,
+     #'@field axisLabels axis labels
      axisLabels = NULL,
+     #'@field axisName axis name
      axisName = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param element element name
+     #'@param attrs list of attributes
+     #'@param defaults list of default values
+     #'@param wrap wrap element?
      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
@@ -53,7 +45,8 @@ GMLGrid <- R6Class("GMLGrid",
                         defaults = defaults, wrap = wrap)
      },
      
-     #setGridEnvelope
+     #'@description Set grid envelope
+     #'@param m object of class \link{matrix}
      setGridEnvelope = function(m){
        if(!is.matrix(m)){
          stop("The argument m should an object of class 'matrix'")
@@ -71,7 +64,8 @@ GMLGrid <- R6Class("GMLGrid",
        
      },
      
-     #setAxisLabels
+     #'@description Set axis labels
+     #'@param labels labels
      setAxisLabels = function(labels){
        if(!is.null(self$limits)) if(length(labels) != self$attrs$dimension) {
          stop(sprintf("The length of labels [%s] does not match the number of dimensions [%s]",
@@ -84,7 +78,9 @@ GMLGrid <- R6Class("GMLGrid",
        self$axisLabels <- GMLElement$create(element = "axisLabels", value = m)
      },
      
-     #addAxisName
+     #'@description Adds axis name
+     #'@param axisName axis name
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addAxisName = function(axisName){
        if(is.null(axisName)) return(FALSE);
        if(is(axisName, "character")) if(is.na(axisName)) return(FALSE);
@@ -92,7 +88,9 @@ GMLGrid <- R6Class("GMLGrid",
        return(self$addListElement("axisName", axisName))
      },
      
-     #delAxisName
+     #'@description Deletes axis name
+     #'@param axisName axis name
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delAxisName = function(axisName){
        if(is.null(axisName)) return(FALSE);
        if(is(axisName, "character")) if(is.na(axisName)) return(FALSE);

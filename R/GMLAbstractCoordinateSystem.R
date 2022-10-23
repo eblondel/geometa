@@ -6,21 +6,6 @@
 #' @keywords ISO GML abstract coordinate system
 #' @return Object of \code{\link{R6Class}} for modelling an GMLAbstractCoordinateSystem
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field axis
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Abstract CRS
-#'  }
-#'  \item{\code{addAxis(axis)}}{
-#'    Adds an axis, object of class \code{GMLCoordinateSystemAxis}
-#'  }
-#'  \item{\code{delAxis(axis)}}{
-#'    Deletes an axis, object of class \code{GMLCoordinateSystemAxis}
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -38,9 +23,13 @@ GMLAbstractCoordinateSystem <- R6Class("GMLAbstractCoordinateSystem",
   ),
   public = list(
     
-    #+ axis [1..*]: GMLCoordinateSystemAxis
+    #'@field axis axis [1..*]: GMLCoordinateSystemAxis
     axis = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param defaults list of default values
+    #'@param id id
     initialize = function(xml = NULL, defaults = list(), id = NULL){
       super$initialize(xml = xml, defaults = defaults)
       if(is.null(xml)){
@@ -48,7 +37,9 @@ GMLAbstractCoordinateSystem <- R6Class("GMLAbstractCoordinateSystem",
       }
     },
     
-    #addAxis
+    #'@description Adds an axis
+    #'@param axis object of class \code{GMLCoordinateSystemAxis}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addAxis = function(axis){
       if(!is(axis, "GMLCoordinateSystemAxis")){
         stop("The argument value should be an object of class 'GMLCoordinateSystemAxis")
@@ -56,7 +47,9 @@ GMLAbstractCoordinateSystem <- R6Class("GMLAbstractCoordinateSystem",
       return(self$addListElement("axis", axis))
     },
     
-    #delAxis
+    #'@description Deletes an axis
+    #'@param axis object of class \code{GMLCoordinateSystemAxis}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delAxis = function(axis){
       if(!is(axis, "GMLCoordinateSystemAxis")){
         stop("The argument value should be an object of class 'GMLCoordinateSystemAxis")

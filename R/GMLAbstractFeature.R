@@ -6,18 +6,6 @@
 #' @keywords ISO GML abstract feature
 #' @return Object of \code{\link{R6Class}} for modelling an GML abstract feature
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML abstract feature
-#'  }
-#'  \item{\code{setBoundedBy(envelope)}}{
-#'    Set the boundedBy as object of class \code{GMLEnvelope}
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -34,7 +22,15 @@ GMLAbstractFeature <- R6Class("GMLAbstractFeature",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field boundedBy boundedBy envelope
      boundedBy = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param element element name
+     #'@param attrs list of attributes
+     #'@param defaults list of default values
+     #'@param wrap wrap element?
      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
@@ -42,7 +38,8 @@ GMLAbstractFeature <- R6Class("GMLAbstractFeature",
                         defaults = defaults, wrap = wrap)
      },
      
-     #setBoundedy
+     #'@description Sets bounding envelope
+     #'@param envelope envelope, object of class \link{GMLEnvelope}
      setBoundedBy = function(envelope){
        if(!is(envelope, "GMLEnvelope")){
          stop("Argument should be an object of class 'GMLEnvelope'")

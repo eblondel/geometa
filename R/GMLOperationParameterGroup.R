@@ -6,30 +6,6 @@
 #' @keywords ISO GML operation parameter group
 #' @return Object of \code{\link{R6Class}} for modelling an GMLOperationParameterGroup
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field maximumOccurs [\code{\link{GMLElement}}]
-#' @field parameter [\code{\link{GMLOperationParameter}}|\code{\link{GMLOperationParameterGroup}}]
-#'
-#' @section Inherited methods:
-#' from \code{GMLAbstractGeneralOperationParameter}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML OperationParameterGroup
-#'  }
-#'  \item{\code{setMaximumOccurs(maximumOccurs)}}{
-#'    Sets the maximum occurs, object of class \code{integer}
-#'  }
-#'  \item{\code{addParameter(parameter)}}{
-#'    Adds a parameter or parameter group, object of class \code{GMLOperationParameter}
-#'    or \code{GMLOperationParameterGroup}
-#'  }
-#'  \item{\code{delParameter(parameter)}}{
-#'    Deletes a parameter or parameter group, object of class \code{GMLOperationParameter}
-#'    or \code{GMLOperationParameterGroupo}
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -47,12 +23,13 @@ GMLOperationParameterGroup <- R6Class("GMLOperationParameterGroup",
    ),
    public = list(
      
-     #+ maximumOccurs [0..1]: integer
+     #'@field maximumOccurs maximumOccurs [0..1]: integer
      maximumOccurs = NULL,
-     #+ parameter [2..*]: GMLOperationParameter / GMLOperationParameterGroup
+     #'@field parameter parameter [2..*]: GMLOperationParameter / GMLOperationParameterGroup
      parameter = list(),
      
-     #setMaximumOccurs
+     #'@description Set maximum occurs
+     #'@param maximumOccurs maximumOccurs, object of class \link{integer}
      setMaximumOccurs = function(maximumOccurs){
        if(!is(maximumOccurs, "integer")){
          maximumOccurs <- as.integer(maximumOccurs)
@@ -63,7 +40,9 @@ GMLOperationParameterGroup <- R6Class("GMLOperationParameterGroup",
        self$maximumOccurs <- GMLElement$create("maximumOccurs", value = maximumOccurs)
      },
      
-     #addParameter
+     #'@description Adds a parameter
+     #'@param param object of class \link{GMLOperationParameter} or \link{GMLOperationParameterGroup}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addParameter = function(param){
        if(!inherits(param, "GMLAbstractGeneralOperationParameter")){
          stop("The argument value should be an object of class 'GMLOperationParameter' or 'GMLOperationParameterGroup'")
@@ -71,7 +50,9 @@ GMLOperationParameterGroup <- R6Class("GMLOperationParameterGroup",
        return(self$addListElement("parameter", param))
      },
      
-     #delParameter
+     #'@description Deletes a parameter
+     #'@param param object of class \link{GMLOperationParameter} or \link{GMLOperationParameterGroup}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delParameter = function(param){
        if(!inherits(param, "GMLAbstractGeneralOperationParameter")){
          stop("The argument value should be an object of class 'GMLOperationParameter' or 'GMLOperationParameterGroup'")

@@ -6,22 +6,6 @@
 #' @keywords ISO GML Grid
 #' @return Object of \code{\link{R6Class}} for modelling an GML rectified grid
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited Methods:
-#' \describe{
-#'  \item{\code{setGridEnvelope(xmin, xmax, ymin, ymax)}}{
-#'    Set the grid envelope limits with \code{xmin},\code{xmax},\code{ymin} and \code{ymax}.
-#'  }
-#'  \item{\code{setAxislabels(xlabel,ylabel)}}{
-#'    Set the Axis labels
-#'  }
-#'  \item{\code{addAxisName(axisName)}}{
-#'    Adds an axis name
-#'  }
-#'  \item{\code{delAxisName(axisName)}}{
-#'    Deletes an axis name
-#'  }
-#' }
 #' 
 #' @section Methods:
 #' \describe{
@@ -48,18 +32,27 @@ GMLRectifiedGrid <- R6Class("GMLRectifiedGrid",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field origin origin
      origin = NULL,
+     #'@field offsetVector offset vector
      offsetVector = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml, element = private$xmlElement)
      },
      
-     #setOrigin
+     #'@description Set origin
+     #'@param x x
+     #'@param y y
      setOrigin = function(x,y){
        self$origin <- GMLPoint$new(sfg = sf::st_point(c(x,y)))
      },
      
-     #addOffsetVector
+     #'@description Adds offset vector
+     #'@param vec vec, object of class \link{vector}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addOffsetVector = function(vec){
        if(!is.vector(vec)){ stop("Input should be a vector")}
        if(length(vec)!=self$attrs$dimension){
@@ -69,8 +62,9 @@ GMLRectifiedGrid <- R6Class("GMLRectifiedGrid",
        offsetVector <- GMLElement$create("offsetVector", list(matrix(vec,1,2)))
        return(self$addListElement("offsetVector", offsetVector))
      },
-     
-     #delOffsetVector
+     #'@description Deletes offset vector
+     #'@param vec vec, object of class \link{vector}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delOffsetVector = function(vec){
        if(!is.vector(vec)){ stop("Input should be a vector")}
        if(length(vec)!=self$attrs$dimension){

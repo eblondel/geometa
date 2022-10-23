@@ -6,15 +6,6 @@
 #' @keywords ISO GML LinearRing
 #' @return Object of \code{\link{R6Class}} for modelling an GML LinearRing
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field posList
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, m)}}{
-#'    This method is used to instantiate a GML LinearRing
-#'  }
-#' }
 #' 
 #' @note Experimental
 #' 
@@ -33,8 +24,15 @@ GMLLinearRing <- R6Class("GMLLinearRing",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
+    #'@field attrs gml attributes
     attrs = list("gml:id" = NA),
+    
+    #'@field posList list of positions
     posList = matrix(NA_real_, 2, 2),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param m simple object of class \link{matrix}
     initialize = function(xml = NULL, m){
       super$initialize(xml, element = private$xmlElement, wrap = TRUE)
       if(is.null(xml)){

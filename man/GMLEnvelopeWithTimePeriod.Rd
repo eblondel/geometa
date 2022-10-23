@@ -12,29 +12,9 @@ Object of \code{\link{R6Class}} for modelling an GML envelope with time period
 }
 \description{
 GMLEnvelopeWithTimePeriod
+
+GMLEnvelopeWithTimePeriod
 }
-\section{Fields}{
-
-\describe{
-\item{\code{beginPosition}}{[\code{\link{GMLElement}}]}
-
-\item{\code{endPosition}}{[\code{\link{GMLElement}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml, bbox, beginPosition, endPosition, 
-                 srsName, srsDimension, axisLabels, uomLabels)}}{
-   This method is used to instantiate a GML envelope with time period. The \code{bbox}
-   parameter should be an object of class \code{matrix} with 2 columns giving mix/max
-   values of each dimension (handled by row). At least one row is required (1D), and
-   can be extended with as many dimensions required. The parameters \code{beginPosition}
-   and \code{endPosition} allow to specify the temporal extent of the envelope.
- }
-}
-}
-
 \references{
 ISO 19136:2007 Geographic Information -- Geographic Markup Language.
   http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32554 
@@ -47,3 +27,171 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{EnvelopeWithTimePeriod}
 \keyword{GML}
 \keyword{ISO}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLEnvelope]{geometa::GMLEnvelope}} -> \code{GMLEnvelopeWithTimePeriod}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{beginPosition}}{begin position}
+
+\item{\code{endPosition}}{end position}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-GMLEnvelopeWithTimePeriod-new}{\code{GMLEnvelopeWithTimePeriod$new()}}
+\item \href{#method-GMLEnvelopeWithTimePeriod-decode}{\code{GMLEnvelopeWithTimePeriod$decode()}}
+\item \href{#method-GMLEnvelopeWithTimePeriod-setBeginPosition}{\code{GMLEnvelopeWithTimePeriod$setBeginPosition()}}
+\item \href{#method-GMLEnvelopeWithTimePeriod-setEndPosition}{\code{GMLEnvelopeWithTimePeriod$setEndPosition()}}
+\item \href{#method-GMLEnvelopeWithTimePeriod-clone}{\code{GMLEnvelopeWithTimePeriod$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLEnvelopeWithTimePeriod-new"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLEnvelopeWithTimePeriod-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes a GML envelope with time period. The argument 'bbox' should be 
+a matrix of dim 2,2 giving the x/y min/max values of a bouding box, as returned by 
+\code{bbox} function in package \pkg{sp}.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLEnvelopeWithTimePeriod$new(
+  xml = NULL,
+  element = NULL,
+  bbox,
+  beginPosition,
+  endPosition,
+  srsName = NULL,
+  srsDimension = NULL,
+  axisLabels = NULL,
+  uomLabels = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{element}}{element}
+
+\item{\code{bbox}}{object of class \link{matrix}}
+
+\item{\code{beginPosition}}{begin position, object of class \link{Date} or \link{POSIXct-class}}
+
+\item{\code{endPosition}}{end position, object of class \link{Date} or \link{POSIXct-class}}
+
+\item{\code{srsName}}{SRS name}
+
+\item{\code{srsDimension}}{SRS dimension}
+
+\item{\code{axisLabels}}{axis labels}
+
+\item{\code{uomLabels}}{uom labels}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLEnvelopeWithTimePeriod-decode"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLEnvelopeWithTimePeriod-decode}{}}}
+\subsection{Method \code{decode()}}{
+Decodes an XML representation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLEnvelopeWithTimePeriod$decode(xml)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLEnvelopeWithTimePeriod-setBeginPosition"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLEnvelopeWithTimePeriod-setBeginPosition}{}}}
+\subsection{Method \code{setBeginPosition()}}{
+Set begin position
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLEnvelopeWithTimePeriod$setBeginPosition(beginPosition)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{beginPosition}}{object of class \link{Date} or \link{POSIXct-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLEnvelopeWithTimePeriod-setEndPosition"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLEnvelopeWithTimePeriod-setEndPosition}{}}}
+\subsection{Method \code{setEndPosition()}}{
+Set end position
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLEnvelopeWithTimePeriod$setEndPosition(endPosition)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{endPosition}}{object of class \link{Date} or \link{POSIXct-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLEnvelopeWithTimePeriod-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLEnvelopeWithTimePeriod-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLEnvelopeWithTimePeriod$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

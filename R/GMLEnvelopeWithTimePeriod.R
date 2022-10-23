@@ -6,21 +6,6 @@
 #' @keywords ISO GML EnvelopeWithTimePeriod
 #' @return Object of \code{\link{R6Class}} for modelling an GML envelope with time period
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field beginPosition [\code{\link{GMLElement}}]
-#' @field endPosition [\code{\link{GMLElement}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, bbox, beginPosition, endPosition, 
-#'                  srsName, srsDimension, axisLabels, uomLabels)}}{
-#'    This method is used to instantiate a GML envelope with time period. The \code{bbox}
-#'    parameter should be an object of class \code{matrix} with 2 columns giving mix/max
-#'    values of each dimension (handled by row). At least one row is required (1D), and
-#'    can be extended with as many dimensions required. The parameters \code{beginPosition}
-#'    and \code{endPosition} allow to specify the temporal extent of the envelope.
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -37,8 +22,23 @@ GMLEnvelopeWithTimePeriod <- R6Class("GMLEnvelopeWithTimePeriod",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field beginPosition begin position
      beginPosition = NA,
+     #'@field endPosition end position
      endPosition = NA,
+     
+     #'@description Initializes a GML envelope with time period. The argument 'bbox' should be 
+     #' a matrix of dim 2,2 giving the x/y min/max values of a bouding box, as returned by 
+     #' \code{bbox} function in package \pkg{sp}.
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param element element
+     #'@param bbox object of class \link{matrix}
+     #'@param beginPosition begin position, object of class \link{Date} or \link{POSIXct-class}
+     #'@param endPosition end position, object of class \link{Date} or \link{POSIXct-class}
+     #'@param srsName SRS name
+     #'@param srsDimension SRS dimension
+     #'@param axisLabels axis labels
+     #'@param uomLabels uom labels
      initialize = function(xml = NULL, element = NULL, bbox, 
                            beginPosition, endPosition,
                            srsName = NULL, srsDimension = NULL, 
@@ -53,7 +53,8 @@ GMLEnvelopeWithTimePeriod <- R6Class("GMLEnvelopeWithTimePeriod",
        }
      },
      
-     #decode
+     #'@description Decodes an XML representation
+     #'@param xml object of class \link{XMLInternalNode-class}
      decode = function(xml){
         super$decode(xml)
         #backward compatibility in case of GML < 3
@@ -65,7 +66,8 @@ GMLEnvelopeWithTimePeriod <- R6Class("GMLEnvelopeWithTimePeriod",
         }
      },
      
-     #setBeginPosition
+     #'@description Set begin position
+     #'@param beginPosition object of class \link{Date} or \link{POSIXct-class}
      setBeginPosition = function(beginPosition){
        if(!all(class(beginPosition)==c("POSIXct","POSIXt")) | is(beginPosition, "Date")){
          stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
@@ -73,7 +75,8 @@ GMLEnvelopeWithTimePeriod <- R6Class("GMLEnvelopeWithTimePeriod",
        self$beginPosition <- GMLElement$create("beginPosition", value = beginPosition)
      },
      
-     #setEndPosition
+     #'@description Set end position
+     #'@param endPosition object of class \link{Date} or \link{POSIXct-class}
      setEndPosition = function(endPosition){
        if(!all(class(endPosition)==c("POSIXct","POSIXt")) | is(endPosition, "Date")){
          stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")

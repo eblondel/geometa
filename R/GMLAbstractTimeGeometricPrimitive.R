@@ -6,15 +6,6 @@
 #' @keywords ISO temporal primitive
 #' @return Object of \code{\link{R6Class}} for modelling an ISO GML abstract temporal primitive
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, namespace, defaults)}}{
-#'    This method is used to instantiate an ISOAbstractTimeGeometricPrimitive
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata
@@ -28,6 +19,10 @@ GMLAbstractTimeGeometricPrimitive <- R6Class("GMLAbstractTimeGeometricPrimitive"
     xmlNamespacePrefix = "GML"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param defaults list of default values
     initialize = function(xml = NULL, defaults = list()){
       super$initialize(xml, defaults)
     }

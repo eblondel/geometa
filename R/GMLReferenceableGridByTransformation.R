@@ -6,13 +6,6 @@
 #' @keywords ISO GML Grid
 #' @return Object of \code{\link{R6Class}} for modelling an GML ReferenceableGridByTransformation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML ReferenceableGridByTransformation
-#'  }
-#' }
 #' 
 #' @note Class used internally by geometa
 #' 
@@ -30,8 +23,17 @@ GMLReferenceableGridByTransformation <- R6Class("GMLReferenceableGridByTransform
      xmlNamespacePrefix = "GMLRGRID"
    ),
    public = list(
+     #'@field transformation transformation
      transformation = NULL,
+     #'@field concatenatedOperation concatenated operation
      concatenatedOperation = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param element element name
+     #'@param attrs list of attributes
+     #'@param defaults list of default values
+     #'@param wrap wrap element?
      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement

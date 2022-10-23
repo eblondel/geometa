@@ -6,24 +6,8 @@
 #' @keywords ISO GML time object abstract
 #' @return Object of \code{\link{R6Class}} for modelling an GML AbstractTimeObject
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field remarks
 #' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate a GML AbstractTimeObject
-#'  }
-#'  \item{\code{setId(id)}}{
-#'    Sets the id
-#'  }
-#'  \item{\code{addRemark(remark)}}{
-#'    Adds a remark
-#'  }
-#'  \item{\code{delRemark(remark)}}{
-#'    Deletes a remark
-#'  }
-#' }
+#' @note Experimental
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -40,8 +24,12 @@ GMLAbstractTimeObject <- R6Class("GMLAbstractTimeObject",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     initialize = function(xml = NULL, defaults = list()){
-       super$initialize(xml, element = private$xmlElement, defaults)
-     }
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param defaults list of default values
+      initialize = function(xml = NULL, defaults = list()){
+         super$initialize(xml, element = private$xmlElement, defaults)
+      }
    )                        
 )

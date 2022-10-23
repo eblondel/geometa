@@ -6,15 +6,6 @@
 #' @keywords ISO GML Abstract GeneralParameterValue
 #' @return Object of \code{\link{R6Class}} for modelling an GML abstract general ParameterValue
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML abstract GML
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -31,6 +22,12 @@ GMLAbstractGeneralParameterValue <- R6Class("GMLAbstractGeneralParameterValue",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param element element name
+    #'@param attrs list of attributes
+    #'@param defaults list of default values
     initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list()){
       if(is.null(element)) element <- private$xmlElement
       super$initialize(xml, element = element, attrs = attrs, defaults = defaults, wrap = TRUE)

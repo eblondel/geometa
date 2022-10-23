@@ -6,26 +6,6 @@
 #' @keywords ISO GML derived crs
 #' @return Object of \code{\link{R6Class}} for modelling an GMLDerivedCRS
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field baseCRS [\code{\link{GMLElement}}]
-#' @field derivedCRSType [\code{\link{GMLElement}}]
-#' @field coordinateSystem [\code{\link{GMLElement}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML derived CRS
-#'  }
-#'  \item{\code{setBaseCRS(crs)}}{
-#'    Sets the base CRS, one object of class inherited from \code{GMLAbstractSingleCRS}
-#'  }
-#'  \item{\code{setDerivedCRSType(type, codeSpace)}}{
-#'    Sets a derived CRS type
-#'  }
-#'  \item{\code{setCoordinateSystem(cs)}}{
-#'    Sets the coordinate system
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -43,14 +23,15 @@ GMLDerivedCRS <- R6Class("GMLDerivedCRS",
    ),
    public = list(
      
-     #+ baseCRS [1..1]: inherited from GMLAbstractSingleCRS
+     #'@field baseCRS baseCRS [1..1]: inherited from GMLAbstractSingleCRS
      baseCRS = NULL,
-     #derivedCRSType [1..1]: character
+     #'@field derivedCRSType derivedCRSType [1..1]: character
      derivedCRSType = NULL,
-     #coordinateSystem [1..1]: inherited from GMLAbstractCoordinateSystem
+     #'@field coordinateSystem coordinateSystem [1..1]: inherited from GMLAbstractCoordinateSystem
      coordinateSystem = NULL,
      
-     #setBaseCRS
+     #'@description Set base CRS
+     #'@param crs object inheriting class \link{GMLAbstractSingleCRS}
      setBaseCRS = function(crs){
        if(!inherits(gml, "GMLAbstractSingleCRS")){
          stop("The argument value should be an object inherited from 'GMLAbstractSingleCRS'")
@@ -58,12 +39,15 @@ GMLDerivedCRS <- R6Class("GMLDerivedCRS",
        self$baseCRS = GMLElement$create("baseCRS", value = crs)
      },
      
-     #setDerivedCRSType
+     #'@description Set derived CRS type
+     #'@param type type
+     #'@param codeSpace code space
      setDerivedCRSType = function(type, codeSpace = NULL){
        self$derivedCRSType <- GMLElement$create("derivedCRSType", value = type, codeSpace = codeSpace)
      },
      
-     #setCoordinateSystem
+     #'@description set coordinate system
+     #'@param cs cs, object inheriting class \link{GMLAbstractCoordinateSystem}
      setCoordinateSystem = function(cs){
        if(!inherits(cs, "GMLAbstractCoordinateSystem")){
          stop("The argument value should be an object inherited from 'GMLAbstractCoordinateSystem'")

@@ -6,27 +6,6 @@
 #' @keywords ISO GML conventional unit definition
 #' @return Object of \code{\link{R6Class}} for modelling an GML derived unit
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field conversionToPreferredUnit [\code{\link{GMLElement}}]
-#' @field roughConversionToPreferredUnit [\code{\link{GMLElement}}]
-#' @field derivationUnitTerm [\code{\link{GMLElement}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Base Unit
-#'  }
-#'  \item{\code{addDerivationUnitTerm(uom, exponent)}}{
-#'    Adds a derivation unit term, made of a uom reference, and an exponent which
-#'    can be negative/positive but not equal to zero.
-#'  }
-#'  \item{\code{delDerivationUnitTerm(uom, exponent)}}{
-#'    Deletes a derivation unit term
-#'  }
-#'  \item{\code{setConversionToPreferredUnit(uom, factor, rough)}}{
-#'    Sets the conversion to preferred unit. \code{rough} is \code{FALSE} by default
-#'  }
-#' }
 #' 
 #' @examples
 #'    gml <- GMLConventionalUnit$new()
@@ -54,12 +33,17 @@ GMLConventionalUnit <- R6Class("GMLConventionalUnit",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
-    #+ conversionToPreferredUnit [1..1]: character/integer
+    #'@field conversionToPreferredUnit conversionToPreferredUnit [1..1]: character/integer
     conversionToPreferredUnit = NULL,
-    #+ conversionToPreferredUnit [1..1]: character/integer
+    #'@field roughConversionToPreferredUnit roughConversionToPreferredUnit [1..1]: character/integer
     roughConversionToPreferredUnit = NULL,
-    #+ derivationUnitTerm [1..*]: character
+    #'@field derivationUnitTerm derivationUnitTerm [1..*]: character
     derivationUnitTerm = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param defaults default values
+    #'@param id id
     initialize = function(xml = NULL, defaults = list(), id = NULL){
       super$initialize(xml, defaults)
       if(is.null(xml)){
@@ -67,7 +51,11 @@ GMLConventionalUnit <- R6Class("GMLConventionalUnit",
       }
     },
     
-    #addDerivationUnitTerm
+    #'@description Adds a derivation unit term, made of a uom reference, and an exponent which
+    #' can be negative/positive but not equal to zero.
+    #'@param uom unit of measure reference
+    #'@param exponent exponent
+    #'@return \code{TRUE} if added, \code{FALSE otherwise}
     addDerivationUnitTerm = function(uom, exponent){
       if(exponent == 0L){
         stop("Exponent argument value cannot be equal to zero")
@@ -76,7 +64,10 @@ GMLConventionalUnit <- R6Class("GMLConventionalUnit",
       return(self$addListElement("derivationUnitTerm", gmlElem))
     },
     
-    #delDerivationUnitTerm
+    #'@description Deletes a derivation unit term
+    #'@param uom unit of measure reference
+    #'@param exponent exponent
+    #'@return \code{TRUE} if deleted, \code{FALSE otherwise}
     delDerivationUnitTerm = function(uom, exponent){
       if(exponent == 0L){
         stop("Exponent argument value cannot be equal to zero")
@@ -85,7 +76,10 @@ GMLConventionalUnit <- R6Class("GMLConventionalUnit",
       return(self$delListElement("derivationUnitTerm", gmlElem))
     },
     
-    #setConversionToPreferredUnit
+    #'@description Sets the conversion to preferred unit.
+    #'@param uom unit of measure reference
+    #'@param factor factor
+    #'@param rough rough . Defaut is \code{FALSE}
     setConversionToPreferredUnit = function(uom, factor, rough = FALSE){
       elem <- ifelse(rough, "roughConversionToPreferredUnit", "conversionToPreferredUnit")
       gmlElem <- GMLElement$create(elem, attrs = list(uom = uom))

@@ -6,15 +6,6 @@
 #' @keywords ISO GML
 #' @return Object of \code{\link{R6Class}} for modelling an GML abstract object
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate an ISOTemporalPrimitive
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -31,6 +22,13 @@ GMLAbstractObject <- R6Class("GMLAbstractObject",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param element element name
+    #'@param attrs list of attributes
+    #'@param defaults list of default values
+    #'@param wrap wrap element?
     initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), wrap = FALSE){
       if(is.null(element)) element <- private$xmlElement
       super$initialize(xml, element, namespace = private$xmlNamespacePrefix, 

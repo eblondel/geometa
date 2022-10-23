@@ -6,13 +6,6 @@
 #' @keywords ISO GML Surface
 #' @return Object of \code{\link{R6Class}} for modelling an GML abstract surface
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, sfg)}}{
-#'    This method is used to instantiate a GML abstract surface
-#'  }
-#' }
 #' 
 #' @note Experimental
 #' 

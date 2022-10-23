@@ -6,19 +6,6 @@
 #' @keywords ISO GML abstract discrete coverage
 #' @return Object of \code{\link{R6Class}} for modelling an GML abstract discrete coverage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML abstract discrete coverage
-#'  }
-#'  \item{\code{setCoverageFunction(coverageFunction)}}{
-#'    Set a coverage function, object of class \code{GMLGridFunction} or
-#'    \code{GMLCoverageMappingRule}
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -35,7 +22,15 @@ GMLAbstractDiscreteCoverage <- R6Class("GMLAbstractDiscreteCoverage",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field coverageFunction coverage function
      coverageFunction = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param element element name
+     #'@param attrs list of attributes
+     #'@param defaults list of default values
+     #'@param wrap wrap element?
      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
@@ -43,7 +38,8 @@ GMLAbstractDiscreteCoverage <- R6Class("GMLAbstractDiscreteCoverage",
                         defaults = defaults, wrap = wrap)
      },
 
-     #setCoverageFunction
+     #'@description Set coverage function
+     #'@param coverageFunction object of class \link{GMLGridFunction} or\link{GMLCoverageMappingRule}
      setCoverageFunction = function(coverageFunction){
        allowedIsClasses <- c("GMLCoverageMappingRule","GMLGridFunction")
        if(!any(sapply(allowedIsClasses, function(x){return(is(coverageFunction, x))}))){

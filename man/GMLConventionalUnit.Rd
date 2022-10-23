@@ -12,36 +12,9 @@ Object of \code{\link{R6Class}} for modelling an GML derived unit
 }
 \description{
 GMLConventionalUnit
+
+GMLConventionalUnit
 }
-\section{Fields}{
-
-\describe{
-\item{\code{conversionToPreferredUnit}}{[\code{\link{GMLElement}}]}
-
-\item{\code{roughConversionToPreferredUnit}}{[\code{\link{GMLElement}}]}
-
-\item{\code{derivationUnitTerm}}{[\code{\link{GMLElement}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml, defaults, id)}}{
-   This method is used to instantiate a GML Base Unit
- }
- \item{\code{addDerivationUnitTerm(uom, exponent)}}{
-   Adds a derivation unit term, made of a uom reference, and an exponent which
-   can be negative/positive but not equal to zero.
- }
- \item{\code{delDerivationUnitTerm(uom, exponent)}}{
-   Deletes a derivation unit term
- }
- \item{\code{setConversionToPreferredUnit(uom, factor, rough)}}{
-   Sets the conversion to preferred unit. \code{rough} is \code{FALSE} by default
- }
-}
-}
-
 \examples{
    gml <- GMLConventionalUnit$new()
    gml$setDescriptionReference("someref")
@@ -68,3 +41,174 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{conventional}
 \keyword{definition}
 \keyword{unit}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractGML]{geometa::GMLAbstractGML}} -> \code{\link[geometa:GMLDefinition]{geometa::GMLDefinition}} -> \code{\link[geometa:GMLUnitDefinition]{geometa::GMLUnitDefinition}} -> \code{GMLConventionalUnit}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{conversionToPreferredUnit}}{conversionToPreferredUnit [1..1]: character/integer}
+
+\item{\code{roughConversionToPreferredUnit}}{roughConversionToPreferredUnit [1..1]: character/integer}
+
+\item{\code{derivationUnitTerm}}{derivationUnitTerm [1..*]: character}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-GMLConventionalUnit-new}{\code{GMLConventionalUnit$new()}}
+\item \href{#method-GMLConventionalUnit-addDerivationUnitTerm}{\code{GMLConventionalUnit$addDerivationUnitTerm()}}
+\item \href{#method-GMLConventionalUnit-delDerivationUnitTerm}{\code{GMLConventionalUnit$delDerivationUnitTerm()}}
+\item \href{#method-GMLConventionalUnit-setConversionToPreferredUnit}{\code{GMLConventionalUnit$setConversionToPreferredUnit()}}
+\item \href{#method-GMLConventionalUnit-clone}{\code{GMLConventionalUnit$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="addName"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-addName'><code>geometa::GMLAbstractGML$addName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="delName"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-delName'><code>geometa::GMLAbstractGML$delName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="setDescription"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-setDescription'><code>geometa::GMLAbstractGML$setDescription()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="setDescriptionReference"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-setDescriptionReference'><code>geometa::GMLAbstractGML$setDescriptionReference()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="setIdentifier"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-setIdentifier'><code>geometa::GMLAbstractGML$setIdentifier()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLDefinition" data-id="addRemark"><a href='../../geometa/html/GMLDefinition.html#method-GMLDefinition-addRemark'><code>geometa::GMLDefinition$addRemark()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLDefinition" data-id="delRemark"><a href='../../geometa/html/GMLDefinition.html#method-GMLDefinition-delRemark'><code>geometa::GMLDefinition$delRemark()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLUnitDefinition" data-id="setCatalogSymbol"><a href='../../geometa/html/GMLUnitDefinition.html#method-GMLUnitDefinition-setCatalogSymbol'><code>geometa::GMLUnitDefinition$setCatalogSymbol()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLUnitDefinition" data-id="setQuantityTypeReference"><a href='../../geometa/html/GMLUnitDefinition.html#method-GMLUnitDefinition-setQuantityTypeReference'><code>geometa::GMLUnitDefinition$setQuantityTypeReference()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLConventionalUnit-new"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLConventionalUnit-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLConventionalUnit$new(xml = NULL, defaults = list(), id = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{defaults}}{default values}
+
+\item{\code{id}}{id}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLConventionalUnit-addDerivationUnitTerm"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLConventionalUnit-addDerivationUnitTerm}{}}}
+\subsection{Method \code{addDerivationUnitTerm()}}{
+Adds a derivation unit term, made of a uom reference, and an exponent which
+can be negative/positive but not equal to zero.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLConventionalUnit$addDerivationUnitTerm(uom, exponent)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{uom}}{unit of measure reference}
+
+\item{\code{exponent}}{exponent}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE otherwise}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLConventionalUnit-delDerivationUnitTerm"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLConventionalUnit-delDerivationUnitTerm}{}}}
+\subsection{Method \code{delDerivationUnitTerm()}}{
+Deletes a derivation unit term
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLConventionalUnit$delDerivationUnitTerm(uom, exponent)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{uom}}{unit of measure reference}
+
+\item{\code{exponent}}{exponent}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE otherwise}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLConventionalUnit-setConversionToPreferredUnit"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLConventionalUnit-setConversionToPreferredUnit}{}}}
+\subsection{Method \code{setConversionToPreferredUnit()}}{
+Sets the conversion to preferred unit.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLConventionalUnit$setConversionToPreferredUnit(uom, factor, rough = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{uom}}{unit of measure reference}
+
+\item{\code{factor}}{factor}
+
+\item{\code{rough}}{rough . Defaut is \code{FALSE}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLConventionalUnit-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLConventionalUnit-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLConventionalUnit$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

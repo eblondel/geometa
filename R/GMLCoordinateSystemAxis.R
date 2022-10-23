@@ -6,34 +6,6 @@
 #' @keywords ISO GML coordinate system axis
 #' @return Object of \code{\link{R6Class}} for modelling an GMLCoordinateSystemAxis
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field axisAbbrev [\code{\link{GMLElement}}]
-#' @field axisDirection [\code{\link{GMLElement}}]
-#' @field minimumValue [\code{\link{GMLElement}}]
-#' @field maximumValue [\code{\link{GMLElement}}]
-#' @field rangeMeaning [\code{\link{GMLElement}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Abstract CRS
-#'  }
-#'  \item{\code{setAbbrev(abbrev)}}{
-#'    Sets the axis abbreviation
-#'  }
-#'  \item{\code{setDirection(direction, codeSpace)}}{
-#'    Sets the axis direction
-#'  }
-#'  \item{\code{setMimimumValue(value)}}{
-#'    Sets the minimum value
-#'  }
-#'  \item{\code{setMaximumValue(value)}}{
-#'    Sets the maximum value
-#'  }
-#'  \item{\code{setRangeMeaning(meaning, codeSpace)}}{
-#'    Sets the range meaning
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -51,17 +23,22 @@ GMLCoordinateSystemAxis <- R6Class("GMLCoordinateSystemAxis",
    ),
    public = list(
    
-     #+ axisAbbrev [1..1]: character
+     #'@field axisAbbrev axisAbbrev [1..1]: character
      axisAbbrev = NULL,
-     #+ axisDirection [1..1]: character (with codeSpace)
+     #'@field axisDirection axisDirection [1..1]: character (with codeSpace)
      axisDirection = NULL,
-     #+ minimumValue [0..1]: double
+     #'@field minimumValue minimumValue [0..1]: double
      minimumValue = NA,
-     #+ maximumValue [0..1]: double
+     #'@field maximumValue maximumValue [0..1]: double
      maximumValue = NA,
-     #+ rangeMeaning [0..1]: character (with codeSpace)
+     #'@field rangeMeaning rangeMeaning [0..1]: character (with codeSpace)
      rangeMeaning = NA,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param defaults list of default values
+     #'@param id id
+     #'@param uom unit of measure
      initialize = function(xml = NULL, defaults = list(), id = NULL, uom = NA){
        super$initialize(xml = xml, defaults = defaults)
        if(is.null(xml)){
@@ -70,27 +47,34 @@ GMLCoordinateSystemAxis <- R6Class("GMLCoordinateSystemAxis",
        }
      },
      
-     #setAbbrev
+     #'@description Set Abbrev
+     #'@param abbrev abbrev
      setAbbrev = function(abbrev){
        self$axisAbbrev <- GMLElement$create("axisAbbrev", value = abbrev)
      },
      
-     #setDirection
+     #'@description Set description
+     #'@param direction direction
+     #'@param codeSpace code space
      setDirection = function(direction, codeSpace = NULL){
        self$axisDirection <- GMLElement$create("axisDirection", value = direction, codeSpace = codeSpace)
      },
      
-     #setMinimumValue
+     #'@description Set minimum value
+     #'@param value value
      setMinimumValue = function(value){
        self$minimumValue <- GMLElement$create("minimumValue", value = value)
      },
      
-     #setMaximumValue
+     #'@description Set maxium value
+     #'@param value value
      setMaximumValue = function(value){
        self$maximumValue <- GMLElement$create("maximumValue", value = value)
      },
      
-     #setRangeMeaning
+     #'@description Set range meaning
+     #'@param meaning meaning
+     #'@param codeSpace code space
      setRangeMeaning = function(meaning, codeSpace = NULL){
        self$rangeMeaning <- GMLElement$create("rangeMeaning", value = meaning, codeSpace = codeSpace)
      }

@@ -6,21 +6,6 @@
 #' @keywords ISO GML definition
 #' @return Object of \code{\link{R6Class}} for modelling an GML definition
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field remarks
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate a GML Definition
-#'  }
-#'  \item{\code{addRemark(remark)}}{
-#'    Adds a remark
-#'  }
-#'  \item{\code{delRemark(remark)}}{
-#'    Deletes a remark
-#'  }
-#' }
 #' 
 #' @examples 
 #'   gml <- GMLDefinition$new()
@@ -44,19 +29,27 @@ GMLDefinition <- R6Class("GMLDefinition",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
-    #+ remarks [0..*]: character
+    #'@field remarks remarks [0..*]: character
     remarks = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param defaults default values
     initialize = function(xml = NULL, defaults = list()){
       super$initialize(xml, element = private$xmlElement, defaults)
     },
     
-    #addRemark
+    #'@description Adds remark
+    #'@param remark remark
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addRemark = function(remark){
       gmlRemark <- GMLElement$create("remarks", value = remark)
       return(self$addListElement("remarks", gmlRemark))
     },
     
-    #delRemark
+    #'@description Deletes remark
+    #'@param remark remark
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delRemark = function(remark){
       gmlRemark <- GMLElement$create("remarks", value = remark)
       return(self$delListElement("remark", gmlRemark))

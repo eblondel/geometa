@@ -6,42 +6,6 @@
 #' @keywords ISO GML abstract coordinate Operation
 #' @return Object of \code{\link{R6Class}} for modelling an GMLAbstractCoordinateOperation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field operationVersion [\code{\link{GMLElement}}]
-#' @field coordinateOperationAccuracy [\code{\link{GMLElement}}]
-#' @field sourceCRS [\code{\link{GMLElement}}]
-#' @field targetCRS [\code{\link{GMLElement}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Abstract CRS
-#'  }
-#'  \item{\code{setDomainOfValidity(domainOfValidity)}}{
-#'    Sets the domain of validity
-#'  }
-#'  \item{\code{addScope(scope)}}{
-#'    Adds a scope
-#'  }
-#'  \item{\code{delScope(scope)}}{
-#'    Deletes a scope
-#'  }
-#'  \item{\code{setVersion(version)}}{
-#'    Sets version
-#'  }
-#'  \item{\code{addAccuracy(accuracy)}}{
-#'    Adds coordinate operation accuracy, object extending \code{ISOAbstractPositionalAccuracy}
-#'  }
-#'  \item{\code{delAccuracy(accuracy)}}{
-#'    Deletes coordinate operation accuracy, object extending \code{ISOAbstractPositionalAccuracy}
-#'  }
-#'  \item{\code{setSourceCRS(sourceCRS)}}{
-#'    Sets the source CRS, object extending \code{GMLAbstractSingleCRS}
-#'  }
-#'  \item{\code{setTargetCRS(targetCRS)}}{
-#'    Sets the target CRS, object extending \code{GMLAbstractSingleCRS}
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -58,19 +22,23 @@ GMLAbstractCoordinateOperation <- R6Class("GMLAbstractCoordinateOperation",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     #+ domainOfValidity [0..1]: character
+     #'@field domainOfValidity domainOfValidity [0..1]: character
      domainOfValidity = NULL,
-     #+ scope [1..*]: character
+     #'@field scope scope [1..*]: character
      scope = list(),
-     #+ operationVersion [0..1]: character
+     #'@field operationVersion operationVersion [0..1]: character
      operationVersion = NULL,
-     #+ coordinateOperationAccuracy [0..1]: ISOPositionalAccuracy 
+     #'@field coordinateOperationAccuracy coordinateOperationAccuracy [0..1]: ISOPositionalAccuracy 
      coordinateOperationAccuracy = list(), #TODO
-     #+ sourceCRS [0..1]: subclass of GMLAbstractCRS
+     #'@field sourceCRS sourceCRS [0..1]: subclass of GMLAbstractCRS
      sourceCRS = NULL,
-     #+ targetCRS [0..1]: subclass of GMLAbstractCRS
+     #'@field targetCRS targetCRS [0..1]: subclass of GMLAbstractCRS
      targetCRS = NULL,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param defaults list of default values
+     #'@param id id
      initialize = function(xml = NULL, defaults = list(), id = NULL){
        super$initialize(xml = xml, defaults = defaults)
        if(is.null(xml)){
@@ -78,30 +46,38 @@ GMLAbstractCoordinateOperation <- R6Class("GMLAbstractCoordinateOperation",
        }
      },
      
-     #setDomainOfValidity
+     #'@description Set domain of validity
+     #'@param domainOfValidity domain of validity, object extending \link{ISOExtent} class
      setDomainOfValidity = function(domainOfValidity){
        if(!is(domainOfValidity, "ISOExtent")) stop("Input should be an object of class 'ISOExtent'")
        self$domainOfValidity <- domainOfValidity
      },
      
-     #addScope
+     #'@description Adds scope
+     #'@param scope scope
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addScope = function(scope){
        return(self$addListElement("scope", GMLElement$create("scope", value = scope)))
      },
      
-     #delScope
+     #'@description Removes scope
+     #'@param scope scope
+     #'@return \code{TRUE} if removed, \code{FALSE} otherwise
      delScope = function(scope){
        return(self$delListElement("scope", GMLElement$create("scope", value = scope)))
      },
      
-     #setVersion
+     #'@description Set version
+     #'@param version version
      setVersion = function(version){
        self$operationVersion <- GMLElement$create("operationVersion", value = version)
      },
      
-     #addAccuracy
+     #'@description Adds accuracy
+     #'@param accuracy accuracy, object inheriting class \link{ISOAbstractPositionalAccuracy}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addAccuracy = function(accuracy){
-       if(!inherits(accuracy, "ISOPOsitionalAccuracy")){
+       if(!inherits(accuracy, "ISOAbstractPositionalAccuracy")){
          stop("The argument value should be an object of class 'ISOPositionalAccuracy")
        }
        return(self$addListElement("coordinateOperationAccuracy",
@@ -109,7 +85,9 @@ GMLAbstractCoordinateOperation <- R6Class("GMLAbstractCoordinateOperation",
                                                     value = accuracy)))
      },
      
-     #delAccuracy
+     #'@description Removes accuracy
+     #'@param accuracy accuracy, object inheriting class \link{ISOAbstractPositionalAccuracy}
+     #'@return \code{TRUE} if removed, \code{FALSE} otherwise
      delAccuracy = function(accuracy){
        if(!inherits(accuracy, "ISOAbstractPositionalAccuracy")){
          stop("The argument value should be an object of class 'ISOAbstractPositionalAccuracy")
@@ -119,7 +97,8 @@ GMLAbstractCoordinateOperation <- R6Class("GMLAbstractCoordinateOperation",
                                                     value = accuracy)))
      },
      
-     #setSourceCRS
+     #'@description Set source CRS
+     #'@param crs crs, object inheriting class \link{GMLAbstractSingleCRS}
      setSourceCRS = function(crs){
        if(!inherits(crs, "GMLAbstractSingleCRS")){
          stop("The argument value should be an object extending 'GMLAbstractSingleCRS'")
@@ -127,7 +106,8 @@ GMLAbstractCoordinateOperation <- R6Class("GMLAbstractCoordinateOperation",
        self$sourceCRS <- GMLElement$create("sourceCRS", value = crs)
      },
      
-     #setTargetCRS
+     #'@description Set target CRS
+     #'@param crs crs, object inheriting class \link{GMLAbstractSingleCRS}
      setTargetCRS = function(crs){
        if(!inherits(crs, "GMLAbstractSingleCRS")){
          stop("The argument value should be an object extending 'GMLAbstractSingleCRS'")

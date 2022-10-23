@@ -12,44 +12,9 @@ Object of \code{\link{R6Class}} for modelling an GML abstract GML
 }
 \description{
 GMLAbstractGML
+
+GMLAbstractGML
 }
-\section{Fields}{
-
-\describe{
-\item{\code{descriptionReference}}{[\code{\link{GMLElement}}]}
-
-\item{\code{identifier}}{[\code{\link{GMLElement}}]}
-
-\item{\code{name}}{[\code{\link{GMLElement}}]}
-}}
-
-\note{
-Class used internally by geometa
-}
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml, element, attrs, defaults)}}{
-   This method is used to instantiate a GML abstract GML
- }
- \item{\code{setDescription(description)}}{
-   Set the description
- }
- \item{\code{setDescriptionReference(descriptionReference)}}{
-   Set the descriptionReference
- }
- \item{\code{setIdentifier(identifier)}}{
-   Set the identifier
- }
- \item{\code{addName(name)}}{
-   Adds a name
- }
- \item{\code{delName(name)}}{
-   Deletes a name
- }
-}
-}
-
 \references{
 ISO 19136:2007 Geographic Information -- Geographic Markup Language.
   http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32554 
@@ -61,3 +26,212 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{GML}
 \keyword{ISO}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{GMLAbstractGML}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{metaDataProperty}}{metaDataProperty [0..*]}
+
+\item{\code{description}}{description [0..1]}
+
+\item{\code{descriptionReference}}{descriptionReference [0..1]: character}
+
+\item{\code{identifier}}{identifier [0..1]: character}
+
+\item{\code{name}}{name [0..*]: character}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-GMLAbstractGML-new}{\code{GMLAbstractGML$new()}}
+\item \href{#method-GMLAbstractGML-setDescription}{\code{GMLAbstractGML$setDescription()}}
+\item \href{#method-GMLAbstractGML-setDescriptionReference}{\code{GMLAbstractGML$setDescriptionReference()}}
+\item \href{#method-GMLAbstractGML-setIdentifier}{\code{GMLAbstractGML$setIdentifier()}}
+\item \href{#method-GMLAbstractGML-addName}{\code{GMLAbstractGML$addName()}}
+\item \href{#method-GMLAbstractGML-delName}{\code{GMLAbstractGML$delName()}}
+\item \href{#method-GMLAbstractGML-clone}{\code{GMLAbstractGML$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLAbstractGML-new"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLAbstractGML-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLAbstractGML$new(
+  xml = NULL,
+  element = NULL,
+  attrs = list(),
+  defaults = list(),
+  wrap = TRUE
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{element}}{element name}
+
+\item{\code{attrs}}{list of attributes}
+
+\item{\code{defaults}}{list of default values}
+
+\item{\code{wrap}}{wrap element?}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLAbstractGML-setDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLAbstractGML-setDescription}{}}}
+\subsection{Method \code{setDescription()}}{
+Set description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLAbstractGML$setDescription(description)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{description}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLAbstractGML-setDescriptionReference"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLAbstractGML-setDescriptionReference}{}}}
+\subsection{Method \code{setDescriptionReference()}}{
+Set description reference
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLAbstractGML$setDescriptionReference(descriptionReference)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{descriptionReference}}{description reference}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLAbstractGML-setIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLAbstractGML-setIdentifier}{}}}
+\subsection{Method \code{setIdentifier()}}{
+Set identifier
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLAbstractGML$setIdentifier(identifier, codeSpace)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier}
+
+\item{\code{codeSpace}}{codespace}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLAbstractGML-addName"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLAbstractGML-addName}{}}}
+\subsection{Method \code{addName()}}{
+Adds name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLAbstractGML$addName(name, codeSpace = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+
+\item{\code{codeSpace}}{codespace}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLAbstractGML-delName"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLAbstractGML-delName}{}}}
+\subsection{Method \code{delName()}}{
+Deletes name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLAbstractGML$delName(name, codeSpace = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+
+\item{\code{codeSpace}}{codespace}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLAbstractGML-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLAbstractGML-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLAbstractGML$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

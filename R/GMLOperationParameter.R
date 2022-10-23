@@ -6,16 +6,6 @@
 #' @keywords ISO GML operation parameter
 #' @return Object of \code{\link{R6Class}} for modelling an GMLOperationParameter
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{GMLAbstractGeneralOperationParameter}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML OperationParameter
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.

@@ -6,21 +6,6 @@
 #' @keywords ISO GML abstract general operation parameter
 #' @return Object of \code{\link{R6Class}} for modelling an GMLAbstractGeneralOperationParameter
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field minimumOccurs
-#'
-#' @section Inherited methods:
-#' from \code{GMLDefinition}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML AbstractGeneralOperationParameter
-#'  }
-#'  \item{\code{setMinimumOccurs(minimumOccurs)}}{
-#'    Sets the minimum occurs, object of class \code{integer}
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -38,10 +23,11 @@ GMLAbstractGeneralOperationParameter <- R6Class("GMLAbstractGeneralOperationPara
    ),
    public = list(
      
-     #+ minimumOccurs [0..1]: integer
+     #'@field minimumOccurs minimumOccurs [0..1]: integer
      minimumOccurs = NULL,
      
-     #setMinimumOccurs
+     #'@description Set minimum occurs
+     #'@param minimumOccurs object of class \link{integer}
      setMinimumOccurs = function(minimumOccurs){
        if(!is(minimumOccurs, "integer")){
          minimumOccurs <- as.integer(minimumOccurs)

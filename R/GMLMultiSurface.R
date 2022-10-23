@@ -6,21 +6,6 @@
 #' @keywords ISO GML MultiSurface
 #' @return Object of \code{\link{R6Class}} for modelling an GML multisurface
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field surfaceMember
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, sfg)}}{
-#'    This method is used to instantiate a GML multisurface
-#'  }
-#'  \item{\code{addSurfaceMember(surface)}}{
-#'    Add a surface member
-#'  }
-#'  \item{\code{delSurfaceMember(surface)}}{
-#'    Deletes a surface member
-#'  }
-#' }
 #' 
 #' @note Experimental
 #' 
@@ -39,8 +24,14 @@ GMLMultiSurface <- R6Class("GMLMultiSurface",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
+    #'@field attrs gml attributes
     attrs = list("gml:id" = NA),
+    #'@field surfaceMember surface members
     surfaceMember = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param sfg simple feature geometry resulting from \pkg{sf}
     initialize = function(xml = NULL, sfg = NULL){
       super$initialize(xml, element = private$xmlElement, wrap = TRUE)
       if(is.null(xml)){
@@ -56,7 +47,9 @@ GMLMultiSurface <- R6Class("GMLMultiSurface",
       }
     },
     
-    #addSurfaceMember
+    #'@description Adds surface member
+    #'@param surface surface object of class inheriting \link{GMLAbstractSurface}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addSurfaceMember = function(surface){
       if(!inherits(surface, "GMLAbstractSurface")){
         stop("Input 'polygon' should be an object that inherits 'GMLAbstractSurface'")
@@ -68,7 +61,9 @@ GMLMultiSurface <- R6Class("GMLMultiSurface",
       return(added)
     },
     
-    #delSurfaceMember
+    #'@description Deletes surface member
+    #'@param surface surface object of class inheriting \link{GMLAbstractSurface}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delSurfaceMember = function(surface){
       if(!inherits(surface, "GMLAbstractSurface")){
         stop("Input 'polygon' should be an object that inherits 'GMLAbstractSurface'")

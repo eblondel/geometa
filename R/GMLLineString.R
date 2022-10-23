@@ -6,15 +6,6 @@
 #' @keywords ISO GML LineString
 #' @return Object of \code{\link{R6Class}} for modelling an GML linestring
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field posList
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, sfg)}}{
-#'    This method is used to instantiate a GML linestring
-#'  }
-#' }
 #' 
 #' @note Experimental
 #' 
@@ -33,7 +24,12 @@ GMLLineString <- R6Class("GMLLineString",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
+    #'@field posList list of positions
     posList = matrix(NA_real_, 2, 2),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param sfg simple feature geometry resulting from \pkg{sf}
     initialize = function(xml = NULL, sfg){
       super$initialize(xml, element = private$xmlElement, wrap = TRUE)
       if(is.null(xml)){

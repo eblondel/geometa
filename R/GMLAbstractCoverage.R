@@ -6,21 +6,8 @@
 #' @keywords ISO GML abstract coverage
 #' @return Object of \code{\link{R6Class}} for modelling an GML abstract coverage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML abstract coverage
-#'  }
-#'  \item{\code{setDomainSet(domainSet)}}{
-#'    Set a domain set. The object should be a GML Geometric or Time object
-#'  }
-#'  \item{\code{setRangeSet(rangeSet)}}{
-#'    Set a range set. Currently not implemented in \pkg{geometa}
-#'  }
-#' }
 #' 
-#' @note Class used internally by geometa
+#' @note Internal binding used with OGC services
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -37,8 +24,17 @@ GMLAbstractCoverage <- R6Class("GMLAbstractCoverage",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
+    #'@field domainSet domainSet
     domainSet = NULL,
+    #'@field rangeSet rangeSet
     rangeSet = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param element element name
+    #'@param attrs list of attributes
+    #'@param defaults list of default values
+    #'@param wrap wrap element?
     initialize = function(xml = NULL, element = NULL, attrs = list(),
                           defaults = list(), wrap = TRUE){
       if(is.null(element)) element <- private$xmlElement
@@ -46,7 +42,8 @@ GMLAbstractCoverage <- R6Class("GMLAbstractCoverage",
                        defaults = defaults, wrap = wrap)
     },
     
-    #setDomainSet
+    #'@description Set domain set
+    #'@param domainSet object inheriting either \link{GMLAbstractGeometry} or \link{GMLAbstractTimeObject}
     setDomainSet = function(domainSet){
       allowedInheritingClasses <- c("GMLAbstractGeometry", "GMLAbstractTimeObject")
       if(!any(sapply(allowedInheritingClasses, function(x){return(is(domainSet, x))}))){
@@ -56,7 +53,7 @@ GMLAbstractCoverage <- R6Class("GMLAbstractCoverage",
       self$domainSet <- domainSet
     },
     
-    #setRangeSet
+    #'@description Set range set (NOT YET IMPLEMENTED)
     setRangeSet = function(){
       stop("Not yet implemented")
     }

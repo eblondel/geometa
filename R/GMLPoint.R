@@ -6,16 +6,6 @@
 #' @keywords ISO GML Point
 #' @return Object of \code{\link{R6Class}} for modelling an GML point
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field pos
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, sfg = NULL, m = NULL)}}{
-#'    This method is used to instantiate a GML point either using an object
-#'    of class \code{sfg} (from \pkg{sf}), or using a \code{matrix} object
-#'  }
-#' }
 #' 
 #' @note Experimental
 #' 
@@ -34,7 +24,13 @@ GMLPoint <- R6Class("GMLPoint",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field pos matrix of positions
      pos = matrix(NA_real_, 1, 2),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param sfg simple feature geometry from \link{sf}
+     #'@param m simple object of class \link{matrix}
      initialize = function(xml = NULL, sfg = NULL, m = NULL){
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)
        if(is.null(xml)){

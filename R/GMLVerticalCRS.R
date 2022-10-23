@@ -6,16 +6,6 @@
 #' @keywords ISO GML vertical crs
 #' @return Object of \code{\link{R6Class}} for modelling an GMLVerticalCRS
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field verticalCS [\code{\link{GMLVerticalCS}}]
-#' @field verticalDatum [code{GMLVerticalDatum}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML temporal CRS
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -32,11 +22,13 @@ GMLVerticalCRS <- R6Class("GMLVerticalCRS",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
-    
+    #'@field verticalCS [\code{\link{GMLVerticalCS}}]
     verticalCS = NULL,
+    #'@field verticalDatum [code{GMLVerticalDatum}]
     verticalDatum = NULL,
     
-    #setVerticalCS
+    #'@description Set vertical CS
+    #'@param verticalCS object of class \link{GMLVerticalCS}
     setVerticalCS = function(verticalCS){
       if(!is(verticalCS, "GMLVerticalCS")){
         stop("The argument should be an object of class 'GMLVerticalCS")
@@ -44,7 +36,8 @@ GMLVerticalCRS <- R6Class("GMLVerticalCRS",
       self$verticalCS <- GMLElement$create("verticalCS", verticalCS)
     },
     
-    #setVerticalDatum
+    #'@description Set vertical datum
+    #'@param verticalDatum object of class \link{GMLVerticalDatum}
     setVerticalDatum = function(verticalDatum){
       if(!is(verticalDatum, "GMLVerticalDatum")){
         stop("The argument should be an object of class 'GMLVerticalDatum")

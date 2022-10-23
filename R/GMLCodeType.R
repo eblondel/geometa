@@ -22,8 +22,15 @@ GMLCodeType <- R6Class("GMLCodeType",
     xmlNamespacePrefix = "GML"
   ),
   public = list(
+    #'@field value value
     value = NA,
+    #'@field attrs attributes
     attrs = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param value value
+    #'@param codeSpace code space
     initialize = function(xml = NULL, value = NULL, codeSpace = NULL){
       super$initialize(xml = xml)
       if(is.null(xml)){

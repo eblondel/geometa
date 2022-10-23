@@ -6,25 +6,6 @@
 #' @keywords ISO GML parameter value group
 #' @return Object of \code{\link{R6Class}} for modelling an GML parameter value group
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field parameterValue [\code{\link{GMLParameterValue}}]
-#' @field group [\code{\link{GMLOperationParameterGroup}}]
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate a GML ParameterValue
-#'  }
-#'  \item{\code{addParameterValue(parameterValue)}}{
-#'    Adds a parameter value, object of class 'GMLParameterValue'
-#'  }
-#'  \item{\code{delParameterValue(parameterValue)}}{
-#'    Deletes a parameter value, object of class 'GMLParameterValue'
-#'  }
-#'  \item{\code{setOperationParameterGroup(operationParameterGroup)}}{
-#'    Sets the operation parameter group, object of class \code{GMLOperationParameterGroup}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   gml <- GMLParameterValueGroup$new()
@@ -44,13 +25,21 @@ GMLParameterValueGroup <- R6Class("GMLParameterValueGroup",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field parameterValue parameter value list
      parameterValue = list(),
+     #'@field group group
      group = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param defaults default values
      initialize = function(xml = NULL, defaults = list()){
        super$initialize(xml, element = private$xmlElement, defaults)
      },
      
-     #addParameterValue
+     #'@description Adds parameter value
+     #'@param parameterValue parameter value, object of class \link{GMLParameterValue}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addParameterValue = function(parameterValue){
        if(!is(parameterValue, "GMLParameterValue")){
          stop("Input should be an object of class 'GMLParameterValue")
@@ -58,7 +47,9 @@ GMLParameterValueGroup <- R6Class("GMLParameterValueGroup",
        return(self$addListElement("parameterValue", parameterValue))
      },
      
-     #delParameterValue
+     #'@description Deletes parameter value
+     #'@param parameterValue parameter value, object of class \link{GMLParameterValue}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delParameterValue = function(parameterValue){
        if(!is(parameterValue, "GMLParameterValue")){
          stop("Input should be an object of class 'GMLParameterValue")
@@ -66,7 +57,8 @@ GMLParameterValueGroup <- R6Class("GMLParameterValueGroup",
        return(self$delListElement("parameterValue", parameterValue))
      },
      
-     #setOperationParameterGroup
+     #'@description Set operation parameter group
+     #'@param operationParameterGroup operation parameter group
      setOperationParameterGroup = function(operationParameterGroup){
        if(!is(operationParameterGroup, "GMLOperationParameterGroup")){
          stop("Input 'operationParameterGroup' should be of an object oftype 'GMLOperationParameterGroup'")

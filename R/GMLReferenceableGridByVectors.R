@@ -6,24 +6,6 @@
 #' @keywords ISO GML Grid
 #' @return Object of \code{\link{R6Class}} for modelling an GML ReferenceableGridByVectors
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML ReferenceableGridByVectors
-#'  }
-#'  \item{\code{setOrigin(coords)}}{
-#'    Set the grid origin coordinates
-#'  }
-#'  \item{\code{addGeneralGridAxis(axis)}}{
-#'    Add a general grid axis definition, object of class \code{GMLGeneralGridAxis}.
-#'    Returns \code{TRUE} if added, \code{FALSE} otherwise.
-#'  }
-#'  \item{\code{delGeneralGridAxis(axis)}}{
-#'    Deletes a ageneral grid axis definition,  object of class \code{GMLGeneralGridAxis}.
-#'    Returns \code{TRUE} if deleted, \code{FALSE} otherwise.
-#'  }
-#' }
 #' 
 #' @note Class used internally by geometa
 #' 
@@ -41,8 +23,17 @@ GMLReferenceableGridByVectors <- R6Class("GMLReferenceableGridByVectors",
      xmlNamespacePrefix = "GMLRGRID"
    ),
    public = list(
+     #'@field origin origin
      origin = NULL,
+     #'@field generalGridAxis general grid axis
      generalGridAxis = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param element element name
+     #'@param attrs list of attributes
+     #'@param defaults list of default values
+     #'@param wrap wrap element?
      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
@@ -50,7 +41,8 @@ GMLReferenceableGridByVectors <- R6Class("GMLReferenceableGridByVectors",
                         defaults = defaults, wrap = wrap)
      },
      
-     #setOrigin
+     #'@description Set origin
+     #'@param coords coords, object of class \link{list}
      setOrigin = function(coords){
        if(!is.list(coords)){
          stop("The argument 'coords' should be a list")
@@ -58,7 +50,9 @@ GMLReferenceableGridByVectors <- R6Class("GMLReferenceableGridByVectors",
        self$origin <- GMLPoint$new(m = coords)
      },
      
-     #addGeneralGridAxis
+     #'@description Adds general grid axis
+     #'@param axis object of class \link{GMLGeneralGridAxis}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addGeneralGridAxis = function(axis){
        if(!is(axis, "GMLGeneralGridAxis")){
          stop("The argument 'axis' should be an object of class 'GMLGeneralGridAxis")
@@ -66,7 +60,9 @@ GMLReferenceableGridByVectors <- R6Class("GMLReferenceableGridByVectors",
        return(self$addListElement("generalGridAxis", axis))
      },
      
-     #delGeneralGridAxis
+     #'@description Deletes general grid axis
+     #'@param axis object of class \link{GMLGeneralGridAxis}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delGeneralGridAxis = function(axis){
        if(!is(axis, "GMLGeneralGridAxis")){
          stop("The argument 'axis' should be an object of class 'GMLGeneralGridAxis")

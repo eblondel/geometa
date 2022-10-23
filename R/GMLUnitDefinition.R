@@ -6,23 +6,6 @@
 #' @keywords ISO GML unit definition
 #' @return Object of \code{\link{R6Class}} for modelling an GML unit definition
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field quantityTypeReference [\code{\link{character}}]
-#' @field catalogSymbol [\code{\link{character}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Definition
-#'  }
-#'  \item{\code{setQuantityTypeReference(ref)}}{
-#'    Set the quantity type reference. The content is a reference to a remote value
-#'  }
-#'  \item{\code{setCatalogSymbol(symbol)}}{
-#'    Sets the preferred lexical symbol used for this unit of measure
-#'  
-#'  }
-#' }
 #' 
 #' @examples 
 #'   gml <- GMLUnitDefinition$new()
@@ -48,10 +31,15 @@ GMLUnitDefinition <- R6Class("GMLUnitDefinition",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     #+ quantityTypeReference [0..1]: character
+     #'@field quantityTypeReference quantityTypeReference [0..1]: character
      quantityTypeReference = NULL,
-     #+ catalogSymbol [0..1]: character
+     #'@field catalogSymbol catalogSymbol [0..1]: character
      catalogSymbol = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param defaults list of default values
+     #'@param id id
      initialize = function(xml = NULL, defaults = list(), id = NULL){
        super$initialize(xml, defaults)
        if(is.null(xml)){
@@ -59,12 +47,14 @@ GMLUnitDefinition <- R6Class("GMLUnitDefinition",
        }
      },
      
-     #setQuantityTypeReference
+     #'@description Set quantity type reference. Content is reference to a remote value
+     #'@param quantityTypeReference quantity type reference
      setQuantityTypeReference = function(quantityTypeReference){
        self$quantityTypeReference <- GMLElement$create("quantityTypeReference", href = quantityTypeReference)
      },
      
-     #setCatalogSymbol
+     #'@description Set catalog symbol
+     #'@param catalogSymbol catalog symbol, preferred lexical symbol used for this unit of measure
      setCatalogSymbol = function(catalogSymbol){
        self$catalogSymbol <- GMLElement$create("catalogSymbol", value = catalogSymbol)
      }

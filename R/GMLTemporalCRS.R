@@ -6,16 +6,6 @@
 #' @keywords ISO GML temporal crs
 #' @return Object of \code{\link{R6Class}} for modelling an GMLTemporalCRS
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field timeCS [\code{\link{GMLTimeCS}}]
-#' @field temporalDatum [\code{GMLTemporalDatum}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML temporal CRS
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -32,11 +22,13 @@ GMLTemporalCRS <- R6Class("GMLTemporalCRS",
       xmlNamespacePrefix = "GML"
     ),
     public = list(
-      
+      #'@field timeCS time CS
       timeCS = NULL,
+      #'@field temporalDatum temporal datum
       temporalDatum = NULL,
       
-      #setTimeCS
+      #'@description Set time CS
+      #'@param timeCS time CS, object of class \link{GMLTimeCS}
       setTimeCS = function(timeCS){
         if(!is(timeCS, "GMLTimeCS")){
           stop("The argument should be an object of class 'GMLTimeCS")
@@ -44,7 +36,8 @@ GMLTemporalCRS <- R6Class("GMLTemporalCRS",
         self$timeCS <- GMLElement$create("timeCS", timeCS)
       },
       
-      #setTemporalDatum
+      #'@description Set temporal datum
+      #'@param temporalDatum temporal datum
       setTemporalDatum = function(temporalDatum){
         if(!is(temporalDatum, "GMLTemporalDatum")){
           stop("The argument should be an object of class 'GMLTemporalDatum")

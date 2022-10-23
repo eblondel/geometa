@@ -6,18 +6,6 @@
 #' @keywords ISO GML Envelope
 #' @return Object of \code{\link{R6Class}} for modelling an GML envelope
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field lowerCorner [\code{\link{matrix}}]
-#' @field upperCorner [\code{\link{matrix}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, bbox, srsName, srsDimension, axisLabels, uomLabels)}}{
-#'    This method is used to instantiate a GML envelope. The argument 'bbox'
-#'    should be a matrix of dim 2,2 giving the x/y min/max values of a bouding box,
-#'    as returned by \code{bbox} function in package \pkg{sp}
-#'  }
-#' }
 #' 
 #' @note Experimental
 #' 
@@ -36,8 +24,21 @@ GMLEnvelope <- R6Class("GMLEnvelope",
    xmlNamespacePrefix = "GML"
  ),
  public = list(
+   #'@field lowerCorner lower corner
    lowerCorner = matrix(NA_real_, 1, 2),
+   #'@field upperCorner upper corner
    upperCorner = matrix(NA_real_, 1, 2),
+   
+   #'@description Initializes a GML envelope. The argument 'bbox' should be a matrix of dim 2,2 
+   #' giving the x/y min/max values of a bouding box, as returned by \code{bbox} function 
+   #' in package \pkg{sp}.
+   #'@param xml object of class \link{XMLInternalNode-class}
+   #'@param element element
+   #'@param bbox object of class \link{matrix}
+   #'@param srsName SRS name
+   #'@param srsDimension SRS dimension
+   #'@param axisLabels axis labels
+   #'@param uomLabels uom labels
    initialize = function(xml = NULL, element = NULL, bbox,
                          srsName = NULL, srsDimension = NULL, 
                          axisLabels = NULL, uomLabels = NULL){
@@ -66,7 +67,8 @@ GMLEnvelope <- R6Class("GMLEnvelope",
      }
    },
    
-   #decode
+   #'@description Decodes an XML representation
+   #'@param xml object of class \link{XMLInternalNode-class}
    decode = function(xml){
       super$decode(xml)
       #backward compatibility in case of GML < 3

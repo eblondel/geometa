@@ -6,15 +6,6 @@
 #' @keywords ISO GML Grid
 #' @return Object of \code{\link{R6Class}} for modelling an GML grid
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML grid
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   OGC Geography Markup Language. http://www.opengeospatial.org/standards/gml
@@ -30,7 +21,14 @@ GMLAbstractReferenceableGrid <- R6Class("GMLAbstractReferenceableGrid",
      xmlNamespacePrefix = "GMLRGRID"
    ),
    public = list(
-     initialize = function(xml = NULL, element = NULL, attrs = list(),
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param element element name
+      #'@param attrs list of attributes
+      #'@param defaults list of default values
+      #'@param wrap wrap element?
+      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = element, attrs = attrs,

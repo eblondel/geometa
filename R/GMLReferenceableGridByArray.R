@@ -6,13 +6,6 @@
 #' @keywords ISO GML Grid
 #' @return Object of \code{\link{R6Class}} for modelling an GML ReferenceableGridByArray
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML ReferenceableGridByArray
-#'  }
-#' }
 #' 
 #' @note Class used internally by geometa
 #' 
@@ -30,7 +23,15 @@ GMLReferenceableGridByArray <- R6Class("GMLReferenceableGridByArray",
      xmlNamespacePrefix = "GMLRGRID"
    ),
    public = list(
+     #'@field generalGridAxis general grid axis
      generalGridAxis = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param element element name
+     #'@param attrs list of attributes
+     #'@param defaults list of default values
+     #'@param wrap wrap element?
      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement

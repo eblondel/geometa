@@ -6,15 +6,6 @@
 #' @keywords ISO GML abstract single crs
 #' @return Object of \code{\link{R6Class}} for modelling an GMLAbstractGeneralDerivedCRS
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field conversion
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML abstract general derived CRS
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -32,10 +23,11 @@ GMLAbstractGeneralDerivedCRS <- R6Class("GMLAbstractGeneralDerivedCRS",
     ),
     public = list(
       
-      #conversion [1..1]: GMLConversion
+      #'@field conversion conversion [1..1]: GMLConversion
       conversion = NULL,
       
-      #setConversion
+      #'@description Set conversion
+      #'@param conversion, object of class \link{GMLConversion}
       setConversion = function(conversion){
         if(!is(conversion, "GMLConversion")){
           stop("The argument value should an object of class 'GMLConversion'")

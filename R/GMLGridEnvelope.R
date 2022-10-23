@@ -22,9 +22,9 @@ GMLGridEnvelope <- R6Class("GMLGridEnvelope",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     #'@field low [\code{\link{matrix}}]
+     #'@field low low value [\code{\link{matrix}}]
      low = matrix(NA_real_, 1, 2),
-     #'@field high [\code{\link{matrix}}]
+     #'@field high high value [\code{\link{matrix}}]
      high = matrix(NA_real_, 1, 2),
      
      #'@description This method is used to instantiate a GML envelope. The argument 'bbox'

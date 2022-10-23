@@ -6,19 +6,6 @@
 #' @keywords ISO GML GridFunction
 #' @return Object of \code{\link{R6Class}} for modelling an GML grid function
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML grid function
-#'  }
-#'  \item{\code{setSequenceRule(sequenceRule)}}{
-#'    Set the sequence rule, as object of class \code{character}
-#'  }
-#'  \item{\code{setStartPoint(x,y)}}{
-#'    Set the start point
-#'  }
-#' }
 #' 
 #' @note Class used internally by geometa
 #' 
@@ -37,8 +24,17 @@ GMLGridFunction <- R6Class("GMLGridFunction",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field sequenceRule sequence rule
      sequenceRule = NULL,
+     #'@field startPoint start point
      startPoint = matrix(NA,1,2),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param element element name
+     #'@param attrs list of attributes
+     #'@param defaults list of default values
+     #'@param wrap wrap element?
      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
@@ -46,7 +42,9 @@ GMLGridFunction <- R6Class("GMLGridFunction",
                         defaults = defaults, wrap = wrap)
      },
      
-     #setSequenceRule
+     #'@description Set sequence rule
+     #'@param sequenceRule sequence rule, a value among: Linear,Boustrophedonic,
+     #'  Cantor-diagonal,Spiral,Morton,Hilbert
      setSequenceRule = function(sequenceRule){
        allowedValues <- c("Linear","Boustrophedonic", "Cantor-diagonal",
                           "Spiral","Morton","Hilbert")
@@ -56,7 +54,9 @@ GMLGridFunction <- R6Class("GMLGridFunction",
        self$sequenceRule <- GMLElement$create("sequenceRule", sequenceRule)
      },
      
-     #setStartPoint
+     #'@description Set start point
+     #'@param x x
+     #'@param y y
      setStartPoint = function(x,y){
        self$startPoint <- GMLElement$create("startPoint", matrix(c(x,y),1,2))
      }

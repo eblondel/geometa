@@ -6,13 +6,6 @@
 #' @keywords ISO GML abstract single crs
 #' @return Object of \code{\link{R6Class}} for modelling an GMLAbstractSingleCRS
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Abstract single CRS
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.

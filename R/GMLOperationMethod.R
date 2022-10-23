@@ -6,42 +6,6 @@
 #' @keywords ISO GML operation method
 #' @return Object of \code{\link{R6Class}} for modelling an GMLOperationMethod
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field formulaCitation [\code{\link{ISOCitation}}]
-#' @field formula [\code{\link{GMLElement}}]
-#' @field sourceDimensions [\code{\link{GMLElement}}]
-#' @field targetDimensions [\code{\link{GMLElement}}]
-#' @field parameter [\code{list} of [\code{\link{GMLOperationParameter}} or \code{\link{GMLOperationParameterGroup}}]]
-#'
-#' @section Inherited methods:
-#' from \code{GMLDefinition}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML OperationMethod
-#'  }
-#'  \item{\code{setFormulaCitation(citation)}}{
-#'    Sets the formula citation, object of class \code{ISOCitation}
-#'  }
-#'  \item{\code{setFormula(formula)}}{
-#'    Sets a formula, object of class \code{character}
-#'  }
-#'  \item{\code{setSourceDimensions(value)}}{
-#'    Sets the number of source dimensions, object of class \code{integer}
-#'  }
-#'  \item{\code{setTargetDimensions(value)}}{
-#'    Sets the number of target dimensions, object of class \code{integer}
-#'  }
-#'  \item{\code{addParameter(parameter)}}{
-#'    Adds a parameter or parameter group, object of class \code{GMLOperationParameter}
-#'    or \code{GMLOperationParameterGroup}
-#'  }
-#'  \item{\code{delParameter(parameter)}}{
-#'    Deletes a parameter or parameter group, object of class \code{GMLOperationParameter}
-#'    or \code{GMLOperationParameterGroupo}
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -59,18 +23,19 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
   ),
   public = list(
    
-    #+ formulaCitation [1..1]: ISOCitation, or use forula
+    #'@field formulaCitation [\code{\link{ISOCitation}}]
     formulaCitation = NA,
-    #+ formula [1..1]: character
+    #'@field formula [\code{\link{GMLElement}}]
     formula = NULL,
-    #+ sourceDimensions [0..1]: integer
+    #'@field sourceDimensions [\code{\link{GMLElement}}]
     sourceDimensions = NULL,
-    #+ targetDimensions [0..1]: integer
+    #'@field targetDimensions [\code{\link{GMLElement}}]
     targetDimensions = NULL,
-    #+ parameter  [0..*]: GMLOperationParameter or GMLOperationParameterGroup
+    #' @field parameter [\code{list} of [\code{\link{GMLOperationParameter}} or \code{\link{GMLOperationParameterGroup}}]]
     parameter = list(),
     
-    #setFormulaCitation
+    #'@description Sets the formula citation
+    #'@param citation object of class \code{ISOCitation}
     setFormulaCitation = function(citation){
       if(!is(citation, "ISOCitation")){
         stop("The argument value should be an object of class 'ISOCitation'")
@@ -78,7 +43,8 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
       self$formulaCitation <- citation
     },
     
-    #setFormula
+    #'@description Set formula
+    #'@param formula formula, object of class \link{character}
     setFormula = function(formula){
       if(!is(formula, "character")) stop("Input object should be of class 'character'")
       formulaElem <- GMLElement$new(element = "formula")
@@ -86,7 +52,8 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
       self$formula <- formulaElem
     },
     
-    #setSourceDimensions
+    #'@description Set source dimensions
+    #'@param value value, object of class \link{integer}
     setSourceDimensions = function(value){
       if(!is(value, "integer")){
         value <- as.integer(value)
@@ -97,7 +64,8 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
       self$sourceDimensions <- GMLElement$create("sourceDimensions", value = value)
     },
     
-    #setTargetDimensions
+    #'@description Set target dimensions
+    #'@param value value, object of class \link{integer}
     setTargetDimensions = function(value){
       if(!is(value, "integer")){
         value <- as.integer(value)
@@ -108,7 +76,9 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
       self$targetDimensions <- GMLElement$create("targetDimensions", value = value)
     },
     
-    #addParameter
+    #'@description Adds a parameter
+    #'@param param object of class \link{GMLOperationParameter} or \link{GMLOperationParameterGroup}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addParameter = function(param){
       if(!inherits(param, "GMLAbstractGeneralOperationParameter")){
         stop("The argument value should be an object of class 'GMLOperationParameter' or 'GMLOperationParameterGroup'")
@@ -116,7 +86,9 @@ GMLOperationMethod <- R6Class("GMLOperationMethod",
       return(self$addListElement("parameter", param))
     },
     
-    #delParameter
+    #'@description Deletes a parameter
+    #'@param param object of class \link{GMLOperationParameter} or \link{GMLOperationParameterGroup}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delParameter = function(param){
       if(!inherits(param, "GMLAbstractGeneralOperationParameter")){
         stop("The argument value should be an object of class 'GMLOperationParameter' or 'GMLOperationParameterGroup'")

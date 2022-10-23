@@ -5,14 +5,8 @@
 #' @keywords GML GMLCOV Coverage
 #' @return Object of \code{\link{R6Class}} for modelling a GMLCOV Extension
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults, wrap)}}{
-#'    This method is used to create a GMLCOV extension
-#'  }
-#' }
 #' 
+#' @note Internal binding for OGC services
 #' @references 
 #'   GML 3.2.1 Application Schema for Coverages http://www.opengis.net/gmlcov/1.0
 #' 
@@ -26,7 +20,15 @@ GMLCOVExtension <-  R6Class("GMLCOVExtension",
      xmlNamespacePrefix = "GMLCOV"
    ),
    public = list(
+     #'@field anyElement anyElement
      anyElement = TRUE,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param element element name
+     #'@param attrs list of attributes
+     #'@param defaults list of default values
+     #'@param wrap wrap element?
      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement

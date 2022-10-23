@@ -7,21 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLCompoundCRS
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @field componentReferenceSystem
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Abstract CRS
-#'  }
-#'  \item{\code{addComponentReferenceSystem(referenceSystem)}}{
-#'    Adds a reference system
-#'  }
-#'  \item{\code{delComponentReferenceSystem(referenceSystem)}}{
-#'    Deletes a reference system
-#'  }
-#' }
-#' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
 #'   http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32554 
@@ -38,14 +23,20 @@ GMLCompoundCRS <- R6Class("GMLCompoundCRS",
   ),
   public = list(
     
-    #+ componentReferenceSystem [2..*]: instance of AbstractSingleCRS
+    #'@field componentReferenceSystem componentReferenceSystem [2..*]: instance of AbstractSingleCRS
     componentReferenceSystem = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param defaults default values
+    #'@param id id
     initialize = function(xml = NULL, defaults = list(), id = NULL){
       super$initialize(xml = xml, defaults = defaults, id = id)
     },
     
-    #addComponentReferenceSystem
+    #'@description Adds component reference system
+    #'@param referenceSystem referenceSystem, object of class \link{GMLAbstractSingleCRS}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addComponentReferenceSystem = function(referenceSystem){
       if(!inherits(referenceSystem, "GMLAbstractSingleCRS")){
         stop("The argument should be a instance of class CRS")
@@ -53,7 +44,9 @@ GMLCompoundCRS <- R6Class("GMLCompoundCRS",
       return(self$addListElement("componentReferenceSystem", referenceSystem))
     },
     
-    #delComponentReferenceSystem
+    #'@description Deletes component reference system
+    #'@param referenceSystem referenceSystem, object of class \link{GMLAbstractSingleCRS}
+    #'@return \code{TRUE} if delete, \code{FALSE} otherwise
     delComponentReferenceSystem = function(referenceSystem){
       if(!inherits(referenceSystem, "GMLAbstractSingleCRS")){
         stop("The argument should be a instance of class CRS")

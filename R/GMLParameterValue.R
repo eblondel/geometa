@@ -6,34 +6,6 @@
 #' @keywords ISO GML parameter value
 #' @return Object of \code{\link{R6Class}} for modelling an GML parameter value
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value [\code{\link{GMLElement}}]
-#' @field operationParameter [\code{\link{GMLOperationParameter}}]
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate a GML ParameterValue
-#'  }
-#'  \item{\code{setValue(value,uom)}}{
-#'    Sets the value (object of class "numeric"), with unit of measure (uom)
-#'  }
-#'  \item{\code{setStringValue(value)}}{
-#'    Sets a string value
-#'  }
-#'  \item{\code{setIntegerValue(value)}}{
-#'    Sets an integer value
-#'  }
-#'  \item{\code{setBooleanValue(value)}}{
-#'    Sets a boolean value
-#'  }
-#'  \item{\code{setValueFile(value)}}{
-#'    Sets a file value
-#'  }
-#'  \item{\code{setOperationParameter(operationParameter)}}{
-#'    Sets the operation parameter, object of class \code{GMLOperationParameter}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   gml <- GMLParameterValue$new()
@@ -62,19 +34,33 @@ GMLParameterValue <- R6Class("GMLParameterValue",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field value value
      value = NULL,
+     #'@field stringValue string value
      stringValue = NULL,
+     #'@field integerValue integer value
      integerValue = NULL,
+     #'@field booleanValue boolean value
      booleanValue = NULL,
+     #'@field valueList value list
      valueList = NULL, #TODO
+     #'@field integerValueList integer value list
      integerValueList = NULL, #TODO
+     #'@field valueFile value file
      valueFile = NULL,
+     #'@field operationParameter operation parameter
      operationParameter = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param defaults default values
      initialize = function(xml = NULL, defaults = list()){
        super$initialize(xml, element = private$xmlElement, defaults)
      },
      
-     #setValue
+     #'@description Set value
+     #'@param value value, object of class \link{numeric}
+     #'@param uom uom
      setValue = function(value, uom){
        if(!is(value, "numeric")){stop("Value should be an object of class 'numeric'")}
        valueElem <- GMLElement$new(element = "value")
@@ -83,14 +69,16 @@ GMLParameterValue <- R6Class("GMLParameterValue",
        self$value <- valueElem
      },
      
-     #setStringValue
+     #'@description Set string value
+     #'@param value value
      setStringValue = function(value){
        valueElem <- GMLElement$new(element = "stringValue")
        valueElem$setValue(value)
        self$stringValue <- valueElem
      },
      
-     #setIntegerValue
+     #'@description Set integer value
+     #'@param value value, object of class \link{integer}
      setIntegerValue = function(value){
        if(!is(value, "integer")){stop("Value should be an object of class 'integer'")}
        valueElem <- GMLElement$new(element = "integerValue")
@@ -98,7 +86,8 @@ GMLParameterValue <- R6Class("GMLParameterValue",
        self$integerValue <- valueElem
      },
      
-     #setBooleanValue
+     #'@description Set boolean value
+     #'@param value object of class \link{boolean}
      setBooleanValue = function(value){
        if(!is(value, "logical")){stop("Value should be an object of class 'logical'")}
        valueElem <- GMLElement$new(element = "booleanValue")
@@ -106,7 +95,8 @@ GMLParameterValue <- R6Class("GMLParameterValue",
        self$booleanValue <- valueElem
      },
      
-     #setValueFile
+     #'@description Set value file
+     #'@param value value
      setValueFile = function(value){
        if(!is(value, "character")){stop("Value should be an object of class 'character'")}
        valueElem <- GMLElement$new(element = "valueFile")
@@ -114,10 +104,11 @@ GMLParameterValue <- R6Class("GMLParameterValue",
        self$valueFile <- valueElem
      },
      
-     #setOperationParameter
+     #'@description Set operation parameter
+     #'@param operationParameter object of class \link{GMLOperationParameter}
      setOperationParameter = function(operationParameter){
        if(!is(operationParameter, "GMLOperationParameter")){
-         stop("Input 'operationParameter' should be of an object oftype 'GMLOperationParameter'")
+         stop("Input 'operationParameter' should be of an object of class 'GMLOperationParameter'")
        }
        self$operationParameter <- operationParameter
      }

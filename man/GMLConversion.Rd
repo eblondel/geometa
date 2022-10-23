@@ -12,38 +12,9 @@ Object of \code{\link{R6Class}} for modelling an GMLConversion
 }
 \description{
 GMLConversion
+
+GMLConversion
 }
-\section{Fields}{
-
-\describe{
-\item{\code{method}}{[\code{\link{GMLElement}}]}
-
-\item{\code{parameterValue}}{[\code{list} of \code{\link{GMLAbstractGeneralParameterValue}}]}
-}}
-
-\section{Inherited methods}{
-
-from \code{GMLAbstractCoordinateOperation}
-}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml, defaults, id)}}{
-   This method is used to instantiate a GML Conversion
- }
- \item{\code{setMethod(method)}}{
-   Sets the method
- }
- \item{\code{addParameterValue(paramValue)}}{
-   Adds a parameter value
- }
- \item{\code{delParameterValue(paramValue)}}{
-   Deletes a parameter value
- }
-}
-}
-
 \references{
 ISO 19136:2007 Geographic Information -- Geographic Markup Language.
   http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32554 
@@ -56,3 +27,148 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{GML}
 \keyword{ISO}
 \keyword{conversion}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractGML]{geometa::GMLAbstractGML}} -> \code{\link[geometa:GMLDefinition]{geometa::GMLDefinition}} -> \code{\link[geometa:GMLAbstractCoordinateOperation]{geometa::GMLAbstractCoordinateOperation}} -> \code{\link[geometa:GMLAbstractSingleOperation]{geometa::GMLAbstractSingleOperation}} -> \code{\link[geometa:GMLAbstractGeneralConversion]{geometa::GMLAbstractGeneralConversion}} -> \code{GMLConversion}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{method}}{method [1..1]: GMLOperationMethod}
+
+\item{\code{parameterValue}}{parameterValue [0..*]: GMLParameterValue}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-GMLConversion-setMethod}{\code{GMLConversion$setMethod()}}
+\item \href{#method-GMLConversion-addParameterValue}{\code{GMLConversion$addParameterValue()}}
+\item \href{#method-GMLConversion-delParameterValue}{\code{GMLConversion$delParameterValue()}}
+\item \href{#method-GMLConversion-clone}{\code{GMLConversion$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="addName"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-addName'><code>geometa::GMLAbstractGML$addName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="delName"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-delName'><code>geometa::GMLAbstractGML$delName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="setDescription"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-setDescription'><code>geometa::GMLAbstractGML$setDescription()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="setDescriptionReference"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-setDescriptionReference'><code>geometa::GMLAbstractGML$setDescriptionReference()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractGML" data-id="setIdentifier"><a href='../../geometa/html/GMLAbstractGML.html#method-GMLAbstractGML-setIdentifier'><code>geometa::GMLAbstractGML$setIdentifier()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLDefinition" data-id="addRemark"><a href='../../geometa/html/GMLDefinition.html#method-GMLDefinition-addRemark'><code>geometa::GMLDefinition$addRemark()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLDefinition" data-id="delRemark"><a href='../../geometa/html/GMLDefinition.html#method-GMLDefinition-delRemark'><code>geometa::GMLDefinition$delRemark()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCoordinateOperation" data-id="addAccuracy"><a href='../../geometa/html/GMLAbstractCoordinateOperation.html#method-GMLAbstractCoordinateOperation-addAccuracy'><code>geometa::GMLAbstractCoordinateOperation$addAccuracy()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCoordinateOperation" data-id="addScope"><a href='../../geometa/html/GMLAbstractCoordinateOperation.html#method-GMLAbstractCoordinateOperation-addScope'><code>geometa::GMLAbstractCoordinateOperation$addScope()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCoordinateOperation" data-id="delAccuracy"><a href='../../geometa/html/GMLAbstractCoordinateOperation.html#method-GMLAbstractCoordinateOperation-delAccuracy'><code>geometa::GMLAbstractCoordinateOperation$delAccuracy()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCoordinateOperation" data-id="delScope"><a href='../../geometa/html/GMLAbstractCoordinateOperation.html#method-GMLAbstractCoordinateOperation-delScope'><code>geometa::GMLAbstractCoordinateOperation$delScope()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCoordinateOperation" data-id="initialize"><a href='../../geometa/html/GMLAbstractCoordinateOperation.html#method-GMLAbstractCoordinateOperation-initialize'><code>geometa::GMLAbstractCoordinateOperation$initialize()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCoordinateOperation" data-id="setDomainOfValidity"><a href='../../geometa/html/GMLAbstractCoordinateOperation.html#method-GMLAbstractCoordinateOperation-setDomainOfValidity'><code>geometa::GMLAbstractCoordinateOperation$setDomainOfValidity()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCoordinateOperation" data-id="setSourceCRS"><a href='../../geometa/html/GMLAbstractCoordinateOperation.html#method-GMLAbstractCoordinateOperation-setSourceCRS'><code>geometa::GMLAbstractCoordinateOperation$setSourceCRS()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCoordinateOperation" data-id="setTargetCRS"><a href='../../geometa/html/GMLAbstractCoordinateOperation.html#method-GMLAbstractCoordinateOperation-setTargetCRS'><code>geometa::GMLAbstractCoordinateOperation$setTargetCRS()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="GMLAbstractCoordinateOperation" data-id="setVersion"><a href='../../geometa/html/GMLAbstractCoordinateOperation.html#method-GMLAbstractCoordinateOperation-setVersion'><code>geometa::GMLAbstractCoordinateOperation$setVersion()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLConversion-setMethod"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLConversion-setMethod}{}}}
+\subsection{Method \code{setMethod()}}{
+Set method
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLConversion$setMethod(method)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{method}}{method, object of class \link{GMLOperationMethod}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLConversion-addParameterValue"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLConversion-addParameterValue}{}}}
+\subsection{Method \code{addParameterValue()}}{
+Adds parameter value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLConversion$addParameterValue(paramValue)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{paramValue}}{parameter value, object class inheriting \link{GMLAbstractGeneralParameterValue}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLConversion-delParameterValue"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLConversion-delParameterValue}{}}}
+\subsection{Method \code{delParameterValue()}}{
+Deletes parameter value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLConversion$delParameterValue(paramValue)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{paramValue}}{parameter value, object class inheriting \link{GMLAbstractGeneralParameterValue}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLConversion-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLConversion-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLConversion$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

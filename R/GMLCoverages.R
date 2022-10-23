@@ -6,19 +6,6 @@
 #' @keywords ISO GML multipoint coverage
 #' @return Object of \code{\link{R6Class}} for modelling an GML multipoint coverage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GMLmultipoint coverage
-#'  }
-#'  \item{\code{setCoverageFunction(coverageFunction)}}{
-#'    Set a coverage function, object of class \code{GMLGridFunction} or
-#'    \code{GMLCoverageMappingRule}
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -35,7 +22,14 @@ GMLMultiPointCoverage <- R6Class("GMLMultiPointCoverage",
    xmlNamespacePrefix = "GML"
  ),
  public = list(
-   initialize = function(xml = NULL, element = NULL, attrs = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param element element name
+    #'@param attrs list of attributes
+    #'@param defaults list of default values
+    #'@param wrap wrap element? 
+    initialize = function(xml = NULL, element = NULL, attrs = list(),
                          defaults = list(), wrap = TRUE){
      if(is.null(element)) element <- private$xmlElement
      super$initialize(xml, element = element, attrs = attrs,
@@ -52,17 +46,6 @@ GMLMultiPointCoverage <- R6Class("GMLMultiPointCoverage",
 #' @keywords ISO GML multicurve coverage
 #' @return Object of \code{\link{R6Class}} for modelling an GML multicurve coverage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML multicurve coverage
-#'  }
-#'  \item{\code{setCoverageFunction(coverageFunction)}}{
-#'    Set a coverage function, object of class \code{GMLGridFunction} or
-#'    \code{GMLCoverageMappingRule}
-#'  }
-#' }
 #' 
 #' @note Class used internally by geometa
 #' 
@@ -81,7 +64,14 @@ GMLMultiCurveCoverage <- R6Class("GMLMultiCurveCoverage",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     initialize = function(xml = NULL, element = NULL, attrs = list(),
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param element element name
+      #'@param attrs list of attributes
+      #'@param defaults list of default values
+      #'@param wrap wrap element?
+      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = element, attrs = attrs,
@@ -98,17 +88,6 @@ GMLMultiCurveCoverage <- R6Class("GMLMultiCurveCoverage",
 #' @keywords ISO GML multisurface coverage
 #' @return Object of \code{\link{R6Class}} for modelling an GML multisurface coverage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML multisurface coverage
-#'  }
-#'  \item{\code{setCoverageFunction(coverageFunction)}}{
-#'    Set a coverage function, object of class \code{GMLGridFunction} or
-#'    \code{GMLCoverageMappingRule}
-#'  }
-#' }
 #' 
 #' @note Class used internally by geometa
 #' 
@@ -127,7 +106,13 @@ GMLMultiSurfaceCoverage <- R6Class("GMLMultiSurfaceCoverage",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     initialize = function(xml = NULL, element = NULL, attrs = list(),
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param element element name
+      #'@param attrs list of attributes
+      #'@param defaults list of default values
+      #'@param wrap wrap element?
+      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = element, attrs = attrs,
@@ -144,19 +129,6 @@ GMLMultiSurfaceCoverage <- R6Class("GMLMultiSurfaceCoverage",
 #' @keywords ISO GML multisolid coverage
 #' @return Object of \code{\link{R6Class}} for modelling an GML multisolid coverage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML multisolid coverage
-#'  }
-#'  \item{\code{setCoverageFunction(coverageFunction)}}{
-#'    Set a coverage function, object of class \code{GMLGridFunction} or
-#'    \code{GMLCoverageMappingRule}
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -173,7 +145,13 @@ GMLMultiSolidCoverage <- R6Class("GMLMultiSolidCoverage",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     initialize = function(xml = NULL, element = NULL, attrs = list(),
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param element element name
+      #'@param attrs list of attributes
+      #'@param defaults list of default values
+      #'@param wrap wrap element?
+      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = element, attrs = attrs,
@@ -181,7 +159,6 @@ GMLMultiSolidCoverage <- R6Class("GMLMultiSolidCoverage",
      }
    )
 )
-
 
 #' GMLGridCoverage
 #'
@@ -191,19 +168,6 @@ GMLMultiSolidCoverage <- R6Class("GMLMultiSolidCoverage",
 #' @keywords ISO GML grid coverage
 #' @return Object of \code{\link{R6Class}} for modelling an GML grid coverage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML grid coverage
-#'  }
-#'  \item{\code{setCoverageFunction(coverageFunction)}}{
-#'    Set a coverage function, object of class \code{GMLGridFunction} or
-#'    \code{GMLCoverageMappingRule}
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -220,7 +184,13 @@ GMLGridCoverage <- R6Class("GMLGridCoverage",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     initialize = function(xml = NULL, element = NULL, attrs = list(),
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param element element name
+      #'@param attrs list of attributes
+      #'@param defaults list of default values
+      #'@param wrap wrap element?
+      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = element, attrs = attrs,
@@ -237,19 +207,6 @@ GMLGridCoverage <- R6Class("GMLGridCoverage",
 #' @keywords ISO GML rectified grid coverage
 #' @return Object of \code{\link{R6Class}} for modelling an GML rectified grid coverage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, element, attrs, defaults)}}{
-#'    This method is used to instantiate a GML rectified grid coverage
-#'  }
-#'  \item{\code{setCoverageFunction(coverageFunction)}}{
-#'    Set a coverage function, object of class \code{GMLGridFunction} or
-#'    \code{GMLCoverageMappingRule}
-#'  }
-#' }
-#' 
-#' @note Class used internally by geometa
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -266,7 +223,13 @@ GMLRectifiedGridCoverage <- R6Class("GMLRectifiedGridCoverage",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
-     initialize = function(xml = NULL, element = NULL, attrs = list(),
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param element element name
+      #'@param attrs list of attributes
+      #'@param defaults list of default values
+      #'@param wrap wrap element?
+      initialize = function(xml = NULL, element = NULL, attrs = list(),
                            defaults = list(), wrap = TRUE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = element, attrs = attrs,

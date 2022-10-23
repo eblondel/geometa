@@ -7,15 +7,7 @@
 #' @return Object of \code{\link{R6Class}} for modelling an GMLAbstractGeneralConversion
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Inherited methods:
-#' from \code{GMLAbstractCoordinateOperation}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults, id)}}{
-#'    This method is used to instantiate a GML Abstract CRS
-#'  }
-#' }
+#' @note Experimental
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.

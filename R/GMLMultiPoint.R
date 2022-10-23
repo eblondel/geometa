@@ -6,21 +6,6 @@
 #' @keywords ISO GML MultiPoint
 #' @return Object of \code{\link{R6Class}} for modelling an GML multipoint
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field pointMember
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, sfg)}}{
-#'    This method is used to instantiate a GML multipoint
-#'  }
-#'  \item{\code{addPointMember(point)}}{
-#'    Add a point member
-#'  }
-#'  \item{\code{delPointMember(point)}}{
-#'    Deletes a point member
-#'  }
-#' }
 #' 
 #' @note Experimental
 #' 
@@ -39,7 +24,12 @@ GMLMultiPoint <- R6Class("GMLMultiPoint",
      xmlNamespacePrefix = "GML"
    ),
    public = list(
+     #'@field pointMember point members
      pointMember = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param sfg simple feature geometry resulting from \pkg{sf}
      initialize = function(xml = NULL, sfg = NULL){
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)
        if(is.null(xml)){
@@ -55,7 +45,9 @@ GMLMultiPoint <- R6Class("GMLMultiPoint",
        }
      },
      
-     #addPointMember
+     #'@description Adds point member
+     #'@param point point object of class \link{GMLPoint}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addPointMember = function(point){
        if(!inherits(point, "GMLPoint")){
          stop("Input 'point' should be an object that inherits 'GMLPoint'")
@@ -67,7 +59,9 @@ GMLMultiPoint <- R6Class("GMLMultiPoint",
        return(added)
      },
      
-     #delPointMember
+     #'@description Deletes point member
+     #'@param point point object of class \link{GMLPoint}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delPointMember = function(point){
        if(!inherits(point, "GMLPoint")){
          stop("Input 'point' should be an object that inherits 'GMLPoint'")
