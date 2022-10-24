@@ -6,24 +6,7 @@
 #' @keywords ISO Binding
 #' @return Object of \code{\link{R6Class}} for modelling an ISOBinding
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field description [\code{\link{character}}] description
-#' @field globalProperty [\code{\link{ISOPropertyType}}] property type
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an \code{\link{ISOBinding}}
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Set description of inheritance relation. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setPropertyType(propertyType)}}{
-#'    Set global property, object of class \code{\link{ISOPropertyType}}
-#'  }
-#' }
-#'  
+#' 
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
 #' 
@@ -37,12 +20,14 @@ ISOBinding <- R6Class("ISOBinding",
     ),
     public = list(
       
-      #+ description [0..1]: character
+      #'@field description description [0..1]: character
       description = NULL,
-      #+ globalProperty [1..1]: ISOPropertyType
+      #'@field globalProperty globalProperty [1..1]: ISOPropertyType
       globalProperty = NULL,
 
-      #setDescription
+      #'@description Set description 
+      #'@param description description
+      #'@param locales list of localized descriptions
       setDescription = function(description, locales = NULL){
         self$description <- as.character(description)
         if(!is.null(locales)){
@@ -50,7 +35,8 @@ ISOBinding <- R6Class("ISOBinding",
         }
       },
 
-      #setPropertyType
+      #'@description Set property type
+      #'@param propertyType property type, object of class \link{ISOPropertyType}
       setPropertyType = function(propertyType){
         if(!is(propertyType, "ISOPropertyType")){
           stop("The argument value should be an object of class 'ISOPropertyType'")

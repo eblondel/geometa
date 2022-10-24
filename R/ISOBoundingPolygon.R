@@ -6,15 +6,6 @@
 #' @keywords ISO bounding polygon
 #' @return Object of \code{\link{R6Class}} for modelling an ISO BoundingPolygon
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field polygon [\code{\link{GMLAbstractGeometry}}] a (list of) geometrie(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, sfg)}}{
-#'    This method is used to instantiate an \code{\link{ISOBoundingPolygon}}
-#'  }
-#' }
 #' 
 #' @note Experimental
 #' 
@@ -30,12 +21,18 @@ ISOBoundingPolygon <- R6Class("ISOBoundingPolygon",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field polygon list of polygons
     polygon = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #addPolygon
+    #'@description Adds polygon
+    #'@param x geometry object from \pkg{sf} or object of class inheriting \link{GMLAbstractGeometry}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addPolygon = function(x){
       if(is(x,"sfg")) x <- GMLAbstractGeometry$fromSimpleFeatureGeometry(x)
       if(!inherits(x, "GMLAbstractGeometry")){
@@ -44,7 +41,9 @@ ISOBoundingPolygon <- R6Class("ISOBoundingPolygon",
       return(self$addListElement("polygon", x))
     },
     
-    #delPolygon
+    #'@description Deletes polygon
+    #'@param x geometry object from \pkg{sf} or object of class inheriting \link{GMLAbstractGeometry}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delPolygon = function(x){
       if(is(x,"sfg")) x <- GMLAbstractGeometry$fromSimpleFeatureGeometry(x)
       if(!inherits(x, "GMLAbstractGeometry")){

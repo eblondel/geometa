@@ -6,16 +6,6 @@
 #' @keywords ISO decimal
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Decimal
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOBaseDecimal
-#'  }
-#' }
-#' 
 #' @note Class used by geometa internal XML decoder/encoder
 #' 
 #' @references
@@ -39,7 +29,12 @@ ISOBaseDecimal <- R6Class("ISOBaseDecimal",
      }
    ),
    public = list(
+     #'@field value value
      value = NA,
+     
+     #'@description Initializes a base decimal object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param value value
      initialize = function(xml = NULL, value){
        super$initialize(xml = xml)
        if(is.null(xml)){

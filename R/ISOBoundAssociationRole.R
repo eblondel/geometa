@@ -6,18 +6,6 @@
 #' @keywords ISO BoundAssociationRole
 #' @return Object of \code{\link{R6Class}} for modelling an ISOBoundAssociationRole
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field rolePlayer [\code{\link{ISOFeatureType}}] feature type
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an \code{\link{ISOBoundAssociationRole}}
-#'  }
-#'  \item{\code{setFeatureType(featureType)}}{
-#'    Set feature type, object of class \code{\link{ISOFeatureType}}
-#'  }
-#' }
 #'  
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
@@ -32,10 +20,11 @@ ISOBoundAssociationRole <- R6Class("ISOBoundAssociationRole",
     ),
     public = list(
       
-      #+ rolePlayer [0..1]: ISOFeatureType
+      #'@field rolePlayer rolePlayer [0..1]: ISOFeatureType
       rolePlayer = NULL,
       
-      #setRolePlayer
+      #'@description set role player
+      #'@param rolePlayer object of class \link{ISOFeatureType}
       setRolePlayer = function(rolePlayer){
         if(!is(rolePlayer, "ISOFeatureType")){
           stop("The argument value should be an object of class 'ISOFeatureType'")

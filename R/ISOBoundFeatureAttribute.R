@@ -6,19 +6,7 @@
 #' @keywords ISO BoundFeatureAttribute
 #' @return Object of \code{\link{R6Class}} for modelling an ISOBoundFeatureAttribute
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field valueType [\code{\link{ISOTypeName}}] value type
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an \code{\link{ISOBoundFeatureAttribute}}
-#'  }
-#'  \item{\code{setTypeName(typeName)}}{
-#'    Set typeName, object of class \code{\link{ISOTypeName}} or \code{character}
-#'  }
-#' }
-#'  
+#' 
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
 #' 
@@ -32,10 +20,11 @@ ISOBoundFeatureAttribute <- R6Class("ISOBoundFeatureAttribute",
     ),
     public = list(
       
-      #+ valueType [0..1]: ISOTypeName
+      #'@field valueType valueType [0..1]: ISOTypeName
       valueType = NULL,
       
-      #setTypeName
+      #'@description Set type name
+      #'@param typeName object of class \link{ISOTypeName} or \link{character}
       setTypeName = function(typeName){
         if(!is(typeName, "ISOTypeName")){
           if(is(typeName, "character")){

@@ -6,46 +6,6 @@
 #' @keywords ISO band
 #' @return Object of \code{\link{R6Class}} for modelling an ISOBand
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field maxValue [\code{\link{numeric}}]
-#' @field minValue [\code{\link{numeric}}]
-#' @field units [\code{\link{GMLUnitDefinition}}]
-#' @field peakResponse [\code{\link{numeric}}]
-#' @field bitsPerValue [\code{\link{integer}}]
-#' @field toneGradation [\code{\link{integer}}]
-#' @field scaleFactor [\code{\link{numeric}}]
-#' @field offset [\code{\link{numeric}}]
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOBand}}
-#'  }
-#'  \item{\code{setMaxValue(maxValue)}}{
-#'    Sets the maximum value
-#'  }
-#'  \item{\code{setMinValue(minValue)}}{
-#'    Sets the minimum value
-#'  }
-#'  \item{\code{setUnits(units)}}{
-#'    Sets the unit, object of class \code{\link{GMLUnitDefinition}}
-#'  }
-#'  \item{\code{setPeakResponse(peakResponse)}}{
-#'    Sets the peak response
-#'  }
-#'  \item{\code{setBitsPerValue(bitsPerValue)}}{
-#'    Sets the bits per value
-#'  }
-#'  \item{\code{setToneGradation}}{
-#'    Sets the tone gradation
-#'  }
-#'  \item{\code{setScaleFactor(scaleFactor)}}{
-#'    Sets the scale factor
-#'  }
-#'  \item{\code{setOffset(offset)}}{
-#'    Sets the offset
-#'  }
-#' }
 #' 
 #' @examples
 #'    #create band range dimension
@@ -80,38 +40,43 @@ ISOBand <- R6Class("ISOBand",
    ),
    public = list(
      
-     #+ maxValue [0..1] : numeric
+     #'@field maxValue maxValue [0..1] : numeric
      maxValue = NULL,
-     #+ minValue [0..1] : numeric
+     #'@field minValue minValue [0..1] : numeric
      minValue = NULL,
-     #+ units [0..1] : GMLUnitDefinition
+     #'@field units units [0..1] : GMLUnitDefinition
      units = NULL,
-     #+ peakResponse [0..1] : numeric
+     #'@field peakResponse peakResponse [0..1] : numeric
      peakResponse = NULL,
-     #+ bitsPerValue [0..1] : integer
+     #'@field bitsPerValue bitsPerValue [0..1] : integer
      bitsPerValue = NULL,
-     #+ toneGradation [0..1] : integer
+     #'@field toneGradation toneGradation [0..1] : integer
      toneGradation = NULL,
-     #+ scaleFactor [0..1] : numeric
+     #'@field scaleFactor scaleFactor [0..1] : numeric
      scaleFactor = NULL,
-     #+ offset [0..1] : numeric
+     #'@field offset offset [0..1] : numeric
      offset = NULL,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setMaxValue
+     #'@description Set max value
+     #'@param maxValue max value, object of class \link{numeric}
      setMaxValue = function(maxValue){
        self$maxValue <- as.numeric(maxValue)
      },
      
-     #setMinValue
+     #'@description Set min value
+     #'@param minValue min value, object of class \link{numeric}
      setMinValue = function(minValue){
        self$minValue <- as.numeric(minValue)
      },
      
-     #setUnits
+     #'@description Set unit definition
+     #'@param uom object of class \link{GMLUnitDefinition}
      setUnits = function(uom){
        if(!is(uom, "GMLUnitDefinition")){
          stop("The argument value should be an object of class 'GMUnitDefinition")
@@ -119,27 +84,32 @@ ISOBand <- R6Class("ISOBand",
        self$units <- uom
      },
      
-     #setPeakResponse
+     #'@description Set peak response
+     #'@param peakResponse object of class \link{numeric}
      setPeakResponse = function(peakResponse){
        self$peakResponse <- as.numeric(peakResponse)
      },
      
-     #setBitsPerValue
+     #'@description Set bits per value
+     #'@param bitsPerValue object of class \link{numeric}
      setBitsPerValue = function(bitsPerValue){
        self$bitsPerValue <- as.integer(bitsPerValue)
      },
      
-     #setToneGradation
+     #'@description Set tone gradation
+     #'@param toneGradation object of class \link{numeric}
      setToneGradation = function(toneGradation){
        self$toneGradation = as.integer(toneGradation)
      },
      
-     #setScaleFactor
+     #'@description Set scale factor
+     #'@param scaleFactor object of class \link{numeric}
      setScaleFactor = function(scaleFactor){
        self$scaleFactor <- as.numeric(scaleFactor)
      },
      
-     #setOffset
+     #'@description Set offset
+     #'@param offset object of class \link{numeric}
      setOffset = function(offset){
        self$offset <- as.numeric(offset)
      }

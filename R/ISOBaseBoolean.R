@@ -6,15 +6,6 @@
 #' @keywords ISO boolean
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Boolean
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOBaseBoolean
-#'  }
-#' }
 #' 
 #' @note Class used by geometa internal XML decoder/encoder
 #' 
@@ -30,7 +21,12 @@ ISOBaseBoolean <- R6Class("ISOBaseBoolean",
     xmlNamespacePrefix = "GCO"
   ),
   public = list(
+    #'@field value value
     value = NA,
+    
+    #'@description Initializes a base boolean object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param value value
     initialize = function(xml = NULL, value){
       super$initialize(xml = xml)
       if(is.null(xml)){

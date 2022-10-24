@@ -12,60 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISOBand
 }
 \description{
 ISOBand
+
+ISOBand
 }
-\section{Fields}{
-
-\describe{
-\item{\code{maxValue}}{[\code{\link{numeric}}]}
-
-\item{\code{minValue}}{[\code{\link{numeric}}]}
-
-\item{\code{units}}{[\code{\link{GMLUnitDefinition}}]}
-
-\item{\code{peakResponse}}{[\code{\link{numeric}}]}
-
-\item{\code{bitsPerValue}}{[\code{\link{integer}}]}
-
-\item{\code{toneGradation}}{[\code{\link{integer}}]}
-
-\item{\code{scaleFactor}}{[\code{\link{numeric}}]}
-
-\item{\code{offset}}{[\code{\link{numeric}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOBand}}
- }
- \item{\code{setMaxValue(maxValue)}}{
-   Sets the maximum value
- }
- \item{\code{setMinValue(minValue)}}{
-   Sets the minimum value
- }
- \item{\code{setUnits(units)}}{
-   Sets the unit, object of class \code{\link{GMLUnitDefinition}}
- }
- \item{\code{setPeakResponse(peakResponse)}}{
-   Sets the peak response
- }
- \item{\code{setBitsPerValue(bitsPerValue)}}{
-   Sets the bits per value
- }
- \item{\code{setToneGradation}}{
-   Sets the tone gradation
- }
- \item{\code{setScaleFactor(scaleFactor)}}{
-   Sets the scale factor
- }
- \item{\code{setOffset(offset)}}{
-   Sets the offset
- }
-}
-}
-
 \examples{
    #create band range dimension
    md <- ISOBand$new()
@@ -95,3 +44,248 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{band}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISORangeDimension]{geometa::ISORangeDimension}} -> \code{ISOBand}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{maxValue}}{maxValue [0..1] : numeric}
+
+\item{\code{minValue}}{minValue [0..1] : numeric}
+
+\item{\code{units}}{units [0..1] : GMLUnitDefinition}
+
+\item{\code{peakResponse}}{peakResponse [0..1] : numeric}
+
+\item{\code{bitsPerValue}}{bitsPerValue [0..1] : integer}
+
+\item{\code{toneGradation}}{toneGradation [0..1] : integer}
+
+\item{\code{scaleFactor}}{scaleFactor [0..1] : numeric}
+
+\item{\code{offset}}{offset [0..1] : numeric}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOBand-new}{\code{ISOBand$new()}}
+\item \href{#method-ISOBand-setMaxValue}{\code{ISOBand$setMaxValue()}}
+\item \href{#method-ISOBand-setMinValue}{\code{ISOBand$setMinValue()}}
+\item \href{#method-ISOBand-setUnits}{\code{ISOBand$setUnits()}}
+\item \href{#method-ISOBand-setPeakResponse}{\code{ISOBand$setPeakResponse()}}
+\item \href{#method-ISOBand-setBitsPerValue}{\code{ISOBand$setBitsPerValue()}}
+\item \href{#method-ISOBand-setToneGradation}{\code{ISOBand$setToneGradation()}}
+\item \href{#method-ISOBand-setScaleFactor}{\code{ISOBand$setScaleFactor()}}
+\item \href{#method-ISOBand-setOffset}{\code{ISOBand$setOffset()}}
+\item \href{#method-ISOBand-clone}{\code{ISOBand$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISORangeDimension" data-id="setDescriptor"><a href='../../geometa/html/ISORangeDimension.html#method-ISORangeDimension-setDescriptor'><code>geometa::ISORangeDimension$setDescriptor()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISORangeDimension" data-id="setSequenceIdentifier"><a href='../../geometa/html/ISORangeDimension.html#method-ISORangeDimension-setSequenceIdentifier'><code>geometa::ISORangeDimension$setSequenceIdentifier()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-setMaxValue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-setMaxValue}{}}}
+\subsection{Method \code{setMaxValue()}}{
+Set max value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$setMaxValue(maxValue)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{maxValue}}{max value, object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-setMinValue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-setMinValue}{}}}
+\subsection{Method \code{setMinValue()}}{
+Set min value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$setMinValue(minValue)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{minValue}}{min value, object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-setUnits"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-setUnits}{}}}
+\subsection{Method \code{setUnits()}}{
+Set unit definition
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$setUnits(uom)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{uom}}{object of class \link{GMLUnitDefinition}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-setPeakResponse"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-setPeakResponse}{}}}
+\subsection{Method \code{setPeakResponse()}}{
+Set peak response
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$setPeakResponse(peakResponse)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{peakResponse}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-setBitsPerValue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-setBitsPerValue}{}}}
+\subsection{Method \code{setBitsPerValue()}}{
+Set bits per value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$setBitsPerValue(bitsPerValue)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{bitsPerValue}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-setToneGradation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-setToneGradation}{}}}
+\subsection{Method \code{setToneGradation()}}{
+Set tone gradation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$setToneGradation(toneGradation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{toneGradation}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-setScaleFactor"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-setScaleFactor}{}}}
+\subsection{Method \code{setScaleFactor()}}{
+Set scale factor
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$setScaleFactor(scaleFactor)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{scaleFactor}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-setOffset"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-setOffset}{}}}
+\subsection{Method \code{setOffset()}}{
+Set offset
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$setOffset(offset)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{offset}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOBand-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOBand-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOBand$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

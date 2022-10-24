@@ -33,6 +33,11 @@ ISOCellGeometry <- R6Class("ISOCellGeometry",
       xmlNamespacePrefix = "GMD"
     ),
     public = list(
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param value value
+      #'@param description description
       initialize = function(xml = NULL, value, description = NULL){
         super$initialize(xml = xml, id = private$xmlElement, value = value, 
                          description = description)
