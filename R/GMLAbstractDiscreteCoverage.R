@@ -39,7 +39,7 @@ GMLAbstractDiscreteCoverage <- R6Class("GMLAbstractDiscreteCoverage",
      },
 
      #'@description Set coverage function
-     #'@param coverageFunction object of class \link{GMLGridFunction} or\link{GMLCoverageMappingRule}
+     #'@param coverageFunction object of class \link{GMLGridFunction} (or\code{GMLCoverageMappingRule}, not yet supported)
      setCoverageFunction = function(coverageFunction){
        allowedIsClasses <- c("GMLCoverageMappingRule","GMLGridFunction")
        if(!any(sapply(allowedIsClasses, function(x){return(is(coverageFunction, x))}))){

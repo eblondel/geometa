@@ -37,8 +37,8 @@ GMLProjectedCRS <- R6Class("GMLProjectedCRS",
       self$baseGeodeticCRS <- GMLElement$create("baseGeodeticCRS", value = crs)
     },
     
-    #'@description Set cartesian CRS
-    #'@param cs cs, object of class \link{GMLCartesianCRS}
+    #'@description Set cartesian CRS. Not yet supported
+    #'@param cs cs, object of class \code{GMLCartesianCRS}
     setCartesianCS = function(cs){
       if(!is(cs, "GMLCartesianCS")){
         stop("The argument value should be an object of class 'GMLCartesianCS")

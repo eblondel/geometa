@@ -194,7 +194,7 @@ Set boolean value
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{value}}{object of class \link{boolean}}
+\item{\code{value}}{object of class \link{logical}}
 }
 \if{html}{\out{</div>}}
 }

@@ -65,8 +65,8 @@ GMLGeodeticCRS <- R6Class("GMLGeodeticCRS",
       self$cartesianCS <- NULL
     },
     
-    #'@description Set geodetic datum
-    #'@param datum object of class \link{GMLGeodeticDatum}
+    #'@description Set geodetic datum. Currently not supported
+    #'@param datum object of class \code{GMLGeodeticDatum}
     setGeodeticDatum = function(datum){
       if(!is(datum, "GMLGeodeticDatum")){
         stop("The argument value should be an object of class 'GMLGeodeticDatum")

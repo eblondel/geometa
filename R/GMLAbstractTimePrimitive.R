@@ -34,7 +34,8 @@ GMLAbstractTimePrimitive <- R6Class("GMLAbstractTimePrimitive",
        },
        
        #'@description Adds related time
-       #'@param time object of class \link{GMLTimeInstant}, \link{GMLTimePeriod}, \link{GMLTimeNode} or \link{GMLTimeEdge}
+       #'@param time object of class \link{GMLTimeInstant}, \link{GMLTimePeriod}. 
+       #'  (\code{GMLTimeNode} or \code{GMLTimeEdge} are not yet supported)
        #'@return \code{TRUE} if added, \code{FALSE} otherwise
        addRelatedTime = function(time){
          allowedClasses <- c("GMLTimeInstant", "GMLTimePeriod",
@@ -47,7 +48,8 @@ GMLAbstractTimePrimitive <- R6Class("GMLAbstractTimePrimitive",
        },
        
        #'@description Deletes related time
-       #'@param time object of class \link{GMLTimeInstant}, \link{GMLTimePeriod}, \link{GMLTimeNode} or \link{GMLTimeEdge}
+       #'@param time object of class \link{GMLTimeInstant}, \link{GMLTimePeriod}. 
+       #'  (\code{GMLTimeNode} or \code{GMLTimeEdge} are not yet supported)
        #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
        delRelatedTime = function(time){
          allowedClasses <- c("GMLTimeInstant", "GMLTimePeriod",

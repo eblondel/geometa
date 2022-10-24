@@ -117,7 +117,8 @@ Adds related time
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{time}}{object of class \link{GMLTimeInstant}, \link{GMLTimePeriod}, \link{GMLTimeNode} or \link{GMLTimeEdge}}
+\item{\code{time}}{object of class \link{GMLTimeInstant}, \link{GMLTimePeriod}. 
+(\code{GMLTimeNode} or \code{GMLTimeEdge} are not yet supported)}
 }
 \if{html}{\out{</div>}}
 }
@@ -137,7 +138,8 @@ Deletes related time
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{time}}{object of class \link{GMLTimeInstant}, \link{GMLTimePeriod}, \link{GMLTimeNode} or \link{GMLTimeEdge}}
+\item{\code{time}}{object of class \link{GMLTimeInstant}, \link{GMLTimePeriod}. 
+(\code{GMLTimeNode} or \code{GMLTimeEdge} are not yet supported)}
 }
 \if{html}{\out{</div>}}
 }

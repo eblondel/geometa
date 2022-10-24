@@ -36,8 +36,8 @@ GMLVerticalCRS <- R6Class("GMLVerticalCRS",
       self$verticalCS <- GMLElement$create("verticalCS", verticalCS)
     },
     
-    #'@description Set vertical datum
-    #'@param verticalDatum object of class \link{GMLVerticalDatum}
+    #'@description Set vertical datum. not yet supported
+    #'@param verticalDatum object of class \code{GMLVerticalDatum}
     setVerticalDatum = function(verticalDatum){
       if(!is(verticalDatum, "GMLVerticalDatum")){
         stop("The argument should be an object of class 'GMLVerticalDatum")

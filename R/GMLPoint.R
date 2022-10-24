@@ -29,7 +29,7 @@ GMLPoint <- R6Class("GMLPoint",
      
      #'@description Initializes object
      #'@param xml object of class \link{XMLInternalNode-class}
-     #'@param sfg simple feature geometry from \link{sf}
+     #'@param sfg simple feature geometry from \pkg{sf}
      #'@param m simple object of class \link{matrix}
      initialize = function(xml = NULL, sfg = NULL, m = NULL){
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)

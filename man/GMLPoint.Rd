@@ -99,7 +99,7 @@ Initializes object
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
 
-\item{\code{sfg}}{simple feature geometry from \link{sf}}
+\item{\code{sfg}}{simple feature geometry from \pkg{sf}}
 
 \item{\code{m}}{simple object of class \link{matrix}}
 }

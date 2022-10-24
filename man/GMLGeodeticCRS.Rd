@@ -152,7 +152,7 @@ Set spherical CS
 \if{html}{\out{<a id="method-GMLGeodeticCRS-setGeodeticDatum"></a>}}
 \if{latex}{\out{\hypertarget{method-GMLGeodeticCRS-setGeodeticDatum}{}}}
 \subsection{Method \code{setGeodeticDatum()}}{
-Set geodetic datum
+Set geodetic datum. Currently not supported
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{GMLGeodeticCRS$setGeodeticDatum(datum)}\if{html}{\out{</div>}}
 }
@@ -160,7 +160,7 @@ Set geodetic datum
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{datum}}{object of class \link{GMLGeodeticDatum}}
+\item{\code{datum}}{object of class \code{GMLGeodeticDatum}}
 }
 \if{html}{\out{</div>}}
 }

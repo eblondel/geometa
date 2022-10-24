@@ -113,7 +113,7 @@ Set base Geodetic CRS
 \if{html}{\out{<a id="method-GMLProjectedCRS-setCartesianCS"></a>}}
 \if{latex}{\out{\hypertarget{method-GMLProjectedCRS-setCartesianCS}{}}}
 \subsection{Method \code{setCartesianCS()}}{
-Set cartesian CRS
+Set cartesian CRS. Not yet supported
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{GMLProjectedCRS$setCartesianCS(cs)}\if{html}{\out{</div>}}
 }
@@ -121,7 +121,7 @@ Set cartesian CRS
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{cs}}{cs, object of class \link{GMLCartesianCRS}}
+\item{\code{cs}}{cs, object of class \code{GMLCartesianCRS}}
 }
 \if{html}{\out{</div>}}
 }

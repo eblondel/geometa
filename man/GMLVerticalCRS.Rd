@@ -112,7 +112,7 @@ Set vertical CS
 \if{html}{\out{<a id="method-GMLVerticalCRS-setVerticalDatum"></a>}}
 \if{latex}{\out{\hypertarget{method-GMLVerticalCRS-setVerticalDatum}{}}}
 \subsection{Method \code{setVerticalDatum()}}{
-Set vertical datum
+Set vertical datum. not yet supported
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{GMLVerticalCRS$setVerticalDatum(verticalDatum)}\if{html}{\out{</div>}}
 }
@@ -120,7 +120,7 @@ Set vertical datum
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{verticalDatum}}{object of class \link{GMLVerticalDatum}}
+\item{\code{verticalDatum}}{object of class \code{GMLVerticalDatum}}
 }
 \if{html}{\out{</div>}}
 }

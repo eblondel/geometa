@@ -87,7 +87,7 @@ GMLParameterValue <- R6Class("GMLParameterValue",
      },
      
      #'@description Set boolean value
-     #'@param value object of class \link{boolean}
+     #'@param value object of class \link{logical}
      setBooleanValue = function(value){
        if(!is(value, "logical")){stop("Value should be an object of class 'logical'")}
        valueElem <- GMLElement$new(element = "booleanValue")

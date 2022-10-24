@@ -125,7 +125,7 @@ Set coverage function
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{coverageFunction}}{object of class \link{GMLGridFunction} or\link{GMLCoverageMappingRule}}
+\item{\code{coverageFunction}}{object of class \link{GMLGridFunction} (or\code{GMLCoverageMappingRule}, not yet supported)}
 }
 \if{html}{\out{</div>}}
 }
