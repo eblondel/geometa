@@ -6,39 +6,6 @@
 #' @keywords ISO address
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Address
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field deliveryPoint [\code{\link{character}}]
-#' @field city [\code{\link{character}}]
-#' @field postalCode [\code{\link{character}}]
-#' @field country [\code{\link{ISOCountry}}]
-#' @field electronicMailAddress [\code{\link{character}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAddress}}
-#'  }
-#'  \item{\code{setDeliveryPoint(deliveryPoint, locales)}}{
-#'    Sets the delivery point. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setCity(city, locales)}}{
-#'    Sets the city. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setPostalCode(postalCode, locales)}}{
-#'    Sets the postal code. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setCountry(country, locales)}}{
-#'    Sets the country. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setEmail(email, locales)}}{
-#'    Sets the electronic Mail address. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples 
 #'  md <- ISOAddress$new()
@@ -61,16 +28,26 @@ ISOAddress <- R6Class("ISOAddress",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field deliveryPoint delivery point
     deliveryPoint = NULL,
+    #'@field city city
     city = NULL,
+    #'@field postalCode postal code
     postalCode = NULL,
+    #'@field country country
     country = NULL,
+    #'@field electronicMailAddress email
     electronicMailAddress = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setDeliveryPoint
+    #'@description Set delivery point
+    #'@param deliveryPoint delivery point
+    #'@param locales list of localized names
     setDeliveryPoint = function(deliveryPoint, locales = NULL){
       if(!is(deliveryPoint,"character")) deliveryPoint <- as.character(deliveryPoint)
       self$deliveryPoint <- deliveryPoint
@@ -79,7 +56,9 @@ ISOAddress <- R6Class("ISOAddress",
       }
     },
     
-    #setCity
+    #'@description Set city
+    #'@param city city
+    #'@param locales list of localized names
     setCity = function(city, locales = NULL){
       if(!is(city,"character")) city <- as.character(city)
       self$city <- city
@@ -88,7 +67,9 @@ ISOAddress <- R6Class("ISOAddress",
       }
     },
     
-    #setPostalCode
+    #'@description Set postal code
+    #'@param postalCode postal code
+    #'@param locales list of localized names
     setPostalCode = function(postalCode, locales = NULL){
       if(!is(postalCode,"character")) postalCode <- as.character(postalCode)
       self$postalCode <- postalCode
@@ -97,7 +78,9 @@ ISOAddress <- R6Class("ISOAddress",
       }
     },
     
-    #setCountry
+    #'@description Set country
+    #'@param country country
+    #'@param locales list of localized names
     setCountry = function(country, locales = NULL){
       self$country <- country
       if(!is.null(locales)){
@@ -105,7 +88,9 @@ ISOAddress <- R6Class("ISOAddress",
       }
     },
     
-    #setEmail
+    #'@description Set email
+    #'@param email email
+    #'@param locales list of localized names
     setEmail = function(email, locales = NULL){
       if(!is(email, "character")) email <- as.character(email)
       self$electronicMailAddress <- email

@@ -6,38 +6,6 @@
 #' @keywords ISO association role
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAssociationRole
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field type [\code{\link{ISORoleType}}]
-#' @field isOrdered [\code{\link{logical}}]
-#' @field isNavigable [\code{\link{logical}}]
-#' @field relation [\code{\link{ISOFeatureAssociation}}]
-#' @field rolePlayer [\code{\link{ISOFeatureType}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAssociationRole}}
-#'  }
-#'  \item{\code{setRoleType(roleType)}}{
-#'    Sets the role type, object of class \code{\link{ISORoleType}} or any \code{character}
-#'    value among \code{ISORoleType$values()}.
-#'  }
-#'  \item{\code{setIsOrdered(isOrdered)}}{
-#'    Sets \code{TRUE} if ordered, \code{FALSE} otherwise
-#'  }
-#'  \item{\code{setIsNavigable(isNavigable)}}{
-#'    Sets \code{TRUE} if navigable, \code{FALSE} otherwise
-#'  }
-#'  \item{code{setRelation(relation)}}{
-#'    Sets an object of class \code{\link{ISOFeatureAssociation}} as relation
-#'  }
-#'  \item{\code{addRolePlayer(rolePlayer)}}{
-#'    Adds a role player, object of class \code{\link{ISOFeatureType}}
-#'  }
-#'  \item{\code{delRolePlayer(rolePlayer)}}{
-#'    Deletes a role player, object of class \code{\link{ISOFeatureType}}
-#'  }
-#' }
 #'  
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
@@ -52,23 +20,27 @@ ISOAssociationRole <- R6Class("ISOAssociationRole",
     ),
     public = list(
       
-      #+ type: ISORoleType
+      #'@field type type: ISORoleType
       type = NULL,
-      #+ isOrdered: logical
+      #'@field isOrdered isOrdered: logical
       isOrdered = NULL,
-      #+ isNavigable: logical
+      #'@field isNavigable isNavigable: logical
       isNavigable = NULL,
-      #+ relation: ISOAssociationRole
+      #'@field relation relation: ISOAssociationRole
       relation = NA,
-      #+ rolePlayer: ISOFeatureType
+      #'@field rolePlayer rolePlayer: ISOFeatureType
       rolePlayer = list(),
       
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
       initialize = function(xml = NULL){
         defaults = list(type = ISORoleType$new(value = "ordinary"))
         super$initialize(xml = xml, defaults = defaults)
       },
       
-      #setRoleType
+      #'@description Set role type
+      #'@param roleType role type, object of class \link{ISORoleType} or any \link{character} among
+      #' values returned by \code{ISORoleType$values()}
       setRoleType = function(roleType){
         if(!is(roleType, "ISORoleType")){
           if(is(roleType, "character")){
@@ -80,7 +52,8 @@ ISOAssociationRole <- R6Class("ISOAssociationRole",
         self$type <- roleType
       },
       
-      #setIsOrdered
+      #'@description Set is ordered
+      #'@param isOrdered object of class \link{logical}
       setIsOrdered = function(isOrdered){
         if(!is(isOrdered, "logical")){
           isOrdered <- as.logical(isOrdered)
@@ -91,7 +64,8 @@ ISOAssociationRole <- R6Class("ISOAssociationRole",
         self$isOrdered <- isOrdered
       },
       
-      #setIsNavigable
+      #'@description Set is navigable
+      #'@param isNavigable object of class \link{logical}
       setIsNavigable = function(isNavigable){
         if(!is(isNavigable, "logical")){
           isNavigable <- as.logical(isNavigable)
@@ -102,7 +76,8 @@ ISOAssociationRole <- R6Class("ISOAssociationRole",
         self$isNavigable <- isNavigable
       },
       
-      #setRelation
+      #'@description Set relation
+      #'@param relation relation
       setRelation = function(relation){
         if(!is(relation, "ISOAssociationRole")){
           stop("The argument value should be an object of class 'ISOAssociationRole")
@@ -110,7 +85,9 @@ ISOAssociationRole <- R6Class("ISOAssociationRole",
         self$relation <- relation
       },
       
-      #addRolePlayer
+      #'@description Adds role player
+      #'@param rolePlayer object of class \link{ISOFeatureType}
+      #'@return \code{TRUE} if added, \code{FALSE} otherwise
       addRolePlayer = function(rolePlayer){
         if(!is(rolePlayer, "ISOFeatureType")){
           stop("The argument value should be an object of class (ISOFeatureType")
@@ -118,7 +95,9 @@ ISOAssociationRole <- R6Class("ISOAssociationRole",
         return(self$addListElement("rolePlayer", rolePlayer))
       },
       
-      #delRolePlayer
+      #'@description Deletes role player
+      #'@param rolePlayer object of class \link{ISOFeatureType}
+      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
       delRolePlayer = function(rolePlayer){
         if(!is(rolePlayer, "ISOFeatureType")){
           stop("The argument value should be an object of class (ISOFeatureType")

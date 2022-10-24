@@ -12,58 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISOAbstracCatalogue
 }
 \description{
 ISOAbstractCatalogue
+
+ISOAbstractCatalogue
 }
-\section{Fields}{
-
-\describe{
-\item{\code{name}}{[\code{\link{character}}]}
-
-\item{\code{scope}}{[\code{\link{character}}]}
-
-\item{\code{fieldOfApplication}}{[\code{\link{character}}]}
-
-\item{\code{versionNumber}}{[\code{\link{character}}]}
-
-\item{\code{versionDate}}{[\code{\link{character}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOAbstractCatalogue}}
- }
- \item{\code{setName(name, locales)}}{
-   Sets the name. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{addScope(scope, locales)}}{
-   Adds scope (object of class \code{character}). Locale names can be 
-   specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{delScope(scope, locales)}}{
-   Deletes scope. Locale names can be  specified as \code{list} with 
-   the \code{locales} argument. Local names should match those of 
-   the scope to be deleted, otherwise nothing will be deleted.
- }
- \item{\code{addFieldOfApplication(fieldOfApplication, locales)}}{
-   Adds a field of application (object of class \code{character}). Locale names 
-   can be specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{delFieldOfApplication(fieldOfApplication, locales)}}{
-   Deletes fieldOfApplication. Locale names can be  specified as \code{list} with 
-   the \code{locales} argument. Local names should match those of 
-   the field of application to be deleted, otherwise nothing will be deleted.
- }
- \item{\code{setVersionNumber(versionNumber)}}{
-   Sets version number (object of class \code{character})
- }
- \item{\code{setVersionDate(versionDate)}}{
-   Sets version date
- }
-}
-}
-
 \references{
 ISO 19139:2007 Metadata - XML schema implementation
 }
@@ -73,3 +24,244 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{abstract}
 \keyword{catalogue}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractCatalogue}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{name}}{name [1..1]: character}
+
+\item{\code{scope}}{scope [1..*]: character}
+
+\item{\code{fieldOfApplication}}{fieldOfApplication [0.*]: character}
+
+\item{\code{versionNumber}}{versionNumber [1..1]: character}
+
+\item{\code{versionDate}}{versionDate [1..1]: Date/Posix}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOAbstractCatalogue-new}{\code{ISOAbstractCatalogue$new()}}
+\item \href{#method-ISOAbstractCatalogue-setName}{\code{ISOAbstractCatalogue$setName()}}
+\item \href{#method-ISOAbstractCatalogue-addScope}{\code{ISOAbstractCatalogue$addScope()}}
+\item \href{#method-ISOAbstractCatalogue-delScope}{\code{ISOAbstractCatalogue$delScope()}}
+\item \href{#method-ISOAbstractCatalogue-addFieldOfApplication}{\code{ISOAbstractCatalogue$addFieldOfApplication()}}
+\item \href{#method-ISOAbstractCatalogue-delFieldOfApplication}{\code{ISOAbstractCatalogue$delFieldOfApplication()}}
+\item \href{#method-ISOAbstractCatalogue-setVersionNumber}{\code{ISOAbstractCatalogue$setVersionNumber()}}
+\item \href{#method-ISOAbstractCatalogue-setVersionDate}{\code{ISOAbstractCatalogue$setVersionDate()}}
+\item \href{#method-ISOAbstractCatalogue-clone}{\code{ISOAbstractCatalogue$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-setName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-setName}{}}}
+\subsection{Method \code{setName()}}{
+Sets the name. Locale names can be specified as
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$setName(name, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+
+\item{\code{locales}}{locales, object of class \link{list}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-addScope"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-addScope}{}}}
+\subsection{Method \code{addScope()}}{
+Adds scope
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$addScope(scope, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{scope}}{scope}
+
+\item{\code{locales}}{locales, object of class \link{list}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-delScope"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-delScope}{}}}
+\subsection{Method \code{delScope()}}{
+Deletes scope
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$delScope(scope, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{scope}}{scope}
+
+\item{\code{locales}}{locales, object of class \link{list}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-addFieldOfApplication"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-addFieldOfApplication}{}}}
+\subsection{Method \code{addFieldOfApplication()}}{
+Adds field of application
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$addFieldOfApplication(fieldOfApplication, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fieldOfApplication}}{field of application}
+
+\item{\code{locales}}{locales, object of class \link{list}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-delFieldOfApplication"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-delFieldOfApplication}{}}}
+\subsection{Method \code{delFieldOfApplication()}}{
+Deletes field of application
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$delFieldOfApplication(fieldOfApplication)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fieldOfApplication}}{field of application}
+
+\item{\code{locales}}{locales, object of class \link{list}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-setVersionNumber"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-setVersionNumber}{}}}
+\subsection{Method \code{setVersionNumber()}}{
+Set version number
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$setVersionNumber(versionNumber)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{versionNumber}}{version number}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-setVersionDate"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-setVersionDate}{}}}
+\subsection{Method \code{setVersionDate()}}{
+Set version date
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$setVersionDate(versionDate)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{versionDate}}{version date}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

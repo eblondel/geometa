@@ -7,37 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractAggregate
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAbstractAggregate
-#'  }
-#'  \item{\code{addComposedOf(composedOf)}}{
-#'    Adds a dataset, object of class \code{ISODataSet}
-#'  }
-#'  \item{\code{delComposedOf(composedOf)}}{
-#'    Deletes a dataset, object of class \code{ISODataSet}
-#'  }
-#'  \item{\code{addSeriesMetadata(metadata)}}{
-#'    Adds a series metadata, object of class \code{ISOMetadata}
-#'  }
-#'  \item{\code{delSeriesMetadata(metadata)}}{
-#'    Deletes a series metadata, object of class \code{ISOMetadata}
-#'  }
-#'  \item{\code{addSubset(subset)}}{
-#'    Adds a subset, object that inherits from \code{ISOAbstractAggregate}
-#'  }
-#'  \item{\code{delSubset(subset)}}{
-#'    Deletes a subset, object that inherits from \code{ISOAbstractAggregate}
-#'  }
-#'  \item{\code{addSuperset(superset)}}{
-#'    Adds a superset, object that inherits from \code{ISOAbstractAggregate}
-#'  }
-#'  \item{\code{delSuperset(superset)}}{
-#'    Deletes a superset, object that inherits from \code{ISOAbstractAggregate}
-#'  }
-#' }
-#' 
 #' @note abstract class
 #'    
 #' @references 
@@ -52,20 +21,24 @@ ISOAbstractAggregate <- R6Class("ISOAbstractAggregate",
    xmlNamespacePrefix = "GMD"
  ),
  public = list(
-   #composedOf [1..*]
+   #'@field composedOf composedOf [1..*]
    composedOf = list(),
-   #seriesMetadata [1..*]
+   #'@field seriesMetadata seriesMetadata [1..*]
    seriesMetadata = list(),
-   #subset [0..*]
+   #'@field subset subset [0..*]
    subset = list(),
-   #superset [0..*]
+   #'@field superset superset [0..*]
    superset = list(),
    
+   #'@description Initializes object
+   #'@param xml object of class \link{XMLInternalNode-class}
    initialize = function(xml = NULL){
      super$initialize(xml = xml)
    },
    
-   #addComposedOf
+   #'@description Adds a dataset 'composedOf' relationship
+   #'@param composedOf object of class \link{ISODataSet}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addComposedOf = function(composedOf){
      if(is(composedOf, "ISODataSet")){
        stop("The argument should be an object of class 'ISODataSet")
@@ -73,7 +46,9 @@ ISOAbstractAggregate <- R6Class("ISOAbstractAggregate",
      return(self$addListElement("composedOf", composedOf))
    },
    
-   #delComposedOf
+   #'@description Deletes a dataset 'composedOf' relationship
+   #'@param composedOf object of class \link{ISODataSet}
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
    delComposedOf = function(composedOf){
      if(is(composedOf, "ISODataSet")){
        stop("The argument should be an object of class 'ISODataSet")
@@ -81,7 +56,9 @@ ISOAbstractAggregate <- R6Class("ISOAbstractAggregate",
      return(self$delListElement("composedOf", composedOf))
    },
    
-   #addSeriesMetadata
+   #'@description Adds a series metadata
+   #'@param metadata object of class \link{ISOMetadata}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addSeriesMetadata = function(metadata){
      if(!is(metadata, "ISOMetadata")){
        stop("The argument should be an object of class 'ISOMetadata'")
@@ -89,7 +66,9 @@ ISOAbstractAggregate <- R6Class("ISOAbstractAggregate",
      return(self$addListElement("seriesMetadata", metadata))
    },
    
-   #delSeriesMetadata
+   #'@description Deletes a series metadata
+   #'@param metadata object of class \link{ISOMetadata}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    delSeriesMetadata = function(metadata){
      if(!is(metadata, "ISOMetadata")){
        stop("The argument should be an object of class 'ISOMetadata'")
@@ -97,7 +76,9 @@ ISOAbstractAggregate <- R6Class("ISOAbstractAggregate",
      return(self$delListElement("seriesMetadata", metadata))
    },
    
-   #addSubset
+   #'@description Adds subset
+   #'@param subset object of class inheriting \link{ISOAbstractAggregate}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addSubset = function(subset){
      if(!inherits(subset,"ISOAbstractAggregate")){
        stop("The argument should be an object inheriting 'ISOAbstractAggregate")
@@ -105,7 +86,9 @@ ISOAbstractAggregate <- R6Class("ISOAbstractAggregate",
      return(self$addListElement("subset", subset))
    },
    
-   #delSubset
+   #'@description Deletes subset
+   #'@param subset object of class inheriting \link{ISOAbstractAggregate}
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
    delSubset = function(subset){
      if(!inherits(subset,"ISOAbstractAggregate")){
        stop("The argument should be an object inheriting 'ISOAbstractAggregate")
@@ -113,7 +96,9 @@ ISOAbstractAggregate <- R6Class("ISOAbstractAggregate",
      return(self$delListElement("subset", subset))
    },
    
-   #addSuperset
+   #'@description Adds superset
+   #'@param superset object of class inheriting \link{ISOAbstractAggregate}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addSuperset = function(superset){
      if(!inherits(superset,"ISOAbstractAggregate")){
        stop("The argument should be an object inheriting 'ISOAbstractAggregate")
@@ -121,7 +106,9 @@ ISOAbstractAggregate <- R6Class("ISOAbstractAggregate",
      return(self$addListElement("superset", superset))
    },
    
-   #delSuperset
+   #'@description Deletes superset
+   #'@param superset object of class inheriting \link{ISOAbstractAggregate}
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
    delSuperset = function(superset){
      if(!inherits(superset,"ISOAbstractAggregate")){
        stop("The argument should be an object inheriting 'ISOAbstractAggregate")

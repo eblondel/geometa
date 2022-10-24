@@ -6,23 +6,7 @@
 #' @keywords ISO abstract reference system
 #' @return Object of \code{\link{R6Class}} for modelling an ISO abstract RS Reference system
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOAbstractReferenceSystem
-#'  }
-#'  \item{\code{setName(name)}}{
-#'    Set the name, object of class \code{ISOReferenceIdentifier}
-#'  }
-#'  \item{\code{addDomainOfValidity(domainOfValidity)}}{
-#'    Adds a domain of validity, object of class \code{ISOExtent}
-#'  }
-#'  \item{\code{delDomainOfValidity(domainOfValidity)}}{
-#'    Deletes a domain of validity, object of class \code{ISOExtent}
-#'  }
-#' }
-#'  
+#' 
 #' @note abstract class
 #'  
 #' @references 
@@ -37,13 +21,19 @@ ISOAbstractReferenceSystem <- R6Class("ISOAbstractReferenceSystem",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@field name name
      name = NULL,
+     #'@field domainOfValidity domain of validity
      domainOfValidity = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
    
-     #setName
+     #'@description Set name
+     #'@param name name, object of class \link{ISOReferenceIdentifier}
      setName = function(name){
        if(!is(name, "ISOReferenceIdentifier")){
          stop("The argument should be an object of class 'ISOReferenceIdentifier'")
@@ -51,7 +41,9 @@ ISOAbstractReferenceSystem <- R6Class("ISOAbstractReferenceSystem",
        self$name <- name
      },
      
-     #addDomainOfValidity
+     #'@description Adds domain of validity
+     #'@param domainOfValidity object of class \link{ISOExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDomainOfValidity = function(domainOfValidity){
        if(!is(domainOfValidity)){
          stop("The argument should be an object of class 'ISOExtent'")
@@ -59,7 +51,9 @@ ISOAbstractReferenceSystem <- R6Class("ISOAbstractReferenceSystem",
        return(self$addListElement("domainOfValidity", domainOfValidity))
      },
      
-     #delDomainOfValidity
+     #'@description Deletes domain of validity
+     #'@param domainOfValidity object of class \link{ISOExtent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDomainOfValidity = function(domainOfValidity){
        if(!is(domainOfValidity)){
          stop("The object should be of class 'ISOExtent'")

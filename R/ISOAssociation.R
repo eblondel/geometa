@@ -7,13 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAssociation
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAssociation}}
-#'  }
-#' }
-#' 
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
 #' 
@@ -26,6 +19,9 @@ ISOAssociation <- R6Class("ISOAssociation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     }

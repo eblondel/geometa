@@ -12,55 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO ApplicationSchemaInformatio
 }
 \description{
 ISOApplicationSchemaInformation
+
+ISOApplicationSchemaInformation
 }
-\section{Fields}{
-
-\describe{
-\item{\code{name}}{[\code{\link{ISOCitation}}]}
-
-\item{\code{schemaLanguage}}{[\code{\link{character}}]}
-
-\item{\code{constraintLanguage}}{[\code{\link{character}}]}
-
-\item{\code{schemaAscii}}{[\code{\link{character}}]}
-
-\item{\code{graphicsFile}}{[\code{\link{ISOBinary}}]}
-
-\item{\code{softwareDevelopmentFile}}{[\code{\link{ISOBinary}}]}
-
-\item{\code{softwareDevelopmentFileFormat}}{[\code{\link{character}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOApplicationSchemaInformation}}
- }
- \item{\code{setName(name)}}{
-   Sets name, object of class \code{\link{ISOCitation}}
- }
- \item{\code{setSchemaLanguage(schemaLanguage)}}{
-   Sets schema language
- }
- \item{\code{setConstraintLanguage(constraintLanguage)}}{
-   Sets constraint language
- }
- \item{\code{setSchemaAscii(schemaAscii)}}{
-   Sets schema Ascii
- }
- \item{\code{setGraphicsFile(graphicsFile)}}{
-   Sets graphics file
- }
- \item{\code{setSoftwareDevelopmentFile(file)}}{
-   Sets software development file
- }
- \item{\code{setSoftwareDevelopmentFileFormat(format)}}{
-   Sets software development file format
- }
-}
-}
-
 \references{
 ISO 19115:2003 - Geographic information -- Metadata
 }
@@ -71,3 +25,226 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{application}
 \keyword{information}
 \keyword{schema}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOApplicationSchemaInformation}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{name}}{name [1..1]}
+
+\item{\code{schemaLanguage}}{chemaLanguage [1..1]}
+
+\item{\code{constraintLanguage}}{constraintLanguage [1..1]}
+
+\item{\code{schemaAscii}}{schemaAscii [0..1]}
+
+\item{\code{graphicsFile}}{graphicsFile [0..1]}
+
+\item{\code{softwareDevelopmentFile}}{softwareDevelopmentFile [0..1]}
+
+\item{\code{softwareDevelopmentFileFormat}}{softwareDevelopmentFileFormat [0..1]}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOApplicationSchemaInformation-new}{\code{ISOApplicationSchemaInformation$new()}}
+\item \href{#method-ISOApplicationSchemaInformation-setName}{\code{ISOApplicationSchemaInformation$setName()}}
+\item \href{#method-ISOApplicationSchemaInformation-setSchemaLanguage}{\code{ISOApplicationSchemaInformation$setSchemaLanguage()}}
+\item \href{#method-ISOApplicationSchemaInformation-setConstraintLanguage}{\code{ISOApplicationSchemaInformation$setConstraintLanguage()}}
+\item \href{#method-ISOApplicationSchemaInformation-setSchemaAscii}{\code{ISOApplicationSchemaInformation$setSchemaAscii()}}
+\item \href{#method-ISOApplicationSchemaInformation-setGraphicsFile}{\code{ISOApplicationSchemaInformation$setGraphicsFile()}}
+\item \href{#method-ISOApplicationSchemaInformation-setSoftwareDevelopmentFile}{\code{ISOApplicationSchemaInformation$setSoftwareDevelopmentFile()}}
+\item \href{#method-ISOApplicationSchemaInformation-setSoftwareDevelopmentFileFormat}{\code{ISOApplicationSchemaInformation$setSoftwareDevelopmentFileFormat()}}
+\item \href{#method-ISOApplicationSchemaInformation-clone}{\code{ISOApplicationSchemaInformation$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOApplicationSchemaInformation-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOApplicationSchemaInformation-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOApplicationSchemaInformation$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOApplicationSchemaInformation-setName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOApplicationSchemaInformation-setName}{}}}
+\subsection{Method \code{setName()}}{
+Set name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOApplicationSchemaInformation$setName(name)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOApplicationSchemaInformation-setSchemaLanguage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOApplicationSchemaInformation-setSchemaLanguage}{}}}
+\subsection{Method \code{setSchemaLanguage()}}{
+Set schema language
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOApplicationSchemaInformation$setSchemaLanguage(schemaLanguage)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{schemaLanguage}}{schema language}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOApplicationSchemaInformation-setConstraintLanguage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOApplicationSchemaInformation-setConstraintLanguage}{}}}
+\subsection{Method \code{setConstraintLanguage()}}{
+Set constraint language
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOApplicationSchemaInformation$setConstraintLanguage(constraintLanguage)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{constraintLanguage}}{constraint language}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOApplicationSchemaInformation-setSchemaAscii"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOApplicationSchemaInformation-setSchemaAscii}{}}}
+\subsection{Method \code{setSchemaAscii()}}{
+Set schema Ascii
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOApplicationSchemaInformation$setSchemaAscii(schemaAscii)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{schemaAscii}}{schema Ascii}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOApplicationSchemaInformation-setGraphicsFile"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOApplicationSchemaInformation-setGraphicsFile}{}}}
+\subsection{Method \code{setGraphicsFile()}}{
+Set graphics file
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOApplicationSchemaInformation$setGraphicsFile(graphicsFile)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{graphicsFile}}{graphics file}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOApplicationSchemaInformation-setSoftwareDevelopmentFile"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOApplicationSchemaInformation-setSoftwareDevelopmentFile}{}}}
+\subsection{Method \code{setSoftwareDevelopmentFile()}}{
+Set software development file
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOApplicationSchemaInformation$setSoftwareDevelopmentFile(file)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{file}}{file}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOApplicationSchemaInformation-setSoftwareDevelopmentFileFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOApplicationSchemaInformation-setSoftwareDevelopmentFileFormat}{}}}
+\subsection{Method \code{setSoftwareDevelopmentFileFormat()}}{
+Set software development file format
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOApplicationSchemaInformation$setSoftwareDevelopmentFileFormat(format)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{format}}{file format}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOApplicationSchemaInformation-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOApplicationSchemaInformation-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOApplicationSchemaInformation$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

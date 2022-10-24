@@ -6,47 +6,6 @@
 #' @keywords ISO abstract catalogue
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbstracCatalogue
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{character}}]
-#' @field scope [\code{\link{character}}]
-#' @field fieldOfApplication [\code{\link{character}}]
-#' @field versionNumber [\code{\link{character}}]
-#' @field versionDate [\code{\link{character}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAbstractCatalogue}}
-#'  }
-#'  \item{\code{setName(name, locales)}}{
-#'    Sets the name. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{addScope(scope, locales)}}{
-#'    Adds scope (object of class \code{character}). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{delScope(scope, locales)}}{
-#'    Deletes scope. Locale names can be  specified as \code{list} with 
-#'    the \code{locales} argument. Local names should match those of 
-#'    the scope to be deleted, otherwise nothing will be deleted.
-#'  }
-#'  \item{\code{addFieldOfApplication(fieldOfApplication, locales)}}{
-#'    Adds a field of application (object of class \code{character}). Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{delFieldOfApplication(fieldOfApplication, locales)}}{
-#'    Deletes fieldOfApplication. Locale names can be  specified as \code{list} with 
-#'    the \code{locales} argument. Local names should match those of 
-#'    the field of application to be deleted, otherwise nothing will be deleted.
-#'  }
-#'  \item{\code{setVersionNumber(versionNumber)}}{
-#'    Sets version number (object of class \code{character})
-#'  }
-#'  \item{\code{setVersionDate(versionDate)}}{
-#'    Sets version date
-#'  }
-#' }
 #'  
 #' @references 
 #'   ISO 19139:2007 Metadata - XML schema implementation
@@ -62,22 +21,26 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
    ),
    public = list(
      
-     #+ name [1..1]: character
+     #'@field name name [1..1]: character
      name = NULL,
-     #+ scope [1..*]: character
+     #'@field scope scope [1..*]: character
      scope = list(),
-     #+ fieldOfApplication [0.*]: character
+     #'@field fieldOfApplication fieldOfApplication [0.*]: character
      fieldOfApplication = list(),
-     #+ versionNumber [1..1]: character
+     #'@field versionNumber versionNumber [1..1]: character
      versionNumber = NULL,
-     #+ versionDate [1..1]: Date/Posix
+     #'@field versionDate versionDate [1..1]: Date/Posix
      versionDate = NULL,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setName
+     #'@description Sets the name. Locale names can be specified as
+     #'@param name name
+     #'@param locales locales, object of class \link{list}
      setName = function(name, locales = NULL){
        if(!is(name,"character")) name <- as(name, "character")
        if(!is.null(locales)){
@@ -86,7 +49,10 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
        self$name <- name
      },
      
-     #addScope
+     #'@description Adds scope
+     #'@param scope scope
+     #'@param locales locales, object of class \link{list}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addScope = function(scope, locales = NULL){
        if(!is.null(locales)){
          scope <- self$createLocalisedProperty(scope, locales)
@@ -94,7 +60,10 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
        return(self$addListElement("scope", scope))
      },
      
-     #delScope
+     #'@description Deletes scope
+     #'@param scope scope
+     #'@param locales locales, object of class \link{list}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delScope = function(scope, locales = NULL){
        if(!is.null(locales)){
          scope <- self$createLocalisedProperty(scope, locales)
@@ -102,7 +71,10 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
        return(self$delListElement("scope", scope))
      },
      
-     #addFieldOfApplication
+     #'@description Adds field of application
+     #'@param fieldOfApplication field of application
+     #'@param locales locales, object of class \link{list}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addFieldOfApplication = function(fieldOfApplication, locales = NULL){
        if(!is.null(locales)){
          fieldOfApplication <- self$createLocalisedProperty(fieldOfApplication, locales)
@@ -110,7 +82,10 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
        return(self$addListElement("fieldOfApplication", fieldOfApplication))
      },
      
-     #delFieldOfApplication
+     #'@description Deletes field of application
+     #'@param fieldOfApplication field of application
+     #'@param locales locales, object of class \link{list}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delFieldOfApplication = function(fieldOfApplication){
        if(!is.null(locales)){
          fieldOfApplication <- self$createLocalisedProperty(fieldOfApplication, locales)
@@ -118,13 +93,15 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
        return(self$delListElement("fieldOfApplication", fieldOfApplication))
      },
      
-     #setVersionNumber
+     #'@description Set version number
+     #'@param versionNumber version number
      setVersionNumber = function(versionNumber){
        if(!is(versionNumber,"character")) versionNumber <- as(versionNumber, "character")
        self$versionNumber <- versionNumber
      },
      
-     #setVersionDate
+     #'@description Set version date
+     #'@param versionDate version date
      setVersionDate = function(versionDate){
        self$versionDate <- versionDate
      }

@@ -12,6 +12,8 @@ Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
 }
 \description{
 ISOAbstractObject
+
+ISOAbstractObject
 }
 \note{
 Abstract ISO Metadata class used internally by geometa
@@ -167,3 +169,606 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{element}
 \keyword{metadata}
+\section{Super class}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{ISOAbstractObject}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{wrap}}{wrap}
+
+\item{\code{element}}{element}
+
+\item{\code{namespace}}{namespace}
+
+\item{\code{defaults}}{defaults}
+
+\item{\code{attrs}}{attributes}
+
+\item{\code{printAttrs}}{attributes to print}
+
+\item{\code{parentAttrs}}{parent attributes}
+
+\item{\code{value}}{value}
+
+\item{\code{value_as_field}}{value as field?}
+
+\item{\code{isNull}}{is null?}
+
+\item{\code{anyElement}}{any element?}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOAbstractObject-new}{\code{ISOAbstractObject$new()}}
+\item \href{#method-ISOAbstractObject-print}{\code{ISOAbstractObject$print()}}
+\item \href{#method-ISOAbstractObject-decode}{\code{ISOAbstractObject$decode()}}
+\item \href{#method-ISOAbstractObject-encode}{\code{ISOAbstractObject$encode()}}
+\item \href{#method-ISOAbstractObject-validate}{\code{ISOAbstractObject$validate()}}
+\item \href{#method-ISOAbstractObject-save}{\code{ISOAbstractObject$save()}}
+\item \href{#method-ISOAbstractObject-getNamespaceDefinition}{\code{ISOAbstractObject$getNamespaceDefinition()}}
+\item \href{#method-ISOAbstractObject-getClassName}{\code{ISOAbstractObject$getClassName()}}
+\item \href{#method-ISOAbstractObject-getClass}{\code{ISOAbstractObject$getClass()}}
+\item \href{#method-ISOAbstractObject-wrapBaseElement}{\code{ISOAbstractObject$wrapBaseElement()}}
+\item \href{#method-ISOAbstractObject-setIsNull}{\code{ISOAbstractObject$setIsNull()}}
+\item \href{#method-ISOAbstractObject-contains}{\code{ISOAbstractObject$contains()}}
+\item \href{#method-ISOAbstractObject-addListElement}{\code{ISOAbstractObject$addListElement()}}
+\item \href{#method-ISOAbstractObject-delListElement}{\code{ISOAbstractObject$delListElement()}}
+\item \href{#method-ISOAbstractObject-setAttr}{\code{ISOAbstractObject$setAttr()}}
+\item \href{#method-ISOAbstractObject-addFieldAttrs}{\code{ISOAbstractObject$addFieldAttrs()}}
+\item \href{#method-ISOAbstractObject-setId}{\code{ISOAbstractObject$setId()}}
+\item \href{#method-ISOAbstractObject-setHref}{\code{ISOAbstractObject$setHref()}}
+\item \href{#method-ISOAbstractObject-setCodeList}{\code{ISOAbstractObject$setCodeList()}}
+\item \href{#method-ISOAbstractObject-setCodeListValue}{\code{ISOAbstractObject$setCodeListValue()}}
+\item \href{#method-ISOAbstractObject-setCodeSpace}{\code{ISOAbstractObject$setCodeSpace()}}
+\item \href{#method-ISOAbstractObject-setValue}{\code{ISOAbstractObject$setValue()}}
+\item \href{#method-ISOAbstractObject-isDocument}{\code{ISOAbstractObject$isDocument()}}
+\item \href{#method-ISOAbstractObject-isFieldInheritedFrom}{\code{ISOAbstractObject$isFieldInheritedFrom()}}
+\item \href{#method-ISOAbstractObject-createLocalisedProperty}{\code{ISOAbstractObject$createLocalisedProperty()}}
+}
+}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$new(
+  xml = NULL,
+  element = NULL,
+  namespace = NULL,
+  attrs = list(),
+  defaults = list(),
+  wrap = TRUE,
+  value_as_field = FALSE
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{element}}{element name}
+
+\item{\code{namespace}}{namespace}
+
+\item{\code{attrs}}{attrs}
+
+\item{\code{defaults}}{defaults}
+
+\item{\code{wrap}}{wrap?}
+
+\item{\code{value_as_field}}{value as field?}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-print"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-print}{}}}
+\subsection{Method \code{print()}}{
+Provides a custom print output (as tree) of the current class
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$print(..., depth = 1)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{args}
+
+\item{\code{depth}}{class nesting depth}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-decode"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-decode}{}}}
+\subsection{Method \code{decode()}}{
+Decodes object from XML
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$decode(xml)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-encode"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-encode}{}}}
+\subsection{Method \code{encode()}}{
+Encodes object as XML. 
+
+   By default, namespace definition will be added to XML root (\code{addNS = TRUE}), and validation
+   of object will be performed (\code{validate = TRUE}) prior to its XML encoding. The argument 
+   \code{strict} allows to stop the encoding in case object is not valid, with a default value set to \code{FALSE}. 
+   
+   The argument \code{setSerialID} is used by \pkg{geometa} to generate automatically serial IDs associated to
+   XML elements, in particular for GML, default value is \code{TRUE} (recommended value).
+   
+   The argument \code{resetSerialID} is used by \pkg{geometa} for reseting mandatory IDs
+   associated to XML elements, such as GML objects, default value is \code{TRUE} 
+   (recommended value).
+   
+   Setting \code{inspire} to TRUE (default FALSE), the metadata will be checked with
+   the INSPIRE metadata validator (online web-service provided by INSPIRE). To check 
+   metadata with the INSPIRE metadata validator, setting an INSPIRE metadata validator 
+   is now required, and should be specified with the \code{inspireValidator}. See 
+   \code{\link{INSPIREMetadataValidator}} for more details
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$encode(
+  addNS = TRUE,
+  validate = TRUE,
+  strict = FALSE,
+  inspire = FALSE,
+  inspireValidator = NULL,
+  resetSerialID = TRUE,
+  setSerialID = TRUE,
+  encoding = "UTF-8"
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{addNS}}{add namespace? Default is \code{TRUE}}
+
+\item{\code{validate}}{validate XML output against schemas?}
+
+\item{\code{strict}}{strict validation? Default is \code{FALSE}.}
+
+\item{\code{inspire}}{perform INSPIRE validation? Default is \code{FALSE}}
+
+\item{\code{inspireValidator}}{an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation}
+
+\item{\code{resetSerialID}}{reset Serial ID? Default is \code{TRUE}}
+
+\item{\code{setSerialID}}{set serial ID? Default is \code{TRUE}}
+
+\item{\code{encoding}}{encoding. Default is \code{UTF-8}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-validate"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-validate}{}}}
+\subsection{Method \code{validate()}}{
+Validates an XML object resulting from object encoding
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$validate(
+  xml = NULL,
+  strict = FALSE,
+  inspire = FALSE,
+  inspireValidator = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{strict}}{strict validation? If \code{TRUE}, a invalid XML will return an error}
+
+\item{\code{inspire}}{perform INSPIRE validation? Default is \code{FALSE}}
+
+\item{\code{inspireValidator}}{an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if valid, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-save"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-save}{}}}
+\subsection{Method \code{save()}}{
+Save XML representation resulting from \code{$encode(...)} method to a file
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$save(file, ...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{file}}{file}
+
+\item{\code{...}}{any other argument from \code{$encode(...)} method}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-getNamespaceDefinition"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-getNamespaceDefinition}{}}}
+\subsection{Method \code{getNamespaceDefinition()}}{
+Get namespace definition
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$getNamespaceDefinition(recursive = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{recursive}}{recursive namespace definitions? Default is \code{FALSE}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+the list of XML namespace definitions
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-getClassName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-getClassName}{}}}
+\subsection{Method \code{getClassName()}}{
+Get class name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$getClassName(level = 1L)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{level}}{level of class}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+the class name
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-getClass"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-getClass}{}}}
+\subsection{Method \code{getClass()}}{
+Get class
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$getClass()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+the corresponding class, as \link{R6Class} reference object generator
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-wrapBaseElement"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-wrapBaseElement}{}}}
+\subsection{Method \code{wrapBaseElement()}}{
+Wraps base element
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$wrapBaseElement(field, fieldObj)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field name}
+
+\item{\code{fieldObj}}{field object}
+
+\item{\code{an}}{object of class \link{R6Class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-setIsNull"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-setIsNull}{}}}
+\subsection{Method \code{setIsNull()}}{
+Set Is Null
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$setIsNull(isNull, reason = "missing")}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isNull}}{object of class \link{logical}}
+
+\item{\code{reason}}{reason why object is Null}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-contains"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-contains}{}}}
+\subsection{Method \code{contains()}}{
+Util to know if a field contain a metadata element
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$contains(field, metadataElement)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field name}
+
+\item{\code{metadataElement}}{metadata element}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if contains, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-addListElement"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-addListElement}{}}}
+\subsection{Method \code{addListElement()}}{
+Util to add an element to a list of elements for N cardinality of a target element name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$addListElement(field, metadataElement)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field}
+
+\item{\code{metadataElement}}{metadata element}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-delListElement"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-delListElement}{}}}
+\subsection{Method \code{delListElement()}}{
+Util to deleted an element to a list of elements for N cardinality of a target element name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$delListElement(field, metadataElement)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field}
+
+\item{\code{metadataElement}}{metadata element}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-setAttr"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-setAttr}{}}}
+\subsection{Method \code{setAttr()}}{
+Util to set an attribute
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$setAttr(attrKey, attrValue)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{attrKey}}{attribute key}
+
+\item{\code{attrValue}}{attribute value}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-addFieldAttrs"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-addFieldAttrs}{}}}
+\subsection{Method \code{addFieldAttrs()}}{
+Util add field attributes, over the XML field wrapping element instead of the element itself
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$addFieldAttrs(field, ...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field}
+
+\item{\code{...}}{list of attributes}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-setId"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-setId}{}}}
+\subsection{Method \code{setId()}}{
+Set id
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$setId(id, addNS = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{id}}{id}
+
+\item{\code{addNS}}{add namespace definition? Default is \code{FALSE}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-setHref"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-setHref}{}}}
+\subsection{Method \code{setHref()}}{
+Set Href attribute
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$setHref(href)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{href}}{href}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-setCodeList"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-setCodeList}{}}}
+\subsection{Method \code{setCodeList()}}{
+Set codelist attribute
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$setCodeList(codeList)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{codeList}}{codelist}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-setCodeListValue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-setCodeListValue}{}}}
+\subsection{Method \code{setCodeListValue()}}{
+Set codelist value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$setCodeListValue(codeListValue)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{codeListValue}}{codelist value}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-setCodeSpace"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-setCodeSpace}{}}}
+\subsection{Method \code{setCodeSpace()}}{
+Set codeSpace
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$setCodeSpace(codeSpace)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{codeSpace}}{codespace}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-setValue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-setValue}{}}}
+\subsection{Method \code{setValue()}}{
+Set value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$setValue(value)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{value}}{value}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-isDocument"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-isDocument}{}}}
+\subsection{Method \code{isDocument()}}{
+Util to check where object refers to a emetadata document (eg. \link{ISOMetadata} or \link{ISOFeatureCatalogue})
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$isDocument()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+\code{TRUE} if a document, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-isFieldInheritedFrom"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-isFieldInheritedFrom}{}}}
+\subsection{Method \code{isFieldInheritedFrom()}}{
+Indicates the class a field inherits from
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$isFieldInheritedFrom(field)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+an object generator of class \link{R6Class}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-createLocalisedProperty"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-createLocalisedProperty}{}}}
+\subsection{Method \code{createLocalisedProperty()}}{
+Creates a localised property
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$createLocalisedProperty(text, locales)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{text}}{text}
+
+\item{\code{locales}}{a list of localized names}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

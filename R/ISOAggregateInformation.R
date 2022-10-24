@@ -6,30 +6,6 @@
 #' @keywords ISO aggregated information
 #' @return Object of \code{\link{R6Class}} for modelling a ISO AggregateInformation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field aggregateDataSetName [\code{\link{ISOCitation}}]
-#' @field aggregateDataSetIdentifier [\code{\link{ISOMetaIdentifier}}]
-#' @field associationType [\code{\link{ISOAssociationType}}]
-#' @field initiativeType [\code{\link{ISOInitiativeType}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAggregateInformation}}
-#'  }
-#'  \item{\code{setAggregateDataSetName(datasetName)}}{
-#'    Sets aggregate dataset name, as an object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setAggregateDataSetIdentifier(datasetIdentifier)}}{
-#'    Sets aggregate dataset identifier, as an object of class \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{setAssociationType(associationType)}}{
-#'    Sets the association type
-#'  }
-#'  \item{\code{setInitiativeType(initiativeType))}}{
-#'    Sets the initiative type
-#'  }
-#' }
 #' 
 #' @examples
 #'   #encoding
@@ -89,15 +65,23 @@ ISOAggregateInformation <- R6Class("ISOAggregateInformation",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@field aggregateDataSetName aggregate dataset name
      aggregateDataSetName = NULL,
+     #'@field aggregateDataSetIdentifier aggregate dataset identifier
      aggregateDataSetIdentifier = NULL,
+     #'@field associationType association type
      associationType = NULL,
+     #'@field initiativeType initiative type
      initiativeType = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setAggregateDataSetName
+     #'@description Set aggregate dataset name
+     #'@param datasetName object of class \link{ISOCitation}
      setAggregateDataSetName = function(datasetName){
        if(!is(datasetName, "ISOCitation")){
          stop("The argument should be a 'ISOCitation' object")
@@ -105,7 +89,8 @@ ISOAggregateInformation <- R6Class("ISOAggregateInformation",
        self$aggregateDataSetName <- datasetName
      },
      
-     #setAggregateDataSetIdentifier
+     #'@description Set aggregate dataset identifier
+     #'@param datasetIdentifier object of class \link{ISOMetaIdentifier}
      setAggregateDataSetIdentifier = function(datasetIdentifier){
        if(!is(datasetIdentifier, "ISOMetaIdentifier")){
          stop("The argument should be a 'ISOMetaIdentifier' object")
@@ -113,7 +98,9 @@ ISOAggregateInformation <- R6Class("ISOAggregateInformation",
        self$aggregateDataSetIdentifier <- datasetIdentifier
      },
      
-     #setAssociationType
+     #'@description Set association type
+     #'@param associationType object of class \link{ISOAssociationType} or \link{character} value among values
+     #'  from \code{ISOAssociationType$values()}
      setAssociationType = function(associationType){
        if(is(associationType, "character")){
          associationType <- ISOAssociationType$new(value = associationType)
@@ -121,7 +108,9 @@ ISOAggregateInformation <- R6Class("ISOAggregateInformation",
        self$associationType <- associationType
      },
      
-     #setInitiativeType
+     #'@description Set association type
+     #'@param initiativeType object of class \link{ISOInitiativeType} or \link{character} value among values
+     #'  from \code{ISOInitiativeType$values()}
      setInitiativeType = function(initiativeType){
        if(is(initiativeType, "character")){
          initiativeType <- ISOInitiativeType$new(value = initiativeType)

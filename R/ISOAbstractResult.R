@@ -6,13 +6,6 @@
 #' @keywords ISO data quality result
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Result
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOResult
-#'  }
-#' }
 #'  
 #' @note abstract class
 #'  
@@ -28,9 +21,15 @@ ISOAbstractResult <- R6Class("ISOAbstractResult",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field specification specification
     specification = NULL,
+    #'@field explanation explanation
     explanation = NULL,
+    #'@field pass pass
     pass = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     }

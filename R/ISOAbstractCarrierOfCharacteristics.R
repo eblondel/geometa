@@ -6,25 +6,6 @@
 #' @keywords ISO abstract carrierOfCharacteristics
 #' @return Object of \code{\link{R6Class}} for modelling an abstract ISOCarrierOfCharacteristics
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field featureType [\code{\link{ISOFeatureType}}]
-#' @field constrainedBy [\code{\link{ISOConstraint}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an \code{\link{ISOAbstractCarrierOfCharacteristics}}
-#'  }
-#'  \item{\code{setFeatureType(featureType)}}{
-#'    Set a feature type, object of class \code{\link{ISOFeatureType}}
-#'  }
-#'  \item{\code{addConstraint(constraint)}}{
-#'    Add constraint, object of class \code{\link{ISOConstraint}}
-#'  }
-#'  \item{\code{delConstraint(constraint)}}{
-#'    Deletes constraint, object of class \code{\link{ISOConstraint}}
-#'  }
-#' }
 #' 
 #' @note abstract class
 #'  
@@ -41,16 +22,20 @@ ISOAbstractCarrierOfCharacteristics <- R6Class("ISOAbstractCarrierOfCharacterist
    ),
    public = list(
      
-     #+ featureType [0..1]: ISOFeatureType
+     #'@field featureType featureType [0..1]: ISOFeatureType
      featureType = NULL,
-     #+ constrainedBy [0..*]: ISOConstraint
+     #'@field constrainedBy constrainedBy [0..*]: ISOConstraint
      constrainedBy = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param defaults default values
      initialize = function(xml = NULL, defaults = NULL){
        super$initialize(xml = xml, defaults = defaults)
      },
      
-     #setFeatureType
+     #'@description Set feature type
+     #'@param featureType feature type, object of class \link{ISOFeatureType}
      setFeatureType = function(featureType){
        if(!is(featureType, "ISOFeatureType")){
          stop("The argument should be an object of class 'ISOFeatureType'")
@@ -58,7 +43,9 @@ ISOAbstractCarrierOfCharacteristics <- R6Class("ISOAbstractCarrierOfCharacterist
        self$featureType <- featureType
      },
      
-     #addConstraint
+     #'@description Adds constraint
+     #'@param constraint, object of class \link{ISOConstraint}
+     #'@return \code{TRUE} if added, \link{FALSE} otherwise
      addConstraint = function(constraint){
        if(!is(constraint, "ISOConstraint")){
          constraint <- ISOConstraint$new(description = constraint)
@@ -66,7 +53,9 @@ ISOAbstractCarrierOfCharacteristics <- R6Class("ISOAbstractCarrierOfCharacterist
        return(self$addListElement("constrainedBy", constraint))
      },
      
-     #delConstraint
+     #'@description Deletes constraint
+     #'@param constraint, object of class \link{ISOConstraint}
+     #'@return \code{TRUE} if deleted, \link{FALSE} otherwise
      delConstraint = function(constraint){
        if(!is(constraint, "ISOConstraint")){
          constraint <- ISOConstraint$new(description = constraint)

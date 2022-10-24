@@ -6,14 +6,6 @@
 #' @keywords ISO attributes
 #' @return Spatial object of \code{\link{R6Class}} for modelling a list of ISO xml attributes
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(...)}}{
-#'    This method is used to instantiate a vector of attributes to be used
-#'    for empty element properties.
-#'  }
-#' }
 #' 
 #' @examples
 #'   attrs <- ISOAttributes$new(href = "http://somelink", title = "sometitle")
@@ -22,7 +14,12 @@
 #'
 ISOAttributes <- R6Class("ISOAttributes",
    public = list(
+     #'@field attrs attrs
      attrs = list(),
+     
+     #'@description method is used to instantiate a vector of attributes to be used
+     #'    for empty element properties.
+     #'@param ... list of attributes
      initialize = function(...){
        simpleAttrs <- c(...)
        class(simpleAttrs) <- "list"

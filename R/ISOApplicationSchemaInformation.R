@@ -6,42 +6,6 @@
 #' @keywords ISO application schema information
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ApplicationSchemaInformation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{ISOCitation}}]
-#' @field schemaLanguage [\code{\link{character}}]
-#' @field constraintLanguage [\code{\link{character}}]
-#' @field schemaAscii [\code{\link{character}}]
-#' @field graphicsFile [\code{\link{ISOBinary}}]
-#' @field softwareDevelopmentFile [\code{\link{ISOBinary}}]
-#' @field softwareDevelopmentFileFormat [\code{\link{character}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOApplicationSchemaInformation}}
-#'  }
-#'  \item{\code{setName(name)}}{
-#'    Sets name, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setSchemaLanguage(schemaLanguage)}}{
-#'    Sets schema language
-#'  }
-#'  \item{\code{setConstraintLanguage(constraintLanguage)}}{
-#'    Sets constraint language
-#'  }
-#'  \item{\code{setSchemaAscii(schemaAscii)}}{
-#'    Sets schema Ascii
-#'  }
-#'  \item{\code{setGraphicsFile(graphicsFile)}}{
-#'    Sets graphics file
-#'  }
-#'  \item{\code{setSoftwareDevelopmentFile(file)}}{
-#'    Sets software development file
-#'  }
-#'  \item{\code{setSoftwareDevelopmentFileFormat(format)}}{
-#'    Sets software development file format
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -56,26 +20,29 @@ ISOApplicationSchemaInformation <- R6Class("ISOApplicationSchemaInformation",
    ),
    public = list(
      
-     #name [1..1]
+     #'@field name name [1..1]
      name = NULL,
-     #schemaLanguage [1..1]
+     #'@field schemaLanguage chemaLanguage [1..1]
      schemaLanguage = NULL,
-     #constraintLanguage [1..1]  
+     #'@field constraintLanguage constraintLanguage [1..1]  
      constraintLanguage = NULL,
-     #schemaAscii [0..1]
+     #'@field schemaAscii schemaAscii [0..1]
      schemaAscii = NULL,
-     #graphicsFile [0..1] 
+     #'@field graphicsFile graphicsFile [0..1] 
      graphicsFile = NULL,
-     #softwareDevelopmentFile [0..1]
+     #'@field softwareDevelopmentFile softwareDevelopmentFile [0..1]
      softwareDevelopmentFile = NULL,
-     #softwareDevelopmentFileFormat [0..1]
+     #'@field softwareDevelopmentFileFormat softwareDevelopmentFileFormat [0..1]
      softwareDevelopmentFileFormat = NULL,
     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setName
+     #'@description Set name
+     #'@param name name
      setName = function(name){
        if(!is(name, "ISOCitation")){
          stop("The argument 'name' should be an object of class 'ISOCitation")
@@ -83,32 +50,38 @@ ISOApplicationSchemaInformation <- R6Class("ISOApplicationSchemaInformation",
        self$name <- name
      },
      
-     #setSchemaLanguage
+     #'@description Set schema language
+     #'@param schemaLanguage schema language
      setSchemaLanguage = function(schemaLanguage){
        self$schemaLanguage <- schemaLanguage
      },
      
-     #setConstraintLanguage
+     #'@description Set constraint language
+     #'@param constraintLanguage constraint language
      setConstraintLanguage = function(constraintLanguage){
        self$constraintLanguage <- constraintLanguage
      },
      
-     #setSchemaAscii
+     #'@description Set schema Ascii
+     #'@param schemaAscii schema Ascii
      setSchemaAscii = function(schemaAscii){
        self$schemaAscii <- schemaAscii
      },
      
-     #setGraphicsFile
+     #'@description Set graphics file
+     #'@param graphicsFile graphics file
      setGraphicsFile = function(graphicsFile){
        self$graphicsFile <- ISOBinary$new(value = graphicsFile)
      },
      
-     #setSoftwareDevelopmentFile
+     #'@description Set software development file
+     #'@param file file
      setSoftwareDevelopmentFile = function(file){
        self$softwareDevelopmentFile <- ISOBinary$new(value = file)
      },
      
-     #setSoftwareDevelopmentFileFormat
+     #'@description Set software development file format
+     #'@param format file format
      setSoftwareDevelopmentFileFormat = function(format){
        self$softwareDevelopmentFileFormat <- format
      }

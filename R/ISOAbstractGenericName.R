@@ -6,15 +6,6 @@
 #' @keywords ISO abstract generic name
 #' @return Object of \code{\link{R6Class}} for modelling an ISO abstract GenericName
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOLocalName
-#'  }
-#' }
 #' 
 #' @references
 #'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
@@ -28,7 +19,13 @@ ISOAbstractGenericName <- R6Class("ISOAbstractGenericName",
     xmlNamespacePrefix = "GCO"
   ),
   public = list(
+    #'@field value value
     value = NA,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param value value
+    #'@param codeSpace code space
     initialize = function(xml = NULL, value = NULL, codeSpace = NULL){
       super$initialize(xml = xml, value = value, codeSpace = codeSpace)
     }

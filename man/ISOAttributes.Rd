@@ -12,17 +12,9 @@ Spatial object of \code{\link{R6Class}} for modelling a list of ISO xml attribut
 }
 \description{
 ISOAttributes
-}
-\section{Methods}{
 
-\describe{
- \item{\code{new(...)}}{
-   This method is used to instantiate a vector of attributes to be used
-   for empty element properties.
- }
+ISOAttributes
 }
-}
-
 \examples{
   attrs <- ISOAttributes$new(href = "http://somelink", title = "sometitle")
 
@@ -32,3 +24,53 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{attributes}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{attrs}}{attrs}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOAttributes-new}{\code{ISOAttributes$new()}}
+\item \href{#method-ISOAttributes-clone}{\code{ISOAttributes$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAttributes-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAttributes-new}{}}}
+\subsection{Method \code{new()}}{
+method is used to instantiate a vector of attributes to be used
+   for empty element properties.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAttributes$new(...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{list of attributes}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAttributes-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAttributes-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAttributes$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

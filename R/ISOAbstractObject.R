@@ -313,17 +313,37 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
 
     #fields
     #---------------------------------------------------------------------------
+    #'@field wrap wrap
     wrap = TRUE,
+    #'@field element element
     element = NA,
+    #'@field namespace namespace
     namespace = NA,
+    #'@field defaults defaults
     defaults = list(),
+    #'@field attrs attributes
     attrs = list(),
+    #'@field printAttrs attributes to print
     printAttrs = list(),
+    #'@field parentAttrs parent attributes
     parentAttrs = NULL,
+    #'@field value value
     value = NULL,
+    #'@field value_as_field value as field?
     value_as_field = FALSE,
+    #'@field isNull is null?
     isNull = FALSE,
+    #'@field anyElement any element?
     anyElement = FALSE,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param element element name
+    #'@param namespace namespace
+    #'@param attrs attrs
+    #'@param defaults defaults
+    #'@param wrap wrap?
+    #'@param value_as_field value as field?
     initialize = function(xml = NULL, element = NULL, namespace = NULL,
                           attrs = list(), defaults = list(),
                           wrap = TRUE, value_as_field = FALSE){
@@ -343,7 +363,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #Main methods
     #---------------------------------------------------------------------------
     
-    #print
+    #'@description Provides a custom print output (as tree) of the current class
+    #'@param ... args
+    #'@param depth class nesting depth
     print = function(..., depth = 1){
       #list of fields to encode as XML
       fields <- rev(names(self))
@@ -452,7 +474,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       invisible(self)
     },
     
-    #decode
+    #'@description Decodes object from XML
+    #'@param xml object of class \link{XMLInternalNode-class}
     decode = function(xml){
       
       #remove comments if any (in case of document)
@@ -682,7 +705,33 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       if("gco:nilReason" %in% names(xmlattrs)) self$isNull <- TRUE
     },
     
-    #encode
+    #'@description Encodes object as XML. 
+    #'
+    #'    By default, namespace definition will be added to XML root (\code{addNS = TRUE}), and validation
+    #'    of object will be performed (\code{validate = TRUE}) prior to its XML encoding. The argument 
+    #'    \code{strict} allows to stop the encoding in case object is not valid, with a default value set to \code{FALSE}. 
+    #'    
+    #'    The argument \code{setSerialID} is used by \pkg{geometa} to generate automatically serial IDs associated to
+    #'    XML elements, in particular for GML, default value is \code{TRUE} (recommended value).
+    #'    
+    #'    The argument \code{resetSerialID} is used by \pkg{geometa} for reseting mandatory IDs
+    #'    associated to XML elements, such as GML objects, default value is \code{TRUE} 
+    #'    (recommended value).
+    #'    
+    #'    Setting \code{inspire} to TRUE (default FALSE), the metadata will be checked with
+    #'    the INSPIRE metadata validator (online web-service provided by INSPIRE). To check 
+    #'    metadata with the INSPIRE metadata validator, setting an INSPIRE metadata validator 
+    #'    is now required, and should be specified with the \code{inspireValidator}. See 
+    #'    \code{\link{INSPIREMetadataValidator}} for more details
+    #'    
+    #'@param addNS add namespace? Default is \code{TRUE}
+    #'@param validate validate XML output against schemas?
+    #'@param strict strict validation? Default is \code{FALSE}.
+    #'@param inspire perform INSPIRE validation? Default is \code{FALSE}
+    #'@param inspireValidator an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation
+    #'@param resetSerialID reset Serial ID? Default is \code{TRUE}
+    #'@param setSerialID set serial ID? Default is \code{TRUE}
+    #'@param encoding encoding. Default is \code{UTF-8}
     encode = function(addNS = TRUE, validate = TRUE, strict = FALSE, inspire = FALSE, inspireValidator = NULL,
                       resetSerialID = TRUE, setSerialID = TRUE,
                       encoding = "UTF-8"){
@@ -1054,7 +1103,12 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       return(out)
     },
     
-    #validate
+    #'@description Validates an XML object resulting from object encoding
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param strict strict validation? If \code{TRUE}, a invalid XML will return an error
+    #'@param inspire perform INSPIRE validation? Default is \code{FALSE}
+    #'@param inspireValidator an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation
+    #'@return \code{TRUE} if valid, \code{FALSE} otherwise
     validate = function(xml = NULL, strict = FALSE, inspire = FALSE, inspireValidator = NULL){
       
       #xml
@@ -1113,7 +1167,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       return(isValid)
     },
     
-    #save
+    #'@description Save XML representation resulting from \code{$encode(...)} method to a file
+    #'@param file file
+    #'@param ... any other argument from \code{$encode(...)} method
     save = function(file, ...){
       #encode as xml
       xml <- self$encode(...)
@@ -1129,7 +1185,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #Util & internal methods
     #---------------------------------------------------------------------------
     
-    #getNamespaceDefinition
+    #'@description Get namespace definition
+    #'@param recursive recursive namespace definitions? Default is \code{FALSE}
+    #'@return the list of XML namespace definitions
     getNamespaceDefinition = function(recursive = FALSE){
       nsdefs <- NULL
       
@@ -1227,12 +1285,15 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       return(nsdefs)
     },
     
-    #getClassName
+    #'@description Get class name
+    #'@param level level of class
+    #'@return the class name
     getClassName = function(level = 1L){
       return(class(self)[level])
     },
     
-    #getClass
+    #'@description Get class
+    #'@return the corresponding class, as \link{R6Class} reference object generator
     getClass = function(){
       class <- try(eval(parse(text = self$getClassName())), silent = TRUE)
       level <- 1L
@@ -1245,7 +1306,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       return(class)
     },
     
-    #wrapBaseElement
+    #'@description Wraps base element
+    #'@param field field name
+    #'@param fieldObj field object
+    #'@param an object of class \link{R6Class}
     wrapBaseElement = function(field, fieldObj){
       dataType <- class(fieldObj)
       
@@ -1272,7 +1336,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       return(dataObj)
     },
     
-    #setIsNull
+    #'@description Set Is Null
+    #'@param isNull object of class \link{logical}
+    #'@param reason reason why object is Null
     setIsNull = function(isNull, reason = "missing"){
       if(isNull){
         allowedReasons <- c("inapplicable", "missing", "template", "unknown", "withheld")
@@ -1288,7 +1354,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       }
     },
     
-    #contains
+    #'@description Util to know if a field contain a metadata element
+    #'@param field field name
+    #'@param metadataElement metadata element
+    #'@return \code{TRUE} if contains, \code{FALSE} otherwise
     contains = function(field, metadataElement){
       out = FALSE
       if(length(self[[field]]) == 0){
@@ -1301,7 +1370,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       return(out)
     },
     
-    #addListElement
+    #'@description Util to add an element to a list of elements for N cardinality of a target element name
+    #'@param field field
+    #'@param metadataElement metadata element
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addListElement = function(field, metadataElement){
       startNb <- length(self[[field]])
       if(!self$contains(field, metadataElement)){
@@ -1311,7 +1383,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       return(endNb == startNb+1)
     },
     
-    #delListElement
+    #'@description Util to deleted an element to a list of elements for N cardinality of a target element name
+    #'@param field field
+    #'@param metadataElement metadata element
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delListElement = function(field, metadataElement){
       startNb <- length(self[[field]])
       if(self$contains(field, metadataElement)){
@@ -1321,12 +1396,16 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       return(endNb == startNb-1)
     },
     
-    #setAttr
+    #'@description Util to set an attribute
+    #'@param attrKey attribute key
+    #'@param attrValue attribute value
     setAttr = function(attrKey, attrValue){
       self$attrs[[attrKey]] <- attrValue
     },
     
-    #addFieldAttrs
+    #'@description Util add field attributes, over the XML field wrapping element instead of the element itself
+    #'@param field field
+    #'@param ... list of attributes
     addFieldAttrs = function(field, ...){
       hasfield <- field %in% names(self$getClass()$public_fields)
       if(hasfield){
@@ -1340,7 +1419,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       }
     },
     
-    #setId
+    #'@description Set id
+    #'@param id id
+    #'@param addNS add namespace definition? Default is \code{FALSE}
     setId = function(id, addNS = FALSE){
       attrKey <- "id"
       prefix <- tolower(private$xmlNamespacePrefix)
@@ -1349,37 +1430,45 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       self$attrs[[attrKey]] <- id
     },
     
-    #setHref
+    #'@description Set Href attribute
+    #'@param href href
     setHref = function(href){
       self$attrs[["xlink:href"]] <- href
     },
     
-    #setCodeList
+    #'@description Set codelist attribute
+    #'@param codeList codelist
     setCodeList = function(codeList){
       self$attrs[["codeList"]] <- codeList
     },
     
-    #setCodeListValue
+    #'@description Set codelist value
+    #'@param codeListValue codelist value
     setCodeListValue = function(codeListValue){
       self$attrs[["codeListValue"]] <- codeListValue
     },
     
-    #setCodeSpace
+    #'@description Set codeSpace
+    #'@param codeSpace codespace
     setCodeSpace = function(codeSpace){
       self$attrs[["codeSpace"]] <- codeSpace
     },
     
-    #setValue
+    #'@description Set value
+    #'@param value value
     setValue = function(value){
       self$value <- value
     },
     
-    #isDocument
+    #'@description Util to check where object refers to a emetadata document (eg. \link{ISOMetadata} or \link{ISOFeatureCatalogue})
+    #'@return \code{TRUE} if a document, \code{FALSE} otherwise
     isDocument = function(){
       return(private$document)
     },
     
-    #isFieldInheritedFrom
+    #'@description Indicates the class a field inherits from
+    #'@param field field
+    #'@return an object generator of class \link{R6Class}
     isFieldInheritedFrom = function(field){
       parentClass <- NULL
       inherited <- !(field %in% names(self$getClass()$public_fields))
@@ -1397,11 +1486,13 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       return(parentClass)
     },
 	
-    #createLocalisedProperty
+    #'@description Creates a localised property
+    #'@param text text
+    #'@param locales a list of localized names
     createLocalisedProperty = function(text, locales){
       if(!is(locales, "list")){
         stop("The argument 'locales' should be an object of class 'list'")
-      }
+      } 
       ft <- ISOFreeText$new()
       for(locale in names(locales)){
         localeValue <- locales[[locale]]
