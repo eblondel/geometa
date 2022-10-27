@@ -226,15 +226,13 @@ ISOServiceIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.
 <span class="r-in"><span>    fileDescription <span class="op">=</span> <span class="st">"Map Overview"</span>,</span></span>
 <span class="r-in"><span>    fileType <span class="op">=</span> <span class="st">"image/png"</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setGraphicOverview</span><span class="op">(</span><span class="va">go</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Method 'setGraphicOverview' is deprecated, please use 'addGraphicOverview'!</span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addGraphicOverview</span><span class="op">(</span><span class="va">go</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#maintenance information</span></span></span>
 <span class="r-in"><span>  <span class="va">mi</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">mi</span><span class="op">$</span><span class="fu">setMaintenanceFrequency</span><span class="op">(</span><span class="st">"daily"</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setResourceMaintenance</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Method 'setResourceMaintenance' is deprecated, please use 'addResourceMaintenance'!</span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addResourceMaintenance</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#adding legal constraints</span></span></span>
@@ -253,8 +251,7 @@ ISOServiceIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
-<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setResourceConstraints</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Method 'setResourceConstraints' is deprecated, please use 'addResourceConstraints'!</span>
+<span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>

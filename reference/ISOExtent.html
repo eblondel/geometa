@@ -98,6 +98,7 @@ ISOExtent"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 
 <ul><li><p><a href="#method-ISOExtent-new"><code>ISOExtent$new()</code></a></p></li>
 <li><p><a href="#method-ISOExtent-addGeographicElement"><code>ISOExtent$addGeographicElement()</code></a></p></li>
+<li><p><a href="#method-ISOExtent-setGeographicElement"><code>ISOExtent$setGeographicElement()</code></a></p></li>
 <li><p><a href="#method-ISOExtent-delGeographicElement"><code>ISOExtent$delGeographicElement()</code></a></p></li>
 <li><p><a href="#method-ISOExtent-addTemporalElement"><code>ISOExtent$addTemporalElement()</code></a></p></li>
 <li><p><a href="#method-ISOExtent-delTemporalElement"><code>ISOExtent$delTemporalElement()</code></a></p></li>
@@ -167,11 +168,11 @@ ISOExtent"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOExtent-delGeographicElement"></a><div class="section">
-<h3 id="method-delgeographicelement-">Method <code>delGeographicElement()</code><a class="anchor" aria-label="anchor" href="#method-delgeographicelement-"></a></h3>
-<p>Deletes geographic element</p><div class="section">
+</div><p></p><hr><a id="method-ISOExtent-setGeographicElement"></a><div class="section">
+<h3 id="method-setgeographicelement-">Method <code>setGeographicElement()</code><a class="anchor" aria-label="anchor" href="#method-setgeographicelement-"></a></h3>
+<p>Sets geographic element</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">delGeographicElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">setGeographicElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -184,34 +185,34 @@ ISOExtent"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </div>
 <div class="section">
 <h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOExtent-addTemporalElement"></a><div class="section">
-<h3 id="method-addtemporalelement-">Method <code>addTemporalElement()</code><a class="anchor" aria-label="anchor" href="#method-addtemporalelement-"></a></h3>
-<p>Adds temporal element</p><div class="section">
+</div><p></p><hr><a id="method-ISOExtent-delGeographicElement"></a><div class="section">
+<h3 id="method-delgeographicelement-">Method <code>delGeographicElement()</code><a class="anchor" aria-label="anchor" href="#method-delgeographicelement-"></a></h3>
+<p>Deletes geographic element</p><div class="section">
 <h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">addTemporalElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">delGeographicElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>element</code></dt>
-<dd><p>object of class <a href="ISOTemporalExtent.html">ISOTemporalExtent</a></p></dd>
+<dd><p>object of class <a href="ISOGeographicExtent.html">ISOGeographicExtent</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOExtent-delTemporalElement"></a><div class="section">
-<h3 id="method-deltemporalelement-">Method <code>delTemporalElement()</code><a class="anchor" aria-label="anchor" href="#method-deltemporalelement-"></a></h3>
-<p>Deletes temporal element</p><div class="section">
+</div><p></p><hr><a id="method-ISOExtent-addTemporalElement"></a><div class="section">
+<h3 id="method-addtemporalelement-">Method <code>addTemporalElement()</code><a class="anchor" aria-label="anchor" href="#method-addtemporalelement-"></a></h3>
+<p>Adds temporal element</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">delTemporalElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">addTemporalElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -224,34 +225,34 @@ ISOExtent"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </div>
 <div class="section">
 <h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOExtent-addVerticalElement"></a><div class="section">
-<h3 id="method-addverticalelement-">Method <code>addVerticalElement()</code><a class="anchor" aria-label="anchor" href="#method-addverticalelement-"></a></h3>
-<p>Adds vertical element</p><div class="section">
+</div><p></p><hr><a id="method-ISOExtent-delTemporalElement"></a><div class="section">
+<h3 id="method-deltemporalelement-">Method <code>delTemporalElement()</code><a class="anchor" aria-label="anchor" href="#method-deltemporalelement-"></a></h3>
+<p>Deletes temporal element</p><div class="section">
 <h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">addVerticalElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">delTemporalElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>element</code></dt>
-<dd><p>object of class <a href="ISOVerticalExtent.html">ISOVerticalExtent</a></p></dd>
+<dd><p>object of class <a href="ISOTemporalExtent.html">ISOTemporalExtent</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-4">Returns<a class="anchor" aria-label="anchor" href="#returns-4"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOExtent-delVerticalElement"></a><div class="section">
-<h3 id="method-delverticalelement-">Method <code>delVerticalElement()</code><a class="anchor" aria-label="anchor" href="#method-delverticalelement-"></a></h3>
-<p>Deletes vertical element</p><div class="section">
+</div><p></p><hr><a id="method-ISOExtent-addVerticalElement"></a><div class="section">
+<h3 id="method-addverticalelement-">Method <code>addVerticalElement()</code><a class="anchor" aria-label="anchor" href="#method-addverticalelement-"></a></h3>
+<p>Adds vertical element</p><div class="section">
 <h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">delVerticalElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">addVerticalElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -264,18 +265,38 @@ ISOExtent"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </div>
 <div class="section">
 <h4 id="returns-5">Returns<a class="anchor" aria-label="anchor" href="#returns-5"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOExtent-delVerticalElement"></a><div class="section">
+<h3 id="method-delverticalelement-">Method <code>delVerticalElement()</code><a class="anchor" aria-label="anchor" href="#method-delverticalelement-"></a></h3>
+<p>Deletes vertical element</p><div class="section">
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">delVerticalElement</span><span class="op">(</span><span class="va">element</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>element</code></dt>
+<dd><p>object of class <a href="ISOVerticalExtent.html">ISOVerticalExtent</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-6">Returns<a class="anchor" aria-label="anchor" href="#returns-6"></a></h4>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
 </div><p></p><hr><a id="method-ISOExtent-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOExtent</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
