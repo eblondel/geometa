@@ -14,8 +14,8 @@ test_that("encoding",{
   md <- ISODataIdentification$new()
   md$setAbstract("abstract")
   md$setPurpose("purpose")
-  md$setLanguage("eng")
-  md$setCharacterSet("utf8")
+  md$addLanguage("eng")
+  md$addCharacterSet("utf8")
   md$addTopicCategory("biota")
   md$addTopicCategory("oceans")
   
@@ -64,12 +64,12 @@ test_that("encoding",{
     fileDescription = "Map Overview",
     fileType = "image/png"
   )
-  md$setGraphicOverview(go)
+  md$addGraphicOverview(go)
   
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  md$setResourceMaintenance(mi)
+  md$addResourceMaintenance(mi)
   
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -83,13 +83,13 @@ test_that("encoding",{
   expect_equal(length(lc$useLimitation), 3L)
   expect_equal(length(lc$accessConstraints), 2L)
   expect_equal(length(lc$useConstraints), 2L)
-  md$setResourceConstraints(lc)
+  md$addResourceConstraints(lc)
   
   #adding extent
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
   extent$setGeographicElement(bbox)
-  md$setExtent(extent)
+  md$addExtent(extent)
   
   #add keywords
   kwds <- ISOKeywords$new()
@@ -140,8 +140,8 @@ test_that("encoding - i18n",{
       RU = "цель",
       ZH = "目的"
     ))
-  md$setLanguage("eng")
-  md$setCharacterSet("utf8")
+  md$addLanguage("eng")
+  md$addCharacterSet("utf8")
   md$addTopicCategory("biota")
   md$addTopicCategory("oceans")
   
@@ -324,12 +324,12 @@ test_that("encoding - i18n",{
       ZH = "地图概述"
     )
   )
-  md$setGraphicOverview(go)
+  md$addGraphicOverview(go)
   
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  md$setResourceMaintenance(mi)
+  md$addResourceMaintenance(mi)
   
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -360,13 +360,13 @@ test_that("encoding - i18n",{
   expect_equal(length(lc$useLimitation), 2L)
   expect_equal(length(lc$accessConstraints), 2L)
   expect_equal(length(lc$useConstraints), 2L)
-  md$setResourceConstraints(lc)
+  md$addResourceConstraints(lc)
   
   #adding extent
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
   extent$setGeographicElement(bbox)
-  md$setExtent(extent)
+  md$addExtent(extent)
   
   #add keywords
   kwds <- ISOKeywords$new()

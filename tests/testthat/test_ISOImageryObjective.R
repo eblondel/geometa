@@ -29,7 +29,7 @@ test_that("encoding",{
   
   #adding geographicElement
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   
   #adding temporalElement
   time <- ISOTemporalExtent$new()
@@ -37,13 +37,13 @@ test_that("encoding",{
   end <- ISOdate(2010, 8, 22, 13, 12, 43)
   tp <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
   time$setTimePeriod(tp)
-  extent$setTemporalElement(time)
+  extent$addTemporalElement(time)
   
   #adding verticalElement
   vert <- ISOVerticalExtent$new()
   vert$setMinimumValue(0)
   vert$setMaximumValue(19)
-  extent$setVerticalElement(vert)
+  extent$addVerticalElement(vert)
   md$addExtent(extent)
   
   md$sensingInstrument = NA

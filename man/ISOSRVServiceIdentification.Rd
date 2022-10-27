@@ -66,12 +66,12 @@ ISOSRVServiceIdentification
     fileDescription = "Map Overview",
     fileType = "image/png"
   )
-  md$setGraphicOverview(go)
+  md$addGraphicOverview(go)
 
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  md$setResourceMaintenance(mi)
+  md$addResourceMaintenance(mi)
 
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -82,7 +82,7 @@ ISOSRVServiceIdentification
   lc$addAccessConstraint("license")
   lc$addUseConstraint("copyright")
   lc$addUseConstraint("license")
-  md$setResourceConstraints(lc)
+  md$addResourceConstraints(lc)
 
   #specific elements to service identification
   md$setServiceType("Fishery data harmonization process")
@@ -108,7 +108,7 @@ ISOSRVServiceIdentification
   #adding extent
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   md$addExtent(extent)
 
   #coupling type

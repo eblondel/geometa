@@ -42,6 +42,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \itemize{
 \item \href{#method-ISOExtent-new}{\code{ISOExtent$new()}}
 \item \href{#method-ISOExtent-addGeographicElement}{\code{ISOExtent$addGeographicElement()}}
+\item \href{#method-ISOExtent-setGeographicElement}{\code{ISOExtent$setGeographicElement()}}
 \item \href{#method-ISOExtent-delGeographicElement}{\code{ISOExtent$delGeographicElement()}}
 \item \href{#method-ISOExtent-addTemporalElement}{\code{ISOExtent$addTemporalElement()}}
 \item \href{#method-ISOExtent-delTemporalElement}{\code{ISOExtent$delTemporalElement()}}
@@ -107,6 +108,26 @@ Initializes object
 Adds geographic element
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ISOExtent$addGeographicElement(element)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{element}}{object of class \link{ISOGeographicExtent}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOExtent-setGeographicElement"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOExtent-setGeographicElement}{}}}
+\subsection{Method \code{setGeographicElement()}}{
+Sets geographic element
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOExtent$setGeographicElement(element)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

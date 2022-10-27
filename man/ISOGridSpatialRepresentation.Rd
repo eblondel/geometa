@@ -185,7 +185,7 @@ Set cell geometry
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{cellGeometry}}{object of class \link{ISOCellGeometry} or any \link{character}
-among values returned by \link{ISOCellGeometry$values()}}
+among values returned by \code{ISOCellGeometry$values()}}
 }
 \if{html}{\out{</div>}}
 }

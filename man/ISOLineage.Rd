@@ -42,7 +42,7 @@ ISOLineage
   src$setCitation(cit)
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   src$addExtent(extent)
   lineage$addSource(src)
   

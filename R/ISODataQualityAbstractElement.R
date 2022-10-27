@@ -18,7 +18,7 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
     xmlElement = "AbstractDQ_Element",
     xmlNamespacePrefix = "GMD"
   ),
-  public = list(
+  public = list( 
 
     #'@field nameOfMeasure nameOfMeasure [0..*]: character
     nameOfMeasure = list(),
@@ -76,7 +76,7 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
     
     #'@description Set measure description
     #'@param description object of class \link{character}
-    #'@param locales list of localized descriptions. Default is \cod{NULL}
+    #'@param locales list of localized descriptions. Default is \code{NULL}
     setMeasureDescription = function(description, locales = NULL){
       if(!is.null(locales)){
         description <- self$createLocalisedProperty(description, locales)

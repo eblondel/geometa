@@ -30,7 +30,7 @@ test_that("encoding",{
   
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   md$addExtent(extent)
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
@@ -84,7 +84,7 @@ test_that("encoding - i18n",{
   
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   md$addExtent(extent)
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")

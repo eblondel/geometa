@@ -45,7 +45,7 @@ ISOUsage <- R6Class("ISOUsage",
     },
     
     #'@description Set usage date time
-    #'@param usageDateTime object of class \link{POSIct}
+    #'@param usageDateTime object of class \link{POSIXct}
     setUsageDateTime = function(usageDateTime){
       if(!is(usageDateTime,"POSIXt")){
         stop("The usage datetime should be an object of class 'POSIXt'")

@@ -61,14 +61,14 @@ ISOMetadata
    geomObject <- ISOGeometricObjects$new()
    geomObject$setGeometricObjectType("surface")
    geomObject$setGeometricObjectCount(5L)
-   vsr$setGeometricObjects(geomObject)
+   vsr$addGeometricObjects(geomObject)
    md$addSpatialRepresentationInfo(vsr)
    
    #ReferenceSystem
    rs <- ISOReferenceSystem$new()
    rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
    rs$setReferenceSystemIdentifier(rsId)
-   md$setReferenceSystemInfo(rs)
+   md$addReferenceSystemInfo(rs)
    
    #data identification
    ident <- ISODataIdentification$new()
@@ -78,8 +78,8 @@ ISOMetadata
    ident$addCredit("credit2")
    ident$addCredit("credit3")
    ident$addStatus("completed")
-   ident$setLanguage("eng")
-   ident$setCharacterSet("utf8")
+   ident$addLanguage("eng")
+   ident$addCharacterSet("utf8")
    ident$addTopicCategory("biota")
    ident$addTopicCategory("oceans")
    
@@ -139,7 +139,7 @@ ISOMetadata
    #maintenance information
    mi <- ISOMaintenanceInformation$new()
    mi$setMaintenanceFrequency("daily")
-   ident$setResourceMaintenance(mi)
+   ident$addResourceMaintenance(mi)
    
    #adding legal constraints
    lc <- ISOLegalConstraints$new()
@@ -163,8 +163,8 @@ ISOMetadata
    #adding extent
    extent <- ISOExtent$new()
    bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-   extent$setGeographicElement(bbox)
-   ident$setExtent(extent)
+   extent$addGeographicElement(bbox)
+   ident$addExtent(extent)
    
    #add keywords
    kwds <- ISOKeywords$new()
@@ -205,7 +205,7 @@ ISOMetadata
    #spatial representation type
    ident$addSpatialRepresentationType("vector")
    
-   md$setIdentificationInfo(ident)
+   md$addIdentificationInfo(ident)
    
    #Distribution
    distrib <- ISODistribution$new()
@@ -289,7 +289,7 @@ ISOMetadata
    lineage$setStatement("statement")
    dq$setLineage(lineage)
    
-   md$setDataQualityInfo(dq)
+   md$addDataQualityInfo(dq)
    
    #Content Information
    #-------------------------

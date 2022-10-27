@@ -44,14 +44,14 @@ vsr$setTopologyLevel("geometryOnly")
 geomObject <- ISOGeometricObjects$new()
 geomObject$setGeometricObjectType("surface")
 geomObject$setGeometricObjectCount(5L)
-vsr$setGeometricObjects(geomObject)
+vsr$addGeometricObjects(geomObject)
 md$addSpatialRepresentationInfo(vsr)
 
 #ReferenceSystem
 rs <- ISOReferenceSystem$new()
 rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
 rs$setReferenceSystemIdentifier(rsId)
-md$setReferenceSystemInfo(rs)
+md$addReferenceSystemInfo(rs)
 
 #data identification
 ident <- ISODataIdentification$new()
@@ -61,8 +61,8 @@ ident$addCredit("credit1")
 ident$addCredit("credit2")
 ident$addCredit("credit3")
 ident$addStatus("completed")
-ident$setLanguage("eng")
-ident$setCharacterSet("utf8")
+ident$addLanguage("eng")
+ident$addCharacterSet("utf8")
 ident$addTopicCategory("biota")
 ident$addTopicCategory("oceans")
 
@@ -122,7 +122,7 @@ ident$addGraphicOverview(go2)
 #maintenance information
 mi <- ISOMaintenanceInformation$new()
 mi$setMaintenanceFrequency("daily")
-ident$setResourceMaintenance(mi)
+ident$addResourceMaintenance(mi)
 
 #adding access legal constraints
 #for INSPIRE controlled terms on access legal constraints, please browse the INSPIRE registry:
@@ -160,8 +160,8 @@ ident$addResourceConstraints(sc)
 #adding extent
 extent <- ISOExtent$new()
 bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-extent$setGeographicElement(bbox)
-ident$setExtent(extent)
+extent$addGeographicElement(bbox)
+ident$addExtent(extent)
 
 #add keywords
 kwds <- ISOKeywords$new()
@@ -180,7 +180,7 @@ ident$setSupplementalInformation("some additional information")
 #spatial representation type
 ident$addSpatialRepresentationType("vector")
 
-md$setIdentificationInfo(ident)
+md$addIdentificationInfo(ident)
 
 #Distribution
 distrib <- ISODistribution$new()
@@ -193,7 +193,7 @@ for(i in 1:3){
   or$setProtocol("WWW:LINK-1.0-http--link")
   dto$addOnlineResource(or)
 }
-distrib$setDigitalTransferOptions(dto)
+distrib$addDigitalTransferOptions(dto)
 md$setDistributionInfo(distrib)
 
 #create dataQuality object with a 'dataset' scope
@@ -255,7 +255,7 @@ lineage <- ISOLineage$new()
 lineage$setStatement("statement")
 dq$setLineage(lineage)
 
-md$setDataQualityInfo(dq)
+md$addDataQualityInfo(dq)
 
 #XML representation of the ISOMetadata
 xml <- md$encode()

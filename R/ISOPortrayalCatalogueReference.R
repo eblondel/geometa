@@ -63,7 +63,7 @@ ISOPortrayalCatalogueReference <- R6Class("ISOPortrayalCatalogueReference",
      portrayalCatalogueCitation = list(),
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode}
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },

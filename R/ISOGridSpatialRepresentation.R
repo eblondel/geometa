@@ -74,7 +74,7 @@ ISOGridSpatialRepresentation <- R6Class("ISOGridSpatialRepresentation",
       
       #'@description Set cell geometry 
       #'@param cellGeometry object of class \link{ISOCellGeometry} or any \link{character}
-      #' among values returned by \link{ISOCellGeometry$values()}
+      #' among values returned by \code{ISOCellGeometry$values()}
       setCellGeometry = function(cellGeometry){
         if(!is(cellGeometry, "ISOCellGeometry")){
           cellGeometry <- ISOCellGeometry$new(value = cellGeometry)

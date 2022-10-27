@@ -1555,6 +1555,7 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
     return(r6Predicate & envPredicate & includePredicate)
   })]
   list_of_classes <- as.vector(list_of_classes)
+  list_of_classes <- list_of_classes[!startsWith(list_of_classes, "pivot")]
   if(pretty){
     std_info <- do.call("rbind",lapply(list_of_classes, function(x){
       clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))

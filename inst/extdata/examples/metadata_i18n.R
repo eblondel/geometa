@@ -188,7 +188,7 @@ vsr$setTopologyLevel("geometryOnly")
 geomObject <- ISOGeometricObjects$new()
 geomObject$setGeometricObjectType("surface")
 geomObject$setGeometricObjectCount(5L)
-vsr$setGeometricObjects(geomObject)
+vsr$addGeometricObjects(geomObject)
 geomObject$setGeometricObjectCount(6L)
 
 #ReferenceSystem
@@ -196,7 +196,7 @@ geomObject$setGeometricObjectCount(6L)
 rs <- ISOReferenceSystem$new()
 rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
 rs$setReferenceSystemIdentifier(rsId)
-md$setReferenceSystemInfo(rs)
+md$addReferenceSystemInfo(rs)
 
 #data identification
 #--------------------
@@ -221,8 +221,8 @@ ident$setPurpose(
     RU = "цель",
     ZH = "目的"
   ))
-ident$setLanguage("eng")
-ident$setCharacterSet("utf8")
+ident$addLanguage("eng")
+ident$addCharacterSet("utf8")
 ident$addTopicCategory("biota")
 ident$addTopicCategory("oceans")
 
@@ -405,12 +405,12 @@ go$setFileDescription(
     ZH = "地图概述"
   )
 )
-ident$setGraphicOverview(go)
+ident$addGraphicOverview(go)
 
 #maintenance information
 mi <- ISOMaintenanceInformation$new()
 mi$setMaintenanceFrequency("daily")
-ident$setResourceMaintenance(mi)
+ident$addResourceMaintenance(mi)
 
 #adding legal constraints
 lc <- ISOLegalConstraints$new()
@@ -438,13 +438,13 @@ lc$addAccessConstraint("copyright")
 lc$addAccessConstraint("license")
 lc$addUseConstraint("copyright")
 lc$addUseConstraint("license")
-ident$setResourceConstraints(lc)
+ident$addResourceConstraints(lc)
 
 #adding extent
 extent <- ISOExtent$new()
 bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
 extent$setGeographicElement(bbox)
-ident$setExtent(extent)
+ident$addExtent(extent)
 
 #add keywords
 kwds <- ISOKeywords$new()
@@ -496,7 +496,7 @@ ident$setSupplementalInformation(
     ZH = "附加信息"
   ))
 
-md$setIdentificationInfo(ident)
+md$addIdentificationInfo(ident)
 
 #Distribution
 #---------------
@@ -536,7 +536,7 @@ or$setProtocol(
     ZH="protocol_ZH"
   ))
 dto$addOnlineResource(or)
-distrib$setDigitalTransferOptions(dto)
+distrib$addDigitalTransferOptions(dto)
 
 #format
 format <- ISOFormat$new()
@@ -631,7 +631,7 @@ lineage$setStatement(
   ))
 dq$setLineage(lineage)
 
-md$setDataQualityInfo(dq)
+md$addDataQualityInfo(dq)
 
 #Content Information
 #-------------------------

@@ -195,7 +195,7 @@ Set measure description
 \describe{
 \item{\code{description}}{object of class \link{character}}
 
-\item{\code{locales}}{list of localized descriptions. Default is \cod{NULL}}
+\item{\code{locales}}{list of localized descriptions. Default is \code{NULL}}
 }
 \if{html}{\out{</div>}}
 }

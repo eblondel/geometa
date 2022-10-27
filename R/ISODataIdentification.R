@@ -12,8 +12,8 @@
 #'    md <- ISODataIdentification$new()
 #'    md$setAbstract("abstract")
 #'    md$setPurpose("purpose")
-#'    md$setLanguage("eng")
-#'    md$setCharacterSet("utf8")
+#'    md$addLanguage("eng")
+#'    md$addCharacterSet("utf8")
 #'    md$addTopicCategory("biota")
 #'    md$addTopicCategory("oceans")
 #'    
@@ -62,12 +62,12 @@
 #'      fileDescription = "Map Overview",
 #'      fileType = "image/png"
 #'    )
-#'    md$setGraphicOverview(go)
+#'    md$addGraphicOverview(go)
 #'    
 #'    #maintenance information
 #'    mi <- ISOMaintenanceInformation$new()
 #'    mi$setMaintenanceFrequency("daily")
-#'    md$setResourceMaintenance(mi)
+#'    md$addResourceMaintenance(mi)
 #'    
 #'    #adding legal constraints
 #'    lc <- ISOLegalConstraints$new()
@@ -78,13 +78,13 @@
 #'    lc$addAccessConstraint("license")
 #'    lc$addUseConstraint("copyright")
 #'    lc$addUseConstraint("license")
-#'    md$setResourceConstraints(lc)
+#'    md$addResourceConstraints(lc)
 #'    
 #'    #adding extent
 #'    extent <- ISOExtent$new()
 #'    bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-#'    extent$setGeographicElement(bbox)
-#'    md$setExtent(extent)
+#'    extent$addGeographicElement(bbox)
+#'    md$addExtent(extent)
 #'    
 #'    #add keywords
 #'    kwds <- ISOKeywords$new()

@@ -62,7 +62,7 @@ test_that("encoding/decoding",{
   vsr$setGeometricObjects(geomObject)
   expect_true(md$addSpatialRepresentationInfo(vsr))
   expect_false(md$addSpatialRepresentationInfo(vsr))
-  geomObject$setGeometricObjectCount(6L)
+  geomObject$addGeometricObjectCount(6L)
   expect_true(md$delSpatialRepresentationInfo(vsr))
   
   #ReferenceSystem
@@ -70,7 +70,7 @@ test_that("encoding/decoding",{
   rs <- ISOReferenceSystem$new()
   rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
   rs$setReferenceSystemIdentifier(rsId)
-  md$setReferenceSystemInfo(rs)
+  md$addReferenceSystemInfo(rs)
   
   #data identification
   #--------------------
@@ -92,8 +92,8 @@ test_that("encoding/decoding",{
   expect_true(ident$delStatus("final"))
   expect_equal(length(ident$status), 2L)
   
-  ident$setLanguage("eng")
-  ident$setCharacterSet("utf8")
+  ident$addLanguage("eng")
+  ident$addCharacterSet("utf8")
   ident$addTopicCategory("biota")
   ident$addTopicCategory("oceans")
   
@@ -161,7 +161,7 @@ test_that("encoding/decoding",{
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  ident$setResourceMaintenance(mi)
+  ident$addResourceMaintenance(mi)
   
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -193,20 +193,20 @@ test_that("encoding/decoding",{
   extent <- ISOExtent$new()
   #geographic element
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   #vertical element
   vert <- ISOVerticalExtent$new()
   vert$setMinimumValue(0)
   vert$setMaximumValue(500)
-  extent$setVerticalElement(vert)
+  extent$addVerticalElement(vert)
   #temporal element
   te <- ISOTemporalExtent$new()
   start <- ISOdate(2000, 1, 12, 12, 59, 45)
   end <- ISOdate(2010, 8, 22, 13, 12, 43)
   tp <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
   te$setTimePeriod(tp)
-  extent$setTemporalElement(te)
-  ident$setExtent(extent)
+  extent$addTemporalElement(te)
+  ident$addExtent(extent)
   
   #add keywords
   kwds1 <- ISOKeywords$new()
@@ -249,7 +249,7 @@ test_that("encoding/decoding",{
   expect_true(ident$delSpatialRepresentationType("grid"))
   expect_equal(length(ident$spatialRepresentationType), 1L)
   
-  md$setIdentificationInfo(ident)
+  md$addIdentificationInfo(ident)
   
   #Distribution
   #---------------
@@ -263,7 +263,7 @@ test_that("encoding/decoding",{
     or$setProtocol("WWW:LINK-1.0-http--link")
     dto$addOnlineResource(or)
   }
-  distrib$setDigitalTransferOptions(dto)
+  distrib$addDigitalTransferOptions(dto)
   md$setDistributionInfo(distrib)
   
   #Data Quality
@@ -296,7 +296,7 @@ test_that("encoding/decoding",{
   lineage$setStatement("statement")
   dq$setLineage(lineage)
   
-  md$setDataQualityInfo(dq)
+  md$addDataQualityInfo(dq)
   
   #Content Information #encoding
   md = ISOImageryMetadata$new()
@@ -347,7 +347,7 @@ test_that("encoding/decoding",{
   geomObject <- ISOGeometricObjects$new()
   geomObject$setGeometricObjectType("surface")
   geomObject$setGeometricObjectCount(5L)
-  vsr$setGeometricObjects(geomObject)
+  vsr$addGeometricObjects(geomObject)
   expect_true(md$addSpatialRepresentationInfo(vsr))
   expect_false(md$addSpatialRepresentationInfo(vsr))
   geomObject$setGeometricObjectCount(6L)
@@ -358,7 +358,7 @@ test_that("encoding/decoding",{
   rs <- ISOReferenceSystem$new()
   rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
   rs$setReferenceSystemIdentifier(rsId)
-  md$setReferenceSystemInfo(rs)
+  md$addReferenceSystemInfo(rs)
   
   #data identification
   #--------------------
@@ -380,8 +380,8 @@ test_that("encoding/decoding",{
   expect_true(ident$delStatus("final"))
   expect_equal(length(ident$status), 2L)
   
-  ident$setLanguage("eng")
-  ident$setCharacterSet("utf8")
+  ident$addLanguage("eng")
+  ident$addCharacterSet("utf8")
   ident$addTopicCategory("biota")
   ident$addTopicCategory("oceans")
   
@@ -449,7 +449,7 @@ test_that("encoding/decoding",{
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  ident$setResourceMaintenance(mi)
+  ident$addResourceMaintenance(mi)
   
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -481,20 +481,20 @@ test_that("encoding/decoding",{
   extent <- ISOExtent$new()
   #geographic element
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   #vertical element
   vert <- ISOVerticalExtent$new()
   vert$setMinimumValue(0)
   vert$setMaximumValue(500)
-  extent$setVerticalElement(vert)
+  extent$addVerticalElement(vert)
   #temporal element
   te <- ISOTemporalExtent$new()
   start <- ISOdate(2000, 1, 12, 12, 59, 45)
   end <- ISOdate(2010, 8, 22, 13, 12, 43)
   tp <- GMLTimePeriod$new(beginPosition = start, endPosition = end)
   te$setTimePeriod(tp)
-  extent$setTemporalElement(te)
-  ident$setExtent(extent)
+  extent$addTemporalElement(te)
+  ident$addExtent(extent)
   
   #add keywords
   kwds1 <- ISOKeywords$new()
@@ -537,7 +537,7 @@ test_that("encoding/decoding",{
   expect_true(ident$delSpatialRepresentationType("grid"))
   expect_equal(length(ident$spatialRepresentationType), 1L)
   
-  md$setIdentificationInfo(ident)
+  md$addIdentificationInfo(ident)
   
   #Distribution
   #---------------
@@ -551,7 +551,7 @@ test_that("encoding/decoding",{
     or$setProtocol("WWW:LINK-1.0-http--link")
     dto$addOnlineResource(or)
   }
-  distrib$setDigitalTransferOptions(dto)
+  distrib$addDigitalTransferOptions(dto)
   md$setDistributionInfo(distrib)
   
   #Data Quality
@@ -584,7 +584,7 @@ test_that("encoding/decoding",{
   lineage$setStatement("statement")
   dq$setLineage(lineage)
   
-  md$setDataQualityInfo(dq)
+  md$addDataQualityInfo(dq)
   
   #Content Information
   #-------------------------
@@ -808,7 +808,7 @@ test_that("encoding/decoding - i18n",{
   geomObject <- ISOGeometricObjects$new()
   geomObject$setGeometricObjectType("surface")
   geomObject$setGeometricObjectCount(5L)
-  vsr$setGeometricObjects(geomObject)
+  vsr$addGeometricObjects(geomObject)
   expect_true(md$addSpatialRepresentationInfo(vsr))
   expect_false(md$addSpatialRepresentationInfo(vsr))
   geomObject$setGeometricObjectCount(6L)
@@ -819,7 +819,7 @@ test_that("encoding/decoding - i18n",{
   rs <- ISOReferenceSystem$new()
   rsId <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
   rs$setReferenceSystemIdentifier(rsId)
-  md$setReferenceSystemInfo(rs)
+  md$addReferenceSystemInfo(rs)
   
   #data identification
   #--------------------
@@ -844,8 +844,8 @@ test_that("encoding/decoding - i18n",{
       RU = "цель",
       ZH = "目的"
     ))
-  ident$setLanguage("eng")
-  ident$setCharacterSet("utf8")
+  ident$addLanguage("eng")
+  ident$addCharacterSet("utf8")
   ident$addTopicCategory("biota")
   ident$addTopicCategory("oceans")
   
@@ -1028,12 +1028,12 @@ test_that("encoding/decoding - i18n",{
       ZH = "地图概述"
     )
   )
-  ident$setGraphicOverview(go)
+  ident$addGraphicOverview(go)
   
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  ident$setResourceMaintenance(mi)
+  ident$addResourceMaintenance(mi)
   
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -1064,13 +1064,13 @@ test_that("encoding/decoding - i18n",{
   expect_equal(length(lc$useLimitation), 2L)
   expect_equal(length(lc$accessConstraints), 2L)
   expect_equal(length(lc$useConstraints), 2L)
-  ident$setResourceConstraints(lc)
+  ident$addResourceConstraints(lc)
   
   #adding extent
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
-  ident$setExtent(extent)
+  extent$addGeographicElement(bbox)
+  ident$addExtent(extent)
   
   #add keywords
   kwds <- ISOKeywords$new()
@@ -1122,7 +1122,7 @@ test_that("encoding/decoding - i18n",{
       ZH = "附加信息"
     ))
   
-  md$setIdentificationInfo(ident)
+  md$addIdentificationInfo(ident)
   
   #Distribution
   #---------------
@@ -1162,7 +1162,7 @@ test_that("encoding/decoding - i18n",{
       ZH="protocol_ZH"
     ))
   dto$addOnlineResource(or)
-  distrib$setDigitalTransferOptions(dto)
+  distrib$addDigitalTransferOptions(dto)
   
   #format
   format <- ISOFormat$new()
@@ -1257,7 +1257,7 @@ test_that("encoding/decoding - i18n",{
     ))
   dq$setLineage(lineage)
   
-  md$setDataQualityInfo(dq)
+  md$addDataQualityInfo(dq)
   
   #Content Information
   #-------------------------

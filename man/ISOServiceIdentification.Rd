@@ -66,12 +66,12 @@ ISOServiceIdentification
     fileDescription = "Map Overview",
     fileType = "image/png"
   )
-  md$setGraphicOverview(go)
+  md$addGraphicOverview(go)
 
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  md$setResourceMaintenance(mi)
+  md$addResourceMaintenance(mi)
 
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -82,7 +82,7 @@ ISOServiceIdentification
   lc$addAccessConstraint("license")
   lc$addUseConstraint("copyright")
   lc$addUseConstraint("license")
-  md$setResourceConstraints(lc)
+  md$addResourceConstraints(lc)
 
   xml <- md$encode()
    

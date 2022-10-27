@@ -132,7 +132,7 @@ Set usage date time
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{usageDateTime}}{object of class \link{POSIct}}
+\item{\code{usageDateTime}}{object of class \link{POSIXct}}
 }
 \if{html}{\out{</div>}}
 }
