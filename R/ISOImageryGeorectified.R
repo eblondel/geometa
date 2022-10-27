@@ -7,27 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO image Georectified
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field checkPoint [\code{list} of \code{\link{ISOImageryGCP}}]
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryGeorectified}}
-#'  }
-#'  \item{\code{addCheckPoint(sfg,m)}}{
-#'    Adds a check point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
-#'  }
-#'  \item{\code{delCheckPoint(sfg,m)}}{
-#'    Deletes a check point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
-#'  }
-#' }
-#' 
-#' @section Methods inherited from \code{\link{ISOGridSpatialRepresentation}}:
-#' See \code{\link{ISOGridSpatialRepresentation}}
-#'
-#' @section Methods inherited from \code{\link{ISOGeorectified}}:
-#' See \code{\link{ISOGeorectified}}
-#'
 #' @references 
 #'   ISO 19115-2:2009 - Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data
 #' 
@@ -41,21 +20,29 @@ ISOImageryGeorectified <- R6Class("ISOImageryGeorectified",
    ),
    public = list(
     
-     #checkPoint [0..*]: ISOImageryGCP
+     #'@field checkPoint checkPoint [0..*]: ISOImageryGCP
      checkPoint = list(),
      
+     #'@description Initializes object 
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
 
-     #addCheckPoint
+     #'@description Adds check point
+     #'@param sfg simple feature object from \pkg{sf}
+     #'@param m object of class \link{matrix}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addCheckPoint = function(sfg = NULL, m = NULL){
        gcp<- ISOImageryGCP$new()
        gcp$setGeographicCoordinates(sfg = sfg, m = m)
        return(self$addListElement("checkPoint", gcp))
      },
      
-     #delCheckPoint
+     #'@description Deletes check point
+     #'@param sfg simple feature object from \pkg{sf}
+     #'@param m object of class \link{matrix}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delCheckPoint = function(sfg = NULL, m = NULL){
        gcp<- ISOImageryGCP$new()
        gcp$setGeographicCoordinates(sfg = sfg, m = m)

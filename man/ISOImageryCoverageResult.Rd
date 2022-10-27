@@ -12,51 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO imagery coverage result
 }
 \description{
 ISOImageryCoverageResult
+
+ISOImageryCoverageResult
 }
-\section{Fields}{
-
-\describe{
-\item{\code{spatialRepresentationType}}{[\code{\link{ISOSpatialRepresentationType}}]}
-
-\item{\code{resultFile}}{[\code{\link{ISODataFile}}]}
-
-\item{\code{resultSpatialRepresentation}}{[\code{\link{ISOSpatialRepresentation}}]}
-
-\item{\code{resultContentDescription}}{[\code{\link{ISOCoverageDescription}}]}
-
-\item{\code{resultFormat}}{[\code{\link{ISOFormat}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOImageryCoverageResult}}
- }
- \item{\code{setSpatialRepresentationType(spatialRepresentationType)}}{
-   Set the spatial representation type, object of class \code{\link{ISOSpatialRepresentationType}},
-   or 'character' among values given by \code{ISOSpatialRepresentationType$values()} or any free text.
- }
- \item{\code{setResultFile(resultFile)}}{
-   Set the result data file, object of class \code{\link{ISODataFile}}.
- }
- \item{\code{setResultSpatialRepresentation(spatialRepresentation)}}{
-   Set the spatial representation, object of class \code{\link{ISOSpatialRepresentation}}.
- }
- \item{\code{setResultCoverageDescription(coverageDescription)}}{
-   Set the coverage description, object of class \code{\link{ISOCoverageDescription}}
- }
- \item{\code{setResultFormat(format)}}{
-   Set the result format, object of class \code{\link{ISOFormat}}
- }
-}
-}
-
-\section{Methods inherited from \code{\link{ISOAbstractResult}}}{
-
-See methods description at \code{\link{ISOAbstractResult}}
-}
-
 \references{
 ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
 }
@@ -67,3 +25,189 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{coverage}
 \keyword{imagery}
 \keyword{result}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractResult]{geometa::ISOAbstractResult}} -> \code{ISOImageryCoverageResult}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{spatialRepresentationType}}{spatialRepresentationType [1..1] : ISOSpatialRepresentationType}
+
+\item{\code{resultFile}}{resultFile [1..1]: ISODataFile}
+
+\item{\code{resultSpatialRepresentation}}{resultSpatialRepresentation  [1..1]: ISOSpatialRepresentation}
+
+\item{\code{resultContentDescription}}{resultContentDescription [1..1]: ISOCoverageDescription}
+
+\item{\code{resultFormat}}{resultFormat [1..1]: ISOFormat}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOImageryCoverageResult-new}{\code{ISOImageryCoverageResult$new()}}
+\item \href{#method-ISOImageryCoverageResult-setSpatialRepresentationType}{\code{ISOImageryCoverageResult$setSpatialRepresentationType()}}
+\item \href{#method-ISOImageryCoverageResult-setResultFile}{\code{ISOImageryCoverageResult$setResultFile()}}
+\item \href{#method-ISOImageryCoverageResult-setResultSpatialRepresentation}{\code{ISOImageryCoverageResult$setResultSpatialRepresentation()}}
+\item \href{#method-ISOImageryCoverageResult-setResultCoverageDescription}{\code{ISOImageryCoverageResult$setResultCoverageDescription()}}
+\item \href{#method-ISOImageryCoverageResult-setResultFormat}{\code{ISOImageryCoverageResult$setResultFormat()}}
+\item \href{#method-ISOImageryCoverageResult-clone}{\code{ISOImageryCoverageResult$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryCoverageResult-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryCoverageResult$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryCoverageResult-setSpatialRepresentationType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-setSpatialRepresentationType}{}}}
+\subsection{Method \code{setSpatialRepresentationType()}}{
+Set spatial representation type
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryCoverageResult$setSpatialRepresentationType(
+  spatialRepresentationType
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{spatialRepresentationType}}{object of class \link{ISOSpatialRepresentationType} or \link{character}
+among values returned by \code{ISOSpatialRepresentationType$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryCoverageResult-setResultFile"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-setResultFile}{}}}
+\subsection{Method \code{setResultFile()}}{
+Set result file
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryCoverageResult$setResultFile(resultFile)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resultFile}}{object of class \link{ISODataFile}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryCoverageResult-setResultSpatialRepresentation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-setResultSpatialRepresentation}{}}}
+\subsection{Method \code{setResultSpatialRepresentation()}}{
+Set result spatial representation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryCoverageResult$setResultSpatialRepresentation(spatialRepresentation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{spatialRepresentation}}{object of class \link{ISOSpatialRepresentation}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryCoverageResult-setResultCoverageDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-setResultCoverageDescription}{}}}
+\subsection{Method \code{setResultCoverageDescription()}}{
+Set result coverage description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryCoverageResult$setResultCoverageDescription(coverageDescription)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{coverageDescription}}{object of class \link{ISOCoverageDescription}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryCoverageResult-setResultFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-setResultFormat}{}}}
+\subsection{Method \code{setResultFormat()}}{
+Set format
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryCoverageResult$setResultFormat(format)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{format}}{object of class \link{ISOFormat}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryCoverageResult-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryCoverageResult$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

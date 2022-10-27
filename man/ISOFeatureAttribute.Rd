@@ -12,45 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISOFeatureAttribute
 }
 \description{
 ISOFeatureAttribute
+
+ISOFeatureAttribute
 }
-\section{Fields}{
-
-\describe{
-\item{\code{code}}{[\code{\link{character}}]}
-
-\item{\code{valueMeasurementUnit}}{[\code{\link{GMLUnitDefinition}}]}
-
-\item{\code{valueType}}{[\code{\link{character}}]}
-
-\item{\code{listedValue}}{[\code{\link{ISOListedValue}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOFeatureAttribute}}
- }
- \item{\code{setCode(code, locales)}}{
-   Sets the code. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{setValueMeasurementUnit(uom)}}{
-   Sets the value measurement unit, an object of class \code{\link{GMLUnitDefinition}}
- }
- \item{\code{setValueType(typeName, locales)}}{
-   Sets the value type. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{addListedValue(value)}}{
-   Adds a listed value (object of class \code{\link{ISOListedValue})}
- }
- \item{\code{delListedValue(value)}}{
-  Deletes a listed value (object of class \code{\link{ISOListedValue})}
- }
-}
-}
-
 \examples{
   md <- ISOFeatureAttribute$new()
   md$setMemberName("name")
@@ -90,3 +54,202 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{feature}
 \keyword{operation}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractCarrierOfCharacteristics]{geometa::ISOAbstractCarrierOfCharacteristics}} -> \code{\link[geometa:ISOAbstractPropertyType]{geometa::ISOAbstractPropertyType}} -> \code{\link[geometa:ISOPropertyType]{geometa::ISOPropertyType}} -> \code{ISOFeatureAttribute}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{code}}{code [0..1]: character}
+
+\item{\code{valueMeasurementUnit}}{valueMeasurementUnit [0..1]: GMLUnitDefinition}
+
+\item{\code{valueType}}{valueType [0..1]: ISOTypeName}
+
+\item{\code{listedValue}}{listedValue [0..*]: ISOListedValue}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOFeatureAttribute-new}{\code{ISOFeatureAttribute$new()}}
+\item \href{#method-ISOFeatureAttribute-setCode}{\code{ISOFeatureAttribute$setCode()}}
+\item \href{#method-ISOFeatureAttribute-setValueMeasurementUnit}{\code{ISOFeatureAttribute$setValueMeasurementUnit()}}
+\item \href{#method-ISOFeatureAttribute-setValueType}{\code{ISOFeatureAttribute$setValueType()}}
+\item \href{#method-ISOFeatureAttribute-addListedValue}{\code{ISOFeatureAttribute$addListedValue()}}
+\item \href{#method-ISOFeatureAttribute-delListedValue}{\code{ISOFeatureAttribute$delListedValue()}}
+\item \href{#method-ISOFeatureAttribute-clone}{\code{ISOFeatureAttribute$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractCarrierOfCharacteristics" data-id="addConstraint"><a href='../../geometa/html/ISOAbstractCarrierOfCharacteristics.html#method-ISOAbstractCarrierOfCharacteristics-addConstraint'><code>geometa::ISOAbstractCarrierOfCharacteristics$addConstraint()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractCarrierOfCharacteristics" data-id="delConstraint"><a href='../../geometa/html/ISOAbstractCarrierOfCharacteristics.html#method-ISOAbstractCarrierOfCharacteristics-delConstraint'><code>geometa::ISOAbstractCarrierOfCharacteristics$delConstraint()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractCarrierOfCharacteristics" data-id="setFeatureType"><a href='../../geometa/html/ISOAbstractCarrierOfCharacteristics.html#method-ISOAbstractCarrierOfCharacteristics-setFeatureType'><code>geometa::ISOAbstractCarrierOfCharacteristics$setFeatureType()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setCardinality"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setCardinality'><code>geometa::ISOAbstractPropertyType$setCardinality()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setDefinition"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setDefinition'><code>geometa::ISOAbstractPropertyType$setDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setDefinitionReference"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setDefinitionReference'><code>geometa::ISOAbstractPropertyType$setDefinitionReference()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setFeatureCatalogue"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setFeatureCatalogue'><code>geometa::ISOAbstractPropertyType$setFeatureCatalogue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setMemberName"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setMemberName'><code>geometa::ISOAbstractPropertyType$setMemberName()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFeatureAttribute-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFeatureAttribute-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFeatureAttribute$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFeatureAttribute-setCode"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFeatureAttribute-setCode}{}}}
+\subsection{Method \code{setCode()}}{
+Set code
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFeatureAttribute$setCode(code, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{code}}{code}
+
+\item{\code{locales}}{list of localized codes. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFeatureAttribute-setValueMeasurementUnit"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFeatureAttribute-setValueMeasurementUnit}{}}}
+\subsection{Method \code{setValueMeasurementUnit()}}{
+Set value measurement unit
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFeatureAttribute$setValueMeasurementUnit(uom)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{uom}}{uom, object of class \link{GMLUnitDefinition}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFeatureAttribute-setValueType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFeatureAttribute-setValueType}{}}}
+\subsection{Method \code{setValueType()}}{
+Set type name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFeatureAttribute$setValueType(typeName, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{typeName}}{typeName}
+
+\item{\code{locales}}{list of localized typeNames. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFeatureAttribute-addListedValue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFeatureAttribute-addListedValue}{}}}
+\subsection{Method \code{addListedValue()}}{
+Adds listed value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFeatureAttribute$addListedValue(value)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{value}}{value, object of class \link{ISOListedValue}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFeatureAttribute-delListedValue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFeatureAttribute-delListedValue}{}}}
+\subsection{Method \code{delListedValue()}}{
+Deletes listed value
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFeatureAttribute$delListedValue(value)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{value}}{value, object of class \link{ISOListedValue}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFeatureAttribute-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFeatureAttribute-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFeatureAttribute$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

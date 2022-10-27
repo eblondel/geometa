@@ -6,30 +6,6 @@
 #' @keywords ISO extent
 #' @return Object of \code{\link{R6Class}} for modelling an ISO GeographicBoundingBox
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field westBoundLongitude [\code{\link{numeric}}] west longitude
-#' @field eastBoundLongitude [\code{\link{numeric}}] east longitude
-#' @field southBoundLatitude [\code{\link{numeric}}] south latitude
-#' @field northBoundLatitude [\code{\link{numeric}}] north latitude
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, minx, miny, maxx, maxy, bbox)}}{
-#'    This method is used to instantiate an \code{\link{ISOGeographicBoundingBox}}
-#'  }
-#'  \item{\code{setWestBoundLongitude(minx)}}{
-#'    Set the west bound longitude.
-#'  }
-#'  \item{\code{setEastBoundLongitude(minx)}}{
-#'    Set the west bound longitude.
-#'  }
-#'  \item{\code{setSouthBoundLatitude(miny)}}{
-#'    Set the south bound latitude.
-#'  }
-#'  \item{\code{setNorthBoundLatitude(maxy)}}{
-#'    Set the north bound latitude.
-#'  }
-#' }
 #' 
 #' @examples
 #'   md <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
@@ -47,10 +23,22 @@ ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@field westBoundLongitude westBoundLongitude
      westBoundLongitude = NULL,
+     #'@field eastBoundLongitude eastBoundLongitude
      eastBoundLongitude = NULL,
+     #'@field southBoundLatitude southBoundLatitude
      southBoundLatitude = NULL,
+     #'@field northBoundLatitude northBoundLatitude
      northBoundLatitude = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param minx minx object of class \link{numeric}
+     #'@param miny miny object of class \link{numeric}
+     #'@param maxx maxx object of class \link{numeric}
+     #'@param maxy maxy object of class \link{numeric}
+     #'@param bbox bbox object of class \link{matrix}
      initialize = function(xml = NULL, minx = NULL, miny = NULL, maxx = NULL, maxy = NULL, bbox = NULL){
        super$initialize(xml = xml)
        if(is.null(xml)){
@@ -76,7 +64,8 @@ ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
        }
      },
      
-     #setWestBoundLongitude
+     #'@description Set west bound longitude
+     #'@param minx minx object of class \link{numeric}
      setWestBoundLongitude = function(minx){
        if(!is(minx,"numeric")){
          stop("Argument 'minx' should be numeric!")
@@ -84,7 +73,8 @@ ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
        self$westBoundLongitude <- minx
      },
      
-     #setEastBoundLongitude
+     #'@description Set east bound longitude
+     #'@param maxx maxx object of class \link{numeric}
      setEastBoundLongitude = function(maxx){
        if(!is(maxx,"numeric")){
          stop("Argument 'minx' should be numeric!")
@@ -92,7 +82,8 @@ ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
        self$eastBoundLongitude <- maxx
      },
      
-     #setSouthBoundLatitude
+     #'@description Set south bound latitude
+     #'@param miny miny object of class \link{numeric}
      setSouthBoundLatitude = function(miny){
        if(!is(miny, "numeric")){
          stop("Argument 'miny' should be numeric!")
@@ -100,7 +91,8 @@ ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
        self$southBoundLatitude <- miny
      },
      
-     #setNorthBoundLatitude
+     #'@description Set north bound latitude
+     #'@param maxy maxy object of class \link{numeric}
      setNorthBoundLatitude = function(maxy){
        if(!is(maxy, "numeric")){
          stop("Argument 'maxy', should be numeric!")

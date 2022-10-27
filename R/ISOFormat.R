@@ -6,43 +6,6 @@
 #' @keywords ISO format
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFormat
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{character}}] format name
-#' @field version [\code{\link{character}}] format version
-#' @field amendmentNumber [\code{\link{character}}] format amendment number
-#' @field specification [\code{\link{character}}] format specification
-#' @field fileDecompressionTechnique [\code{\link{character}}] technique for file decompression
-#' @field formatDistributor [\code{\link{ISODistributor}}] format distributor
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOFormat
-#'  }
-#'  \item{\code{setName(name, locales)}}{
-#'    Sets the format name. Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setVersion(version)}}{
-#'    Sets the format version
-#'  }
-#'  \item{\code{setAmendmentNumber(amendmentNumber)}}{
-#'    Sets an admenment number
-#'  }
-#'  \item{\code{setSpecification(specification, locales)}}{
-#'    Sets the format specification. Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setFileDecompressionTechnique(technique)}}{
-#'    Sets the file decompression technique
-#'  }
-#'  \item{\code{addDistributor(distributor)}}{
-#'    Adds a distributor, object of class \code{ISODistributor}
-#'  }
-#'  \item{\code{delDistributor(distributor)}}{
-#'    Deletes a distributor, object of class \code{ISODistributor}
-#'  }
-#' }
 #' 
 #' @examples 
 #'  md <- ISOFormat$new()
@@ -64,24 +27,28 @@ ISOFormat <- R6Class("ISOFormat",
     ),
     public = list(
       
-      #+ name : CharacterString
+      #'@field name name : CharacterString
       name = NULL,
-      #+ version : CharacterString
+      #'@field version version : CharacterString
       version = NULL,
-      #+ amendmentNumber [0..1] : CharacterString
+      #'@field amendmentNumber amendmentNumber [0..1] : CharacterString
       amendmentNumber = NULL,
-      #+ specification [0..1] : CharacterString
+      #'@field specification specification [0..1] : CharacterString
       specification = NULL,
-      #+ fileDecompressionTechnique [0..1] : CharacterString
+      #'@field fileDecompressionTechnique fileDecompressionTechnique [0..1] : CharacterString
       fileDecompressionTechnique = NULL,
-      #+ FormatDistributor [0..*]: ISODistributor
+      #'@field FormatDistributor FormatDistributor [0..*]: ISODistributor
       FormatDistributor = list(),
       
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
       initialize = function(xml = NULL){
         super$initialize(xml = xml)
       },
      
-      #setName
+      #'@description Set name
+      #'@param name name
+      #'@param locales list of localized names. Default is \code{NULL}
       setName = function(name, locales = NULL){
         self$name <- name
         if(!is.null(locales)){
@@ -89,17 +56,21 @@ ISOFormat <- R6Class("ISOFormat",
         }
       },
       
-      #setVersion
+      #'@description Set version
+      #'@param version version
       setVersion = function(version){
         self$version <- as.character(version)
       },
       
-      #setAmendmentNumber
+      #'@description Set amendment number
+      #'@param amendmentNumber amendment number
       setAmendmentNumber = function(amendmentNumber){
         self$amendmentNumber <- as.character(amendmentNumber)
       },
       
-      #setSpecification
+      #'@description Set specification
+      #'@param specification specification
+      #'@param locales list of localized specifications. Default is \code{NULL}
       setSpecification = function(specification, locales = NULL){
         self$specification <- specification
         if(!is.null(locales)){
@@ -107,12 +78,15 @@ ISOFormat <- R6Class("ISOFormat",
         }
       },
       
-      #setFileDecompressionTechnique
+      #'@description Set file decompression technique
+      #'@param technique technique
       setFileDecompressionTechnique = function(technique){
         self$fileDecompressionTechnique = as.character(technique)
       },
       
-      #addDistributor
+      #'@description Adds distributor
+      #'@param distributor object of class \link{ISODistributor}
+      #'@return \code{TRUE} if added, \code{FALSE} otherwise
       addDistributor = function(distributor){
         if(!is(distributor, "ISODistributor")){
           stop("The argument value should an object of class 'ISODistributor")
@@ -120,7 +94,9 @@ ISOFormat <- R6Class("ISOFormat",
         return(self$addListElement("FormatDistributor", distributor))
       },
       
-      #delDistributor
+      #'@description Deletes distributor
+      #'@param distributor object of class \link{ISODistributor}
+      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
       delDistributor = function(distributor){
         if(!is(distributor, "ISODistributor")){
           stop("The argument value should an object of class 'ISODistributor")

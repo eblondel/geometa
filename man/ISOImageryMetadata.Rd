@@ -12,141 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO Imagery Metadata
 }
 \description{
 ISOImageryMetadata
+
+ISOImageryMetadata
 }
-\section{Fields}{
-
-\describe{
-\item{\code{acquisitionInformation}}{[\code{list} of \code{\link{ISOImageryAcquisitionInformation}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOImageryMetadata}}
- }
- \item{\code{addAcquisitionInfo(acquisitionInfo)}}{
-   Add acquisition information, object of class \code{\link{ISOImageryAcquisitionInformation}}
- }
- \item{\code{delAcquisitionInfo(acquisitionInfo)}}{
-   Deletes acquisition information, object of class \code{\link{ISOImageryAcquisitionInformation}}
- }
-}
-}
-
-\section{Methods inherited from of \code{ISOMetadata})}{
-
-\describe{
- \item{\code{setFileIdentifier(fileIdentifier)}}{
-   Sets the file identifier
- }
- \item{\code{setLanguage{locale}}}{
-   Sets the locale
- }
- \item{\code{setCharacterSet(charset)}}{
-   Sets the character set
- }
- \item{\code{setParentIdentifier(parentIdentifier)}}{
-   Sets the parentIdentifier
- }
- \item{\code{addHierarchyLevel(level)}}{
-   Adds the hierarchy level
- }
- \item{\code{setHierarchyLevel(level)}}{
-   Sets the hierarchy level
- }
- \item{\code{delHierarchyLevel(level)}}{
-   Deletes the hierarchy level
- }
- \item{\code{addHierarchyLevelName(levelName)}}{
-   Adds the hierarchy level name
- }
- \item{\code{delHierarchyLevelName(levelName)}}{
-   Deletes the hierarchy level name
- }
- \item{\code{addContact(contact)}}{
-   Adds a contact as object of class \code{ISOResponsibleParty}
- }
- \item{\code{delContact(contact)}}{
-   Deletes a contact as object of class \code{ISOResponsibleParty}
- }
- \item{\code{setDateStamp(date)}}{
-   Sets the date stamp
- }
- \item{\code{setMetadataStandardName(name)}}{
-   Sets the metadata standard name
- }
- \item{\code{setMetadataStandardVersion(version)}}{
-   Sets the metadata standard version
- }
- \item{\code{setDataSetURI(dataSetURI)}}{
-   Sets the metadata dataSet URI
- }
- \item{\code{addLocale(locale)}}{
-   Adds a locale, object of class \code{ISOLocale}
- }
- \item{\code{delLocale(locale)}}{
-   Deletes a locale, object of class \code{ISOLocale}
- }
- \item{\code{addSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-   Adds a spatial representation
- }
- \item{\code{setSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-   Sets a spatial representation
- }
- \item{\code{delSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-   Deletes a spatial representation
- }
- \item{\code{addReferenceSystemInfo(referenceSystemInfo)}}{
-   Adds a reference system
- }
- \item{\code{setReferenceSystemInfo(referenceSystemInfo)}}{
-   Sets the reference system
- }
- \item{\code{delReferenceSystemInfo(referenceSystemInfo)}}{
-   Deletes a reference system
- }
- \item{\code{addMetadataExtensionInfo(extensionInfo)}}{
-   Adds extension info, object of class \code{ISOMetadataExtensionInformation}
- }
- \item{\code{delMetadataExtensionInfo(extensionInfo)}}{
-   Deletes extension info, object of class \code{ISOMetadataExtensionInformation}
- }
- \item{\code{addIdentificationInfo(identificationInfo)}}{
-   Adds a data identification
- }
- \item{\code{setIdentificationInfo(identificationInfo)}}{
-   Sets the data identification
- }
- \item{\code{delIdentificationInfo(identificationInfo)}}{
-   Deletes a data identification
- }
- \item{\code{addContentInfo(contentInfo)}}{
-   Adds a content info, either an object of class \code{\link{ISOCoverageDescription}}
-   for coverage data, or \code{\link{ISOFeatureCatalogueDescription}} for vector data.
- }
- \item{\code{delContentInfo(contentInfo)}}{
-   Deletes a content info, either an object of class \code{\link{ISOCoverageDescription}} 
-   for coverage data, or \code{\link{ISOFeatureCatalogueDescription}} for vector data.
- }
- \item{\code{setDistributionInfo(distributionInfo)}}{
-   Sets the distribution
- }
- \item{\code{addDataQualityInfo(dataQualityInfo)}}{
-   Adds a data quality
- }
- \item{\code{setDataQualityInfo(dataQualityInfo)}}{
-   Sets the data quality
- }
- \item{\code{delDataQualityInfo(dataQualityInfo)}}{
-   Deletes a data quality
- }
- \item{\code{setMetadataMaintenance(metadataMaintenance)}}{
-   Sets a metadata maintenance as object of class \code{ISOMaintenanceInformation}
- }
-}
-}
-
 \examples{
     #example 1 - WRITE: Create an ISO metadata and encode it as XML
     #######################################################
@@ -472,3 +340,165 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{element}
 \keyword{imagery}
 \keyword{metadata}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOMetadata]{geometa::ISOMetadata}} -> \code{ISOImageryMetadata}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{acquisitionInformation}}{acquisitionInformation [0..*]: ISOImageryAcquisitionInformation}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOImageryMetadata-new}{\code{ISOImageryMetadata$new()}}
+\item \href{#method-ISOImageryMetadata-addAcquisitionInfo}{\code{ISOImageryMetadata$addAcquisitionInfo()}}
+\item \href{#method-ISOImageryMetadata-delAcquisitionInfo}{\code{ISOImageryMetadata$delAcquisitionInfo()}}
+\item \href{#method-ISOImageryMetadata-clone}{\code{ISOImageryMetadata$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addContact"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addContact'><code>geometa::ISOMetadata$addContact()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addContentInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addContentInfo'><code>geometa::ISOMetadata$addContentInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addDataQualityInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addDataQualityInfo'><code>geometa::ISOMetadata$addDataQualityInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addHierarchyLevel"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addHierarchyLevel'><code>geometa::ISOMetadata$addHierarchyLevel()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addHierarchyLevelName"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addHierarchyLevelName'><code>geometa::ISOMetadata$addHierarchyLevelName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addIdentificationInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addIdentificationInfo'><code>geometa::ISOMetadata$addIdentificationInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addLocale"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addLocale'><code>geometa::ISOMetadata$addLocale()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addMetadataExtensionInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addMetadataExtensionInfo'><code>geometa::ISOMetadata$addMetadataExtensionInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addReferenceSystemInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addReferenceSystemInfo'><code>geometa::ISOMetadata$addReferenceSystemInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="addSpatialRepresentationInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-addSpatialRepresentationInfo'><code>geometa::ISOMetadata$addSpatialRepresentationInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delContact"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delContact'><code>geometa::ISOMetadata$delContact()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delContentInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delContentInfo'><code>geometa::ISOMetadata$delContentInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delDataQualityInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delDataQualityInfo'><code>geometa::ISOMetadata$delDataQualityInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delHierarchyLevel"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delHierarchyLevel'><code>geometa::ISOMetadata$delHierarchyLevel()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delHierarchyLevelName"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delHierarchyLevelName'><code>geometa::ISOMetadata$delHierarchyLevelName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delIdentificationInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delIdentificationInfo'><code>geometa::ISOMetadata$delIdentificationInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delLocale"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delLocale'><code>geometa::ISOMetadata$delLocale()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delMetadataExtensionInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delMetadataExtensionInfo'><code>geometa::ISOMetadata$delMetadataExtensionInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delReferenceSystemInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delReferenceSystemInfo'><code>geometa::ISOMetadata$delReferenceSystemInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="delSpatialRepresentationInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-delSpatialRepresentationInfo'><code>geometa::ISOMetadata$delSpatialRepresentationInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setCharacterSet"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setCharacterSet'><code>geometa::ISOMetadata$setCharacterSet()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setDataQualityInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setDataQualityInfo'><code>geometa::ISOMetadata$setDataQualityInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setDataSetURI"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setDataSetURI'><code>geometa::ISOMetadata$setDataSetURI()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setDateStamp"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setDateStamp'><code>geometa::ISOMetadata$setDateStamp()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setDistributionInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setDistributionInfo'><code>geometa::ISOMetadata$setDistributionInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setFileIdentifier"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setFileIdentifier'><code>geometa::ISOMetadata$setFileIdentifier()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setHierarchyLevel"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setHierarchyLevel'><code>geometa::ISOMetadata$setHierarchyLevel()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setIdentificationInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setIdentificationInfo'><code>geometa::ISOMetadata$setIdentificationInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setLanguage"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setLanguage'><code>geometa::ISOMetadata$setLanguage()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setMetadataMaintenance"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setMetadataMaintenance'><code>geometa::ISOMetadata$setMetadataMaintenance()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setMetadataStandardName"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setMetadataStandardName'><code>geometa::ISOMetadata$setMetadataStandardName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setMetadataStandardVersion"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setMetadataStandardVersion'><code>geometa::ISOMetadata$setMetadataStandardVersion()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setParentIdentifier"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setParentIdentifier'><code>geometa::ISOMetadata$setParentIdentifier()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setReferenceSystemInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setReferenceSystemInfo'><code>geometa::ISOMetadata$setReferenceSystemInfo()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOMetadata" data-id="setSpatialRepresentationInfo"><a href='../../geometa/html/ISOMetadata.html#method-ISOMetadata-setSpatialRepresentationInfo'><code>geometa::ISOMetadata$setSpatialRepresentationInfo()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryMetadata-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryMetadata-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryMetadata$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryMetadata-addAcquisitionInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryMetadata-addAcquisitionInfo}{}}}
+\subsection{Method \code{addAcquisitionInfo()}}{
+Adds acquisition info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryMetadata$addAcquisitionInfo(acquisitionInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{acquisitionInfo}}{object of class \link{ISOImageryAcquisitionInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryMetadata-delAcquisitionInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryMetadata-delAcquisitionInfo}{}}}
+\subsection{Method \code{delAcquisitionInfo()}}{
+Deletes acquisition info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryMetadata$delAcquisitionInfo(acquisitionInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{acquisitionInfo}}{object of class \link{ISOImageryAcquisitionInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryMetadata-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryMetadata-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryMetadata$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

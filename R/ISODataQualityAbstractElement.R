@@ -7,58 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISODataQualityAbstractElement
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field nameOfMeasure [\code{\link{character}}] measure name
-#' @field measureIdentification [\code{\link{ISOMetaIdentifier}}] measure identification
-#' @field measureDescription [\code{\link{character}}] measure description
-#' @field evaluationMethodType [\code{\link{ISOEvaluationMethodType}}] measure evaluation method type
-#' @field evaluationMethodDescription [\code{\link{character}}] measure evaluation method description
-#' @field evaluationProcedure [\code{\link{character}}] evaluation procedure
-#' @field dateTime [\code{\link{POSIXt}}] dateTime
-#' @field result [\code{\link{ISOConformanceResult}}] conformance result(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISODataQuality
-#'  }
-#'  \item{\code{addNameOfMeasure(name, locales)}}{
-#'    Add name. Locale names can be specified as \code{list} with 
-#'    the \code{locales} argument.
-#'  }
-#'  \item{\code{delNameOfMeasure(name, locales)}}{
-#'    Deletes name. Locale names can be  specified as \code{list} with 
-#'    the \code{locales} argument. Local names should match those of 
-#'    the name to be deleted, otherwise nothing will be deleted.
-#'  }
-#'  \item{\code{setMeasureIdentification(identification)}}{
-#'    Sets measure identifier, an object of class \code{ISOMetaIdentifier}
-#'  }
-#'  \item{\code{setMeasureDescription(description, locales)}}{
-#'    Sets measure description. Locale names can be specified as \code{list} with 
-#'    the \code{locales} argument.
-#'  }
-#'  \item{\code{setEvaluationMethodType(type)}}{
-#'    Sets the type of evaluation method, an object of class \code{ISOEvaluationMethodType}
-#'    or any \code{character} value among code{ISOEvaluationMethodType$values()}
-#'  }
-#'  \item{\code{setEvaluationMethodDescription(description, loales)}}{
-#'    Sets the description of evaluation method. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setEvaluationMethodProcedure(procedure)}}{
-#'    Sets the procedure as an object of class \code{ISOCitation}
-#'  }
-#'  \item{\code{setDateTime(dateTime)}}{
-#'    Sets datetime, object class 'POSIXct'/'POSIXt'
-#'  }
-#'  \item{\code{addResult(result)}}{
-#'    Sets conformance result, object of class \code{ISOConformanceResult}
-#'  }
-#'  \item{\code{delResult(result)}}{
-#'    Deletes conformance result, object of class \code{ISOConformanceResult}
-#'  }
-#' }
-#'   
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
 #' 
@@ -72,28 +20,33 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
   ),
   public = list(
 
-    #+ nameOfMeasure [0..*]: character
+    #'@field nameOfMeasure nameOfMeasure [0..*]: character
     nameOfMeasure = list(),
-    #+ measureIdentification [0..1]: ISOMetaIdentifier
+    #'@field measureIdentification measureIdentification [0..1]: ISOMetaIdentifier
     measureIdentification = NULL,
-    #+ measureDescription [0..1]: character
+    #'@field measureDescription measureDescription [0..1]: character
     measureDescription = NULL,
-    #+ evaluationMethodType [0..1]: ISOEvaluationMethodType
+    #'@field evaluationMethodType evaluationMethodType [0..1]: ISOEvaluationMethodType
     evaluationMethodType = NULL,
-    #+ evaluationMethodDescription [0..1]: character
+    #'@field evaluationMethodDescription evaluationMethodDescription [0..1]: character
     evaluationMethodDescription = NULL,
-    #+ evaluationProcedure [0..1]: ISOCitation
+    #'@field evaluationProcedure evaluationProcedure [0..1]: ISOCitation
     evaluationProcedure = NULL,
-    #+ dateTime [0..1]: ISODateTime
+    #'@field dateTime dateTime [0..1]: ISODateTime
     dateTime = NULL,
-    #+ result [1..2]: ISOConformanceResult
+    #'@field result result [1..2]: ISOConformanceResult
     result = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #addNameOfMeasure
+    #'@description Adds name of measure
+    #'@param name name
+    #'@param locales list of localized names. Default is \code{NULL}
+    #'@return \code{TRUE} if added, \code{FALSE}
     addNameOfMeasure = function(name, locales = NULL){
       if(!is.null(locales)){
         name <- self$createLocalisedProperty(name, locales)
@@ -101,7 +54,10 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       return(self$addListElement("nameOfMeasure", name))
     },
     
-    #delNameOfMeasure
+    #'@description Deletes name of measure
+    #'@param name name
+    #'@param locales list of localized names. Default is \code{NULL}
+    #'@return \code{TRUE} if deleted, \code{FALSE}
     delNameOfMeasure = function(name, locales = NULL){
       if(!is.null(locales)){
         name <- self$createLocalisedProperty(name, locales)
@@ -109,7 +65,8 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       return(self$delListElement("nameOfMeasure", name))
     },
     
-    #setMeasureIdentification
+    #'@description Set measure identification
+    #'@param identification object of class \link{ISOMetaIdentifier}
     setMeasureIdentification = function(identification){
       if(!is(identification, "ISOMetaIdentifier")){
         stop("The argument value should be an object of class 'ISOMetaIdentifier")
@@ -117,7 +74,9 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       self$measureIdentification = identification
     },
     
-    #setMeasureDescription
+    #'@description Set measure description
+    #'@param description object of class \link{character}
+    #'@param locales list of localized descriptions. Default is \cod{NULL}
     setMeasureDescription = function(description, locales = NULL){
       if(!is.null(locales)){
         description <- self$createLocalisedProperty(description, locales)
@@ -125,7 +84,9 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       self$measureDescription <- description
     },
     
-    #setEvaluationMethodType
+    #'@description Set evaluation method type
+    #'@param type object of class \link{ISOEvaluationMethodType} or any \link{character} value
+    #'  from those returned by \code{ISOEvaluationMethodType$values()}
     setEvaluationMethodType = function(type){
       if(!is(type, "ISOEvaluationMethodType")){
         type <- ISOEvaluationMethodType$new(value = type)
@@ -133,7 +94,9 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       self$evaluationMethodType <- type
     },
     
-    #setEvaluationMethodDescription
+    #'@description Set evaluation method description
+    #'@param description description
+    #'@param locales list of localized descriptions. Default is \code{NULL}
     setEvaluationMethodDescription = function(description, locales = NULL){
       if(!is.null(locales)){
         description <- self$createLocalisedProperty(description, locales)
@@ -141,7 +104,8 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       self$evaluationMethodDescription <- description
     },
     
-    #setEvaluationProcedure
+    #'@description Set evaluation procedure
+    #'@param procedure procedure, object of class \link{ISOCitation}
     setEvaluationProcedure = function(procedure){
       if(!is(procedure, "ISOCitation")){
         stop("The argument value should be an object of class 'ISOCitation'")
@@ -149,7 +113,8 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       self$evaluationProcedure <- procedure
     },
     
-    #setDateTime
+    #'@description Set date time
+    #'@param dateTime date time, object of class \link{POSIXct}
     setDateTime = function(dateTime){
       if(!all(class(dateTime) == c("POSIXct","POSIXt"))){ 
         stop("The argument should be an 'POSIXct'/'POSIXt' object")
@@ -157,7 +122,9 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       self$dateTime <- dateTime
     },
     
-    #addResult
+    #'@description Adds result
+    #'@param result object of class \link{ISOConformanceResult}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addResult = function(result){
       if(!is(result, "ISOConformanceResult")){
         stop("The argument value should be an object of class 'ISOConformanceResult'")
@@ -165,7 +132,9 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       return(self$addListElement("result", result))
     },
     
-    #delResult
+    #'@description Deletes result
+    #'@param result object of class \link{ISOConformanceResult}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delResult = function(result){
       if(!is(result, "ISOConformanceResult")){
         stop("The argument value should be an object of class 'ISOConformanceResult'")

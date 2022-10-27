@@ -6,31 +6,6 @@
 #' @keywords ISO imagery range element description
 #' @return Object of \code{\link{R6Class}} for modelling an ISOImageryRangeElementDescription
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{character}}]
-#' @field description [\code{\link{character}}]
-#' @field rangeElement [\code{\link{ISORecord}}]
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryRangeElementDescription}}
-#'  }
-#'  \item{\code{setName(name, locales)}}{
-#'    Sets the name. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDefinition(description, locales)}}{
-#'    Sets the description. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{addRangeElement(record)}}{
-#'    Add range element, object of class \code{\link{ISORecord}}
-#'  }
-#'  \item{\code{delRangeElement(record)}}{
-#'    Deletes range element, object of class \code{\link{ISORecord}}
-#'  }
-#' }
 #' 
 #' @examples
 #'    #create object
@@ -54,18 +29,22 @@ ISOImageryRangeElementDescription <- R6Class("ISOImageryRangeElementDescription"
    ),
    public = list(
      
-     #+ name [0..1] : character
+     #'@field name name [0..1] : character
      name = NULL,
-     #+ description [0..1] : character
+     #'@field definition definition [0..1] : character
      definition = NULL,
-     #+ rangeElement [0..*] : ISORecord
+     #'@field rangeElement rangeElement [0..*] : ISORecord
      rangeElement = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setName
+     #'@description Set name
+     #'@param name name
+     #'@param locales list of localized texts. Default is \code{NULL}
      setName = function(name, locales = NULL){
        if(!is.null(locales)){
          name <- self$createLocalisedProperty(name, locales)
@@ -73,7 +52,9 @@ ISOImageryRangeElementDescription <- R6Class("ISOImageryRangeElementDescription"
        self$name <- name
      },
      
-     #setDefinition
+     #'@description Set definition
+     #'@param definition definition
+     #'@param locales list of localized texts. Default is \code{NULL}
      setDefinition = function(definition, locales = NULL){
        if(!is.null(locales)){
          definition <- self$createLocalisedProperty(definition, locales)
@@ -81,7 +62,9 @@ ISOImageryRangeElementDescription <- R6Class("ISOImageryRangeElementDescription"
        self$definition <- definition
      },
      
-     #addRangeElement
+     #'@description Adds range element
+     #'@param record object of class \link{ISORecord} or \link{character}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addRangeElement = function(record){
        if(is(record, "character")){
          record <- ISORecord$new(value = record)
@@ -93,7 +76,9 @@ ISOImageryRangeElementDescription <- R6Class("ISOImageryRangeElementDescription"
        return(self$addListElement("rangeElement", record))
      },
      
-     #delRangeElement
+     #'@description Deletes range element
+     #'@param record object of class \link{ISORecord} or \link{character}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delRangeElement = function(record){
        if(is(record, "character")){
          record <- ISORecord$new(value = record)

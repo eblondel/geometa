@@ -6,16 +6,6 @@
 #' @keywords ISO data quality abstract thematic accuracy
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractThematicAccuracy
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAbstractThematicAccuracy}}
-#'  }
-#' }
 #'   
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -39,16 +29,6 @@ ISOAbstractThematicAccuracy <- R6Class("ISOAbstractThematicAccuracy",
 #' @keywords ISO data quality quantitative attribute accuracy
 #' @return Object of \code{\link{R6Class}} for modelling an ISOQuantitativeAttributeAccuracy
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOQuantitativeAttributeAccuracy}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -97,16 +77,6 @@ ISOQuantitativeAttributeAccuracy <- R6Class("ISOQuantitativeAttributeAccuracy",
 #' @keywords ISO data quality nonquantitative attribute accuracy
 #' @return Object of \code{\link{R6Class}} for modelling an ISONonQuantitativeAttributeAccuracy
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISONonQuantitativeAttributeAccuracy}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -155,16 +125,6 @@ ISONonQuantitativeAttributeAccuracy <- R6Class("ISONonQuantitativeAttributeAccur
 #' @keywords ISO data quality thematic accuracy classification correctness
 #' @return Object of \code{\link{R6Class}} for modelling an ISOThematicClassificationCorrectness
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOThematicClassificationCorrectness}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding

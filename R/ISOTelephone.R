@@ -6,24 +6,6 @@
 #' @keywords ISO file identifier
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Telephone
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field voice [\code{\link{character}}] phone number
-#' @field facsimile [\code{\link{character}}] facsimile number
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOTelephone}}
-#'  }
-#'  \item{\code{setVoice(voice, locales)}}{
-#'    Set voice phone number. Locale numbers can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setFacsimile(voice, locales)}}{
-#'    Set facsimile phone number. Locale numbers can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOTelephone$new()
@@ -43,13 +25,20 @@ ISOTelephone <- R6Class("ISOTelephone",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@field voice voice
      voice = NULL,
+     #'@field facsimile facsimile
      facsimile = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}  
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setVoice
+     #'@description Set voice
+     #'@param voice voice
+     #'@param locales list of localized voices. Default is \code{NULL}
      setVoice = function(voice, locales = NULL){
        if(!is(voice,"character")) voice <- as.character(voice)
        self$voice = voice
@@ -58,7 +47,9 @@ ISOTelephone <- R6Class("ISOTelephone",
        }
      },
      
-     #setFacsimile
+     #'@description Set facsimile
+     #'@param facsimile facsimile
+     #'@param locales list of localized facsimiles. Default is \code{NULL}
      setFacsimile = function(facsimile, locales = NULL){
        if(!is(facsimile,"character")) facsimile <- as.character(facsimile)
        self$facsimile = facsimile

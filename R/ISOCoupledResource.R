@@ -6,24 +6,6 @@
 #' @keywords ISO CoupledResource
 #' @return Object of \code{\link{R6Class}} for modelling an ISOCoupledResource
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field operationName [\code{\link{character}}] operation name
-#' @field identifier [\code{\link{character}}] identifier
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOCoupledResource}}
-#'  }
-#'  \item{\code{setOperationName(operationName, locales)}}{
-#'    Set the operation name. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setIdentifier(identifier, locales)}}{
-#'    Set the identifier. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples
 #'   md <- ISOCoupledResource$new()
@@ -44,16 +26,20 @@ ISOCoupledResource <- R6Class("ISOCoupledResource",
     ),
     public = list(
       
-      #+ operationName [1..1]: character
+      #'@field operationName operationName [1..1]: character
       operationName = NULL,
-      #+ identifier [1..1]: character
+      #'@field identifier identifier [1..1]: character
       identifier = NULL,
       
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
       initialize = function(xml = NULL){
         super$initialize(xml = xml)
       },
       
-      #setOperationName
+      #'@description Set operation name
+      #'@param operationName operation name
+      #'@param locales a list of localized names. Default is \code{NULL}
       setOperationName = function(operationName, locales = NULL){
         self$operationName <- as.character(operationName)
         if(!is.null(locales)){
@@ -61,7 +47,9 @@ ISOCoupledResource <- R6Class("ISOCoupledResource",
         }
       },
       
-      #setIdentifier
+      #'@description Set identifier
+      #'@param identifier identifier
+      #'@param locales a list of localized identifiers. Default is \code{NULL}
       setIdentifier = function(identifier, locales = NULL){
         self$identifier <- as.character(identifier)
         if(!is.null(locales)){

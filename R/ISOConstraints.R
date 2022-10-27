@@ -6,27 +6,6 @@
 #' @keywords ISO  constraints
 #' @return Object of \code{\link{R6Class}} for modelling an ISO abstract Constraints
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field useLimitation [\code{\link{character}}] use limitation
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOLegalConstraints}}
-#'  }
-#'  \item{\code{addUseLimitation(useLimitation, locales)}}{
-#'    Adds a use limitation. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setUseLimitation(useLimitation, locales)}}{
-#'    Sets a use limitation. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{delUseLimitation(useLimitation, locales)}}{
-#'    Deletes a use limitation. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @note Abstract ISO class
 #' 
@@ -42,13 +21,20 @@ ISOConstraints<- R6Class("ISOConstraints",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    #+ useLimitation [0..*]: character
+    #'@field useLimitation useLimitation [0..*]: character
     useLimitation = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param defaults list of default values
     initialize = function(xml = NULL, defaults = list()){
       super$initialize(xml, defaults = defaults)
     },
     
-    #addUseLimitation
+    #'@description Adds a use limitation
+    #'@param useLimitation use limitation
+    #'@param locales list of localized use limitations. Default is \code{NULL}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addUseLimitation = function(useLimitation, locales = NULL){
       useLimitation <- as.character(useLimitation)
       if(!is.null(locales)){
@@ -57,13 +43,19 @@ ISOConstraints<- R6Class("ISOConstraints",
       return(self$addListElement("useLimitation", useLimitation))
     },
     
-    #setUseLimitation
+    #'@description Adds a use limitation
+    #'@param useLimitation use limitation
+    #'@param locales list of localized use limitations. Default is \code{NULL}
     setUseLimitation = function(useLimitation, locales = NULL){
+      warning("Method 'setUseLimitation' is deprecated, please use 'addUseLimitation' instead!")
       self$useLimitation <- list()
       return(self$addUseLimitation(useLimitation, locales))
     },
     
-    #delUseLimitation
+    #'@description Deletes a use limitation
+    #'@param useLimitation use limitation
+    #'@param locales list of localized use limitations. Default is \code{NULL}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delUseLimitation = function(useLimitation, locales = NULL){
       useLimitation <- as.character(useLimitation)
       if(!is.null(locales)){

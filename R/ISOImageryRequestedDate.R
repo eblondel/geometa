@@ -6,22 +6,6 @@
 #' @keywords ISO imagery requested date
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery requested date
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field requestedDateOfCollection [\code{\link{POSIXt}}]
-#' @field latestAcceptableDate [\code{\link{POSIXt}}]
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryRequestedDate}}
-#'  }
-#'  \item{\code{setRequestedDateOfCollection(date)}}{
-#'    Set the requested date of collection, object of class \code{\link{POSIXt}}
-#'  }
-#'  \item{\code{setLatestAcceptableDate(date)}}{
-#'    Set the latest acceptable date, object of class \code{\link{POSIXt}}
-#'  }
-#' }
 #' 
 #' @examples
 #'    #create band range dimension
@@ -43,16 +27,19 @@ ISOImageryRequestedDate <- R6Class("ISOImageryRequestedDate",
    ),
    public = list(
      
-     #+ requestedDateOfCollection
+     #'@field requestedDateOfCollection requestedDateOfCollection
      requestedDateOfCollection = NULL,
-     #+ latestAcceptableDate
+     #'@field latestAcceptableDate latestAcceptableDate
      latestAcceptableDate = NULL,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setRequestedDateOfCollection
+     #'@description Set requested date of collection
+     #'@param date object of class \link{POSIXct}
      setRequestedDateOfCollection = function(date){
        if(!is(date, "POSIXt")){
          stop("The date should be an object of class 'POSIXt'")
@@ -60,7 +47,8 @@ ISOImageryRequestedDate <- R6Class("ISOImageryRequestedDate",
        self$requestedDateOfCollection <- date
      },
      
-     #setLatestAcceptableDate
+     #'@description Set latest acceptable date
+     #'@param date object of class \link{POSIXct}
      setLatestAcceptableDate = function(date){
        if(!is(date, "POSIXt")){
          stop("The date should be an object of class 'POSIXt'")

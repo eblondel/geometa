@@ -6,29 +6,6 @@
 #' @keywords ISO citation series
 #' @return Object of \code{\link{R6Class}} for modelling an ISOCitationSeries
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{character}}] citation series name
-#' @field issueIdentification [\code{\link{character}}] issue identification number
-#' @field page [\code{\link{character}}] page
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOCitationSeries
-#'  }
-#'  \item{\code{setName(name, locales)}}{
-#'    Sets a name (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setIssueIdentification(issueId, locales)}}{
-#'    Sets an issue identification (object of class "character"). Locale 
-#'    names can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setPage(page, locales)}}{
-#'    Sets a page (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -42,17 +19,22 @@ ISOCitationSeries <- R6Class("ISOCitationSeries",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     #+name [0..1]
+     #'@field name name [0..1]
      name = NULL,
-     #+issueIdentification [0..1] 
+     #'@field issueIdentification issueIdentification [0..1] 
      issueIdentification = NULL,
-     #+page [0..1]
+     #'@field page page [0..1]
      page = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
 
-     #setName
+     #'@description Set name
+     #'@param name name
+     #'@param locales list of localized names. Default is \code{NULL}
      setName = function(name, locales = NULL){
        classPass <- TRUE
        if(is.null(name)){
@@ -73,7 +55,9 @@ ISOCitationSeries <- R6Class("ISOCitationSeries",
        }
      },
      
-     #setIssueIdentification
+     #'@description Set issue ID
+     #'@param issueId issueId
+     #'@param locales list of localized ids Default is \code{NULL}
      setIssueIdentification = function(issueId, locales = NULL){
        classPass <- TRUE
        if(is.null(issueId)){
@@ -94,7 +78,9 @@ ISOCitationSeries <- R6Class("ISOCitationSeries",
        }
      },
      
-     #setPage
+     #'@description Set page
+     #'@param page page
+     #'@param locales list of localized pages. Default is \code{NULL}
      setPage = function(page, locales = NULL){
        classPass <- TRUE
        if(is.null(page)){

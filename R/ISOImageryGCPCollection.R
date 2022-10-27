@@ -53,20 +53,23 @@ ISOImageryGCPCollection <- R6Class("ISOImageryGCPCollection",
   ),
   public = list(
     
-    #+ collectionIdentification [1..1]: integer
+    #'@field collectionIdentification collectionIdentification [1..1]: integer
     collectionIdentification = NULL,
-    #+ collectionName [1..1]: character|ISOLocalisedCharacterString
+    #'@field collectionName collectionName [1..1]: character|ISOLocalisedCharacterString
     collectionName = NULL,
-    #+ coordinateReferenceSystem [1..1]: ISOReferenceSystem
+    #'@field coordinateReferenceSystem coordinateReferenceSystem [1..1]: ISOReferenceSystem
     coordinateReferenceSystem = NULL,
-    #+ gcp [0..*]: list of ISOImageryGCP
+    #'@field gcp gcp [0..*]: list of ISOImageryGCP
     gcp = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setCollectionIdentification
+    #'@description Set collection identification id
+    #'@param id object of class \link{integer}
     setCollectionIdentification = function(id){
       identifier <- id
       if(!is(identifier, "integer")){
@@ -78,7 +81,9 @@ ISOImageryGCPCollection <- R6Class("ISOImageryGCPCollection",
       self$collectionIdentification <- identifier
     },
     
-    #setCollectionName
+    #'@description Set collection name
+    #'@param name object of class \link{character}
+    #'@param locales list of localized names. Default is \code{NULL}
     setCollectionName = function(name, locales = NULL){
       if(!is.null(locales)){
         name <- self$createLocalisedProperty(name, locales)
@@ -86,7 +91,8 @@ ISOImageryGCPCollection <- R6Class("ISOImageryGCPCollection",
       self$collectionName <- name
     },
     
-    #setCoordinateReferenceSystem
+    #'@description Set coordinate reference system
+    #'@param crs object of class \link{ISOReferenceSystem}
     setCoordinateReferenceSystem = function(crs){
       if(!is(crs, "ISOReferenceSystem")){
         stop("The argument should be an object of class 'ISOReferenceSystem'")
@@ -94,7 +100,9 @@ ISOImageryGCPCollection <- R6Class("ISOImageryGCPCollection",
       self$coordinateReferenceSystem <- crs
     },
     
-    #addGCP
+    #'@description Adds GCP
+    #'@param gcp object of class \link{ISOImageryGCP}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addGCP = function(gcp){
       if(!is(gcp, "ISOImageryGCP")){
         stop("The argument should be an object of class 'ISOImageryGCP'")
@@ -102,7 +110,9 @@ ISOImageryGCPCollection <- R6Class("ISOImageryGCPCollection",
       return(self$addListElement("gcp", gcp))
     },
     
-    #delGCP
+    #'@description Deletes GCP
+    #'@param gcp object of class \link{ISOImageryGCP}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delGCP = function(gcp){
       if(!is(gcp, "ISOImageryGCP")){
         stop("The argument should be an object of class 'ISOImageryGCP'")

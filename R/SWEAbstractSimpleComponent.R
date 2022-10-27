@@ -36,7 +36,7 @@ SWEAbstractSimpleComponent <- R6Class("SWEAbstractSimpleComponent",
     
     #'@description Set nil value and its reason (optional)
     #'@param nilValue value to set as nil Value. object of class \code{numeric}
-    setNilValues = function(nilvalue){
+    setNilValues = function(nilValue){
       self$nilValues = SWENilValues$new(value = nilValue)
     }
   )                        

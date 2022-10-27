@@ -7,21 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFeatureAssociation
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @field roleName [\code{\link{ISOAssociationRole}}] association role(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOFeatureAssociation
-#'  }
-#'  \item{\code{addRoleName(associationRole)}}{
-#'    Adds an association role, object of class \code{ISOAssociationRole}
-#'  }
-#'  \item{\code{delRoleName(associationRole)}}{
-#'    Deletes an association role, object of class \code{ISOAssociationRole}
-#'  }
-#' }
-#'  
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
 #' 
@@ -35,14 +20,18 @@ ISOFeatureAssociation <- R6Class("ISOFeatureAssociation",
    ),
    public = list(
      
-     #+ roleName [2..*]: ISOAssociationRole
+     #'@field roleName roleName [2..*]: ISOAssociationRole
      roleName = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #addRoleName
+     #'@description Adds role name
+     #'@param associationRole object of class \link{ISOAssociationRole}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addRoleName = function(associationRole){
        if(!is(associationRole, "ISOAssociationRole")){
          stop("The argument value should be an object of class 'ISOAssocationRole'")
@@ -50,7 +39,9 @@ ISOFeatureAssociation <- R6Class("ISOFeatureAssociation",
        return(self$addListElement("roleName", associationRole))
      },
      
-     #delRoleName
+     #'@description Deletes role name
+     #'@param associationRole object of class \link{ISOAssociationRole}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delRoleName = function(associationRole){
        if(!is(associationRole, "ISOAssociationRole")){
          stop("The argument value should be an object of class 'ISOAssocationRole'")

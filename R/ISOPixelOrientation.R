@@ -6,13 +6,6 @@
 #' @keywords ISO pixel orientation
 #' @return Object of \code{\link{R6Class}} for modelling an ISOPixelOrientation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value, description)}}{
-#'    This method is used to instantiate an \code{\link{ISOPixelOrientation}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   #possible values
@@ -33,6 +26,11 @@ ISOPixelOrientation <- R6Class("ISOPixelOrientation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}  
+    #'@param value value
+    #'@param description description
     initialize = function(xml = NULL, value, description = NULL){
       super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
                       addCodeSpaceAttr = FALSE)

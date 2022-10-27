@@ -12,55 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO LocaleContainer
 }
 \description{
 ISOLocaleContainer
+
+ISOLocaleContainer
 }
-\section{Fields}{
-
-\describe{
-\item{\code{description}}{[\code{\link{character}}] description}
-
-\item{\code{locale}}{[\code{\link{ISOLocale}}] locale}
-
-\item{\code{date}}{[\code{\link{ISODate}}] date(s)}
-
-\item{\code{responsibleParty}}{[\code{\link{ISOResponsibleParty}}] responsible party}
-
-\item{\code{localisedString}}{[\code{\link{character}}] localised string(s)}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOLocaleContainer}}
- }
- \item{\code{setDescription(description, locales)}}{
-   Sets the process step description. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{setLocale(locale)}}{
-   Sets the locale, object of class \code{\link{ISOLocale}}
- }
- \item{\code{addDate(date)}}{
-   Add a date, object of class \code{\link{ISODate}}
- }
- \item{\code{delDate(date)}}{
-   Deletes a date, object of class \code{\link{ISODate}}
- }
- \item{\code{addResponsibleParty(responsibleParty)}}{
-   Add a responsible party, object of class \code{\link{ISOResponsibleParty}}
- }
- \item{\code{delResponsibleParty(responsibleParty)}}{
-   Deletes a responsible party, object of class \code{\link{ISOResponsibleParty}}
- }
- \item{\code{addLocalisedString(string)}}{
-   Adds a localised string
- }
- \item{\code{delLocalisedString(string)}}{
-   Deletes a localised string
- }
-}
-}
-
 \references{
 ISO 19115:2003 - Geographic information -- Metadata
 }
@@ -70,3 +24,260 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{container}
 \keyword{locale}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOLocaleContainer}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{description}}{description [1..1]}
+
+\item{\code{locale}}{locale [1..1]}
+
+\item{\code{date}}{date [1..*]}
+
+\item{\code{responsibleParty}}{responsibleParty [1..*]}
+
+\item{\code{localisedString}}{localisedString [1..*]}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOLocaleContainer-new}{\code{ISOLocaleContainer$new()}}
+\item \href{#method-ISOLocaleContainer-setDescription}{\code{ISOLocaleContainer$setDescription()}}
+\item \href{#method-ISOLocaleContainer-setLocale}{\code{ISOLocaleContainer$setLocale()}}
+\item \href{#method-ISOLocaleContainer-addDate}{\code{ISOLocaleContainer$addDate()}}
+\item \href{#method-ISOLocaleContainer-delDate}{\code{ISOLocaleContainer$delDate()}}
+\item \href{#method-ISOLocaleContainer-addResponsibleParty}{\code{ISOLocaleContainer$addResponsibleParty()}}
+\item \href{#method-ISOLocaleContainer-delResponsibleParty}{\code{ISOLocaleContainer$delResponsibleParty()}}
+\item \href{#method-ISOLocaleContainer-addLocalisedString}{\code{ISOLocaleContainer$addLocalisedString()}}
+\item \href{#method-ISOLocaleContainer-delLocalisedString}{\code{ISOLocaleContainer$delLocalisedString()}}
+\item \href{#method-ISOLocaleContainer-clone}{\code{ISOLocaleContainer$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-setDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-setDescription}{}}}
+\subsection{Method \code{setDescription()}}{
+Set description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$setDescription(description, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{description}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-setLocale"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-setLocale}{}}}
+\subsection{Method \code{setLocale()}}{
+Set locale
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$setLocale(locale)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locale}}{object of class \link{ISOLocale}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-addDate"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-addDate}{}}}
+\subsection{Method \code{addDate()}}{
+Adds date
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$addDate(date)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{date}}{object of class \link{ISODate}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-delDate"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-delDate}{}}}
+\subsection{Method \code{delDate()}}{
+Deletes date
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$delDate(date)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{date}}{object of class \link{ISODate}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-addResponsibleParty"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-addResponsibleParty}{}}}
+\subsection{Method \code{addResponsibleParty()}}{
+Adds responsible party
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$addResponsibleParty(responsibleParty)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{responsibleParty}}{object of class \link{ISOResponsibleParty}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-delResponsibleParty"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-delResponsibleParty}{}}}
+\subsection{Method \code{delResponsibleParty()}}{
+Deletes responsible party
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$delResponsibleParty(responsibleParty)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{responsibleParty}}{object of class \link{ISOResponsibleParty}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-addLocalisedString"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-addLocalisedString}{}}}
+\subsection{Method \code{addLocalisedString()}}{
+Adds localised string
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$addLocalisedString(string)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{string}}{object of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-delLocalisedString"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-delLocalisedString}{}}}
+\subsection{Method \code{delLocalisedString()}}{
+Deletes localised string
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$delLocalisedString(string)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{string}}{object of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

@@ -6,35 +6,6 @@
 #' @keywords ISO security constraints
 #' @return Object of \code{\link{R6Class}} for modelling an ISO SecurityConstraints
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field classification [\code{\link{ISOClassification}}] security classifciation
-#' @field userNote [\code{\link{character}}] user note
-#' @field classificationSystem [\code{\link{character}}] classification system
-#' @field handlingDescription [\code{\link{character}}] description
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOSecurityConstraints
-#'  }
-#'  \item{\code{setClassification(classification)}}{
-#'    Adds a classification, as object of class "character" or class \code{\link{ISOClassification}}.
-#'    If an object of class "character" is specified, it must match the accepted
-#'    values given by \code{ISOClassification$values()}.
-#'  }
-#'  \item{\code{setUserNote(userNote, locales)}}{
-#'    Sets a user note as object of class "character". Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setClassificationSystem(classificationSystem, locales)}}{
-#'    Sets a classification system as object of class "character". Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setHandlingDescription(handlingDescription, locales)}}{
-#'    Sets a handling description as object of class "character". Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples 
 #'    #create object
@@ -58,19 +29,24 @@ ISOSecurityConstraints <- R6Class("ISOSecurityConstraints",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     #+ classification: ISOClassification
+     #'@field classification classification: ISOClassification
      classification = NULL,
-     #+ userNote [0..1]: character
+     #'@field userNote userNote [0..1]: character
      userNote = NULL,
-     #+ classificationSystem [0..1]: character
+     #'@field classificationSystem classificationSystem [0..1]: character
      classificationSystem = NULL,
-     #+ handlingDescription [0..1]: character
+     #'@field handlingDescription handlingDescription [0..1]: character
      handlingDescription = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setClassification
+     #'@description Set classification
+     #'@param classification object of class \link{ISOClassification} or any \link{character}
+     #' among values returned by \code{ISOClassification$values()}
      setClassification = function(classification){
        if(!is(classification,"ISOClassification")){
          classification <- ISOClassification$new(value = classification)
@@ -78,7 +54,9 @@ ISOSecurityConstraints <- R6Class("ISOSecurityConstraints",
        self$classification <- classification
      },
      
-     #setUserNote
+     #'@description Set user note
+     #'@param userNote user note
+     #'@param locales list of localized texts. Default is \code{NULL}
      setUserNote = function(userNote, locales = NULL){
        self$userNote <- as.character(userNote)
        if(!is.null(locales)){
@@ -86,7 +64,9 @@ ISOSecurityConstraints <- R6Class("ISOSecurityConstraints",
        }
      },
      
-     #setClassificationSystem
+     #'@description Set classification system
+     #'@param classificationSystem classification system
+     #'@param locales list of localized texts. Default is \code{NULL}
      setClassificationSystem = function(classificationSystem, locales = NULL){
        self$classificationSystem = as.character(classificationSystem)
        if(!is.null(locales)){
@@ -94,7 +74,9 @@ ISOSecurityConstraints <- R6Class("ISOSecurityConstraints",
        }
      },
      
-     #setHandlingDescription
+     #'@description Set handling description 
+     #'@param handlingDescription handling description
+     #'@param locales list of localized texts. Default is \code{NULL}
      setHandlingDescription = function(handlingDescription, locales = NULL){
        self$handlingDescription = as.character(handlingDescription)
        if(!is.null(locales)){

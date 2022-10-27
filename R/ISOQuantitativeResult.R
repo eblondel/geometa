@@ -6,33 +6,6 @@
 #' @keywords ISO Quantitative result
 #' @return Object of \code{\link{R6Class}} for modelling an ISO QuantitativeResult
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field valueType [\code{\link{ISORecordType}}] record type
-#' @field valueUnit [\code{\link{GMLUnitDefinition}}] unit
-#' @field errorStatistic [\code{\link{character}}] error statistic
-#' @field value [\code{\link{ISORecord}}] record(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOQuantitativeResult}}
-#'  }
-#'  \item{\code{setValueType(valueType)}}{
-#'    Sets value type
-#'  }
-#'  \item{\code{setValueUnit(valueUnit)}}{
-#'    Sets value unit
-#'  }
-#'  \item{\code{setErrorStatistic(errorStatistic)}}{
-#'    Sets error statistic
-#'  }
-#'  \item{\code{addValue(value)}}{
-#'    Add value
-#'  }
-#'  \item{\code{delValue(value)}}{
-#'    Deletes value
-#'  }
-#' }
 #' 
 #' @examples
 #'  md <- ISOQuantitativeResult$new()
@@ -50,15 +23,23 @@ ISOQuantitativeResult <- R6Class("ISOQuantitativeResult",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    valueType = NULL, #valueType [0..1]- Record   
-    valueUnit = NA, #valueUnit [1..1]- UnitDefinition (GML)    
-    errorStatistic = NULL, #errorStatistic [0..1]    
-    value = list(), #value [1..*]    
+    #'@field valueType valueType [0..1]- ISORecord 
+    valueType = NULL,
+    #'@field valueUnit valueUnit [1..1]- GMLUnitDefinition
+    valueUnit = NA,
+    #'@field errorStatistic errorStatistic [0..1]
+    errorStatistic = NULL,
+    #'@field value value [1..*]   
+    value = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setValueType
+    #'@description Set value type
+    #'@param valueType object of class \link{ISORecordType} or \link{character}
     setValueType = function(valueType){
       if(!is(valueType,"ISORecordType")) if(is(valueType,"character")){
         valueType <- ISORecordType$new(value = valueType)
@@ -68,7 +49,8 @@ ISOQuantitativeResult <- R6Class("ISOQuantitativeResult",
       self$valueType <- valueType
     },
     
-    #setValueUnit
+    #'@description Set value unit
+    #'@param valueUnit object of class inheriting \link{GMLUnitDefinition}
     setValueUnit = function(valueUnit){
       if(!is(valueUnit, "GMLUnitDefinition")){
         stop("The valueUnit should be an object of class 'GMLUnitDefinitions such as
@@ -77,12 +59,15 @@ ISOQuantitativeResult <- R6Class("ISOQuantitativeResult",
       self$valueUnit <- valueUnit
     },
     
-    #setErrorStatistic
+    #'@description Set error statistic
+    #'@param errorStatistic error statistic
     setErrorStatistic = function(errorStatistic){
       self$errorStatistic <- errorStatistic
     },
     
-    #addValue
+    #'@description Adds value
+    #'@param value  object of class \link{ISORecord} or \link{character}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addValue = function(value){
       if(is(value,"character")){
         value <- ISORecord$new(value = value)
@@ -92,7 +77,9 @@ ISOQuantitativeResult <- R6Class("ISOQuantitativeResult",
       return(self$addListElement("value", value))
     },
     
-    #delValue
+    #'@description Deletes value
+    #'@param value  object of class \link{ISORecord} or \link{character}
+    #'@return \code{TRUE} if delete, \code{FALSE} otherwise
     delValue = function(value){
       if(is(value,"character")){
         value <- ISORecord$new(value = value)

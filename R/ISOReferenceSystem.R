@@ -6,18 +6,6 @@
 #' @keywords ISO reference system
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ReferenceSystem
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field referenceSystemIdentifier [\code{\link{ISOReferenceIdentifier}}] the reference system identifier
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to instantiate an \code{\link{ISOReferenceSystem}}
-#'  }
-#'  \item{\code{setReferenceSystemIdentifier(code, codeSpace)}}{
-#'    Sets the reference system identifier
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOReferenceSystem$new()
@@ -37,12 +25,19 @@ ISOReferenceSystem <- R6Class("ISOReferenceSystem",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field referenceSystemIdentifier referenceSystemIdentifier
     referenceSystemIdentifier = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param prefix prefix
+    #'@param code code
     initialize = function(xml = NULL, prefix, code){
       super$initialize(xml = xml)
     },
     
-    #setReferenceSystemIdentifier
+    #'@description Set reference system identifier
+    #'@param identifier object of class \link{ISOReferenceIdentifier}
     setReferenceSystemIdentifier = function(identifier){
       if(!is(identifier, "ISOReferenceIdentifier")){
         stop("The argument should be an object of class 'ISOReferenceIdentifier")

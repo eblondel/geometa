@@ -6,13 +6,6 @@
 #' @keywords ISO imagery Operation type
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Imagery Operation type
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryOperationType}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   #possible values
@@ -33,6 +26,11 @@ ISOImageryOperationType <- R6Class("ISOImageryOperationType",
     xmlNamespacePrefix = "GMI"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param value value
+    #'@param description description
     initialize = function(xml = NULL, value, description = NULL){
       super$initialize(xml = xml, id = private$xmlElement, value = value, description = description, 
                        addCodeSpaceAttr = FALSE)

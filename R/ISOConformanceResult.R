@@ -6,27 +6,6 @@
 #' @keywords ISO conformance result
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ConformanceResult
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field specification [\code{\link{ISOCitation}}] specification citation
-#' @field explanation [\code{\link{character}}] explanation about conformance
-#' @field pass [\code{\link{logical}}] if the conformance is passing or not
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOConformanceResult}}
-#'  }
-#'  \item{\code{setSpecification(specification)}}{
-#'    Sets the specification (an \code{\link{ISOCitation}} object)
-#'  }
-#'  \item{\code{setExplanation(explanation, locales)}}{
-#'    Sets the explanation. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-##'  \item{\code{setPass(pass)}}{
-#'    Sets if passing the conformance or not (logical value)
-#'  }
-#' }
 #' 
 #' @examples
 #'  md <- ISOConformanceResult$new()
@@ -54,14 +33,21 @@ ISOConformanceResult <- R6Class("ISOConformanceResult",
       xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field specification specification
     specification = NULL,
+    #'@field explanation explanation
     explanation = NULL,
+    #'@field pass pass
     pass = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setSpecification
+    #'@description Set specification
+    #'@param specification specification
     setSpecification = function(specification){
       if(!is(specification, "ISOCitation")){
         stop("The argument should be a 'ISOCitation' object")
@@ -69,7 +55,9 @@ ISOConformanceResult <- R6Class("ISOConformanceResult",
       self$specification <- specification
     },
     
-    #setExplanation
+    #'@description Set explanation about the conformance result
+    #'@param explanation explanation
+    #'@param locales list of localized explanations. Default is \code{NULL}
     setExplanation = function(explanation, locales = NULL){
       self$explanation <- as.character(explanation)
       if(!is.null(locales)){
@@ -77,7 +65,8 @@ ISOConformanceResult <- R6Class("ISOConformanceResult",
       }
     },
     
-    #setPass
+    #'@description Set wether the conformance passed or not
+    #'@param pass object of class \link{logical}
     setPass = function(pass){
       self$pass <- as.logical(pass)
     }

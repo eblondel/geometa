@@ -6,38 +6,6 @@
 #' @keywords ISO file identifier
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ResponsibleParty
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field individualName [\code{\link{character}}] Individual name
-#' @field organisationName [\code{\link{character}}] Organization name
-#' @field positionName [\code{\link{character}}] Position name
-#' @field contactInfo [\code{\link{ISOContact}}] contact information
-#' @field role [\code{\link{ISORole}}] role
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISOResponsibleParty
-#'  }
-#'  \item{\code{setIndividualName(invidualName, locales)}}{
-#'    Set the individual name. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setOrganisationName(organisationName, locales)}}{
-#'    Set the organisation name. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setPositionName(positionName, locales)}}{
-#'    Set the position name. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setContactInfo(contactInfo)}}{
-#'    Set the contact info, should be an object of class \code{\link{ISOContact}}
-#'  }
-#'  \item{\code{setRole(role)}}{
-#'    Set the role, either an object of class "character" (among values
-#'    available in \code{ISORole$values()}) or an object of class \code{\link{ISORole}}.
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #create a responsible party element
@@ -80,16 +48,26 @@ ISOResponsibleParty <- R6Class("ISOResponsibleParty",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field individualName individualName
     individualName = NULL,
+    #'@field organisationName organisationName
     organisationName = NULL,
+    #'@field positionName positionName
     positionName = NULL,
+    #'@field contactInfo contactInfo
     contactInfo = NULL,
+    #'@field role role
     role = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setIndividualName
+    #'@description Set individual name
+    #'@param individualName individual name
+    #'@param locales list of localized texts. Default is \code{NULL}
     setIndividualName = function(individualName, locales = NULL){
       self$individualName = individualName
       if(!is.null(locales)){
@@ -97,7 +75,9 @@ ISOResponsibleParty <- R6Class("ISOResponsibleParty",
       }
     },
     
-    #setOrganisationName
+    #'@description Set organisation name
+    #'@param organisationName organisation name
+    #'@param locales list of localized texts. Default is \code{NULL}
     setOrganisationName = function(organisationName, locales = NULL){
       self$organisationName = organisationName
       if(!is.null(locales)){
@@ -105,7 +85,9 @@ ISOResponsibleParty <- R6Class("ISOResponsibleParty",
       }
     },
     
-    #setPositionName
+    #'@description Set position name
+    #'@param positionName position name
+    #'@param locales list of localized texts. Default is \code{NULL}
     setPositionName = function(positionName, locales = NULL){
       self$positionName = positionName
       if(!is.null(locales)){
@@ -113,12 +95,15 @@ ISOResponsibleParty <- R6Class("ISOResponsibleParty",
       }
     },
     
-    #setContactInfo
+    #'@description Set contact info
+    #'@param contactInfo object of class \link{ISOContact}
     setContactInfo = function(contactInfo){
       self$contactInfo = contactInfo
     },
     
-    #setRole
+    #'@description Set role
+    #'@param role role object of class \link{ISORole} or any \link{character}
+    #' among values returned by \code{ISORole$values()}
     setRole = function(role){
       if(is(role, "character")){
         role <- ISORole$new(value = role)

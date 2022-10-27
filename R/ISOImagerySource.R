@@ -6,22 +6,6 @@
 #' @keywords ISO imagery source
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery source
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field processedLevel [\code{\link{ISOMetaIdentifier}}]
-#' @field resolution [\code{\link{ISOImageryNominalResolution}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImagerySource}}
-#'  }
-#'  \item{\code{setProcessedLevel(processedLevel)}}{
-#'    Sets processed level, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{setResolution(resolution)}}{
-#'    Set the resolution, object of class \code{ISOImageryNominalResolution}
-#'  }
-#' }  
 #' 
 #' @examples
 #'    md <- ISOImagerySource$new()
@@ -46,16 +30,19 @@ ISOImagerySource <- R6Class("ISOImagerySource",
   ),
   public = list(
     
-    #+ processedLevel [0..1]: ISOMetaIdentifier
+    #'@field processedLevel processedLevel [0..1]: ISOMetaIdentifier
     processedLevel = NULL,
-    #+ resolution [0..1]: ISOImageryNominalResolution
+    #'@field resolution resolution [0..1]: ISOImageryNominalResolution
     resolution = NULL,
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setProcessedLevel
+    #'@description Set processed level
+    #'@param processedLevel object of class \link{ISOMetaIdentifier} or \link{character}
     setProcessedLevel = function(processedLevel){
       if(is(processedLevel, "character")){
         processedLevel <- ISOMetaIdentifier$new(code = processedLevel)
@@ -67,7 +54,8 @@ ISOImagerySource <- R6Class("ISOImagerySource",
       self$processedLevel <- processedLevel
     },
     
-    #setResolution
+    #'@description Set resolution
+    #'@param resolution object of class \link{ISOImageryNominalResolution}
     setResolution = function(resolution){
       if(!is(resolution, "ISOImageryNominalResolution")){
         stop("The argument should be an object of class 'ISOImageryNominalResolution")

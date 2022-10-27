@@ -6,70 +6,6 @@
 #' @keywords ISO imagery objective
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery objective
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field identifier [\code{\link{ISOMetaIdentifier}}]
-#' @field priority [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @field type [\code{list} of \code{\link{ISOImageryObjectiveType}}]
-#' @field function [\code{list} of \code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @field extent [\code{list} of \code{\link{ISOExtent}}]
-#' @field sensingInstrument [\code{list} of \code{\link{ISOImageryInstrument}}]
-#' @field pass [\code{list} of \code{\link{ISOImageryPlatformPass}}]
-#' @field objectiveOccurance [\code{list} of \code{\link{ISOImageryEvent}}]
-#' 
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryObjective}}
-#'  }
-#'  \item{\code{setIdentifier(identifier)}}{
-#'    Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{setPriority(priority, locales)}}{
-#'    Sets a priority (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addType(type)}}{
-#'    Add type, object of class \code{\link{ISOImageryObjectiveType}} or 'character' among values
-#'    given by \code{ISOImageryObjectiveType$values()} or any free text.
-#'  }
-#'  \item{\code{delType(type)}}{
-#'    Deletes type, object of class \code{\link{ISOImageryObjectiveType}} or 'character' among values
-#'    given by \code{ISOImageryObjectiveType$values()} or any free text.
-#'  }
-#'  \item{\code{addFunction(fun, locales)}}{
-#'    Adds a function (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{delFunction(fun, locales)}}{
-#'    Deletes a function (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addExtent(extent)}}{
-#'    Adds an extent, object of class \code{\link{ISOExtent}}
-#'  }
-#'  \item{\code{delExtent(extent)}}{
-#'    Deletes an extent, object of class \code{\link{ISOExtent}}
-#'  }
-#'  \item{\code{addSensingInstrument(instrument)}}{
-#'    Adds an instrument, object of class \code{\link{ISOImageryInstrument}}
-#'  }
-#'  \item{\code{delSensingInstrument(instrument)}}{
-#'    Deletes an instrument, object of class \code{\link{ISOImageryInstrument}}
-#'  }
-#'  \item{\code{addPlatformPass(pass)}}{
-#'    Adds an platform pass, object of class \code{\link{ISOImageryPlatformPass}}
-#'  }
-#'  \item{\code{delPlatformPass(pass)}}{
-#'    Deletes an platform pass, object of class \code{\link{ISOImageryPlatformPass}}
-#'  }
-#'  \item{\code{addObjectiveOccurance(event)}}{
-#'    Adds an objective occurance, object of class \code{\link{ISOImageryEvent}}
-#'  }
-#'  \item{\code{delObjectiveOccurance(event)}}{
-#'    Deletes an objective occurance, object of class \code{\link{ISOImageryEvent}}
-#'  }
-#' }  
 #' 
 #' @examples
 #'    #encoding
@@ -116,28 +52,31 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
   ),
   public = list(
     
-    #+ identifier [1..1]: ISOMetaIdentifier
+    #'@field identifier identifier [1..1]: ISOMetaIdentifier
     identifier = NULL,
-    #+ priority [0..1]: character|ISOLocalisedCharacterString
+    #'@field priority priority [0..1]: character|ISOLocalisedCharacterString
     priority = NULL,
-    #+ type [0..*]: ISOImageryObjectiveType
+    #'@field type type [0..*]: ISOImageryObjectiveType
     type = list(),
-    #+ function [0..*]: character|ISOLocalisedCharacterString
+    #'@field function function [0..*]: character|ISOLocalisedCharacterString
     "function" = list(),
-    #+ extent [0..*]: ISOExtent
+    #'@field extent extent [0..*]: ISOExtent
     extent = list(),
-    #+ sensingInstrument [0..*]: ISOImageryInstrument
+    #'@field sensingInstrument sensingInstrument [0..*]: ISOImageryInstrument
     sensingInstrument = list(),
-    #+ pass [0..*]: ISOImageryPlatformPass
+    #'@field pass pass [0..*]: ISOImageryPlatformPass
     pass = list(),
-    #+ objectiveOccurance [1..*]: ISOImageryEvent
+    #'@field objectiveOccurance objectiveOccurance [1..*]: ISOImageryEvent
     objectiveOccurance = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setIdentifier
+    #'@description Set identifier
+    #'@param identifier object of class \link{ISOMetaIdentifier} or \link{character}
     setIdentifier = function(identifier){
       if(is(identifier, "character")){
         identifier <- ISOMetaIdentifier$new(code = identifier)
@@ -149,7 +88,9 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       self$identifier <- identifier
     },
     
-    #setPriority
+    #'@description Set priority
+    #'@param priority priority
+    #'@param locales list of localized texts. Default is \code{NULL}
     setPriority = function(priority, locales = NULL){
       if(!is.null(locales)){
         priority <- self$createLocalisedProperty(priority, locales)
@@ -157,7 +98,10 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       self$priority <- priority
     },
     
-    #addType
+    #'@description Adds type
+    #'@param type object of class \link{ISOImageryObjectiveType} or any \link{character}
+    #'  among values returned by \code{ISOImageryObjectiveType$values()}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addType = function(type){
       if(is(type, "character")){
         type <- ISOImageryObjectiveType$new(value = type)
@@ -169,7 +113,10 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$addListElement("type", type))
     },
     
-    #delType
+    #'@description Deletes type
+    #'@param type object of class \link{ISOImageryObjectiveType} or any \link{character}
+    #'  among values returned by \code{ISOImageryObjectiveType$values()}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delType = function(type){
       if(is(type, "character")){
         type <- ISOImageryObjectiveType$new(value = type)
@@ -181,7 +128,10 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$delListElement("type", type))
     },
     
-    #addFunction
+    #'@description Adds function
+    #'@param fun fun
+    #'@param locales list of localized texts. Default is \code{NULL}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addFunction = function(fun, locales = NULL){
       if(!is.null(locales)){
         fun <- self$createLocalisedProperty(fun, locales)
@@ -189,7 +139,10 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$addListElement("function", fun))
     },
     
-    #delFunction
+    #'@description Deletes function
+    #'@param fun fun
+    #'@param locales list of localized texts. Default is \code{NULL}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delFunction = function(fun, locales = NULL){
       if(!is.null(locales)){
         fun <- self$createLocalisedProperty(fun, locales)
@@ -197,7 +150,9 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$delListElement("function", fun))
     },
     
-    #addExtent
+    #'@description Adds extent
+    #'@param extent extent, object of class \link{ISOExtent}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addExtent = function(extent){
       if(!is(extent, "ISOExtent")){
         stop("The argument should be an object of class 'ISOExtent'")
@@ -205,7 +160,9 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$addListElement("extent", extent))
     },
     
-    #delExtent
+    #'@description Deletes extent
+    #'@param extent extent, object of class \link{ISOExtent}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delExtent = function(extent){
       if(!is(extent, "ISOExtent")){
         stop("The argument should be an object of class 'ISOExtent'")
@@ -213,7 +170,9 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$delListElement("extent", extent))
     },
     
-    #addSensingInstrument
+    #'@description Adds sensing instrument
+    #'@param instrument object of class \link{ISOImageryInstrument}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addSensingInstrument = function(instrument){
       if(!is(instrument, "ISOImageryInstrument")){
         stop("The argument should be an object of class 'ISOImageryInstrument'")
@@ -221,7 +180,9 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$addListElement("instrument", instrument))
     },
     
-    #delSensingInstrument
+    #'@description Deletes sensing instrument
+    #'@param instrument object of class \link{ISOImageryInstrument}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delSensingInstrument = function(instrument){
       if(!is(instrument, "ISOImageryInstrument")){
         stop("The argument should be an object of class 'ISOImageryInstrument'")
@@ -229,7 +190,9 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$delListElement("instrument", instrument))
     },
     
-    #addPlatformPass
+    #'@description Adds platform pass
+    #'@param pass object of class \link{ISOImageryPlatformPass}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addPlatformPass = function(pass){
       if(!is(pass, "ISOImageryPlatformPass")){
         stop("The argument should be an object of class 'ISOImageryPlatformPass'")
@@ -237,7 +200,9 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$addListElement("pass", pass))
     },
     
-    #delPlatformPass
+    #'@description Deletes platform pass
+    #'@param pass object of class \link{ISOImageryPlatformPass}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delPlatformPass = function(pass){
       if(!is(pass, "ISOImageryPlatformPass")){
         stop("The argument should be an object of class 'ISOImageryPlatformPass'")
@@ -245,7 +210,9 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$delListElement("pass", pass))
     },
     
-    #addObjectiveOccurance
+    #'@description Adds objective occurance
+    #'@param event object of class \link{ISOImageryEvent}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addObjectiveOccurance = function(event){
       if(!is(event, "ISOImageryEvent")){
         stop("The argument should be an object of class 'ISOImageryEvent'")
@@ -253,7 +220,9 @@ ISOImageryObjective <- R6Class("ISOImageryObjective",
       return(self$addListElement("objectiveOccurance", event))
     },
     
-    #delObjectiveOccurance
+    #'@description Deletes objective occurance
+    #'@param event object of class \link{ISOImageryEvent}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delObjectiveOccurance = function(event){
       if(!is(event, "ISOImageryEvent")){
         stop("The argument should be an object of class 'ISOImageryEvent'")

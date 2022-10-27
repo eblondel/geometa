@@ -6,17 +6,6 @@
 #' @keywords ISO measure
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Measure
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value [\code{\link{character}}] measure
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value, uom, useUomURI)}}{
-#'    This method is used to instantiate an \code{\link{ISOMeasure}}. The \code{uom} argument represents
-#'    the symbol of unit of measure used. The parameter  \code{useUomURI} can be used to 
-#'    set the uom as URI, its default value is \code{FALSE}.
-#'  }
-#' }
 #' 
 #' @references
 #'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
@@ -30,8 +19,16 @@ ISOMeasure <- R6Class("ISOMeasure",
       xmlNamespacePrefix = "GCO"
     ),
     public = list(
+      #'@field value value
       value = NA,
+      #'@field attrs attrs
       attrs = list(),
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param value value
+      #'@param uom uom symbol of unit of measure used
+      #'@param useUomURI use uom URI. Default is \code{FALSE}
       initialize = function(xml = NULL, value, uom, useUomURI = FALSE){
         super$initialize(xml = xml)
         if(is.null(xml)){

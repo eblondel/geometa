@@ -12,55 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISOParameter
 }
 \description{
 ISOParameter
+
+ISOParameter
 }
-\section{Fields}{
-
-\describe{
-\item{\code{name}}{[\code{\link{character}}] name}
-
-\item{\code{direction}}{[\code{\link{ISOParameterDirection}}] direction}
-
-\item{\code{description}}{[\code{\link{character}}] description}
-
-\item{\code{optionality}}{[\code{\link{logical}}] parameter optionality}
-
-\item{\code{repeatability}}{[\code{\link{logical}}] parameter repeatability}
-
-\item{\code{valueType}}{[\code{\link{ISOTypeName}}|\code{\link{character}}] value type}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOParameter}}
- }
- \item{\code{setName(name, attributeType, locales)}}{
-   Sets the parameter name (\code{character}) and attributeType (\code{\link{ISOTypeName}}
-   or \code{character}). Locale names can be specified as \code{list} with the 
-   \code{locales} argument.
- }
- \item{\code{setDirection(direction)}}{
-   Sets the direction, an object of class \code{\link{ISOParameterDirection}} or any
-   \code{character} value among \code{ISOParameterDirection$values()}
- }
- \item{\code{setDescription(description, locales)}}{
-   Sets the parameter description. Locale names can be specified as 
-   \code{list} with the \code{locales} argument.
- }
- \item{\code{setOptionality(optional)}}{
-   Set whether the parameter is optional (\code{TRUE}), \code{FALSE} otherwise
- }
- \item{\code{setRepeatability(repeatable)}}{
-   Set whether the parameter is repeatable (\code{TRUE}), \code{FALSE} otherwise
- }
- \item{\code{setValueType(valueType, locales)}}{
-   Sets the type of parameter value, object of class \code{\link{ISOTypeName}} or \code{character}
-   Locale names can be specified as \code{list} with the \code{locales} argument.
- }
-}
-}
-
 \examples{
   md <- ISOParameter$new()
   md$setName("name", "attType")
@@ -80,3 +34,215 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{parameter}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOParameter}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{name}}{name [1..1]: character}
+
+\item{\code{direction}}{direction [0..1]: ISOParameterDirection}
+
+\item{\code{description}}{description [0..1]: character}
+
+\item{\code{optionality}}{optionality [1..1]: character}
+
+\item{\code{repeatability}}{repeatability [1..1]: logical}
+
+\item{\code{valueType}}{valueType [1..1]: ISOTypeName}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOParameter-new}{\code{ISOParameter$new()}}
+\item \href{#method-ISOParameter-setName}{\code{ISOParameter$setName()}}
+\item \href{#method-ISOParameter-setDirection}{\code{ISOParameter$setDirection()}}
+\item \href{#method-ISOParameter-setDescription}{\code{ISOParameter$setDescription()}}
+\item \href{#method-ISOParameter-setOptionality}{\code{ISOParameter$setOptionality()}}
+\item \href{#method-ISOParameter-setRepeatability}{\code{ISOParameter$setRepeatability()}}
+\item \href{#method-ISOParameter-setValueType}{\code{ISOParameter$setValueType()}}
+\item \href{#method-ISOParameter-clone}{\code{ISOParameter$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOParameter-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOParameter-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOParameter$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOParameter-setName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOParameter-setName}{}}}
+\subsection{Method \code{setName()}}{
+Set name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOParameter$setName(name, attributeType, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+
+\item{\code{attributeType}}{attribute type}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOParameter-setDirection"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOParameter-setDirection}{}}}
+\subsection{Method \code{setDirection()}}{
+Set direction
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOParameter$setDirection(direction)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{direction}}{object of class \link{ISOParameterDirection} or \link{character}
+among values returned by \code{ISOParameterDirection$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOParameter-setDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOParameter-setDescription}{}}}
+\subsection{Method \code{setDescription()}}{
+Set description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOParameter$setDescription(description, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{description}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOParameter-setOptionality"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOParameter-setOptionality}{}}}
+\subsection{Method \code{setOptionality()}}{
+Set optionality
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOParameter$setOptionality(optional)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{optional}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOParameter-setRepeatability"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOParameter-setRepeatability}{}}}
+\subsection{Method \code{setRepeatability()}}{
+Set repeatability
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOParameter$setRepeatability(repeatable)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{repeatable}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOParameter-setValueType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOParameter-setValueType}{}}}
+\subsection{Method \code{setValueType()}}{
+Set value type
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOParameter$setValueType(valueType, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{valueType}}{object of class \link{ISOTypeName} or \link{character}}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOParameter-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOParameter-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOParameter$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

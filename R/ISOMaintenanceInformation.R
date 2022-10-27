@@ -6,18 +6,6 @@
 #' @keywords ISO maintenance information
 #' @return Object of \code{\link{R6Class}} for modelling an ISO MaintenanceInformation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field maintenanceAndUpdateFrequency [\code{\link{ISOMaintenanceFrequency}}|\code{\link{character}}] frequency
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOMaintenanceInformation}}
-#'  }
-#'  \item{\code{setMaintenanceFrequency(frequency)}}{
-#'    Sets the maintenance and update frequency
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOMaintenanceInformation$new()
@@ -36,12 +24,18 @@ ISOMaintenanceInformation <- R6Class("ISOMaintenanceInformation",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@field maintenanceAndUpdateFrequency maintenanceAndUpdateFrequency
      maintenanceAndUpdateFrequency = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setMaintenanceFrequency
+     #'@description Set maintenance frequency
+     #'@param frequency frequency object of class \link{ISOMaintenanceFrequency} or any
+     #' \link{character} among values returned by \code{ISOMaintenanceFrequency$values()}
      setMaintenanceFrequency = function(frequency){
        if(is(frequency, "character")){
          frequency <- ISOMaintenanceFrequency$new(value = frequency)

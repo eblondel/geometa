@@ -12,40 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO GeographicBoundingBox
 }
 \description{
 ISOGeographicBoundingBox
+
+ISOGeographicBoundingBox
 }
-\section{Fields}{
-
-\describe{
-\item{\code{westBoundLongitude}}{[\code{\link{numeric}}] west longitude}
-
-\item{\code{eastBoundLongitude}}{[\code{\link{numeric}}] east longitude}
-
-\item{\code{southBoundLatitude}}{[\code{\link{numeric}}] south latitude}
-
-\item{\code{northBoundLatitude}}{[\code{\link{numeric}}] north latitude}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml, minx, miny, maxx, maxy, bbox)}}{
-   This method is used to instantiate an \code{\link{ISOGeographicBoundingBox}}
- }
- \item{\code{setWestBoundLongitude(minx)}}{
-   Set the west bound longitude.
- }
- \item{\code{setEastBoundLongitude(minx)}}{
-   Set the west bound longitude.
- }
- \item{\code{setSouthBoundLatitude(miny)}}{
-   Set the south bound latitude.
- }
- \item{\code{setNorthBoundLatitude(maxy)}}{
-   Set the north bound latitude.
- }
-}
-}
-
 \examples{
   md <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
   xml <- md$encode()
@@ -59,3 +28,183 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{extent}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOGeographicExtent]{geometa::ISOGeographicExtent}} -> \code{ISOGeographicBoundingBox}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{westBoundLongitude}}{westBoundLongitude}
+
+\item{\code{eastBoundLongitude}}{eastBoundLongitude}
+
+\item{\code{southBoundLatitude}}{southBoundLatitude}
+
+\item{\code{northBoundLatitude}}{northBoundLatitude}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOGeographicBoundingBox-new}{\code{ISOGeographicBoundingBox$new()}}
+\item \href{#method-ISOGeographicBoundingBox-setWestBoundLongitude}{\code{ISOGeographicBoundingBox$setWestBoundLongitude()}}
+\item \href{#method-ISOGeographicBoundingBox-setEastBoundLongitude}{\code{ISOGeographicBoundingBox$setEastBoundLongitude()}}
+\item \href{#method-ISOGeographicBoundingBox-setSouthBoundLatitude}{\code{ISOGeographicBoundingBox$setSouthBoundLatitude()}}
+\item \href{#method-ISOGeographicBoundingBox-setNorthBoundLatitude}{\code{ISOGeographicBoundingBox$setNorthBoundLatitude()}}
+\item \href{#method-ISOGeographicBoundingBox-clone}{\code{ISOGeographicBoundingBox$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeographicBoundingBox-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeographicBoundingBox-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeographicBoundingBox$new(
+  xml = NULL,
+  minx = NULL,
+  miny = NULL,
+  maxx = NULL,
+  maxy = NULL,
+  bbox = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{minx}}{minx object of class \link{numeric}}
+
+\item{\code{miny}}{miny object of class \link{numeric}}
+
+\item{\code{maxx}}{maxx object of class \link{numeric}}
+
+\item{\code{maxy}}{maxy object of class \link{numeric}}
+
+\item{\code{bbox}}{bbox object of class \link{matrix}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeographicBoundingBox-setWestBoundLongitude"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeographicBoundingBox-setWestBoundLongitude}{}}}
+\subsection{Method \code{setWestBoundLongitude()}}{
+Set west bound longitude
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeographicBoundingBox$setWestBoundLongitude(minx)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{minx}}{minx object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeographicBoundingBox-setEastBoundLongitude"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeographicBoundingBox-setEastBoundLongitude}{}}}
+\subsection{Method \code{setEastBoundLongitude()}}{
+Set east bound longitude
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeographicBoundingBox$setEastBoundLongitude(maxx)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{maxx}}{maxx object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeographicBoundingBox-setSouthBoundLatitude"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeographicBoundingBox-setSouthBoundLatitude}{}}}
+\subsection{Method \code{setSouthBoundLatitude()}}{
+Set south bound latitude
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeographicBoundingBox$setSouthBoundLatitude(miny)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{miny}}{miny object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeographicBoundingBox-setNorthBoundLatitude"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeographicBoundingBox-setNorthBoundLatitude}{}}}
+\subsection{Method \code{setNorthBoundLatitude()}}{
+Set north bound latitude
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeographicBoundingBox$setNorthBoundLatitude(maxy)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{maxy}}{maxy object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeographicBoundingBox-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeographicBoundingBox-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeographicBoundingBox$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

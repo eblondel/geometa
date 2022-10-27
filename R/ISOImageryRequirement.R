@@ -6,56 +6,6 @@
 #' @keywords ISO imagery requirement
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery requirement
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field citation [\code{\link{ISOCitation}}]
-#' @field identifier [\code{\link{ISOMetaIdentifier}}]
-#' @field requestor [\code{list} of \code{\link{ISOResponsibleParty}}]
-#' @field recipient [\code{list} of \code{\link{ISOResponsibleParty}}]
-#' @field priority [\code{\link{ISOImageryPriority}}]
-#' @field requestedDate [\code{\link{ISOImageryRequestedDate}}]
-#' @field expiryDate [\code{\link{POSIXt}}]
-#' @field satisfiedPlan [\code{list} of \code{\link{ISOImageryPlan}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryRequirement}}
-#'  }
-#'  \item{\code{setCitation(citation)}}{
-#'    Sets the citation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setIdentifier(identifier)}}{
-#'    Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{addRequestor(requestor)}}{
-#'    Adds a requestor, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{delRequestor(requestor)}}{
-#'    Deletes a requestor, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{addRecipient(recipient)}}{
-#'    Adds a recipient, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{delRecipient(recipient)}}{
-#'    Deletes a recipient, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{setPriority(priority)}}{
-#'    Set the priority, object of class \code{\link{ISOImageryPriority}}, or an object
-#'    of class 'character' among values given by \code{ISOImageryPriority$values()}.
-#'  }
-#'  \item{\code{setRequestedDate(date)}}{
-#'    Set requested date, object of class \code{\link{ISOImageryRequestedDate}}
-#'  }
-#'  \item{\code{setExpiryDate(date)}}{
-#'    Set expiry date, object of class \code{\link{POSIXt}}
-#'  }
-#'  \item{\code{addSatisfiedPlan(plan)}}{
-#'    Add a satisfied plan, object of class \code{\link{ISOImageryPlan}}
-#'  }
-#'  \item{\code{delSatisfiedPlan(plan)}}{
-#'    Deletes a satisfied plan, object of class \code{\link{ISOImageryPlan}}
-#'  }
-#' } 
 #' 
 #' @examples
 #'    md <- ISOImageryRequirement$new()
@@ -139,28 +89,31 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
    ),
    public = list(
      
-     #+ citation [1..1]: ISOCitation
+     #'@field citation citation [1..1]: ISOCitation
      citation = NULL,
-     #+ identifier [1..1]: ISOMetaIdentifier
+     #'@field identifier identifier [1..1]: ISOMetaIdentifier
      identifier = NULL,
-     #+ requestor [0..*]: ISOResponsibleParty
+     #'@field requestor requestor [0..*]: ISOResponsibleParty
      requestor = list(),
-     #+ recipient [0..*]: ISOResponsibleParty
+     #'@field recipient recipient [0..*]: ISOResponsibleParty
      recipient =list(),
-     #priority [1..1]: ISOImageryPriority
+     #'@field priority priority [1..1]: ISOImageryPriority
      priority = NULL,
-     #requestedDate [1..1]: ISOImageryRequestedDate
+     #'@field requestedDate requestedDate [1..1]: ISOImageryRequestedDate
      requestedDate = NULL,
-     #expiryDate [1..1]: POSIXt
+     #'@field expiryDate expiryDate [1..1]: POSIXt
      expiryDate = NULL,
-     #+ satisfiedPlan [0..*]: ISOImageryPlan
+     #'@field satisfiedPlan satisfiedPlan [0..*]: ISOImageryPlan
      satisfiedPlan = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setCitation
+     #'@description Set citation
+     #'@param citation object of class \link{ISOCitation}
      setCitation = function(citation){
        if(!is(citation, "ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation")
@@ -168,7 +121,8 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        self$citation <- citation
      },
      
-     #setIdentifier
+     #'@description Set identifier
+     #'@param identifier object of class \link{ISOMetaIdentifier} or \link{character}
      setIdentifier = function(identifier){
        if(is(identifier, "character")){
          identifier <- ISOMetaIdentifier$new(code = identifier)
@@ -180,7 +134,9 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        self$identifier <- identifier
      },
      
-     #addRequestor
+     #'@description Adds requestor
+     #'@param requestor object of class \link{ISOResponsibleParty}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addRequestor = function(requestor){
        if(!is(requestor, "ISOResponsibleParty")){
          stop("The argument should be an object of class 'ISOResponsibleParty'")
@@ -188,7 +144,9 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        return(self$addListElement("requestor", requestor))
      },
      
-     #delRequestor
+     #'@description Deletes requestor
+     #'@param requestor object of class \link{ISOResponsibleParty}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delRequestor = function(requestor){
        if(!is(requestor, "ISOResponsibleParty")){
          stop("The argument should be an object of class 'ISOResponsibleParty'")
@@ -196,7 +154,9 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        return(self$delListElement("requestor", requestor))
      },
      
-     #addRecipient
+     #'@description Adds recipient
+     #'@param recipient object of class \link{ISOResponsibleParty}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addRecipient = function(recipient){
        if(!is(recipient, "ISOResponsibleParty")){
          stop("The argument should be an object of class 'ISOResponsibleParty'")
@@ -204,7 +164,9 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        return(self$addListElement("recipient", recipient))
      },
      
-     #delRecipient
+     #'@description Deletes recipient
+     #'@param recipient object of class \link{ISOResponsibleParty}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delRecipient = function(recipient){
        if(!is(recipient, "ISOResponsibleParty")){
          stop("The argument should be an object of class 'ISOResponsibleParty'")
@@ -212,7 +174,9 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        return(self$delListElement("recipient", recipient))
      },
      
-     #setPriority
+     #'@description Set priority
+     #'@param priority object of class \link{ISOImageryPriority} pr any \link{character}
+     #' among values returned by \code{ISOImageryPriority$values()}
      setPriority = function(priority){
        if(is(priority, "character")){
          priority <- ISOImageryPriority$new(value = priority)
@@ -224,7 +188,8 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        self$priority <- priority
      },
      
-     #setRequestedDate
+     #'@description Set requested date
+     #'@param date object of class \link{ISOImageryRequestedDate}
      setRequestedDate = function(date){
        if(!is(date, "ISOImageryRequestedDate")){
          stop("The argument should be an object of class 'ISOImageryRequestedDate")
@@ -232,7 +197,8 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        self$requestedDate <- date
      },
      
-     #setExpiryDate
+     #'@description Set expiry date
+     #'@param date object of class \link{POSIXct}
      setExpiryDate = function(date){
        if(!is(date, "POSIXt")){
          stop("The argument should be an object of class 'POSIXt'")
@@ -240,7 +206,9 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        self$expiryDate <- date
      },
      
-     #addSatisfiedPlan
+     #'@description Adds satisfied plan
+     #'@param plan object of class \link{ISOImageryPlan}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSatisfiedPlan = function(plan){
        if(!is(plan, "ISOImageryPlan")){
          stop("The argument should be an object of class 'ISOImageryPlan'")
@@ -248,7 +216,9 @@ ISOImageryRequirement <- R6Class("ISOImageryRequirement",
        return(self$addListElement("satisfiedPlan", plan))
      },
      
-     #delSatisfiedPlan
+     #'@description Deletes satisfied plan
+     #'@param plan object of class \link{ISOImageryPlan}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSatisfiedPlan = function(plan){
        if(!is(plan, "ISOImageryPlan")){
          stop("The argument should be an object of class 'ISOImageryPlan'")

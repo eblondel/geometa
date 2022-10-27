@@ -6,15 +6,6 @@
 #' @keywords ISO extent
 #' @return Object of \code{\link{R6Class}} for modelling an ISO abstract geographicExtent
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field extentTypeCode
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an ISOGeographicExtent
-#'  }
-#' }
 #' 
 #' @note abstract class
 #' 
@@ -30,8 +21,12 @@ ISOGeographicExtent <- R6Class("ISOGeographicExtent",
       xmlNamespacePrefix = "GMD"
     ),
     public = list(
-      #+ extentTypeCode [0..1]: ISOBaseBoolean default "true"
+      #'@field extentTypeCode extentTypeCode [0..1]: ISOBaseBoolean default "true"
       extentTypeCode = NULL,
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param defaults defaults list
       initialize = function(xml = NULL, defaults = list()){        
         #defaults = list(extentTypeCode = TRUE)
         super$initialize(xml, defaults = defaults)

@@ -103,7 +103,7 @@ Set description
 \if{html}{\out{<a id="method-ISOBinding-setPropertyType"></a>}}
 \if{latex}{\out{\hypertarget{method-ISOBinding-setPropertyType}{}}}
 \subsection{Method \code{setPropertyType()}}{
-Set property type
+Set property type.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ISOBinding$setPropertyType(propertyType)}\if{html}{\out{</div>}}
 }

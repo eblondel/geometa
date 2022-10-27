@@ -12,37 +12,95 @@ Object of \code{\link{R6Class}} for modelling an ISO codelist
 }
 \description{
 ISOCodelist
+
+ISOCodelist
 }
-\section{Fields}{
-
-\describe{
-\item{\code{id}}{[\code{\link{character}}] codelist id}
-
-\item{\code{refFile}}{[\code{\link{character}}] reference XML file}
-
-\item{\code{codeSpace}}{[\code{\link{character}}] codelist codeSpace}
-
-\item{\code{identifier}}{[\code{\link{character}}] codelist identifier}
-
-\item{\code{description}}{[\code{\link{character}}] codelist description}
-
-\item{\code{entries}}{[\code{\link{data.frame}}] the list of codelist entries}
-}}
-
 \note{
 Class used by geometa internal codelist XML decoder/encoder
 }
-\section{Methods}{
-
-\describe{
- \item{\code{new(refFile, id)}}{
-   This method is used to instantiate an \code{\link{ISOCodelist}}
- }
-}
-}
-
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{codelist}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{id}}{id}
+
+\item{\code{refFile}}{ref file}
+
+\item{\code{codeSpace}}{code space}
+
+\item{\code{identifier}}{identifier}
+
+\item{\code{description}}{description}
+
+\item{\code{entries}}{entries}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOCodelist-new}{\code{ISOCodelist$new()}}
+\item \href{#method-ISOCodelist-parse}{\code{ISOCodelist$parse()}}
+\item \href{#method-ISOCodelist-clone}{\code{ISOCodelist$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCodelist-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCodelist-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCodelist$new(refFile, id)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{refFile}}{ref file}
+
+\item{\code{id}}{id}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCodelist-parse"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCodelist-parse}{}}}
+\subsection{Method \code{parse()}}{
+Parse codelist
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCodelist$parse(refFile, id)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{refFile}}{ref file}
+
+\item{\code{id}}{id}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCodelist-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCodelist-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCodelist$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

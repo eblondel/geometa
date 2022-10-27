@@ -6,22 +6,6 @@
 #' @keywords ISO imagery algorithm
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery algorithm
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field citation [\code{\link{ISOCitation}}]
-#' @field description [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryAlgorithm}}
-#'  }
-#'  \item{\code{setCitation(citation)}}{
-#'    Set citation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets a description (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#' } 
 #' 
 #' @examples
 #'    md <- ISOImageryAlgorithm$new()
@@ -80,16 +64,19 @@ ISOImageryAlgorithm <- R6Class("ISOImageryAlgorithm",
   ),
   public = list(
     
-    #+ citation [1..1]: ISOCitation
+    #'@field citation citation [1..1]: ISOCitation
     citation = list(),
-    #+ description [1..1]: character|ISOLocalisedCharacterString
+    #'@field description description [1..1]: character|ISOLocalisedCharacterString
     description = NULL,
     
+    #'@description Initialized object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setCitation
+    #'@description Set citation
+    #'@param citation object of class \link{ISOCitation}
     setCitation = function(citation){
       if(!is(citation, "ISOCitation")){
         stop("The argument should be an object of class 'ISOCitation")
@@ -97,7 +84,9 @@ ISOImageryAlgorithm <- R6Class("ISOImageryAlgorithm",
       self$citation <- citation
     },
     
-    #setDescription
+    #'@description Set description
+    #'@param description description
+    #'@param locales list of localized texts. Default is \code{NULL}
     setDescription = function(description, locales = NULL){
       if(!is.null(locales)){
         description <- self$createLocalisedProperty(description, locales)

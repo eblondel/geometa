@@ -7,43 +7,14 @@
 \format{
 \code{\link{R6Class}} object.
 }
-\arguments{
-\item{xml}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
-
-\item{updatable}{updatable}
-
-\item{optional}{optional}
-
-\item{definition}{definition}
-
-\item{uom}{uom}
-
-\item{constraint}{constraint}
-
-\item{value}{value}
-}
 \value{
 Object of \code{\link{R6Class}} for modelling an SWE Quantity
 }
 \description{
-Initializes an object of class \link{SWEQuantity}
+SWEQuantity
 
-setUom
-
-setConstraint
-
-setValue
+SWEQuantity
 }
-\section{Fields}{
-
-\describe{
-\item{\code{uom}}{uom}
-
-\item{\code{constraint}}{constraint}
-
-\item{\code{value}}{value}
-}}
-
 \references{
 SWE Common Data Model Encoding Standard. https://www.ogc.org/standards/swecommon
 }
@@ -52,3 +23,171 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{SWE}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:SWEAbstractObject]{geometa::SWEAbstractObject}} -> \code{\link[geometa:SWEAbstractSWE]{geometa::SWEAbstractSWE}} -> \code{\link[geometa:SWEAbstractSWEIdentifiable]{geometa::SWEAbstractSWEIdentifiable}} -> \code{\link[geometa:SWEAbstractDataComponent]{geometa::SWEAbstractDataComponent}} -> \code{\link[geometa:SWEAbstractSimpleComponent]{geometa::SWEAbstractSimpleComponent}} -> \code{SWEQuantity}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{uom}}{uom}
+
+\item{\code{constraint}}{constraint}
+
+\item{\code{value}}{value}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-SWEQuantity-new}{\code{SWEQuantity$new()}}
+\item \href{#method-SWEQuantity-setUom}{\code{SWEQuantity$setUom()}}
+\item \href{#method-SWEQuantity-setConstraint}{\code{SWEQuantity$setConstraint()}}
+\item \href{#method-SWEQuantity-setValue}{\code{SWEQuantity$setValue()}}
+\item \href{#method-SWEQuantity-clone}{\code{SWEQuantity$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="SWEAbstractSWEIdentifiable" data-id="setDescription"><a href='../../geometa/html/SWEAbstractSWEIdentifiable.html#method-SWEAbstractSWEIdentifiable-setDescription'><code>geometa::SWEAbstractSWEIdentifiable$setDescription()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="SWEAbstractSWEIdentifiable" data-id="setIdentifier"><a href='../../geometa/html/SWEAbstractSWEIdentifiable.html#method-SWEAbstractSWEIdentifiable-setIdentifier'><code>geometa::SWEAbstractSWEIdentifiable$setIdentifier()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="SWEAbstractSWEIdentifiable" data-id="setLabel"><a href='../../geometa/html/SWEAbstractSWEIdentifiable.html#method-SWEAbstractSWEIdentifiable-setLabel'><code>geometa::SWEAbstractSWEIdentifiable$setLabel()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="SWEAbstractDataComponent" data-id="addName"><a href='../../geometa/html/SWEAbstractDataComponent.html#method-SWEAbstractDataComponent-addName'><code>geometa::SWEAbstractDataComponent$addName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="SWEAbstractDataComponent" data-id="delName"><a href='../../geometa/html/SWEAbstractDataComponent.html#method-SWEAbstractDataComponent-delName'><code>geometa::SWEAbstractDataComponent$delName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="SWEAbstractSimpleComponent" data-id="setNilValues"><a href='../../geometa/html/SWEAbstractSimpleComponent.html#method-SWEAbstractSimpleComponent-setNilValues'><code>geometa::SWEAbstractSimpleComponent$setNilValues()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-SWEQuantity-new"></a>}}
+\if{latex}{\out{\hypertarget{method-SWEQuantity-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes an object of class \link{SWEQuantity}
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SWEQuantity$new(
+  xml = NULL,
+  uom = NULL,
+  constraint = NULL,
+  value = NULL,
+  updatable = NULL,
+  optional = FALSE,
+  definition = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+
+\item{\code{uom}}{uom}
+
+\item{\code{constraint}}{constraint}
+
+\item{\code{value}}{value}
+
+\item{\code{updatable}}{updatable}
+
+\item{\code{optional}}{optional}
+
+\item{\code{definition}}{definition}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-SWEQuantity-setUom"></a>}}
+\if{latex}{\out{\hypertarget{method-SWEQuantity-setUom}{}}}
+\subsection{Method \code{setUom()}}{
+setUom
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SWEQuantity$setUom(uom)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{uom}}{uom}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-SWEQuantity-setConstraint"></a>}}
+\if{latex}{\out{\hypertarget{method-SWEQuantity-setConstraint}{}}}
+\subsection{Method \code{setConstraint()}}{
+setConstraint
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SWEQuantity$setConstraint(constraint)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{constraint}}{constraint}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-SWEQuantity-setValue"></a>}}
+\if{latex}{\out{\hypertarget{method-SWEQuantity-setValue}{}}}
+\subsection{Method \code{setValue()}}{
+setValue
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SWEQuantity$setValue(value)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{value}}{value}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-SWEQuantity-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-SWEQuantity-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SWEQuantity$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

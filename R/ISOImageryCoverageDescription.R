@@ -6,21 +6,6 @@
 #' @keywords ISO imagery image description
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery image description
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field rangeElementdescription [\code{\link{ISOImageryRangeElementDescription}}]
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryCoverageDescription}}
-#'  }
-#'  \item{\code{addRangeElement(description)}}{
-#'    Add range element description, object of class \code{\link{ISOImageryRangeElementDescription}}
-#'  }
-#'  \item{\code{delRangeElementDescription(description)}}{
-#'    Deletes range element description, object of class \code{\link{ISOImageryRangeElementDescription}}
-#'  }
-#' }
 #' 
 #' @examples
 #'    #create coverage description
@@ -73,13 +58,18 @@ ISOImageryCoverageDescription <- R6Class("ISOImageryCoverageDescription",
     xmlNamespacePrefix = "GMI"
   ),
   public = list(
-    #+ rangeElementDescription [0..*] : ISOImageryRangeElementDescription
+    #'@field rangeElementDescription rangeElementDescription [0..*] : ISOImageryRangeElementDescription
     rangeElementDescription = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #addRangeElementDescription
+    #'@description Adds range element description
+    #'@param description object of class \link{ISOImageryRangeElementDescription}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addRangeElementDescription = function(description){
       if(!is(description, "ISOImageryRangeElementDescription")){
         stop("The argument should be an object of class 'ISOImageryRangeElementDescription'")
@@ -87,7 +77,9 @@ ISOImageryCoverageDescription <- R6Class("ISOImageryCoverageDescription",
       return(self$addListElement("rangeElementDescription", description))
     },
     
-    #delRangeElementDescription
+    #'@description Deletes range element description
+    #'@param description object of class \link{ISOImageryRangeElementDescription}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delRangeElementDescription = function(description){
       if(!is(description, "ISOImageryRangeElementDescription")){
         stop("The argument should be an object of class 'ISOImageryRangeElementDescription'")

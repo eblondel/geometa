@@ -6,16 +6,6 @@
 #' @keywords ISO data quality abstract logical consistency
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractLogicalConsistency
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAbstractLogicalConsistency}}
-#'  }
-#' }
 #'   
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -39,16 +29,6 @@ ISOAbstractLogicalConsistency <- R6Class("ISOAbstractLogicalConsistency",
 #' @keywords ISO data quality topological consistency
 #' @return Object of \code{\link{R6Class}} for modelling an ISOTopologicalConsistency
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOTopologicalConsistency}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -97,16 +77,6 @@ ISOTopologicalConsistency <- R6Class("ISOTopologicalConsistency",
 #' @keywords ISO data quality format consistency
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFormatConsistency
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOFormatConsistency}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -155,16 +125,6 @@ ISOFormatConsistency <- R6Class("ISOFormatConsistency",
 #' @keywords ISO data quality domain consistency
 #' @return Object of \code{\link{R6Class}} for modelling an ISODomainConsistency
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISODomainConsistency}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -213,16 +173,6 @@ ISODomainConsistency <- R6Class("ISODomainConsistency",
 #' @keywords ISO data quality conceptual consistency
 #' @return Object of \code{\link{R6Class}} for modelling an ISOConceptualConsistency
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOConceptualConsistency}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding

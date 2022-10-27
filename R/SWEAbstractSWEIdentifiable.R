@@ -29,6 +29,11 @@ SWEAbstractSWEIdentifiable <- R6Class("SWEAbstractSWEIdentifiable",
      
      #'@description Initializes a SWE Nil Values object
      #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param element element
+     #'@param attrs attrs
+     #'@param defaults defaults
+     #'@param wrap wrap
+     #'@param value_as_field value as field?
      initialize = function(xml, element = element, attrs = list(), defaults = list(), wrap = TRUE, value_as_field = TRUE){
        if(is.null(element)) element <- private$xmlElement
        super$initialize(xml, element = element, attrs = attrs, defaults = defaults, wrap = wrap, value_as_field = value_as_field)

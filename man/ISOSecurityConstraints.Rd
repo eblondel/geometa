@@ -12,45 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO SecurityConstraints
 }
 \description{
 ISOSecurityConstraints
+
+ISOSecurityConstraints
 }
-\section{Fields}{
-
-\describe{
-\item{\code{classification}}{[\code{\link{ISOClassification}}] security classifciation}
-
-\item{\code{userNote}}{[\code{\link{character}}] user note}
-
-\item{\code{classificationSystem}}{[\code{\link{character}}] classification system}
-
-\item{\code{handlingDescription}}{[\code{\link{character}}] description}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOSecurityConstraints
- }
- \item{\code{setClassification(classification)}}{
-   Adds a classification, as object of class "character" or class \code{\link{ISOClassification}}.
-   If an object of class "character" is specified, it must match the accepted
-   values given by \code{ISOClassification$values()}.
- }
- \item{\code{setUserNote(userNote, locales)}}{
-   Sets a user note as object of class "character". Locale names can be specified 
-   as \code{list} with the \code{locales} argument.
- }
- \item{\code{setClassificationSystem(classificationSystem, locales)}}{
-   Sets a classification system as object of class "character". Locale names can be specified 
-   as \code{list} with the \code{locales} argument.
- }
- \item{\code{setHandlingDescription(handlingDescription, locales)}}{
-   Sets a handling description as object of class "character". Locale names can be specified 
-   as \code{list} with the \code{locales} argument.
- }
-}
-}
-
 \examples{
    #create object
    md <- ISOSecurityConstraints$new()
@@ -71,3 +35,182 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{constraints}
 \keyword{security}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOConstraints]{geometa::ISOConstraints}} -> \code{ISOSecurityConstraints}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{classification}}{classification: ISOClassification}
+
+\item{\code{userNote}}{userNote [0..1]: character}
+
+\item{\code{classificationSystem}}{classificationSystem [0..1]: character}
+
+\item{\code{handlingDescription}}{handlingDescription [0..1]: character}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOSecurityConstraints-new}{\code{ISOSecurityConstraints$new()}}
+\item \href{#method-ISOSecurityConstraints-setClassification}{\code{ISOSecurityConstraints$setClassification()}}
+\item \href{#method-ISOSecurityConstraints-setUserNote}{\code{ISOSecurityConstraints$setUserNote()}}
+\item \href{#method-ISOSecurityConstraints-setClassificationSystem}{\code{ISOSecurityConstraints$setClassificationSystem()}}
+\item \href{#method-ISOSecurityConstraints-setHandlingDescription}{\code{ISOSecurityConstraints$setHandlingDescription()}}
+\item \href{#method-ISOSecurityConstraints-clone}{\code{ISOSecurityConstraints$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOConstraints" data-id="addUseLimitation"><a href='../../geometa/html/ISOConstraints.html#method-ISOConstraints-addUseLimitation'><code>geometa::ISOConstraints$addUseLimitation()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOConstraints" data-id="delUseLimitation"><a href='../../geometa/html/ISOConstraints.html#method-ISOConstraints-delUseLimitation'><code>geometa::ISOConstraints$delUseLimitation()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOConstraints" data-id="setUseLimitation"><a href='../../geometa/html/ISOConstraints.html#method-ISOConstraints-setUseLimitation'><code>geometa::ISOConstraints$setUseLimitation()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSecurityConstraints-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSecurityConstraints-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSecurityConstraints$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSecurityConstraints-setClassification"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSecurityConstraints-setClassification}{}}}
+\subsection{Method \code{setClassification()}}{
+Set classification
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSecurityConstraints$setClassification(classification)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{classification}}{object of class \link{ISOClassification} or any \link{character}
+among values returned by \code{ISOClassification$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSecurityConstraints-setUserNote"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSecurityConstraints-setUserNote}{}}}
+\subsection{Method \code{setUserNote()}}{
+Set user note
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSecurityConstraints$setUserNote(userNote, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{userNote}}{user note}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSecurityConstraints-setClassificationSystem"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSecurityConstraints-setClassificationSystem}{}}}
+\subsection{Method \code{setClassificationSystem()}}{
+Set classification system
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSecurityConstraints$setClassificationSystem(
+  classificationSystem,
+  locales = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{classificationSystem}}{classification system}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSecurityConstraints-setHandlingDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSecurityConstraints-setHandlingDescription}{}}}
+\subsection{Method \code{setHandlingDescription()}}{
+Set handling description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSecurityConstraints$setHandlingDescription(
+  handlingDescription,
+  locales = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{handlingDescription}}{handling description}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSecurityConstraints-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSecurityConstraints-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSecurityConstraints$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

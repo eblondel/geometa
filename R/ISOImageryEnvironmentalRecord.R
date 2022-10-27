@@ -6,31 +6,6 @@
 #' @keywords ISO imagery environmental record
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery environmental record
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field averageAirTemperature [\code{\link{numeric}}]
-#' @field maxRelativeHumidity [\code{\link{numeric}}]
-#' @field maxAltitude [\code{\link{numeric}}]
-#' @field meterologicalConditions [\code{\link{ISOBaseCharacterString}|\link{ISOLocalisedCharacterString}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryEnvironmentalRecord}}
-#'  }
-#'  \item{\code{setAverageAirTemperature(temperature)}}{
-#'    Set the average air temperature
-#'  }
-#'  \item{\code{setMaxRelativeHumidity(humidity)}}{
-#'    Set the max relative humidity
-#'  }
-#'  \item{\code{setMaxAltitude(altitude)}}{
-#'    Set the max altitude
-#'  }
-#'  \item{\code{setMeterologicalConditions(conditions)}}{
-#'    Set the meterological conditions. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#' } 
 #' 
 #' 
 #' @examples
@@ -54,20 +29,23 @@ ISOImageryEnvironmentalRecord <- R6Class("ISOImageryEnvironmentalRecord",
   ),
   public = list(
     
-    #+ averageAirTemperature
+    #'@field averageAirTemperature averageAirTemperature
     averageAirTemperature = NULL,
-    #+ maxRelativeHumidity
+    #'@field maxRelativeHumidity maxRelativeHumidity
     maxRelativeHumidity = NULL,
-    #+ maxAltitude
+    #'@field maxAltitude maxAltitude
     maxAltitude = NULL,
-    #+ meterologicalConditions
+    #'@field meterologicalConditions meterologicalConditions
     meterologicalConditions = NULL,
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setAverageAirTemperature
+    #'@description Set average air temperature
+    #'@param temperature object of class \link{numeric}
     setAverageAirTemperature = function(temperature){
       temp <- temperature
       if(!is(temp, "numeric")){
@@ -79,7 +57,8 @@ ISOImageryEnvironmentalRecord <- R6Class("ISOImageryEnvironmentalRecord",
       self$averageAirTemperature <- temp
     },
     
-    #setMaxRelativeHumidity
+    #'@description Set max relative humidity
+    #'@param humidity object of class \link{numeric}
     setMaxRelativeHumidity = function(humidity){
       hum <- humidity
       if(!is(hum, "numeric")){
@@ -91,7 +70,8 @@ ISOImageryEnvironmentalRecord <- R6Class("ISOImageryEnvironmentalRecord",
       self$maxRelativeHumidity <- hum
     },
     
-    #setMaxAltitude
+    #'@description Set max altitude
+    #'@param altitude object of class \link{numeric}
     setMaxAltitude = function(altitude){
       alt <- altitude
       if(!is(alt, "numeric")){
@@ -103,7 +83,9 @@ ISOImageryEnvironmentalRecord <- R6Class("ISOImageryEnvironmentalRecord",
       self$maxAltitude <- alt
     },
     
-    #setMeterologicalConditions
+    #'@description Set meterological conditions
+    #'@param conditions conditions
+    #'@param locales list of localized texts. Default is \code{NULL}
     setMeterologicalConditions = function(conditions, locales = NULL){
       if(!is.null(locales)){
         conditions <- self$createLocalisedProperty(conditions, locales)

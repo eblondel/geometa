@@ -6,17 +6,6 @@
 #' @keywords ISO measure scale
 #' @return Object of \code{\link{R6Class}} for modelling an ISOScale measure
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value, uom, useUomURI)}}{
-#'    This method is used to instantiate an \code{\link{ISOScale}}. The \code{uom} argument represents
-#'    the symbol of unit of measure used. The parameter  \code{useUomURI} can be used to 
-#'    set the uom as URI, its default value is \code{FALSE}.
-#'  }
-#' }
 #' 
 #' @references
 #'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
@@ -30,6 +19,12 @@ ISOScale <- R6Class("ISOScale",
       xmlNamespacePrefix = "GCO"
     ),
     public = list(
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param value value
+      #'@param uom uom symbol of unit of measure used
+      #'@param useUomURI use uom URI. Default is \code{FALSE}
       initialize = function(xml = NULL, value, uom, useUomURI = FALSE){
         super$initialize(
           xml = xml,

@@ -6,25 +6,7 @@
 #' @keywords ISO feature operation
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFeatureOperation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field signature [\code{\link{character}}]
-#' @field formalDefinition [\code{\link{character}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOFeatureOperation
-#'  }
-#'  \item{\code{setSignature(signature, locales)}}{
-#'    Sets the signature. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setFormalDefinition(formalDefinition, locales)}}{
-#'    Sets the formal definition. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#' }
-#'  
+#' 
 #' @examples 
 #'   md <- ISOFeatureOperation$new()
 #'   md$setMemberName("name")
@@ -46,16 +28,20 @@ ISOFeatureOperation <- R6Class("ISOFeatureOperation",
    ),
    public = list(
      
-     #+ signature: character
+     #'@field signature signature: character
      signature = NULL,
-     #+ definition [0..1]: character
+     #'@field formalDefinition formalDefinition [0..1]: character
      formalDefinition = NULL,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setSignature
+     #'@description Set signature
+     #'@param signature signature
+     #'@param locales list of localized signatures. Default is \code{NULL}
      setSignature = function(signature, locales = NULL){
        self$signature <- signature
        if(!is.null(locales)){
@@ -63,7 +49,9 @@ ISOFeatureOperation <- R6Class("ISOFeatureOperation",
        }
      },
      
-     #setFormalDefinition
+     #'@description Set formal definition
+     #'@param formalDefinition formal definition
+     #'@param locales list of localized definitions. Default is \code{NULL}
      setFormalDefinition = function(formalDefinition, locales = NULL){
        self$formalDefinition <- formalDefinition
        if(!is.null(locales)){

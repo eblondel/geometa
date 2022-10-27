@@ -6,31 +6,6 @@
 #' @keywords ISO spatialtemporal extent
 #' @return Object of \code{\link{R6Class}} for modelling an ISO SpatialTemporalExtent
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field spatialExtent [\code{\link{ISOGeographicExtent}}] the geographic extent(s)
-#'
-#' @section Methods inherited from \code{\link{ISOTemporalExtent}}:
-#' \describe{
-#'  \item{\code{setTimeInstant(timeInstant)}}{
-#'    Sets a time instant, object of class \code{\link{GMLTimeInstant}}
-#'  }
-#'  \item{\code{setTimePeriod(timePeriod)}}{
-#'    Sets a time period, object of class \code{\link{GMLTimePeriod}}
-#'  }
-#' }
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOSpatialTemporalExtent}}
-#'  }
-#'  \item{\code{addSpatialExtent(spatialExtent)}}{
-#'    Adds an object of class \code{\link{ISOGeographicExtent}}
-#'  }
-#'  \item{\code{delSpatialExtent(spatialExtent)}}{
-#'    Deletes an object of class \code{\link{ISOGeographicExtent}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #create object
@@ -56,13 +31,18 @@ ISOSpatialTemporalExtent <- R6Class("ISOSpatialTemporalExtent",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     #+ spatialExtent [1..*]: ISOGeographicExtent
+     #'@field spatialExtent spatialExtent [1..*]: ISOGeographicExtent
      spatialExtent = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #addSpatialExtent
+     #'@description Adds spatial extent
+     #'@param spatialExtent object of class \link{ISOGeographicExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSpatialExtent = function(spatialExtent){
        if(!is(spatialExtent,"ISOGeographicExtent")){
          stop("The argument should be an object of class 'ISOGeographicExtent")
@@ -70,7 +50,9 @@ ISOSpatialTemporalExtent <- R6Class("ISOSpatialTemporalExtent",
        return(self$addListElement("spatialExtent", spatialExtent))
      },
      
-     #delSpatialExtent
+     #'@description Deletes spatial extent
+     #'@param spatialExtent object of class \link{ISOGeographicExtent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSpatialExtent = function(spatialExtent){
        if(!is(spatialExtent,"ISOGeographicExtent")){
          stop("The argument should be an object of class 'ISOGeographicExtent")

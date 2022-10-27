@@ -6,49 +6,6 @@
 #' @keywords ISO property type
 #' @return Object of \code{\link{R6Class}} for modelling an ISOPropertyType
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an \code{\link{ISOPropertyType}}
-#'  }
-#' }
-#'
-#' @section Methods Inherited from \code{\link{ISOAbstractCarrierOfCharacteristics}}:
-#' \describe{
-#'  \item{\code{setFeatureType(featureType)}}{
-#'    Sets a feature type, object of class \code{\link{ISOFeatureType}}
-#'  }
-#'  \item{\code{addConstraint(constraint)}}{
-#'    Adds a constraint, object of class \code{\link{ISOConstraint}} or \code{character}
-#'  }
-#'  \item{\code{delConstraint(constraint)}}{
-#'    Deletes a constraint, object of class \code{\link{ISOConstraint}} or \code{character}
-#'  }
-#' }
-#'
-#' @section Methods from \code{\link{ISOAbstractPropertyType}}:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an \code{\link{ISOPropertyType}}
-#'  }
-#'  \item{\code{setMemberName(memberName)}}{
-#'    Sets the member name. Object of class \code{\link{ISOLocalName}} or \code{"character"}
-#'  }
-#'  \item{\code{setDefinition(definition, locales)}}{
-#'    Sets the definition. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setCardinality(lower, upper)}}{
-#'    Sets the cardinality boundaries lower and upper of class \code{numeric}
-#'  }
-#'  \item{\code{setDefinitionReference(definitionReference)}}{
-#'    Sets the definition Reference, object of class \code{\link{ISODefinitionReference}}
-#'  }
-#'  \item{\code{setFeatureCatalogue(featureCatalogue)}}{
-#'    Sets a feature catalogue, object of class \code{\link{ISOFeatureCatalogue}}
-#'  }
-#' }
 #'  
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
@@ -62,6 +19,10 @@ ISOPropertyType <- R6Class("ISOPropertyType",
       xmlNamespacePrefix = "GFC"
     ),
     public = list(
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param defaults default values
       initialize = function(xml = NULL, defaults = NULL){
         if(is.null(defaults)) defaults <- list(cardinality = ISOMultiplicity$new(lower=1L,upper=1L))
         super$initialize(xml = xml, defaults = defaults)

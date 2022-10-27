@@ -7,13 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOimagery geolocation information
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryAbstractGeolocationInformation}}
-#'  }
-#' }
-#' 
 #' @note abstract class
 #'  
 #' @references 
@@ -28,6 +21,9 @@ ISOImageryAbstractGeolocationInformation <- R6Class("ISOImageryAbstractGeolocati
       xmlNamespacePrefix = "GMI"
     ),
     public = list(
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
       initialize = function(xml = NULL){
         super$initialize(xml = xml)
       }

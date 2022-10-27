@@ -12,165 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO Metadata
 }
 \description{
 ISOMetadata
+
+ISOMetadata
 }
-\section{Fields}{
-
-\describe{
-\item{\code{fileIdentifier}}{[\code{\link{character}}] metadata file identifier}
-
-\item{\code{language}}{[\code{\link{ISOLanguage}}|\code{\link{character}}] metadata language coded}
-
-\item{\code{characterSet}}{[\code{\link{ISOCharacterSet}}|\code{\link{character}}] character set}
-
-\item{\code{parentIdentifier}}{[\code{\link{character}}] parent metadata identifier}
-
-\item{\code{hierarchyLevel}}{[\code{\link{ISOHierarchyLevel}}|\code{\link{character}}] hierarchy level}
-
-\item{\code{hierarchyLevelName}}{[\code{\link{character}}] hierarchy level name}
-
-\item{\code{contact}}{[\code{\link{ISOResponsibleParty}}] contact(s)}
-
-\item{\code{dateStamp}}{[\code{\link{Date}}|\code{\link{POSIXt}}] datestamp}
-
-\item{\code{metadataStandardName}}{[\code{\link{character}}] metadata standard name}
-
-\item{\code{metadataStandardVersion}}{[\code{\link{character}}] metadata standard version}
-
-\item{\code{dataSetURI}}{[\code{\link{character}}] dataset URI}
-
-\item{\code{spatialRepresentationInfo}}{[\code{\link{ISOSpatialRepresentation}}] the spatial representation}
-
-\item{\code{referenceSystemInfo}}{[\code{\link{ISOReferenceSystem}}] the reference system}
-
-\item{\code{metadataExtensionInfo}}{[\code{\link{ISOMetadataExtensionInformation}}] metadata extension}
-
-\item{\code{identificationInfo}}{[\code{\link{ISOIdentification}}] identification information}
-
-\item{\code{contentInfo}}{[\code{\link{ISOFeatureCatalogueDescription}}|\code{\link{ISOCoverageDescription}}] content description}
-
-\item{\code{distributionInfo}}{[\code{\link{ISODistribution}}] distribution information}
-
-\item{\code{dataQualityInfo}}{[\code{\link{ISODataQuality}}] data quality}
-
-\item{\code{metadataMaintenance}}{[\code{\link{ISOMaintenanceInformation}}] maintenance info}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOMetadata}}
- }
- \item{\code{setFileIdentifier(fileIdentifier)}}{
-   Sets the file identifier
- }
- \item{\code{setLanguage{locale}}}{
-   Sets the locale
- }
- \item{\code{setCharacterSet(charset)}}{
-   Sets the character set
- }
- \item{\code{setParentIdentifier(parentIdentifier)}}{
-   Sets the parentIdentifier
- }
- \item{\code{addHierarchyLevel(level)}}{
-   Adds the hierarchy level
- }
- \item{\code{setHierarchyLevel(level)}}{
-   Sets the hierarchy level
- }
- \item{\code{delHierarchyLevel(level)}}{
-   Deletes the hierarchy level
- }
- \item{\code{addHierarchyLevelName(levelName)}}{
-   Adds the hierarchy level name
- }
- \item{\code{delHierarchyLevelName(levelName)}}{
-   Deletes the hierarchy level name
- }
- \item{\code{addContact(contact)}}{
-   Adds a contact as object of class \code{ISOResponsibleParty}
- }
- \item{\code{delContact(contact)}}{
-   Deletes a contact as object of class \code{ISOResponsibleParty}
- }
- \item{\code{setDateStamp(date)}}{
-   Sets the date stamp
- }
- \item{\code{setMetadataStandardName(name)}}{
-   Sets the metadata standard name
- }
- \item{\code{setMetadataStandardVersion(version)}}{
-   Sets the metadata standard version
- }
- \item{\code{setDataSetURI(dataSetURI)}}{
-   Sets the metadata dataSet URI
- }
- \item{\code{addLocale(locale)}}{
-   Adds a locale, object of class \code{ISOLocale}
- }
- \item{\code{delLocale(locale)}}{
-   Deletes a locale, object of class \code{ISOLocale}
- }
- \item{\code{addSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-   Adds a spatial representation
- }
- \item{\code{setSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-   Sets a spatial representation
- }
- \item{\code{delSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-   Deletes a spatial representation
- }
- \item{\code{addReferenceSystemInfo(referenceSystemInfo)}}{
-   Adds a reference system
- }
- \item{\code{setReferenceSystemInfo(referenceSystemInfo)}}{
-   Sets the reference system
- }
- \item{\code{delReferenceSystemInfo(referenceSystemInfo)}}{
-   Deletes a reference system
- }
- \item{\code{addMetadataExtensionInfo(extensionInfo)}}{
-   Adds extension info, object of class \code{ISOMetadataExtensionInformation}
- }
- \item{\code{delMetadataExtensionInfo(extensionInfo)}}{
-   Deletes extension info, object of class \code{ISOMetadataExtensionInformation}
- }
- \item{\code{addIdentificationInfo(identificationInfo)}}{
-   Adds a data identification
- }
- \item{\code{setIdentificationInfo(identificationInfo)}}{
-   Sets the data identification
- }
- \item{\code{delIdentificationInfo(identificationInfo)}}{
-   Deletes a data identification
- }
- \item{\code{addContentInfo(contentInfo)}}{
-   Adds a content info, either an object of class \code{\link{ISOCoverageDescription}}
-   for coverage data, or \code{\link{ISOFeatureCatalogueDescription}} for vector data.
- }
- \item{\code{delContentInfo(contentInfo)}}{
-   Deletes a content info, either an object of class \code{\link{ISOCoverageDescription}} 
-   for coverage data, or \code{\link{ISOFeatureCatalogueDescription}} for vector data.
- }
- \item{\code{setDistributionInfo(distributionInfo)}}{
-   Sets the distribution
- }
- \item{\code{addDataQualityInfo(dataQualityInfo)}}{
-   Adds a data quality
- }
- \item{\code{setDataQualityInfo(dataQualityInfo)}}{
-   Sets the data quality
- }
- \item{\code{delDataQualityInfo(dataQualityInfo)}}{
-   Deletes a data quality
- }
- \item{\code{setMetadataMaintenance(metadataMaintenance)}}{
-   Sets a metadata maintenance as object of class \code{ISOMaintenanceInformation}
- }
-}
-}
-
 \examples{
     #example 1 - WRITE: Create an ISO metadata and encode it as XML
     #######################################################
@@ -495,3 +339,846 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{element}
 \keyword{metadata}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOMetadata}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{fileIdentifier}}{fileIdentifier [0..1] : character}
+
+\item{\code{language}}{language [0..1] : character}
+
+\item{\code{characterSet}}{characterSet [0..1] : ISOCharacterSet = "utf8"}
+
+\item{\code{parentIdentifier}}{parentIdentifier [0..1] : character}
+
+\item{\code{hierarchyLevel}}{hierarchyLevel [0..*] : ISOHierarchyLevel = "dataset"}
+
+\item{\code{hierarchyLevelName}}{hierarchyLevelName [0..*] : character}
+
+\item{\code{contact}}{contact [1..*] : ISOResponsibleParty}
+
+\item{\code{dateStamp}}{dateStamp : POSIXct/POSIXt}
+
+\item{\code{metadataStandardName}}{metadataStandardName [0..1] : character}
+
+\item{\code{metadataStandardVersion}}{metadataStandardVersion [0..1] : character}
+
+\item{\code{dataSetURI}}{dataSetURI [0..1] : character}
+
+\item{\code{locale}}{locale [0..*]: ISOLocale}
+
+\item{\code{spatialRepresentationInfo}}{spatialRepresentationInfo [0..*]: ISOSpatialRepresentation}
+
+\item{\code{referenceSystemInfo}}{referenceSystemInfo [0..*]: ISOReferenceSystem}
+
+\item{\code{metadataExtensionInfo}}{metadataExtensionInfo [0..*]: ISOMetadataExtensionInformation}
+
+\item{\code{identificationInfo}}{identificationInfo [1..*]: ISOIdentification}
+
+\item{\code{contentInfo}}{contentInfo [0..*]}
+
+\item{\code{distributionInfo}}{distributionInfo [0..1] : ISODistribution}
+
+\item{\code{dataQualityInfo}}{dataQualityInfo [0..*]: ISODataQuality}
+
+\item{\code{metadataMaintenance}}{metadataMaintenance [0..1]: ISOMaintenanceInformation}
+
+\item{\code{portrayalCatalogueInfo}}{portrayalCatalogueInfo [0..*]}
+
+\item{\code{applicationSchemaInformation}}{applicationSchemaInfo [0..*]}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOMetadata-new}{\code{ISOMetadata$new()}}
+\item \href{#method-ISOMetadata-setFileIdentifier}{\code{ISOMetadata$setFileIdentifier()}}
+\item \href{#method-ISOMetadata-setLanguage}{\code{ISOMetadata$setLanguage()}}
+\item \href{#method-ISOMetadata-setCharacterSet}{\code{ISOMetadata$setCharacterSet()}}
+\item \href{#method-ISOMetadata-setParentIdentifier}{\code{ISOMetadata$setParentIdentifier()}}
+\item \href{#method-ISOMetadata-addHierarchyLevel}{\code{ISOMetadata$addHierarchyLevel()}}
+\item \href{#method-ISOMetadata-setHierarchyLevel}{\code{ISOMetadata$setHierarchyLevel()}}
+\item \href{#method-ISOMetadata-delHierarchyLevel}{\code{ISOMetadata$delHierarchyLevel()}}
+\item \href{#method-ISOMetadata-addHierarchyLevelName}{\code{ISOMetadata$addHierarchyLevelName()}}
+\item \href{#method-ISOMetadata-delHierarchyLevelName}{\code{ISOMetadata$delHierarchyLevelName()}}
+\item \href{#method-ISOMetadata-addContact}{\code{ISOMetadata$addContact()}}
+\item \href{#method-ISOMetadata-delContact}{\code{ISOMetadata$delContact()}}
+\item \href{#method-ISOMetadata-setDateStamp}{\code{ISOMetadata$setDateStamp()}}
+\item \href{#method-ISOMetadata-setMetadataStandardName}{\code{ISOMetadata$setMetadataStandardName()}}
+\item \href{#method-ISOMetadata-setMetadataStandardVersion}{\code{ISOMetadata$setMetadataStandardVersion()}}
+\item \href{#method-ISOMetadata-setDataSetURI}{\code{ISOMetadata$setDataSetURI()}}
+\item \href{#method-ISOMetadata-addLocale}{\code{ISOMetadata$addLocale()}}
+\item \href{#method-ISOMetadata-delLocale}{\code{ISOMetadata$delLocale()}}
+\item \href{#method-ISOMetadata-addSpatialRepresentationInfo}{\code{ISOMetadata$addSpatialRepresentationInfo()}}
+\item \href{#method-ISOMetadata-setSpatialRepresentationInfo}{\code{ISOMetadata$setSpatialRepresentationInfo()}}
+\item \href{#method-ISOMetadata-delSpatialRepresentationInfo}{\code{ISOMetadata$delSpatialRepresentationInfo()}}
+\item \href{#method-ISOMetadata-addReferenceSystemInfo}{\code{ISOMetadata$addReferenceSystemInfo()}}
+\item \href{#method-ISOMetadata-setReferenceSystemInfo}{\code{ISOMetadata$setReferenceSystemInfo()}}
+\item \href{#method-ISOMetadata-delReferenceSystemInfo}{\code{ISOMetadata$delReferenceSystemInfo()}}
+\item \href{#method-ISOMetadata-addMetadataExtensionInfo}{\code{ISOMetadata$addMetadataExtensionInfo()}}
+\item \href{#method-ISOMetadata-delMetadataExtensionInfo}{\code{ISOMetadata$delMetadataExtensionInfo()}}
+\item \href{#method-ISOMetadata-addIdentificationInfo}{\code{ISOMetadata$addIdentificationInfo()}}
+\item \href{#method-ISOMetadata-setIdentificationInfo}{\code{ISOMetadata$setIdentificationInfo()}}
+\item \href{#method-ISOMetadata-delIdentificationInfo}{\code{ISOMetadata$delIdentificationInfo()}}
+\item \href{#method-ISOMetadata-setDistributionInfo}{\code{ISOMetadata$setDistributionInfo()}}
+\item \href{#method-ISOMetadata-addDataQualityInfo}{\code{ISOMetadata$addDataQualityInfo()}}
+\item \href{#method-ISOMetadata-setDataQualityInfo}{\code{ISOMetadata$setDataQualityInfo()}}
+\item \href{#method-ISOMetadata-delDataQualityInfo}{\code{ISOMetadata$delDataQualityInfo()}}
+\item \href{#method-ISOMetadata-setMetadataMaintenance}{\code{ISOMetadata$setMetadataMaintenance()}}
+\item \href{#method-ISOMetadata-addContentInfo}{\code{ISOMetadata$addContentInfo()}}
+\item \href{#method-ISOMetadata-delContentInfo}{\code{ISOMetadata$delContentInfo()}}
+\item \href{#method-ISOMetadata-clone}{\code{ISOMetadata$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setFileIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setFileIdentifier}{}}}
+\subsection{Method \code{setFileIdentifier()}}{
+Set file identifier
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setFileIdentifier(fileIdentifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fileIdentifier}}{file identifier}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setLanguage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setLanguage}{}}}
+\subsection{Method \code{setLanguage()}}{
+Set language
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setLanguage(locale)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locale}}{object of class \link{ISOLanguage} or any \link{character}
+from values returned by \code{ISOLanguages$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setCharacterSet"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setCharacterSet}{}}}
+\subsection{Method \code{setCharacterSet()}}{
+Set charset
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setCharacterSet(charset)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{charset}}{object of class \link{ISOCharacterSet} or any \link{character}
+from values returned by \code{ISOCharacterSet$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setParentIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setParentIdentifier}{}}}
+\subsection{Method \code{setParentIdentifier()}}{
+Set parent identifier
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setParentIdentifier(parentIdentifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{parentIdentifier}}{parent identifier}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addHierarchyLevel"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addHierarchyLevel}{}}}
+\subsection{Method \code{addHierarchyLevel()}}{
+Adds hierarchy level
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addHierarchyLevel(level)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{level}}{object of class \link{ISOHierarchyLevel} or any \link{character}
+from values returned by \code{ISOHierarchyLevel$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setHierarchyLevel"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setHierarchyLevel}{}}}
+\subsection{Method \code{setHierarchyLevel()}}{
+Sets hierarchy level
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setHierarchyLevel(level)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{level}}{object of class \link{ISOHierarchyLevel} or any \link{character}
+from values returned by \code{ISOHierarchyLevel$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delHierarchyLevel"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delHierarchyLevel}{}}}
+\subsection{Method \code{delHierarchyLevel()}}{
+Deletes hierarchy level
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delHierarchyLevel(level)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{level}}{object of class \link{ISOHierarchyLevel} or any \link{character}
+from values returned by \code{ISOHierarchyLevel$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addHierarchyLevelName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addHierarchyLevelName}{}}}
+\subsection{Method \code{addHierarchyLevelName()}}{
+Adds hierarchy level name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addHierarchyLevelName(levelName)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{levelName}}{object of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delHierarchyLevelName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delHierarchyLevelName}{}}}
+\subsection{Method \code{delHierarchyLevelName()}}{
+Deletes hierarchy level name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delHierarchyLevelName(levelName)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{levelName}}{object of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addContact"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addContact}{}}}
+\subsection{Method \code{addContact()}}{
+Adds contact
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addContact(contact)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{contact}}{object of class \link{ISOResponsibleParty}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delContact"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delContact}{}}}
+\subsection{Method \code{delContact()}}{
+Deletes contact
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delContact(contact)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{contact}}{object of class \link{ISOResponsibleParty}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setDateStamp"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setDateStamp}{}}}
+\subsection{Method \code{setDateStamp()}}{
+Set date stamp
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setDateStamp(date)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{date}}{date}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setMetadataStandardName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setMetadataStandardName}{}}}
+\subsection{Method \code{setMetadataStandardName()}}{
+Set metadata standard name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setMetadataStandardName(name)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setMetadataStandardVersion"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setMetadataStandardVersion}{}}}
+\subsection{Method \code{setMetadataStandardVersion()}}{
+Set metadata standard version
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setMetadataStandardVersion(version)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{version}}{version}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setDataSetURI"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setDataSetURI}{}}}
+\subsection{Method \code{setDataSetURI()}}{
+Set dataset URI
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setDataSetURI(dataSetURI)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataSetURI}}{dataset URI}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addLocale"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addLocale}{}}}
+\subsection{Method \code{addLocale()}}{
+Adds locale
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addLocale(locale)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locale}}{object of class \link{ISOLocale}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delLocale"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delLocale}{}}}
+\subsection{Method \code{delLocale()}}{
+Deletes locale
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delLocale(locale)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locale}}{object of class \link{ISOLocale}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addSpatialRepresentationInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addSpatialRepresentationInfo}{}}}
+\subsection{Method \code{addSpatialRepresentationInfo()}}{
+Adds spatial representation info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addSpatialRepresentationInfo(spatialRepresentationInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{spatialRepresentationInfo}}{object of class \link{ISOSpatialRepresentation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setSpatialRepresentationInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setSpatialRepresentationInfo}{}}}
+\subsection{Method \code{setSpatialRepresentationInfo()}}{
+Sets spatial representation info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setSpatialRepresentationInfo(spatialRepresentationInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{spatialRepresentationInfo}}{object of class \link{ISOSpatialRepresentation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delSpatialRepresentationInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delSpatialRepresentationInfo}{}}}
+\subsection{Method \code{delSpatialRepresentationInfo()}}{
+Deletes spatial representation info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delSpatialRepresentationInfo(spatialRepresentationInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{spatialRepresentationInfo}}{object of class \link{ISOSpatialRepresentation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addReferenceSystemInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addReferenceSystemInfo}{}}}
+\subsection{Method \code{addReferenceSystemInfo()}}{
+Adds reference system info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addReferenceSystemInfo(referenceSystemInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{referenceSystemInfo}}{object of class \link{ISOReferenceSystem}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setReferenceSystemInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setReferenceSystemInfo}{}}}
+\subsection{Method \code{setReferenceSystemInfo()}}{
+Sets reference system info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setReferenceSystemInfo(referenceSystemInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{referenceSystemInfo}}{object of class \link{ISOReferenceSystem}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delReferenceSystemInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delReferenceSystemInfo}{}}}
+\subsection{Method \code{delReferenceSystemInfo()}}{
+Deletes reference system info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delReferenceSystemInfo(referenceSystemInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{referenceSystemInfo}}{object of class \link{ISOReferenceSystem}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addMetadataExtensionInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addMetadataExtensionInfo}{}}}
+\subsection{Method \code{addMetadataExtensionInfo()}}{
+Adds metadata extension info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addMetadataExtensionInfo(metadataExtensionInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{metadataExtensionInfo}}{object of class \link{ISOMetadataExtensionInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delMetadataExtensionInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delMetadataExtensionInfo}{}}}
+\subsection{Method \code{delMetadataExtensionInfo()}}{
+Deletes metadata extension info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delMetadataExtensionInfo(metadataExtensionInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{metadataExtensionInfo}}{object of class \link{ISOMetadataExtensionInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addIdentificationInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addIdentificationInfo}{}}}
+\subsection{Method \code{addIdentificationInfo()}}{
+Adds metadata extension info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addIdentificationInfo(identificationInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identificationInfo}}{object of class inheriting \link{ISOIdentification}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setIdentificationInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setIdentificationInfo}{}}}
+\subsection{Method \code{setIdentificationInfo()}}{
+Sets metadata extension info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setIdentificationInfo(identificationInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identificationInfo}}{object of class inheriting \link{ISOIdentification}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delIdentificationInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delIdentificationInfo}{}}}
+\subsection{Method \code{delIdentificationInfo()}}{
+Deletes metadata extension info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delIdentificationInfo(identificationInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identificationInfo}}{object of class inheriting \link{ISOIdentification}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setDistributionInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setDistributionInfo}{}}}
+\subsection{Method \code{setDistributionInfo()}}{
+Sets metadata extension info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setDistributionInfo(distributionInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{distributionInfo}}{object of class \link{ISODistribution}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if set, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addDataQualityInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addDataQualityInfo}{}}}
+\subsection{Method \code{addDataQualityInfo()}}{
+Adds data quality info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addDataQualityInfo(dataQualityInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataQualityInfo}}{object of class \link{ISODataQuality}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setDataQualityInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setDataQualityInfo}{}}}
+\subsection{Method \code{setDataQualityInfo()}}{
+Sets data quality info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setDataQualityInfo(dataQualityInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataQualityInfo}}{object of class \link{ISODataQuality}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delDataQualityInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delDataQualityInfo}{}}}
+\subsection{Method \code{delDataQualityInfo()}}{
+Deletes data quality info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delDataQualityInfo(dataQualityInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataQualityInfo}}{object of class \link{ISODataQuality}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-setMetadataMaintenance"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-setMetadataMaintenance}{}}}
+\subsection{Method \code{setMetadataMaintenance()}}{
+Sets metadata maintenance
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$setMetadataMaintenance(metadataMaintenance)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{metadataMaintenance}}{object of class \link{ISOMaintenanceInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addContentInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addContentInfo}{}}}
+\subsection{Method \code{addContentInfo()}}{
+Adds content information
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addContentInfo(contentInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{contentInfo}}{object of class inheriting \link{ISOContentInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delContentInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delContentInfo}{}}}
+\subsection{Method \code{delContentInfo()}}{
+Deletes content information
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delContentInfo(contentInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{contentInfo}}{object of class inheriting \link{ISOContentInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

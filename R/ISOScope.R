@@ -6,18 +6,6 @@
 #' @keywords ISO extent
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Scope
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field level [\code{\link{ISOHierarchyLevel}}] the scope/hierarchy level
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOScope}}
-#'  }
-#'  \item{\code{setLevel(level)}}{
-#'    Sets the scope level, object of class 'character' or \code{\link{ISOHierarchyLevel}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOScope$new()
@@ -36,12 +24,18 @@ ISOScope <- R6Class("ISOScope",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@field level level
      level = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}  
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setLevel
+     #'@description Set level
+     #'@param level object of class \link{ISOHierarchyLevel} or any \link{character}
+     #'  among values returned by \link{ISOHierarchyLevel}
      setLevel = function(level){
        if(is(level, "character")){
          level <- ISOHierarchyLevel$new(value = level)

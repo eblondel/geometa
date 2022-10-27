@@ -6,15 +6,6 @@
 #' @keywords ISO unlimited integer
 #' @return Object of \code{\link{R6Class}} for modelling an ISO UnlimitedInteger
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value [\code{\link{integer}}|\code{\link{numeric}}] the integer
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOUnlimitedInteger}}
-#'  }
-#' }
 #' 
 #' @note Class used by geometa internal XML decoder/encoder
 #' 
@@ -30,8 +21,14 @@ ISOUnlimitedInteger <- R6Class("ISOUnlimitedInteger",
       xmlNamespacePrefix = "GCO"
     ),
     public = list(
+      #'@field value value
       value = NA,
+      #'@field attrs attrs
       attrs = list(),
+      
+      #'@description Initialize object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param value value
       initialize = function(xml = NULL, value){
         super$initialize(xml = xml)
         if(is.null(xml)){

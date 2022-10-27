@@ -6,34 +6,6 @@
 #' @keywords ISO data file
 #' @return Object of \code{\link{R6Class}} for modelling an ISO DataFile
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISODataFile}}
-#'  }
-#'  \item{\code{setFileName(fileName)}}{
-#'    Set the file name, object of class \code{\link{ISOFileName}}
-#'  }
-#'  \item{\code{setFileDescription(fileDescription, locales)}}{
-#'    Set the file description, object of class 'character'. Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setFileType(type)}}{
-#'    Set the file type, object of class \code{\link{ISOMimeFileType}}.
-#'  }
-#'  \item{\code{addFeatureType(featureType)}}{
-#'    Add a feature type, object of class \code{\link{ISOLocalName}} or \code{link{ISOScopedName}},
-#'    or eventually a 'character' in which case the featureType will be coerced to a local name.
-#'  }
-#'  \item{\code{delFeatureType(featureType)}}{
-#'    Deletes a feature type, object of class \code{\link{ISOLocalName}} or \code{link{ISOScopedName}},
-#'    or eventually a 'character' in which case the featureType will be coerced to a local name.
-#'  }
-#'  \item{\code{setFileFormat(fileFormat)}}{
-#'    Set the file format, object of class \code{\link{ISOFormat}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   md <- ISODataFile$new()
@@ -61,21 +33,25 @@ ISODataFile <- R6Class("ISODataFile",
      xmlNamespacePrefix = "GMX"
    ),
    public = list(
-     #+ fileName [1..1]: ISOFileName
+     #'@field fileName fileName [1..1]: ISOFileName
      fileName = NULL,
-     #+ fileDescription [1..1]: character|ISOLocalisedCharacterString
+     #'@field fileDescription fileDescription [1..1]: character|ISOLocalisedCharacterString
      fileDescription = NULL,
-     #+ fileType [1..1]: ISOMimeFileType
+     #'@field fileType fileType [1..1]: ISOMimeFileType
      fileType = NULL,
-     #+ featureTypes [0..*]: ISOLocalName|ISOScopedName 
+     #'@field featureTypes featureTypes [0..*]: ISOLocalName|ISOScopedName 
      featureTypes = list(),
-     #+ fileFormat [1..1]: ISOFormat
+     #'@field fileFormat fileFormat [1..1]: ISOFormat
      fileFormat = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setFileName
+     #'@description Set file name
+     #'@param fileName object of class \link{ISOFileName}
      setFileName = function(fileName){
        if(!is(fileName, "ISOFileName")){
          stop("The argument should be an object of class 'ISOFileName'")
@@ -83,7 +59,9 @@ ISODataFile <- R6Class("ISODataFile",
        self$fileName <- fileName
      },
      
-     #setFileDescription
+     #'@description Set file description
+     #'@param fileDescription object of class \link{character}
+     #'@param locales list of localized descriptions. Default is \code{NULL}
      setFileDescription = function(fileDescription, locales = NULL){
        if(!is.null(locales)){
          fileDescription <- self$createLocalisedProperty(fileDescription, locales)
@@ -91,7 +69,8 @@ ISODataFile <- R6Class("ISODataFile",
        self$fileDescription <- fileDescription
      },
      
-     #setFileType
+     #'@description Set file type
+     #'@param fileType object of class \link{ISOMimeFileType}
      setFileType = function(fileType){
        if(!is(fileType, "ISOMimeFileType")){
          stop("The argument should be an object of class 'ISOMimeFileType")
@@ -99,7 +78,9 @@ ISODataFile <- R6Class("ISODataFile",
        self$fileType <- fileType
      },
      
-     #addFeatureType
+     #'@description Adds feature type
+     #'@param featureType object of class \link{ISOLocalName}, \link{ISOScopedName} or \link{character}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addFeatureType = function(featureType){
        if(is(featureType, "character")){
          featureType <- ISOLocalName$new(value = featureType)
@@ -111,7 +92,9 @@ ISODataFile <- R6Class("ISODataFile",
        return(self$addListElement("featureTypes", featureType))
      },
      
-     #delFeatureType
+     #'@description Deletes feature type
+     #'@param featureType object of class \link{ISOLocalName}, \link{ISOScopedName} or \link{character}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delFeatureType = function(featureType){
        if(is(featureType, "character")){
          featureType <- ISOLocalName$new(value = featureType)
@@ -123,7 +106,8 @@ ISODataFile <- R6Class("ISODataFile",
        return(self$delListElement("featureTypes", featureType))
      },
      
-     #setFileFormat
+     #'@description Set file format
+     #'@param fileFormat file format, object of class \link{ISOFormat}
      setFileFormat = function(fileFormat){
        if(!is(fileFormat, "ISOFormat")){
          stop("The argument should be an object of class 'ISOFormat'")

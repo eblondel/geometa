@@ -6,32 +6,6 @@
 #' @keywords ISO distribution
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Distribution
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field distributionFormat [\code{\link{ISOFormat}}]
-#' @field distributor [\code{\link{ISODistributor}}]
-#' @field transferOptions [\code{\link{ISODigitalTransferOptions}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISODistribution}}
-#'  }
-#'  \item{\code{addFormat(format)}}{
-#'    Adds a distribution format, object of class \code{\link{ISOFormat}}
-#'  }
-#'  \item{\code{delFormat(format)}}{
-#'    Deletes a distribution format, object of class \code{\link{ISOFormat}}
-#'  }
-#'  \item{\code{addDistributor(distributor)}}{
-#'    Adds a distributor, object of class \code{\link{ISODistributor}}
-#'  }
-#'  \item{\code{delDistributor(distributor)}}{
-#'    Deletes a distributor, object of class \code{\link{ISODistributor}}
-#'  }
-#'  \item{\code{setDigitalTransferOptions(options)}}{
-#'    Sets the digital transfer options, object of class \code{\link{ISODigitalTransferOptions}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISODistribution$new()
@@ -62,13 +36,15 @@ ISODistribution <- R6Class("ISODistribution",
    ),
    public = list(
      
-     #+ distributionFormat [0..*]: ISOFormat
+     #'@field distributionFormat distributionFormat [0..*]: ISOFormat
      distributionFormat = list(),
-     #+ distributor [0..*]: ISODistributor
+     #'@field distributor distributor [0..*]: ISODistributor
      distributor = list(),
-     #+ transferOptions [0..*]: ISODigitalTransferOptions
+     #'@field transferOptions transferOptions [0..*]: ISODigitalTransferOptions
      transferOptions = list(),
     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
@@ -76,7 +52,9 @@ ISODistribution <- R6Class("ISODistribution",
      #MD_Format
      #--------------------------------------------------------------------------
      
-     #addFormat
+     #'@description Adds format
+     #'@param format format object of class \link{ISOFormat}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addFormat = function(format){
        if(!is(format, "ISOFormat")){
          stop("The argument value should an object of class 'ISOFormat'")
@@ -84,7 +62,9 @@ ISODistribution <- R6Class("ISODistribution",
        return(self$addListElement("distributionFormat", format))
      },
      
-     #delFormat
+     #'@description Deletes format
+     #'@param format format object of class \link{ISOFormat}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delFormat = function(format){
        if(!is(format, "ISOFormat")){
          stop("The argument value should an object of class 'ISOFormat'")
@@ -95,7 +75,9 @@ ISODistribution <- R6Class("ISODistribution",
      #MD_Distributor
      #--------------------------------------------------------------------------
      
-     #addDistributor
+     #'@description Adds distributor
+     #'@param distributor distributor object of class \link{ISODistributor}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDistributor = function(distributor){
        if(!is(distributor, "ISODistributor")){
          stop("The argument value should an object of class 'ISODistributor'")
@@ -103,7 +85,9 @@ ISODistribution <- R6Class("ISODistribution",
        return(self$addListElement("distributor", distributor))
      },
      
-     #delDistributor
+     #'@description Deletes distributor
+     #'@param distributor distributor object of class \link{ISODistributor}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDistributor = function(distributor){
        if(!is(distributor, "ISODistributor")){
          stop("The argument value should an object of class 'ISODistributor'")
@@ -114,7 +98,9 @@ ISODistribution <- R6Class("ISODistribution",
      #MD_DigitalTransferOptions
      #--------------------------------------------------------------------------
      
-     #addDigitalTransferOptions
+     #'@description Adds digital transfer options
+     #'@param options options object of class \link{ISODigitalTransferOptions}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDigitalTransferOptions = function(options){
        if(!is(options, "ISODigitalTransferOptions")){
          stop("The argument should be a 'ISODigitalTransferOptions' object")
@@ -122,13 +108,18 @@ ISODistribution <- R6Class("ISODistribution",
        return(self$addListElement("transferOptions", options))
      },
      
-     #setDigitalTransferOptions
+     #'@description Sets digital transfer options
+     #'@param options options object of class \link{ISODigitalTransferOptions}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setDigitalTransferOptions = function(options){
+       warning("Method 'setDigitalTransferOptions' is deprecated, please use 'addDigitalTransferOptions'!")
        self$transferOptions <- list()
        return(self$addDigitalTransferOptions(options))
      },
      
-     #delDigitalTransferOptions
+     #'@description Deletes digital transfer options
+     #'@param options options object of class \link{ISODigitalTransferOptions}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDigitalTransferOptions = function(options){
        if(!is(options, "ISODigitalTransferOptions")){
          stop("The argument should be a 'ISODigitalTransferOptions' object")

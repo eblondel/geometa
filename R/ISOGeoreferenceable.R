@@ -6,58 +6,6 @@
 #' @keywords ISO grid spatial representation georeferenceable
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Georeferenceable
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field controlPointAvailability [\code{\link{logical}}]
-#' @field orientationParameterAvailability [\code{\link{logical}}]
-#' @field orientationParameterDescription [\code{\link{character}}]
-#' @field georeferencedParameters [\code{\link{ISORecord}}]
-#' @field parameterCitation [\code{\link{ISOCitation}}]
-#'
-#' @section Inherited Methods:
-#' \describe{
-#'  \item{\code{setNumberOfDimensions}}{
-#'    Sets the number of dimensions (value of class \code{integer})
-#'  }
-#'  \item{\code{addDimension(dimension)}}{
-#'    Adds a dimension. Object of class \code{\link{ISODimension}}
-#'  }
-#'  \item{\code{delDimension(dimension)}}{
-#'    Deletes a dimension
-#'  }
-#'  \item{\code{setCellGeometry(cellGeometry)}}{
-#'    Sets the cell geometry. Object of class \code{\link{ISOCellGeometry}} or any value
-#'    from \code{ISOCellGeometry$values()}
-#'  }
-#'  \item{\code{setTransformationParameterAvailability(availability)}}{
-#'    Sets the transformation parameter availability
-#'  }
-#' }
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOGeoreferenceable}}
-#'  }
-#'  \item{\code{setControlPointAvailability(availability)}}{
-#'    Sets the control point availability. TRUE/FALSE
-#'  }
-#'  \item{\code{setOrientationParameterAvailability(availability)}}{
-#'    Sets the orientation parameter availability. TRUE/FALSE
-#'  }
-#'  \item{\code{setOrientationParameterDescription(description, locales)}}{
-#'    Sets the orientation parameter description. Locale names can be specified
-#'     as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setGeoreferencedParameters(record)}}{
-#'    Sets the georeferenced parameter (object of class \code{\link{ISORecord}})
-#'  }
-#'  \item{\code{addParameterCitation(citation)}}{
-#'    Adds a parameter citation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{delParameterCitation(citation)}}{
-#'    Deletes a parameter citation, object of class \code{\link{ISOCitation}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOGeoreferenceable$new()
@@ -95,32 +43,38 @@ ISOGeoreferenceable <- R6Class("ISOGeoreferenceable",
     ),
     public = list(
       
-      #+ controlPointAvailability: logical
+      #'@field controlPointAvailability controlPointAvailability: logical
       controlPointAvailability = NULL,
-      #+ orientationParameterAvailability : logical
+      #'@field orientationParameterAvailability orientationParameterAvailability : logical
       orientationParameterAvailability = NULL,
-      #+ orientationParameterDescription [0..1] : character
+      #'@field orientationParameterDescription orientationParameterDescription [0..1] : character
       orientationParameterDescription = NULL,
-      #+ georeferencedParameters : ISORecord
+      #'@field georeferencedParameters georeferencedParameters : ISORecord
       georeferencedParameters = NULL,
-      #+ parameterCitation [0..*] : ISOCitation
+      #'@field parameterCitation parameterCitation [0..*] : ISOCitation
       parameterCitation = NULL,
       
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
       initialize = function(xml = NULL){
         super$initialize(xml = xml)
       },
       
-      #setControlPointAvailability
+      #'@description Set control point availability
+      #'@param availability object of class \link{logical}
       setControlPointAvailability = function(availability){
         self$controlPointAvailability = as.logical(availability)
       },
       
-      #setOrientationParameterAvailability
+      #'@description Set orientation parameter availability
+      #'@param availability object of class \link{logical}
       setOrientationParameterAvailability = function(availability){
         self$orientationParameterAvailability = as.logical(availability)
       },
       
-      #setOrientationParameterDescription
+      #'@description Set orientation parameter description
+      #'@param description description
+      #'@param locales list of localized descriptions. Default is \code{NULL}
       setOrientationParameterDescription = function(description, locales = NULL){
         self$orientationParameterDescription = as.character(description)
         if(!is.null(locales)){
@@ -128,7 +82,8 @@ ISOGeoreferenceable <- R6Class("ISOGeoreferenceable",
         }
       },
       
-      #setGeoreferencedParameters
+      #'@description Set georeferenced parameters
+      #'@param record object of class \link{ISORecord}
       setGeoreferencedParameters = function(record){
         if(!is(record, "ISORecord")){
           record <- ISORecord$new(value = as(record,"character"))
@@ -136,7 +91,9 @@ ISOGeoreferenceable <- R6Class("ISOGeoreferenceable",
         self$georeferencedParameters = record
       },
       
-      #addParameterCitation
+      #'@description Adds parameter citation
+      #'@param citation object of class \link{ISOCitation}
+      #'@return \code{TRUE} if added, \code{FALSE} otherwise
       addParameterCitation = function(citation){
         if(!is(citation, "ISOCitation")){
           stop("Argument should be an object of class 'ISOCitation'")
@@ -144,7 +101,9 @@ ISOGeoreferenceable <- R6Class("ISOGeoreferenceable",
         return(self$addListElement("parameterCitation", citation))
       },
       
-      #delParameterCitation
+      #'@description Deletes parameter citation
+      #'@param citation object of class \link{ISOCitation}
+      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
       delParameterCitation = function(citation){
         if(!is(citation, "ISOCitation")){
           stop("Argument should be an object of class 'ISOCitation'")

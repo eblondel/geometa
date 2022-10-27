@@ -6,36 +6,6 @@
 #' @keywords ISO InheritanceRelation
 #' @return Object of \code{\link{R6Class}} for modelling an ISOInheritanceRelation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{character}}] name
-#' @field description [\code{\link{character}}] description
-#' @field uniqueInstance [\code{\link{logical}}]
-#' @field subtype [\code{\link{ISOFeatureType}}] subtype
-#' @field supertype [\code{\link{ISOFeatureType}}] supertype
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, defaults)}}{
-#'    This method is used to instantiate an \code{\link{ISOInheritanceRelation}}
-#'  }
-#'  \item{\code{setName(name, locales)}}{
-#'    Set name of inheritance relation. Locale names can be specified
-#'     as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Set description of inheritance relation. Locale names can be specified
-#'     as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setUniqueInstance(uniqueInstance)}}{
-#'    Set \code{TRUE} if it's a unique instance, \code{FALSE} otherwise
-#'  }
-#'  \item{\code{setSubtype(featureType)}}{
-#'    Set subtype, object of class \code{\link{ISOFeatureType}}
-#'  }
-#'  \item{\code{setSupertype(featureType)}}{
-#'    Set supertype, object of class \code{\link{ISOFeatureType}}
-#'  }
-#' }
 #'  
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
@@ -50,18 +20,20 @@ ISOInheritanceRelation <- R6Class("ISOInheritanceRelation",
    ),
    public = list(
      
-     #+ name [0..1]: character
+     #'@field name name [0..1]: character
      name = NULL,
-     #+ description [0..1]: character
+     #'@field description description [0..1]: character
      description = NULL,
-     #+ uniqueInstance: logical
+     #'@field uniqueInstance uniqueInstance: logical
      uniqueInstance = NULL,
-     #+ subtype [1..1]: ISOFeatureType
+     #'@field subtype subtype [1..1]: ISOFeatureType
      subtype = NULL,
-     #+ supertype [1..1]: ISOFeatureType
+     #'@field supertype supertype [1..1]: ISOFeatureType
      supertype = NULL,
      
-     #setName
+     #'@description Set name
+     #'@param name name
+     #'@param locales list of localized texts. Default is \code{NULL}
      setName = function(name, locales = NULL){
        self$name <- as.character(name)
        if(!is.null(locales)){
@@ -69,7 +41,9 @@ ISOInheritanceRelation <- R6Class("ISOInheritanceRelation",
        }
      },
      
-     #setDescription
+     #'@description Set description
+     #'@param description description
+     #'@param locales list of localized texts. Default is \code{NULL}
      setDescription = function(description, locales = NULL){
        self$description <- as.character(description)
        if(!is.null(locales)){
@@ -77,7 +51,8 @@ ISOInheritanceRelation <- R6Class("ISOInheritanceRelation",
        }
      },
      
-     #setUniqueInstance
+     #'@description Set unique instance
+     #'@param uniqueInstance object of class \link{logical}
      setUniqueInstance = function(uniqueInstance){
        if(!is.logical(uniqueInstance)){
          uniqueInstance < as.logical(uniqueInstance)
@@ -88,7 +63,8 @@ ISOInheritanceRelation <- R6Class("ISOInheritanceRelation",
        self$uniqueInstance <- uniqueInstance
      },
      
-     #setSubtype
+     #'@description Set sub feature type
+     #'@param featureType object of class \link{ISOFeatureType}
      setSubtype = function(featureType){
        if(!is(featureType, "ISOFeatureType")){
          stop("The argument value should be an object of class 'ISOFeatureType'")
@@ -96,7 +72,8 @@ ISOInheritanceRelation <- R6Class("ISOInheritanceRelation",
        self$subtype <- featureType
      },
      
-     #setSupertype
+     #'@description Set super feature type
+     #'@param featureType object of class \link{ISOFeatureType}
      setSupertype = function(featureType){
        if(!is(featureType, "ISOFeatureType")){
          stop("The argument value should be an object of class 'ISOFeatureType'")

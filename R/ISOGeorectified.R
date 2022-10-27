@@ -6,68 +6,6 @@
 #' @keywords ISO georectified
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Georectified
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field checkPointAvailability [\code{\link{logical}}]
-#' @field checkPointDescription [\code{\link{character}}]
-#' @field cornerPoints [\code{\link{GMLPoint}}]
-#' @field centerPoint [\code{\link{GMLPoint}}]
-#' @field pointInPixel [\code{\link{ISOPixelOrientation}}]
-#' @field transformationDimensionDescription [\code{\link{character}}]
-#' @field transformationDimensionMapping [\code{\link{character}}]
-#'
-#' @section Inherited methods from \code{\link{ISOGridSpatialRepresentation}}:
-#' \describe{
-#'  \item{\code{setNumberOfDimensions}}{
-#'    Sets the number of dimensions (value of class \code{integer})
-#'  }
-#'  \item{\code{addDimension(dimension)}}{
-#'    Adds a dimension. Object of class \code{\link{ISODimension}}
-#'  }
-#'  \item{\code{delDimension(dimension)}}{
-#'    Deletes a dimension;
-#'  }
-#'  \item{\code{setCellGeometry(cellGeometry)}}{
-#'    Sets the cell geometry. Object of class \code{ISOCellGeometry} or any value
-#'    from \code{ISOCellGeometry$values()}
-#'  }
-#'  \item{\code{setTransformationParameterAvailability(availability)}}{
-#'    Sets the transformation parameter availability
-#'  }
-#'  \item{\code{setPixelOrientation(pixelOrientation)}}{
-#'    Sets the point in pixel orientation, object of class 'character' or \code{\link{ISOPixelOrientation}}
-#'  }
-#' }
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOGeorectified}}
-#'  }
-#'  \item{\code{setCheckPointAvailability(availability)}}{
-#'    Set checkpoint availability, object of class 'logical' (TRUE/FALSE)
-#'  }
-#'  \item{\code{setCheckPointDescription(description, locales)}}{
-#'    Set checkpoint description
-#'  }
-#'  \item{\code{addCornerPoint(sfg,m)}}{
-#'    Adds a corner point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
-#'  }
-#'  \item{\code{delCornerPoint(sfg,m)}}{
-#'    Deletes a corner point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
-#'  }
-#'  \item{\code{setCenterPoint(sfg,m)}}{
-#'    Sets a center point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
-#'  }
-#'  \item{\code{setTransformationDimensionDescription(description, locales)}}{
-#'    Sets the transformation dimension description.
-#'  }
-#'  \item{\code{addTransformationDimensionMapping(mapping)}}{
-#'    Adds a transformation dimension mapping
-#'  }
-#'  \item{\code{delTransformationDimensionMapping(mapping)}}{
-#'    Deletes a transformation dimension mapping
-#'  }
-#' }
 #'   
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -82,26 +20,29 @@ ISOGeorectified <- R6Class("ISOGeorectified",
    ),
    public = list(
      
-     #checkPointAvailability [1..1]
+     #'@field checkPointAvailability checkPointAvailability [1..1]
      checkPointAvailability = NULL,
-     #checkPointDescription [0..1]
+     #'@field checkPointDescription checkPointDescription [0..1]
      checkPointDescription = NULL,
-     #cornerPoints [0..*]
+     #'@field cornerPoints cornerPoints [0..*]
      cornerPoints = list(),
-     #centerPoint [0..1]
+     #'@field centerPoint centerPoint [0..1]
      centerPoint = NULL,
-     #pointInPixel [1..1]
+     #'@field pointInPixel pointInPixel [1..1]
      pointInPixel = NULL,
-     #transformationDimensionDescription [0..1]
+     #'@field transformationDimensionDescription transformationDimensionDescription [0..1]
      transformationDimensionDescription = NULL,
-     #transformationDimensionMapping [0..2]
+     #'@field transformationDimensionMapping transformationDimensionMapping [0..2]
      transformationDimensionMapping = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setCheckPointAvailability
+     #'@description Set check point availability
+     #'@param availability object of class \link{logical}
      setCheckPointAvailability = function(availability){
        if(!is(availability, "logical")){
          stop("The argument should be of class 'logical' (TRUE/FALSE)")
@@ -109,7 +50,9 @@ ISOGeorectified <- R6Class("ISOGeorectified",
        self$checkPointAvailability = availability
      },
      
-     #setCheckPointDescription
+     #'@description Set check point description
+     #'@param description object of class \link{character}
+     #'@param locales list of localized descriptions. Default is \code{NULL}
      setCheckPointDescription = function(description, locales = NULL){
        if(!is.null(locales)){
          description <- self$createLocalisedProperty(description, locales)
@@ -117,24 +60,34 @@ ISOGeorectified <- R6Class("ISOGeorectified",
        self$checkPointDescription <- description
      },
 
-     #addCornerPoint
+     #'@description Adds corner point
+     #'@param sfg simple feature object from \pkg{sf}
+     #'@param m simple feature object of class \link{matrix}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addCornerPoint = function(sfg = NULL, m = NULL){
        cornerPoint <- GMLPoint$new(sfg = sfg, m = m)
        return(self$addListElement("cornerPoints", cornerPoint))
      },
      
-     #delCornerPoint
+     #'@description Deletes corner point
+     #'@param sfg simple feature object from \pkg{sf}
+     #'@param m simple feature object of class \link{matrix}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delCornerPoint = function(sfg = NULL, m = NULL){
        cornerPoint <- GMLPoint$new(sfg = sfg, m = m)
        return(self$delListElement("cornerPoints", cornerPoint))
      },
      
-     #setCenterPoint
+     #'@description Sets center point
+     #'@param sfg simple feature object from \pkg{sf}
+     #'@param m simple feature object of class \link{matrix}
      setCenterPoint = function(sfg = NULL, m = NULL){
        self$centerPoint <- GMLPoint$new(sfg = sfg, m = m)
      },
      
-     #setPixelOrientation
+     #'@description Set pixel orientation
+     #'@param pixelOrientation object of class \link{ISOPixelOrientation} or \link{character} among
+     #'  values among those returned by \code{ISOPixelOrientation$values()}
      setPixelOrientation = function(pixelOrientation){
        if(is(pixelOrientation, "character")){
          pixelOrientation <- ISOPixelOrientation$new(value = pixelOrientation)
@@ -142,7 +95,9 @@ ISOGeorectified <- R6Class("ISOGeorectified",
        self$pointInPixel <- pixelOrientation
      },
      
-     #setTransformationDimensionDescription
+     #'@description Set transformation dimension description
+     #'@param description description
+     #'@param locales list of localized descriptions. Default is \code{NULL}
      setTransformationDimensionDescription = function(description, locales = NULL){
        if(!is.null(locales)){
          description <- self$createLocalisedProperty(description, locales)
@@ -150,12 +105,16 @@ ISOGeorectified <- R6Class("ISOGeorectified",
        self$transformationDimensionDescription <- description
      },
      
-     #addTransformationDimensionMapping
+     #'@description Adds transformation dimension mapping
+     #'@param mapping mapping
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addTransformationDimensionMapping = function(mapping){
        return(self$addListElement("transformationDimensionMapping", mapping))
      },
      
-     #delTransformationDimensionMapping
+     #'@description Deletes transformation dimension mapping
+     #'@param mapping mapping
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delTransformationDimensionMapping = function(mapping){
        return(self$delListElement("transformationDimensionMapping", mapping))
      }

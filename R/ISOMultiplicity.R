@@ -6,16 +6,6 @@
 #' @keywords ISO multiplicity
 #' @return Object of \code{\link{R6Class}} for modelling an ISOMultiplicity
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field range [\code{\link{ISOMultiplicityRange}}] multiplicity range
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, lower, upper)}}{
-#'    This method is used to instantiate an \code{\link{ISOMultiplicity}}. The range is specified
-#'    by two arguments \code{lower} and \code{upper}.
-#'  }
-#' }
 #' 
 #' @examples
 #'   md <- ISOMultiplicity$new(lower = 1, upper = Inf)
@@ -33,7 +23,13 @@ ISOMultiplicity <- R6Class("ISOMultiplicity",
     xmlNamespacePrefix = "GCO"
   ),
   public = list(
+    #'@field range range
     range = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param lower lower
+    #'@param upper upper
     initialize = function(xml = NULL, lower, upper){
       super$initialize(xml = xml)
       if(is.null(xml)){

@@ -6,46 +6,6 @@
 #' @keywords ISO source
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Source
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field description [\code{\link{character}}] source description
-#' @field scaleDenominator [\code{\link{ISORepresentativeFraction}}] sale denominator
-#' @field sourceReferenceSystem [\code{\link{ISOReferenceSystem}}] source reference system
-#' @field sourceCitation [\code{\link{ISOCitation}}] the source citation
-#' @field sourceExtent [\code{\link{ISOExtent}}] the source extent(s)
-#' @field sourceStep [\code{\link{ISOProcessStep}}] the source process step(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOSource}}
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets the source description. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setScaleDenominator(denominator)}}{
-#'    Sets the scale denominator (object of class \code{\link{ISORepresentativeFraction}} or
-#'    an integer value or other value coercable to integer)
-#'  }
-#'  \item{\code{setReferenceSystem(referenceSystem)}}{
-#'    Sets the source reference system (object of class \code{\link{ISOReferenceSystem}})
-#'  }
-#'  \item{\code{setCitation(citation)}}{
-#'    Sets the source citation (object of class \code{\link{ISOCitation}})
-#'  }
-#'  \item{\code{addExtent(extent)}}{
-#'    Adds the source extent (object of class \code{\link{ISOExtent}})
-#'  }
-#'  \item{\code{delExtent(extent)}}{
-#'    Deletes a source extent (object of class \code{\link{ISOExtent}})
-#'  }
-#'  \item{\code{addProcessStep(processStep)}}{
-#'    Adds a source process step (object of class \code{\link{ISOProcessStep}})
-#'  }
-#'  \item{\code{delProcessStep(processStep)}}{
-#'    Deletes a source processStep(object of class \code{\link{ISOProcessStep}})
-#'  }
-#' }
 #' 
 #' @examples 
 #'   src <- ISOSource$new()
@@ -80,24 +40,28 @@ ISOSource <- R6Class("ISOSource",
    ),
    public = list(
      
-     #+ description [0..1]: character
+     #'@field description description [0..1]: character
      description = NULL,
-     #+ scaleDenominator [0..1]: ISORepresentativeFraction
+     #'@field scaleDenominator scaleDenominator [0..1]: ISORepresentativeFraction
      scaleDenominator = NULL,
-     #+ sourceReferenceSystem [0..1]: ISOReferenceSystem
+     #'@field sourceReferenceSystem sourceReferenceSystem [0..1]: ISOReferenceSystem
      sourceReferenceSystem = NULL,
-     #+ sourceCitation [0..1]: ISOCitation
+     #'@field sourceCitation sourceCitation [0..1]: ISOCitation
      sourceCitation = NULL,
-     #+ sourceExtent [0..*]: ISOExtent
+     #'@field sourceExtent sourceExtent [0..*]: ISOExtent
      sourceExtent = list(),
-     #+ sourceStep [0..*]: ISOProcessStep
+     #'@field sourceStep sourceStep [0..*]: ISOProcessStep
      sourceStep = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setDescription
+     #'@description Set description
+     #'@param description description
+     #'@param locales list of localized texts. Default is \code{NULL}
      setDescription = function(description, locales = NULL){
        self$description <- as.character(description)
        if(!is.null(locales)){
@@ -105,7 +69,8 @@ ISOSource <- R6Class("ISOSource",
        }
      },
      
-     #setScaleDenominator
+     #'@description Set scale denominator
+     #'@param denominator object of class \link{ISORepresentativeFraction}
      setScaleDenominator = function(denominator){
        if(!is(denominator, "ISORepresentativeFraction")){
          denominator <- ISORepresentativeFraction$new(denominator = denominator)
@@ -113,7 +78,8 @@ ISOSource <- R6Class("ISOSource",
        self$scaleDenominator = denominator
      },
 
-     #setReferenceSystem
+     #'@description Set reference system
+     #'@param referenceSystem object of class \link{ISOReferenceSystem}
      setReferenceSystem = function(referenceSystem){
        if(!is(referenceSystem, "ISOReferenceSystem")){
          stop("The argument should be a 'ISOReferenceSystem' object")
@@ -121,7 +87,8 @@ ISOSource <- R6Class("ISOSource",
        self$sourceReferenceSystem = referenceSystem
      },
      
-     #setCitation
+     #'@description Set citation
+     #'@param citation object of class \link{ISOCitation}
      setCitation = function(citation){
        if(!is(citation, "ISOCitation")){
          stop("The argument should be a 'ISOCitation' object")
@@ -129,7 +96,9 @@ ISOSource <- R6Class("ISOSource",
        self$sourceCitation = citation
      },
      
-     #addExtent
+     #'@description Adds extent
+     #'@param extent object of class \link{ISOExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addExtent = function(extent){
        if(!is(extent, "ISOExtent")){
          stop("The argument should be a 'ISOExtent' object")
@@ -137,7 +106,9 @@ ISOSource <- R6Class("ISOSource",
        return(self$addListElement("sourceExtent", extent))
      },
      
-     #delExtent
+     #'@description Deletes extent
+     #'@param extent object of class \link{ISOExtent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delExtent = function(extent){
        if(!is(extent, "ISOExtent")){
          stop("The argument should be a 'ISOExtent' object")
@@ -145,7 +116,9 @@ ISOSource <- R6Class("ISOSource",
        return(self$delListElement("sourceExtent", extent))
      },
      
-     #addProcessStep
+     #'@description Adds process step
+     #'@param processStep object of class \link{ISOProcessStep}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addProcessStep = function(processStep){
        if(!is(processStep, "ISOProcessStep")){
          stop("The argument should be a 'ISOProcessStep' object")
@@ -153,7 +126,9 @@ ISOSource <- R6Class("ISOSource",
        return(self$addListElement("sourceStep", processStep))
      },
      
-     #delProcessStep
+     #'@description Deletes process step
+     #'@param processStep object of class \link{ISOProcessStep}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delProcessStep = function(processStep){
        if(!is(processStep, "ISOProcessStep")){
          stop("The argument should be a 'ISOProcessStep' object")

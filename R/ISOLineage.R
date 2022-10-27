@@ -6,33 +6,6 @@
 #' @keywords ISO lineage
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Lineage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field statement [\code{\link{character}}] statement
-#' @field processStep [\code{\link{ISOProcessStep}}] process step(s)
-#' @field source [\code{\link{ISOSource}}] source(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOLineage}}
-#'  }
-#'  \item{\code{setStatement(statement, locales)}}{
-#'    Sets the statement. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{addProcessStep(processStep)}}{
-#'    Adds a process step (object of class \code{\link{ISOProcessStep}})
-#'  }
-#'  \item{\code{delProcessStep(processStep)}}{
-#'    Deletes a process step, object of class \code{\link{ISOProcessStep}}
-#'  }
-#'  \item{\code{addSource(source)}}{
-#'    Adds a source (object of class \code{\link{ISOSource}})
-#'  }
-#'  \item{\code{delSource(source)}}{
-#'    Deletes a source (object of class \code{\link{ISOSource}})
-#'  }
-#' }
 #' 
 #' @examples 
 #'   lineage <- ISOLineage$new()
@@ -79,17 +52,22 @@ ISOLineage<- R6Class("ISOLineage",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    #+ statement [0..1]: character
+    #'@field statement statement [0..1]: character
     statement = NULL,
-    #+ processStep [0..*]: ISOProcessStep
+    #'@field processStep processStep [0..*]: ISOProcessStep
     processStep = list(),
-    #+ source [0..*]: ISOSource 
+    #'@field source source [0..*]: ISOSource 
     source = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setStatement
+    #'@description Set statement
+    #'@param statement statement
+    #'@param locales list of localized texts. Default is \code{NULL}
     setStatement = function(statement, locales = NULL){
       self$statement <- as.character(statement)
       if(!is.null(locales)){
@@ -97,7 +75,9 @@ ISOLineage<- R6Class("ISOLineage",
       }
     },
     
-    #addProcessStep
+    #'@description Adds process step
+    #'@param processStep object of class \link{ISOProcessStep}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addProcessStep = function(processStep){
       if(!is(processStep,"ISOProcessStep")){
         stop("The argument should be a 'ISOProcessStep' object")
@@ -105,7 +85,9 @@ ISOLineage<- R6Class("ISOLineage",
       return(self$addListElement("processStep", processStep))
     },
     
-    #delProcessStep
+    #'@description Deletes process step
+    #'@param processStep object of class \link{ISOProcessStep}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delProcessStep = function(processStep){
       if(!is(processStep,"ISOProcessStep")){
         stop("The argument should be a 'ISOProcessStep' object")
@@ -113,7 +95,9 @@ ISOLineage<- R6Class("ISOLineage",
       return(self$dellListElement("processStep", processStep))
     },
     
-    #addSource
+    #'@description Adds source
+    #'@param source object of class \link{ISOSource}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addSource = function(source){
       if(!is(source,"ISOSource")){
         stop("The argument should be a 'ISOSource' object")
@@ -121,7 +105,9 @@ ISOLineage<- R6Class("ISOLineage",
       return(self$addListElement("source", source))
     },
     
-    #delSource
+    #'@description Deletes source
+    #'@param source object of class \link{ISOSource}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delSource = function(source){
       if(!is(source,"ISOSource")){
         stop("The argument should be a 'ISOSource' object")

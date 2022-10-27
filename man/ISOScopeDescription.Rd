@@ -12,46 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO ScopeDescription
 }
 \description{
 ISOScopeDescription
-}
-\section{Methods}{
 
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOScopeDescription}}
- }
- \item{\code{addAttribute(attribute)}}{
-   Adds an attribute
- }
- \item{\code{delAttribute(attribute)}}{
-   Deletes an attribute
- }
- \item{\code{addAttributeInstance(attributeInstance)}}{
-   Adds an attribute instance
- }
- \item{\code{delAttributeInstance(attributeInstance)}}{
-   Deletes an attribute instance
- }
- \item{\code{addFeature(feature)}}{
-   Adds an feature
- }
- \item{\code{delFeature(feature)}}{
-   Deletes an feature
- }
- \item{\code{addFeatureInstance(featureInstance)}}{
-   Adds an feature instance
- }
- \item{\code{delFeatureInstance(featureInstance)}}{
-   Deletes an feature instance
- }
- \item{\code{setDataset(dataset)}}{
-   Set the dataset
- }
- \item{\code{setOther(other)}}{
-   Set other description
- }
+ISOScopeDescription
 }
-}
-
 \examples{
  md <- ISOScopeDescription$new()
  xml <- md$encode()
@@ -66,3 +29,260 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{browse}
 \keyword{graphic}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOScopeDescription}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{attributes}}{attributes [1..*]}
+
+\item{\code{features}}{features [1..*]}
+
+\item{\code{featureInstances}}{featureInstances [1..*]}
+
+\item{\code{attributeInstances}}{attributeInstances [1..*]}
+
+\item{\code{dataset}}{dataset}
+
+\item{\code{other}}{other}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOScopeDescription-new}{\code{ISOScopeDescription$new()}}
+\item \href{#method-ISOScopeDescription-addAttribute}{\code{ISOScopeDescription$addAttribute()}}
+\item \href{#method-ISOScopeDescription-delAttribute}{\code{ISOScopeDescription$delAttribute()}}
+\item \href{#method-ISOScopeDescription-addAttributeInstance}{\code{ISOScopeDescription$addAttributeInstance()}}
+\item \href{#method-ISOScopeDescription-delAttributeInstance}{\code{ISOScopeDescription$delAttributeInstance()}}
+\item \href{#method-ISOScopeDescription-addFeatureInstance}{\code{ISOScopeDescription$addFeatureInstance()}}
+\item \href{#method-ISOScopeDescription-delFeatureInstance}{\code{ISOScopeDescription$delFeatureInstance()}}
+\item \href{#method-ISOScopeDescription-setDataset}{\code{ISOScopeDescription$setDataset()}}
+\item \href{#method-ISOScopeDescription-setOther}{\code{ISOScopeDescription$setOther()}}
+\item \href{#method-ISOScopeDescription-clone}{\code{ISOScopeDescription$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-addAttribute"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-addAttribute}{}}}
+\subsection{Method \code{addAttribute()}}{
+Adds attribute
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$addAttribute(attribute)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{attribute}}{attribute}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-delAttribute"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-delAttribute}{}}}
+\subsection{Method \code{delAttribute()}}{
+Deletes attribute
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$delAttribute(attribute)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{attribute}}{attribute}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-addAttributeInstance"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-addAttributeInstance}{}}}
+\subsection{Method \code{addAttributeInstance()}}{
+Adds attribute instance
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$addAttributeInstance(attributeInstance)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{attributeInstance}}{attribute instance}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-delAttributeInstance"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-delAttributeInstance}{}}}
+\subsection{Method \code{delAttributeInstance()}}{
+Deletes attribute instance
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$delAttributeInstance(attributeInstance)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{attributeInstance}}{attribute instance}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-addFeatureInstance"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-addFeatureInstance}{}}}
+\subsection{Method \code{addFeatureInstance()}}{
+Adds feature instance
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$addFeatureInstance(featureInstance)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{featureInstance}}{feature instance}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-delFeatureInstance"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-delFeatureInstance}{}}}
+\subsection{Method \code{delFeatureInstance()}}{
+Deletes feature instance
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$delFeatureInstance(featureInstance)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{featureInstance}}{feature instance}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-setDataset"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-setDataset}{}}}
+\subsection{Method \code{setDataset()}}{
+Set dataset
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$setDataset(dataset)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataset}}{dataset}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-setOther"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-setOther}{}}}
+\subsection{Method \code{setOther()}}{
+Set other
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$setOther(other)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{other}}{other}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScopeDescription-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScopeDescription-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScopeDescription$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

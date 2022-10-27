@@ -7,28 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata codelist element
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @field codelistId [\code{\link{character}}] codelist identifier
-#' @field attrs [\code{\link{list}}] list of codelist attributes
-#' @field value [\code{\link{character}}] codelist value
-#' @field valueDescription [\code{\link{character}}] codelist value description
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, id, value, description, addCodeListAttrs, addCodeSpaceAttr, setValue)}}{
-#'    This method is used to instantiate an ISOCodeListValue. By default,
-#'    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The 
-#'    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
-#'    \code{addCodeLisAttrs} is set to \code{FALSE}. The argument \code{setValue}
-#'    sets the value as node text (defaut is \code{TRUE}). The argument \code{setValueDescription}
-#'    allows to force having description set as value, default is \code{FALSE} in which case
-#'    the name will be preferred, and in case no name is provided, code value will be used.
-#'    
-#'  }
-#'  \item{\code{getAcceptedValues()}}{
-#'    This method allows to get the codelist accepted values
-#'  }
-#' }
-#' 
 #' @note Abstract ISO codelist class used internally by geometa
 #' 
 #' @references 
@@ -42,10 +20,30 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
      printAttrs = list()
    ),
    public = list(
+     #'@field codelistId codelist ID
      codelistId = NULL,
+     #'@field attrs attrs
      attrs = list(),
+     #'@field value value
      value = NULL,
+     #'@field valueDescription value description
      valueDescription = NULL,
+     
+     #'@description Method used to instantiate an \link{ISOCodeListValue}. By default,
+     #'    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The 
+     #'    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
+     #'    \code{addCodeLisAttrs} is set to \code{FALSE}. The argument \code{setValue}
+     #'    sets the value as node text (defaut is \code{TRUE}). The argument \code{setValueDescription}
+     #'    allows to force having description set as value, default is \code{FALSE} in which case
+     #'    the name will be preferred, and in case no name is provided, code value will be used.
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param id id
+     #'@param value value
+     #'@param description description
+     #'@param addCodeListAttrs add codelist attributes?
+     #'@param addCodeSpaceAttr add codespace attribute?
+     #'@param setValue set value?
+     #'@param setValueDescription set value description?
      initialize = function(xml = NULL, id, value = NULL, description = NULL,
                            addCodeListAttrs = TRUE,
                            addCodeSpaceAttr = TRUE,
@@ -140,7 +138,8 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        
      },
      
-     #getAcceptedValues
+     #'@description Get accepted values
+     #'@return a vector of class \link{character}
      getAcceptedValues = function(){
        return(self$codelistId$entries$value)
      }

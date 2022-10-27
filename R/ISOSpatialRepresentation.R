@@ -6,13 +6,6 @@
 #' @keywords ISO address
 #' @return Object of \code{\link{R6Class}} for modelling an ISO abstract SpatialRepresentation
 #' @format \code{\link{R6Class}} object.
-
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOSpatialRepresentation}}
-#'  }
-#' }
 #' 
 #' @note abstract class
 #' 
@@ -28,6 +21,10 @@ ISOSpatialRepresentation <- R6Class("ISOSpatialRepresentation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}  
+    #'@param defaults list of defaults 
     initialize = function(xml = NULL, defaults = list()){
       super$initialize(xml, defaults = defaults)
     }    

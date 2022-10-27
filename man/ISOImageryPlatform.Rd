@@ -12,55 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO imagery platform
 }
 \description{
 ISOImageryPlatform
+
+ISOImageryPlatform
 }
-\section{Fields}{
-
-\describe{
-\item{\code{citation}}{[\code{list} of \code{\link{ISOCitation}}]}
-
-\item{\code{identifier}}{[\code{\link{ISOMetaIdentifier}}]}
-
-\item{\code{description}}{[\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]}
-
-\item{\code{sponsor}}{[\code{list} of \code{\link{ISOResponsibleParty}}]}
-
-\item{\code{instrument}}{[\code{list} of \code{\link{ISOImageryInstrument}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOImageryPlatform}}
- }
- \item{\code{addCitation(citation)}}{
-   Adds citation, object of class \code{\link{ISOCitation}}
- }
- \item{\code{delCitation(citation)}}{
-   Deletes a citation, object of class \code{\link{ISOCitation}}
- }
- \item{\code{setIdentifier(identifier)}}{
-   Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
- }
- \item{\code{setDescription(description, locales)}}{
-   Sets a description (object of class "character"). Locale names can be 
-   specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{addSponsor(sponsor)}}{
-   Adds a sponsor, object of class \code{\link{ISOResponsibleParty}}
- }
- \item{\code{delSponsor(sponsor)}}{
-   Deletes a sponsor, object of class \code{\link{ISOResponsibleParty}}
- }
- \item{\code{addInstrument(instrument)}}{
-   Add a instrument, object of class \code{\link{ISOImageryInstrument}}
- }
- \item{\code{delInstrument(instrument)}}{
-   Deletes a instrument, object of class \code{\link{ISOImageryInstrument}}
- }
-}
-}
-
 \examples{
    md <- ISOImageryPlatform$new()
    
@@ -117,3 +71,260 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{imagery}
 \keyword{platform}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOImageryPlatform}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{citation}}{citation [0..*]: ISOCitation}
+
+\item{\code{identifier}}{identifier [1..1]: ISOMetaIdentifier}
+
+\item{\code{description}}{description [0..1]: character|ISOLocalisedCharacterString}
+
+\item{\code{sponsor}}{sponsor [0..*]: ISOResponsibleParty}
+
+\item{\code{instrument}}{instrument [0..*]: ISOImageryInstrument}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOImageryPlatform-new}{\code{ISOImageryPlatform$new()}}
+\item \href{#method-ISOImageryPlatform-addCitation}{\code{ISOImageryPlatform$addCitation()}}
+\item \href{#method-ISOImageryPlatform-delCitation}{\code{ISOImageryPlatform$delCitation()}}
+\item \href{#method-ISOImageryPlatform-setIdentifier}{\code{ISOImageryPlatform$setIdentifier()}}
+\item \href{#method-ISOImageryPlatform-setDescription}{\code{ISOImageryPlatform$setDescription()}}
+\item \href{#method-ISOImageryPlatform-addSponsor}{\code{ISOImageryPlatform$addSponsor()}}
+\item \href{#method-ISOImageryPlatform-delSponsor}{\code{ISOImageryPlatform$delSponsor()}}
+\item \href{#method-ISOImageryPlatform-addInstrument}{\code{ISOImageryPlatform$addInstrument()}}
+\item \href{#method-ISOImageryPlatform-delInstrument}{\code{ISOImageryPlatform$delInstrument()}}
+\item \href{#method-ISOImageryPlatform-clone}{\code{ISOImageryPlatform$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-addCitation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-addCitation}{}}}
+\subsection{Method \code{addCitation()}}{
+Adds citation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$addCitation(citation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{citation}}{object of class \link{ISOCitation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-delCitation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-delCitation}{}}}
+\subsection{Method \code{delCitation()}}{
+Deletes citation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$delCitation(citation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{citation}}{object of class \link{ISOCitation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-setIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-setIdentifier}{}}}
+\subsection{Method \code{setIdentifier()}}{
+Set identifier
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$setIdentifier(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{object of class \link{ISOMetaIdentifier} or \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-setDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-setDescription}{}}}
+\subsection{Method \code{setDescription()}}{
+Set description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$setDescription(description, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{description}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-addSponsor"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-addSponsor}{}}}
+\subsection{Method \code{addSponsor()}}{
+Adds sponsor
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$addSponsor(sponsor)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sponsor}}{object of class \link{ISOResponsibleParty}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-delSponsor"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-delSponsor}{}}}
+\subsection{Method \code{delSponsor()}}{
+Deletes sponsor
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$delSponsor(sponsor)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sponsor}}{object of class \link{ISOResponsibleParty}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-addInstrument"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-addInstrument}{}}}
+\subsection{Method \code{addInstrument()}}{
+Adds instrument
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$addInstrument(instrument)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{instrument}}{object of class \link{ISOImageryInstrument}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-delInstrument"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-delInstrument}{}}}
+\subsection{Method \code{delInstrument()}}{
+Deletes instrument
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$delInstrument(instrument)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{instrument}}{object of class \link{ISOImageryInstrument}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

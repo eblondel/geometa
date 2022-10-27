@@ -6,32 +6,6 @@
 #' @keywords ISO keywords
 #' @return Object of \code{\link{R6Class}} for modelling a ISO set of keywords
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field keyword [\code{\link{character}}] keyword(s)
-#' @field type [\code{\link{ISOKeywordType}}] keyword type
-#' @field thesaurusName [\code{\link{ISOCitation}}] thesaurus citation
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOKeywords
-#'  }
-#'  \item{\code{addKeyword(keyword, locales)}}{
-#'    Adds a keyword. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{delKeyword(keyword, locales)}}{
-#'    Deletes a keyword. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument. Local names should match those
-#'    of the keyword to be deleted, otherwise nothing will be deleted.
-#'  }
-#'  \item{\code{setKeywordType(keywordType)}}{
-#'    Sets the keyword type
-#'  }
-#'  \item{\code{setThesaurusName(thesaurusName)}}{
-#'    Sets the thesaurus name
-#'  }
-#' }
 #' 
 #' @examples
 #'   #a basic keyword set
@@ -92,14 +66,23 @@ ISOKeywords <- R6Class("ISOKeywords",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field keyword keyword
     keyword = list(),
+    #'@field type type
     type = NULL,
+    #'@field thesaurusName thesaurus name
     thesaurusName = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}    
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #addKeyword
+    #'@description Adds keyword
+    #'@param keyword keyword
+    #'@param locales list of localized texts. Default is \code{NULL}
+    #'@return \code{TRUE} if added, \code{FALSe} otherwise
     addKeyword = function(keyword, locales = NULL){
       if(is.null(keyword)) return(FALSE);
       if(is(keyword, "character")) if(is.na(keyword)) return(FALSE);
@@ -109,7 +92,10 @@ ISOKeywords <- R6Class("ISOKeywords",
       return(self$addListElement("keyword", keyword))
     },
     
-    #delKeyword
+    #'@description Deletes keyword
+    #'@param keyword keyword
+    #'@param locales list of localized texts. Default is \code{NULL}
+    #'@return \code{TRUE} if deleted, \code{FALSe} otherwise
     delKeyword = function(keyword, locales = NULL){
       if(is.null(keyword)) return(FALSE);
       if(is(keyword, "character")) if(is.na(keyword)) return(FALSE);
@@ -119,7 +105,9 @@ ISOKeywords <- R6Class("ISOKeywords",
       return(self$delListElement("keyword", keyword))
     },
     
-    #setKeywordType
+    #'@description Set keyword type
+    #'@param keywordType object of class \link{ISOKeywordType} or any \link{character} among
+    #' values returned by \code{ISOKeywordType$values()}
     setKeywordType = function(keywordType){
       if(!is(keywordType, "ISOKeywordType")){
         keywordType <- ISOKeywordType$new(value = keywordType)
@@ -127,7 +115,8 @@ ISOKeywords <- R6Class("ISOKeywords",
       self$type <- keywordType
     },
     
-    #setThesaurusName
+    #'@description Set thesaurus name
+    #'@param thesaurusName object of class \link{ISOCitation}
     setThesaurusName = function(thesaurusName){
       if(!is(thesaurusName, "ISOCitation")){
         stop("The argument should be a 'ISOCitation' object")

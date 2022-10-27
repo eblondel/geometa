@@ -6,24 +6,6 @@
 #' @keywords ISO record
 #' @return Object of \code{\link{R6Class}} for modelling an ISOMemberName
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field aName [\code{\link{character}}] member name
-#' @field attributeType [\code{\link{ISOTypeName}}|\code{\link{character}}] attribute type
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, aName, attributeType)}}{
-#'    This method is used to instantiate an \code{\link{ISOMemberName}}
-#'  }
-#'  \item{\code{setName(aName)}}{
-#'    Set the aName, object of class \code{character}. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setAttributeType(attributeType, locales)}}{
-#'    Set the attribute type, object of class \code{ISOTypeName} or \code{character}
-#'    Locale names can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @references
 #'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
@@ -37,8 +19,15 @@ ISOMemberName <- R6Class("ISOMemberName",
      xmlNamespacePrefix = "GCO"
    ),
    public = list(
+     #'@field aName name
      aName = NULL,
+     #'@field attributeType attribute type
      attributeType = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param aName a name
+     #'@param attributeType attribute type
      initialize = function(xml = NULL, aName = NULL, attributeType = NULL){
        super$initialize(xml = xml)
        if(is.null(xml)){
@@ -47,7 +36,9 @@ ISOMemberName <- R6Class("ISOMemberName",
        }
      },
      
-     #setName
+     #'@description Set name
+     #'@param aName name
+     #'@param locales list of localized texts. Default is \code{NULL}
      setName = function(aName, locales = NULL){
        self$aName <- aName
        if(!is.null(locales)){
@@ -55,7 +46,9 @@ ISOMemberName <- R6Class("ISOMemberName",
        }
      },
      
-     #setAttributeType
+     #'@description Set attribute type
+     #'@param attributeType attribute type
+     #'@param locales list of localized texts. Default is \code{NULL}
      setAttributeType = function(attributeType, locales = NULL){
        if(!is(attributeType, "ISOTypeName")){
          attrType <- ISOTypeName$new(aName = attributeType)

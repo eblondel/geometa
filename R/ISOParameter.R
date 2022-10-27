@@ -6,43 +6,6 @@
 #' @keywords ISO parameter
 #' @return Object of \code{\link{R6Class}} for modelling an ISOParameter
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{character}}] name
-#' @field direction [\code{\link{ISOParameterDirection}}] direction
-#' @field description [\code{\link{character}}] description
-#' @field optionality [\code{\link{logical}}] parameter optionality
-#' @field repeatability [\code{\link{logical}}] parameter repeatability
-#' @field valueType [\code{\link{ISOTypeName}}|\code{\link{character}}] value type
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOParameter}}
-#'  }
-#'  \item{\code{setName(name, attributeType, locales)}}{
-#'    Sets the parameter name (\code{character}) and attributeType (\code{\link{ISOTypeName}}
-#'    or \code{character}). Locale names can be specified as \code{list} with the 
-#'    \code{locales} argument.
-#'  }
-#'  \item{\code{setDirection(direction)}}{
-#'    Sets the direction, an object of class \code{\link{ISOParameterDirection}} or any
-#'    \code{character} value among \code{ISOParameterDirection$values()}
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets the parameter description. Locale names can be specified as 
-#'    \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setOptionality(optional)}}{
-#'    Set whether the parameter is optional (\code{TRUE}), \code{FALSE} otherwise
-#'  }
-#'  \item{\code{setRepeatability(repeatable)}}{
-#'    Set whether the parameter is repeatable (\code{TRUE}), \code{FALSE} otherwise
-#'  }
-#'  \item{\code{setValueType(valueType, locales)}}{
-#'    Sets the type of parameter value, object of class \code{\link{ISOTypeName}} or \code{character}
-#'    Locale names can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples
 #'   md <- ISOParameter$new()
@@ -67,24 +30,29 @@ ISOParameter <- R6Class("ISOParameter",
      ),
      public = list(
        
-       #+ name [1..1]: character
+       #'@field name name [1..1]: character
        name = NULL,
-       #+ direction [0..1]: ISOParameterDirection
+       #'@field direction direction [0..1]: ISOParameterDirection
        direction = NULL,
-       #+ description [0..1]: character
+       #'@field description description [0..1]: character
        description = NULL,
-       #+ optionality [1..1]: character
+       #'@field optionality optionality [1..1]: character
        optionality = "Mandatory",
-       #+ repeatability [1..1]: logical
+       #'@field repeatability repeatability [1..1]: logical
        repeatability = FALSE,
-       #+ valueType [1..1]: ISOTypeName
+       #'@field valueType valueType [1..1]: ISOTypeName
        valueType = NULL,
        
+       #'@description Initializes object
+       #'@param xml object of class \link{XMLInternalNode-class}
        initialize = function(xml = NULL){
          super$initialize(xml = xml)
        },
        
-       #setName
+       #'@description Set name
+       #'@param name name
+       #'@param attributeType attribute type
+       #'@param locales list of localized texts. Default is \code{NULL}
        setName = function(name, attributeType, locales = NULL){
          if(!is(attributeType, "ISOTypeName")){
            attrType <- ISOTypeName$new()
@@ -97,7 +65,9 @@ ISOParameter <- R6Class("ISOParameter",
          self$name <- ISOElementSequence$new(aName = name, attributeType = attributeType)
        },
        
-       #setDirection
+       #'@description Set direction
+       #'@param direction object of class \link{ISOParameterDirection} or \link{character}
+       #'  among values returned by \code{ISOParameterDirection$values()}
        setDirection = function(direction){
          if(!is(direction, "ISOParameterDirection")){
            direction <- ISOParameterDirection$new(value = direction)
@@ -105,7 +75,9 @@ ISOParameter <- R6Class("ISOParameter",
          self$direction <- direction
        },
        
-       #setDescription
+       #'@description Set description
+       #'@param description description
+       #'@param locales list of localized texts. Default is \code{NULL}
        setDescription = function(description, locales = NULL){
          self$description <- as.character(description)
          if(!is.null(locales)){
@@ -113,7 +85,8 @@ ISOParameter <- R6Class("ISOParameter",
          }
        },
        
-       #setOptionality
+       #'@description Set optionality
+       #'@param optional object of class \link{logical}
        setOptionality = function(optional){
          if(!is(optional, "logical")){
            optional <- as.logical(optional)
@@ -124,7 +97,8 @@ ISOParameter <- R6Class("ISOParameter",
          self$optionality <- ifelse(optional, "Optional", "Mandatory")
        },
        
-       #setRepeatability
+       #'@description Set repeatability
+       #'@param repeatable object of class \link{logical}
        setRepeatability = function(repeatable){
          if(!is(repeatable, "logical")){
            repeatable <- as.logical(repeatable)
@@ -135,7 +109,9 @@ ISOParameter <- R6Class("ISOParameter",
          self$repeatability <- repeatable
        },
        
-       #setValueType
+       #'@description Set value type
+       #'@param valueType object of class \link{ISOTypeName} or \link{character}
+       #'@param locales list of localized texts. Default is \code{NULL}
        setValueType = function(valueType, locales = NULL){
          if(!is(valueType, "ISOTypeName")){
            typeName <- ISOTypeName$new()

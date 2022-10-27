@@ -6,35 +6,6 @@
 #' @keywords ISO feature operation
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFeatureAttribute
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field code [\code{\link{character}}]
-#' @field valueMeasurementUnit [\code{\link{GMLUnitDefinition}}]
-#' @field valueType [\code{\link{character}}]
-#' @field listedValue [\code{\link{ISOListedValue}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOFeatureAttribute}}
-#'  }
-#'  \item{\code{setCode(code, locales)}}{
-#'    Sets the code. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setValueMeasurementUnit(uom)}}{
-#'    Sets the value measurement unit, an object of class \code{\link{GMLUnitDefinition}}
-#'  }
-#'  \item{\code{setValueType(typeName, locales)}}{
-#'    Sets the value type. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{addListedValue(value)}}{
-#'    Adds a listed value (object of class \code{\link{ISOListedValue})}
-#'  }
-#'  \item{\code{delListedValue(value)}}{
-#'   Deletes a listed value (object of class \code{\link{ISOListedValue})}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOFeatureAttribute$new()
@@ -78,20 +49,24 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
    ),
    public = list(
      
-     #+ code [0..1]: character
+     #'@field code code [0..1]: character
      code = NULL,
-     #+ valueMeasurementUnit [0..1]: GMLUnitDefinition
+     #'@field valueMeasurementUnit valueMeasurementUnit [0..1]: GMLUnitDefinition
      valueMeasurementUnit = NA,
-     #+ valueType [0..1]: ISOTypeName
+     #'@field valueType valueType [0..1]: ISOTypeName
      valueType = NULL,
-     #+ listedValue [0..*]: ISOListedValue
+     #'@field listedValue listedValue [0..*]: ISOListedValue
      listedValue = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setCode
+     #'@description Set code
+     #'@param code code
+     #'@param locales list of localized codes. Default is \code{NULL}
      setCode = function(code, locales = NULL){
        self$code <- code
        if(!is.null(locales)){
@@ -99,7 +74,8 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
        }
      },
      
-     #setValueMeasurementUnit
+     #'@description Set value measurement unit
+     #'@param uom uom, object of class \link{GMLUnitDefinition}
      setValueMeasurementUnit = function(uom){
        if(!is(uom, "GMLUnitDefinition")){
          stop("The argument should be an object of class 'GMLUnitDefinition")
@@ -107,7 +83,9 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
        self$valueMeasurementUnit <- uom
      },
      
-     #setValueType
+     #'@description Set type name
+     #'@param typeName typeName
+     #'@param locales list of localized typeNames. Default is \code{NULL}
      setValueType = function(typeName, locales = NULL){
        if(!is(typeName, "ISOTypeName")){
          tn <- ISOTypeName$new()
@@ -120,7 +98,9 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
        self$valueType <- typeName
      },
      
-     #addListedValue
+     #'@description Adds listed value
+     #'@param value value, object of class \link{ISOListedValue}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addListedValue = function(value){
        if(!is(value, "ISOListedValue")){
          stop("The parameter should be an object of class 'ISOListedValue'")
@@ -128,7 +108,9 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
        return(self$addListElement("listedValue", value))
      },
      
-     #delListedValue
+     #'@description Deletes listed value
+     #'@param value value, object of class \link{ISOListedValue}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delListedValue = function(value){
        if(!is(value, "ISOListedValue")){
          stop("The parameter should be an object of class 'ISOListedValue")

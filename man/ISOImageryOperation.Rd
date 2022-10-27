@@ -12,90 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO imagery Operation
 }
 \description{
 ISOImageryOperation
+
+ISOImageryOperation
 }
-\section{Fields}{
-
-\describe{
-\item{\code{description}}{[\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]}
-
-\item{\code{citation}}{[\code{\link{ISOCitation}}]}
-
-\item{\code{identifier}}{[\code{\link{ISOMetaIdentifier}}]}
-
-\item{\code{status}}{[\code{\link{ISOStatus}}]}
-
-\item{\code{type}}{[\code{\link{ISOImageryOperationType}}]}
-
-\item{\code{parentOperation}}{[\code{\link{ISOImageryOperation}}]}
-
-\item{\code{childOperation}}{[\code{list} of \code{\link{ISOImageryOperation}}]}
-
-\item{\code{platform}}{[\code{list} of \code{\link{ISOImageryPlatform}}]}
-
-\item{\code{objective}}{[\code{list} of \code{\link{ISOImageryObjective}}]}
-
-\item{\code{plan}}{[\code{list} of \code{\link{ISOImageryPlan}}]}
-
-\item{\code{significantEvent}}{[\code{list} of \code{\link{ISOImageryEvent}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOImageryOperation}}
- }
- \item{\code{setDescription(description, locales)}}{
-   Sets a description (object of class "character"). Locale names can be 
-   specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{setCitation(citation)}}{
-   Sets a citation, object of class \code{\link{ISOCitation}}
- }
- \item{\code{setIdentifier(identifier)}}{
-   Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
- }
- \item{\code{setStatus(status)}}{
-   Sets status, object of class \code{\link{ISOStatus}} or 'character', among values given 
-   by \code{ISOStatus$values()} or any free text code
- }
- \item{\code{setType(type)}}{
-   Sets the operation type, object of class \code{\link{ISOImageryOperationType}}, or 'character'
-   amont values given by \code{ISOImageryOperationType$values()}, or any free text code.
- }
- \item{\code{setParentOperation(operation)}}{
-   Sets the parent operation, object of class \code{\link{ISOImageryOperation}}.
- }
- \item{\code{addChildOperation(operation)}}{
-   Adds a child operation, object of class \code{\link{ISOImageryOperation}}
- }
- \item{\code{delChildOperation(operation)}}{
-   Deletes a child operation, object of class \code{\link{ISOImageryOperation}}
- }
- \item{\code{addPlatform(platform)}}{
-   Adds a platform, object of class \code{\link{ISOImageryPlatform}}
- }
- \item{\code{delPlatform(platform)}}{
-   Deletes a platform, object of class \code{\link{ISOImageryPlatform}}
- }
- \item{\code{addObjective(objective)}}{
-   Adds an objective object of class \code{\link{ISOImageryObjective}}
- }
- \item{\code{delObjective(objective)}}{
-   Deletes an objective, object of class \code{\link{ISOImageryObjective}}
- }
- \item{\code{setPlan(plan)}}{
-   Sets a plan, object of class \code{\link{ISOImageryPlan}}
- }
- \item{\code{addSignificantEvent(event)}}{
-   Adds a significant event, object of class \code{\link{ISOImageryEvent}}
- }
- \item{\code{delSignificantEvent(event)}}{
-   Deletes a significant event, object of class \code{\link{ISOImageryEvent}}
- }
-}
-}
-
 \references{
 ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
 }
@@ -105,3 +24,406 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{Operation}
 \keyword{imagery}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOImageryOperation}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{description}}{description [0..1]: character|ISOLocalisedCharacterString}
+
+\item{\code{citation}}{citation [0..1]: ISOCitation}
+
+\item{\code{identifier}}{identifier [1..1]: ISOMetaIdentifier}
+
+\item{\code{status}}{status [1..1]: ISOStatus}
+
+\item{\code{type}}{type [0..1]: ISOImageryOperationType}
+
+\item{\code{parentOperation}}{parentOperation [1..1]: ISOImageryOperation}
+
+\item{\code{childOperation}}{childOperation [0..*]: ISOImageryOperation}
+
+\item{\code{platform}}{platform [0..*]: ISOImageryPlatform}
+
+\item{\code{objective}}{objective [0..*]: ISOImageryObjective}
+
+\item{\code{plan}}{plan [0..1]: ISOImageryPlan}
+
+\item{\code{significantEvent}}{significantEvent [0..*]: ISOImageryEvent}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOImageryOperation-new}{\code{ISOImageryOperation$new()}}
+\item \href{#method-ISOImageryOperation-setDescription}{\code{ISOImageryOperation$setDescription()}}
+\item \href{#method-ISOImageryOperation-setCitation}{\code{ISOImageryOperation$setCitation()}}
+\item \href{#method-ISOImageryOperation-setIdentifier}{\code{ISOImageryOperation$setIdentifier()}}
+\item \href{#method-ISOImageryOperation-setStatus}{\code{ISOImageryOperation$setStatus()}}
+\item \href{#method-ISOImageryOperation-setType}{\code{ISOImageryOperation$setType()}}
+\item \href{#method-ISOImageryOperation-setParentOperation}{\code{ISOImageryOperation$setParentOperation()}}
+\item \href{#method-ISOImageryOperation-addChildOperation}{\code{ISOImageryOperation$addChildOperation()}}
+\item \href{#method-ISOImageryOperation-delChildOperation}{\code{ISOImageryOperation$delChildOperation()}}
+\item \href{#method-ISOImageryOperation-addPlatform}{\code{ISOImageryOperation$addPlatform()}}
+\item \href{#method-ISOImageryOperation-delPlatform}{\code{ISOImageryOperation$delPlatform()}}
+\item \href{#method-ISOImageryOperation-addObjective}{\code{ISOImageryOperation$addObjective()}}
+\item \href{#method-ISOImageryOperation-delObjective}{\code{ISOImageryOperation$delObjective()}}
+\item \href{#method-ISOImageryOperation-setPlan}{\code{ISOImageryOperation$setPlan()}}
+\item \href{#method-ISOImageryOperation-addSignificantEvent}{\code{ISOImageryOperation$addSignificantEvent()}}
+\item \href{#method-ISOImageryOperation-delSignificantEvent}{\code{ISOImageryOperation$delSignificantEvent()}}
+\item \href{#method-ISOImageryOperation-clone}{\code{ISOImageryOperation$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-setDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-setDescription}{}}}
+\subsection{Method \code{setDescription()}}{
+Set description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$setDescription(description, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{description}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-setCitation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-setCitation}{}}}
+\subsection{Method \code{setCitation()}}{
+Set citation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$setCitation(citation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{citation}}{object of class \link{ISOCitation}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-setIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-setIdentifier}{}}}
+\subsection{Method \code{setIdentifier()}}{
+Set identifier
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$setIdentifier(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{object of class \link{ISOMetaIdentifier} or \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-setStatus"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-setStatus}{}}}
+\subsection{Method \code{setStatus()}}{
+Set status
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$setStatus(status)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{status}}{object of class \link{ISOStatus} or any \link{character}
+among values returned by \code{ISOStatus$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-setType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-setType}{}}}
+\subsection{Method \code{setType()}}{
+Set type
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$setType(type)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{type}}{object of class \link{ISOImageryOperationType} or any \link{character}
+among values returned by \code{ISOImageryOperationType$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-setParentOperation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-setParentOperation}{}}}
+\subsection{Method \code{setParentOperation()}}{
+Set parent operation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$setParentOperation(operation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{operation}}{object of class \link{ISOImageryOperation}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-addChildOperation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-addChildOperation}{}}}
+\subsection{Method \code{addChildOperation()}}{
+Adds child operation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$addChildOperation(operation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{operation}}{object of class \link{ISOImageryOperation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-delChildOperation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-delChildOperation}{}}}
+\subsection{Method \code{delChildOperation()}}{
+Deletes child operation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$delChildOperation(operation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{operation}}{object of class \link{ISOImageryOperation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-addPlatform"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-addPlatform}{}}}
+\subsection{Method \code{addPlatform()}}{
+Adds platform
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$addPlatform(platform)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{platform}}{object of class \link{ISOImageryPlatform}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-delPlatform"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-delPlatform}{}}}
+\subsection{Method \code{delPlatform()}}{
+Deletes platform
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$delPlatform(platform)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{platform}}{object of class \link{ISOImageryPlatform}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-addObjective"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-addObjective}{}}}
+\subsection{Method \code{addObjective()}}{
+Adds objective
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$addObjective(objective)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{objective}}{object of class \link{ISOImageryObjective}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-delObjective"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-delObjective}{}}}
+\subsection{Method \code{delObjective()}}{
+Deletes objective
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$delObjective(objective)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{objective}}{object of class \link{ISOImageryObjective}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-setPlan"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-setPlan}{}}}
+\subsection{Method \code{setPlan()}}{
+Set plan
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$setPlan(plan)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{plan}}{object of class \link{ISOImageryPlan}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-addSignificantEvent"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-addSignificantEvent}{}}}
+\subsection{Method \code{addSignificantEvent()}}{
+Adds significative event
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$addSignificantEvent(event)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{event}}{object of class \link{ISOImageryEvent}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-delSignificantEvent"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-delSignificantEvent}{}}}
+\subsection{Method \code{delSignificantEvent()}}{
+Deletes significative event
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$delSignificantEvent(event)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{event}}{object of class \link{ISOImageryEvent}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

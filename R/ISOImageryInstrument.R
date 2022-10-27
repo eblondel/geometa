@@ -6,42 +6,6 @@
 #' @keywords ISO imagery platform
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery platform
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field citation [\code{list} of \code{\link{ISOCitation}}]
-#' @field identifier [\code{\link{ISOMetaIdentifier}}]
-#' @field type [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @field description [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @field mountedOn [\code{list} of \code{\link{ISOImageryPlatform}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryPlatform}}
-#'  }
-#'  \item{\code{addCitation(citation)}}{
-#'    Adds citation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{delCitation(citation)}}{
-#'    Deletes a citation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setIdentifier(identifier)}}{
-#'    Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{setType(type, locales)}}{
-#'    Sets a type (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets a description (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addPlatform(platform)}}{
-#'    Add a platform, object of class \code{\link{ISOImageryPlatform}}
-#'  }
-#'  \item{\code{delPlatform(platform)}}{
-#'    Deletes a platform, object of class \code{\link{ISOImageryPlatform}}
-#'  }
-#' } 
 #' 
 #' @examples
 #'    md <- ISOImageryInstrument$new()
@@ -63,22 +27,26 @@ ISOImageryInstrument <- R6Class("ISOImageryInstrument",
   ),
   public = list(
     
-    #+ citation [0..*]: ISOCitation
+    #'@field citation citation [0..*]: ISOCitation
     citation = list(),
-    #+ identifier [1..1]: ISOMetaIdentifier
+    #'@field identifier identifier [1..1]: ISOMetaIdentifier
     identifier = NULL,
-    #+ type [1..1]: character|ISOLocalisedCharacterString
+    #'@field type type [1..1]: character|ISOLocalisedCharacterString
     type = NULL,
-    #+ description [0..1]: character|ISOLocalisedCharacterString
+    #'@field description description [0..1]: character|ISOLocalisedCharacterString
     description = NULL,
-    #+ mountedOn [0..*]: ISOImageryPlatform
+    #'@field mountedOn mountedOn [0..*]: ISOImageryPlatform
     mountedOn = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #addCitation
+    #'@description Adds citation
+    #'@param citation object of class \link{ISOCitation}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addCitation = function(citation){
       if(!is(citation, "ISOCitation")){
         stop("The argument should be an object of class 'ISOCitation")
@@ -86,7 +54,9 @@ ISOImageryInstrument <- R6Class("ISOImageryInstrument",
       return(self$addListElement("citation", citation))
     },
     
-    #delCitation
+    #'@description Deletes citation
+    #'@param citation object of class \link{ISOCitation}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delCitation = function(citation){
       if(!is(citation, "ISOCitation")){
         stop("The argument should be an object of class 'ISOCitation")
@@ -94,7 +64,8 @@ ISOImageryInstrument <- R6Class("ISOImageryInstrument",
       return(self$delListElement("citation", citation))
     },
     
-    #setIdentifier
+    #'@description Set identifier
+    #'@param identifier object of class \link{ISOMetaIdentifier} or \link{character}
     setIdentifier = function(identifier){
       if(is(identifier, "character")){
         identifier <- ISOMetaIdentifier$new(code = identifier)
@@ -106,7 +77,9 @@ ISOImageryInstrument <- R6Class("ISOImageryInstrument",
       self$identifier <- identifier
     },
  
-    #setType
+    #'@description Set type
+    #'@param type type
+    #'@param locales list of localized texts. Default is \code{NULL}
     setType = function(type, locales = NULL){
       if(!is.null(locales)){
         type <- self$createLocalisedProperty(type, locales)
@@ -114,7 +87,9 @@ ISOImageryInstrument <- R6Class("ISOImageryInstrument",
       self$type <- type
     },    
        
-    #setDescription
+    #'@description Set description
+    #'@param description description
+    #'@param locales list of localized texts. Default is \code{NULL}
     setDescription = function(description, locales = NULL){
       if(!is.null(locales)){
         description <- self$createLocalisedProperty(description, locales)
@@ -122,7 +97,9 @@ ISOImageryInstrument <- R6Class("ISOImageryInstrument",
       self$description <- description
     },
     
-    #addPlatform
+    #'@description Adds platform
+    #'@param platform object of class \link{ISOImageryPlatform}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addPlatform = function(platform){
       if(!is(platform, "ISOImageryPlatform")){
         stop("The argument should be an object of class 'ISOImageryPlatform'")
@@ -130,7 +107,9 @@ ISOImageryInstrument <- R6Class("ISOImageryInstrument",
       return(self$addListElement("mountedOn", platform))
     },
     
-    #delPlatform
+    #'@description Deletes platform
+    #'@param platform object of class \link{ISOImageryPlatform}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delPlatform = function(platform){
       if(!is(platform, "ISOImageryPlatform")){
         stop("The argument should be an object of class 'ISOImageryPlatform'")

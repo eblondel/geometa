@@ -6,44 +6,6 @@
 #' @keywords ISO locale container
 #' @return Object of \code{\link{R6Class}} for modelling an ISO LocaleContainer
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field description [\code{\link{character}}] description
-#' @field locale [\code{\link{ISOLocale}}] locale
-#' @field date [\code{\link{ISODate}}] date(s)
-#' @field responsibleParty [\code{\link{ISOResponsibleParty}}] responsible party
-#' @field localisedString [\code{\link{character}}] localised string(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOLocaleContainer}}
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets the process step description. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setLocale(locale)}}{
-#'    Sets the locale, object of class \code{\link{ISOLocale}}
-#'  }
-#'  \item{\code{addDate(date)}}{
-#'    Add a date, object of class \code{\link{ISODate}}
-#'  }
-#'  \item{\code{delDate(date)}}{
-#'    Deletes a date, object of class \code{\link{ISODate}}
-#'  }
-#'  \item{\code{addResponsibleParty(responsibleParty)}}{
-#'    Add a responsible party, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{delResponsibleParty(responsibleParty)}}{
-#'    Deletes a responsible party, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{addLocalisedString(string)}}{
-#'    Adds a localised string
-#'  }
-#'  \item{\code{delLocalisedString(string)}}{
-#'    Deletes a localised string
-#'  }
-#' }
 #'   
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata
@@ -58,22 +20,26 @@ ISOLocaleContainer <- R6Class("ISOLocaleContainer",
   ),
   public = list(
     
-    #description [1..1]
+    #'@field description description [1..1]
     description = NULL,
-    #locale [1..1]
+    #'@field locale locale [1..1]
     locale = NULL,
-    #date [1..*]
+    #'@field date date [1..*]
     date = list(),
-    #responsibleParty [1..*]
+    #'@field responsibleParty responsibleParty [1..*]
     responsibleParty = list(),
-    #localisedString [1..*]
+    #'@field localisedString localisedString [1..*]
     localisedString = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setDescription
+    #'@description Set description
+    #'@param description description
+    #'@param locales list of localized texts. Default is \code{NULL}
     setDescription = function(description, locales = NULL){
       self$description <- as.character(description)
       if(!is.null(locales)){
@@ -81,7 +47,8 @@ ISOLocaleContainer <- R6Class("ISOLocaleContainer",
       }
     },
     
-    #setLocale
+    #'@description Set locale
+    #'@param locale object of class \link{ISOLocale}
     setLocale = function(locale){
       if(!is(locale, "ISOLocale")){
         stop("The argument 'locale' should be an object of class 'ISOLocale'")
@@ -89,7 +56,9 @@ ISOLocaleContainer <- R6Class("ISOLocaleContainer",
       self$locale = locale
     },
     
-    #addDate
+    #'@description Adds date
+    #'@param date object of class \link{ISODate}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addDate = function(date){
       if(!is(date, "ISODate")){
         stop("The argument 'date' should be an object of class 'ISODate'")
@@ -97,7 +66,9 @@ ISOLocaleContainer <- R6Class("ISOLocaleContainer",
       return(self$addListElement("date", date))
     },
     
-    #delDate
+    #'@description Deletes date
+    #'@param date object of class \link{ISODate}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delDate = function(date){
       if(!is(date, "ISODate")){
         stop("The argument 'date' should be an object of class 'ISODate'")
@@ -105,7 +76,9 @@ ISOLocaleContainer <- R6Class("ISOLocaleContainer",
       return(self$delListElement("date", date))
     },
     
-    #addResponsibleParty
+    #'@description Adds responsible party
+    #'@param responsibleParty object of class \link{ISOResponsibleParty}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addResponsibleParty = function(responsibleParty){
       if(!is(responsibleParty, "ISOResponsibleParty")){
         stop("The argument 'responsibleParty' should be an object of class 'ISOResponsibleParty'")
@@ -113,7 +86,9 @@ ISOLocaleContainer <- R6Class("ISOLocaleContainer",
       return(self$addListElement("responsibleParty", responsibleParty))
     },
     
-    #delResponsibleParty
+    #'@description Deletes responsible party
+    #'@param responsibleParty object of class \link{ISOResponsibleParty}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delResponsibleParty = function(responsibleParty){
       if(!is(responsibleParty, "ISOResponsibleParty")){
         stop("The argument 'responsibleParty' should be an object of class 'ISOResponsibleParty'")
@@ -121,13 +96,17 @@ ISOLocaleContainer <- R6Class("ISOLocaleContainer",
       return(self$delListElement("responsibleParty", responsibleParty))
     },
     
-    #addLocalisedString
+    #'@description Adds localised string
+    #'@param string object of class \link{character}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addLocalisedString = function(string){
       str <- ISOLocalisedCharacterString$new(value = string)
       return(self$addListElement("localisedString", str))
     },
     
-    #delLocalisedString
+    #'@description Deletes localised string
+    #'@param string object of class \link{character}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delLocalisedString = function(string){
       str <- ISOLocalisedCharacterString$new(value = string)
       return(self$delListElement("localisedString", str))

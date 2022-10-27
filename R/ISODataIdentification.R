@@ -6,185 +6,6 @@
 #' @keywords ISO data identification
 #' @return Object of \code{\link{R6Class}} for modelling an ISO DataIdentification
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field spatialRepresentationType [\code{\link{ISOSpatialRepresentationType}}] spatial representation type
-#' @field spatialResolution [\code{\link{ISOResolution}}] spatial resolution(s)
-#' @field language [\code{\link{ISOLanguage}}] locale language(s)
-#' @field characterSet [\code{\link{ISOCharacterSet}}] character set
-#' @field topicCategory [\code{\link{ISOTopicCategory}}] topic categorie(s)
-#' @field environmentDescription [\code{\link{character}}] environment description
-#' @field extent [\code{\link{ISOExtent}}] extent(s)
-#' @field supplementalInformation [\code{\link{character}}] supplemental information
-#' 
-#' @section Inherited methods:
-#' \describe{
-#'  \item{\code{setCitation(citation)}}{
-#'    Sets an object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setAbstract(abstract, locales)}}{
-#'    Sets an abstract (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setPurpose(purpose, locales)}}{
-#'    Sets a purpose (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addCredit(credit, locales)}}{
-#'    Adds a credit (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{delCredit(credit, locales)}}{
-#'    Deletes a credit (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addStatus(status)}}{
-#'    Adds a status, as object of class "character" or class \code{\link{ISOStatus}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    progress status values \code{ISOStatus$values()}.
-#'  }
-#'  \item{\code{delStatus(status)}}{
-#'    Deletes a status, as object of class "character" or class \code{\link{ISOStatus}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    progress status values \code{ISOStatus$values()}.
-#'  }
-#'  \item{\code{addPointOfContact(pointOfContact)}}{
-#'    Adds an object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{delPointOfContact(pointOfContact)}}{
-#'    Deletes an object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{addResourceMaintenance(resourceMaintenance)}}{
-#'    Adds a resource maintenance information as object of class 
-#'    \code{\link{ISOMaintenanceInformation}}.
-#'  }
-#'  \item{\code{setResourceMaintenance(resourceMaintenance)}}{
-#'    Sets a resource maintenance information as object of class 
-#'    \code{\link{ISOMaintenanceInformation}}.
-#'  }
-#'  \item{\code{delResourceMaintenance(resourceMaintenance)}}{
-#'    Deletes a resource maintenance information as object of class 
-#'    \code{\link{ISOMaintenanceInformation}}.
-#'  }
-#'  \item{\code{addGraphicOverview(graphicOverview)}}{
-#'    Adds an object of class \code{\link{ISOBrowseGraphic}}
-#'  }
-#'  \item{\code{setGraphicOverview(graphicOverview)}}{
-#'    Sets an object of class \code{\link{ISOBrowseGraphic}}
-#'  }
-#'  \item{\code{delGraphicOverview(graphicOverview)}}{
-#'    Deletes an object of class \code{\link{ISOBrowseGraphic}}
-#'  }
-#'  \item{\code{addKeywords(keywords)}}{
-#'    Adds a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{setKeywords(keywords)}}{
-#'    Sets a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{delKeywords(keywords)}}{
-#'    Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Adds an object of class \code{\link{ISOLegalConstraints}}
-#'  }
-#'  \item{\code{setResourceConstraints(resourceConstraints)}}{
-#'    Sets an object of class \code{\link{ISOLegalConstraints}}
-#'  }
-#'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Deletes an object of class \code{\link{ISOLegalConstraints}}
-#'  }
-#' }
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISODataIdentification}}
-#'  }
-#'  \item{\code{addSpatialRepresentationType(spatialRepresentationType)}}{
-#'    Adds a spatial representation type, as object of class "character" or class
-#'    \code{\link{ISOSpatialRepresentationType}}. If an object of class "character" is 
-#'    specified, it must match the accepted values listed by 
-#'    \code{ISOSpatialRepresentationType$values()}.
-#'  }
-#'  \item{\code{setSpatialRepresentationType(spatialRepresentationType)}}{
-#'    Sets a spatial representation type, as object of class "character" or class
-#'    \code{\link{ISOSpatialRepresentationType}}. If an object of class "character" is 
-#'    specified, it must match the accepted values listed by 
-#'    \code{ISOSpatialRepresentationType$values()}.
-#'  }
-#'  \item{\code{delSpatialRepresentationType(spatialRepresentationType)}}{
-#'    Deletes a spatial representation type, as object of class "character" or class
-#'    \code{\link{ISOSpatialRepresentationType}}. If an object of class "character" is 
-#'    specified, it must match the accepted values listed by 
-#'    \code{ISOSpatialRepresentationType$values()}.
-#'  }
-#'  \item{\code{addSpatialResolution(resolution)}}{
-#'    Adds a spatial resolution, object of class \code{\link{ISOResolution}}
-#'  }
-#'  \item{\code{delSpatialResolution(resolution)}}{
-#'    Deletes a spatial resolution, object of class\code{\link{ISOResolution}}
-#'  }
-#'  \item{\code{addLanguage(locale)}}{
-#'    Adds a language, as object of class "character" or class \code{\link{ISOLanguage}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    language values \code{ISOLanguage$values()}.
-#'  }
-#'  \item{\code{setLanguage(locale)}}{
-#'    Sets a language, as object of class "character" or class \code{\link{ISOLanguage}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    language values \code{ISOLanguage$values()}.
-#'  }
-#'  \item{\code{delLanguage(locale)}}{
-#'    Deletes a language, as object of class "character" or class \code{ISOLanguage}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    language values \code{ISOLanguage$values()}.
-#'  }
-#'  \item{\code{addCharacterSet(charset)}}{
-#'    Adds a character set, as object of class "character" or class \code{\link{ISOCharacterSet}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    charset values \code{ISOCharacterSet$values()}.
-#'  }
-#'  \item{\code{setCharacterSet(charset)}}{
-#'    Sets a character set, as object of class "character" or class \code{\link{ISOCharacterSet}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    charset values \code{ISOCharacterSet$values()}.
-#'  }
-#'  \item{\code{delCharacterSet(charset)}}{
-#'    Deletes a character set, as object of class "character" or class \code{\link{ISOCharacterSet}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    charset values \code{ISOCharacterSet$values()}.
-#'  }
-#'  \item{\code{addTopicCategory(topicCategory)}}{
-#'    Adds a character set, as object of class "character" or class \code{\link{ISOTopicCategory}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    topic category values \code{ISOTopicCategory$values()}.
-#'  }
-#'  \item{\code{setTopicCategory(topicCategory)}}{
-#'    Sets a character set, as object of class "character" or class \code{\link{ISOTopicCategory}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    topic category values \code{ISOTopicCategory$values()}.
-#'  }
-#'  \item{\code{delTopicCategory(topicCategory)}}{
-#'    Deletes a character set, as object of class "character" or class \code{\link{ISOTopicCategory}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    topic category values \code{ISOTopicCategory$values()}.
-#'  }
-#'  \item{\code{setEnvironmentDescription(environmentDescription)}}{
-#'    Sets the environment description
-#'  }
-#'  \item{\code{addExtent(extent)}}{
-#'    Adds an object of class \code{\link{ISOExtent}}.
-#'  }
-#'  \item{\code{setExtent(extent)}}{
-#'    Sets an object of class \code{\link{ISOExtent}}.
-#'  }
-#'  \item{\code{delExtent(extent)}}{
-#'    Deletes an object of class \code{\link{ISOExtent}}.
-#'  }
-#'  \item{\code{setSupplementalInformation(supplementalInformation, locales)}}{
-#'    Sets supplemental information (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples
 #'    #create dataIdentification
@@ -293,19 +114,23 @@ ISODataIdentification <- R6Class("ISODataIdentification",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     #+ spatialRepresentationType [0..*]: ISOSpatialRepresentationType
+     #'@field spatialRepresentationType spatialRepresentationType [0..*]: ISOSpatialRepresentationType
      spatialRepresentationType = list(),
-     #+ spatialResolution [0..*]: ISOResolution
+     #'@field spatialResolution spatialResolution [0..*]: ISOResolution
      spatialResolution = list(),
-     #+ language [1..*]: character
+     #'@field language language [1..*]: character
      language = list(),
-     #+ characterSet [0..*]: ISOCharacterSet
+     #'@field characterSet characterSet [0..*]: ISOCharacterSet
      characterSet = NULL,
-     #+ topicCategory [0..*]: ISOTopicCategory
+     #'@field topicCategory topicCategory [0..*]: ISOTopicCategory
      topicCategory = list(),
-     #+ extent [0..*]: ISOExtent
+     #'@field extent extent [0..*]: ISOExtent
      extent = list(),
+     #'@field supplementalInformation supplementalInformation
      supplementalInformation = NULL, 
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        
        #default values
@@ -316,7 +141,10 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        super$initialize(xml = xml, defaults = defaults)
      },
      
-     #addSpatialRepresentationType
+     #'@description Adds spatial representation type
+     #'@param spatialRepresentationType object of class \link{ISOSpatialRepresentationType} or
+     #'  any \link{character} among values returned by \code{ISOSpatialRepresentationType$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSpatialRepresentationType = function(spatialRepresentationType){
        if(!is(spatialRepresentationType, "ISOSpatialRepresentationType")){
          spatialRepresentationType <- ISOSpatialRepresentationType$new(value = spatialRepresentationType)
@@ -324,13 +152,20 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$addListElement("spatialRepresentationType", spatialRepresentationType))
      },
      
-     #setSpatialRepresentationType
+     #'@description Sets spatial representation type
+     #'@param spatialRepresentationType object of class \link{ISOSpatialRepresentationType} or
+     #'  any \link{character} among values returned by \code{ISOSpatialRepresentationType$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setSpatialRepresentationType = function(spatialRepresentationType){
+        warning("'setSpatialRepresentationType' method is depecrated, please use 'addSpatialRepresentationType'!")
         self$spatialRepresentationType <- list()
         return(self$addSpatialRepresentationType(spatialRepresentationType))
      },
      
-     #delSpatialRepresentationType
+     #'@description Deletes spatial representation type
+     #'@param spatialRepresentationType object of class \link{ISOSpatialRepresentationType} or
+     #'  any \link{character} among values returned by \code{ISOSpatialRepresentationType$values()}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSpatialRepresentationType = function(spatialRepresentationType){
        if(!is(spatialRepresentationType, "ISOSpatialRepresentationType")){
          spatialRepresentationType <- ISOSpatialRepresentationType$new(value = spatialRepresentationType)
@@ -338,7 +173,9 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$delListElement("spatialRepresentationType", spatialRepresentationType))
      },
      
-     #addSpatialResolution
+     #'@description Adds spatial resolution
+     #'@param resolution object of class \link{ISOResolution}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSpatialResolution = function(resolution){
        if(!is(resolution, "ISOResolution")){
          resolution <- ISOResolution$new(value = resolution)
@@ -346,7 +183,9 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$addListElement("spatialResolution", resolution))
      },
      
-     #delSpatialResolution
+     #'@description Deletes spatial resolution
+     #'@param resolution object of class \link{ISOResolution}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSpatialResolution = function(resolution){
        if(!is(resolution, "ISOResolution")){
          resolution <- ISOResolution$new(value = resolution)
@@ -354,7 +193,10 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$delListElement("spatialResolution", resolution))
      },
      
-     #addLanguage
+     #'@description Adds language
+     #'@param locale object of class \link{ISOLanguage} or any \link{character}
+     #'  value among those returned by \code{ISOLanguage$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addLanguage = function(locale){
        if(is(locale, "character")){
          locale <- ISOLanguage$new(value = locale)
@@ -362,13 +204,20 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$addListElement("language", locale))
      },
      
-     #setLanguage
+     #'@description Sets language
+     #'@param locale object of class \link{ISOLanguage} or any \link{character}
+     #'  value among those returned by \code{ISOLanguage$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setLanguage = function(locale){
-       self$language <- list()
-       return(self$addLanguage(locale))
+        warning("Method 'setLanguage' is deprecated, please use 'addLanguage'!")
+        self$language <- list()
+        return(self$addLanguage(locale))
      },
      
-     #delLanguage
+     #'@description Deletes language
+     #'@param locale object of class \link{ISOLanguage} or any \link{character}
+     #'  value among those returned by \code{ISOLanguage$values()}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delLanguage = function(locale){
        if(is(locale, "character")){
          locale <- ISOLanguage$new(value = locale)
@@ -376,7 +225,10 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$delListElement("language", locale))
      },
      
-     #addCharacterSet
+     #'@description Adds character set
+     #'@param charset object of class \link{ISOCharacterSet} or any \link{character}
+     #'  value among those returned by \code{ISOCharacterSet$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addCharacterSet = function(charset){
        if(!is(charset, "ISOCharacterSet")){
          charset <- ISOCharacterSet$new(value = charset)
@@ -384,13 +236,20 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$addListElement("characterSet", charset))
      },
      
-     #setCharacterSet
+     #'@description Sets character set
+     #'@param charset object of class \link{ISOCharacterSet} or any \link{character}
+     #'  value among those returned by \code{ISOCharacterSet$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setCharacterSet = function(charset){
-       self$characterSet <- list()
-       return(self$addCharacterSet(charset))
+        warning("Method 'setCharacterSet' is deprecated, please use 'addCharacterSet'!")
+        self$characterSet <- list()
+        return(self$addCharacterSet(charset))
      },
      
-     #delCharacterSet
+     #'@description Deletes character set
+     #'@param charset object of class \link{ISOCharacterSet} or any \link{character}
+     #'  value among those returned by \code{ISOCharacterSet$values()}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delCharacterSet = function(charset){
        if(!is(charset, "ISOCharacterSet")){
          charset <- ISOCharacterSet$new(value = charset)
@@ -398,7 +257,10 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$delListElement("characterSet", charset))
      },
      
-     #addTopicCategory
+     #'@description Adds topic category
+     #'@param topicCategory object of class \link{ISOTopicCategory} or any \link{character}
+     #'  value among those returned by \code{ISOTopicCategory$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addTopicCategory = function(topicCategory){
        if(!is(topicCategory, "ISOTopicCategory")){
          topicCategory <- ISOTopicCategory$new(value = topicCategory)
@@ -406,13 +268,20 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$addListElement("topicCategory", topicCategory))
      },
      
-     #setTopicCategory
+     #'@description Sets topic category
+     #'@param topicCategory object of class \link{ISOTopicCategory} or any \link{character}
+     #'  value topicCategory those returned by \code{ISOTopicCategory$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setTopicCategory = function(topicCategory){
-       self$topicCategory = list()
-       return(self$addTopicCategory(topicCategory))
+        warning("Method 'setTopicCategory' is deprecated, please use 'addTopicCategory'!")
+        self$topicCategory = list()
+        return(self$addTopicCategory(topicCategory))
      },
      
-     #delTopicCategory
+     #'@description Deletes topic category
+     #'@param topicCategory object of class \link{ISOTopicCategory} or any \link{character}
+     #'  value among those returned by \code{ISOTopicCategory$values()}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delTopicCategory = function(topicCategory){
        if(!is(topicCategory, "ISOTopicCategory")){
          topicCategory <- ISOTopicCategory$new(value = topicCategory)
@@ -420,7 +289,9 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$delListElement("topicCategory", topicCategory))
      },
      
-     #addExtent
+     #'@description Adds extent
+     #'@param extent object of class \link{ISOExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addExtent = function(extent){
        if(!is(extent, "ISOExtent")){
          stop("The argument should be a 'ISOExtent' object")
@@ -428,13 +299,18 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$addListElement("extent", extent))
      },
      
-     #setExtent
+     #'@description Sets extent
+     #'@param extent object of class \link{ISOExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setExtent = function(extent){
+       warning("Method 'setExtent' is deprecated, please use 'addExtent'!")
        self$extent <- list()
        return(self$addExtent(extent))
      },
      
-     #delExtent
+     #'@description Deletes extent
+     #'@param extent object of class \link{ISOExtent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delExtent = function(extent){
        if(!is(extent, "ISOExtent")){
          stop("The argument should be a 'ISOExtent' object")
@@ -442,7 +318,9 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        return(self$delListElement("extent", extent))
      },
      
-     #setSupplementalInformation
+     #'@description Set supplemental information
+     #'@param supplementalInformation supplemental information
+     #'@param locales a list of localized information. Default is \code{NULL}
      setSupplementalInformation = function(supplementalInformation, locales = NULL){
        self$supplementalInformation = as.character(supplementalInformation)
        if(!is.null(locales)){

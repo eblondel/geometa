@@ -12,44 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO GridSpatialRepresentation
 }
 \description{
 ISOGridSpatialRepresentation
+
+ISOGridSpatialRepresentation
 }
-\section{Fields}{
-
-\describe{
-\item{\code{numberOfDimensions}}{[\code{\link{integer}}] number of dimensions}
-
-\item{\code{axisDimensionProperties}}{[\code{\link{ISODimension}}] dimension(s)}
-
-\item{\code{cellGeometry}}{[\code{\link{ISOCellGeometry}}]}
-
-\item{\code{transformationParameterAvailability}}{[\code{\link{logical}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOGridSpatialRepresentation}}
- }
- \item{\code{setNumberOfDimensions}}{
-   Sets the number of dimensions (value of class \code{integer})
- }
- \item{\code{addDimension(dimension)}}{
-   Adds a dimension. Object of class \code{\link{ISODimension}}
- }
- \item{\code{delDimension(dimension)}}{
-   Deletes a dimension;
- }
- \item{\code{setCellGeometry(cellGeometry)}}{
-   Sets the cell geometry. Object of class \code{\link{ISOCellGeometry}} or any value
-   from \code{ISOCellGeometry$values()}
- }
- \item{\code{setTransformationParameterAvailability(availability)}}{
-   Sets the transformation parameter availability
- }
-}
-}
-
 \examples{
   md <- ISOGridSpatialRepresentation$new()
   md$setNumberOfDimensions(1)
@@ -72,3 +37,193 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{grid}
 \keyword{representation}
 \keyword{spatial}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOSpatialRepresentation]{geometa::ISOSpatialRepresentation}} -> \code{ISOGridSpatialRepresentation}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{numberOfDimensions}}{numberOfDimensions [1..1]: integer}
+
+\item{\code{axisDimensionProperties}}{axisDimensionProperties [1..*] : ISODimension}
+
+\item{\code{cellGeometry}}{cellGeometry [1..1]: ISOCellGeometry}
+
+\item{\code{transformationParameterAvailability}}{transformationParameterAvailability : logical}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOGridSpatialRepresentation-new}{\code{ISOGridSpatialRepresentation$new()}}
+\item \href{#method-ISOGridSpatialRepresentation-setNumberOfDimensions}{\code{ISOGridSpatialRepresentation$setNumberOfDimensions()}}
+\item \href{#method-ISOGridSpatialRepresentation-addDimension}{\code{ISOGridSpatialRepresentation$addDimension()}}
+\item \href{#method-ISOGridSpatialRepresentation-delDimension}{\code{ISOGridSpatialRepresentation$delDimension()}}
+\item \href{#method-ISOGridSpatialRepresentation-setCellGeometry}{\code{ISOGridSpatialRepresentation$setCellGeometry()}}
+\item \href{#method-ISOGridSpatialRepresentation-setTransformationParameterAvailability}{\code{ISOGridSpatialRepresentation$setTransformationParameterAvailability()}}
+\item \href{#method-ISOGridSpatialRepresentation-clone}{\code{ISOGridSpatialRepresentation$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGridSpatialRepresentation-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGridSpatialRepresentation-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGridSpatialRepresentation$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGridSpatialRepresentation-setNumberOfDimensions"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGridSpatialRepresentation-setNumberOfDimensions}{}}}
+\subsection{Method \code{setNumberOfDimensions()}}{
+Set number of dimensions
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGridSpatialRepresentation$setNumberOfDimensions(numberOfDimensions)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{numberOfDimensions}}{object of class \link{integer}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGridSpatialRepresentation-addDimension"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGridSpatialRepresentation-addDimension}{}}}
+\subsection{Method \code{addDimension()}}{
+Adds dimension
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGridSpatialRepresentation$addDimension(dimension)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dimension}}{object of class \link{ISODimension}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGridSpatialRepresentation-delDimension"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGridSpatialRepresentation-delDimension}{}}}
+\subsection{Method \code{delDimension()}}{
+Deletes dimension
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGridSpatialRepresentation$delDimension(dimension)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dimension}}{object of class \link{ISODimension}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGridSpatialRepresentation-setCellGeometry"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGridSpatialRepresentation-setCellGeometry}{}}}
+\subsection{Method \code{setCellGeometry()}}{
+Set cell geometry
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGridSpatialRepresentation$setCellGeometry(cellGeometry)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{cellGeometry}}{object of class \link{ISOCellGeometry} or any \link{character}
+among values returned by \link{ISOCellGeometry$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGridSpatialRepresentation-setTransformationParameterAvailability"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGridSpatialRepresentation-setTransformationParameterAvailability}{}}}
+\subsection{Method \code{setTransformationParameterAvailability()}}{
+Set transformation parameter availability
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGridSpatialRepresentation$setTransformationParameterAvailability(
+  availability
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{availability}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGridSpatialRepresentation-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGridSpatialRepresentation-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGridSpatialRepresentation$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

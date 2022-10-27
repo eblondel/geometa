@@ -6,13 +6,6 @@
 #' @keywords ISO imagery sensor type
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery sensor type
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOImagerySensorType}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   md <- ISOImagerySensorType$new()
@@ -29,7 +22,10 @@ ISOImagerySensorType <- R6Class("ISOImagerySensorType",
      xmlNamespacePrefix = "GMI"
    ),
    public = list(
-     initialize = function(xml = NULL){
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }
    )                        

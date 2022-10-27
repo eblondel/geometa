@@ -6,15 +6,6 @@
 #' @keywords ISO record
 #' @return Object of \code{\link{R6Class}} for modelling an ISORecord
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value [\code{\link{character}}] record
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an ISORecord
-#'  }
-#' }
 #' 
 #' @references
 #'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
@@ -28,7 +19,12 @@ ISORecord <- R6Class("ISORecord",
       xmlNamespacePrefix = "GCO"
     ),
     public = list(
+      #'@field value value
       value = NA,
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param value value
       initialize = function(xml = NULL, value){
         super$initialize(xml = xml)
         if(is.null(xml)){

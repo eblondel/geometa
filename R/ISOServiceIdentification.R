@@ -6,84 +6,6 @@
 #' @keywords ISO service identification
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods inherited from \code{\link{ISOIdentification}}:
-#' \describe{
-#'  \item{\code{setCitation(citation)}}{
-#'    Sets an object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setAbstract(abstract, locales)}}{
-#'    Sets an abstract (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setPurpose(purpose, locales)}}{
-#'    Sets a purpose (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addCredit(credit, locales)}}{
-#'    Adds a credit (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{delCredit(credit, locales)}}{
-#'    Deletes a credit (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addStatus(status)}}{
-#'    Adds a status, as object of class "character" or class \code{\link{ISOStatus}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    progress status values \code{ISOStatus$values()}.
-#'  }
-#'  \item{\code{delStatus(status)}}{
-#'    Deletes a status, as object of class "character" or class \code{\link{ISOStatus}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    progress status values \code{ISOStatus$values()}.
-#'  }
-#'  \item{\code{addPointOfContact(pointOfContact)}}{
-#'    Adds an object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{delPointOfContact(pointOfContact)}}{
-#'    Deletes an object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{addResourceMaintenance(resourceMaintenance)}}{
-#'    Adds a resource maintenance information as object of class 
-#'    \code{\link{ISOMaintenanceInformation}}.
-#'  }
-#'  \item{\code{setResourceMaintenance(resourceMaintenance)}}{
-#'    Sets a resource maintenance information as object of class 
-#'    \code{\link{ISOMaintenanceInformation}}.
-#'  }
-#'  \item{\code{delResourceMaintenance(resourceMaintenance)}}{
-#'    Deletes a resource maintenance information as object of class 
-#'    \code{\link{ISOMaintenanceInformation}}.
-#'  }
-#'  \item{\code{addGraphicOverview(graphicOverview)}}{
-#'    Adds an object of class \code{\link{ISOBrowseGraphic}}
-#'  }
-#'  \item{\code{setGraphicOverview(graphicOverview)}}{
-#'    Sets an object of class \code{\link{ISOBrowseGraphic}}
-#'  }
-#'  \item{\code{delGraphicOverview(graphicOverview)}}{
-#'    Deletes an object of class \code{\link{ISOBrowseGraphic}}
-#'  }
-#'  \item{\code{addKeywords(keywords)}}{
-#'    Adds a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{setKeywords(keywords)}}{
-#'    Sets a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{delKeywords(keywords)}}{
-#'    Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Adds an object of class \code{\link{ISOLegalConstraints}}
-#'  }
-#'  \item{\code{setResourceConstraints(resourceConstraints)}}{
-#'    Sets an object of class \code{\link{ISOLegalConstraints}}
-#'  }
-#'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Deletes an object of class \code{ISOLegalConstraints}
-#'  }
-#' }
 #' 
 #' @examples
 #'   #encoding
@@ -168,6 +90,9 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        defaults <- list(characterSet = ISOCharacterSet$new(value = "utf8"))
        super$initialize(xml = xml, defaults = defaults)
@@ -183,156 +108,6 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
 #' @keywords ISO service identification
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification
 #' @format \code{\link{R6Class}} object.
-#' 
-#' @field serviceType [\code{\link{character}}] the service type
-#' @field serviceTypeVersion [\code{\link{character}}] the service type version(s)
-#' @field accessProperties [\code{\link{ISOStandardOrderProcess}}] the access properties
-#' @field restrictions [\code{\link{ISOConstraints}}] restrictions applied to service
-#' @field keywords [\code{\link{ISOKeywords}}] service keywords
-#' @field extent [\code{\link{ISOExtent}}] service extent(s)
-#' @field coupledResource [\code{\link{ISOCoupledResource}}] the coupled resource
-#' @field couplingType [\code{\link{ISOCouplingType}}] the coupling type
-#' @field containsOperations [\code{\link{ISOOperationMetadata}}] the operation metadata
-#' @field operatesOn [\code{\link{ISODataIdentification}}] data identification on which service operates
-#'
-#' @section Methods inherited from \code{\link{ISOServiceIdentification}}:
-#' \describe{
-#'  \item{\code{setCitation(citation)}}{
-#'    Sets an object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setAbstract(abstract, locales)}}{
-#'    Sets an abstract (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setPurpose(purpose, locales)}}{
-#'    Sets a purpose (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addCredit(credit, locales)}}{
-#'    Adds a credit (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{delCredit(credit, locales)}}{
-#'    Deletes a credit (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addStatus(status)}}{
-#'    Adds a status, as object of class "character" or class \code{\link{ISOStatus}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    progress status values \code{ISOStatus$values()}.
-#'  }
-#'  \item{\code{delStatus(status)}}{
-#'    Deletes a status, as object of class "character" or class \code{\link{ISOStatus}}. If
-#'    an object of class "character" is specified, it must match the accepted
-#'    progress status values \code{ISOStatus$values()}.
-#'  }
-#'  \item{\code{addPointOfContact(pointOfContact)}}{
-#'    Adds an object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{delPointOfContact(pointOfContact)}}{
-#'    Deletes an object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{addResourceMaintenance(resourceMaintenance)}}{
-#'    Adds a resource maintenance information as object of class 
-#'    \code{\link{ISOMaintenanceInformation}}.
-#'  }
-#'  \item{\code{setResourceMaintenance(resourceMaintenance)}}{
-#'    Sets a resource maintenance information as object of class 
-#'    \code{\link{ISOMaintenanceInformation}}.
-#'  }
-#'  \item{\code{delResourceMaintenance(resourceMaintenance)}}{
-#'    Deletes a resource maintenance information as object of class 
-#'    \code{\link{ISOMaintenanceInformation}}.
-#'  }
-#'  \item{\code{addGraphicOverview(graphicOverview)}}{
-#'    Adds an object of class \code{\link{ISOBrowseGraphic}}
-#'  }
-#'  \item{\code{setGraphicOverview(graphicOverview)}}{
-#'    Sets an object of class \code{\link{ISOBrowseGraphic}}
-#'  }
-#'  \item{\code{delGraphicOverview(graphicOverview)}}{
-#'    Deletes an object of class \code{\link{ISOBrowseGraphic}}
-#'  }
-#'  \item{\code{addKeywords(keywords)}}{
-#'    Adds a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{setKeywords(keywords)}}{
-#'    Sets a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{delKeywords(keywords)}}{
-#'    Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Adds an object of class \code{\link{ISOLegalConstraints}}
-#'  }
-#'  \item{\code{setResourceConstraints(resourceConstraints)}}{
-#'    Sets an object of class \code{\link{ISOLegalConstraints}}
-#'  }
-#'  \item{\code{addResourceConstraints(resourceConstraints)}}{
-#'    Deletes an object of class \code{\link{ISOLegalConstraints}}
-#'  }
-#' }
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOSRVServiceIdentification}}
-#'  }
-#'  \item{\code{setServiceType(serviceType)}}{
-#'    Set the type of service
-#'  }
-#'  \item{\code{addServiceTypeVersion(version)}}{
-#'    Adds a service type version
-#'  }
-#'  \item{\code{delServiceTypeVersion(version)}}{
-#'    Deletes a service type version
-#'  }
-#'  \item{\code{setAccessProperties(accesProperties)}}{
-#'    Sets the access properties, as object of class  \code{\link{ISOStandardOrderProcess}}
-#'  }
-#'  \item{\code{setRestrictions(restrictions)}}{
-#'    Sets the restrictions associated to the service, as object of class \code{\link{ISOConstraints}}
-#'  }
-#'  \item{\code{addKeywords(keywords)}}{
-#'    Adds a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{setKeywords(keywords)}}{
-#'    Sets a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{delKeywords(keywords)}}{
-#'    Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
-#'  }
-#'  \item{\code{addExtent(extent)}}{
-#'    Adds an object of class \code{\link{ISOExtent}}.
-#'  }
-#'  \item{\code{setExtent(extent)}}{
-#'    Sets an object of class \code{\link{ISOExtent}}.
-#'  }
-#'  \item{\code{delExtent(extent)}}{
-#'    Deletes an object of class \code{\link{ISOExtent}}.
-#'  }
-#'  \item{\code{addCoupledResource(resource)}}{
-#'    Adds a coupled resource, object of class \code{\link{ISOCoupledResource}}
-#'  }
-#'  \item{\code{delCoupledResource(resource)}}{
-#'    Deletes a coupled resource, object of class \code{\link{ISOCoupledResource}}
-#'  }
-#'  \item{\code{setCouplingType(couplingType)}}{
-#'    Set the coupling type, object of class \code{character} values among following: "loose" "mixed" "tight"
-#'  }
-#'  \item{\code{addOperationMetadata(operationMetadata)}}{
-#'    Adds operation metadata, object of class \code{\link{ISOOperationMetadata}}
-#'  }
-#'  \item{\code{delOperationMetadata(operationMetadata)}}{
-#'    Deletes operation metadata, object of class \code{\link{ISOOperationMetadata}}
-#'  }
-#'  \item{\code{addOperatesOn(dataIdentification)}}{
-#'    Adds an operates on relationship, object of class \code{\link{ISODataIdentification}}
-#'  }
-#'  \item{\code{delOperatesOn(dataIdentification)}}{
-#'    Deletes an operates on relationship, object of class \code{\link{ISODataIdentification}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   #encoding
@@ -531,32 +306,35 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
   ),
   public = list(
    
-    #+ serviceType [1..1]: ISOGenericName
+    #'@field serviceType serviceType [1..1]: ISOGenericName
     serviceType = NULL,
-    #+ serviceTypeVersion [0..*]: character
+    #'@field serviceTypeVersion serviceTypeVersion [0..*]: character
     serviceTypeVersion = list(),
-    #+ accessProperties [0..1]: ISOStandardOrderProcess
+    #'@field accessProperties accessProperties [0..1]: ISOStandardOrderProcess
     accessProperties = NULL,
-    #+ restrictions [0..1]: ISOConstraints
+    #'@field restrictions restrictions [0..1]: ISOConstraints
     restrictions = NULL,
-    #+ keywords [0..*]: ISOKeywords
+    #'@field keywords keywords [0..*]: ISOKeywords
     keywords = list(),
-    #+ extent [0..*]: ISOExtent
+    #'@field extent extent [0..*]: ISOExtent
     extent = list(),
-    #+ coupledResource [0..*]: ISOCoupledResource
+    #'@field coupledResource coupledResource [0..*]: ISOCoupledResource
     coupledResource = list(),
-    #+ couplingType [1..1]: ISOCouplingType
+    #'@field couplingType couplingType [1..1]: ISOCouplingType
     couplingType = NULL,
-    #+ containsOperations [1..*]: ISOOperationMetadata
+    #'@field containsOperations containsOperations [1..*]: ISOOperationMetadata
     containsOperations = list(),
-    #+ operatesOn [0..*]: ISODataIdentification
+    #'@field operatesOn operatesOn [0..*]: ISODataIdentification
     operatesOn = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setServiceType
+    #'@description Set service type
+    #'@param serviceType object of class \link{ISOLocalName}, \link{ISOScopedName} or \link{character}
     setServiceType = function(serviceType){
       if(!inherits(serviceType, "ISOAbstractGenericName")){
         if(is(serviceType, "character")){
@@ -568,17 +346,22 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       self$serviceType <- serviceType
     },
     
-    #addServiceTypeVersion
+    #'@description Adds service type version
+    #'@param version version
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addServiceTypeVersion = function(version){
       return(self$addListElement("serviceTypeVersion", version))
     },
     
-    #delServiceTypeVersion
+    #'@description Deletes service type version
+    #'@param version version
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delServiceTypeVersion = function(version){
       return(self$delListElement("serviceTypeVersion", version))
     },
     
-    #setAccessProperties
+    #'@description Set access properties
+    #'@param accessProperties object of class \link{ISOStandardOrderProcess}
     setAccessProperties = function(accessProperties){
       if(!is(accessProperties, "ISOStandardOrderProcess")){
         stop("The argument value should be an object of class 'ISOStandardOrderProcess")
@@ -586,7 +369,8 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       self$accessProperties <- accessProperties
     },
     
-    #setRestrictions
+    #'@description Set restrictions
+    #'@param restrictions object of class \link{ISOConstraints}
     setRestrictions = function(restrictions){
       if(!is(restrictions, "ISOConstraints")){
         stop("The argument should be an object of class 'ISOConstraints'")
@@ -594,7 +378,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       self$restrictions <- restrictions
     },
     
-    #addKeywords
+    #'@description Adds keywords
+    #'@param keywords object of class \link{ISOKeywords}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addKeywords = function(keywords){
       if(!is(keywords, "ISOKeywords")){
         stop("The argument should be a 'ISOKeywords' object")
@@ -602,7 +388,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       return(self$addListElement("keywords", keywords))
     },
     
-    #delKeywords
+    #'@description Deletes keywords
+    #'@param keywords object of class \link{ISOKeywords}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delKeywords = function(keywords){
       if(!is(keywords, "ISOKeywords")){
         stop("The argument should be a 'ISOKeywords' object")
@@ -610,7 +398,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       return(self$delListElement("keywords", keywords))
     },
     
-    #addExtent
+    #'@description Adds extent
+    #'@param extent object of class \link{ISOExtent}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addExtent = function(extent){
       if(!is(extent, "ISOExtent")){
         stop("The argument should be a 'ISOExtent' object")
@@ -618,7 +408,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       return(self$addListElement("extent", extent))
     },
     
-    #delExtent
+    #'@description Deletes extent
+    #'@param extent object of class \link{ISOExtent}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delExtent = function(extent){
       if(!is(extent, "ISOExtent")){
         stop("The argument should be a 'ISOExtent' object")
@@ -626,7 +418,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       return(self$delListElement("extent", extent))
     },
     
-    #addCoupledResource
+    #'@description Adds coupled resource
+    #'@param resource object of class \link{ISOCoupledResource}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addCoupledResource = function(resource){
       if(!is(resource, "ISOCoupledResource")){
         stop("The argument should be an object of class 'ISOCoupledResource'")
@@ -634,7 +428,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       return(self$addListElement("coupledResource", resource))
     },
     
-    #delCoupledResource
+    #'@description Deletes coupled resource
+    #'@param resource object of class \link{ISOCoupledResource}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delCoupledResource = function(resource){
       if(!is(resource, "ISOCoupledResource")){
         stop("The argument should be an object of class 'ISOCoupledResource'")
@@ -642,7 +438,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       return(self$delListElement("coupledResource", resource))
     },
     
-    #setCouplingType
+    #'@description Set coupling type
+    #'@param couplingType object of class \link{ISOCouplingType} or any \link{character}
+    #' among values returned by \code{ISOCouplingType$values()}
     setCouplingType = function(couplingType){
       if(!is(couplingType, "ISOCouplingType")){
         couplingType <- ISOCouplingType$new(value = couplingType)
@@ -650,7 +448,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       self$couplingType <- couplingType
     },
     
-    #addOperationMetadata
+    #'@description Adds operation metadata
+    #'@param operationMetadata object of class \link{ISOOperationMetadata}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addOperationMetadata = function(operationMetadata){
       if(!is(operationMetadata, "ISOOperationMetadata")){
         stop("The argument value should be an object of class 'ISOOperationMetadata'")
@@ -658,7 +458,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       return(self$addListElement("containsOperations", operationMetadata))
     },
     
-    #delOperationMetadata
+    #'@description Deletes operation metadata
+    #'@param operationMetadata object of class \link{ISOOperationMetadata}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delOperationMetadata = function(operationMetadata){
       if(!is(operationMetadata, "ISOOperationMetadata")){
         stop("The argument value should be an object of class 'ISOOperationMetadata'")
@@ -666,7 +468,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       return(self$delListElement("containsOperations", operationMetadata))
     },
     
-    #addOperatesOn
+    #'@description Adds operates on
+    #'@param dataIdentification object of class \link{ISODataIdentification}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addOperatesOn = function(dataIdentification){
       if(!is(dataIdentification, "ISODataIdentification")){
         stop("The argument value should be an object of class 'ISODataIdentification'")
@@ -674,7 +478,9 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
       return(self$addListElement("operatesOn", dataIdentification))
     },
     
-    #delOperatesOn
+    #'@description Deletes operates on
+    #'@param dataIdentification object of class \link{ISODataIdentification}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delOperatesOn = function(dataIdentification){
       if(!is(dataIdentification, "ISODataIdentification")){
         stop("The argument value should be an object of class 'ISODataIdentification'")

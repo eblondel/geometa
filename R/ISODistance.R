@@ -28,6 +28,12 @@ ISODistance <- R6Class("ISODistance",
      xmlNamespacePrefix = "GCO"
    ),
    public = list(
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param value value
+      #'@param uom uom symbol of unit of measure used
+      #'@param useUomURI use uom URI. Default is \code{FALSE}
      initialize = function(xml = NULL, value, uom, useUomURI = FALSE){
        super$initialize(xml = xml, value = value, uom = uom, useUomURI = useUomURI)
      }

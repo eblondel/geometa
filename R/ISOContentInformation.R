@@ -6,13 +6,6 @@
 #' @keywords ISO content information
 #' @return Object of \code{\link{R6Class}} for modelling an ISOContentInformation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Abstract Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOContentInformation}}
-#'  }
-#' }
 #' 
 #' @note Abstract class. Used internally by \pkg{geometa}
 #' 
@@ -28,6 +21,9 @@ ISOContentInformation <- R6Class("ISOContentInformation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     }

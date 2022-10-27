@@ -6,33 +6,6 @@
 #' @keywords ISO StandardOrderProcess
 #' @return Object of \code{\link{R6Class}} for modelling an ISO StandardOrderProcess
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field fees [\code{\link{character}}]
-#' @field plannedAvailableDateTime [\code{\link{POSIXt}}] the datetime
-#' @field orderingInstructions [\code{\link{character}}] ordering instructions
-#' @field turnaround [\code{\link{character}}] turnaround
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOStandardOrderProcess}}
-#'  }
-#'  \item{\code{setFees(fees, locales)}}{
-#'    Sets fees, object of class \code{character}. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setPlannedAvailableDateTime(dateTime)}}{
-#'    Sets planned available datetime, object of class \code{c('POSIXct','POSIXlt')}
-#'  }
-#'  \item{\code{setOrderingInstructions(instructions, locales)}}{
-#'    Sets ordering instructions, object of class \code{character}. Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setTurnaround(turnaround, locales)}}{
-#'    Sets turnaround, object of class \code{character}. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOStandardOrderProcess$new()
@@ -55,20 +28,24 @@ ISOStandardOrderProcess <- R6Class("ISOStandardOrderProcess",
    ),
    public = list(
      
-     #+ fees [0..1]: character
+     #'@field fees fees [0..1]: character
      fees = NULL,
-     #+ plannedAvailableDateTime [0..1]: 'POSIXct/POSIXlt'
+     #'@field plannedAvailableDateTime plannedAvailableDateTime [0..1]: 'POSIXct/POSIXlt'
      plannedAvailableDateTime = NULL,
-     #+ orderingInstructions [0..1]: character
+     #'@field orderingInstructions orderingInstructions [0..1]: character
      orderingInstructions = NULL,
-     #+ turnaround [0..1]: character
+     #'@field turnaround turnaround [0..1]: character
      turnaround = NULL,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml)
      },
      
-     #setFees
+     #'@description Set fees
+     #'@param fees fees
+     #'@param locales list of localized texts. Default is \code{NULL}
      setFees = function(fees, locales = NULL){
        self$fees <- as.character(fees)
        if(!is.null(locales)){
@@ -76,7 +53,8 @@ ISOStandardOrderProcess <- R6Class("ISOStandardOrderProcess",
        }
      },
      
-     #setPlannedAvailableDateTime
+     #'@description Set planned available date time
+     #'@param dateTime object of class \link{POSIXct}
      setPlannedAvailableDateTime = function(dateTime){
        if(!all(class(dateTime)==c("POSIXct","POSIXt"))){
          stop("The argument value should be of class ('POSIXct','POSIXt')")
@@ -84,7 +62,9 @@ ISOStandardOrderProcess <- R6Class("ISOStandardOrderProcess",
        self$plannedAvailableDateTime <- dateTime
      },
      
-     #setOrderingInstructions
+     #'@description Set ordering instructions
+     #'@param instructions instructions
+     #'@param locales list of localized texts. Default is \code{NULL}
      setOrderingInstructions = function(instructions, locales = NULL){
        self$orderingInstructions <- as.character(instructions)
        if(!is.null(locales)){
@@ -92,7 +72,9 @@ ISOStandardOrderProcess <- R6Class("ISOStandardOrderProcess",
        }
      },
      
-     #setTurnaround
+     #'@description Set turnaround
+     #'@param turnaround turnaround
+     #'@param locales list of localized texts. Default is \code{NULL}
      setTurnaround = function(turnaround, locales = NULL){
        self$turnaround <- as.character(turnaround)
        if(!is.null(locales)){

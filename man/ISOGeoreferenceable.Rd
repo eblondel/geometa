@@ -12,71 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO Georeferenceable
 }
 \description{
 ISOGeoreferenceable
+
+ISOGeoreferenceable
 }
-\section{Fields}{
-
-\describe{
-\item{\code{controlPointAvailability}}{[\code{\link{logical}}]}
-
-\item{\code{orientationParameterAvailability}}{[\code{\link{logical}}]}
-
-\item{\code{orientationParameterDescription}}{[\code{\link{character}}]}
-
-\item{\code{georeferencedParameters}}{[\code{\link{ISORecord}}]}
-
-\item{\code{parameterCitation}}{[\code{\link{ISOCitation}}]}
-}}
-
-\section{Inherited Methods}{
-
-\describe{
- \item{\code{setNumberOfDimensions}}{
-   Sets the number of dimensions (value of class \code{integer})
- }
- \item{\code{addDimension(dimension)}}{
-   Adds a dimension. Object of class \code{\link{ISODimension}}
- }
- \item{\code{delDimension(dimension)}}{
-   Deletes a dimension
- }
- \item{\code{setCellGeometry(cellGeometry)}}{
-   Sets the cell geometry. Object of class \code{\link{ISOCellGeometry}} or any value
-   from \code{ISOCellGeometry$values()}
- }
- \item{\code{setTransformationParameterAvailability(availability)}}{
-   Sets the transformation parameter availability
- }
-}
-}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOGeoreferenceable}}
- }
- \item{\code{setControlPointAvailability(availability)}}{
-   Sets the control point availability. TRUE/FALSE
- }
- \item{\code{setOrientationParameterAvailability(availability)}}{
-   Sets the orientation parameter availability. TRUE/FALSE
- }
- \item{\code{setOrientationParameterDescription(description, locales)}}{
-   Sets the orientation parameter description. Locale names can be specified
-    as \code{list} with the \code{locales} argument.
- }
- \item{\code{setGeoreferencedParameters(record)}}{
-   Sets the georeferenced parameter (object of class \code{\link{ISORecord}})
- }
- \item{\code{addParameterCitation(citation)}}{
-   Adds a parameter citation, object of class \code{\link{ISOCitation}}
- }
- \item{\code{delParameterCitation(citation)}}{
-   Deletes a parameter citation, object of class \code{\link{ISOCitation}}
- }
-}
-}
-
 \examples{
   md <- ISOGeoreferenceable$new()
   
@@ -112,3 +50,220 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{grid}
 \keyword{representation}
 \keyword{spatial}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOSpatialRepresentation]{geometa::ISOSpatialRepresentation}} -> \code{\link[geometa:ISOGridSpatialRepresentation]{geometa::ISOGridSpatialRepresentation}} -> \code{ISOGeoreferenceable}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{controlPointAvailability}}{controlPointAvailability: logical}
+
+\item{\code{orientationParameterAvailability}}{orientationParameterAvailability : logical}
+
+\item{\code{orientationParameterDescription}}{orientationParameterDescription [0..1] : character}
+
+\item{\code{georeferencedParameters}}{georeferencedParameters : ISORecord}
+
+\item{\code{parameterCitation}}{parameterCitation [0..*] : ISOCitation}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOGeoreferenceable-new}{\code{ISOGeoreferenceable$new()}}
+\item \href{#method-ISOGeoreferenceable-setControlPointAvailability}{\code{ISOGeoreferenceable$setControlPointAvailability()}}
+\item \href{#method-ISOGeoreferenceable-setOrientationParameterAvailability}{\code{ISOGeoreferenceable$setOrientationParameterAvailability()}}
+\item \href{#method-ISOGeoreferenceable-setOrientationParameterDescription}{\code{ISOGeoreferenceable$setOrientationParameterDescription()}}
+\item \href{#method-ISOGeoreferenceable-setGeoreferencedParameters}{\code{ISOGeoreferenceable$setGeoreferencedParameters()}}
+\item \href{#method-ISOGeoreferenceable-addParameterCitation}{\code{ISOGeoreferenceable$addParameterCitation()}}
+\item \href{#method-ISOGeoreferenceable-delParameterCitation}{\code{ISOGeoreferenceable$delParameterCitation()}}
+\item \href{#method-ISOGeoreferenceable-clone}{\code{ISOGeoreferenceable$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="addDimension"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-addDimension'><code>geometa::ISOGridSpatialRepresentation$addDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="delDimension"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-delDimension'><code>geometa::ISOGridSpatialRepresentation$delDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="setCellGeometry"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-setCellGeometry'><code>geometa::ISOGridSpatialRepresentation$setCellGeometry()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="setNumberOfDimensions"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-setNumberOfDimensions'><code>geometa::ISOGridSpatialRepresentation$setNumberOfDimensions()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="setTransformationParameterAvailability"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-setTransformationParameterAvailability'><code>geometa::ISOGridSpatialRepresentation$setTransformationParameterAvailability()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeoreferenceable-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeoreferenceable-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeoreferenceable$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeoreferenceable-setControlPointAvailability"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeoreferenceable-setControlPointAvailability}{}}}
+\subsection{Method \code{setControlPointAvailability()}}{
+Set control point availability
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeoreferenceable$setControlPointAvailability(availability)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{availability}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeoreferenceable-setOrientationParameterAvailability"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeoreferenceable-setOrientationParameterAvailability}{}}}
+\subsection{Method \code{setOrientationParameterAvailability()}}{
+Set orientation parameter availability
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeoreferenceable$setOrientationParameterAvailability(availability)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{availability}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeoreferenceable-setOrientationParameterDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeoreferenceable-setOrientationParameterDescription}{}}}
+\subsection{Method \code{setOrientationParameterDescription()}}{
+Set orientation parameter description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeoreferenceable$setOrientationParameterDescription(
+  description,
+  locales = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{description}
+
+\item{\code{locales}}{list of localized descriptions. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeoreferenceable-setGeoreferencedParameters"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeoreferenceable-setGeoreferencedParameters}{}}}
+\subsection{Method \code{setGeoreferencedParameters()}}{
+Set georeferenced parameters
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeoreferenceable$setGeoreferencedParameters(record)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{record}}{object of class \link{ISORecord}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeoreferenceable-addParameterCitation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeoreferenceable-addParameterCitation}{}}}
+\subsection{Method \code{addParameterCitation()}}{
+Adds parameter citation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeoreferenceable$addParameterCitation(citation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{citation}}{object of class \link{ISOCitation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeoreferenceable-delParameterCitation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeoreferenceable-delParameterCitation}{}}}
+\subsection{Method \code{delParameterCitation()}}{
+Deletes parameter citation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeoreferenceable$delParameterCitation(citation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{citation}}{object of class \link{ISOCitation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeoreferenceable-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeoreferenceable-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeoreferenceable$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

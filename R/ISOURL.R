@@ -6,18 +6,6 @@
 #' @keywords ISO URL
 #' @return Object of \code{\link{R6Class}} for modelling an ISOURL
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value [\code{\link{character}}] the url
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOURL}}
-#'  }
-#'  \item{\code{setUrl(url)}}{
-#'    Set the url
-#'  }
-#' }
 #' 
 #' @note Class used by geometa internal XML decoder/encoder
 #' 
@@ -33,7 +21,12 @@ ISOURL <- R6Class("ISOURL",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field value value
     value = NA,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml)
       if(is.null(xml)){
@@ -41,6 +34,8 @@ ISOURL <- R6Class("ISOURL",
       }
     },
     
+    #'@description Set URL
+    #'@param url url
     setUrl = function(url){
       self$value <- url
     }

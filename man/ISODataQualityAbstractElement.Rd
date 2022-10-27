@@ -12,72 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISODataQualityAbstractElement
 }
 \description{
 ISODataQualityAbstractElement
+
+ISODataQualityAbstractElement
 }
-\section{Fields}{
-
-\describe{
-\item{\code{nameOfMeasure}}{[\code{\link{character}}] measure name}
-
-\item{\code{measureIdentification}}{[\code{\link{ISOMetaIdentifier}}] measure identification}
-
-\item{\code{measureDescription}}{[\code{\link{character}}] measure description}
-
-\item{\code{evaluationMethodType}}{[\code{\link{ISOEvaluationMethodType}}] measure evaluation method type}
-
-\item{\code{evaluationMethodDescription}}{[\code{\link{character}}] measure evaluation method description}
-
-\item{\code{evaluationProcedure}}{[\code{\link{character}}] evaluation procedure}
-
-\item{\code{dateTime}}{[\code{\link{POSIXt}}] dateTime}
-
-\item{\code{result}}{[\code{\link{ISOConformanceResult}}] conformance result(s)}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an ISODataQuality
- }
- \item{\code{addNameOfMeasure(name, locales)}}{
-   Add name. Locale names can be specified as \code{list} with 
-   the \code{locales} argument.
- }
- \item{\code{delNameOfMeasure(name, locales)}}{
-   Deletes name. Locale names can be  specified as \code{list} with 
-   the \code{locales} argument. Local names should match those of 
-   the name to be deleted, otherwise nothing will be deleted.
- }
- \item{\code{setMeasureIdentification(identification)}}{
-   Sets measure identifier, an object of class \code{ISOMetaIdentifier}
- }
- \item{\code{setMeasureDescription(description, locales)}}{
-   Sets measure description. Locale names can be specified as \code{list} with 
-   the \code{locales} argument.
- }
- \item{\code{setEvaluationMethodType(type)}}{
-   Sets the type of evaluation method, an object of class \code{ISOEvaluationMethodType}
-   or any \code{character} value among code{ISOEvaluationMethodType$values()}
- }
- \item{\code{setEvaluationMethodDescription(description, loales)}}{
-   Sets the description of evaluation method. Locale names can be specified 
-   as \code{list} with the \code{locales} argument.
- }
- \item{\code{setEvaluationMethodProcedure(procedure)}}{
-   Sets the procedure as an object of class \code{ISOCitation}
- }
- \item{\code{setDateTime(dateTime)}}{
-   Sets datetime, object class 'POSIXct'/'POSIXt'
- }
- \item{\code{addResult(result)}}{
-   Sets conformance result, object of class \code{ISOConformanceResult}
- }
- \item{\code{delResult(result)}}{
-   Deletes conformance result, object of class \code{ISOConformanceResult}
- }
-}
-}
-
 \references{
 ISO 19115:2003 - Geographic information -- Metadata
 }
@@ -89,3 +26,309 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{data}
 \keyword{element}
 \keyword{quality}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISODataQualityAbstractElement}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{nameOfMeasure}}{nameOfMeasure [0..*]: character}
+
+\item{\code{measureIdentification}}{measureIdentification [0..1]: ISOMetaIdentifier}
+
+\item{\code{measureDescription}}{measureDescription [0..1]: character}
+
+\item{\code{evaluationMethodType}}{evaluationMethodType [0..1]: ISOEvaluationMethodType}
+
+\item{\code{evaluationMethodDescription}}{evaluationMethodDescription [0..1]: character}
+
+\item{\code{evaluationProcedure}}{evaluationProcedure [0..1]: ISOCitation}
+
+\item{\code{dateTime}}{dateTime [0..1]: ISODateTime}
+
+\item{\code{result}}{result [1..2]: ISOConformanceResult}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISODataQualityAbstractElement-new}{\code{ISODataQualityAbstractElement$new()}}
+\item \href{#method-ISODataQualityAbstractElement-addNameOfMeasure}{\code{ISODataQualityAbstractElement$addNameOfMeasure()}}
+\item \href{#method-ISODataQualityAbstractElement-delNameOfMeasure}{\code{ISODataQualityAbstractElement$delNameOfMeasure()}}
+\item \href{#method-ISODataQualityAbstractElement-setMeasureIdentification}{\code{ISODataQualityAbstractElement$setMeasureIdentification()}}
+\item \href{#method-ISODataQualityAbstractElement-setMeasureDescription}{\code{ISODataQualityAbstractElement$setMeasureDescription()}}
+\item \href{#method-ISODataQualityAbstractElement-setEvaluationMethodType}{\code{ISODataQualityAbstractElement$setEvaluationMethodType()}}
+\item \href{#method-ISODataQualityAbstractElement-setEvaluationMethodDescription}{\code{ISODataQualityAbstractElement$setEvaluationMethodDescription()}}
+\item \href{#method-ISODataQualityAbstractElement-setEvaluationProcedure}{\code{ISODataQualityAbstractElement$setEvaluationProcedure()}}
+\item \href{#method-ISODataQualityAbstractElement-setDateTime}{\code{ISODataQualityAbstractElement$setDateTime()}}
+\item \href{#method-ISODataQualityAbstractElement-addResult}{\code{ISODataQualityAbstractElement$addResult()}}
+\item \href{#method-ISODataQualityAbstractElement-delResult}{\code{ISODataQualityAbstractElement$delResult()}}
+\item \href{#method-ISODataQualityAbstractElement-clone}{\code{ISODataQualityAbstractElement$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-addNameOfMeasure"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-addNameOfMeasure}{}}}
+\subsection{Method \code{addNameOfMeasure()}}{
+Adds name of measure
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$addNameOfMeasure(name, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+
+\item{\code{locales}}{list of localized names. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-delNameOfMeasure"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-delNameOfMeasure}{}}}
+\subsection{Method \code{delNameOfMeasure()}}{
+Deletes name of measure
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$delNameOfMeasure(name, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+
+\item{\code{locales}}{list of localized names. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-setMeasureIdentification"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setMeasureIdentification}{}}}
+\subsection{Method \code{setMeasureIdentification()}}{
+Set measure identification
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$setMeasureIdentification(identification)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identification}}{object of class \link{ISOMetaIdentifier}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-setMeasureDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setMeasureDescription}{}}}
+\subsection{Method \code{setMeasureDescription()}}{
+Set measure description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$setMeasureDescription(
+  description,
+  locales = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{object of class \link{character}}
+
+\item{\code{locales}}{list of localized descriptions. Default is \cod{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-setEvaluationMethodType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setEvaluationMethodType}{}}}
+\subsection{Method \code{setEvaluationMethodType()}}{
+Set evaluation method type
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$setEvaluationMethodType(type)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{type}}{object of class \link{ISOEvaluationMethodType} or any \link{character} value
+from those returned by \code{ISOEvaluationMethodType$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-setEvaluationMethodDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setEvaluationMethodDescription}{}}}
+\subsection{Method \code{setEvaluationMethodDescription()}}{
+Set evaluation method description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$setEvaluationMethodDescription(
+  description,
+  locales = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{description}
+
+\item{\code{locales}}{list of localized descriptions. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-setEvaluationProcedure"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setEvaluationProcedure}{}}}
+\subsection{Method \code{setEvaluationProcedure()}}{
+Set evaluation procedure
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$setEvaluationProcedure(procedure)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{procedure}}{procedure, object of class \link{ISOCitation}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-setDateTime"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setDateTime}{}}}
+\subsection{Method \code{setDateTime()}}{
+Set date time
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$setDateTime(dateTime)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dateTime}}{date time, object of class \link{POSIXct}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-addResult"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-addResult}{}}}
+\subsection{Method \code{addResult()}}{
+Adds result
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$addResult(result)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{result}}{object of class \link{ISOConformanceResult}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-delResult"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-delResult}{}}}
+\subsection{Method \code{delResult()}}{
+Deletes result
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$delResult(result)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{result}}{object of class \link{ISOConformanceResult}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

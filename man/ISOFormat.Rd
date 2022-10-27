@@ -12,55 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISOFormat
 }
 \description{
 ISOFormat
+
+ISOFormat
 }
-\section{Fields}{
-
-\describe{
-\item{\code{name}}{[\code{\link{character}}] format name}
-
-\item{\code{version}}{[\code{\link{character}}] format version}
-
-\item{\code{amendmentNumber}}{[\code{\link{character}}] format amendment number}
-
-\item{\code{specification}}{[\code{\link{character}}] format specification}
-
-\item{\code{fileDecompressionTechnique}}{[\code{\link{character}}] technique for file decompression}
-
-\item{\code{formatDistributor}}{[\code{\link{ISODistributor}}] format distributor}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an ISOFormat
- }
- \item{\code{setName(name, locales)}}{
-   Sets the format name. Locale names can be 
-   specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{setVersion(version)}}{
-   Sets the format version
- }
- \item{\code{setAmendmentNumber(amendmentNumber)}}{
-   Sets an admenment number
- }
- \item{\code{setSpecification(specification, locales)}}{
-   Sets the format specification. Locale names can be 
-   specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{setFileDecompressionTechnique(technique)}}{
-   Sets the file decompression technique
- }
- \item{\code{addDistributor(distributor)}}{
-   Adds a distributor, object of class \code{ISODistributor}
- }
- \item{\code{delDistributor(distributor)}}{
-   Deletes a distributor, object of class \code{ISODistributor}
- }
-}
-}
-
 \examples{
  md <- ISOFormat$new()
  md$setName("name")
@@ -77,3 +31,234 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{format}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOFormat}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{name}}{name : CharacterString}
+
+\item{\code{version}}{version : CharacterString}
+
+\item{\code{amendmentNumber}}{amendmentNumber [0..1] : CharacterString}
+
+\item{\code{specification}}{specification [0..1] : CharacterString}
+
+\item{\code{fileDecompressionTechnique}}{fileDecompressionTechnique [0..1] : CharacterString}
+
+\item{\code{FormatDistributor}}{FormatDistributor [0..*]: ISODistributor}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOFormat-new}{\code{ISOFormat$new()}}
+\item \href{#method-ISOFormat-setName}{\code{ISOFormat$setName()}}
+\item \href{#method-ISOFormat-setVersion}{\code{ISOFormat$setVersion()}}
+\item \href{#method-ISOFormat-setAmendmentNumber}{\code{ISOFormat$setAmendmentNumber()}}
+\item \href{#method-ISOFormat-setSpecification}{\code{ISOFormat$setSpecification()}}
+\item \href{#method-ISOFormat-setFileDecompressionTechnique}{\code{ISOFormat$setFileDecompressionTechnique()}}
+\item \href{#method-ISOFormat-addDistributor}{\code{ISOFormat$addDistributor()}}
+\item \href{#method-ISOFormat-delDistributor}{\code{ISOFormat$delDistributor()}}
+\item \href{#method-ISOFormat-clone}{\code{ISOFormat$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFormat-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFormat-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFormat$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFormat-setName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFormat-setName}{}}}
+\subsection{Method \code{setName()}}{
+Set name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFormat$setName(name, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+
+\item{\code{locales}}{list of localized names. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFormat-setVersion"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFormat-setVersion}{}}}
+\subsection{Method \code{setVersion()}}{
+Set version
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFormat$setVersion(version)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{version}}{version}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFormat-setAmendmentNumber"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFormat-setAmendmentNumber}{}}}
+\subsection{Method \code{setAmendmentNumber()}}{
+Set amendment number
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFormat$setAmendmentNumber(amendmentNumber)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{amendmentNumber}}{amendment number}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFormat-setSpecification"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFormat-setSpecification}{}}}
+\subsection{Method \code{setSpecification()}}{
+Set specification
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFormat$setSpecification(specification, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{specification}}{specification}
+
+\item{\code{locales}}{list of localized specifications. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFormat-setFileDecompressionTechnique"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFormat-setFileDecompressionTechnique}{}}}
+\subsection{Method \code{setFileDecompressionTechnique()}}{
+Set file decompression technique
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFormat$setFileDecompressionTechnique(technique)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{technique}}{technique}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFormat-addDistributor"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFormat-addDistributor}{}}}
+\subsection{Method \code{addDistributor()}}{
+Adds distributor
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFormat$addDistributor(distributor)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{distributor}}{object of class \link{ISODistributor}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFormat-delDistributor"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFormat-delDistributor}{}}}
+\subsection{Method \code{delDistributor()}}{
+Deletes distributor
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFormat$delDistributor(distributor)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{distributor}}{object of class \link{ISODistributor}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFormat-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFormat-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFormat$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

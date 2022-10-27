@@ -6,23 +6,6 @@
 #' @keywords ISO definition reference
 #' @return Object of \code{\link{R6Class}} for modelling an ISODefinitionReference
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field sourceIdentifier [\code{\link{character}}] source identifier
-#' @field definitionSource [\code{\link{ISODefinitionSource}}] definition source
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISODefinitionReference}}
-#'  }
-#'  \item{\code{setSourceIdentifier(identifier)}}{
-#'    Sets the source identifier as object of class \code{character}
-#'  }
-#'  \item{\code{setDefinitionSource(source)}}{
-#'    Sets the definition source as object of class \code{\link{ISODefinitionSource}} or
-#'    directly using a \code{\link{ISOCitation}}
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
@@ -37,21 +20,25 @@ ISODefinitionReference <- R6Class("ISODefinitionReference",
    ),
    public = list(
      
-     #+ sourceIdentifier [0..1]: character
+     #'@field sourceIdentifier sourceIdentifier [0..1]: character
      sourceIdentifier = NULL,
-     #+ definitionSource: ISODefinitionSource
+     #'@field definitionSource definitionSource: ISODefinitionSource
      definitionSource = NULL,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setSourceIdentifier
+     #'@description Set source identifier
+     #'@param identifier identifier
      setSourceIdentifier = function(identifier){
        self$sourceIdentifier <- identifier
      },
      
-     #setDefinitionSource
+     #'@description Set definition source
+     #'@param source object of class \link{ISODefinitionSource} or \link{ISOCitation}
      setDefinitionSource = function(source){
        if(!is(source, "ISODefinitionSource")){
          if(is(source, "ISOCitation")){

@@ -12,83 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO Georectified
 }
 \description{
 ISOGeorectified
+
+ISOGeorectified
 }
-\section{Fields}{
-
-\describe{
-\item{\code{checkPointAvailability}}{[\code{\link{logical}}]}
-
-\item{\code{checkPointDescription}}{[\code{\link{character}}]}
-
-\item{\code{cornerPoints}}{[\code{\link{GMLPoint}}]}
-
-\item{\code{centerPoint}}{[\code{\link{GMLPoint}}]}
-
-\item{\code{pointInPixel}}{[\code{\link{ISOPixelOrientation}}]}
-
-\item{\code{transformationDimensionDescription}}{[\code{\link{character}}]}
-
-\item{\code{transformationDimensionMapping}}{[\code{\link{character}}]}
-}}
-
-\section{Inherited methods from \code{\link{ISOGridSpatialRepresentation}}}{
-
-\describe{
- \item{\code{setNumberOfDimensions}}{
-   Sets the number of dimensions (value of class \code{integer})
- }
- \item{\code{addDimension(dimension)}}{
-   Adds a dimension. Object of class \code{\link{ISODimension}}
- }
- \item{\code{delDimension(dimension)}}{
-   Deletes a dimension;
- }
- \item{\code{setCellGeometry(cellGeometry)}}{
-   Sets the cell geometry. Object of class \code{ISOCellGeometry} or any value
-   from \code{ISOCellGeometry$values()}
- }
- \item{\code{setTransformationParameterAvailability(availability)}}{
-   Sets the transformation parameter availability
- }
- \item{\code{setPixelOrientation(pixelOrientation)}}{
-   Sets the point in pixel orientation, object of class 'character' or \code{\link{ISOPixelOrientation}}
- }
-}
-}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml,value)}}{
-   This method is used to instantiate an \code{\link{ISOGeorectified}}
- }
- \item{\code{setCheckPointAvailability(availability)}}{
-   Set checkpoint availability, object of class 'logical' (TRUE/FALSE)
- }
- \item{\code{setCheckPointDescription(description, locales)}}{
-   Set checkpoint description
- }
- \item{\code{addCornerPoint(sfg,m)}}{
-   Adds a corner point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
- }
- \item{\code{delCornerPoint(sfg,m)}}{
-   Deletes a corner point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
- }
- \item{\code{setCenterPoint(sfg,m)}}{
-   Sets a center point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
- }
- \item{\code{setTransformationDimensionDescription(description, locales)}}{
-   Sets the transformation dimension description.
- }
- \item{\code{addTransformationDimensionMapping(mapping)}}{
-   Adds a transformation dimension mapping
- }
- \item{\code{delTransformationDimensionMapping(mapping)}}{
-   Deletes a transformation dimension mapping
- }
-}
-}
-
 \references{
 ISO 19115:2003 - Geographic information -- Metadata
 }
@@ -97,3 +23,293 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{georectified}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOSpatialRepresentation]{geometa::ISOSpatialRepresentation}} -> \code{\link[geometa:ISOGridSpatialRepresentation]{geometa::ISOGridSpatialRepresentation}} -> \code{ISOGeorectified}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{checkPointAvailability}}{checkPointAvailability [1..1]}
+
+\item{\code{checkPointDescription}}{checkPointDescription [0..1]}
+
+\item{\code{cornerPoints}}{cornerPoints [0..*]}
+
+\item{\code{centerPoint}}{centerPoint [0..1]}
+
+\item{\code{pointInPixel}}{pointInPixel [1..1]}
+
+\item{\code{transformationDimensionDescription}}{transformationDimensionDescription [0..1]}
+
+\item{\code{transformationDimensionMapping}}{transformationDimensionMapping [0..2]}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOGeorectified-new}{\code{ISOGeorectified$new()}}
+\item \href{#method-ISOGeorectified-setCheckPointAvailability}{\code{ISOGeorectified$setCheckPointAvailability()}}
+\item \href{#method-ISOGeorectified-setCheckPointDescription}{\code{ISOGeorectified$setCheckPointDescription()}}
+\item \href{#method-ISOGeorectified-addCornerPoint}{\code{ISOGeorectified$addCornerPoint()}}
+\item \href{#method-ISOGeorectified-delCornerPoint}{\code{ISOGeorectified$delCornerPoint()}}
+\item \href{#method-ISOGeorectified-setCenterPoint}{\code{ISOGeorectified$setCenterPoint()}}
+\item \href{#method-ISOGeorectified-setPixelOrientation}{\code{ISOGeorectified$setPixelOrientation()}}
+\item \href{#method-ISOGeorectified-setTransformationDimensionDescription}{\code{ISOGeorectified$setTransformationDimensionDescription()}}
+\item \href{#method-ISOGeorectified-addTransformationDimensionMapping}{\code{ISOGeorectified$addTransformationDimensionMapping()}}
+\item \href{#method-ISOGeorectified-delTransformationDimensionMapping}{\code{ISOGeorectified$delTransformationDimensionMapping()}}
+\item \href{#method-ISOGeorectified-clone}{\code{ISOGeorectified$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="addDimension"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-addDimension'><code>geometa::ISOGridSpatialRepresentation$addDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="delDimension"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-delDimension'><code>geometa::ISOGridSpatialRepresentation$delDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="setCellGeometry"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-setCellGeometry'><code>geometa::ISOGridSpatialRepresentation$setCellGeometry()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="setNumberOfDimensions"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-setNumberOfDimensions'><code>geometa::ISOGridSpatialRepresentation$setNumberOfDimensions()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="setTransformationParameterAvailability"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-setTransformationParameterAvailability'><code>geometa::ISOGridSpatialRepresentation$setTransformationParameterAvailability()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-setCheckPointAvailability"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-setCheckPointAvailability}{}}}
+\subsection{Method \code{setCheckPointAvailability()}}{
+Set check point availability
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$setCheckPointAvailability(availability)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{availability}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-setCheckPointDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-setCheckPointDescription}{}}}
+\subsection{Method \code{setCheckPointDescription()}}{
+Set check point description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$setCheckPointDescription(description, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{object of class \link{character}}
+
+\item{\code{locales}}{list of localized descriptions. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-addCornerPoint"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-addCornerPoint}{}}}
+\subsection{Method \code{addCornerPoint()}}{
+Adds corner point
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$addCornerPoint(sfg = NULL, m = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sfg}}{simple feature object from \pkg{sf}}
+
+\item{\code{m}}{simple feature object of class \link{matrix}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-delCornerPoint"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-delCornerPoint}{}}}
+\subsection{Method \code{delCornerPoint()}}{
+Deletes corner point
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$delCornerPoint(sfg = NULL, m = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sfg}}{simple feature object from \pkg{sf}}
+
+\item{\code{m}}{simple feature object of class \link{matrix}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-setCenterPoint"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-setCenterPoint}{}}}
+\subsection{Method \code{setCenterPoint()}}{
+Sets center point
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$setCenterPoint(sfg = NULL, m = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sfg}}{simple feature object from \pkg{sf}}
+
+\item{\code{m}}{simple feature object of class \link{matrix}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-setPixelOrientation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-setPixelOrientation}{}}}
+\subsection{Method \code{setPixelOrientation()}}{
+Set pixel orientation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$setPixelOrientation(pixelOrientation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{pixelOrientation}}{object of class \link{ISOPixelOrientation} or \link{character} among
+values among those returned by \code{ISOPixelOrientation$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-setTransformationDimensionDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-setTransformationDimensionDescription}{}}}
+\subsection{Method \code{setTransformationDimensionDescription()}}{
+Set transformation dimension description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$setTransformationDimensionDescription(
+  description,
+  locales = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{description}
+
+\item{\code{locales}}{list of localized descriptions. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-addTransformationDimensionMapping"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-addTransformationDimensionMapping}{}}}
+\subsection{Method \code{addTransformationDimensionMapping()}}{
+Adds transformation dimension mapping
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$addTransformationDimensionMapping(mapping)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{mapping}}{mapping}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-delTransformationDimensionMapping"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-delTransformationDimensionMapping}{}}}
+\subsection{Method \code{delTransformationDimensionMapping()}}{
+Deletes transformation dimension mapping
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$delTransformationDimensionMapping(mapping)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{mapping}}{mapping}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOGeorectified-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOGeorectified-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOGeorectified$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

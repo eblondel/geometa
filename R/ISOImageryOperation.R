@@ -6,73 +6,6 @@
 #' @keywords ISO imagery Operation
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery Operation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field description [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @field citation [\code{\link{ISOCitation}}]
-#' @field identifier [\code{\link{ISOMetaIdentifier}}]
-#' @field status [\code{\link{ISOStatus}}]
-#' @field type [\code{\link{ISOImageryOperationType}}]
-#' @field parentOperation [\code{\link{ISOImageryOperation}}]
-#' @field childOperation  [\code{list} of \code{\link{ISOImageryOperation}}]
-#' @field platform [\code{list} of \code{\link{ISOImageryPlatform}}]
-#' @field objective [\code{list} of \code{\link{ISOImageryObjective}}]
-#' @field plan [\code{list} of \code{\link{ISOImageryPlan}}]
-#' @field significantEvent [\code{list} of \code{\link{ISOImageryEvent}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryOperation}}
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets a description (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setCitation(citation)}}{
-#'    Sets a citation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setIdentifier(identifier)}}{
-#'    Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{setStatus(status)}}{
-#'    Sets status, object of class \code{\link{ISOStatus}} or 'character', among values given 
-#'    by \code{ISOStatus$values()} or any free text code
-#'  }
-#'  \item{\code{setType(type)}}{
-#'    Sets the operation type, object of class \code{\link{ISOImageryOperationType}}, or 'character'
-#'    amont values given by \code{ISOImageryOperationType$values()}, or any free text code.
-#'  }
-#'  \item{\code{setParentOperation(operation)}}{
-#'    Sets the parent operation, object of class \code{\link{ISOImageryOperation}}.
-#'  }
-#'  \item{\code{addChildOperation(operation)}}{
-#'    Adds a child operation, object of class \code{\link{ISOImageryOperation}}
-#'  }
-#'  \item{\code{delChildOperation(operation)}}{
-#'    Deletes a child operation, object of class \code{\link{ISOImageryOperation}}
-#'  }
-#'  \item{\code{addPlatform(platform)}}{
-#'    Adds a platform, object of class \code{\link{ISOImageryPlatform}}
-#'  }
-#'  \item{\code{delPlatform(platform)}}{
-#'    Deletes a platform, object of class \code{\link{ISOImageryPlatform}}
-#'  }
-#'  \item{\code{addObjective(objective)}}{
-#'    Adds an objective object of class \code{\link{ISOImageryObjective}}
-#'  }
-#'  \item{\code{delObjective(objective)}}{
-#'    Deletes an objective, object of class \code{\link{ISOImageryObjective}}
-#'  }
-#'  \item{\code{setPlan(plan)}}{
-#'    Sets a plan, object of class \code{\link{ISOImageryPlan}}
-#'  }
-#'  \item{\code{addSignificantEvent(event)}}{
-#'    Adds a significant event, object of class \code{\link{ISOImageryEvent}}
-#'  }
-#'  \item{\code{delSignificantEvent(event)}}{
-#'    Deletes a significant event, object of class \code{\link{ISOImageryEvent}}
-#'  }
-#' }  
 #' 
 #' @references 
 #'   ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
@@ -87,42 +20,47 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
    ),
    public = list(
      
-     #+ description [0..1]: character|ISOLocalisedCharacterString
+     #'@field description description [0..1]: character|ISOLocalisedCharacterString
      description = NULL,
-     #+ citation [0..1]: ISOCitation
+     #'@field citation citation [0..1]: ISOCitation
      citation = NULL,
-     #+ identifier [1..1]: ISOMetaIdentifier
+     #'@field identifier identifier [1..1]: ISOMetaIdentifier
      identifier = NULL,
-     #+ status [1..1]: ISOStatus
+     #'@field status status [1..1]: ISOStatus
      status = NULL,
-     #+ type [0..1]: ISOImageryOperationType
+     #'@field type type [0..1]: ISOImageryOperationType
      type = NULL,
-     #+ parentOperation [1..1]: ISOImageryOperation
+     #'@field parentOperation parentOperation [1..1]: ISOImageryOperation
      parentOperation = NA,
-     #+ childOperation [0..*]: ISOImageryOperation
+     #'@field childOperation childOperation [0..*]: ISOImageryOperation
      childOperation = list(),
-     #+ platform [0..*]: ISOImageryPlatform
+     #'@field platform platform [0..*]: ISOImageryPlatform
      platform = list(),
-     #+ objective [0..*]: ISOImageryObjective
+     #'@field objective objective [0..*]: ISOImageryObjective
      objective = list(),
-     #+ plan [0..1]: ISOImageryPlan
+     #'@field plan plan [0..1]: ISOImageryPlan
      plan = NULL,
-     #+ significantEvent [0..*]: ISOImageryEvent
+     #'@field significantEvent significantEvent [0..*]: ISOImageryEvent
      significantEvent = list(),
-     
+
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setDescription
-     setDescription = function(description, locales){
+     #'@description Set description
+     #'@param description description
+     #'@param locales list of localized texts. Default is \code{NULL}
+     setDescription = function(description, locales = NULL){
        if(!is.null(locales)){
          description <- self$createLocalisedProperty(description, locales)
        }
        self$description <- description
      },
      
-     #setCitation
+     #'@description Set citation
+     #'@param citation object of class \link{ISOCitation}
      setCitation = function(citation){
        if(!is(citation, "ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation'")
@@ -130,7 +68,8 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        self$citation <- citation
      },
      
-     #setIdentifier
+     #'@description Set identifier
+     #'@param identifier object of class \link{ISOMetaIdentifier} or \link{character}
      setIdentifier = function(identifier){
        if(is(identifier, "character")){
          identifier <- ISOMetaIdentifier$new(code = identifier)
@@ -142,7 +81,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        self$identifier <- identifier
      },
      
-     #setStatus
+     #'@description Set status
+     #'@param status object of class \link{ISOStatus} or any \link{character}
+     #'  among values returned by \code{ISOStatus$values()}
      setStatus = function(status){
        if(is(status, "character")){
          status <- ISOStatus$new(value = status)
@@ -154,7 +95,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        self$status <- status
      },
      
-     #setType
+     #'@description Set type
+     #'@param type object of class \link{ISOImageryOperationType} or any \link{character}
+     #'  among values returned by \code{ISOImageryOperationType$values()}
      setType = function(type){
        if(is(type, "character")){
          type <- ISOImageryOperationType$new(value = type)
@@ -166,7 +109,8 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        self$type <- type
      },
      
-     #setParentOperation
+     #'@description Set parent operation
+     #'@param operation object of class \link{ISOImageryOperation}
      setParentOperation = function(operation){
        if(!is(operation, "ISOImageryOperation")){
          stop("The argument should be an object of class 'ISOImageryOperation")
@@ -174,7 +118,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        self$parentOperation <- operation
      },
      
-     #addChildOperation
+     #'@description Adds child operation
+     #'@param operation object of class \link{ISOImageryOperation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addChildOperation = function(operation){
        if(!is(operation, "ISOImageryOperation")){
          stop("The argument should be an object of class 'ISOImageryOperation")
@@ -182,7 +128,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        return(self$addListElement("childOperation", operation))
      },
      
-     #delChildOperation
+     #'@description Deletes child operation
+     #'@param operation object of class \link{ISOImageryOperation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delChildOperation = function(operation){
        if(!is(operation, "ISOImageryOperation")){
          stop("The argument should be an object of class 'ISOImageryOperation")
@@ -190,7 +138,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        return(self$delListElement("childOperation", operation))
      },
      
-     #addPlatform
+     #'@description Adds platform
+     #'@param platform object of class \link{ISOImageryPlatform}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addPlatform = function(platform){
        if(!is(platform, "ISOImageryPlatform")){
          stop("The argument should be an object of class 'ISOImageryPlatform")
@@ -198,7 +148,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        return(self$addListElement("platform", platform))
      },
      
-     #delPlatform
+     #'@description Deletes platform
+     #'@param platform object of class \link{ISOImageryPlatform}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delPlatform = function(platform){
        if(!is(platform, "ISOImageryPlatform")){
          stop("The argument should be an object of class 'ISOImageryPlatform")
@@ -206,7 +158,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        return(self$delListElement("platform", platform))
      },
      
-     #addObjective
+     #'@description Adds objective
+     #'@param objective object of class \link{ISOImageryObjective}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addObjective = function(objective){
        if(!is(objective, "ISOImageryObjective")){
          stop("The argument should be an object of class 'ISOImageryObjective")
@@ -214,7 +168,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        return(self$addListElement("objective", objective))
      },
      
-     #delObjective
+     #'@description Deletes objective
+     #'@param objective object of class \link{ISOImageryObjective}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delObjective = function(objective){
        if(!is(objective, "ISOImageryObjective")){
          stop("The argument should be an object of class 'ISOImageryObjective")
@@ -222,7 +178,8 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        return(self$delListElement("objective", objective))
      },
      
-     #setPlan
+     #'@description Set plan
+     #'@param plan object of class \link{ISOImageryPlan}
      setPlan = function(plan){
        if(!is(plan, "ISOImageryPlan")){
          stop("The argument should be an object of class 'ISOImageryPlan'")
@@ -230,7 +187,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        self$plan <- plan
      },
      
-     #addSignificantEvent
+     #'@description Adds significative event
+     #'@param event object of class \link{ISOImageryEvent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSignificantEvent = function(event){
        if(!is(event, "ISOImageryEvent")){
          stop("The argument should be an object of class 'ISOImageryEvent")
@@ -238,7 +197,9 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
        return(self$addListElement("significantEvent", event))
      },
      
-     #delSignificantEvent
+     #'@description Deletes significative event
+     #'@param event object of class \link{ISOImageryEvent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSignificantEvent = function(event){
        if(!is(event, "ISOImageryEvent")){
          stop("The argument should be an object of class 'ISOImageryEvent")

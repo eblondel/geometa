@@ -6,13 +6,6 @@
 #' @keywords ISO coupling type
 #' @return Object of \code{\link{R6Class}} for modelling an ISOCouplingType
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value, description)}}{
-#'    This method is used to instantiate an \code{\link{ISOCouplingType}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   #possible values
@@ -33,7 +26,12 @@ ISOCouplingType <- R6Class("ISOCouplingType",
      xmlNamespacePrefix = "SRV"
    ),
    public = list(
-     initialize = function(xml = NULL, value, description = NULL){
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param value value
+      #'@param description description
+      initialize = function(xml = NULL, value, description = NULL){
        super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
                         addCodeSpaceAttr = FALSE)
      }

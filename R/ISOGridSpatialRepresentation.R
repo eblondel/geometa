@@ -6,34 +6,6 @@
 #' @keywords ISO grid spatial representation
 #' @return Object of \code{\link{R6Class}} for modelling an ISO GridSpatialRepresentation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field numberOfDimensions [\code{\link{integer}}] number of dimensions
-#' @field axisDimensionProperties [\code{\link{ISODimension}}] dimension(s)
-#' @field cellGeometry [\code{\link{ISOCellGeometry}}]
-#' @field transformationParameterAvailability [\code{\link{logical}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOGridSpatialRepresentation}}
-#'  }
-#'  \item{\code{setNumberOfDimensions}}{
-#'    Sets the number of dimensions (value of class \code{integer})
-#'  }
-#'  \item{\code{addDimension(dimension)}}{
-#'    Adds a dimension. Object of class \code{\link{ISODimension}}
-#'  }
-#'  \item{\code{delDimension(dimension)}}{
-#'    Deletes a dimension;
-#'  }
-#'  \item{\code{setCellGeometry(cellGeometry)}}{
-#'    Sets the cell geometry. Object of class \code{\link{ISOCellGeometry}} or any value
-#'    from \code{ISOCellGeometry$values()}
-#'  }
-#'  \item{\code{setTransformationParameterAvailability(availability)}}{
-#'    Sets the transformation parameter availability
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOGridSpatialRepresentation$new()
@@ -59,25 +31,30 @@ ISOGridSpatialRepresentation <- R6Class("ISOGridSpatialRepresentation",
     ),
     public = list(
       
-      #+ numberOfDimensions [1..1]: integer
+      #'@field numberOfDimensions numberOfDimensions [1..1]: integer
       numberOfDimensions = NULL,
-      #+ axisDimensionProperties [1..*] : ISODimension
+      #'@field axisDimensionProperties axisDimensionProperties [1..*] : ISODimension
       axisDimensionProperties = list(),
-      #+ cellGeometry [1..1]: ISOCellGeometry
+      #'@field cellGeometry cellGeometry [1..1]: ISOCellGeometry
       cellGeometry = NULL,
-      #+ transformationParameterAvailability : logical
+      #'@field transformationParameterAvailability transformationParameterAvailability : logical
       transformationParameterAvailability = NULL,
       
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
       initialize = function(xml = NULL){
         super$initialize(xml = xml)
       },
       
-      #setNumberOfDimensions
+      #'@description Set number of dimensions
+      #'@param numberOfDimensions object of class \link{integer}
       setNumberOfDimensions = function(numberOfDimensions){
         self$numberOfDimensions <- as.integer(numberOfDimensions)
       },
       
-      #addDimension
+      #'@description Adds dimension
+      #'@param dimension object of class \link{ISODimension}
+      #'@return \code{TRUE} if added, \code{FALSE} otherwise
       addDimension = function(dimension){
         if(!is(dimension, "ISODimension")){
           stop("Argument should be an object of class 'ISODimension'")
@@ -85,7 +62,9 @@ ISOGridSpatialRepresentation <- R6Class("ISOGridSpatialRepresentation",
         return(self$addListElement("axisDimensionProperties", dimension))
       },
       
-      #delDimension
+      #'@description Deletes dimension
+      #'@param dimension object of class \link{ISODimension}
+      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
       delDimension = function(dimension){
         if(!is(dimension, "ISODimension")){
           stop("Argument should be an object of class 'ISODimension'")
@@ -93,7 +72,9 @@ ISOGridSpatialRepresentation <- R6Class("ISOGridSpatialRepresentation",
         return(self$delListElement("axisDimensionProperties", dimension))
       },
       
-      #setCellGeometry
+      #'@description Set cell geometry 
+      #'@param cellGeometry object of class \link{ISOCellGeometry} or any \link{character}
+      #' among values returned by \link{ISOCellGeometry$values()}
       setCellGeometry = function(cellGeometry){
         if(!is(cellGeometry, "ISOCellGeometry")){
           cellGeometry <- ISOCellGeometry$new(value = cellGeometry)
@@ -101,7 +82,8 @@ ISOGridSpatialRepresentation <- R6Class("ISOGridSpatialRepresentation",
         self$cellGeometry <- cellGeometry
       },
       
-      #setTransformationParameterAvailability
+      #'@description Set transformation parameter availability
+      #'@param availability object of class \link{logical}
       setTransformationParameterAvailability = function(availability){
         self$transformationParameterAvailability <- as.logical(availability)
       }

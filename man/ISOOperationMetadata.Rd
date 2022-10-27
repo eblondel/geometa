@@ -12,70 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISOOperationMetadata
 }
 \description{
 ISOOperationMetadata
+
+ISOOperationMetadata
 }
-\section{Fields}{
-
-\describe{
-\item{\code{operationName}}{[\code{\link{character}}] operation name}
-
-\item{\code{DCP}}{[\code{\link{ISODCPList}}] DCP}
-
-\item{\code{operationDescription}}{[\code{\link{character}}] operation description}
-
-\item{\code{invocationName}}{[\code{\link{character}}] invocation name}
-
-\item{\code{parameters}}{[\code{\link{ISOParameter}}] parameter(s)}
-
-\item{\code{connectPoint}}{[\code{\link{ISOOnlineResource}}] online resources}
-
-\item{\code{dependsOn}}{[\code{\link{ISOOperationMetadata}}] dependent operation metadata}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOOperationMetadata}}
- }
- \item{\code{setOperationName(operationName, locales)}}{
-   Set the operation name. Locale names can be specified as 
-   \code{list} with the \code{locales} argument.
- }
- \item{\code{addDCP(dcp)}}{
-   Add a DCP
- }
- \item{\code{delDCP(dcp)}}{
-   Deletes a DCP
- }
- \item{\code{setOperationDescription(operationDescription, locales)}}{
-   Set the operation description. Locale names can be specified as 
-   \code{list} with the \code{locales} argument.
- }
- \item{\code{setInvocationName(invocationName, locales)}}{
-   Set the invocation name. Locale names can be specified as 
-   \code{list} with the \code{locales} argument.
- }
- \item{\code{addParameter(parameter)}}{
-   Add a parameter, object of class \code{\link{ISOParameter}}
- }
- \item{\code{delParameter(parameter)}}{
-   Deletes a parameter, object of class \code{\link{ISOParameter}}
- }
- \item{\code{addConnectPoint(connectPoint)}}{
-   Add a connect point, object of class \code{\link{ISOOnlineResource}}
- }
- \item{\code{delConnectPoint(connectPoint)}}{
-   Deletes a connect point, object of class \code{\link{ISOOnlineResource}}
- }
- \item{\code{addDependentOperationMetadata(operationMetadata)}}{
-   Add dependent operation metadata, object of class \code{\link{ISOOperationMetadata}}
- }
- \item{\code{delDependentOperationMetadata(operationMetadata)}}{
-   Deletes dependent operation metadata, object of class \code{\link{ISOOperationMetadata}}
- }
-}
-}
-
 \examples{
   md <- ISOOperationMetadata$new()
   xml <- md$encode()
@@ -89,3 +28,333 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{OperationMetadata}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOOperationMetadata}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{operationName}}{operationName [1..1]: character}
+
+\item{\code{DCP}}{DCP [1..*]: ISODCPList}
+
+\item{\code{operationDescription}}{operationDescription [0..1]: character}
+
+\item{\code{invocationName}}{invocationName [0..1]: character}
+
+\item{\code{parameters}}{parameters [0..*]: ISOParameter}
+
+\item{\code{connectPoint}}{connectPoint [1..*]: ISOOnlineResource}
+
+\item{\code{dependsOn}}{dependsOn [0..*]: ISOOperationMetadata}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOOperationMetadata-new}{\code{ISOOperationMetadata$new()}}
+\item \href{#method-ISOOperationMetadata-setOperationName}{\code{ISOOperationMetadata$setOperationName()}}
+\item \href{#method-ISOOperationMetadata-addDCP}{\code{ISOOperationMetadata$addDCP()}}
+\item \href{#method-ISOOperationMetadata-delDCP}{\code{ISOOperationMetadata$delDCP()}}
+\item \href{#method-ISOOperationMetadata-setOperationDescription}{\code{ISOOperationMetadata$setOperationDescription()}}
+\item \href{#method-ISOOperationMetadata-setInvocationName}{\code{ISOOperationMetadata$setInvocationName()}}
+\item \href{#method-ISOOperationMetadata-addParameter}{\code{ISOOperationMetadata$addParameter()}}
+\item \href{#method-ISOOperationMetadata-delParameter}{\code{ISOOperationMetadata$delParameter()}}
+\item \href{#method-ISOOperationMetadata-addConnectPoint}{\code{ISOOperationMetadata$addConnectPoint()}}
+\item \href{#method-ISOOperationMetadata-delConnectPoint}{\code{ISOOperationMetadata$delConnectPoint()}}
+\item \href{#method-ISOOperationMetadata-addDependentOperationMetadata}{\code{ISOOperationMetadata$addDependentOperationMetadata()}}
+\item \href{#method-ISOOperationMetadata-delDependentOperationMetadata}{\code{ISOOperationMetadata$delDependentOperationMetadata()}}
+\item \href{#method-ISOOperationMetadata-clone}{\code{ISOOperationMetadata$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-setOperationName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-setOperationName}{}}}
+\subsection{Method \code{setOperationName()}}{
+Set operation name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$setOperationName(operationName, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{operationName}}{operation name}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-addDCP"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-addDCP}{}}}
+\subsection{Method \code{addDCP()}}{
+Adds DCP
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$addDCP(dcp)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dcp}}{object of class \link{ISODCPList} or any \link{character}
+among values returned by \code{ISODCPList$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-delDCP"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-delDCP}{}}}
+\subsection{Method \code{delDCP()}}{
+Deletes DCP
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$delDCP(dcp)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dcp}}{object of class \link{ISODCPList} or any \link{character}
+among values returned by \code{ISODCPList$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-setOperationDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-setOperationDescription}{}}}
+\subsection{Method \code{setOperationDescription()}}{
+Set operation description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$setOperationDescription(
+  operationDescription,
+  locales = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{operationDescription}}{operation description}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-setInvocationName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-setInvocationName}{}}}
+\subsection{Method \code{setInvocationName()}}{
+Set invocation name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$setInvocationName(invocationName, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{invocationName}}{invocation name}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-addParameter"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-addParameter}{}}}
+\subsection{Method \code{addParameter()}}{
+Adds parameter
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$addParameter(parameter)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{parameter}}{object of class \link{ISOParameter}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-delParameter"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-delParameter}{}}}
+\subsection{Method \code{delParameter()}}{
+Deletes parameter
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$delParameter(parameter)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{parameter}}{object of class \link{ISOParameter}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-addConnectPoint"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-addConnectPoint}{}}}
+\subsection{Method \code{addConnectPoint()}}{
+Adds connection point
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$addConnectPoint(connectPoint)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{connectPoint}}{object of class \link{ISOOnlineResource}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-delConnectPoint"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-delConnectPoint}{}}}
+\subsection{Method \code{delConnectPoint()}}{
+Deletes connection point
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$delConnectPoint(connectPoint)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{connectPoint}}{object of class \link{ISOOnlineResource}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-addDependentOperationMetadata"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-addDependentOperationMetadata}{}}}
+\subsection{Method \code{addDependentOperationMetadata()}}{
+Adds operation metadata
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$addDependentOperationMetadata(operationMetadata)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{operationMetadata}}{object of class \link{ISOOperationMetadata}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-delDependentOperationMetadata"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-delDependentOperationMetadata}{}}}
+\subsection{Method \code{delDependentOperationMetadata()}}{
+Deletes operation metadata
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$delDependentOperationMetadata(operationMetadata)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{operationMetadata}}{object of class \link{ISOOperationMetadata}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOOperationMetadata-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOOperationMetadata-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOOperationMetadata$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

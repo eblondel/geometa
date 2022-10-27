@@ -6,44 +6,6 @@
 #' @keywords ISO imagery platform
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery platform
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field citation [\code{list} of \code{\link{ISOCitation}}]
-#' @field identifier [\code{\link{ISOMetaIdentifier}}]
-#' @field description [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @field sponsor [\code{list} of \code{\link{ISOResponsibleParty}}]
-#' @field instrument [\code{list} of \code{\link{ISOImageryInstrument}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryPlatform}}
-#'  }
-#'  \item{\code{addCitation(citation)}}{
-#'    Adds citation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{delCitation(citation)}}{
-#'    Deletes a citation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setIdentifier(identifier)}}{
-#'    Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets a description (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addSponsor(sponsor)}}{
-#'    Adds a sponsor, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{delSponsor(sponsor)}}{
-#'    Deletes a sponsor, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{addInstrument(instrument)}}{
-#'    Add a instrument, object of class \code{\link{ISOImageryInstrument}}
-#'  }
-#'  \item{\code{delInstrument(instrument)}}{
-#'    Deletes a instrument, object of class \code{\link{ISOImageryInstrument}}
-#'  }
-#' } 
 #' 
 #' @examples
 #'    md <- ISOImageryPlatform$new()
@@ -104,22 +66,26 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
  ),
  public = list(
    
-   #+ citation [0..*]: ISOCitation
+   #'@field citation citation [0..*]: ISOCitation
    citation = list(),
-   #+ identifier [1..1]: ISOMetaIdentifier
+   #'@field identifier identifier [1..1]: ISOMetaIdentifier
    identifier = NULL,
-   #+ description [0..1]: character|ISOLocalisedCharacterString
+   #'@field description description [0..1]: character|ISOLocalisedCharacterString
    description = NULL,
-   #+ sponsor [0..*]: ISOResponsibleParty
+   #'@field sponsor sponsor [0..*]: ISOResponsibleParty
    sponsor =list(),
-   #+ instrument [0..*]: ISOImageryInstrument
+   #'@field instrument instrument [0..*]: ISOImageryInstrument
    instrument = list(),
    
+   #'@description Initializes object
+   #'@param xml object of class \link{XMLInternalNode-class}
    initialize = function(xml = NULL){
      super$initialize(xml = xml)
    },
    
-   #addCitation
+   #'@description Adds citation
+   #'@param citation object of class \link{ISOCitation}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addCitation = function(citation){
      if(!is(citation, "ISOCitation")){
        stop("The argument should be an object of class 'ISOCitation")
@@ -127,7 +93,9 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
      return(self$addListElement("citation", citation))
    },
    
-   #delCitation
+   #'@description Deletes citation
+   #'@param citation object of class \link{ISOCitation}
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
    delCitation = function(citation){
      if(!is(citation, "ISOCitation")){
        stop("The argument should be an object of class 'ISOCitation")
@@ -135,7 +103,8 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
      return(self$delListElement("citation", citation))
    },
    
-   #setIdentifier
+   #'@description Set identifier
+   #'@param identifier object of class \link{ISOMetaIdentifier} or \link{character}
    setIdentifier = function(identifier){
      if(is(identifier, "character")){
        identifier <- ISOMetaIdentifier$new(code = identifier)
@@ -147,7 +116,9 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
      self$identifier <- identifier
    },
    
-   #setDescription
+   #'@description Set description
+   #'@param description description
+   #'@param locales list of localized texts. Default is \code{NULL}
    setDescription = function(description, locales = NULL){
      if(!is.null(locales)){
        description <- self$createLocalisedProperty(description, locales)
@@ -155,7 +126,9 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
      self$description <- description
    },
    
-   #addSponsor
+   #'@description Adds sponsor
+   #'@param sponsor object of class \link{ISOResponsibleParty}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addSponsor = function(sponsor){
      if(!is(sponsor, "ISOResponsibleParty")){
        stop("The argument should be an object of class 'ISOResponsibleParty'")
@@ -163,7 +136,9 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
      return(self$addListElement("sponsor", sponsor))
    },
    
-   #delSponsor
+   #'@description Deletes sponsor
+   #'@param sponsor object of class \link{ISOResponsibleParty}
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
    delSponsor = function(sponsor){
      if(!is(sponsor, "ISOResponsibleParty")){
        stop("The argument should be an object of class 'ISOResponsibleParty'")
@@ -171,7 +146,9 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
      return(self$delListElement("sponsor", sponsor))
    },
    
-   #addInstrument
+   #'@description Adds instrument
+   #'@param instrument object of class \link{ISOImageryInstrument}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addInstrument = function(instrument){
      if(!is(instrument, "ISOImageryInstrument")){
        stop("The argument should be an object of class 'ISOImageryInstrument'")
@@ -179,7 +156,9 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
      return(self$addListElement("instrument", instrument))
    },
    
-   #delInstrument
+   #'@description Deletes instrument
+   #'@param instrument object of class \link{ISOImageryInstrument}
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
    delInstrument = function(instrument){
      if(!is(instrument, "ISOImageryInstrument")){
        stop("The argument should be an object of class 'ISOImageryInstrument'")

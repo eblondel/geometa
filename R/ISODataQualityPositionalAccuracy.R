@@ -6,16 +6,6 @@
 #' @keywords ISO data quality abstract positional accuracy
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractPositionalAccuracy
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAbstractPositionalAccuracy}}
-#'  }
-#' }
 #'   
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -39,16 +29,6 @@ ISOAbstractPositionalAccuracy <- R6Class("ISOAbstractPositionalAccuracy",
 #' @keywords ISO data quality absolute external positional accuracy
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbsoluteExternalPositionalAccuracy
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAbsoluteExternalPositionalAccuracy}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -97,16 +77,6 @@ ISOAbsoluteExternalPositionalAccuracy <- R6Class("ISOAbsoluteExternalPositionalA
 #' @keywords ISO data quality relative internal positional accuracy
 #' @return Object of \code{\link{R6Class}} for modelling an ISORelativeInternalPositionalAccuracy
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISORelativeInternalPositionalAccuracy}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -155,16 +125,6 @@ ISORelativeInternalPositionalAccuracy <- R6Class("ISORelativeInternalPositionalA
 #' @keywords ISO data quality gridded data positional accuracy
 #' @return Object of \code{\link{R6Class}} for modelling an ISOGriddedDataPositionalAccuracy
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOGriddedDataPositionalAccuracy}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding

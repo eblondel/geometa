@@ -7,21 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISOPortrayalCatalogueReference
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field portrayalCatalogueCitation [\code{\link{ISOCitation}}] the catalogue citation
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOPortrayalCatalogueReference}}
-#'  }
-#'  \item{\code{addCitation(citation)}}{
-#'    Add citation, object of class \code{ISOCitation}
-#'  }
-#'  \item{\code{delCitation(citation)}}{
-#'    Deletes citation, object of class \code{ISOCitation}
-#'  }
-#' }
-#' 
 #' @examples 
 #'    md <- ISOPortrayalCatalogueReference$new()
 #'    #citation
@@ -74,13 +59,18 @@ ISOPortrayalCatalogueReference <- R6Class("ISOPortrayalCatalogueReference",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     #portrayalCatalogueCitation [1..*]    
+     #'@field portrayalCatalogueCitation portrayalCatalogueCitation [1..*]    
      portrayalCatalogueCitation = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #addCitation
+     #'@description Adds citation
+     #'@param citation object of class \link{ISOCitation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addCitation = function(citation){
        if(!is(citation,"ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation'")
@@ -88,7 +78,9 @@ ISOPortrayalCatalogueReference <- R6Class("ISOPortrayalCatalogueReference",
        return(self$addListElement("portrayalCatalogueCitation", citation))
      },
      
-     #delCitation
+     #'@description Deletes citation
+     #'@param citation object of class \link{ISOCitation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delCitation = function(citation){
        if(!is(citation,"ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation'")

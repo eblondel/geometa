@@ -6,29 +6,6 @@
 #' @keywords ISO imagery PlatformPass
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery PlatformPass
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field identifier [\code{\link{ISOMetaIdentifier}}]
-#' @field extent [?]
-#' @field relatedEvent [\code{list} of \code{\link{ISOImageryEvent}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryPlatformPass}}
-#'  }
-#'  \item{\code{setIdentifier(identifier)}}{
-#'    Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{setExtent(extent)}}{
-#'    Set the extent
-#'  }
-#'  \item{\code{addEvent(event)}}{
-#'    Add a event, object of class \code{\link{ISOImageryEvent}}
-#'  }
-#'  \item{\code{delEvent(event)}}{
-#'    Deletes a event, object of class \code{\link{ISOImageryEvent}}
-#'  }
-#' }  
 #' 
 #' @examples
 #'    md <- ISOImageryPlatformPass$new()
@@ -57,18 +34,21 @@ ISOImageryPlatformPass <- R6Class("ISOImageryPlatformPass",
   ),
   public = list(
     
-    #+ identifier [1..1]: ISOMetaIdentifier
+    #'@field identifier identifier [1..1]: ISOMetaIdentifier
     identifier = NULL,
-    #+ extent [0..1]: ?
+    #'@field extent extent [0..1]: ?
     extent = NULL,
-    #relatedEvent [0..*]: ISOImageryEvent
+    #'@field relatedEvent relatedEvent [0..*]: ISOImageryEvent
     relatedEvent = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setIdentifier
+    #'@description Set identifier
+    #'@param identifier object of class \link{ISOMetaIdentifier} or \link{character}
     setIdentifier = function(identifier){
       if(is(identifier, "character")){
         identifier <- ISOMetaIdentifier$new(code = identifier)
@@ -80,7 +60,8 @@ ISOImageryPlatformPass <- R6Class("ISOImageryPlatformPass",
       self$identifier <- identifier
     },
     
-    #setExtent
+    #'@description Set extent
+    #'@param extent simple feature geometry object from \pkg{sf}
     setExtent = function(extent){
       if(is(extent,"sfg")) extent <- GMLAbstractGeometry$fromSimpleFeatureGeometry(extent)
       if(!inherits(extent, "GMLAbstractGeometry")){
@@ -89,7 +70,9 @@ ISOImageryPlatformPass <- R6Class("ISOImageryPlatformPass",
       self$extent <- extent
     },
     
-    #addEvent
+    #'@description Adds event
+    #'@param event object of class \link{ISOImageryEvent}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addEvent = function(event){
       if(!is(event, "ISOImageryEvent")){
         stop("The argument should be an object of class 'ISOImagery")
@@ -97,7 +80,9 @@ ISOImageryPlatformPass <- R6Class("ISOImageryPlatformPass",
       return(self$addListElement("relatedEvent", event))
     },
     
-    #delEvent
+    #'@description Deletes event
+    #'@param event object of class \link{ISOImageryEvent}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delEvent = function(event){
       if(!is(event, "ISOImageryEvent")){
         stop("The argument should be an object of class 'ISOImagery")

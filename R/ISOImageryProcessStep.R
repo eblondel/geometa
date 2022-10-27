@@ -6,35 +6,6 @@
 #' @keywords ISO imagery process step
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery process step
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field processingInformation [\code{\link{ISOImageryProcessing}}]
-#' @field output [\code{list} of \code{\link{ISOImagerySource}}]
-#' @field report [\code{list} of \code{\link{ISOImageryProcessStepReport}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryProcessStep}}
-#'  }
-#'  \item{\code{setProcessingInformation(processingInfo)}}{
-#'    Set the processing information, object of class \code{\link{ISOImageryProcessing}}
-#'  }
-#'  \item{\code{addOutput(output)}}{
-#'    Add output, object of class \code{\link{ISOSource}}
-#'  }
-#'  \item{\code{delOutput(output)}}{
-#'    Deletes output, object of class \code{\link{ISOSource}}
-#'  }
-#'  \item{\code{addReport(report)}}{
-#'    Add report, object of class \code{\link{ISOImageryProcessStepReport}}
-#'  }
-#'  \item{\code{delReport(report)}}{
-#'    Deletes report, object of class \code{\link{ISOImageryProcessStepReport}}
-#'  }
-#' }
-#' 
-#' @section Methods inherited from \code{\link{ISOProcessStep}}:
-#' See methods description at \code{\link{ISOProcessStep}}
 #' 
 #' @examples 
 #'    ps <- ISOImageryProcessStep$new()
@@ -122,18 +93,21 @@ ISOImageryProcessStep <- R6Class("ISOImageryProcessStep",
     xmlNamespacePrefix = "GMI"
   ),
   public = list(
-    #+ processingInformation [0..1]: ISOImageryProcessing
+    #'@field processingInformation processingInformation [0..1]: ISOImageryProcessing
     processingInformation = NULL,
-    #+ output [0..*]: list of ISOImagerySource
+    #'@field output output [0..*]: list of ISOImagerySource
     output = list(),
-    #+ report [0..*]: list of ISOImageryProcessStepReport 
+    #'@field report report [0..*]: list of ISOImageryProcessStepReport 
     report = list(),
 
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setProcessingInformation
+    #'@description Set processing info
+    #'@param processingInfo object of class \link{ISOImageryProcessing}
     setProcessingInformation = function(processingInfo){
       if(!is(processingInfo, "ISOImageryProcessing")){
         stop("The argument should be an object of class 'ISOImageryProcessing'")
@@ -141,7 +115,9 @@ ISOImageryProcessStep <- R6Class("ISOImageryProcessStep",
       self$processingInformation <- processingInfo
     },
     
-    #addOutput
+    #'@description Adds output
+    #'@param output object of class \link{ISOImagerySource}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addOutput = function(output){
       if(!is(output, "ISOImagerySource")){
         stop("The argument should be an object of class 'ISOImagerySource")
@@ -149,7 +125,9 @@ ISOImageryProcessStep <- R6Class("ISOImageryProcessStep",
       return(self$addListElement("output", output))
     },
     
-    #delOutput
+    #'@description Deletes output
+    #'@param output object of class \link{ISOImagerySource}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delOutput = function(output){
       if(!is(output, "ISOImagerySource")){
         stop("The argument should be an object of class 'ISOImagerySource")
@@ -157,7 +135,9 @@ ISOImageryProcessStep <- R6Class("ISOImageryProcessStep",
       return(self$delListElement("output", output))
     },
     
-    #addReport
+    #'@description Adds report
+    #'@param report object of class \link{ISOImageryProcessStepReport}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addReport = function(report){
       if(!is(report, "ISOImageryProcessStepReport")){
         stop("The argument should be an object of class 'ISOImageryProcessStepReport")
@@ -165,7 +145,9 @@ ISOImageryProcessStep <- R6Class("ISOImageryProcessStep",
       return(self$addListElement("report", report))
     },
     
-    #delReport
+    #'@description Deletes report
+    #'@param report object of class \link{ISOImageryProcessStepReport}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delReport = function(report){
       if(!is(report, "ISOImageryProcessStepReport")){
         stop("The argument should be an object of class 'ISOImageryProcessStepReport")

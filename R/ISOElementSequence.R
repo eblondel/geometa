@@ -6,13 +6,6 @@
 #' @keywords ISO record
 #' @return Object of \code{\link{R6Class}} for modelling an ISOElementSequence
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, ...)}}{
-#'    This method is used to instantiate an element sequence
-#'  }
-#' }
 #' 
 #' @note This class is used internally by geometa to deal with simple type not
 #' handled by proper class element. e.g. \code{name} property of \code{ISOParameter}
@@ -31,6 +24,10 @@ ISOElementSequence <- R6Class("ISOElementSequence",
      xmlNamespacePrefix = "GCO"
    ),
    public = list(
+      
+     #'@description Initializes sequence object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param ... other args
      initialize = function(xml = NULL, ...){
        super$initialize(xml = xml)
        if(is.null(xml)){

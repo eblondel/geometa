@@ -7,21 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO TemporalExtent
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @field extent [\code{\link{GMLTimeInstant}}|\code{\link{GMLTimePeriod}}] the temporal extent (instant or period)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOTemporalExtent}}
-#'  }
-#'  \item{\code{setTimeInstant(timeInstant)}}{
-#'    Sets a time instant, object of class \code{\link{GMLTimeInstant}}
-#'  }
-#'  \item{\code{setTimePeriod(timePeriod)}}{
-#'    Sets a time period, object of class \code{\link{GMLTimePeriod}}
-#'  }
-#' }
-#' 
 #' @examples 
 #'    te <- ISOTemporalExtent$new()
 #'    start <- ISOdate(2000, 1, 12, 12, 59, 45)
@@ -41,12 +26,17 @@ ISOTemporalExtent <- R6Class("ISOTemporalExtent",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field extent extent
     extent = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}  
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setTimeInstant
+    #'@description Set time instant
+    #'@param timeInstant object of class \link{GMLTimeInstant}
     setTimeInstant = function(timeInstant){
       if(!is(timeInstant, "GMLTimeInstant")){
         stop("Value should be an object of class 'GMLTimeInstant'")
@@ -54,7 +44,8 @@ ISOTemporalExtent <- R6Class("ISOTemporalExtent",
       self$extent = timeInstant
     },
     
-    #setTimePeriod
+    #'@description Set time period
+    #'@param timePeriod object of class \link{GMLTimePeriod}
     setTimePeriod = function(timePeriod){
       if(!is(timePeriod, "GMLTimePeriod")){
         stop("Value should be an object of class 'GMLTimePeriod'")

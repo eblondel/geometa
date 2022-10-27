@@ -6,13 +6,6 @@
 #' @keywords ISO role
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Role
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISORole}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #possible values
@@ -33,6 +26,10 @@ ISORole <- R6Class("ISORole",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}  
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, id = private$xmlElement, value = value, setValue = TRUE)
     }

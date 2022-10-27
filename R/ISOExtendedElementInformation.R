@@ -6,88 +6,6 @@
 #' @keywords ISO extended element information
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ExtendedElementInformation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{character}}]
-#' @field shortName [\code{\link{character}}]
-#' @field domainCode [\code{\link{integer}}]
-#' @field definition [\code{\link{character}}]
-#' @field obligation [\code{\link{ISOObligation}}]
-#' @field condition [\code{\link{character}}]
-#' @field dataType [\code{\link{ISODateType}}]
-#' @field maximumOccurrence [\code{\link{character}}]
-#' @field domainValue [\code{\link{character}}]
-#' @field parentEntity [\code{\link{character}}]
-#' @field rule [\code{\link{character}}]
-#' @field rationale [\code{\link{character}}]
-#' @field source [\code{\link{ISOResponsibleParty}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOExtendedElementInformation}}
-#'  }
-#'  \item{\code{setName(name, locales)}}{
-#'    Sets the element name, object of class \code{Character}. Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setShortName(shortName, locales)}}{
-#'    Sets the element shortname, object of class \code{character}. Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDomainCode(domainCode)}}{
-#'    Sets the element domain code, object of class \code{integer}
-#'  }
-#'  \item{\code{setDefinition(definition, locales)}}{
-#'    Sets the element definition, object of class \code{character}. Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setObligation(obligation)}}{
-#'    Sets an obligation, as object of class \code{character} or class \code{\link{ISOObligation}}. 
-#'    If an object of class "character" is specified, it must match the accepted
-#'    obligation values \code{ISOObligation$values()}.
-#'  }
-#'  \item{\code{setCondition(condition, locales)}}{
-#'    Sets the element condition, object of class \code{character}. Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDatatype(dataType)}}{
-#'    Sets the element datatype, as object of class \code{character} or class \code{\link{ISODatatype}}.
-#'    If an object of class "character" is specified, it must match the accepted
-#'    datatype values \code{ISODatatype$values()}.
-#'  }
-#'  \item{\code{setMaximumOccurrrence(maximumOccurrence)}}{
-#'    Sets the element maximum occurrence, object of class \code{character}
-#'  }
-#'  \item{\code{setDomainValue(domainValue)}}{
-#'    Sets the element domain value, object of class \code{character}
-#'  }
-#'  \item{\code{addParentyEntity(parentEntity)}}{
-#'    Adds a parent Entity, object of class \code{character}
-#'  }
-#'  \item{\code{delParentEntity(parentEntity)}}{
-#'    Deletes a parent Entity, object of class \code{character}
-#'  }
-#'  \item{\code{setRule(rule, locales)}}{
-#'    Sets a rule, object of class \code{character}. Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{addRationale(rationale, locales)}{
-#'    Adds a rationale, object of class \code{character}. Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{delRationale(rationale, locales)}{
-#'    Deletes a rationale, object of class \code{character}. Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'    Local names should match those of the keyword to be deleted, otherwise 
-#'    nothing will be deleted.
-#'  }
-#'  \item{addSource(source)}{
-#'    Adds a source, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{delSource(source)}{
-#'    Deletes a source, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOExtendedElementInformation$new()
@@ -144,37 +62,42 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
    xmlNamespacePrefix = "GMD"
  ),
  public = list(
-   #+ name [1..1]: character
+   #'@field name name [1..1]: character
    name = NA,
-   #+ shortName [0..1]: character
+   #'@field shortName shortName [0..1]: character
    shortName = NULL,
-   #+ domainCode [0..1]: integer
+   #'@field domainCode domainCode [0..1]: integer
    domainCode = NULL,
-   #+ definition [1..1]: character
+   #'@field definition definition [1..1]: character
    definition = NA,
-   #+ obligation [0..1]: ISOObligation
+   #'@field obligation obligation [0..1]: ISOObligation
    obligation = NULL,
-   #+ condition [0..1]: character
+   #'@field condition condition [0..1]: character
    condition = NULL,
-   #+ dataType [1..1]: ISODatatype
+   #'@field dataType dataType [1..1]: ISODatatype
    dataType = NA,
-   #+ maximumOccurrence [0..1]: character
+   #'@field maximumOccurrence maximumOccurrence [0..1]: character
    maximumOccurrence = NULL,
-   #+ domainValue [0..1]: character
+   #'@field domainValue domainValue [0..1]: character
    domainValue = NULL,
-   #+ parentEntity [1..*]: character
+   #'@field parentEntity parentEntity [1..*]: character
    parentEntity = list(),
-   #+ rule [1..1]: character
+   #'@field rule rule [1..1]: character
    rule = NA,
-   #+ rationale [0..*]: character
+   #'@field rationale rationale [0..*]: character
    rationale = list(),
-   #+ source [1..*]: ISOResponsibleParty
+   #'@field source source [1..*]: ISOResponsibleParty
    source = list(),
+   
+   #'@description Initializes object
+   #'@param xml object of class \link{XMLInternalNode-class}
    initialize = function(xml = NULL){
      super$initialize(xml = xml)
    },
    
-   #setName
+   #'@description Set name
+   #'@param name name
+   #'@param locales list of localized names. Default is \code{NULL}
    setName = function(name, locales = NULL){
      self$name <- name
      if(!is.null(locales)){
@@ -182,7 +105,9 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      }
    },
    
-   #setShortName
+   #'@description Set short name
+   #'@param shortName short name
+   #'@param locales list of localized short names. Default is \code{NULL}
    setShortName = function(shortName, locales = NULL){
      self$shortName <- shortName
      if(!is.null(locales)){
@@ -190,7 +115,8 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      }
    },
    
-   #setDomainCode
+   #'@description Set domain code
+   #'@param domainCode domain code, object of class \link{integer}
    setDomainCode = function(domainCode){
      if(!is(domainCode, "integer")){
        domainCode <- as(domainCode, "integer")
@@ -198,7 +124,9 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      self$domainCode <- domainCode
    },
    
-   #setDefinition
+   #'@description Set definition
+   #'@param definition definition
+   #'@param locales list of localized definitions. Default is \code{NULL}
    setDefinition = function(definition, locales = NULL){
      self$definition <- definition
      if(!is.null(locales)){
@@ -206,7 +134,9 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      }
    },
    
-   #setObligation
+   #'@description Set obligation
+   #'@param obligation obligation, object of class \link{ISOObligation} or any \link{character}
+   #'  value among those returned by \code{ISOObligation$values()}
    setObligation = function(obligation){
      if(!is(obligation, "ISOObligation")){
        obligation <- ISOObligation$new(value = obligation)
@@ -214,7 +144,9 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      self$obligation <- obligation
    },
   
-   #setCondition
+   #'@description Set condition
+   #'@param condition condition
+   #'@param locales list of localized conditions. Default is \code{NULL}
    setCondition = function(condition, locales = NULL){
      self$condition <- condition
      if(!is.null(locales)){
@@ -222,7 +154,9 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      }
    },
    
-   #setDatatype
+   #'@description Set data type
+   #'@param dataType data type, object of class \link{ISODatatype} or any \link{character}
+   #'  value among those returned by \code{ISODatatype$values()}
    setDatatype = function(dataType){
      if(!is(dataType, "ISODatatype")){
        dataType <- ISODatatype$new(value = dataType)
@@ -230,27 +164,35 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      self$dataType <- dataType
    },
    
-   #setMaximumOccurrence
+   #'@description Set maximum occurrence
+   #'@param maximumOccurrence max occurrence
    setMaximumOccurrence = function(maximumOccurrence){
      self$maximumOccurrence <- maximumOccurrence
    },
    
-   #setDomainValue
+   #'@description Set domain value
+   #'@param domainValue domain value
    setDomainValue = function(domainValue){
      self$domainValue <- domainValue
    },
    
-   #addParentEntity
+   #'@description Adds parent entity
+   #'@param entity parent entity
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addParentEntity = function(entity){
      return(self$addListElement("parentEntity", entity))
    },
   
-   #delParentEntity
+   #'@description Deletes parent entity
+   #'@param entity parent entity
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
    delParentEntity = function(entity){
      return(self$delListElement("parentEntity", entity))
    },
    
-   #setRule
+   #'@description Set rule
+   #'@param rule rule
+   #'@param locales list of localized rules. Default is \code{NULL}
    setRule = function(rule, locales = NULL){
      self$rule <- rule
      if(!is.null(locales)){
@@ -258,7 +200,10 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      }
    },
    
-   #addRationale
+   #'@description Adds rationale
+   #'@param rationale rationale
+   #'@param locales list of localized rationales. Default is \code{NULL}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addRationale = function(rationale, locales = NULL){
      if(is.null(rationale)) return(FALSE);
      if(!is.null(locales)){
@@ -267,7 +212,10 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      return(self$addListElement("rationale", rationale))
    },
    
-   #delRationale
+   #'@description Deletes rationale
+   #'@param rationale rationale
+   #'@param locales list of localized rationales. Default is \code{NULL}
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
    delRationale = function(rationale, locales = NULL){
      if(is.null(rationale)) return(FALSE);
      if(!is.null(locales)){
@@ -276,7 +224,9 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      return(self$delListElement("rationale", rationale))
    },
    
-   #addSource
+   #'@description Adds source
+   #'@param source source, object of class \link{ISOResponsibleParty}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
    addSource = function(source){
      if(!is(source, "ISOResponsibleParty")){
        stop("The argument should be a 'ISOResponsibleParty' object")
@@ -284,7 +234,9 @@ ISOExtendedElementInformation <- R6Class("ISOExtendedElementInformation",
      return(self$addListElement("source", source))
    },
    
-   #delSource
+   #'@description Deletes source
+   #'@param source source, object of class \link{ISOResponsibleParty}
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
    delSource = function(source){
      if(!is(source, "ISOResponsibleParty")){
        stop("The argument should be a 'ISOResponsibleParty' object")

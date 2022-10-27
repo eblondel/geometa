@@ -6,13 +6,6 @@
 #' @keywords ISO metadata namespace
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata Namespace
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(id, uri)}}{
-#'    This method is used to instantiate an ISOMetadata
-#'  }
-#' }
 #' 
 #' @note ISO class used internally by geometa for specifying XML namespaces
 #' 
@@ -20,12 +13,21 @@
 #'
 ISOMetadataNamespace <- R6Class("ISOMetadataNamespace",
   public = list(
+    #'@field id id
     id = NA,
+    #'@field uri uri
     uri = NA,
+    
+    #'@description Initializes namespace object
+    #'@param id id
+    #'@param uri uri
     initialize = function(id, uri){
       self$id = id
       self$uri = uri
     },
+    
+    #'@description Get definition
+    #'@return an object of class \link{list}
     getDefinition = function(){
       ns <- list(self$uri)
       names(ns) <- self$id

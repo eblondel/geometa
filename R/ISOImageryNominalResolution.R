@@ -6,22 +6,6 @@
 #' @keywords ISO imagery nominal resolution
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery nominal resolution
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field scanningResolution [\code{\link{ISODistance}}]
-#' @field groundResolution [\code{\link{ISODistance}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryNominalResolution}}
-#'  }
-#'  \item{\code{setScanningResolution(resolution)}}{
-#'    Set the scanning resolution, object of class \code{\link{ISODistance}}
-#'  }
-#'  \item{\code{setGroundResolution(resolution)}}{
-#'    Set the ground resolution, object of class \code{\link{ISODistance}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   #encoding
@@ -45,15 +29,19 @@ ISOImageryNominalResolution <- R6Class("ISOImageryNominalResolution",
      xmlNamespacePrefix = "GMI"
    ),
    public = list(
-     #+ scanningResolution [0..1]: ISODistance
+     #'@field scanningResolution scanningResolution [0..1]: ISODistance
      scanningResolution = NULL,
-     #+ groundResolution [0..1]: ISODistance
+     #'@field groundResolution groundResolution [0..1]: ISODistance
      groundResolution = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setScanningResolution
+     #'@description Set scanning resolution
+     #'@param resolution object of class \link{ISODistance}
      setScanningResolution = function(resolution){
        if(!is(resolution, "ISODistance")){
          stop("The argument should be an object of class 'ISODistance'")
@@ -62,7 +50,8 @@ ISOImageryNominalResolution <- R6Class("ISOImageryNominalResolution",
        self$groundResolution <- NULL
      },
      
-     #setGroundResolution
+     #'@description Set ground resolution
+     #'@param resolution object of class \link{ISODistance}
      setGroundResolution = function(resolution){
        if(!is(resolution, "ISODistance")){
          stop("The argument should be an object of class 'ISODistance'")

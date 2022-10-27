@@ -6,62 +6,6 @@
 #' @keywords ISO imagery band
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery band
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field bandBoundaryDefinition [\code{\link{ISOImageryBandDefinition}}]
-#' @field nominalSpatialResolution [\code{\link{numeric}}]
-#' @field transferFunctionType [\code{\link{ISOImageryTransferFunctionType}}]
-#' @field transmittedPolarisation [\code{\link{ISOImageryPolarisationOrientation}}]
-#' @field detectedPolarisation [\code{\link{ISOImageryPolarisationOrientation}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryBand}}
-#'  }
-#'  \item{\code{setBandBoundaryDefinition(definition)}}{
-#'    Set the band boundary definition, object of class \code{\link{ISOImageryBandDefinition}}
-#'    or \code{character} among values available by \code{ISOImageryBandDefinition$values()}
-#'  }
-#'  \item{\code{setNominalSpatialResolution(resolution)}}{
-#'    Set the nominal spatial reosolution, object of class \code{numeric}
-#'  }
-#'  \item{\code{setTransmittedPolarisation(polarisation)}}{
-#'    Set the transmitted polarisation, object of class \code{\link{ISOImageryPolarisationOrientation}}
-#'    or \code{character} among values returned by \code{ISOImageryPolarisationOrientation$values()}
-#'  }
-#'  \item{\code{setDetectedPolarisation(polarisation)}}{
-#'    Set the detected polarisation, object of class \code{\link{ISOImageryPolarisationOrientation}}
-#'    or \code{character} among values returned by \code{ISOImageryPolarisationOrientation$values()}
-#'  }
-#' } 
-#' 
-#' @section Methods inherited from \code{\link{ISOBand}}:
-#' \describe{
-#'  \item{\code{setMaxValue(maxValue)}}{
-#'    Sets the maximum value
-#'  }
-#'  \item{\code{setMinValue(minValue)}}{
-#'    Sets the minimum value
-#'  }
-#'  \item{\code{setUnits(units)}}{
-#'    Sets the unit, object of class \code{\link{GMLUnitDefinition}}
-#'  }
-#'  \item{\code{setPeakResponse(peakResponse)}}{
-#'    Sets the peak response
-#'  }
-#'  \item{\code{setBitsPerValue(bitsPerValue)}}{
-#'    Sets the bits per value
-#'  }
-#'  \item{\code{setToneGradation}}{
-#'    Sets the tone gradation
-#'  }
-#'  \item{\code{setScaleFactor(scaleFactor)}}{
-#'    Sets the scale factor
-#'  }
-#'  \item{\code{setOffset(offset)}}{
-#'    Sets the offset
-#'  }
-#' }
 #' 
 #' @examples
 #'    #create band range dimension
@@ -102,21 +46,26 @@ ISOImageryBand <- R6Class("ISOImageryBand",
      xmlNamespacePrefix = "GMI"
    ),
    public = list(
-     #+ bandBoundaryDefinition [0..1]: ISOImageryBandDefinition
+     #'@field bandBoundaryDefinition bandBoundaryDefinition [0..1]: ISOImageryBandDefinition
      bandBoundaryDefinition = NULL,
-     #+ nominalSpatialResolution [0..1] ISOBaseReal
+     #'@field nominalSpatialResolution nominalSpatialResolution [0..1] ISOBaseReal
      nominalSpatialResolution = NULL,
-     #+ transferFunctionType [0..1]: ISOImageryTransferFunctionType
+     #'@field transferFunctionType transferFunctionType [0..1]: ISOImageryTransferFunctionType
      transferFunctionType = NULL,
-     #+ transmittedPolarisation [0..1]: ISOImageryPolarisationOrientation
+     #'@field transmittedPolarisation transmittedPolarisation [0..1]: ISOImageryPolarisationOrientation
      transmittedPolarisation = NULL,
-     #detectedPolarisation [0..1]: ISOImageryPolarisationOrientation
+     #'@field detectedPolarisation detectedPolarisation [0..1]: ISOImageryPolarisationOrientation
      detectedPolarisation = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setBandBoundaryDefinition
+     #'@description Set band boundary definition
+     #'@param definition object of class \link{ISOImageryBandDefinition} or \link{character}
+     #'  among values returned by \code{ISOImageryBandDefinition$values()}
      setBandBoundaryDefinition = function(definition){
        if(is(definition, "character")){
          definition <- ISOImageryBandDefinition$new(value = definition)
@@ -128,7 +77,8 @@ ISOImageryBand <- R6Class("ISOImageryBand",
        self$bandBoundaryDefinition <- definition
      },
      
-     #setNominalSpatialResolution
+     #'@description Set nominal spatial resolution
+     #'@param resolution object of class \link{numeric}
      setNominalSpatialResolution = function(resolution){
        if(!is(resolution, "numeric")){
          res <- as(resolution, "numeric")
@@ -140,7 +90,9 @@ ISOImageryBand <- R6Class("ISOImageryBand",
        self$nominalSpatialResolution <- resolution
      },
      
-     #setTransferFunctionType
+     #'@description Set transfer function type
+     #'@param functionType object of class \link{ISOImageryTransferFunctionType} or any \link{character}
+     #'  from values returned by \code{ISOImageryTransferFunctionType$values()}
      setTransferFunctionType = function(functionType){
        if(is(functionType, "character")){
          functionType <- ISOImageryTransferFunctionType$new(value = functionType)
@@ -152,7 +104,9 @@ ISOImageryBand <- R6Class("ISOImageryBand",
        self$transferFunctionType <- functionType
      },
      
-     #setTransmittedPolarisation
+     #'@description Set transmitted polarisation
+     #'@param polarisation object of class \link{ISOImageryPolarisationOrientation} or any \link{character}
+     #'  from values returned by \code{ISOImageryPolarisationOrientation$values()}
      setTransmittedPolarisation = function(polarisation){
        if(is(polarisation, "character")){
          polarisation <- ISOImageryPolarisationOrientation$new(value = polarisation)
@@ -164,7 +118,9 @@ ISOImageryBand <- R6Class("ISOImageryBand",
        self$transmittedPolarisation <- polarisation    
      },
      
-     #setDetectedPolarisation
+     #'@description Set detected polarisation
+     #'@param polarisation object of class \link{ISOImageryPolarisationOrientation} or any \link{character}
+     #'  from values returned by \code{ISOImageryPolarisationOrientation$values()}
      setDetectedPolarisation = function(polarisation){
        if(is(polarisation, "character")){
          polarisation <- ISOImageryPolarisationOrientation$new(value = polarisation)

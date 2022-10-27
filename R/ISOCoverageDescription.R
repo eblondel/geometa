@@ -6,31 +6,6 @@
 #' @keywords ISO coverage description
 #' @return Object of \code{\link{R6Class}} for modelling an ISOCoverageDescription
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field attributeDescription [\code{\link{ISORecordType}}] attribute description
-#' @field contentType [\code{\link{character}}] content type
-#' @field dimension [\code{\link{ISORangeDimension}}] range dimension(s)
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOCoverageDescription
-#'  }
-#'  \item{\code{setAttributeDescription}}{
-#'    Sets the attribute description, as object of class \code{ISORecordType} or
-#'    \code{character}
-#'  }
-#'  \item{\code{setContentType(contentType)}}{
-#'    Sets the content Type, as object of class \code{ISOCoverageContentType} or
-#'    any \code{character} value listed in \code{ISOCoverageContentType$values()}
-#'  }
-#'  \item{\code{addDimension(dimension)}}{
-#'    Adds a dimension, object of class (or subclass of) \code{ISORangeDimension}
-#'  }
-#'  \item{\code{delDimension(dimension)}}{
-#'    Deletes a dimension, object of class (or subclass of) \code{ISORangeDimension}
-#'  }
-#' }
 #' 
 #' @examples
 #'    #create coverage description
@@ -77,17 +52,21 @@ ISOCoverageDescription <- R6Class("ISOCoverageDescription",
    ),
    public = list(
      
-     #+ attributeDescription: ISoRecordType
+     #'@field attributeDescription attributeDescription: ISoRecordType
      attributeDescription = NULL,
-     #+ contentType: ISOCoverageContentType
+     #'@field contentType contentType: ISOCoverageContentType
      contentType = NULL,
-     #+ dimension: ISORangeDimension
+     #'@field dimension dimension: ISORangeDimension
      dimension = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setAttributeDescription
+     #'@description Set attribute description
+     #'@param attributeDescription attribute description, object of class \link{ISORecordType} or \link{character}
      setAttributeDescription = function(attributeDescription){
        if(!is(attributeDescription, "ISORecordType")){
          attributeDescription <- ISORecordType$new(value = attributeDescription)
@@ -95,7 +74,8 @@ ISOCoverageDescription <- R6Class("ISOCoverageDescription",
        self$attributeDescription <- attributeDescription
      },
      
-     #setContentType
+     #'@description Set content type
+     #'@param contentType contentType, object of class \link{ISOCoverageContentType} or \link{character}
      setContentType = function(contentType){
        if(!is(contentType, "ISOCoverageContentType")){
          contentType <- ISOCoverageContentType$new(value = contentType)
@@ -103,7 +83,9 @@ ISOCoverageDescription <- R6Class("ISOCoverageDescription",
        self$contentType <- contentType
      },
      
-     #addDimension
+     #'@description Adds dimension
+     #'@param dimension object of class \link{ISORangeDimension}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDimension = function(dimension){
        if(!is(dimension, "ISORangeDimension")){
          stop("The argument should be an object of class 'ISORangeDimension'")
@@ -111,7 +93,9 @@ ISOCoverageDescription <- R6Class("ISOCoverageDescription",
        return(self$addListElement("dimension", dimension))
      },
      
-     #delDimension
+     #'@description Deletes dimension
+     #'@param dimension object of class \link{ISORangeDimension}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDimension = function(dimension){
        if(!is(dimension, "ISORangeDimension")){
          stop("The argument should be an object of class 'ISORangeDimension'")

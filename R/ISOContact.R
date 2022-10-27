@@ -6,26 +6,6 @@
 #' @keywords ISO contact
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Contact
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field phone [\code{\link{ISOTelephone}}] phone
-#' @field address [\code{\link{ISOAddress}}] address
-#' @field onlineResource [\code{\link{ISOOnlineResource}}] online resource
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOContact
-#'  }
-#'  \item{\code{setPhone(phone)}}{
-#'    Sets the phone contact
-#'  }
-#'  \item{\code{setAddress(address)}}{
-#'    Sets the address contact
-#'  }
-#'  \item{\code{setOnlineResource(onlineResource)}}{
-#'    Sets the online resource
-#'  }
-#' }
 #' 
 #' @examples 
 #'  md <- ISOContact$new()
@@ -58,14 +38,21 @@ ISOContact <- R6Class("ISOContact",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@field phone phone
      phone = NULL,
+     #'@field address address
      address = NULL,
+     #'@field onlineResource online resource
      onlineResource = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setPhone
+     #'@description Set phone
+     #'@param phone object of class \link{ISOTelephone}
      setPhone = function(phone){
        if(!is(phone, "ISOTelephone")){
          stop("The argument should be a 'ISOTelephone' object")
@@ -73,7 +60,8 @@ ISOContact <- R6Class("ISOContact",
        self$phone = phone
      },
      
-     #setAddress
+     #'@description Set address
+     #'@param address object of class \link{ISOAddress}
      setAddress = function(address){
        if(!is(address, "ISOAddress")){
          stop("The argument should be a 'ISOAddress' object")
@@ -81,7 +69,8 @@ ISOContact <- R6Class("ISOContact",
        self$address = address
      },
      
-     #setOnlineResource
+     #'@description Set online resource
+     #'@param onlineResource online resource, object of class \link{ISOOnlineResource}
      setOnlineResource = function(onlineResource){
        if(!is(onlineResource, "ISOOnlineResource")){
          stop("The argument should be a 'ISOOnlineResource' object")

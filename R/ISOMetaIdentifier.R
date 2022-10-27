@@ -6,13 +6,6 @@
 #' @keywords ISO meta identifier
 #' @return Object of \code{\link{R6Class}} for modelling an ISO MetaIdentifier
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, code)}}{
-#'    This method is used to instantiate an \code{\link{ISOMetaIdentifier}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOMetaIdentifier$new(code = "identifier")
@@ -30,6 +23,9 @@ ISOMetaIdentifier <- R6Class("ISOMetaIdentifier",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param code code
      initialize = function(xml = NULL, code){
        super$initialize(xml = xml, code = code)
      }

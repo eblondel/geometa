@@ -7,70 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO FeatureCatalogue
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field producer [\code{\link{ISOResponsibleParty}}]
-#' @field functionalLanguage [\code{\link{ISOLanguage}}]
-#' @field featureType [\code{\link{ISOFeatureType}}]
-#' @field definitionSource [\code{\link{ISODefinitionSource}}]
-#'
-#' @section Methods inherited from \code{\link{ISOAbstractCatalogue}}:
-#' \describe{
-#'  \item{\code{setName(name, locales)}}{
-#'    Sets the name. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{addScope(scope, locales)}}{
-#'    Adds scope (object of class \code{character}). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{delScope(scope, locales)}}{
-#'    Deletes scope. Locale names can be  specified as \code{list} with 
-#'    the \code{locales} argument. Local names should match those of 
-#'    the scope to be deleted, otherwise nothing will be deleted.
-#'  }
-#'  \item{\code{addFieldOfApplication(fieldOfApplication, locales)}}{
-#'    Adds a field of application (object of class \code{character}). Locale names 
-#'    can be specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{delFieldOfApplication(fieldOfApplication, locales)}}{
-#'    Deletes fieldOfApplication. Locale names can be  specified as \code{list} with 
-#'    the \code{locales} argument. Local names should match those of 
-#'    the field of application to be deleted, otherwise nothing will be deleted.
-#'  }
-#'  \item{\code{setVersionNumber(versionNumber)}}{
-#'    Sets version number (object of class \code{character})
-#'  }
-#'  \item{\code{setVersionDate(versionDate)}}{
-#'    Sets version date
-#'  }
-#' }
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, uuid)}}{
-#'    This method is used to instantiate an ISOFeatureCatalogue
-#'  }
-#'  \item{\code{setProducer(producer)}}{
-#'    Sets an object of class \code{ISOResponsibleParty} as producer
-#'  }
-#'  \item{\code{setFunctionalLanguage(functionalLanguage)}}{
-#'    Sets the functional language
-#'  }
-#'  \item{\code{addFeatureType(featureType)}}{
-#'    Adds a feature type, object of class \code{ISOFeatureType}
-#'  }
-#'  \item{\code{delFeatureType(featureType)}}{
-#'    Deletes a feature type, object of class \code{ISOFeatureType}
-#'  }
-#'  \item{\code{addDefinitionSource(source)}}{
-#'    Adds a definition source, object of class \code{ISODefinitionSource} or
-#'    \code{ISOCitation}
-#'  }
-#'  \item{\code{delDefinitionSource(source)}}{
-#'    Deletes a definition source, object of class \code{ISODefinitionSource} or
-#'    \code{ISOCitation}
-#'  }
-#' }
-#'
 #' @examples 
 #'  fc <- ISOFeatureCatalogue$new(uuid = "my-fc-identifier")
 #'  fc$setName("name")
@@ -153,24 +89,27 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       xmlNamespacePrefix = "GFC"
     ),
     public = list(
-      
+      #'@field attrs attrs
       attrs = list(),
-      
-      #+ producer [1..1]: ISOResponsibleParty
+      #'@field producer producer [1..1]: ISOResponsibleParty
       producer = NULL,
-      #+ functionalLanguage [0..1]: character 
+      #'@field functionalLanguage functionalLanguage [0..1]: character 
       functionalLanguage = NULL,
-      #+ featureType [1..*]: ISOFeatureType
+      #'@field featureType featureType [1..*]: ISOFeatureType
       featureType = list(),
-      #+ definitionSource [0..*]: ISODefinitionSource
+      #'@field definitionSource definitionSource [0..*]: ISODefinitionSource
       definitionSource = list(),
       
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param uuid uuid
       initialize = function(xml = NULL, uuid = NULL){
         super$initialize(xml = xml)
         if(!is.null(uuid)) self$attrs[["uuid"]] <- as.character(uuid)
       },
       
-      #setProducer
+      #'@description Set producer
+      #'@param producer object of class \link{ISOResponsibleParty}
       setProducer = function(producer){
         if(!is(producer,"ISOResponsibleParty")){
           stop("The argument should be a 'ISOResponsibleParty' object")
@@ -178,13 +117,16 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
         self$producer <- producer
       },
       
-      #setFunctionalLanguage
+      #'@description Set functional language
+      #'@param functionalLanguage functional language
       setFunctionalLanguage = function(functionalLanguage){
         if(!is(functionalLanguage,"character")) functionalLanguage <- as(functionalLanguage, "character")
         self$functionalLanguage <- functionalLanguage
       },
       
-      #addFeatureType
+      #'@description Adds feature type
+      #'@param featureType object of class \link{ISOFeatureType}
+      #'@return \code{TRUE} if added, \code{FALSE} otherwise
       addFeatureType = function(featureType){
         if(!is(featureType, "ISOFeatureType")){
           stop("The argument should be a 'ISOFeatureType' object")
@@ -192,7 +134,9 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
         return(self$addListElement("featureType", featureType))
       },
       
-      #delFeatureType
+      #'@description Deletes feature type
+      #'@param featureType object of class \link{ISOFeatureType}
+      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
       delFeatureType = function(featureType){
         if(!is(featureType, "ISOFeatureType")){
           stop("The argument should be a 'ISOFeatureType' object")
@@ -200,7 +144,9 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
         return(self$delListElement("featureType", featureType))
       },
       
-      #addDefinitionSource
+      #'@description Adds definition source
+      #'@param source object of class \link{ISODefinitionSource} or \link{ISOCitation}
+      #'@return \code{TRUE} if added, \code{FALSE} otherwise
       addDefinitionSource = function(source){
         if(!is(source, "ISODefinitionSource")){
           if(is(source, "ISOCitation")){
@@ -212,7 +158,9 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
         return(self$addListElement("definitionSource", source))
       },
       
-      #delDefinitionSource
+      #'@description Deletes definition source
+      #'@param source object of class \link{ISODefinitionSource} or \link{ISOCitation}
+      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
       delDefinitionSource = function(source){
         if(!is(source, "ISODefinitionSource")){
           if(is(source, "ISOCitation")){

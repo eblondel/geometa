@@ -6,18 +6,6 @@
 #' @keywords ISO representative fraction
 #' @return Object of \code{\link{R6Class}} for modelling an ISO RepresentativeFraction
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field denominator [\code{\link{integer}}] denominator
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, denominator)}}{
-#'    This method is used to instantiate an \code{\link{ISORepresentativeFraction}}
-#'  }
-#'  \item{\code{setDenominator(denominator)}}{
-#'    Sets the denominator, object of class \code{integer}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   fr <- ISORepresentativeFraction$new(denominator = 1L)
@@ -37,7 +25,12 @@ ISORepresentativeFraction <- R6Class("ISORepresentativeFraction",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field denominator denominator
     denominator = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param denominator denominator
     initialize = function(xml = NULL, denominator){
       super$initialize(xml = xml)
       if(is.null(xml) & !missing(denominator)){
@@ -45,13 +38,14 @@ ISORepresentativeFraction <- R6Class("ISORepresentativeFraction",
       }
     },
     
-    #setDenominator
+    #'@description Set denominator
+    #'@param denominator object of class \link{integer}
     setDenominator = function(denominator){
       newValue <- denominator
-      if(!is(denominator, "integer")){
-        newValue <- as.integer(denominator)
+      if(!is(denominator, "numeric")){
+        newValue <- as.numeric(denominator)
         if(is.na(newValue)){
-          stop(sprintf("Value '%s' cannot be coerced to 'integer'", denominator))
+          stop(sprintf("Value '%s' cannot be coerced to 'numeric'", denominator))
         }
       }
       self$denominator = newValue

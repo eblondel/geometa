@@ -6,44 +6,6 @@
 #' @keywords ISO extent
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Extent
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field geographicElement [\code{\link{ISOGeographicExtent}}] geographic extent(s)
-#' @field temporalElement [\code{\link{ISOTemporalExtent}}] temporal extent(s)
-#' @field verticalElement [\code{\link{ISOVerticalExtent}}] vertical extent(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOExtent}}
-#'  }
-#'  \item{\code{addGeographicElement(extent)}}{
-#'    Adds an object extending \code{\link{ISOGeographicExtent}}
-#'  }
-#'  \item{\code{setGeographicElement(extent)}}{
-#'    Sets an object extending \code{\link{ISOGeographicExtent}}
-#'  }
-#'  \item{\code{delGeographicElement(extent)}}{
-#'    Deletes an object extending \code{\link{ISOGeographicExtent}}
-#'  }
-#'  \item{\code{addTemporalElement(extent)}}{
-#'    Adds an object extending \code{\link{ISOTemporalExtent}}
-#'  }
-#'  \item{\code{setTemporalElement(extent)}}{
-#'    Sets an object extending \code{\link{ISOTemporalExtent}}
-#'  }
-#'  \item{\code{delTemporalElement(extent)}}{
-#'    Deletes an object extending \code{\link{ISOTemporalExtent}}
-#'  }
-#'  \item{\code{addVerticalElement(extent)}}{
-#'    Adds an object extending \code{\link{ISOVerticalExtent}}
-#'  }
-#'  \item{\code{setVerticalElement(extent)}}{
-#'    Sets an object extending \code{\link{ISOVerticalExtent}}
-#'  }
-#'  \item{\code{delVerticalElement(extent)}}{
-#'    Deletes an object extending \code{ISOVerticalExtent}
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -57,17 +19,22 @@ ISOExtent <- R6Class("ISOExtent",
       xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     #+ geographicElement [0..*]: ISOGeographicExtent
+     #'@field geographicElement geographicElement [0..*]: ISOGeographicExtent
      geographicElement = list(),
-     #+ temporalElement [0..*]: ISOTemporalExtent
+     #'@field temporalElement temporalElement [0..*]: ISOTemporalExtent
      temporalElement = list(),
-     #+ verticialElement [0..*]: ISOVerticalElement
+     #'@field verticalElement verticalElement [0..*]: ISOVerticalElement
      verticalElement = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #addGeographicElement
+     #'@description Adds geographic element
+     #'@param element object of class \link{ISOGeographicExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addGeographicElement = function(element){
        if(!is(element, "ISOGeographicExtent")){
          stop("The argument should extend 'ISOGeographicExtent' object")
@@ -75,13 +42,9 @@ ISOExtent <- R6Class("ISOExtent",
        return(self$addListElement("geographicElement", element))
      },
      
-     #setGeographicElement
-     setGeographicElement = function(element){
-       self$geographicElement = list()
-       return(self$addGeographicElement(element))
-     }, 
-     
-     #delGeographicElement
+     #'@description Deletes geographic element
+     #'@param element object of class \link{ISOGeographicExtent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delGeographicElement = function(element){
        if(!is(element, "ISOGeographicExtent")){
          stop("The argument should extend 'ISOGeographicExtent' object")
@@ -89,7 +52,9 @@ ISOExtent <- R6Class("ISOExtent",
        return(self$delListElement("geographicElement", element))
      },
      
-     #addTemporalElement
+     #'@description Adds temporal element
+     #'@param element object of class \link{ISOTemporalExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addTemporalElement = function(element){
        if(!is(element, "ISOTemporalExtent")){
          stop("The argument should extend 'ISOTemporalExtent' object")
@@ -97,13 +62,9 @@ ISOExtent <- R6Class("ISOExtent",
        return(self$addListElement("temporalElement", element))
      },
      
-     #setTemporalElement
-     setTemporalElement = function(element){
-       self$temporalElement = list()
-       return(self$addTemporalElement(element))
-     },
-     
-     #delTemporalElement
+     #'@description Deletes temporal element
+     #'@param element object of class \link{ISOTemporalExtent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delTemporalElement = function(element){
        if(!is(element, "ISOTemporalExtent")){
          stop("The argument should extend 'ISOTemporalExtent' object")
@@ -111,7 +72,9 @@ ISOExtent <- R6Class("ISOExtent",
        return(self$delListElement("temporalElement", element))
      },
      
-     #addVerticalElement
+     #'@description Adds vertical element
+     #'@param element object of class \link{ISOVerticalExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addVerticalElement = function(element){
        if(!is(element, "ISOVerticalExtent")){
          stop("The argument should extend 'ISOVerticalExtent' object")
@@ -119,13 +82,9 @@ ISOExtent <- R6Class("ISOExtent",
        return(self$addListElement("verticalElement", element))
      },
      
-     #setVerticalElement
-     setVerticalElement = function(element){
-       self$verticalElement = list()
-       return(self$addVerticalElement(element))
-     },
-     
-     #delVerticalElement
+     #'@description Deletes vertical element
+     #'@param element object of class \link{ISOVerticalExtent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delVerticalElement = function(element){
        if(!is(element, "ISOVerticalExtent")){
          stop("The argument should extend 'ISOVerticalExtent' object")

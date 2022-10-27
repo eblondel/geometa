@@ -6,21 +6,6 @@
 #' @keywords ISO freeText
 #' @return Object of \code{\link{R6Class}} for modelling an ISO FreeText
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field textGroup [\code{\link{ISOLocalisedCharacterString}}] localised string(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOFreeText
-#'  }
-#'  \item{\code{addTextGroup(textGroup)}}{
-#'    Add a text group, object of class \code{\link{ISOLocalisedCharacterString}}
-#'  }
-#'  \item{\code{delTextGroup(textGroup)}}{
-#'    Deletes a text group, object of class \code{\link{ISOLocalisedCharacterString}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   ft <- ISOFreeText$new()
@@ -37,14 +22,18 @@ ISOFreeText <- R6Class("ISOFreeText",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     #+ textGroup [1..*]: ISOLocalisedCharacterString
+     #'@field textGroup textGroup [1..*]: ISOLocalisedCharacterString
      textGroup = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #addTextGroup
+     #'@description Adds text group
+     #'@param textGroup text group, object of class \link{ISOLocalisedCharacterString}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addTextGroup = function(textGroup){
        if(!is(textGroup, "ISOLocalisedCharacterString")){
          stop("The argument should be an object of class 'ISOLocalisedCharacterString")
@@ -52,7 +41,9 @@ ISOFreeText <- R6Class("ISOFreeText",
        return(self$addListElement("textGroup", textGroup))
      },
      
-     #delTextGroup
+     #'@description Deletes text group
+     #'@param textGroup text group, object of class \link{ISOLocalisedCharacterString}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delTextGroup = function(textGroup){
        if(!is(textGroup, "ISOLocalisedCharacterString")){
          stop("The argument should be an object of class 'ISOLocalisedCharacterString")

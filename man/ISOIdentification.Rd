@@ -12,135 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO Identification
 }
 \description{
 ISOIdentification
+
+ISOIdentification
 }
-\section{Fields}{
-
-\describe{
-\item{\code{citation}}{[\code{\link{ISOCitation}}] citation}
-
-\item{\code{abstract}}{[\code{\link{character}}] abstract}
-
-\item{\code{purpose}}{[\code{\link{character}}] purpose}
-
-\item{\code{credit}}{[\code{\link{character}}] credit}
-
-\item{\code{status}}{[\code{\link{ISOStatus}}] status}
-
-\item{\code{pointOfContact}}{[\code{\link{ISOResponsibleParty}}] point(s) of contact}
-
-\item{\code{resourceMaintenance}}{[\code{\link{ISOMaintenanceInformation}}] maintenance information}
-
-\item{\code{graphicOverview}}{[\code{\link{ISOBrowseGraphic}}] graphic overview(s)}
-
-\item{\code{resourceFormat}}{[\code{\link{ISOFormat}}] format(s)}
-
-\item{\code{descriptiveKeywords}}{[\code{\link{ISOKeywords}}] keyword(s)}
-
-\item{\code{resourceConstraints}}{[\code{\link{ISOConstraints}}] constraint(s)}
-
-\item{\code{resourceSpecificUsage}}{[\code{\link{ISOUsage}}] usage(s)}
-
-\item{\code{aggregationInfo}}{[\code{\link{ISOAggregateInformation}}] aggregate information}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml, element, namespace, defaults)}}{
-   This method is used to instantiate an \code{\link{ISOIdentification}}
- }
- \item{\code{setCitation(citation)}}{
-   Sets an object of class \code{\link{ISOCitation}}
- }
- \item{\code{setAbstract(abstract, locales)}}{
-   Sets an abstract (object of class "character"). Locale names can be 
-   specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{setPurpose(purpose, locales)}}{
-   Sets a purpose (object of class "character"). Locale names can be 
-   specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{addCredit(credit, locales)}}{
-   Adds a credit (object of class "character"). Locale names can be 
-   specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{delCredit(credit, locales)}}{
-   Deletes a credit (object of class "character"). Locale names can be 
-   specified as \code{list} with the \code{locales} argument.
- }
- \item{\code{addStatus(status)}}{
-   Adds a status, as object of class "character" or class \code{\link{ISOStatus}}. If
-   an object of class "character" is specified, it must match the accepted
-   progress status values \code{ISOStatus$values()}.
- }
- \item{\code{delStatus(status)}}{
-   Deletes a status, as object of class "character" or class \code{\link{ISOStatus}}. If
-   an object of class "character" is specified, it must match the accepted
-   progress status values \code{ISOStatus$values()}.
- }
- \item{\code{addPointOfContact(pointOfContact)}}{
-   Adds an object of class \code{\link{ISOResponsibleParty}}
- }
- \item{\code{delPointOfContact(pointOfContact)}}{
-   Deletes an object of class \code{\link{ISOResponsibleParty}}
- }
- \item{\code{addResourceMaintenance(resourceMaintenance)}}{
-   Adds a resource maintenance information as object of class 
-   \code{\link{ISOMaintenanceInformation}}.
- }
- \item{\code{setResourceMaintenance(resourceMaintenance)}}{
-   Sets a resource maintenance information as object of class 
-   \code{\link{ISOMaintenanceInformation}}.
- }
- \item{\code{delResourceMaintenance(resourceMaintenance)}}{
-   Deletes a resource maintenance information as object of class 
-   \code{\link{ISOMaintenanceInformation}}.
- }
- \item{\code{addGraphicOverview(graphicOverview)}}{
-   Adds an object of class \code{\link{ISOBrowseGraphic}}
- }
- \item{\code{setGraphicOverview(graphicOverview)}}{
-   Sets an object of class \code{\link{ISOBrowseGraphic}}
- }
- \item{\code{delGraphicOverview(graphicOverview)}}{
-   Deletes an object of class \code{\link{ISOBrowseGraphic}}
- }
- \item{\code{addFormat(format)}}{
-   Adds a resource format, object of class \code{\link{ISOFormat}}
- }
- \item{\code{delFormat(format)}}{
-   Deletes a resource format, object of class \code{\link{ISOFormat}}
- }
- \item{\code{addKeywords(keywords)}}{
-   Adds a set of keywords as object of class \code{\link{ISOKeywords}}
- }
- \item{\code{setKeywords(keywords)}}{
-   Sets a set of keywords as object of class \code{\link{ISOKeywords}}
- }
- \item{\code{delKeywords(keywords)}}{
-   Deletes a set of keywords as object of class \code{\link{ISOKeywords}}
- }
- \item{\code{addResourceConstraints(resourceConstraints)}}{
-   Adds an object extending \code{\link{ISOConstraints}}, either an object of class
-   \code{\link{ISOLegalConstraints}} or \code{\link{ISOSecurityConstraints}}
- }
- \item{\code{setResourceConstraints(resourceConstraints)}}{
-   Sets an object extending \code{\link{ISOConstraints}}, either an object of class
-   \code{\link{ISOLegalConstraints}} or \code{\link{ISOSecurityConstraints}}
- }
- \item{\code{delResourceConstraints(resourceConstraints)}}{
-   Deletes an object extending \code{\link{ISOConstraints}}, either an object of class
-   \code{\link{ISOLegalConstraints}} or \code{\link{ISOSecurityConstraints}}
- }
- \item{\code{addAggregateInformation(aggregateInfo)}}{
-   Adds an object of class \code{\link{ISOAggregateInformation}}
- }
- \item{\code{delAggregateInformation(aggregateInfo)}}{
-   Deletes an object of class \code{\link{ISOAggregateInformation}}
- }
-}
-}
-
 \references{
 ISO 19115:2003 - Geographic information -- Metadata
 }
@@ -149,3 +23,640 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{identification}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOIdentification}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{citation}}{citation: ISOCitation}
+
+\item{\code{abstract}}{abstract: character}
+
+\item{\code{purpose}}{purpose [0..1]: character}
+
+\item{\code{credit}}{credit [0..*]: character}
+
+\item{\code{status}}{status [0..*]: ISOStatus}
+
+\item{\code{pointOfContact}}{pointOfContact [0..*]: ISOResponsibleParty}
+
+\item{\code{resourceMaintenance}}{resourceMaintenance [0..*]: ISOMaintenanceInformation}
+
+\item{\code{graphicOverview}}{graphicOverview [0..*]: ISOBrowseGraphic}
+
+\item{\code{resourceFormat}}{resourceFormat [0..*]: ISOFormat}
+
+\item{\code{descriptiveKeywords}}{descriptiveKeywords [0..*]: ISOKeywords}
+
+\item{\code{resourceConstraints}}{resourceConstraints [0..*]: ISOLegalConstraints}
+
+\item{\code{resourceSpecificUsage}}{resourceSpecificUsage [0..*]: MD_Usage (ISOUsage - to implement)}
+
+\item{\code{aggregationInfo}}{aggregationInfo [0..*]: ISOAggregateInformation}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOIdentification-new}{\code{ISOIdentification$new()}}
+\item \href{#method-ISOIdentification-setCitation}{\code{ISOIdentification$setCitation()}}
+\item \href{#method-ISOIdentification-setAbstract}{\code{ISOIdentification$setAbstract()}}
+\item \href{#method-ISOIdentification-setPurpose}{\code{ISOIdentification$setPurpose()}}
+\item \href{#method-ISOIdentification-addCredit}{\code{ISOIdentification$addCredit()}}
+\item \href{#method-ISOIdentification-delCredit}{\code{ISOIdentification$delCredit()}}
+\item \href{#method-ISOIdentification-addStatus}{\code{ISOIdentification$addStatus()}}
+\item \href{#method-ISOIdentification-delStatus}{\code{ISOIdentification$delStatus()}}
+\item \href{#method-ISOIdentification-addPointOfContact}{\code{ISOIdentification$addPointOfContact()}}
+\item \href{#method-ISOIdentification-delPointOfContact}{\code{ISOIdentification$delPointOfContact()}}
+\item \href{#method-ISOIdentification-addResourceMaintenance}{\code{ISOIdentification$addResourceMaintenance()}}
+\item \href{#method-ISOIdentification-setResourceMaintenance}{\code{ISOIdentification$setResourceMaintenance()}}
+\item \href{#method-ISOIdentification-delResourceMaintenance}{\code{ISOIdentification$delResourceMaintenance()}}
+\item \href{#method-ISOIdentification-addGraphicOverview}{\code{ISOIdentification$addGraphicOverview()}}
+\item \href{#method-ISOIdentification-setGraphicOverview}{\code{ISOIdentification$setGraphicOverview()}}
+\item \href{#method-ISOIdentification-delGraphicOverview}{\code{ISOIdentification$delGraphicOverview()}}
+\item \href{#method-ISOIdentification-addFormat}{\code{ISOIdentification$addFormat()}}
+\item \href{#method-ISOIdentification-delFormat}{\code{ISOIdentification$delFormat()}}
+\item \href{#method-ISOIdentification-addKeywords}{\code{ISOIdentification$addKeywords()}}
+\item \href{#method-ISOIdentification-setKeywords}{\code{ISOIdentification$setKeywords()}}
+\item \href{#method-ISOIdentification-delKeywords}{\code{ISOIdentification$delKeywords()}}
+\item \href{#method-ISOIdentification-addResourceConstraints}{\code{ISOIdentification$addResourceConstraints()}}
+\item \href{#method-ISOIdentification-setResourceConstraints}{\code{ISOIdentification$setResourceConstraints()}}
+\item \href{#method-ISOIdentification-delResourceConstraints}{\code{ISOIdentification$delResourceConstraints()}}
+\item \href{#method-ISOIdentification-addAggregateInformation}{\code{ISOIdentification$addAggregateInformation()}}
+\item \href{#method-ISOIdentification-delAggregateInformation}{\code{ISOIdentification$delAggregateInformation()}}
+\item \href{#method-ISOIdentification-clone}{\code{ISOIdentification$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$new(xml = NULL, defaults = list())}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{defaults}}{defaults list}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-setCitation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-setCitation}{}}}
+\subsection{Method \code{setCitation()}}{
+Set citation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$setCitation(citation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{citation}}{object of class \link{ISOCitation}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-setAbstract"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-setAbstract}{}}}
+\subsection{Method \code{setAbstract()}}{
+Set abstract
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$setAbstract(abstract, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{abstract}}{abstract}
+
+\item{\code{locales}}{list of localized abstracts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-setPurpose"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-setPurpose}{}}}
+\subsection{Method \code{setPurpose()}}{
+Set purpose
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$setPurpose(purpose, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{purpose}}{purpose}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addCredit"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addCredit}{}}}
+\subsection{Method \code{addCredit()}}{
+Adds credit
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addCredit(credit, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{credit}}{credit}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delCredit"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delCredit}{}}}
+\subsection{Method \code{delCredit()}}{
+Deletes credit
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delCredit(credit, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{credit}}{credit}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addStatus"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addStatus}{}}}
+\subsection{Method \code{addStatus()}}{
+Adds status
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addStatus(status)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{status}}{object of class \link{ISOStatus} or any \link{character} among
+values returned by \code{ISOStatus$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delStatus"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delStatus}{}}}
+\subsection{Method \code{delStatus()}}{
+Deletes status
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delStatus(status)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{status}}{object of class \link{ISOStatus} or any \link{character} among
+values returned by \code{ISOStatus$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addPointOfContact"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addPointOfContact}{}}}
+\subsection{Method \code{addPointOfContact()}}{
+Adds point of contact
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addPointOfContact(pointOfContact)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{pointOfContact}}{object of class \link{ISOResponsibleParty}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delPointOfContact"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delPointOfContact}{}}}
+\subsection{Method \code{delPointOfContact()}}{
+Deletes point of contact
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delPointOfContact(pointOfContact)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{pointOfContact}}{object of class \link{ISOResponsibleParty}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addResourceMaintenance"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addResourceMaintenance}{}}}
+\subsection{Method \code{addResourceMaintenance()}}{
+Adds resource maintenance
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addResourceMaintenance(resourceMaintenance)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resourceMaintenance}}{object of class \link{ISOMaintenanceInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-setResourceMaintenance"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-setResourceMaintenance}{}}}
+\subsection{Method \code{setResourceMaintenance()}}{
+Set resource maintenance
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$setResourceMaintenance(resourceMaintenance)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resourceMaintenance}}{object of class \link{ISOMaintenanceInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if set, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delResourceMaintenance"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delResourceMaintenance}{}}}
+\subsection{Method \code{delResourceMaintenance()}}{
+Deletes resource maintenance
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delResourceMaintenance(resourceMaintenance)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resourceMaintenance}}{object of class \link{ISOMaintenanceInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addGraphicOverview"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addGraphicOverview}{}}}
+\subsection{Method \code{addGraphicOverview()}}{
+Adds graphic overview
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addGraphicOverview(graphicOverview)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{graphicOverview}}{object of class \link{ISOBrowseGraphic}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-setGraphicOverview"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-setGraphicOverview}{}}}
+\subsection{Method \code{setGraphicOverview()}}{
+Sets graphic overview
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$setGraphicOverview(graphicOverview)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{graphicOverview}}{object of class \link{ISOBrowseGraphic}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if set, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delGraphicOverview"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delGraphicOverview}{}}}
+\subsection{Method \code{delGraphicOverview()}}{
+Deletes graphic overview
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delGraphicOverview(graphicOverview)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{graphicOverview}}{object of class \link{ISOBrowseGraphic}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addFormat}{}}}
+\subsection{Method \code{addFormat()}}{
+Adds format
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addFormat(format)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{format}}{object of class \link{ISOFormat}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delFormat}{}}}
+\subsection{Method \code{delFormat()}}{
+Deletes format
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delFormat(format)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{format}}{object of class \link{ISOFormat}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addKeywords"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addKeywords}{}}}
+\subsection{Method \code{addKeywords()}}{
+Adds keywords
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addKeywords(keywords)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{keywords}}{object of class \link{ISOKeywords}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-setKeywords"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-setKeywords}{}}}
+\subsection{Method \code{setKeywords()}}{
+Set keywords
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$setKeywords(keywords)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{keywords}}{object of class \link{ISOKeywords}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if set, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delKeywords"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delKeywords}{}}}
+\subsection{Method \code{delKeywords()}}{
+Deletes keywords
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delKeywords(keywords)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{keywords}}{object of class \link{ISOKeywords}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addResourceConstraints"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addResourceConstraints}{}}}
+\subsection{Method \code{addResourceConstraints()}}{
+Adds resource constraints
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addResourceConstraints(resourceConstraints)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resourceConstraints}}{object of class \link{ISOConstraints}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-setResourceConstraints"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-setResourceConstraints}{}}}
+\subsection{Method \code{setResourceConstraints()}}{
+Sets resource constraints
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$setResourceConstraints(resourceConstraints)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resourceConstraints}}{object of class \link{ISOConstraints}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if set, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delResourceConstraints"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delResourceConstraints}{}}}
+\subsection{Method \code{delResourceConstraints()}}{
+Deletes resource constraints
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delResourceConstraints(resourceConstraints)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resourceConstraints}}{object of class \link{ISOConstraints}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addAggregateInformation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addAggregateInformation}{}}}
+\subsection{Method \code{addAggregateInformation()}}{
+Adds aggregate information
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addAggregateInformation(aggregateInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{aggregateInfo}}{object of class \link{ISOAggregateInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delAggregateInformation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delAggregateInformation}{}}}
+\subsection{Method \code{delAggregateInformation()}}{
+Deletes aggregate information
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delAggregateInformation(aggregateInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{aggregateInfo}}{object of class \link{ISOAggregateInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

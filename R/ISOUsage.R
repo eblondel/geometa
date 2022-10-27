@@ -6,33 +6,6 @@
 #' @keywords ISO usage
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Usage
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field specificUsage [\code{\link{character}}] a text giving a specific usage
-#' @field usageDateTime [\code{\link{POSIXt}}] the datetime of the usage
-#' @field userDeterminedLimitations [\code{\link{character}}] limitations determined by user
-#' @field userContactInfo [\code{\link{ISOResponsibleParty}}] the user contact
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOUsage}}
-#'  }
-#'  \item{\code{setSpecificUsage(specificUsage, locales)}}{
-#'    Set the specific usage, as \code{\link{character}} object. 
-#'  }
-#'  \item{\code{setUsageDateTime(usageDateTime)}}{
-#'    Set the usage date time, object of class \code{\link{POSIXt}}
-#'  }
-#'  \item{\code{setUserDeterminedLimitations(userDeterminedLimitations, locales)}}{
-#'    Set the limitations determined by user
-#'  }
-#'  \item{\code{addUserContact(contact)}}{
-#'    Adds user contact, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{delUserContact(contact)}}{
-#'    Deletes user contact, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -46,15 +19,24 @@ ISOUsage <- R6Class("ISOUsage",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field specificUsage specificUsage
     specificUsage = NULL,
+    #'@field usageDateTime usageDateTime
     usageDateTime = NULL,
+    #'@field userDeterminedLimitations userDeterminedLimitations
     userDeterminedLimitations = NULL,
+    #'@field userContactInfo userContactInfo
     userContactInfo = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setSpecificUsage
+    #'@description Set specificUsage
+    #'@param specificUsage specific usage
+    #'@param locales list of localized texts. Default is \code{NULL}
     setSpecificUsage = function(specificUsage, locales = NULL){
       if(!is.null(locales)){
         specificUsage <-  self$createLocalisedProperty(specificUsage, locales)
@@ -62,7 +44,8 @@ ISOUsage <- R6Class("ISOUsage",
       self$specificUsage <- specificUsage
     },
     
-    #setUsageDateTime
+    #'@description Set usage date time
+    #'@param usageDateTime object of class \link{POSIct}
     setUsageDateTime = function(usageDateTime){
       if(!is(usageDateTime,"POSIXt")){
         stop("The usage datetime should be an object of class 'POSIXt'")
@@ -70,7 +53,9 @@ ISOUsage <- R6Class("ISOUsage",
       self$usageDateTime <- usageDateTime
     },
     
-    #setUserDeterminedLimitations
+    #'@description Set user determined limitations
+    #'@param userDeterminedLimitations user determined limitations
+    #'@param locales list of localized texts. Default is \code{NULL}
     setUserDeterminedLimitations = function(userDeterminedLimitations, locales = NULL){
       if(!is.null(locales)){
         userDeterminedLimitations <- self$createLocalisedProperty(userDeterminedLimitations, locales)
@@ -78,7 +63,9 @@ ISOUsage <- R6Class("ISOUsage",
       self$userDeterminedLimitations <- userDeterminedLimitations
     },
     
-    #addUserContact
+    #'@description Adds user contact
+    #'@param contact object of class \link{ISOResponsibleParty}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addUserContact = function(contact){
       if(!is(contact,"ISOResponsibleParty")){
         stop("The argument should be a 'ISOResponsibleParty' object")
@@ -86,7 +73,9 @@ ISOUsage <- R6Class("ISOUsage",
       return(self$addListElement("userContactInfo", contact))
     },
     
-    #delUserContact
+    #'@description Deletes user contact
+    #'@param contact object of class \link{ISOResponsibleParty}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delUserContact = function(contact){
       if(!is(contact,"ISOResponsibleParty")){
         stop("The argument should be a 'ISOResponsibleParty' object")

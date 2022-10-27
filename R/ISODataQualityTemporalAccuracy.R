@@ -6,16 +6,6 @@
 #' @keywords ISO data quality abstract temporal accuracy
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractTemporalAccuracy
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAbstractTemporalAccuracy}}
-#'  }
-#' }
 #'   
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -39,16 +29,6 @@ ISOAbstractTemporalAccuracy <- R6Class("ISOAbstractTemporalAccuracy",
 #' @keywords ISO data quality temporal validity
 #' @return Object of \code{\link{R6Class}} for modelling an ISOTemporalValidity
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOTemporalValidity}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -97,16 +77,6 @@ ISOTemporalValidity <- R6Class("ISOTemporalValidity",
 #' @keywords ISO data quality temporal consistency
 #' @return Object of \code{\link{R6Class}} for modelling an ISOTemporalConsistency
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOTemporalConsistency}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -155,16 +125,6 @@ ISOTemporalConsistency <- R6Class("ISOTemporalConsistency",
 #' @keywords ISO data quality temporal accuracy time measurement
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAccuracyOfATimeMeasurement
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAccuracyOfATimeMeasurement}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding

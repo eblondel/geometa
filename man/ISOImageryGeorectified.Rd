@@ -12,38 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO image Georectified
 }
 \description{
 ISOImageryGeorectified
+
+ISOImageryGeorectified
 }
-\section{Fields}{
-
-\describe{
-\item{\code{checkPoint}}{[\code{list} of \code{\link{ISOImageryGCP}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml,value)}}{
-   This method is used to instantiate an \code{\link{ISOImageryGeorectified}}
- }
- \item{\code{addCheckPoint(sfg,m)}}{
-   Adds a check point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
- }
- \item{\code{delCheckPoint(sfg,m)}}{
-   Deletes a check point, either an object of class 'sfg' (from \pkg{sf}) or a 'matrix'
- }
-}
-}
-
-\section{Methods inherited from \code{\link{ISOGridSpatialRepresentation}}}{
-
-See \code{\link{ISOGridSpatialRepresentation}}
-}
-
-\section{Methods inherited from \code{\link{ISOGeorectified}}}{
-
-See \code{\link{ISOGeorectified}}
-}
-
 \references{
 ISO 19115-2:2009 - Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data
 }
@@ -53,3 +24,148 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{georectified}
 \keyword{image}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOSpatialRepresentation]{geometa::ISOSpatialRepresentation}} -> \code{\link[geometa:ISOGridSpatialRepresentation]{geometa::ISOGridSpatialRepresentation}} -> \code{\link[geometa:ISOGeorectified]{geometa::ISOGeorectified}} -> \code{ISOImageryGeorectified}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{checkPoint}}{checkPoint [0..*]: ISOImageryGCP}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOImageryGeorectified-new}{\code{ISOImageryGeorectified$new()}}
+\item \href{#method-ISOImageryGeorectified-addCheckPoint}{\code{ISOImageryGeorectified$addCheckPoint()}}
+\item \href{#method-ISOImageryGeorectified-delCheckPoint}{\code{ISOImageryGeorectified$delCheckPoint()}}
+\item \href{#method-ISOImageryGeorectified-clone}{\code{ISOImageryGeorectified$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="addDimension"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-addDimension'><code>geometa::ISOGridSpatialRepresentation$addDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="delDimension"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-delDimension'><code>geometa::ISOGridSpatialRepresentation$delDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="setCellGeometry"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-setCellGeometry'><code>geometa::ISOGridSpatialRepresentation$setCellGeometry()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="setNumberOfDimensions"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-setNumberOfDimensions'><code>geometa::ISOGridSpatialRepresentation$setNumberOfDimensions()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGridSpatialRepresentation" data-id="setTransformationParameterAvailability"><a href='../../geometa/html/ISOGridSpatialRepresentation.html#method-ISOGridSpatialRepresentation-setTransformationParameterAvailability'><code>geometa::ISOGridSpatialRepresentation$setTransformationParameterAvailability()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGeorectified" data-id="addCornerPoint"><a href='../../geometa/html/ISOGeorectified.html#method-ISOGeorectified-addCornerPoint'><code>geometa::ISOGeorectified$addCornerPoint()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGeorectified" data-id="addTransformationDimensionMapping"><a href='../../geometa/html/ISOGeorectified.html#method-ISOGeorectified-addTransformationDimensionMapping'><code>geometa::ISOGeorectified$addTransformationDimensionMapping()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGeorectified" data-id="delCornerPoint"><a href='../../geometa/html/ISOGeorectified.html#method-ISOGeorectified-delCornerPoint'><code>geometa::ISOGeorectified$delCornerPoint()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGeorectified" data-id="delTransformationDimensionMapping"><a href='../../geometa/html/ISOGeorectified.html#method-ISOGeorectified-delTransformationDimensionMapping'><code>geometa::ISOGeorectified$delTransformationDimensionMapping()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGeorectified" data-id="setCenterPoint"><a href='../../geometa/html/ISOGeorectified.html#method-ISOGeorectified-setCenterPoint'><code>geometa::ISOGeorectified$setCenterPoint()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGeorectified" data-id="setCheckPointAvailability"><a href='../../geometa/html/ISOGeorectified.html#method-ISOGeorectified-setCheckPointAvailability'><code>geometa::ISOGeorectified$setCheckPointAvailability()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGeorectified" data-id="setCheckPointDescription"><a href='../../geometa/html/ISOGeorectified.html#method-ISOGeorectified-setCheckPointDescription'><code>geometa::ISOGeorectified$setCheckPointDescription()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGeorectified" data-id="setPixelOrientation"><a href='../../geometa/html/ISOGeorectified.html#method-ISOGeorectified-setPixelOrientation'><code>geometa::ISOGeorectified$setPixelOrientation()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOGeorectified" data-id="setTransformationDimensionDescription"><a href='../../geometa/html/ISOGeorectified.html#method-ISOGeorectified-setTransformationDimensionDescription'><code>geometa::ISOGeorectified$setTransformationDimensionDescription()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryGeorectified-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryGeorectified-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryGeorectified$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryGeorectified-addCheckPoint"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryGeorectified-addCheckPoint}{}}}
+\subsection{Method \code{addCheckPoint()}}{
+Adds check point
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryGeorectified$addCheckPoint(sfg = NULL, m = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sfg}}{simple feature object from \pkg{sf}}
+
+\item{\code{m}}{object of class \link{matrix}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryGeorectified-delCheckPoint"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryGeorectified-delCheckPoint}{}}}
+\subsection{Method \code{delCheckPoint()}}{
+Deletes check point
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryGeorectified$delCheckPoint(sfg = NULL, m = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sfg}}{simple feature object from \pkg{sf}}
+
+\item{\code{m}}{object of class \link{matrix}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryGeorectified-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryGeorectified-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryGeorectified$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

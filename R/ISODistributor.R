@@ -6,25 +6,6 @@
 #' @keywords ISO distributor
 #' @return Object of \code{\link{R6Class}} for modelling an ISODistributor
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field distributorContact [\code{\link{ISOResponsibleParty}}]
-#' @field distributorFormat [\code{\link{ISOFormat}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISODistributor}}
-#'  }
-#'  \item{\code{setContact(contact)}}{
-#'    Sets the contact \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{addFormat(format)}}{
-#'    Adds a distributor format \code{\link{ISOFormat}}
-#'  }
-#'  \item{\code{delFormat(format)}}{
-#'    Deletes a distributor format \code{\link{ISOFormat}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'    md <- ISODistributor$new()
@@ -75,16 +56,19 @@ ISODistributor <- R6Class("ISODistributor",
    ),
    public = list(
      
-     #+ distributorContact : ISOResponsibleParty
+     #'@field distributorContact distributorContact : ISOResponsibleParty
      distributorContact = NULL,
-     #+ distributorFormat : ISOFormat
+     #'@field distributorFormat distributorFormat : ISOFormat
      distributorFormat = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setContact
+     #'@description Set contact
+     #'@param contact object of class \link{ISOResponsibleParty}
      setContact = function(contact){
        if(!is(contact, "ISOResponsibleParty")){
          stop("The argument value should an object of class 'ISOResponsibleParty")
@@ -92,7 +76,9 @@ ISODistributor <- R6Class("ISODistributor",
        self$distributorContact = contact
      },
      
-     #addFormat
+     #'@description Adds format
+     #'@param format format object of class \link{ISOFormat}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addFormat = function(format){
        if(!is(format, "ISOFormat")){
          stop("The argument value should an object of class 'ISOFormat")
@@ -100,7 +86,9 @@ ISODistributor <- R6Class("ISODistributor",
        return(self$addListElement("distributorFormat", format))
      },
      
-     #delFormat
+     #'@description Deletes format
+     #'@param format format object of class \link{ISOFormat}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delFormat = function(format){
        if(!is(format, "ISOFormat")){
          stop("The argument value should an object of class 'ISOFormat")

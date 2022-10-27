@@ -6,48 +6,6 @@
 #' @keywords ISO imagery processing
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery processing
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field identifier [\code{\link{ISOMetaIdentifier}}]
-#' @field softwareReference [\code{list} of \code{\link{ISOCitation}}]
-#' @field procedureDescription [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @field documentation [\code{list} of \code{\link{ISOCitation}}]
-#' @field rumTimeParameters [\code{character}]
-#' @field algorithm [\code{list} of \code{\link{ISOImageryAlgorithm}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryProcessing}}
-#'  }
-#'  \item{\code{setIdentifier(identifier)}}{
-#'    Sets an identifier, object of class \code{character} or \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{addSoftwareReference(softwareReference)}}{
-#'    Adds software reference, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{delSoftwareReference(softwareReference)}}{
-#'    Deletes a software reference, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setProcedureDescription(description, locales)}}{
-#'    Sets a description (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addDocumentation(documentation)}}{
-#'    Adds documentation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{delDocumentation(documentation)}}{
-#'    Deletes documentation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setRunTimeParameters(params)}}{
-#'    Set the runtime parameters, object of class \code{character}
-#'  }
-#'  \item{\code{addAlgorithm(algorithm)}}{
-#'    Add a algorithm, object of class \code{\link{ISOImageryAlgorithm}}
-#'  }
-#'  \item{\code{delAlgorithm(algorithm)}}{
-#'    Deletes a algorithm, object of class \code{\link{ISOImageryAlgorithm}}
-#'  }
-#' }  
 #' 
 #' @examples
 #'    md <- ISOImageryProcessing$new()
@@ -110,24 +68,27 @@ ISOImageryProcessing <- R6Class("ISOImageryProcessing",
    ),
    public = list(
      
-     #+ identifier [1..1]: ISOMetaIdentifier
+     #'@field identifier identifier [1..1]: ISOMetaIdentifier
      identifier = NULL,
-     #+ softwareReference [0.1]: ISOCitation
+     #'@field softwareReference softwareReference [0.1]: ISOCitation
      softwareReference = list(),
-     #+ procedureDescription [0..1]: character|ISOLocalisedCharacterString
+     #'@field procedureDescription procedureDescription [0..1]: character|ISOLocalisedCharacterString
      procedureDescription = NULL,
-     #+ documentation [0..*]: ISOCitation
+     #'@field documentation documentation [0..*]: ISOCitation
      documentation = list(),
-     #+ runTimeParameters [0..1]: character
+     #'@field runTimeParameters runTimeParameters [0..1]: character
      runTimeParameters = NULL,
-     #+ algorithm [0..*]: ISOImageryAlgorithm
+     #'@field algorithm algorithm [0..*]: ISOImageryAlgorithm
      algorithm = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setIdentifier
+     #'@description Set identifier
+     #'@param identifier object of class \link{ISOMetaIdentifier} or \link{character}
      setIdentifier = function(identifier){
        if(is(identifier, "character")){
          identifier <- ISOMetaIdentifier$new(code = identifier)
@@ -139,7 +100,9 @@ ISOImageryProcessing <- R6Class("ISOImageryProcessing",
        self$identifier <- identifier
      },
      
-     #addSoftwareReference
+     #'@description Adds software reference
+     #'@param softwareReference object of class \link{ISOCitation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSoftwareReference = function(softwareReference){
        if(!is(softwareReference, "ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation")
@@ -147,7 +110,9 @@ ISOImageryProcessing <- R6Class("ISOImageryProcessing",
        return(self$addListElement("softwareReference", softwareReference))
      },
      
-     #delSoftwareReference
+     #'@description Deletes software reference
+     #'@param softwareReference object of class \link{ISOCitation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSoftwareReference = function(softwareReference){
        if(!is(softwareReference, "ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation")
@@ -155,7 +120,9 @@ ISOImageryProcessing <- R6Class("ISOImageryProcessing",
        return(self$delListElement("softwareReference", softwareReference))
      },
      
-     #setProcedureDescription
+     #'@description Set procedure description
+     #'@param procedureDescription procedure description
+     #'@param locales list of localized texts. Default is \code{NULL}
      setProcedureDescription = function(procedureDescription, locales = NULL){
        if(!is.null(locales)){
          procedureDescription <- self$createLocalisedProperty(procedureDescription, locales)
@@ -163,7 +130,9 @@ ISOImageryProcessing <- R6Class("ISOImageryProcessing",
        self$procedureDescription <- procedureDescription
      },
      
-     #addDocumentation
+     #'@description Adds documentation
+     #'@param documentation object of class \link{ISOCitation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDocumentation = function(documentation){
        if(!is(documentation, "ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation")
@@ -171,7 +140,9 @@ ISOImageryProcessing <- R6Class("ISOImageryProcessing",
        return(self$addListElement("documentation", documentation))
      },
      
-     #delDocumentation
+     #'@description Deletes documentation
+     #'@param documentation object of class \link{ISOCitation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDocumentation = function(documentation){
        if(!is(documentation, "ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation")
@@ -179,12 +150,15 @@ ISOImageryProcessing <- R6Class("ISOImageryProcessing",
        return(self$delListElement("documentation", documentation))
      },
      
-     #setRunTimeParameters
+     #'@description Set runtime parameters
+     #'@param params parameters
      setRunTimeParameters = function(params){
        self$runTimeParameters <- params
      },
      
-     #addAlgorithm
+     #'@description Adds algorithm
+     #'@param algorithm object of class \link{ISOImageryAlgorithm}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addAlgorithm = function(algorithm){
        if(!is(algorithm, "ISOImageryAlgorithm")){
          stop("The argument should be an object of class 'ISOImageryAlgorithm")
@@ -192,7 +166,9 @@ ISOImageryProcessing <- R6Class("ISOImageryProcessing",
        return(self$addListElement("algorithm", algorithm))
      },
      
-     #delAlgorithm
+     #'@description Deletes algorithm
+     #'@param algorithm object of class \link{ISOImageryAlgorithm}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delAlgorithm = function(algorithm){
        if(!is(algorithm, "ISOImageryAlgorithm")){
          stop("The argument should be an object of class 'ISOImageryAlgorithm")

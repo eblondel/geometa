@@ -12,22 +12,82 @@ Object of \code{\link{R6Class}} for modelling an ISO Metadata Namespace
 }
 \description{
 ISOMetadataNamespace
+
+ISOMetadataNamespace
 }
 \note{
 ISO class used internally by geometa for specifying XML namespaces
 }
-\section{Methods}{
-
-\describe{
- \item{\code{new(id, uri)}}{
-   This method is used to instantiate an ISOMetadata
- }
-}
-}
-
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{metadata}
 \keyword{namespace}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{id}}{id}
+
+\item{\code{uri}}{uri}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOMetadataNamespace-new}{\code{ISOMetadataNamespace$new()}}
+\item \href{#method-ISOMetadataNamespace-getDefinition}{\code{ISOMetadataNamespace$getDefinition()}}
+\item \href{#method-ISOMetadataNamespace-clone}{\code{ISOMetadataNamespace$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadataNamespace-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadataNamespace-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes namespace object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadataNamespace$new(id, uri)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{id}}{id}
+
+\item{\code{uri}}{uri}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadataNamespace-getDefinition"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadataNamespace-getDefinition}{}}}
+\subsection{Method \code{getDefinition()}}{
+Get definition
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadataNamespace$getDefinition()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+an object of class \link{list}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadataNamespace-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadataNamespace-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadataNamespace$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

@@ -6,38 +6,6 @@
 #' @keywords ISO feature catalogue description
 #' @return Object of \code{\link{R6Class}} for modelling an ISOFeatureCatalogue
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field complianceCode [\code{\link{logical}}]
-#' @field language [\code{\link{ISOLanguage}}]
-#' @field includedWithDataset [\code{\link{logical}}]
-#' @field featureCatalogueCitation [\code{\link{ISOCitation}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOFeatureCatalogueDescription}}
-#'  }
-#'  \item{\code{setComplianceCode(compliance)}}{
-#'    Sets the compliance. TRUE if compliant, FALSE otherwise
-#'  }
-#'  \item{\code{addLanguage(lang)}}{
-#'    Adds a language
-#'  }
-#'  \item{\code{delLanguage(lang)}}{
-#'    Deletes a language
-#'  }
-#'  \item{\code{setIncludedWithDataset(include)}}{
-#'    Sets TRUE if included with dataset, FALSE otherwise
-#'  }
-#'  \item{\code{addFeatureCatalogueCitation(citation, uuid)}}{
-#'   Adds an object of class \code{\link{ISOCitation}} referencing the link
-#'   to Feature Catalogue
-#'  }
-#'  \item{\code{delFeatureCatalogueCitation(citation, uuid)}}{
-#'   Deletes an object of class \code{\link{ISOCitation}} referencing the link
-#'   to Feature Catalogue
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOFeatureCatalogueDescription$new()
@@ -68,22 +36,25 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
    ),
    public = list(
      
-     #+ complianceCode: logical
+     #'@field complianceCode complianceCode: logical
      complianceCode = NULL,
-     #+ language [0..*]: character
+     #'@field language language [0..*]: character
      language = list(),
-     #+ includedWithDataset: logical
+     #'@field includedWithDataset includedWithDataset: logical
      includedWithDataset = FALSE,
-     #+ featureTypes [0..*]: GenericName #TODO?
+     #'@field featureTypes featureTypes [0..*]: GenericName #TODO?
      featureTypes = list(),
-     #+ featureCatalogueCitation [1..*]: ISOCitation
+     #'@field featureCatalogueCitation featureCatalogueCitation [1..*]: ISOCitation
      featureCatalogueCitation = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setComplianceCode
+     #'@description Set compliance code
+     #'@param compliance compliance, object of class \link{logical}
      setComplianceCode = function(compliance){
        if(!is(compliance, "logical")){
          compliance <- as.logical(compliance)
@@ -92,17 +63,22 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
        self$complianceCode <- compliance
      },
      
-     #addLanguage
+     #'@description Adds language
+     #'@param lang lang
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addLanguage = function(lang){
        return(self$addListElement("language", lang))
      },
      
-     #delLanguage
+     #'@description Deletes language
+     #'@param lang lang
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delLanguage = function(lang){
        return(self$delListElement("language", lang))
      },
      
-     #setIncludedWithDataset
+     #'@description Set included with dataset
+     #'@param include include, object of class \link{logical}
      setIncludedWithDataset = function(include){
        if(!is(include, "logical")){
          include <- as.logical(include)
@@ -111,7 +87,10 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
        self$includedWithDataset <- include
      },
      
-     #addFeatureCatalogueCitation
+     #'@description Adds feature catalogue citation
+     #'@param citation, object of class \link{ISOCitation}
+     #'@param uuid uuid
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addFeatureCatalogueCitation = function(citation, uuid = NULL){
        if(!is.null(uuid)) citation$parentAttrs <- list(uuidref = uuid)
        if(!is(citation, "ISOCitation")){
@@ -120,7 +99,10 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
        return(self$addListElement("featureCatalogueCitation", citation))
      },
      
-     #delFeatureCatalogueCitation
+     #'@description Deletes feature catalogue citation
+     #'@param citation, object of class \link{ISOCitation}
+     #'@param uuid uuid
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delFeatureCatalogueCitation = function(citation, uuid = NULL){
        if(!is.null(uuid)) citation$parentAttrs <- list(uuidref = uuid)
        if(!is(citation, "ISOCitation")){

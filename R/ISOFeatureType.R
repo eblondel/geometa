@@ -6,76 +6,7 @@
 #' @keywords ISO feature type
 #' @return Object of \code{\link{R6Class}} for modelling an ISO FeatureType
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field typeName [\code{\link{ISOLocalName}}]
-#' @field definition [\code{\link{character}}]
-#' @field code [\code{\link{character}}]
-#' @field isAbstract [\code{\link{logical}}]
-#' @field aliases [\code{\link{ISOLocalName}}]
-#' @field inheritsFrom [\code{\link{ISOInheritanceRelation}}]
-#' @field inheritsTo [\code{\link{ISOInheritanceRelation}}]
-#' @field featureCatalogue [\code{\link{ISOFeatureCatalogue}}]
-#' @field constrainedBy [\code{\link{ISOConstraints}}]
-#' @field definitionReference [\code{\link{ISODefinitionReference}}]
-#' @field carrierOfCharacteristics [\code{\link{ISOCarrierOfCharacteristics}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISOFeatureType
-#'  }
-#'  \item{\code{setTypeName(typeName)}}{
-#'    Sets the type name. Object of class \code{ISOLocalName} or \code{"character"}
-#'  }
-#'  \item{\code{setDefinition(definition, locales)}}{
-#'    Sets the definition. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setCode(code, locales)}}{
-#'    Sets the code. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setIsAbstract(isAbstract)}}{
-#'    Sets TRUE/FALSE if the feature type is abstract or not
-#'  }
-#'  \item{\code{addAlias(alias)}}{
-#'    Set alias name. Object of class \code{ISOLocalName} or \code{"character"}
-#'  }
-#'  \item{\code{delAlias(alias)}}{
-#'    Deletes alias name
-#'  }
-#'  \item{\code{addInheritsFrom(rel)}}{
-#'    Adds a relation (from) as object of class \code{ISOInheritanceRelation}
-#'  }
-#'  \item{\code{delInheritsFrom(rel)}}{
-#'    Deletes a relation (from) as object of class \code{ISOInheritanceRelation}
-#'  }
-#'  \item{\code{addInheritsTo(rel)}}{
-#'    Adds a relation (to) as object of class \code{ISOInheritanceRelation}
-#'  }
-#'  \item{\code{delInheritsTo(rel)}}{
-#'    Deletes a relation (to) as object of class \code{ISOInheritanceRelation}
-#'  }
-#'  \item{\code{setFeatureCatalogue(fc)}}{
-#'    Sets a feature catalogue, object of class \code{ISOFeatureCatalogue}
-#'  }
-#'  \item{\code{addConstraint(constraint)}}{
-#'    Adds a constraint, object of class \code{ISOConstraint} or \code{character}
-#'  }
-#'  \item{\code{delConstraint(constraint)}}{
-#'    Deletes a constraint, object of class \code{ISOConstraint} or \code{character}
-#'  }
-#'  \item{\code{setDefinitionReference(definitionReference)}}{
-#'    Sets the definition Reference, object of class \code{ISODefinitionReference}
-#'  }
-#'  \item{\code{addCharacteristic(characteristic)}}{
-#'    Adds a characteristic as object of class \code{ISOPropertyType} or subclass
-#'  }
-#'  \item{\code{delCharacteristic(characteristic)}}{
-#'    Deletes a characteristic as object of class \code{ISOPropertyType} or subclass
-#'  }
-#' }
-#'
+#' 
 #' @examples 
 #'  #featuretype
 #'  md <- ISOFeatureType$new()
@@ -137,40 +68,45 @@ ISOFeatureType <- R6Class("ISOFeatureType",
    ),
    public = list(
      
-     #+ typeName [1..1]: ISOLocalName
+     #'@field typeName typeName [1..1]: ISOLocalName
      typeName = NULL,
-     #+ definition [0..1]: character
+     #'@field definition definition [0..1]: character
      definition = NULL,
-     #+ code [0..1]: character
+     #'@field code code [0..1]: character
      code = NULL,
-     #+ isAbstract [1..1]: logical
+     #'@field isAbstract isAbstract [1..1]: logical
      isAbstract = FALSE,
-     #+ aliases [0..*]: ISOLocalName
+     #'@field aliases aliases [0..*]: ISOLocalName
      aliases = list(),
-     #+ inheritsFrom [0..*]: ISOInheritanceRelation
+     #'@field inheritsFrom inheritsFrom [0..*]: ISOInheritanceRelation
      inheritsFrom = list(),
-     #+ inheritsTo [0..*]: ISOInheritanceRelation
+     #'@field inheritsTo inheritsTo [0..*]: ISOInheritanceRelation
      inheritsTo = list(),
-     #+ featureCatalogue: ISOFeatureCatalogue
+     #'@field featureCatalogue featureCatalogue: ISOFeatureCatalogue
      featureCatalogue = NA,
-     #+ constrainedBy [0..*]: ISOConstraint
+     #'@field constrainedBy constrainedBy [0..*]: ISOConstraint
      constrainedBy = list(),
-     #+ definitionReference [0..*]: ISODefinitionReference
+     #'@field definitionReference definitionReference [0..*]: ISODefinitionReference
      definitionReference = list(),
-     #+ carrierOfCharacteristics [0..*]: ISOCarrierOfCharacteristics
+     #'@field carrierOfCharacteristics carrierOfCharacteristics [0..*]: ISOCarrierOfCharacteristics
      carrierOfCharacteristics = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setTypeName
+     #'@description Set type name
+     #'@param typeName type name, object of class \link{ISOLocalName} or \link{character}
      setTypeName = function(typeName){
        if(!is(typeName,"ISOLocalName")) typeName <- ISOLocalName$new(value = typeName)
        self$typeName <- typeName
      },
      
-     #setDefinition
+     #'@description Set definition
+     #'@param definition definition
+     #'@param locales list of localized definitions. Default is \code{NULL}
      setDefinition = function(definition, locales = NULL){
        self$definition <- definition
        if(!is.null(locales)){
@@ -178,7 +114,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        }
      },
      
-     #setCode
+     #'@description Set code
+     #'@param code definition
+     #'@param locales list of localized codes. Default is \code{NULL}
      setCode = function(code, locales = NULL){
        self$code = code
        if(!is.null(locales)){
@@ -186,7 +124,8 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        }
      },
      
-     #setIsAbstract
+     #'@description Set whether feature type is abstract
+     #'@param isAbstract object of class \link{logical}
      setIsAbstract = function(isAbstract){
        if(!is.logical(isAbstract)) isAbstract <- as.logical(isAbstract)
        if(is.na(isAbstract)){
@@ -195,7 +134,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        self$isAbstract <- isAbstract
      },
      
-     #addAlias
+     #'@description Adds alias
+     #'@param alias object of class \link{ISOLocalName} or \link{character}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addAlias = function(alias){
        if(!is(alias, "ISOLocalName")){
          alias <- ISOLocalName$new(value = alias)
@@ -203,7 +144,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$addListElement("aliases", alias))
      },
      
-     #delAlias
+     #'@description Deletes alias
+     #'@param alias object of class \link{ISOLocalName} or \link{character}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delAlias = function(alias){
        if(!is(alias, "ISOLocalName")){
          alias <- ISOLocalName$new(value = alias)
@@ -211,6 +154,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$delListElement("aliases", alias))
      },
      
+     #'@description Adds 'inheritsFrom' relation
+     #'@param rel rel, object of class \link{ISOInheritanceRelation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addInheritsFrom = function(rel){
        if(!is(rel, "ISOInheritanceRelation")){
          stop("Argument value should be an object of class 'ISOInheritanceRelation'")
@@ -218,6 +164,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$addListElement("inheritsFrom", rel))
      },
      
+     #'@description Deletes 'inheritsFrom' relation
+     #'@param rel rel, object of class \link{ISOInheritanceRelation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delInheritsFrom = function(rel){
        if(!is(rel, "ISOInheritanceRelation")){
          stop("Argument value should be an object of class 'ISOInheritanceRelation'")
@@ -225,6 +174,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$delListElement("inheritsFrom", rel))
      },
      
+     #'@description Adds 'inheritsTo' relation
+     #'@param rel rel, object of class \link{ISOInheritanceRelation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addInheritsTo = function(rel){
        if(!is(rel, "ISOInheritanceRelation")){
          stop("Argument value should be an object of class 'ISOInheritanceRelation'")
@@ -232,6 +184,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$addListElement("inheritsTo", rel))
      },
      
+     #'@description Deletes 'inheritsTo' relation
+     #'@param rel rel, object of class \link{ISOInheritanceRelation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delInheritsTo = function(rel){
        if(!is(rel, "ISOInheritanceRelation")){
          stop("Argument value should be an object of class 'ISOInheritanceRelation'")
@@ -239,7 +194,8 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$delListElement("inheritsTo", rel))
      },
      
-     #setFeatureCatalogue
+     #'@description Set feature catalogue
+     #'@param fc object of class \link{ISOFeatureCatalogue}
      setFeatureCatalogue = function(fc){
        if(!is(fc, "ISOFeatureCatalogue")){
          stop("Argument value should be an object of class 'ISOFeatureCatalogue'")
@@ -247,7 +203,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        self$featureCatalogue = fc
      },
            
-     #addConstraint
+     #'@description Adds constraint
+     #'@param constraint constraint, object of class \link{ISOConstraint}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addConstraint = function(constraint){
        if(!is(constraint, "ISOConstraint")){
          constraint <- ISOConstraint$new(description = constraint)
@@ -255,7 +213,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$addListElement("constrainedBy", constraint))
      },
      
-     #delConstraint
+     #'@description Deletes constraint
+     #'@param constraint constraint, object of class \link{ISOConstraint}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delConstraint = function(constraint){
        if(!is(constraint, "ISOConstraint")){
          constraint <- ISOConstraint$new(description = constraint)
@@ -263,7 +223,8 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$delListElement("constrainedBy", constraint))
      },
      
-     #setDefinitionReference
+     #'@description Set definition reference
+     #'@param definitionReference object of class \link{ISODefinitionReference}
      setDefinitionReference = function(definitionReference){
        if(!is(definitionReference, "ISODefinitionReference")){
          stop("The argument should be an object of class 'ISODefinitionReference'")
@@ -271,7 +232,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        self$definitionReference = definitionReference
      },
      
-     #addCharacteristic
+     #'@description Adds characteristic
+     #'@param characteristic characteristic, object inheriting class \link{ISOAbstractCarrierOfCharacteristics}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addCharacteristic = function(characteristic){
        if(!is(characteristic, "ISOAbstractCarrierOfCharacteristics")){
          stop("The argument should be an object of class extending 'ISOAbstractCarrierOfCharacteristics'")
@@ -279,7 +242,9 @@ ISOFeatureType <- R6Class("ISOFeatureType",
        return(self$addListElement("carrierOfCharacteristics", characteristic))
      },
      
-     #delCharacteristic
+     #'@description Deletes characteristic
+     #'@param characteristic characteristic, object inheriting class \link{ISOAbstractCarrierOfCharacteristics}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delCharacteristic = function(characteristic){
        if(!is(characteristic, "ISOAbstractCarrierOfCharacteristics")){
          stop("The argument should be an object of class extending 'ISOAbstractCarrierOfCharacteristics'")

@@ -6,13 +6,6 @@
 #' @keywords ISO localised character string
 #' @return Object of \code{\link{R6Class}} for modelling an ISO LocalisedCharacterString
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, locale, value)}}{
-#'    This method is used to instantiate an \code{\link{ISOLocalisedCharacterString}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   str <- ISOLocalisedCharacterString$new(locale = "FR", value = "ma description")
@@ -30,6 +23,11 @@ ISOLocalisedCharacterString <- R6Class("ISOLocalisedCharacterString",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param locale locale
+    #'@param value value
     initialize = function(xml = NULL, locale = NULL, value){
       super$initialize(xml = xml, value = value)
       if(is.null(xml)){

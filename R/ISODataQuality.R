@@ -6,26 +6,6 @@
 #' @keywords ISO data quality
 #' @return Object of \code{\link{R6Class}} for modelling an ISO DataQuality
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field scope [\code{\link{ISOScope}}] scope
-#' @field report [\code{\link{ISODomainConsistency}}] report
-#' @field lineage [\code{\link{ISOLineage}}] lineage information
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISODataQuality}}
-#'  }
-#'  \item{\code{setScope(scope)}}{
-#'    Sets the scope
-#'  }
-#'  \item{\code{addReport(report)}}{
-#'    Adds a report
-#'  }
-#'  \item{\code{setLineage(lineage)}}{
-#'    Sets the lineage
-#'  }
-#' }
 #' 
 #' @examples
 #'   #create dataQuality object with a 'dataset' scope
@@ -111,14 +91,21 @@ ISODataQuality <- R6Class("ISODataQuality",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field scope scope
     scope = NULL,
+    #'@field report list of reports
     report = list(),
+    #'@field lineage lineage
     lineage = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setScope
+    #'@description Set scope
+    #'@param scope scope
     setScope = function(scope){
       if(!is(scope, "ISOScope")){
         stop("The argument should be a 'ISOScope' object")
@@ -126,7 +113,9 @@ ISODataQuality <- R6Class("ISODataQuality",
       self$scope <- scope
     },
     
-    #addReport
+    #'@description Adds report
+    #'@param report report, object of class \link{ISODomainConsistency}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addReport = function(report){
       if(!is(report, "ISODomainConsistency")){
         stop("The argument should be a 'ISODomainConsistency' object")
@@ -134,7 +123,8 @@ ISODataQuality <- R6Class("ISODataQuality",
       self$report <- c(self$report, report)
     },
     
-    #setLineage
+    #'@description Set lineage
+    #'@param lineage lineage, object of class \link{ISOLineage}
     setLineage = function(lineage){
       if(!is(lineage, "ISOLineage")){
         stop("The argument should be a 'ISOLineage' object")

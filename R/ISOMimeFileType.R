@@ -6,19 +6,6 @@
 #' @keywords ISO mime file type
 #' @return Object of \code{\link{R6Class}} for modelling an ISO MimeFileType
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, type, name)}}{
-#'    This method is used to instantiate an \code{\link{ISOMimeFileType}}
-#'  }
-#'  \item{\code{setName(name)}}{
-#'    Set name
-#'  }
-#'  \item{\code{setType(type)}}{
-#'   Set type
-#'  }
-#' }
 #' 
 #' @examples
 #'   md <- ISOMimeFileType$new(type = "somemimetype", name = "Mime type name")
@@ -36,6 +23,11 @@ ISOMimeFileType <- R6Class("ISOMimeFileType",
        xmlNamespacePrefix = "GMX"
      ),
      public = list(
+       
+       #'@description Initializes object
+       #'@param xml object of class \link{XMLInternalNode-class}
+       #'@param type type
+       #'@param name name
        initialize = function(xml = NULL, type = NULL, name = NULL){
          super$initialize(xml = xml)
          if(!is.null(type) & !is.null(name)){
@@ -44,12 +36,14 @@ ISOMimeFileType <- R6Class("ISOMimeFileType",
          }
        },
        
-       #setName
+       #'@description Set name
+       #'@param name name
        setName = function(name){
          self$value <- name
        },
        
-       #setType
+       #'@description Set type
+       #'@param type type
        setType = function(type){
          self$attrs$type <- type
        }

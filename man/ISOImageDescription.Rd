@@ -12,100 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISOImageDescription
 }
 \description{
 ISOImageDescription
+
+ISOImageDescription
 }
-\section{Fields}{
-
-\describe{
-\item{\code{illuminationElevationAngle}}{[\code{\link{numeric}}]}
-
-\item{\code{illuminationAzimuthAngle}}{[\code{\link{numeric}}]}
-
-\item{\code{imagingCondition}}{[\code{\link{ISOImagingCondition}}]}
-
-\item{\code{imageQualityCode}}{[\code{\link{ISOMetaIdentifier}}]}
-
-\item{\code{cloudCoverPercentage}}{[\code{\link{numeric}}]}
-
-\item{\code{processingLevelCode}}{[\code{\link{ISOMetaIdentifier}}]}
-
-\item{\code{compressionGenerationQuantity}}{[\code{\link{integer}}]}
-
-\item{\code{triangulationIndicator}}{[\code{\link{logical}}]}
-
-\item{\code{radiometricCalibrationDataAvailability}}{[\code{\link{logical}}]}
-
-\item{\code{cameraCalibrationInformationAvailability}}{[\code{\link{logical}}]}
-
-\item{\code{filmDistortionInformationAvailability}}{[\code{\link{logical}}]}
-
-\item{\code{lensDistortionInformationAvailability}}{[\code{\link{logical}}]}
-}}
-
-\section{Inherited methods from \code{\link{ISOCoverageDescription}}}{
-
-\describe{
- \item{\code{setAttributeDescription}}{
-   Sets the attribute description, as object of class \code{\link{ISORecordType}} or
-   \code{character}
- }
- \item{\code{setContentType(contentType)}}{
-   Sets the content Type, as object of class \code{\link{ISOCoverageContentType}} or
-   any \code{character} value listed in \code{ISOCoverageContentType$values()}
- }
- \item{\code{addDimension(dimension)}}{
-   Adds a dimension, object of class (or subclass of) \code{\link{ISORangeDimension}}
- }
- \item{\code{delDimension(dimension)}}{
-   Deletes a dimension, object of class (or subclass of) \code{\link{ISORangeDimension}}
- }
-}
-}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOImageDescription}}
- }
- \item{\code{setIlluminationElevationAngle(illuminationElevationAngle)}}{
-   Sets the illumination elevation angle
- }
- \item{\code{setIlluminationAzimuthAngle(illuminationAzimuthAngle)}}{
-   Sets the illumination azimuth angle
- }
- \item{\code{setImagingCondition(imagingCondition)}}{
-   Sets the imaging condition, object of class 'character' or \code{\link{ISOImagingCondition}}
- }
- \item{\code{setImageQualityCode(code)}}{
-   Sets an image quality code
- }
- \item{\code{setCloudCoverPercentage(cloudCoverPercentage)}}{
-   Sets the cloud cover percentage
- }
- \item{\code{setProcessingLevelCode(code)}}{
-   Sets the processing level code
- }
- \item{\code{setCompressionGenerationQuantity(quantity)}}{
-   Sets compression generation quantity
- }
- \item{\code{setTriangulationIndicator(triangulationIndicator)}}{
-   Sets the triangulation indicator
- }
- \item{\code{setRadiometricCalibrationDataAvailability(radiometricCalibrationDataAvailability)}}{
-   Sets \code{TRUE} if radiometric calibration data is available, \code{FALSE} otherwise
- }
- \item{\code{setCameraCalibrationInformationAvailability(cameraCalibrationInformationAvailability)}}{
-   Sets \code{TRUE} if camera calibration information is available, \code{FALSE} otherwise
- }
- \item{\code{setFilmDistortionInformationAvailability(filmDistortionInformationAvailability)}}{
-   Sets \code{TRUE} if film distortion information is available, \code{FALSE} otherwise
- }
- \item{\code{setLensDistortionInformationAvailability(lensDistortionInformationAvailability)}}{
-   Sets \code{TRUE} if lens distortion information is available, \code{FALSE} otherwise
- }
-}
-}
-
 \examples{
    #create image description
    md <- ISOImageDescription$new()
@@ -162,3 +71,339 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{coverage}
 \keyword{description}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOContentInformation]{geometa::ISOContentInformation}} -> \code{\link[geometa:ISOCoverageDescription]{geometa::ISOCoverageDescription}} -> \code{ISOImageDescription}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{illuminationElevationAngle}}{illuminationElevationAngle [0..1]}
+
+\item{\code{illuminationAzimuthAngle}}{illuminationAzimuthAngle [0..1]}
+
+\item{\code{imagingCondition}}{imagingCondition [0..1]}
+
+\item{\code{imageQualityCode}}{imageQualityCode [0..1]}
+
+\item{\code{cloudCoverPercentage}}{cloudCoverPercentage [0..1]}
+
+\item{\code{processingLevelCode}}{processingLevelCode [0..1]}
+
+\item{\code{compressionGenerationQuantity}}{compressionGenerationQuantity [0..1]}
+
+\item{\code{triangulationIndicator}}{triangulationIndicator [0..1]}
+
+\item{\code{radiometricCalibrationDataAvailability}}{radiometricCalibrationDataAvailability [0..1]}
+
+\item{\code{cameraCalibrationInformationAvailability}}{cameraCalibrationInformationAvailability [0..1]}
+
+\item{\code{filmDistortionInformationAvailability}}{filmDistortionInformationAvailability [0..1]}
+
+\item{\code{lensDistortionInformationAvailability}}{lensDistortionInformationAvailability [0..1]}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOImageDescription-new}{\code{ISOImageDescription$new()}}
+\item \href{#method-ISOImageDescription-setIlluminationElevationAngle}{\code{ISOImageDescription$setIlluminationElevationAngle()}}
+\item \href{#method-ISOImageDescription-setIlluminationAzimuthAngle}{\code{ISOImageDescription$setIlluminationAzimuthAngle()}}
+\item \href{#method-ISOImageDescription-setImagingCondition}{\code{ISOImageDescription$setImagingCondition()}}
+\item \href{#method-ISOImageDescription-setImageQualityCode}{\code{ISOImageDescription$setImageQualityCode()}}
+\item \href{#method-ISOImageDescription-setCloudCoverPercentage}{\code{ISOImageDescription$setCloudCoverPercentage()}}
+\item \href{#method-ISOImageDescription-setProcessingLevelCode}{\code{ISOImageDescription$setProcessingLevelCode()}}
+\item \href{#method-ISOImageDescription-setCompressionGenerationQuantity}{\code{ISOImageDescription$setCompressionGenerationQuantity()}}
+\item \href{#method-ISOImageDescription-setTriangulationIndicator}{\code{ISOImageDescription$setTriangulationIndicator()}}
+\item \href{#method-ISOImageDescription-setRadiometricCalibrationDataAvailability}{\code{ISOImageDescription$setRadiometricCalibrationDataAvailability()}}
+\item \href{#method-ISOImageDescription-setCameraCalibrationInformationAvailability}{\code{ISOImageDescription$setCameraCalibrationInformationAvailability()}}
+\item \href{#method-ISOImageDescription-setFilmDistortionInformationAvailability}{\code{ISOImageDescription$setFilmDistortionInformationAvailability()}}
+\item \href{#method-ISOImageDescription-setLensDistortionInformationAvailability}{\code{ISOImageDescription$setLensDistortionInformationAvailability()}}
+\item \href{#method-ISOImageDescription-clone}{\code{ISOImageDescription$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCoverageDescription" data-id="addDimension"><a href='../../geometa/html/ISOCoverageDescription.html#method-ISOCoverageDescription-addDimension'><code>geometa::ISOCoverageDescription$addDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCoverageDescription" data-id="delDimension"><a href='../../geometa/html/ISOCoverageDescription.html#method-ISOCoverageDescription-delDimension'><code>geometa::ISOCoverageDescription$delDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCoverageDescription" data-id="setAttributeDescription"><a href='../../geometa/html/ISOCoverageDescription.html#method-ISOCoverageDescription-setAttributeDescription'><code>geometa::ISOCoverageDescription$setAttributeDescription()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCoverageDescription" data-id="setContentType"><a href='../../geometa/html/ISOCoverageDescription.html#method-ISOCoverageDescription-setContentType'><code>geometa::ISOCoverageDescription$setContentType()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setIlluminationElevationAngle"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setIlluminationElevationAngle}{}}}
+\subsection{Method \code{setIlluminationElevationAngle()}}{
+Set illumination elevation angle
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setIlluminationElevationAngle(illuminationElevationAngle)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{illuminationElevationAngle}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setIlluminationAzimuthAngle"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setIlluminationAzimuthAngle}{}}}
+\subsection{Method \code{setIlluminationAzimuthAngle()}}{
+Set illumination azimuth angle
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setIlluminationAzimuthAngle(illuminationAzimuthAngle)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{illuminationAzimuthAngle}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setImagingCondition"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setImagingCondition}{}}}
+\subsection{Method \code{setImagingCondition()}}{
+Set imaging condition
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setImagingCondition(imagingCondition)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{imagingCondition}}{object of class \link{ISOImagingCondition} or \link{character}
+among values returned by \code{ISOImagingCondition$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setImageQualityCode"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setImageQualityCode}{}}}
+\subsection{Method \code{setImageQualityCode()}}{
+Set image quality code
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setImageQualityCode(code)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{code}}{object of class \link{ISOMetaIdentifier}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setCloudCoverPercentage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setCloudCoverPercentage}{}}}
+\subsection{Method \code{setCloudCoverPercentage()}}{
+Set cloud cover percentage
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setCloudCoverPercentage(cloudCoverPercentage)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{cloudCoverPercentage}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setProcessingLevelCode"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setProcessingLevelCode}{}}}
+\subsection{Method \code{setProcessingLevelCode()}}{
+Set processing level code
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setProcessingLevelCode(code)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{code}}{object of class \link{ISOMetaIdentifier}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setCompressionGenerationQuantity"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setCompressionGenerationQuantity}{}}}
+\subsection{Method \code{setCompressionGenerationQuantity()}}{
+Set compression generation quantity
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setCompressionGenerationQuantity(quantity)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{quantity}}{object of class \link{integer}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setTriangulationIndicator"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setTriangulationIndicator}{}}}
+\subsection{Method \code{setTriangulationIndicator()}}{
+Set triangulation indicator
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setTriangulationIndicator(triangulationIndicator)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{triangulationIndicator}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setRadiometricCalibrationDataAvailability"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setRadiometricCalibrationDataAvailability}{}}}
+\subsection{Method \code{setRadiometricCalibrationDataAvailability()}}{
+Set radiometric calibration data availability
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setRadiometricCalibrationDataAvailability(
+  radiometricCalibrationDataAvailability
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{radiometricCalibrationDataAvailability}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setCameraCalibrationInformationAvailability"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setCameraCalibrationInformationAvailability}{}}}
+\subsection{Method \code{setCameraCalibrationInformationAvailability()}}{
+Set camera calibration information availability
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setCameraCalibrationInformationAvailability(
+  cameraCalibrationInformationAvailability
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{cameraCalibrationInformationAvailability}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setFilmDistortionInformationAvailability"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setFilmDistortionInformationAvailability}{}}}
+\subsection{Method \code{setFilmDistortionInformationAvailability()}}{
+Set film distortion information availability
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setFilmDistortionInformationAvailability(
+  filmDistortionInformationAvailability
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{filmDistortionInformationAvailability}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-setLensDistortionInformationAvailability"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-setLensDistortionInformationAvailability}{}}}
+\subsection{Method \code{setLensDistortionInformationAvailability()}}{
+Set lens distortion information availability
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$setLensDistortionInformationAvailability(
+  lensDistortionInformationAvailability
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{lensDistortionInformationAvailability}}{object of class \link{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageDescription-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageDescription-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageDescription$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

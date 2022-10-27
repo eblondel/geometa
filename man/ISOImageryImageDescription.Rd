@@ -12,28 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO imagery image description
 }
 \description{
 ISOImageryImageDescription
+
+ISOImageryImageDescription
 }
-\section{Fields}{
-
-\describe{
-\item{\code{rangeElementdescription}}{[\code{\link{ISOImageryRangeElementDescription}}]}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOImageryImageDescription}}
- }
- \item{\code{addRangeElement(description)}}{
-   Add range element description, object of class \code{\link{ISOImageryRangeElementDescription}}
- }
- \item{\code{delRangeElementDescription(description)}}{
-   Deletes range element description, object of class \code{\link{ISOImageryRangeElementDescription}}
- }
-}
-}
-
 \examples{
    #create image description
    md <- ISOImageryImageDescription$new()
@@ -97,3 +78,146 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{description}
 \keyword{image}
 \keyword{imagery}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOContentInformation]{geometa::ISOContentInformation}} -> \code{\link[geometa:ISOCoverageDescription]{geometa::ISOCoverageDescription}} -> \code{\link[geometa:ISOImageDescription]{geometa::ISOImageDescription}} -> \code{ISOImageryImageDescription}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{rangeElementDescription}}{rangeElementDescription [0..*] : ISOImageryRangeElementDescription}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOImageryImageDescription-new}{\code{ISOImageryImageDescription$new()}}
+\item \href{#method-ISOImageryImageDescription-addRangeElementDescription}{\code{ISOImageryImageDescription$addRangeElementDescription()}}
+\item \href{#method-ISOImageryImageDescription-delRangeElementDescription}{\code{ISOImageryImageDescription$delRangeElementDescription()}}
+\item \href{#method-ISOImageryImageDescription-clone}{\code{ISOImageryImageDescription$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCoverageDescription" data-id="addDimension"><a href='../../geometa/html/ISOCoverageDescription.html#method-ISOCoverageDescription-addDimension'><code>geometa::ISOCoverageDescription$addDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCoverageDescription" data-id="delDimension"><a href='../../geometa/html/ISOCoverageDescription.html#method-ISOCoverageDescription-delDimension'><code>geometa::ISOCoverageDescription$delDimension()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCoverageDescription" data-id="setAttributeDescription"><a href='../../geometa/html/ISOCoverageDescription.html#method-ISOCoverageDescription-setAttributeDescription'><code>geometa::ISOCoverageDescription$setAttributeDescription()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCoverageDescription" data-id="setContentType"><a href='../../geometa/html/ISOCoverageDescription.html#method-ISOCoverageDescription-setContentType'><code>geometa::ISOCoverageDescription$setContentType()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setCameraCalibrationInformationAvailability"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setCameraCalibrationInformationAvailability'><code>geometa::ISOImageDescription$setCameraCalibrationInformationAvailability()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setCloudCoverPercentage"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setCloudCoverPercentage'><code>geometa::ISOImageDescription$setCloudCoverPercentage()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setCompressionGenerationQuantity"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setCompressionGenerationQuantity'><code>geometa::ISOImageDescription$setCompressionGenerationQuantity()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setFilmDistortionInformationAvailability"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setFilmDistortionInformationAvailability'><code>geometa::ISOImageDescription$setFilmDistortionInformationAvailability()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setIlluminationAzimuthAngle"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setIlluminationAzimuthAngle'><code>geometa::ISOImageDescription$setIlluminationAzimuthAngle()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setIlluminationElevationAngle"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setIlluminationElevationAngle'><code>geometa::ISOImageDescription$setIlluminationElevationAngle()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setImageQualityCode"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setImageQualityCode'><code>geometa::ISOImageDescription$setImageQualityCode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setImagingCondition"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setImagingCondition'><code>geometa::ISOImageDescription$setImagingCondition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setLensDistortionInformationAvailability"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setLensDistortionInformationAvailability'><code>geometa::ISOImageDescription$setLensDistortionInformationAvailability()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setProcessingLevelCode"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setProcessingLevelCode'><code>geometa::ISOImageDescription$setProcessingLevelCode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setRadiometricCalibrationDataAvailability"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setRadiometricCalibrationDataAvailability'><code>geometa::ISOImageDescription$setRadiometricCalibrationDataAvailability()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOImageDescription" data-id="setTriangulationIndicator"><a href='../../geometa/html/ISOImageDescription.html#method-ISOImageDescription-setTriangulationIndicator'><code>geometa::ISOImageDescription$setTriangulationIndicator()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryImageDescription-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryImageDescription-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryImageDescription$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryImageDescription-addRangeElementDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryImageDescription-addRangeElementDescription}{}}}
+\subsection{Method \code{addRangeElementDescription()}}{
+Adds range element description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryImageDescription$addRangeElementDescription(description)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{object of class \link{ISOImageryRangeElementDescription}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryImageDescription-delRangeElementDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryImageDescription-delRangeElementDescription}{}}}
+\subsection{Method \code{delRangeElementDescription()}}{
+Deletes range element description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryImageDescription$delRangeElementDescription(description)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{object of class \link{ISOImageryRangeElementDescription}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryImageDescription-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryImageDescription-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryImageDescription$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

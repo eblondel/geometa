@@ -6,41 +6,6 @@
 #' @keywords ISO process step
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ProcessStep
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field description [\code{\link{character}}] process step description
-#' @field rationale [\code{\link{character}}] rationale
-#' @field dateTime [\code{\link{POSIXt}}] dateTime of the process ste
-#' @field processor [\code{\link{ISOResponsibleParty}}] party responsible of the process step
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOProcessStep}}
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets the process step description. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setRationale(rationale, locales)}}{
-#'    Sets the process step rationale. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDateTime(dateTime)}}{
-#'    Sets the date time
-#'  }
-#'  \item{addProcessor(processor)}{
-#'    Adds a processor (object of class \code{\link{ISOResponsibleParty}})
-#'  }
-#'  \item{delProcessor(processor)}{
-#'   Deletes a processor
-#'  }
-#'  \item{addSource(source)}{
-#'    Adds a source (object of class \code{\link{ISOSource}})
-#'  }
-#'  \item{delSource(source)}{
-#'   Deletes a source
-#'  }
-#' }
 #' 
 #' @examples 
 #'   ps <- ISOProcessStep$new()
@@ -65,22 +30,26 @@ ISOProcessStep <- R6Class("ISOProcessStep",
    ),
    public = list(
   
-     #+ description: character
+     #'@field description description: character
      description = NULL,
-     #+ rationale [0..1]: character
+     #'@field rationale rationale [0..1]: character
      rationale = NULL,
-     #+ dateTime [0..1]: ISOBaseDateTime or POSIXct/POSIXt
+     #'@field dateTime dateTime [0..1]: ISOBaseDateTime or POSIXct/POSIXt
      dateTime = NULL,
-     #+ processor [0..*]: ISOResponsibleParty
+     #'@field processor processor [0..*]: ISOResponsibleParty
      processor = list(),
-     #+ source [0..*]: ISOSource
+     #'@field source source [0..*]: ISOSource
      source = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setDescription
+     #'@description Set description
+     #'@param description description
+     #'@param locales list of localized texts. Default is \code{NULL}
      setDescription = function(description, locales = NULL){
        self$description <- as.character(description)
        if(!is.null(locales)){
@@ -88,7 +57,9 @@ ISOProcessStep <- R6Class("ISOProcessStep",
        }
      },
      
-     #setRationale
+     #'@description Set rationale
+     #'@param rationale rationale
+     #'@param locales list of localized texts. Default is \code{NULL}
      setRationale = function(rationale, locales = NULL){
        self$rationale <- as.character(rationale)
        if(!is.null(locales)){
@@ -96,7 +67,8 @@ ISOProcessStep <- R6Class("ISOProcessStep",
        }
      },
      
-     #setDateTime
+     #'@description Set date time
+     #'@param dateTime object of class \link{ISOBaseDateTime} or \link{POSIXct}
      setDateTime = function(dateTime){
        if(!is(dateTime, "ISOBaseDateTime")){
          if(all(class(dateTime) == c("POSIXct","POSIXt"))){
@@ -108,7 +80,9 @@ ISOProcessStep <- R6Class("ISOProcessStep",
        self$dateTime = dateTime
      },
      
-     #addProcessor
+     #'@description Adds processor
+     #'@param processor object of class \link{ISOResponsibleParty}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addProcessor = function(processor){
        if(!is(processor, "ISOResponsibleParty")){
          stop("The argument should be a 'ISOResponsibleParty' object")
@@ -116,7 +90,9 @@ ISOProcessStep <- R6Class("ISOProcessStep",
        return(self$addListElement("processor", processor))
      },
      
-     #delProcessor
+     #'@description Deletes processor
+     #'@param processor object of class \link{ISOResponsibleParty}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delProcessor = function(processor){
        if(!is(processor, "ISOResponsibleParty")){
          stop("The argument should be a 'ISOResponsibleParty' object")
@@ -124,7 +100,9 @@ ISOProcessStep <- R6Class("ISOProcessStep",
        return(self$delListElement("processor", processor))
      },
      
-     #addSource
+     #'@description Adds source
+     #'@param source object of class \link{ISOSource}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSource = function(source){
        if(!is(source, "ISOSource")){
          stop("The argument should be a 'ISOSource' object")
@@ -132,7 +110,9 @@ ISOProcessStep <- R6Class("ISOProcessStep",
        return(self$addListElement("source", source))
      },
      
-     #delSource
+     #'@description Deletes source
+     #'@param source object of class \link{ISOSource}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSource = function(source){
        if(!is(source, "ISOSource")){
          stop("The argument should be a 'ISOSource' object")

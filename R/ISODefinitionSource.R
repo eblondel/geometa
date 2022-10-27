@@ -6,18 +6,6 @@
 #' @keywords ISO definition source
 #' @return Object of \code{\link{R6Class}} for modelling an ISODefinitionSource
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field source [\code{\link{ISOCitation}}] source citation
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, source)}}{
-#'    This method is used to instantiate an \code{\link{ISODefinitionSource}}
-#'  }
-#'  \item{\code{setSource(source)}}{
-#'    Sets the source as object of class \code{\link{ISOCitation}}
-#'  }
-#' }
 #' 
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing
@@ -31,8 +19,12 @@ ISODefinitionSource <- R6Class("ISODefinitionSource",
       xmlNamespacePrefix = "GFC"
     ),
     public = list(
-      #+ source [0..1]: ISOCitation
+      #'@field source source [0..1]: ISOCitation
       source = NULL,
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param source source object of class \link{ISOCitation}
       initialize = function(xml = NULL, source = NULL){
         super$initialize(xml = xml)
         if(!is.null(source)){
@@ -40,7 +32,8 @@ ISODefinitionSource <- R6Class("ISODefinitionSource",
         }
       },
       
-      #setSource
+      #'@description Set source
+      #'@param source object of class \link{ISOCitation}
       setSource = function(source){
         if(!is(source, "ISOCitation")){
           stop("The argument should be an object of class 'ISOCitation'")

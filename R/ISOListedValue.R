@@ -6,33 +6,6 @@
 #' @keywords ISO listed value
 #' @return Object of \code{\link{R6Class}} for modelling an ISOListedValue
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field label [\code{\link{character}}] label
-#' @field code [\code{\link{character}}] code
-#' @field definition [\code{\link{character}}] definition
-#' @field definitionReference [\code{\link{ISODefinitionReference}}] definition reference
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOListedValue}}
-#'  }
-#'  \item{\code{setLabel(label, locales)}}{
-#'    Sets the label. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setCode(code, locales)}}{
-#'    Sets the code. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDefinition(definition, locales)}}{
-#'    Sets the definition. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDefinitionReference(definitionReference)}}{
-#'    Sets the definition reference, object of class \code{\link{ISODefinitionReference}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   val <- ISOListedValue$new()
@@ -54,20 +27,24 @@ ISOListedValue <- R6Class("ISOListedValue",
    ),
    public = list(
      
-     #+ label: character
+     #'@field label label: character
      label = NULL,
-     #+ code [0..1]: character
+     #'@field code code [0..1]: character
      code = NULL,
-     #+ definition [0..1]: character
+     #'@field definition definition [0..1]: character
      definition = NULL,
-     #+ definitionReference [0..1]: ISODefinitionReference
+     #'@field definitionReference definitionReference [0..1]: ISODefinitionReference
      definitionReference = NULL,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setLabel
+     #'@description Set label
+     #'@param label label
+     #'@param locales list of localized texts. Default is \code{NULL}
      setLabel = function(label, locales = NULL){
        self$label = label
        if(!is.null(locales)){
@@ -75,7 +52,9 @@ ISOListedValue <- R6Class("ISOListedValue",
        }
      },
      
-     #setCode
+     #'@description Set code
+     #'@param code code
+     #'@param locales list of localized texts. Default is \code{NULL}
      setCode = function(code, locales = NULL){
        self$code <- code
        if(!is.null(locales)){
@@ -83,7 +62,9 @@ ISOListedValue <- R6Class("ISOListedValue",
        }
      },
      
-     #setDefinition
+     #'@description Set definition
+     #'@param definition definition
+     #'@param locales list of localized texts. Default is \code{NULL}
      setDefinition = function(definition, locales = NULL){
        self$definition <- definition
        if(!is.null(locales)){
@@ -91,7 +72,8 @@ ISOListedValue <- R6Class("ISOListedValue",
        }
      },
      
-     #setDefinitionReference
+     #'@description Set definition reference
+     #'@param definitionReference object of class \link{ISODefinitionReference}
      setDefinitionReference = function(definitionReference){
        if(!is(definitionReference, "ISODefinitionReference")){
          stop("The argument should be an object of class 'ISODefinitionReference'")

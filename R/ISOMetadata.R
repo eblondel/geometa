@@ -7,140 +7,6 @@
 #' @keywords ISO metadata element
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field fileIdentifier [\code{\link{character}}] metadata file identifier
-#' @field language [\code{\link{ISOLanguage}}|\code{\link{character}}] metadata language coded
-#' @field characterSet [\code{\link{ISOCharacterSet}}|\code{\link{character}}] character set
-#' @field parentIdentifier [\code{\link{character}}] parent metadata identifier
-#' @field hierarchyLevel [\code{\link{ISOHierarchyLevel}}|\code{\link{character}}] hierarchy level
-#' @field hierarchyLevelName [\code{\link{character}}] hierarchy level name
-#' @field contact [\code{\link{ISOResponsibleParty}}] contact(s)
-#' @field dateStamp [\code{\link{Date}}|\code{\link{POSIXt}}] datestamp
-#' @field metadataStandardName [\code{\link{character}}] metadata standard name
-#' @field metadataStandardVersion [\code{\link{character}}] metadata standard version
-#' @field dataSetURI [\code{\link{character}}] dataset URI
-#' @field spatialRepresentationInfo [\code{\link{ISOSpatialRepresentation}}] the spatial representation
-#' @field referenceSystemInfo [\code{\link{ISOReferenceSystem}}] the reference system
-#' @field metadataExtensionInfo [\code{\link{ISOMetadataExtensionInformation}}] metadata extension
-#' @field identificationInfo [\code{\link{ISOIdentification}}] identification information
-#' @field contentInfo [\code{\link{ISOFeatureCatalogueDescription}}|\code{\link{ISOCoverageDescription}}] content description
-#' @field distributionInfo [\code{\link{ISODistribution}}] distribution information
-#' @field dataQualityInfo [\code{\link{ISODataQuality}}] data quality
-#' @field metadataMaintenance [\code{\link{ISOMaintenanceInformation}}] maintenance info
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOMetadata}}
-#'  }
-#'  \item{\code{setFileIdentifier(fileIdentifier)}}{
-#'    Sets the file identifier
-#'  }
-#'  \item{\code{setLanguage{locale}}}{
-#'    Sets the locale
-#'  }
-#'  \item{\code{setCharacterSet(charset)}}{
-#'    Sets the character set
-#'  }
-#'  \item{\code{setParentIdentifier(parentIdentifier)}}{
-#'    Sets the parentIdentifier
-#'  }
-#'  \item{\code{addHierarchyLevel(level)}}{
-#'    Adds the hierarchy level
-#'  }
-#'  \item{\code{setHierarchyLevel(level)}}{
-#'    Sets the hierarchy level
-#'  }
-#'  \item{\code{delHierarchyLevel(level)}}{
-#'    Deletes the hierarchy level
-#'  }
-#'  \item{\code{addHierarchyLevelName(levelName)}}{
-#'    Adds the hierarchy level name
-#'  }
-#'  \item{\code{delHierarchyLevelName(levelName)}}{
-#'    Deletes the hierarchy level name
-#'  }
-#'  \item{\code{addContact(contact)}}{
-#'    Adds a contact as object of class \code{ISOResponsibleParty}
-#'  }
-#'  \item{\code{delContact(contact)}}{
-#'    Deletes a contact as object of class \code{ISOResponsibleParty}
-#'  }
-#'  \item{\code{setDateStamp(date)}}{
-#'    Sets the date stamp
-#'  }
-#'  \item{\code{setMetadataStandardName(name)}}{
-#'    Sets the metadata standard name
-#'  }
-#'  \item{\code{setMetadataStandardVersion(version)}}{
-#'    Sets the metadata standard version
-#'  }
-#'  \item{\code{setDataSetURI(dataSetURI)}}{
-#'    Sets the metadata dataSet URI
-#'  }
-#'  \item{\code{addLocale(locale)}}{
-#'    Adds a locale, object of class \code{ISOLocale}
-#'  }
-#'  \item{\code{delLocale(locale)}}{
-#'    Deletes a locale, object of class \code{ISOLocale}
-#'  }
-#'  \item{\code{addSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-#'    Adds a spatial representation
-#'  }
-#'  \item{\code{setSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-#'    Sets a spatial representation
-#'  }
-#'  \item{\code{delSpatialRepresentationInfo(spatialRepresentationInfo)}}{
-#'    Deletes a spatial representation
-#'  }
-#'  \item{\code{addReferenceSystemInfo(referenceSystemInfo)}}{
-#'    Adds a reference system
-#'  }
-#'  \item{\code{setReferenceSystemInfo(referenceSystemInfo)}}{
-#'    Sets the reference system
-#'  }
-#'  \item{\code{delReferenceSystemInfo(referenceSystemInfo)}}{
-#'    Deletes a reference system
-#'  }
-#'  \item{\code{addMetadataExtensionInfo(extensionInfo)}}{
-#'    Adds extension info, object of class \code{ISOMetadataExtensionInformation}
-#'  }
-#'  \item{\code{delMetadataExtensionInfo(extensionInfo)}}{
-#'    Deletes extension info, object of class \code{ISOMetadataExtensionInformation}
-#'  }
-#'  \item{\code{addIdentificationInfo(identificationInfo)}}{
-#'    Adds a data identification
-#'  }
-#'  \item{\code{setIdentificationInfo(identificationInfo)}}{
-#'    Sets the data identification
-#'  }
-#'  \item{\code{delIdentificationInfo(identificationInfo)}}{
-#'    Deletes a data identification
-#'  }
-#'  \item{\code{addContentInfo(contentInfo)}}{
-#'    Adds a content info, either an object of class \code{\link{ISOCoverageDescription}}
-#'    for coverage data, or \code{\link{ISOFeatureCatalogueDescription}} for vector data.
-#'  }
-#'  \item{\code{delContentInfo(contentInfo)}}{
-#'    Deletes a content info, either an object of class \code{\link{ISOCoverageDescription}} 
-#'    for coverage data, or \code{\link{ISOFeatureCatalogueDescription}} for vector data.
-#'  }
-#'  \item{\code{setDistributionInfo(distributionInfo)}}{
-#'    Sets the distribution
-#'  }
-#'  \item{\code{addDataQualityInfo(dataQualityInfo)}}{
-#'    Adds a data quality
-#'  }
-#'  \item{\code{setDataQualityInfo(dataQualityInfo)}}{
-#'    Sets the data quality
-#'  }
-#'  \item{\code{delDataQualityInfo(dataQualityInfo)}}{
-#'    Deletes a data quality
-#'  }
-#'  \item{\code{setMetadataMaintenance(metadataMaintenance)}}{
-#'    Sets a metadata maintenance as object of class \code{ISOMaintenanceInformation}
-#'  }
-#' }
 #' 
 #' @examples
 #'     #example 1 - WRITE: Create an ISO metadata and encode it as XML
@@ -469,54 +335,56 @@ ISOMetadata <- R6Class("ISOMetadata",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-     #+ fileIdentifier [0..1] : character
+     #'@field fileIdentifier fileIdentifier [0..1] : character
      fileIdentifier = NULL,
-     #+ language [0..1] : character
+     #'@field language language [0..1] : character
      language = NULL,
-     #+ characterSet [0..1] : ISOCharacterSet = "utf8"
+     #'@field characterSet characterSet [0..1] : ISOCharacterSet = "utf8"
      characterSet = NULL,
-     #+ parentIdentifier [0..1] : character
+     #'@field parentIdentifier parentIdentifier [0..1] : character
      parentIdentifier = NULL,
-     #+ hierarchyLevel [0..*] : ISOHierarchyLevel = "dataset"
+     #'@field hierarchyLevel hierarchyLevel [0..*] : ISOHierarchyLevel = "dataset"
      hierarchyLevel = list(),
-     #+ hierarchyLevelName [0..*] : character
+     #'@field hierarchyLevelName hierarchyLevelName [0..*] : character
      hierarchyLevelName = list(),
-     #+ contact [1..*] : ISOResponsibleParty
+     #'@field contact contact [1..*] : ISOResponsibleParty
      contact = list(),
-     #+ dateStamp : POSIXct/POSIXt
+     #'@field dateStamp dateStamp : POSIXct/POSIXt
      dateStamp = Sys.time(),
-     #+ metadataStandardName [0..1] : character
+     #'@field metadataStandardName metadataStandardName [0..1] : character
      metadataStandardName = NULL,
-     #+ metadataStandardVersion [0..1] : character
+     #'@field metadataStandardVersion metadataStandardVersion [0..1] : character
      metadataStandardVersion = NULL,
-     #+ dataSetURI [0..1] : character
+     #'@field dataSetURI dataSetURI [0..1] : character
      dataSetURI = NULL,
-     #+ locale [0..*]: ISOLocale
+     #'@field locale locale [0..*]: ISOLocale
      locale = list(),
-     #+ spatialRepresentationInfo [0..*]: ISOSpatialRepresentation
+     #'@field spatialRepresentationInfo spatialRepresentationInfo [0..*]: ISOSpatialRepresentation
      spatialRepresentationInfo = list(),
-     #+ referenceSystemInfo [0..*]: ISOReferenceSystem
+     #'@field referenceSystemInfo referenceSystemInfo [0..*]: ISOReferenceSystem
      referenceSystemInfo = list(),
-     #+ metadataExtensionInfo [0..*]: ISOMetadataExtensionInformation
+     #'@field metadataExtensionInfo metadataExtensionInfo [0..*]: ISOMetadataExtensionInformation
      metadataExtensionInfo = list(),
-     #+ identificationInfo [1..*]: ISOIdentification
+     #'@field identificationInfo identificationInfo [1..*]: ISOIdentification
      identificationInfo = list(),
-     #+ contentInfo [0..*]
+     #'@field contentInfo contentInfo [0..*]
      contentInfo = list(),
-     #+ distributionInfo [0..1] : ISODistribution
+     #'@field distributionInfo distributionInfo [0..1] : ISODistribution
      distributionInfo = NULL,
-     #+ dataQualityInfo [0..*]: ISODataQuality
+     #'@field dataQualityInfo dataQualityInfo [0..*]: ISODataQuality
      dataQualityInfo = list(),
-     #+ metadataMaintenance [0..1]: ISOMaintenanceInformation
+     #'@field metadataMaintenance metadataMaintenance [0..1]: ISOMaintenanceInformation
      metadataMaintenance = NULL,
      
      #unsupported sets (to implement)
      #----------------
-     #+ portrayalCatalogueInfo [0..*]
+     #'@field portrayalCatalogueInfo portrayalCatalogueInfo [0..*]
      portrayalCatalogueInfo = list(), #TODO
-     #+ applicationSchemaInfo [0..*]
+     #'@field applicationSchemaInformation applicationSchemaInfo [0..*]
      applicationSchemaInformation = list(), #TODO
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        
        #default values
@@ -538,12 +406,15 @@ ISOMetadata <- R6Class("ISOMetadata",
      #MD_Metadata
      #--------------------------------------------------------------------------
      
-     #setFileIdentifier
+     #'@description Set file identifier
+     #'@param fileIdentifier file identifier
      setFileIdentifier = function(fileIdentifier){
        self$fileIdentifier <- fileIdentifier
      },
 
-     #setLanguage
+     #'@description Set language
+     #'@param locale object of class \link{ISOLanguage} or any \link{character}
+     #' from values returned by \code{ISOLanguages$values()}
      setLanguage = function(locale){
        if(is(locale, "character")){
          locale <- ISOLanguage$new(value = locale)
@@ -551,7 +422,9 @@ ISOMetadata <- R6Class("ISOMetadata",
        self$language <- locale
      },
 
-     #setCharacterSet
+     #'@description Set charset
+     #'@param charset object of class \link{ISOCharacterSet} or any \link{character}
+     #' from values returned by \code{ISOCharacterSet$values()}
      setCharacterSet = function(charset){
        if(is(charset, "character")){
          charset <- ISOCharacterSet$new(value = charset)
@@ -559,12 +432,16 @@ ISOMetadata <- R6Class("ISOMetadata",
        self$characterSet <- charset
      },
      
-     #setParentIdentifier
+     #'@description Set parent identifier
+     #'@param parentIdentifier parent identifier
      setParentIdentifier = function(parentIdentifier){
        self$parentIdentifier <- parentIdentifier
      },
      
-     #addHierarchyLevel
+     #'@description Adds hierarchy level
+     #'@param level object of class \link{ISOHierarchyLevel} or any \link{character}
+     #' from values returned by \code{ISOHierarchyLevel$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addHierarchyLevel = function(level){
        if(!is(level, "ISOHierarchyLevel")){
          level <- ISOHierarchyLevel$new(value = level)
@@ -572,13 +449,20 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$addListElement("hierarchyLevel", level))
      },
      
-     #setHierarchyLevel
+     #'@description Sets hierarchy level
+     #'@param level object of class \link{ISOHierarchyLevel} or any \link{character}
+     #' from values returned by \code{ISOHierarchyLevel$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setHierarchyLevel = function(level){
+       warning("Method 'setHierarchyLevel' is deprecated, please use 'addHierarchyLevel'!")
        self$hierarchyLevel <- list()
        self$addHierarchyLevel(level)
      },
 
-     #delHierarchyLevel
+     #'@description Deletes hierarchy level
+     #'@param level object of class \link{ISOHierarchyLevel} or any \link{character}
+     #' from values returned by \code{ISOHierarchyLevel$values()}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delHierarchyLevel = function(level){
        if(!is(level, "ISOHierarchyLevel")){
          level <- ISOHierarchyLevel$new(value = level)
@@ -586,17 +470,23 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$delListElement("hierarchyLevel", level))
      },
     
-     #addHierarchyLevelName
+     #'@description Adds hierarchy level name
+     #'@param levelName object of class \link{character}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addHierarchyLevelName = function(levelName){
        return(self$addListElement("hierarchyLevelName", levelName))
      },
 
-     #delHierarchyLevelName
+     #'@description Deletes hierarchy level name
+     #'@param levelName object of class \link{character}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delHierarchyLevelName = function(levelName){
        return(self$delListElement("hierarchyLevelName", levelName))
      },
      
-     #addContact
+     #'@description Adds contact
+     #'@param contact object of class \link{ISOResponsibleParty}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addContact = function(contact){
        if(!is(contact,"ISOResponsibleParty")){
          stop("The argument should be a 'ISOResponsibleParty' object")
@@ -604,7 +494,9 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$addListElement("contact", contact))
      },
      
-     #delContact
+     #'@description Deletes contact
+     #'@param contact object of class \link{ISOResponsibleParty}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delContact = function(contact){
        if(!is(contact,"ISOResponsibleParty")){
          stop("The argument should be a 'ISOResponsibleParty' object")
@@ -613,29 +505,35 @@ ISOMetadata <- R6Class("ISOMetadata",
      },
      
      
-     #setDateStamp
+     #'@description Set date stamp
+     #'@param date date
      setDateStamp = function(date){
        self$dateStamp = date
      },
      
-     #setMetadataStandardName
+     #'@description Set metadata standard name
+     #'@param name name
      setMetadataStandardName = function(name){
        if(!is(name, "character")) name <- as.character(name)
        self$metadataStandardName <- name
      },
      
-     #setMetadataStandardVersion
+     #'@description Set metadata standard version
+     #'@param version version
      setMetadataStandardVersion = function(version){
        if(!is(version, "character")) version <- as.character(version)
        self$metadataStandardVersion <- version
      },
      
-     #setDataSetURI
+     #'@description Set dataset URI
+     #'@param dataSetURI dataset URI
      setDataSetURI = function(dataSetURI){
        self$dataSetURI = dataSetURI
      },
      
-     #addLocale
+     #'@description Adds locale
+     #'@param locale object of class \link{ISOLocale}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addLocale = function(locale){
        if(!is(locale,"ISOLocale")){
          stop("The argument should be a 'ISOLocale' object")  
@@ -643,7 +541,9 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$addListElement("locale", locale))
      },
      
-     #delLocale
+     #'@description Deletes locale
+     #'@param locale object of class \link{ISOLocale}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delLocale = function(locale){
        if(!is(locale,"ISOLocale")){
          stop("The argument should be a 'ISOLocale' object")  
@@ -653,7 +553,9 @@ ISOMetadata <- R6Class("ISOMetadata",
      #MD_SpatialRepresentation
      #--------------------------------------------------------------------------
      
-     #addSpatialRepresentationInfo
+     #'@description Adds spatial representation info
+     #'@param spatialRepresentationInfo object of class \link{ISOSpatialRepresentation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSpatialRepresentationInfo = function(spatialRepresentationInfo){
        if(!is(spatialRepresentationInfo,"ISOSpatialRepresentation")){
          stop("The argument should be a 'ISOSpatialRepresentation' object")
@@ -661,13 +563,18 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$addListElement("spatialRepresentationInfo", spatialRepresentationInfo))
      },
      
-     #setSpatialRepresentationInfo
+     #'@description Sets spatial representation info
+     #'@param spatialRepresentationInfo object of class \link{ISOSpatialRepresentation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setSpatialRepresentationInfo = function(spatialRepresentationInfo){
+       warning("Method 'setSpatialRepresentationInfo' is deprecated, please use 'addSpatialRepresentationInfo'!")
        self$spatialRepresentationInfo = list()
        return(self$addSpatialRepresentationInfo(spatialRepresentationInfo))
      },
      
-     #delSpatialRepresentationInfo
+     #'@description Deletes spatial representation info
+     #'@param spatialRepresentationInfo object of class \link{ISOSpatialRepresentation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSpatialRepresentationInfo = function(spatialRepresentationInfo){
        if(!is(spatialRepresentationInfo,"ISOSpatialRepresentation")){
          stop("The argument should be a 'ISOSpatialRepresentation' object")
@@ -678,7 +585,9 @@ ISOMetadata <- R6Class("ISOMetadata",
      #MD_ReferenceSystem
      #--------------------------------------------------------------------------
      
-     #addReferenceSystemInfo
+     #'@description Adds reference system info
+     #'@param referenceSystemInfo object of class \link{ISOReferenceSystem}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addReferenceSystemInfo = function(referenceSystemInfo){
        if(!is(referenceSystemInfo, "ISOReferenceSystem")){
          stop("The argument should be a 'ISOReferenceSystem' object")  
@@ -686,13 +595,18 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$addListElement("referenceSystemInfo", referenceSystemInfo))
      },
      
-     #setReferenceSystemInfo
+     #'@description Sets reference system info
+     #'@param referenceSystemInfo object of class \link{ISOReferenceSystem}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setReferenceSystemInfo = function(referenceSystemInfo){
+       warning("Method 'setReferenceSystemInfo' is deprecated, please use 'addReferenceSystemInfo'!")
        self$referenceSystemInfo <- list()
        return(self$addReferenceSystemInfo(referenceSystemInfo))
      },
      
-     #delReferenceSystemInfo
+     #'@description Deletes reference system info
+     #'@param referenceSystemInfo object of class \link{ISOReferenceSystem}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delReferenceSystemInfo = function(referenceSystemInfo){
        if(!is(referenceSystemInfo, "ISOReferenceSystem")){
          stop("The argument should be a 'ISOReferenceSystem' object")  
@@ -703,7 +617,9 @@ ISOMetadata <- R6Class("ISOMetadata",
      #MD_MetadataExtensionInformation
      #--------------------------------------------------------------------------
      
-     #addMetadataExtensionInfo
+     #'@description Adds metadata extension info
+     #'@param metadataExtensionInfo object of class \link{ISOMetadataExtensionInformation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addMetadataExtensionInfo = function(metadataExtensionInfo){
        if(!is(metadataExtensionInfo, "ISOMetadataExtensionInformation")){
          stop("The argument should be a 'ISOMetadataExtensionInformation' object")  
@@ -711,7 +627,9 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$addListElement("metadataExtensionInfo", metadataExtensionInfo))
      },
      
-     #delMetadataExtensionInfo
+     #'@description Deletes metadata extension info
+     #'@param metadataExtensionInfo object of class \link{ISOMetadataExtensionInformation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delMetadataExtensionInfo = function(metadataExtensionInfo){
        if(!is(metadataExtensionInfo, "ISOMetadataExtensionInformation")){
          stop("The argument should be a 'ISOMetadataExtensionInformation' object")  
@@ -722,7 +640,9 @@ ISOMetadata <- R6Class("ISOMetadata",
      #MD_Identification
      #--------------------------------------------------------------------------
      
-     #addIdentificationInfo
+     #'@description Adds metadata extension info
+     #'@param identificationInfo object of class inheriting \link{ISOIdentification}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addIdentificationInfo = function(identificationInfo){
        if(!inherits(identificationInfo,"ISOIdentification")){
          stop("The argument should be an object of class 'ISODataIdentification' or 'ISOServiceIdentification")
@@ -730,13 +650,18 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$addListElement("identificationInfo", identificationInfo))
      },
      
-     #setIdentificationInfo
+     #'@description Sets metadata extension info
+     #'@param identificationInfo object of class inheriting \link{ISOIdentification}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setIdentificationInfo = function(identificationInfo){
+       warning("Method 'setIdentificationInfo' is deprecated, please use 'addIdentificationInfo'!")
        self$identificationInfo = list()
        return(self$addIdentificationInfo(identificationInfo))
      },
      
-     #delIdentificationInfo
+     #'@description Deletes metadata extension info
+     #'@param identificationInfo object of class inheriting \link{ISOIdentification}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delIdentificationInfo = function(identificationInfo){
        if(!inherits(identificationInfo,"ISOIdentification")){
          stop("The argument should be an object of class 'ISODataIdentification' or 'ISOServiceIdentification")
@@ -747,7 +672,9 @@ ISOMetadata <- R6Class("ISOMetadata",
      #MD_Distribution
      #--------------------------------------------------------------------------
      
-     #setDistributionInfo
+     #'@description Sets metadata extension info
+     #'@param distributionInfo object of class \link{ISODistribution}
+     #'@return \code{TRUE} if set, \code{FALSE} otherwise
      setDistributionInfo = function(distributionInfo){
        if(!is(distributionInfo,"ISODistribution")){
          stop("The argument should be a 'ISODistribution' object")
@@ -758,7 +685,9 @@ ISOMetadata <- R6Class("ISOMetadata",
      #DQ_DataQuality
      #--------------------------------------------------------------------------     
      
-     #addDataQualityInfo
+     #'@description Adds data quality info
+     #'@param dataQualityInfo object of class \link{ISODataQuality}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDataQualityInfo = function(dataQualityInfo){
        if(!is(dataQualityInfo,"ISODataQuality")){
          stop("The argument should be a 'ISODataQuality' object")
@@ -766,13 +695,18 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$addListElement("dataQualityInfo", dataQualityInfo))
      },
      
-     #setDataQualityInfo
+     #'@description Sets data quality info
+     #'@param dataQualityInfo object of class \link{ISODataQuality}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setDataQualityInfo = function(dataQualityInfo){
+       warning("Method 'setDataQualityInfo' is deprecated, please use 'addDataQualityInfo'!")
        self$dataQualityInfo = list()
        return(self$addDataQualityInfo(dataQualityInfo))
      },
      
-     #delDataQualityInfo
+     #'@description Deletes data quality info
+     #'@param dataQualityInfo object of class \link{ISODataQuality}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDataQualityInfo = function(dataQualityInfo){
        if(!is(dataQualityInfo,"ISODataQuality")){
          stop("The argument should be a 'ISODataQuality' object")
@@ -783,7 +717,9 @@ ISOMetadata <- R6Class("ISOMetadata",
      #MD_MaintenanceInformation
      #-------------------------------------------------------------------------- 
      
-     #setMetadataMaintenance
+     #'@description Sets metadata maintenance
+     #'@param metadataMaintenance object of class \link{ISOMaintenanceInformation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setMetadataMaintenance = function(metadataMaintenance){
        if(!is(metadataMaintenance,"ISOMaintenanceInformation")){
          stop("The argument should be a 'ISOMaintenanceInformation' object")
@@ -794,7 +730,9 @@ ISOMetadata <- R6Class("ISOMetadata",
      #MD_ContentInformation
      #--------------------------------------------------------------------------     
      
-     #addContentInfo
+     #'@description Adds content information
+     #'@param contentInfo object of class inheriting \link{ISOContentInformation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addContentInfo = function(contentInfo){
        if(!is(contentInfo,"ISOContentInformation")){
          stop("The argument should be a 'ISOContentInformation' object")
@@ -802,7 +740,9 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$addListElement("contentInfo", contentInfo))
      },
      
-     #delContentInfo
+     #'@description Deletes content information
+     #'@param contentInfo object of class inheriting \link{ISOContentInformation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delContentInfo = function(contentInfo){
        if(!is(contentInfo,"ISOContentInformation")){
          stop("The argument should be a 'ISOContentInformation' object")

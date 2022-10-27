@@ -6,13 +6,6 @@
 #' @keywords ISO file name
 #' @return Object of \code{\link{R6Class}} for modelling an ISO FileName
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, file, name)}}{
-#'    This method is used to instantiate an \code{\link{ISOFileName}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOFileName$new(file = "someuri", name = "filename")
@@ -24,19 +17,25 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOFileName <- R6Class("ISOFileName",
-                        inherit = ISOAbstractObject,
-                        private = list(
-                          xmlElement = "FileName",
-                          xmlNamespacePrefix = "GMX"
-                        ),
-                        public = list(
-                          attrs = list(),
-                          initialize = function(xml = NULL, file = NULL, name = NULL){
-                            super$initialize(xml = xml)
-                            if(!is.null(file) & !is.null(name)){
-                              self$attrs$src <- file
-                              self$value <- name
-                            }
-                          }
-                        )                        
+  inherit = ISOAbstractObject,
+  private = list(
+    xmlElement = "FileName",
+    xmlNamespacePrefix = "GMX"
+  ),
+  public = list(
+    #'@field attrs attrs
+    attrs = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param file file
+    #'@param name name
+    initialize = function(xml = NULL, file = NULL, name = NULL){
+      super$initialize(xml = xml)
+      if(!is.null(file) & !is.null(name)){
+        self$attrs$src <- file
+        self$value <- name
+      }
+    }
+  )                        
 )

@@ -7,28 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISODataSet
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @field has [\code{\link{ISOMetadata}}] associated metadata
-#' @field partOf [\code{\link{ISOAbstractAggregate}}] part of other aggregate(s)
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISODataSet}}
-#'  }
-#'  \item{\code{addHas(metadata)}}{
-#'    Adds a metadata, object of class \\code{\link{ISOMetadata}}
-#'  }
-#'  \item{\code{delHas(metadata)}}{
-#'    Deletes a metadata, object of class \code{\link{ISOMetadata}}
-#'  }
-#'  \item{\code{addPartOf(partOf)}}{
-#'    Adds a partOf element, object that inherits from \code{\link{ISOAbstractAggregate}}
-#'  }
-#'  \item{\code{delPartOf(partOf)}}{
-#'    Deletes a partOf element, object that inherits from \code{\link{ISOAbstractAggregate}}
-#'  }
-#' }
-#'    
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
 #' 
@@ -41,16 +19,20 @@ ISODataSet <- R6Class("ISODataSet",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    #has [1..*]
+    #'@field has has [1..*]
     has = list(),
-    #partOf [0..*]
+    #'@field partOf partOf [0..*]
     partOf = list(),
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #addHasMetadata
+    #'@description Adds metadata
+    #'@param metadata metadata, object of class \link{ISOMetadata}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addHasMetadata = function(metadata){
       if(!is(metadata, "ISOMetadata")){
         stop("The argument should be an object of class 'ISOMetadata'")
@@ -58,7 +40,9 @@ ISODataSet <- R6Class("ISODataSet",
       return(self$addListElement("has", metadata))
     },
     
-    #delHasMetadata
+    #'@description Deletes metadata
+    #'@param metadata metadata, object of class \link{ISOMetadata}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delHasMetadata = function(metadata){
       if(!is(metadata, "ISOMetadata")){
         stop("The argument should be an object of class 'ISOMetadata'")
@@ -66,8 +50,9 @@ ISODataSet <- R6Class("ISODataSet",
       return(self$delListElement("has", metadata))
     },
     
-    
-    #addPartOf
+    #'@description Adds aggregate dataset is part of
+    #'@param partOf object inheriting class \link{ISOAbstractAggregate}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addPartOf = function(partOf){
       if(!inherits(partOf,"ISOAbstractAggregate")){
         stop("The argument should be an object inheriting 'ISOAbstractAggregate")
@@ -75,7 +60,9 @@ ISODataSet <- R6Class("ISODataSet",
       return(self$addListElement("partOf", partOf))
     },
     
-    #delPartOf
+    #'@description Deletes aggregate dataset is part of
+    #'@param partOf object inheriting class \link{ISOAbstractAggregate}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delPartOf = function(partOf){
       if(!inherits(partOf,"ISOAbstractAggregate")){
         stop("The argument should be an object inheriting 'ISOAbstractAggregate")

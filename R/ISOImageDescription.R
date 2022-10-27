@@ -6,80 +6,6 @@
 #' @keywords ISO coverage description
 #' @return Object of \code{\link{R6Class}} for modelling an ISOImageDescription
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field illuminationElevationAngle [\code{\link{numeric}}]
-#' @field illuminationAzimuthAngle [\code{\link{numeric}}]
-#' @field imagingCondition [\code{\link{ISOImagingCondition}}]
-#' @field imageQualityCode [\code{\link{ISOMetaIdentifier}}]
-#' @field cloudCoverPercentage [\code{\link{numeric}}]
-#' @field processingLevelCode [\code{\link{ISOMetaIdentifier}}]
-#' @field compressionGenerationQuantity [\code{\link{integer}}]
-#' @field triangulationIndicator [\code{\link{logical}}]
-#' @field radiometricCalibrationDataAvailability [\code{\link{logical}}]
-#' @field cameraCalibrationInformationAvailability [\code{\link{logical}}]
-#' @field filmDistortionInformationAvailability [\code{\link{logical}}]
-#' @field lensDistortionInformationAvailability [\code{\link{logical}}]
-#' 
-#' @section Inherited methods from \code{\link{ISOCoverageDescription}}:
-#' \describe{
-#'  \item{\code{setAttributeDescription}}{
-#'    Sets the attribute description, as object of class \code{\link{ISORecordType}} or
-#'    \code{character}
-#'  }
-#'  \item{\code{setContentType(contentType)}}{
-#'    Sets the content Type, as object of class \code{\link{ISOCoverageContentType}} or
-#'    any \code{character} value listed in \code{ISOCoverageContentType$values()}
-#'  }
-#'  \item{\code{addDimension(dimension)}}{
-#'    Adds a dimension, object of class (or subclass of) \code{\link{ISORangeDimension}}
-#'  }
-#'  \item{\code{delDimension(dimension)}}{
-#'    Deletes a dimension, object of class (or subclass of) \code{\link{ISORangeDimension}}
-#'  }
-#' }
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageDescription}}
-#'  }
-#'  \item{\code{setIlluminationElevationAngle(illuminationElevationAngle)}}{
-#'    Sets the illumination elevation angle
-#'  }
-#'  \item{\code{setIlluminationAzimuthAngle(illuminationAzimuthAngle)}}{
-#'    Sets the illumination azimuth angle
-#'  }
-#'  \item{\code{setImagingCondition(imagingCondition)}}{
-#'    Sets the imaging condition, object of class 'character' or \code{\link{ISOImagingCondition}}
-#'  }
-#'  \item{\code{setImageQualityCode(code)}}{
-#'    Sets an image quality code
-#'  }
-#'  \item{\code{setCloudCoverPercentage(cloudCoverPercentage)}}{
-#'    Sets the cloud cover percentage
-#'  }
-#'  \item{\code{setProcessingLevelCode(code)}}{
-#'    Sets the processing level code
-#'  }
-#'  \item{\code{setCompressionGenerationQuantity(quantity)}}{
-#'    Sets compression generation quantity
-#'  }
-#'  \item{\code{setTriangulationIndicator(triangulationIndicator)}}{
-#'    Sets the triangulation indicator
-#'  }
-#'  \item{\code{setRadiometricCalibrationDataAvailability(radiometricCalibrationDataAvailability)}}{
-#'    Sets \code{TRUE} if radiometric calibration data is available, \code{FALSE} otherwise
-#'  }
-#'  \item{\code{setCameraCalibrationInformationAvailability(cameraCalibrationInformationAvailability)}}{
-#'    Sets \code{TRUE} if camera calibration information is available, \code{FALSE} otherwise
-#'  }
-#'  \item{\code{setFilmDistortionInformationAvailability(filmDistortionInformationAvailability)}}{
-#'    Sets \code{TRUE} if film distortion information is available, \code{FALSE} otherwise
-#'  }
-#'  \item{\code{setLensDistortionInformationAvailability(lensDistortionInformationAvailability)}}{
-#'    Sets \code{TRUE} if lens distortion information is available, \code{FALSE} otherwise
-#'  }
-#' }
 #' 
 #' @examples
 #'    #create image description
@@ -139,36 +65,39 @@ ISOImageDescription <- R6Class("ISOImageDescription",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    #illuminationElevationAngle [0..1]
+    #'@field illuminationElevationAngle illuminationElevationAngle [0..1]
     illuminationElevationAngle = NULL,
-    #illuminationAzimuthAngle [0..1]
+    #'@field illuminationAzimuthAngle illuminationAzimuthAngle [0..1]
     illuminationAzimuthAngle = NULL,
-    #imagingCondition [0..1]
+    #'@field imagingCondition imagingCondition [0..1]
     imagingCondition = NULL,
-    #imageQualityCode [0..1]
+    #'@field imageQualityCode imageQualityCode [0..1]
     imageQualityCode = NULL,
-    #cloudCoverPercentage [0..1]
+    #'@field cloudCoverPercentage cloudCoverPercentage [0..1]
     cloudCoverPercentage = NULL,
-    #processingLevelCode [0..1]
+    #'@field processingLevelCode processingLevelCode [0..1]
     processingLevelCode = NULL,
-    #compressionGenerationQuantity [0..1]
+    #'@field compressionGenerationQuantity compressionGenerationQuantity [0..1]
     compressionGenerationQuantity = NULL,
-    #triangulationIndicator [0..1]
+    #'@field triangulationIndicator triangulationIndicator [0..1]
     triangulationIndicator = NULL,
-    #radiometricCalibrationDataAvailability [0..1]
+    #'@field radiometricCalibrationDataAvailability radiometricCalibrationDataAvailability [0..1]
     radiometricCalibrationDataAvailability = NULL,
-    #cameraCalibrationInformationAvailability [0..1]
+    #'@field cameraCalibrationInformationAvailability cameraCalibrationInformationAvailability [0..1]
     cameraCalibrationInformationAvailability = NULL,
-    #filmDistortionInformationAvailability [0..1]
+    #'@field filmDistortionInformationAvailability filmDistortionInformationAvailability [0..1]
     filmDistortionInformationAvailability = NULL,
-    #lensDistortionInformationAvailability [0..1]
+    #'@field lensDistortionInformationAvailability lensDistortionInformationAvailability [0..1]
     lensDistortionInformationAvailability = NULL,
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setIlluminationElevationAngle
+    #'@description Set illumination elevation angle
+    #'@param illuminationElevationAngle object of class \link{numeric}
     setIlluminationElevationAngle = function(illuminationElevationAngle){
       iea <- as.numeric(illuminationElevationAngle)
       if(is.na(iea)){
@@ -178,7 +107,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$illuminationElevationAngle <- illuminationElevationAngle
     },
     
-    #setIlluminationAzimuthAngle
+    #'@description Set illumination azimuth angle
+    #'@param illuminationAzimuthAngle object of class \link{numeric}
     setIlluminationAzimuthAngle = function(illuminationAzimuthAngle){
       iaa <- as.numeric(illuminationAzimuthAngle)
       if(is.na(iaa)){
@@ -188,7 +118,9 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$illuminationAzimuthAngle <- illuminationAzimuthAngle
     },
     
-    #setImagingCondition
+    #'@description Set imaging condition
+    #'@param imagingCondition object of class \link{ISOImagingCondition} or \link{character}
+    #'  among values returned by \code{ISOImagingCondition$values()}
     setImagingCondition = function(imagingCondition){
       if(is(imagingCondition, "character")){
         imagingCondition <- ISOImagingCondition$new(value = imagingCondition)
@@ -196,7 +128,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$imagingCondition <- imagingCondition
     },
     
-    #setImageQualityCode
+    #'@description Set image quality code
+    #'@param code object of class \link{ISOMetaIdentifier}
     setImageQualityCode = function(code){
       if(!is(code,"ISOMetaIdentifier")){
         code <- ISOMetaIdentifier$new(code = code)
@@ -204,7 +137,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$imageQualityCode <- code
     },
     
-    #setCloudCoverPercentage
+    #'@description Set cloud cover percentage
+    #'@param cloudCoverPercentage object of class \link{numeric}
     setCloudCoverPercentage = function(cloudCoverPercentage){
       ccp <- as.numeric(cloudCoverPercentage)
       if(is.na(ccp)){
@@ -214,7 +148,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$cloudCoverPercentage <- cloudCoverPercentage
     },
     
-    #setProcessingLevelCode
+    #'@description Set processing level code
+    #'@param code object of class \link{ISOMetaIdentifier}
     setProcessingLevelCode = function(code){
       if(!is(code,"ISOMetaIdentifier")){
         code <- ISOMetaIdentifier$new(code = code)
@@ -222,7 +157,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$processingLevelCode <- code
     },
     
-    #setCompressionGenerationQuantity
+    #'@description Set compression generation quantity
+    #'@param quantity object of class \link{integer}
     setCompressionGenerationQuantity = function(quantity){
       q <- as.integer(quantity)
       if(is.na(q)){
@@ -232,7 +168,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$compressionGenerationQuantity <- quantity
     },
     
-    #setTriangulationIndicator
+    #'@description Set triangulation indicator
+    #'@param triangulationIndicator object of class \link{logical}
     setTriangulationIndicator = function(triangulationIndicator){
       ti <- as.logical(triangulationIndicator)
       if(is.na(ti)){
@@ -242,7 +179,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$triangulationIndicator <- triangulationIndicator
     },
     
-    #setRadiometricCalibrationDataAvailability
+    #'@description Set radiometric calibration data availability
+    #'@param radiometricCalibrationDataAvailability object of class \link{logical}
     setRadiometricCalibrationDataAvailability = function(radiometricCalibrationDataAvailability){
       availability <- as.logical(radiometricCalibrationDataAvailability)
       if(is.na(availability)){
@@ -252,7 +190,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$radiometricCalibrationDataAvailability <- radiometricCalibrationDataAvailability
     },
     
-    #setCameraCalibrationInformationAvailability
+    #'@description Set camera calibration information availability
+    #'@param cameraCalibrationInformationAvailability object of class \link{logical}
     setCameraCalibrationInformationAvailability = function(cameraCalibrationInformationAvailability){
       availability <- as.logical(cameraCalibrationInformationAvailability)
       if(is.na(availability)){
@@ -262,7 +201,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$cameraCalibrationInformationAvailability <- cameraCalibrationInformationAvailability
     },
     
-    #setFilmDistortionInformationAvailability
+    #'@description Set film distortion information availability
+    #'@param filmDistortionInformationAvailability object of class \link{logical}
     setFilmDistortionInformationAvailability = function(filmDistortionInformationAvailability){
       availability <- as.logical(filmDistortionInformationAvailability)
       if(is.na(availability)){
@@ -272,7 +212,8 @@ ISOImageDescription <- R6Class("ISOImageDescription",
       self$filmDistortionInformationAvailability <- filmDistortionInformationAvailability
     },
     
-    #setLensDistortionInformationAvailability
+    #'@description Set lens distortion information availability
+    #'@param lensDistortionInformationAvailability object of class \link{logical}
     setLensDistortionInformationAvailability = function(lensDistortionInformationAvailability){
       availability <- as.logical(lensDistortionInformationAvailability)
       if(is.na(availability)){

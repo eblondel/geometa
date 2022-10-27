@@ -6,43 +6,6 @@
 #' @keywords ISO legal constraints
 #' @return Object of \code{\link{R6Class}} for modelling an ISO LegalConstraints
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field accessConstraints [\code{\link{ISORestriction}}] access constraint(s)
-#' @field useConstraints [\code{\link{ISORestriction}}] use constraint(s)
-#' @field otherConstraints [\code{\link{character}}] other constraint(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOLegalConstraints}}
-#'  }
-#'  \item{\code{addAccessConstraint(constraint)}}{
-#'    Adds an access constraint, as object of class "character" or class \code{\link{ISORestriction}}.
-#'    If an object of class "character" is specified, it must match the accepted
-#'    values given by \code{ISORestriction$values()}.
-#'  }
-#'  \item{\code{delAccessConstraint(constraint)}}{
-#'    Deletes an access constraint, as object of class "character" or class \code{\link{ISORestriction}}.
-#'    If an object of class "character" is specified, it must match the accepted
-#'    values given by \code{ISORestriction$values()}.
-#'  }
-#'  \item{\code{addUseConstraint(constraint)}}{
-#'    Adds a use constraint, as object of class "character" or class \code{\link{ISORestriction}}.
-#'    If an object of class "character" is specified, it must match the accepted
-#'    values given by \code{ISORestriction$values()}.
-#'  }
-#'  \item{\code{delUseConstraint(constraint)}}{
-#'    Deletes a use constraint, as object of class "character" or class \code{\link{ISORestriction}}.
-#'    If an object of class "character" is specified, it must match the accepted
-#'    values given by \code{ISORestriction$values()}.
-#'  }
-#'  \item{\code{addOtherConstraint(constraint)}}{
-#'    Adds an other constraint as object of class "character
-#'  }
-#'  \item{\code{delOtherConstraint(constraint)}}{
-#'    Deletes an other constraint as object of class "character
-#'  }
-#' }
 #' 
 #' @examples
 #'   #create object
@@ -69,17 +32,22 @@ ISOLegalConstraints <- R6Class("ISOLegalConstraints",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    #+ accessConstraints [0..*]: ISORestriction
+    #'@field accessConstraints accessConstraints [0..*]: ISORestriction
     accessConstraints = list(),
-    #+ useConstraints [0..*]: ISORestriction
+    #'@field useConstraints useConstraints [0..*]: ISORestriction
     useConstraints = list(),
-    #+ otherConstraints [0..*]: character
+    #'@field otherConstraints otherConstraints [0..*]: character
     otherConstraints = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #addAccessConstraint
+    #'@description Adds access constraint
+    #'@param constraint object of class \link{ISORestriction}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addAccessConstraint = function(constraint){
       if(!is(constraint,"ISORestriction")){
         constraint <- ISORestriction$new(value = constraint)
@@ -87,7 +55,9 @@ ISOLegalConstraints <- R6Class("ISOLegalConstraints",
       return(self$addListElement("accessConstraints", constraint))
     },
     
-    #delAccessConstraint
+    #'@description Deletes access constraint
+    #'@param constraint object of class \link{ISORestriction}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delAccessConstraint = function(constraint){
       if(!is(constraint,"ISORestriction")){
         constraint <- ISORestriction$new(value = constraint)
@@ -95,7 +65,9 @@ ISOLegalConstraints <- R6Class("ISOLegalConstraints",
       return(self$delListElement("accessConstraints", constraint))
     },
     
-    #addUseConstraint
+    #'@description Adds use constraint
+    #'@param constraint object of class \link{ISORestriction}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addUseConstraint = function(constraint){
       if(!is(constraint,"ISORestriction")){
         constraint <- ISORestriction$new(value = constraint)
@@ -103,7 +75,9 @@ ISOLegalConstraints <- R6Class("ISOLegalConstraints",
       return(self$addListElement("useConstraints", constraint))
     },
     
-    #delUseConstraint
+    #'@description Deletes use constraint
+    #'@param constraint object of class \link{ISORestriction}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delUseConstraint = function(constraint){
       if(!is(constraint,"ISORestriction")){
         constraint <- ISORestriction$new(value = constraint)
@@ -111,12 +85,16 @@ ISOLegalConstraints <- R6Class("ISOLegalConstraints",
       return(self$delListElement("useConstraints", constraint))
     },
     
-    #addOtherConstraint
+    #'@description Adds other constraint
+    #'@param constraint object of class \link{character}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addOtherConstraint = function(constraint){
       return(self$addListElement("otherConstraints", constraint))
     },
     
-    #delOtherConstraint
+    #'@description Deletes other constraint
+    #'@param constraint object of class \link{character}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delOtherConstraint = function(constraint){
       return(self$delListElement("otherConstraints", constraint))
     }

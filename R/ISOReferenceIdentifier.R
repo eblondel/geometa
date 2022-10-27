@@ -6,22 +6,6 @@
 #' @keywords ISO reference identifier
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ReferenceIdentifier
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field codeSpace [\code{\link{character}}] codespace
-#' @field version [\code{\link{character}}] version
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, code, codeSpace)}}{
-#'    This method is used to instantiate an \code{\link{ISOReferenceIdentifier}}
-#'  }
-#'  \item{\code{setCodeSpace(codeSpace)}}{
-#'    Sets a codeSpace
-#'  }
-#'  \item{\code{setVersion(version)}}{
-#'    Sets a version
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")
@@ -39,21 +23,28 @@ ISOReferenceIdentifier <- R6Class("ISOReferenceIdentifier",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     #+ codeSpace [0..1]: character
+     #'@field codeSpace codeSpace [0..1]: character
      codeSpace = NULL,
-     #+ version [0..1]: character
+     #'@field version version [0..1]: character
      version = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param code code
+     #'@param codeSpace code space
      initialize = function(xml = NULL, code, codeSpace = NULL){
        super$initialize(xml = xml, code = code)
        if(!is.null(codeSpace)) self$setCodeSpace(codeSpace)
      },
      
-     #setCodeSpace
+     #'@description Set code space
+     #'@param codeSpace code space
      setCodeSpace = function(codeSpace){
        self$codeSpace = codeSpace
      },
      
-     #setVersion
+     #'@description Set version
+     #'@param version version
      setVersion = function(version){
        self$version = version
      }

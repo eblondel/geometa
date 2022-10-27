@@ -12,57 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO Citation
 }
 \description{
 ISOMedium
+
+ISOMedium
 }
-\section{Fields}{
-
-\describe{
-\item{\code{name}}{[\code{\link{ISOMediumName}}|\code{\link{character}}] name}
-
-\item{\code{density}}{[\code{\link{numeric}}] density}
-
-\item{\code{densityUnits}}{\code{\link{character}} density unit}
-
-\item{\code{volumes}}{[\code{\link{integer}}] volumes}
-
-\item{\code{mediumFormat}}{[\code{\link{ISOMediumFormat}}|\code{\link{character}}] format}
-
-\item{\code{mediumNode}}{\code{\link{character}} note}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOMedium}}
- }
- \item{\code{setName(name)}}{
-   Set the medium name, object of class 'character' or \code{\link{ISOMediumName}}
- }
- \item{\code{addDensity(density)}}{
-   Adds a density
- }
- \item{\code{delDensity(density)}}{
-   Deletes density
- }
- \item{\code{setDensityUnits(densityUnits)}}{
-   Set density unit
- }
- \item{\code{setVolumes(volumes)}}{
-   Set volumes
- }
- \item{\code{addMediumFormat(mediumFormat)}}{
-   Adds a medium format, object of class 'character' or \code{\link{ISOMediumFormat}}
- }
- \item{\code{delMediumFormat(mediumFormat)}}{
-   Deletes a medium format, object of class 'character' or \code{\link{ISOMediumFormat}}
- }
- \item{\code{setMediumNote(mediumNote, locales)}}{
-   Set a medium note. Locale names can be specified as \code{list} with 
-   the \code{locales} argument.
- }
-}
-}
-
 \examples{
  md <- ISOMedium$new()
  md$setName("satellite")
@@ -82,3 +34,259 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{medium}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOMedium}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{name}}{name}
+
+\item{\code{density}}{density}
+
+\item{\code{densityUnits}}{density units}
+
+\item{\code{volumes}}{volumes}
+
+\item{\code{mediumFormat}}{medium format}
+
+\item{\code{mediumNote}}{medium note}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOMedium-new}{\code{ISOMedium$new()}}
+\item \href{#method-ISOMedium-setName}{\code{ISOMedium$setName()}}
+\item \href{#method-ISOMedium-addDensity}{\code{ISOMedium$addDensity()}}
+\item \href{#method-ISOMedium-delDensity}{\code{ISOMedium$delDensity()}}
+\item \href{#method-ISOMedium-setDensityUnits}{\code{ISOMedium$setDensityUnits()}}
+\item \href{#method-ISOMedium-setVolumes}{\code{ISOMedium$setVolumes()}}
+\item \href{#method-ISOMedium-addMediumFormat}{\code{ISOMedium$addMediumFormat()}}
+\item \href{#method-ISOMedium-delMediumFormat}{\code{ISOMedium$delMediumFormat()}}
+\item \href{#method-ISOMedium-setMediumNote}{\code{ISOMedium$setMediumNote()}}
+\item \href{#method-ISOMedium-clone}{\code{ISOMedium$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-setName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-setName}{}}}
+\subsection{Method \code{setName()}}{
+Set name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$setName(name)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name object of class \link{ISOMediumName} or \link{character} among
+values returned by \code{ISOMediumName$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-addDensity"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-addDensity}{}}}
+\subsection{Method \code{addDensity()}}{
+Adds density
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$addDensity(density)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{density}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-delDensity"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-delDensity}{}}}
+\subsection{Method \code{delDensity()}}{
+Deletes density
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$delDensity(density)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{density}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-setDensityUnits"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-setDensityUnits}{}}}
+\subsection{Method \code{setDensityUnits()}}{
+Set density units
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$setDensityUnits(densityUnits)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{densityUnits}}{densityUnits}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-setVolumes"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-setVolumes}{}}}
+\subsection{Method \code{setVolumes()}}{
+Set volumes
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$setVolumes(volumes)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{volumes}}{object of class \link{integer}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-addMediumFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-addMediumFormat}{}}}
+\subsection{Method \code{addMediumFormat()}}{
+Adds medium format
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$addMediumFormat(mediumFormat)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{mediumFormat}}{object of class \link{ISOMediumFormat} or \link{character}
+among values returned by \code{ISOMediumFormat$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-delMediumFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-delMediumFormat}{}}}
+\subsection{Method \code{delMediumFormat()}}{
+Deletes medium format
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$delMediumFormat(mediumFormat)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{mediumFormat}}{object of class \link{ISOMediumFormat} or \link{character}
+among values returned by \code{ISOMediumFormat$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-setMediumNote"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-setMediumNote}{}}}
+\subsection{Method \code{setMediumNote()}}{
+Set medium note
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$setMediumNote(mediumNote, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{mediumNote}}{medium note}
+
+\item{\code{locales}}{list of localized notes. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMedium-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMedium-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMedium$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

@@ -6,25 +6,6 @@
 #' @keywords ISO metadata extension information
 #' @return Object of \code{\link{R6Class}} for modelling an ISO MetadataExtensionInformation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field extensionOnLineResource [\code{\link{ISOOnlineResource}}] online resource
-#' @field extendedElementInformation [\code{\link{ISOExtendedElementInformation}}] extended element(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOMetadataExtensionInformation}}
-#'  }
-#'  \item{\code{setOnlineResource(onlineResource)}}{
-#'    Sets an online resource (object of class \code{\link{ISOOnlineResource}})
-#'  }
-#'  \item{\code{addElement(element)}}{
-#'    Adds an element (object of class \code{\link{ISOExtendedElementInformation}})
-#'  }
-#'  \item{\code{delElement(element)}}{
-#'    Deletes an element (object of class \code{\link{ISOExtendedElementInformation}})
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #create an extended element information
@@ -83,16 +64,19 @@ ISOMetadataExtensionInformation <- R6Class("ISOMetadataExtensionInformation",
    ),
    public = list(
       
-     #extensionOnLineResource [0..1]: ISOOnlineResource
+     #'@field extensionOnLineResource extensionOnLineResource [0..1]: ISOOnlineResource
      extensionOnLineResource = NULL,
-     #extendedElementInformation [0..*]: ISOExtendedElementInformation
+     #'@field extendedElementInformation extendedElementInformation [0..*]: ISOExtendedElementInformation
      extendedElementInformation = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setOnlineResource
+     #'@description Set online resource
+     #'@param onlineResource object of class \link{ISOOnlineResource}
      setOnlineResource = function(onlineResource){
        if(!is(onlineResource, "ISOOnlineResource")){
          stop("The argument should be a 'ISOOnlineResource' object")
@@ -100,7 +84,9 @@ ISOMetadataExtensionInformation <- R6Class("ISOMetadataExtensionInformation",
        self$extensionOnLineResource = onlineResource
      },
      
-     #addElement
+     #'@description Adds element
+     #'@param element object of class inheriting \link{ISOExtendedElementInformation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addElement = function(element){
        if(!is(element, "ISOExtendedElementInformation")){
          stop("The argument should be a 'ISOExtendedElementInformation' object")
@@ -108,7 +94,9 @@ ISOMetadataExtensionInformation <- R6Class("ISOMetadataExtensionInformation",
        return(self$addListElement("extendedElementInformation", element))
      },
 
-     #delElement
+     #'@description Deletes element
+     #'@param element object of class inheriting \link{ISOExtendedElementInformation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delElement = function(element){
        if(!is(element, "ISOExtendedElementInformation")){
          stop("The argument should be a 'ISOExtendedElementInformation' object")

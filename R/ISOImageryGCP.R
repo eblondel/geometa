@@ -7,29 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery gcp collection
 #' @format \code{\link{R6Class}} object.
 #' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryGCPCollection}}
-#'  }
-#'  \item{\code{setCollectionIdentification(id)}}{
-#'    Set the identifier, object of class \code{integer}
-#'  }
-#'  \item{\code{setCollectionName(name, locales)}}{
-#'    Sets a name (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setCoordinateReferenceSystem(crs)}}{
-#'    Sets the crs, object of class \code{\link{ISOReferenceSystem}}
-#'  }
-#'  \item{\code{addGCP(gcp)}}{
-#'    Adds a GCP, object of class \code{\link{ISOImageryGCP}}
-#'  }
-#'  \item{\code{delGCP(gcp)}}{
-#'    Deletes a GCP, object of class \code{\link{ISOImageryGCP}}
-#'  }
-#' }
-#' 
 #' @examples
 #'   md <- ISOImageryGCP$new()
 #'   require(sf)
@@ -49,12 +26,18 @@ ISOImageryGCP <- R6Class("ISOImageryGCP",
    xmlNamespacePrefix = "GMI"
  ),
  public = list(
+   #'@field geographicCoordinates geographicCoordinates
    geographicCoordinates = matrix(NA_real_, 1, 2),
+   
+   #'@description Initializes object
+   #'@param xml object of class \link{XMLInternalNode-class}
    initialize = function(xml = NULL){
      super$initialize(xml = xml, wrap = TRUE)
    },
    
-   #setGeographicCoordinates
+   #'@description Set geographic coordinates
+   #'@param sfg simple feature object from \pkg{sf}
+   #'@param m object of class \link{matrix}
    setGeographicCoordinates = function(sfg = NULL, m = NULL){
      if(!is.null(sfg)){
        if(!all(sapply(c("sfg","POINT"), function(x){is(sfg, x)}))) stop("Input 'sfg' object should be a 'point'")

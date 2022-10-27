@@ -6,39 +6,7 @@
 #' @keywords ISO online resource
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Online Resource
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field linkage [\code{\link{ISOURL}}] linkage
-#' @field protocol [\code{\link{character}}] protocol
-#' @field name [\code{\link{character}}] name
-#' @field description [\code{\link{character}}] description
-#' @field function [\code{\link{ISOOnLineFunction}}] online function
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOOnlineResource}}
-#'  }
-#'  \item{\code{setLinkage(linkage)}}{
-#'    Sets the linkage (URL), an object of class \code{character} or \code{\link{ISOURL}}
-#'  }
-#'  \item{\code{setProtocol(protocol, locales)}}{
-#'    Sets the protocol. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setName(name, locales)}}{
-#'    Sets the name. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets the description. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setOnLineFunction(onLineFunction)}}{
-#'    Sets the online function, object of class \code{\link{ISOOnLineFunction}} 
-#'    or \code{character}
-#'  }
-#' }
-#' 
+
 #' @examples
 #'   md <- ISOOnlineResource$new()
 #'   md$setLinkage("http://somelink")
@@ -60,16 +28,26 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field linkage linkage
     linkage = NA,
+    #'@field protocol protocol
     protocol = NULL,
+    #'@field name name
     name = NULL,
+    #'@field description description
     description = NULL,
+    #'@field function function
     "function" = NULL,
+    
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setLinkage
+    #'@description Set linkage
+    #'@param linkage linkage object of class \link{ISOURL} or \link{character}
     setLinkage = function(linkage){
       if(!is.null(linkage)){
         if(!is.na(linkage)){ 
@@ -81,7 +59,9 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
       }
     },
     
-    #setName
+    #'@description Set name
+    #'@param name name
+    #'@param locales list of localized texts. Default is \code{NULL}
     setName = function(name, locales = NULL){
       self$name <- name
       if(!is.null(locales)){
@@ -89,7 +69,9 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
       }
     },
     
-    #setProtocol
+    #'@description Set protocol
+    #'@param protocol protocol
+    #'@param locales list of localized texts. Default is \code{NULL}
     setProtocol = function(protocol, locales = NULL){
       if(!is(protocol, "character")) protocol <- as.character(protocol)
       self$protocol <- protocol
@@ -98,7 +80,9 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
       }
     },
     
-    #setDescription
+    #'@description Set description
+    #'@param description description
+    #'@param locales list of localized texts. Default is \code{NULL}
     setDescription = function(description, locales = NULL){
       if(!is(description, "character")) description <- as.character(description)
       self$description <- description
@@ -108,7 +92,9 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     },
     
     
-    #setOnLineFunction
+    #'@description Set online function
+    #'@param onLineFunction object of class \link{ISOOnLineFunction} or any \link{character}
+    #' among values returned by \code{ISOOnLineFunction$values()}
     setOnLineFunction = function(onLineFunction){
       if(is(onLineFunction, "character")){
         onLineFunction <- ISOOnLineFunction$new(value = onLineFunction)

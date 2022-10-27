@@ -6,22 +6,6 @@
 #' @keywords ISO geometry objects
 #' @return Object of \code{\link{R6Class}} for modelling an ISO GeometricObjects
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field geometricObjectType [\code{\link{ISOGeometricObjectType}}]
-#' @field geometricObjectCount [\code{\link{integer}}]
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOGeometricObjects}}
-#'  }
-#'  \item{\code{setGeometricObjectType(geometricObjectType)}}{
-#'    Sets the type of geometric object
-#'  }
-#'  \item{\code{setGeometricObjectCount(geometricObjectCount)}}{
-#'    Sets the count of geometric objects
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOGeometricObjects$new()
@@ -41,13 +25,20 @@ ISOGeometricObjects <- R6Class("ISOGeometricObjects",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@field geometricObjectType geometricObjectType
      geometricObjectType = NULL,
+     #'@field geometricObjectCount geometricObjectCount
      geometricObjectCount = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setGeometricObjectType
+     #'@description Set geometric object type
+     #'@param geometricObjectType object of class \link{ISOGeometricObjectType} or any \link{character} 
+     #'  among values returned by \code{ISOGeometricObjectType$values()}
      setGeometricObjectType = function(geometricObjectType){
        if(is(geometricObjectType, "character")){
          geometricObjectType <- ISOGeometricObjectType$new(value = geometricObjectType)
@@ -55,7 +46,8 @@ ISOGeometricObjects <- R6Class("ISOGeometricObjects",
        self$geometricObjectType <- geometricObjectType
      },
      
-     #setGeometricObjectCount
+     #'@description Set geometric object count
+     #'@param geometricObjectCount object of class \link{integer}
      setGeometricObjectCount = function(geometricObjectCount){
       if(!is(geometricObjectCount, "integer")){
         geometricObjectCount <- suppressWarnings(as.integer(geometricObjectCount))

@@ -35,7 +35,7 @@ ISOBinding <- R6Class("ISOBinding",
         }
       },
 
-      #'@description Set property type
+      #'@description Set property type.
       #'@param propertyType property type, object of class \link{ISOPropertyType}
       setPropertyType = function(propertyType){
         if(!is(propertyType, "ISOPropertyType")){

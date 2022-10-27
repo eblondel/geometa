@@ -6,45 +6,6 @@
 #' @keywords ISO medium
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Citation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{ISOMediumName}}|\code{\link{character}}] name
-#' @field density [\code{\link{numeric}}] density
-#' @field densityUnits \code{\link{character}} density unit
-#' @field volumes [\code{\link{integer}}] volumes
-#' @field mediumFormat [\code{\link{ISOMediumFormat}}|\code{\link{character}}] format
-#' @field mediumNode \code{\link{character}} note
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOMedium}}
-#'  }
-#'  \item{\code{setName(name)}}{
-#'    Set the medium name, object of class 'character' or \code{\link{ISOMediumName}}
-#'  }
-#'  \item{\code{addDensity(density)}}{
-#'    Adds a density
-#'  }
-#'  \item{\code{delDensity(density)}}{
-#'    Deletes density
-#'  }
-#'  \item{\code{setDensityUnits(densityUnits)}}{
-#'    Set density unit
-#'  }
-#'  \item{\code{setVolumes(volumes)}}{
-#'    Set volumes
-#'  }
-#'  \item{\code{addMediumFormat(mediumFormat)}}{
-#'    Adds a medium format, object of class 'character' or \code{\link{ISOMediumFormat}}
-#'  }
-#'  \item{\code{delMediumFormat(mediumFormat)}}{
-#'    Deletes a medium format, object of class 'character' or \code{\link{ISOMediumFormat}}
-#'  }
-#'  \item{\code{setMediumNote(mediumNote, locales)}}{
-#'    Set a medium note. Locale names can be specified as \code{list} with 
-#'    the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples
 #'  md <- ISOMedium$new()
@@ -68,17 +29,28 @@ ISOMedium<- R6Class("ISOMedium",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field name name
     name = NULL,
+    #'@field density density
     density = list(),
+    #'@field densityUnits density units
     densityUnits = NULL,
+    #'@field volumes volumes
     volumes = NULL,
+    #'@field mediumFormat medium format
     mediumFormat = list(),
+    #'@field mediumNote medium note
     mediumNote = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setName
+    #'@description Set name
+    #'@param name name object of class \link{ISOMediumName} or \link{character} among
+    #' values returned by \code{ISOMediumName$values()}
     setName = function(name){
       if(is(name, "character")){
         name <- ISOMediumName$new(value = name)
@@ -86,7 +58,9 @@ ISOMedium<- R6Class("ISOMedium",
       self$name <- name
     },
     
-    #addDensity
+    #'@description Adds density
+    #'@param density object of class \link{numeric}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addDensity = function(density){
       dens <- as.numeric(density)
       if(is.na(dens)){
@@ -96,7 +70,9 @@ ISOMedium<- R6Class("ISOMedium",
       return(self$addListElement("density", density))
     },
     
-    #delDensity
+    #'@description Deletes density
+    #'@param density object of class \link{numeric}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delDensity = function(density){
       dens <- as.numeric(density)
       if(is.na(dens)){
@@ -106,12 +82,14 @@ ISOMedium<- R6Class("ISOMedium",
       return(self$delListElement("density", density))
     },
     
-    #setDensityUnits
+    #'@description Set density units
+    #'@param densityUnits densityUnits
     setDensityUnits = function(densityUnits){
       self$densityUnits <- densityUnits
     },
     
-    #setVolumes
+    #'@description Set volumes
+    #'@param volumes object of class \link{integer}
     setVolumes = function(volumes){
       vol <- as.integer(volumes)
       if(is.na(vol)){
@@ -120,7 +98,10 @@ ISOMedium<- R6Class("ISOMedium",
       self$volumes <- vol
     },
     
-    #addMediumFormat
+    #'@description Adds medium format
+    #'@param mediumFormat object of class \link{ISOMediumFormat} or \link{character}
+    #' among values returned by \code{ISOMediumFormat$values()}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addMediumFormat = function(mediumFormat){
       if(is(mediumFormat, "character")){
         mediumFormat <- ISOMediumFormat$new(value = mediumFormat)
@@ -128,7 +109,10 @@ ISOMedium<- R6Class("ISOMedium",
       return(self$addListElement("mediumFormat", mediumFormat))
     },
     
-    #delMediumFormat
+    #'@description Deletes medium format
+    #'@param mediumFormat object of class \link{ISOMediumFormat} or \link{character}
+    #' among values returned by \code{ISOMediumFormat$values()}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delMediumFormat = function(mediumFormat){
       if(is(mediumFormat, "character")){
         mediumFormat <- ISOMediumFormat$new(value = mediumFormat)
@@ -136,7 +120,9 @@ ISOMedium<- R6Class("ISOMedium",
       return(self$delListElement("mediumFormat", mediumFormat))
     },
     
-    #setMediumNote
+    #'@description Set medium note
+    #'@param mediumNote medium note
+    #'@param locales list of localized notes. Default is \code{NULL}
     setMediumNote = function(mediumNote, locales = NULL){
       if(!is.null(locales)){
         mediumNote <- self$createLocalisedProperty(mediumNote, locales)

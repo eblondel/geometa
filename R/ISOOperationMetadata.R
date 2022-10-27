@@ -6,57 +6,6 @@
 #' @keywords ISO OperationMetadata
 #' @return Object of \code{\link{R6Class}} for modelling an ISOOperationMetadata
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field operationName [\code{\link{character}}] operation name
-#' @field DCP [\code{\link{ISODCPList}}] DCP
-#' @field operationDescription [\code{\link{character}}] operation description
-#' @field invocationName [\code{\link{character}}] invocation name
-#' @field parameters [\code{\link{ISOParameter}}] parameter(s)
-#' @field connectPoint [\code{\link{ISOOnlineResource}}] online resources
-#' @field dependsOn [\code{\link{ISOOperationMetadata}}] dependent operation metadata
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOOperationMetadata}}
-#'  }
-#'  \item{\code{setOperationName(operationName, locales)}}{
-#'    Set the operation name. Locale names can be specified as 
-#'    \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addDCP(dcp)}}{
-#'    Add a DCP
-#'  }
-#'  \item{\code{delDCP(dcp)}}{
-#'    Deletes a DCP
-#'  }
-#'  \item{\code{setOperationDescription(operationDescription, locales)}}{
-#'    Set the operation description. Locale names can be specified as 
-#'    \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setInvocationName(invocationName, locales)}}{
-#'    Set the invocation name. Locale names can be specified as 
-#'    \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{addParameter(parameter)}}{
-#'    Add a parameter, object of class \code{\link{ISOParameter}}
-#'  }
-#'  \item{\code{delParameter(parameter)}}{
-#'    Deletes a parameter, object of class \code{\link{ISOParameter}}
-#'  }
-#'  \item{\code{addConnectPoint(connectPoint)}}{
-#'    Add a connect point, object of class \code{\link{ISOOnlineResource}}
-#'  }
-#'  \item{\code{delConnectPoint(connectPoint)}}{
-#'    Deletes a connect point, object of class \code{\link{ISOOnlineResource}}
-#'  }
-#'  \item{\code{addDependentOperationMetadata(operationMetadata)}}{
-#'    Add dependent operation metadata, object of class \code{\link{ISOOperationMetadata}}
-#'  }
-#'  \item{\code{delDependentOperationMetadata(operationMetadata)}}{
-#'    Deletes dependent operation metadata, object of class \code{\link{ISOOperationMetadata}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   md <- ISOOperationMetadata$new()
@@ -75,26 +24,30 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
   ),
   public = list(
     
-    #+ operationName [1..1]: character
+    #'@field operationName operationName [1..1]: character
     operationName = NULL,
-    #+ DCP [1..*]: ISODCPList
+    #'@field DCP DCP [1..*]: ISODCPList
     DCP = list(),
-    #+ operationDescription [0..1]: character
+    #'@field operationDescription operationDescription [0..1]: character
     operationDescription = NULL,
-    #+ invocationName [0..1]: character
+    #'@field invocationName invocationName [0..1]: character
     invocationName = NULL,
-    #+ parameters [0..*]: ISOParameter
+    #'@field parameters parameters [0..*]: ISOParameter
     parameters = list(),
-    #+ connectPoint [1..*]: ISOOnlineResource
+    #'@field connectPoint connectPoint [1..*]: ISOOnlineResource
     connectPoint = list(),
-    #+ dependsOn [0..*]: ISOOperationMetadata
+    #'@field dependsOn dependsOn [0..*]: ISOOperationMetadata
     dependsOn = list(),
  
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setOperationName
+    #'@description Set operation name
+    #'@param operationName operation name
+    #'@param locales list of localized texts. Default is \code{NULL}
     setOperationName = function(operationName, locales = NULL){
       self$operationName <- as.character(operationName)
       if(!is.null(locales)){
@@ -102,7 +55,10 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       }
     },
     
-    #addDCP
+    #'@description Adds DCP
+    #'@param dcp object of class \link{ISODCPList} or any \link{character}
+    #' among values returned by \code{ISODCPList$values()}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addDCP = function(dcp){
       if(!is(dcp, "ISODCPList")){
         dcp <- ISODCPList$new(value = dcp)
@@ -110,7 +66,10 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       return(self$addListElement("DCP", dcp))
     },
     
-    #delDCP
+    #'@description Deletes DCP
+    #'@param dcp object of class \link{ISODCPList} or any \link{character}
+    #' among values returned by \code{ISODCPList$values()}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delDCP = function(dcp){
       if(!is(dcp, "ISODCPList")){
         dcp <- ISODCPList$new(value = dcp)
@@ -118,7 +77,9 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       return(self$delListElement("DCP", dcp))
     },
     
-    #setOperationDescription
+    #'@description Set operation description
+    #'@param operationDescription operation description
+    #'@param locales list of localized texts. Default is \code{NULL}
     setOperationDescription = function(operationDescription, locales = NULL){
       self$operationDescription <- as.character(operationDescription)
       if(!is.null(locales)){
@@ -126,7 +87,9 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       }
     },
     
-    #setInvocationName
+    #'@description Set invocation name
+    #'@param invocationName invocation name
+    #'@param locales list of localized texts. Default is \code{NULL}
     setInvocationName = function(invocationName, locales = NULL){
       self$invocationName <- as.character(invocationName)
       if(!is.null(locales)){
@@ -134,7 +97,9 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       }
     },
     
-    #addParameter
+    #'@description Adds parameter
+    #'@param parameter object of class \link{ISOParameter}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addParameter = function(parameter){
       if(!is(parameter, "ISOParameter")){
         stop("The argument value should be an object of class 'ISOParameter'")
@@ -142,7 +107,9 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       return(self$addListElement("parameters", parameter))
     },
     
-    #delParameter
+    #'@description Deletes parameter
+    #'@param parameter object of class \link{ISOParameter}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delParameter = function(parameter){
       if(!is(parameter, "ISOParameter")){
         stop("The argument value should be an object of class 'ISOParameter'")
@@ -150,7 +117,9 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       return(self$delListElement("parameters", parameter))
     },
     
-    #addConnectPoint
+    #'@description Adds connection point
+    #'@param connectPoint object of class \link{ISOOnlineResource}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addConnectPoint = function(connectPoint){
       if(!is(connectPoint, "ISOOnlineResource")){
         stop("The argument value should be an object of class 'ISOOnlineResource")
@@ -158,7 +127,9 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       return(self$addListElement("connectPoint", connectPoint))
     },
     
-    #delConnectPoint
+    #'@description Deletes connection point
+    #'@param connectPoint object of class \link{ISOOnlineResource}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delConnectPoint = function(connectPoint){
       if(!is(connectPoint, "ISOOnlineResource")){
         stop("The argument value should be an object of class 'ISOOnlineResource")
@@ -166,7 +137,9 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       return(self$delListElement("connectPoint", connectPoint))
     },
     
-    #addDependentOperationMetadata
+    #'@description Adds operation metadata
+    #'@param operationMetadata object of class \link{ISOOperationMetadata}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addDependentOperationMetadata = function(operationMetadata){
       if(!is(operationMetadata, "ISOOperationMetadata")){
         stop("The argument value should be an object of class 'ISOOperationMetadata")
@@ -174,7 +147,9 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
       return(self$addListElement("dependsOn", operationMetadata))
     },
     
-    #delDependentOperationMetadata
+    #'@description Deletes operation metadata
+    #'@param operationMetadata object of class \link{ISOOperationMetadata}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delDependentOperationMetadata = function(operationMetadata){
       if(!is(operationMetadata, "ISOOperationMetadata")){
         stop("The argument value should be an object of class 'ISOOperationMetadata")

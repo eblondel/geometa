@@ -6,41 +6,6 @@
 #' @keywords ISO imagery Plan
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery Plan
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field type [\code{\link{ISOImageryGeometryType}}]
-#' @field citation [\code{\link{ISOCitation}}]
-#' @field operation [\code{list} of \code{\link{ISOImageryOperation}}]
-#' @field satisfiedPlan [\code{list} of \code{\link{ISOImageryPlan}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryPlan}}
-#'  }
-#'  \item{\code{setType(type)}}{
-#'    Set the imagery geometry type, object of class \code{\link{ISOImageryGeometryType}}
-#'    or 'character' among values given by \code{ISOImageryGeometryType$values()}.
-#'  }
-#'  \item{\code{setStatus(status)}}{
-#'    Set the imagery plan status, object of class \code{\link{ISOStatus}}
-#'    or 'character' among values given by \code{ISOStatus$values()}.
-#'  }
-#'  \item{\code{setCitation(citation)}}{
-#'    Sets the citation, object of class \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{addOperation(operation)}}{
-#'    Adds a operation, object of class \code{\link{ISOImageryOperation}}
-#'  }
-#'  \item{\code{delOperation(operation)}}{
-#'    Deletes a operation, object of class \code{\link{ISOImageryOperation}}
-#'  }
-#'  \item{\code{addSatisfiedRequirement(plan)}}{
-#'    Add a satisfied plan, object of class \code{\link{ISOImageryPlan}}
-#'  }
-#'  \item{\code{delSatisfiedRequirement(plan)}}{
-#'    Deletes a satisfied plan, object of class \code{\link{ISOImageryPlan}}
-#'  }
-#' } 
 #' 
 #' @examples
 #'    md <- ISOImageryPlan$new()
@@ -99,22 +64,26 @@ ISOImageryPlan <- R6Class("ISOImageryPlan",
    ),
    public = list(
      
-     #+ type [0..1]: ISOImageryGeometryType
+     #'@field type type [0..1]: ISOImageryGeometryType
      type = NULL,
-     #+ status [1..1]: ISOProgress
+     #'@field status status [1..1]: ISOProgress
      status = NULL,
-     #+ citation [1..1]: ISOCitation
+     #'@field citation citation [1..1]: ISOCitation
      citation = NULL,
-     #+ operation [0..*]: ISOImageryOperation
+     #'@field operation operation [0..*]: ISOImageryOperation
      operation = list(),
-     #+ satisfiedRequirement [0..*]: ISOImageryRequirement
+     #'@field satisfiedRequirement satisfiedRequirement [0..*]: ISOImageryRequirement
      satisfiedRequirement = list(),
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setType
+     #'@description Set type
+     #'@param type object of class \link{ISOImageryGeometryType} or any \link{character}
+     #' among values returned by \code{ISOImageryGeometryType$values()}
      setType = function(type){
        if(is(type, "character")){
          type <- ISOImageryGeometryType$new(value = type)
@@ -126,7 +95,9 @@ ISOImageryPlan <- R6Class("ISOImageryPlan",
        self$type <- type
      },
      
-     #setStatus
+     #'@description Set status
+     #'@param status object of class \link{ISOStatus} or any \link{character}
+     #' among values returned by \code{ISOStatus$values()}
      setStatus = function(status){
        if(is(status, "character")){
          status <- ISOStatus$new(value = status)
@@ -138,7 +109,8 @@ ISOImageryPlan <- R6Class("ISOImageryPlan",
        self$status <- status
      },
      
-     #setCitation
+     #'@description Set citation
+     #'@param citation object of class \link{ISOCitation}
      setCitation = function(citation){
        if(!is(citation, "ISOCitation")){
          stop("The argument should be an object of class 'ISOCitation")
@@ -146,7 +118,9 @@ ISOImageryPlan <- R6Class("ISOImageryPlan",
        self$citation <- citation
      },
      
-     #addOperation
+     #'@description Adds operation
+     #'@param operation object of class \link{ISOImageryOperation}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addOperation = function(operation){
        if(!is(operation, "ISOImageryOperation")){
          stop("The argument should be an object of class 'ISOImageryOperation'")
@@ -154,7 +128,9 @@ ISOImageryPlan <- R6Class("ISOImageryPlan",
        return(self$addListElement("operation", operation))
      },
      
-     #delOperation
+     #'@description Deletes operation
+     #'@param operation object of class \link{ISOImageryOperation}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delOperation = function(operation){
        if(!is(operation, "ISOImageryOperation")){
          stop("The argument should be an object of class 'ISOImageryOperation'")
@@ -162,7 +138,9 @@ ISOImageryPlan <- R6Class("ISOImageryPlan",
        return(self$delListElement("operation", operation))
      },
     
-     #addSatisfiedRequirement
+     #'@description Adds satisfied requirement
+     #'@param requirement object of class \link{ISOImageryRequirement}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSatisfiedRequirement = function(requirement){
        if(!is(requirement, "ISOImageryRequirement")){
          stop("The argument should be an object of class 'ISOImageryRequirement'")
@@ -170,7 +148,9 @@ ISOImageryPlan <- R6Class("ISOImageryPlan",
        return(self$addListElement("satisfiedRequirement", requirement))
      },
      
-     #delSatisfiedRequirement
+     #'@description Deletes satisfied requirement
+     #'@param requirement object of class \link{ISOImageryRequirement}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSatisfiedRequirement = function(requirement){
        if(!is(requirement, "ISOImageryRequirement")){
          stop("The argument should be an object of class 'ISOImageryRequirement'")

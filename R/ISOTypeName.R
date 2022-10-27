@@ -6,19 +6,6 @@
 #' @keywords ISO typename
 #' @return Object of \code{\link{R6Class}} for modelling an ISOTypeName
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field aName [\code{\link{character}}] the type name 
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, aName)}}{
-#'    This method is used to instantiate an \code{\link{ISOTypeName}}
-#'  }
-#'  \item{\code{setName(aName, locales)}}{
-#'    Sets the aName. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples 
 #'   typeName <- ISOTypeName$new(aName = "name")
@@ -37,9 +24,12 @@ ISOTypeName <- R6Class("ISOTypeName",
    ),
    public = list(
      
-     #+ aName: character
+     #'@field aName aName: character
      aName = NULL,
      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param aName name
      initialize = function(xml = NULL, aName = NULL){
        super$initialize(xml = xml)
        if(is.null(xml)){
@@ -47,7 +37,9 @@ ISOTypeName <- R6Class("ISOTypeName",
        }
      },
      
-     #setName
+     #'@description Set name
+     #'@param aName name
+     #'@param locales list of localized names. Default is \code{NULL}
      setName = function(aName, locales = NULL){
        self$aName <- aName
        if(!is.null(locales)){

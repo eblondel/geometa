@@ -6,16 +6,6 @@
 #' @keywords ISO data quality abstract completeness
 #' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractCompleteness
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOAbstractCompleteness}}
-#'  }
-#' }
 #'   
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata 
@@ -39,16 +29,6 @@ ISOAbstractCompleteness <- R6Class("ISOAbstractCompleteness",
 #' @keywords ISO data quality completeness omission
 #' @return Object of \code{\link{R6Class}} for modelling an ISOCompletenessOmission
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOCompletenessOmission}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding
@@ -97,16 +77,6 @@ ISOCompletenessOmission <- R6Class("ISOCompletenessOmission",
 #' @keywords ISO data quality completeness commission
 #' @return Object of \code{\link{R6Class}} for modelling an ISOCompletenessCommission
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Inherited methods:
-#' from \code{\link{ISODataQualityAbstractElement}}
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOCompletenessCommission}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #encoding

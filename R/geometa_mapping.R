@@ -6,24 +6,6 @@
 #' @keywords metadata convert mapping
 #' @return Object of \code{\link{R6Class}} for modelling a mapping format
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field id (character) format identifier
-#' @field pkg (character) package(s) required for the format
-#' @field reader (function) handler used for reading a property
-#' @field checker (function) handler used for checking a property value
-#' @field constructor (function) handler used for object construction
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(id, pkg, reader, checker, constructor)}}{
-#'    This method is used to instantiate a pivot_format, given a unique \code{id},
-#'    the name of package used (for information only). A format is then defined by
-#'    string expressions (using \code{sprintf} formatting) to read metadata properties
-#'    (\code{reader}), one for checking existence of properties (\code{checker}), and an
-#'    expression to create metadata objects (\code{constructor}). In case the \code{constructor}
-#'    is NULL, then no conversion to this metadata format will be possible.
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #example on how geometa format is defined as pivot format
@@ -37,11 +19,28 @@
 #'
 pivot_format <- R6Class("pivot_format",
   public = list(
+    #'@field id id
     id = NULL,
+    #'@field pkg pkg
     pkg = NULL,
+    #'@field reader reader
     reader = NULL,
+    #'@field checker checker
     checker = NULL,
+    #'@field constructor constructor
     constructor = NULL,
+    
+    #'@description Initializes pivot format. Method is used to instantiate a pivot_format, given a unique \code{id},
+    #'    the name of package used (for information only). A format is then defined by
+    #'    string expressions (using \code{sprintf} formatting) to read metadata properties
+    #'    (\code{reader}), one for checking existence of properties (\code{checker}), and an
+    #'    expression to create metadata objects (\code{constructor}). In case the \code{constructor}
+    #'    is NULL, then no conversion to this metadata format will be possible.
+    #'@param id id
+    #'@param pkg pkg
+    #'@param reader reader
+    #'@param checker checker
+    #'@param constructor constructor
     initialize = function(id, pkg, reader = NULL, checker = NULL, constructor = NULL){
       self$id <- id
       self$pkg <- pkg
@@ -62,11 +61,27 @@ pivot_format <- R6Class("pivot_format",
   )                        
 )
 
-#pivot_converter
+#' pivot_converter
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords metadata convert mapping
+#' @return Object of \code{\link{R6Class}} for modelling a mapping format converter
+#' @format \code{\link{R6Class}} object.
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
 pivot_converter <- R6Class("pivot_converter",
   public = list(
+   #'@field from from
    from = NULL,
+   #'@field to to
    to = NULL,
+   
+   #'@description Initializes pivot converter
+   #'@param from from
+   #'@param to to
    initialize = function(from, to){
      if(!is(from,"pivot_format")) stop("'from' should be an object of class 'pivot_format'")
      if(!is(to,"pivot_format")) stop("'to' should be an object of class 'pivot_format'")

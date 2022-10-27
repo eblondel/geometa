@@ -6,20 +6,6 @@
 #' @keywords ISO codelist
 #' @return Object of \code{\link{R6Class}} for modelling an ISO codelist
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field id [\code{\link{character}}] codelist id
-#' @field refFile [\code{\link{character}}] reference XML file
-#' @field codeSpace [\code{\link{character}}] codelist codeSpace
-#' @field identifier [\code{\link{character}}] codelist identifier
-#' @field description [\code{\link{character}}] codelist description
-#' @field entries [\code{\link{data.frame}}] the list of codelist entries
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(refFile, id)}}{
-#'    This method is used to instantiate an \code{\link{ISOCodelist}}
-#'  }
-#' }
 #' 
 #' @note Class used by geometa internal codelist XML decoder/encoder
 #' 
@@ -27,17 +13,30 @@
 #'
 ISOCodelist <- R6Class("ISOCodelist",
   public = list(
+    #'@field id id
     id =NA,
+    #'@field refFile ref file
     refFile = NA,
+    #'@field codeSpace code space
     codeSpace = NA,
+    #'@field identifier identifier
     identifier = NA,
+    #'@field description description
     description = NA,
+    #'@field entries entries
     entries = NULL,
+    
+    #'@description Initializes object
+    #'@param refFile ref file
+    #'@param id id
     initialize = function(refFile, id){
       self$refFile <- refFile
       self$parse(refFile, id)
     },
      
+    #'@description Parse codelist
+    #'@param refFile ref file
+    #'@param id id
     parse = function(refFile, id){
       
       #query ISO XML Codelist file

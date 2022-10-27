@@ -12,112 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO Citation
 }
 \description{
 ISOCitation
+
+ISOCitation
 }
-\section{Fields}{
-
-\describe{
-\item{\code{title}}{[\code{\link{character}}] title}
-
-\item{\code{alternateTitle}}{[list of \code{\link{character}}] alternateTitle}
-
-\item{\code{date}}{[\code{\link{ISODate}}] the citation date with date type}
-
-\item{\code{edition}}{[\code{\link{character}}] citation edition}
-
-\item{\code{editionDate}}{[\code{\link{Date}}|\code{\link{POSIXt}}] date or date/time of edition}
-
-\item{\code{identifier}}{[list of \code{\link{ISOMetaIdentifier}}] identifier}
-
-\item{\code{citedResponsibleParty}}{[list of \code{\link{ISOResponsibleParty}}] responsible party}
-
-\item{\code{presentationForm}}{[list of \code{\link{ISOPresentationForm}}] presentation form}
-
-\item{\code{series}}{[\code{link{ISOCitationSeries}}] series}
-
-\item{\code{otherCitationDetails}}{[\code{\link{character}}] other citation details}
-
-\item{\code{collectiveTitle}}{[\code{\link{character}}] collective title}
-
-\item{\code{ISBN}}{[\code{\link{character}}] ISBN}
-
-\item{\code{ISSN}}{[\code{\link{character}}] ISSN}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to instantiate an \code{\link{ISOCitation}}
- }
- \item{\code{setTitle(title, locales)}}{
-   Sets the title. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{setAlternateTitle(alternateTitle, locales)}}{
-   Sets an alternate title. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{addAlternateTitle(alternateTitle, locales)}}{
-   Adds an alternate title. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{delAlternateTitle(alternateTitle, locales)}}{
-   Adds an alternate title. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{addDate(date)}}{
-   Adds the date (ISODate object containing date and dateType)
- }
- \item{\code{setEdition(edition)}}{
-   Sets the edition
- }
- \item{\code{setEditionDate(editionDate)}}{
-   Sets the edition date, either an ISODate object containing date and dateType or
-   a simple R date "POSIXct"/"POSIXt" object. For thesaurus citations, an ISODate
-   should be used while for the general citation of \code{\link{ISODataIdentification}},
-   a simple R date should be used.
- }
- \item{\code{setIdentifier(identifier)}}{
-   Sets the identifier as object of class \code{\link{ISOMetaIdentifier}}
- }
- \item{\code{addIdentifier(identifier)}}{
-   Adds an identifier as object of class \code{\link{ISOMetaIdentifier}}
- }
- \item{\code{delIdentifier(identifier)}}{
-   Deletes an identifier as object of class \code{\link{ISOMetaIdentifier}}
- }
- \item{\code{seCitedResponsibleParty(rp)}}{
-   Sets the cited responsiblep party, object of class \code{\link{ISOResponsibleParty}}
- }
- \item{\code{setPresentationForm(presentationForm)}}{
-   Sets the presentation form, object of class \code{\link{ISOPresentationForm}}
- }
- \item{\code{addPresentationForm(presentationForm)}}{
-   Adds a presentation form, object of class \code{\link{ISOPresentationForm}}
- }
- \item{\code{delPresentationForm(presentationForm)}}{
-   Deletes a presentation form, object of class \code{\link{ISOPresentationForm}}
- }
- \item{\code{setSeries(series)}}{
-   Set series, object of class \code{\link{ISOCitationSeries}}
- }
- \item{\code{setOtherCitationDetails(otherCitationDetails, locales)}}{
-   Set other citation details. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{setCollectiveTitle(collectiveTitle, locales)}}{
-   Set collective title. Locale names can be specified as \code{list}
-   with the \code{locales} argument.
- }
- \item{\code{setISBN(isbn)}}{
-   Set the ISBN
- }
- \item{\code{setISSN(issn)}}{
-   Set the ISSN
- }
-}
-}
-
 \examples{
  #create ISOCitation
  md <- ISOCitation$new()
@@ -162,3 +59,543 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{citation}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOCitation}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{title}}{title}
+
+\item{\code{alternateTitle}}{alternate title}
+
+\item{\code{date}}{date list}
+
+\item{\code{edition}}{edition}
+
+\item{\code{editionDate}}{edition date}
+
+\item{\code{identifier}}{identifier list}
+
+\item{\code{citedResponsibleParty}}{list of cited responsible parties}
+
+\item{\code{presentationForm}}{list of presentation forms}
+
+\item{\code{series}}{series}
+
+\item{\code{otherCitationDetails}}{other citation details}
+
+\item{\code{collectiveTitle}}{collective title}
+
+\item{\code{ISBN}}{ISBN}
+
+\item{\code{ISSN}}{ISSN}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISOCitation-new}{\code{ISOCitation$new()}}
+\item \href{#method-ISOCitation-setTitle}{\code{ISOCitation$setTitle()}}
+\item \href{#method-ISOCitation-setAlternateTitle}{\code{ISOCitation$setAlternateTitle()}}
+\item \href{#method-ISOCitation-addAlternateTitle}{\code{ISOCitation$addAlternateTitle()}}
+\item \href{#method-ISOCitation-delAlternateTitle}{\code{ISOCitation$delAlternateTitle()}}
+\item \href{#method-ISOCitation-addDate}{\code{ISOCitation$addDate()}}
+\item \href{#method-ISOCitation-setEdition}{\code{ISOCitation$setEdition()}}
+\item \href{#method-ISOCitation-setEditionDate}{\code{ISOCitation$setEditionDate()}}
+\item \href{#method-ISOCitation-setIdentifier}{\code{ISOCitation$setIdentifier()}}
+\item \href{#method-ISOCitation-addIdentifier}{\code{ISOCitation$addIdentifier()}}
+\item \href{#method-ISOCitation-delIdentifier}{\code{ISOCitation$delIdentifier()}}
+\item \href{#method-ISOCitation-setCitedResponsibleParty}{\code{ISOCitation$setCitedResponsibleParty()}}
+\item \href{#method-ISOCitation-addCitedResponsibleParty}{\code{ISOCitation$addCitedResponsibleParty()}}
+\item \href{#method-ISOCitation-delCitedResponsibleParty}{\code{ISOCitation$delCitedResponsibleParty()}}
+\item \href{#method-ISOCitation-setPresentationForm}{\code{ISOCitation$setPresentationForm()}}
+\item \href{#method-ISOCitation-addPresentationForm}{\code{ISOCitation$addPresentationForm()}}
+\item \href{#method-ISOCitation-delPresentationForm}{\code{ISOCitation$delPresentationForm()}}
+\item \href{#method-ISOCitation-setSeries}{\code{ISOCitation$setSeries()}}
+\item \href{#method-ISOCitation-setOtherCitationDetails}{\code{ISOCitation$setOtherCitationDetails()}}
+\item \href{#method-ISOCitation-setCollectiveTitle}{\code{ISOCitation$setCollectiveTitle()}}
+\item \href{#method-ISOCitation-setISBN}{\code{ISOCitation$setISBN()}}
+\item \href{#method-ISOCitation-setISSN}{\code{ISOCitation$setISSN()}}
+\item \href{#method-ISOCitation-clone}{\code{ISOCitation$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setTitle}{}}}
+\subsection{Method \code{setTitle()}}{
+Set title
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setTitle(title, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{title}}{title}
+
+\item{\code{locales}}{list of localized names. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setAlternateTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setAlternateTitle}{}}}
+\subsection{Method \code{setAlternateTitle()}}{
+Set alternate title
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setAlternateTitle(alternateTitle, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{alternateTitle}}{alternate title}
+
+\item{\code{locales}}{list of localized names. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-addAlternateTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-addAlternateTitle}{}}}
+\subsection{Method \code{addAlternateTitle()}}{
+Adds alternate title
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$addAlternateTitle(alternateTitle, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{alternateTitle}}{alternate title}
+
+\item{\code{locales}}{list of localized titles. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-delAlternateTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-delAlternateTitle}{}}}
+\subsection{Method \code{delAlternateTitle()}}{
+Deletes alternate title
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$delAlternateTitle(alternateTitle, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{alternateTitle}}{alternate title}
+
+\item{\code{locales}}{list of localized titles. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-addDate"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-addDate}{}}}
+\subsection{Method \code{addDate()}}{
+Adds date
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$addDate(date)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{date}}{date}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setEdition"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setEdition}{}}}
+\subsection{Method \code{setEdition()}}{
+Set edition
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setEdition(edition)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{edition}}{edition}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setEditionDate"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setEditionDate}{}}}
+\subsection{Method \code{setEditionDate()}}{
+Sets the edition date, either an ISODate object containing date and dateType or
+   a simple R date "POSIXct"/"POSIXt" object. For thesaurus citations, an ISODate
+   should be used while for the general citation of \code{\link{ISODataIdentification}},
+   a simple R date should be used.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setEditionDate(editionDate)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{editionDate}}{object of class \link{Date} or \link{POSIXct}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setIdentifier}{}}}
+\subsection{Method \code{setIdentifier()}}{
+Set identifier
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setIdentifier(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier, object of class \link{ISOMetaIdentifier}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-addIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-addIdentifier}{}}}
+\subsection{Method \code{addIdentifier()}}{
+Adds identifier
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$addIdentifier(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier, object of class \link{ISOMetaIdentifier}}
+
+\item{\code{locales}}{list of localized identifiers. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-delIdentifier"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-delIdentifier}{}}}
+\subsection{Method \code{delIdentifier()}}{
+Deletes identifier
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$delIdentifier(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier, object of class \link{ISOMetaIdentifier}}
+
+\item{\code{locales}}{list of localized identifiers. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setCitedResponsibleParty"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setCitedResponsibleParty}{}}}
+\subsection{Method \code{setCitedResponsibleParty()}}{
+Set cited responsible party
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setCitedResponsibleParty(rp)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{rp}}{cited responsible party, object of class \link{ISOResponsibleParty}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-addCitedResponsibleParty"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-addCitedResponsibleParty}{}}}
+\subsection{Method \code{addCitedResponsibleParty()}}{
+Adds cited responsible party
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$addCitedResponsibleParty(rp)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{rp}}{cited responsible party, object of class \link{ISOResponsibleParty}}
+
+\item{\code{locales}}{list of localized responsible parties. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-delCitedResponsibleParty"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-delCitedResponsibleParty}{}}}
+\subsection{Method \code{delCitedResponsibleParty()}}{
+Deletes cited responsible party
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$delCitedResponsibleParty(rp)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{rp}}{cited responsible party, object of class \link{ISOResponsibleParty}}
+
+\item{\code{locales}}{list of localized responsible parties. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setPresentationForm"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setPresentationForm}{}}}
+\subsection{Method \code{setPresentationForm()}}{
+Sets presentation form
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setPresentationForm(presentationForm)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{presentationForm}}{presentation form, object of class \link{ISOPresentationForm} or \link{character} among values
+returned by \code{ISOPresentationForm$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-addPresentationForm"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-addPresentationForm}{}}}
+\subsection{Method \code{addPresentationForm()}}{
+Adds presentation form
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$addPresentationForm(presentationForm)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{presentationForm}}{presentation form, object of class \link{ISOPresentationForm} or 
+\link{character} among values returned by \code{ISOPresentationForm$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-delPresentationForm"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-delPresentationForm}{}}}
+\subsection{Method \code{delPresentationForm()}}{
+Deletes presentation form
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$delPresentationForm(presentationForm)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{presentationForm}}{presentation form, object of class \link{ISOPresentationForm} or 
+\link{character} among values returned by \code{ISOPresentationForm$values()}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setSeries"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setSeries}{}}}
+\subsection{Method \code{setSeries()}}{
+Set series
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setSeries(series)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{series}}{object of class \link{ISOCitationSeries}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setOtherCitationDetails"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setOtherCitationDetails}{}}}
+\subsection{Method \code{setOtherCitationDetails()}}{
+Set other citation details
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setOtherCitationDetails(otherCitationDetails, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{otherCitationDetails}}{other citation details}
+
+\item{\code{locales}}{list of localized other citation details. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setCollectiveTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setCollectiveTitle}{}}}
+\subsection{Method \code{setCollectiveTitle()}}{
+Set collective title
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setCollectiveTitle(collectiveTitle, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{collectiveTitle}}{collective title}
+
+\item{\code{locales}}{list of localized titles. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setISBN"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setISBN}{}}}
+\subsection{Method \code{setISBN()}}{
+Set ISBN
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setISBN(isbn)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isbn}}{isbn}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-setISSN"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-setISSN}{}}}
+\subsection{Method \code{setISSN()}}{
+Set ISSN
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setISSN(issn)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{issn}}{issn}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCitation-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCitation-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

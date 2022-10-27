@@ -6,29 +6,6 @@
 #' @keywords ISO address
 #' @return Object of \code{\link{R6Class}} for modelling an ISO VectorSpatialRepresentation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field topologyLevel [\code{\link{character}}] the topologic level
-#' @field geometricObjects [\code{\link{ISOGeometricObjects}}] giving type and number of geometries
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOVectorSpatialRepresentation}}
-#'  }
-#'  \item{\code{setTopologyLevel(topologyLevel)}}{
-#'    Sets the topology level, object of class \code{\link{character}} or \code{\link{ISOTopologyLevel}}.
-#'    Recommended values among those listed by \code{ISOTopologyLevel$values()}.
-#'  }
-#'  \item{\code{addGeometricObject(geometricObjects)}}{
-#'    Adds the geometricObjects, object of class \code{\link{ISOGeometricObjects}}
-#'  }
-#'  \item{\code{setGeometricObject(geometricObjects)}}{
-#'    Sets the geometricObjects, object of class \code{\link{ISOGeometricObjects}}
-#'  }
-#'  \item{\code{delGeometricObject(geometricObjects)}}{
-#'    Deletes the geometricObjects, object of class \code{\link{ISOGeometricObjects}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISOVectorSpatialRepresentation$new()
@@ -51,15 +28,20 @@ ISOVectorSpatialRepresentation <- R6Class("ISOVectorSpatialRepresentation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    #+ topologyLevel [0..1]: ISOTopologyLevel
+    #'@field topologyLevel topologyLevel [0..1]: ISOTopologyLevel
     topologyLevel = NULL,
-    #+ geometricObjects [0..*]: ISOGeometricObjects
+    #'@field geometricObjects geometricObjects [0..*]: ISOGeometricObjects
     geometricObjects = list(),
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setTopologyLevel
+    #'@description Set topology level
+    #'@param topologyLevel object of class \link{ISOTopologyLevel} or \link{character} 
+    #'  among values returned by \code{ISOTopologyLevel$values()}
     setTopologyLevel = function(topologyLevel){
       if(is(topologyLevel,"character")){
         topologyLevel <- ISOTopologyLevel$new(value = topologyLevel)
@@ -67,7 +49,9 @@ ISOVectorSpatialRepresentation <- R6Class("ISOVectorSpatialRepresentation",
       self$topologyLevel <- topologyLevel
     },
     
-    #addGeometricObjects
+    #'@description Adds geometric objects
+    #'@param geometricObjects geometric objects, object of \link{ISOGeometricObjects}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addGeometricObjects = function(geometricObjects){
       if(!is(geometricObjects, "ISOGeometricObjects")){
         stop("The argument should be a 'ISOGeometricObjects' object")
@@ -75,13 +59,18 @@ ISOVectorSpatialRepresentation <- R6Class("ISOVectorSpatialRepresentation",
       return(self$addListElement("geometricObjects", geometricObjects))
     },
     
-    #setGeometricObjects
+    #'@description Set geometric objects
+    #'@param geometricObjects geometric objects, object of \link{ISOGeometricObjects}
+    #'@return \code{TRUE} if set, \code{FALSE} otherwise
     setGeometricObjects = function(geometricObjects){
+      warning("The 'setGeometricObjects' is deprecated, please use 'addGeometricObjects'")
       self$geometricObjects <- list()
       return(self$addGeometricObjects(geometricObjects))
     },
     
-    #delGeometricObjects
+    #'@description Deletes geometric objects
+    #'@param geometricObjects geometric objects, object of \link{ISOGeometricObjects}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delGeometricObjects = function(geometricObjects){
       if(!is(geometricObjects, "ISOGeometricObjects")){
         stop("The argument should be a 'ISOGeometricObjects' object")

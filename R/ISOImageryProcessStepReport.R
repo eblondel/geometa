@@ -6,29 +6,6 @@
 #' @keywords ISO imagery ProcessStepReport
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery ProcessStepReport
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @field description [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#' @field fileType [\code{\link{character}}|\code{\link{ISOLocalisedCharacterString}}]
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryProcessStepReport}}
-#'  }
-#'  \item{\code{setName(name, locales)}}{
-#'    Sets a name (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setDescription(description, locales)}}{
-#'    Sets a description (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#'  \item{\code{setFileType(fileType, locales)}}{
-#'    Sets a fileType (object of class "character"). Locale names can be 
-#'    specified as \code{list} with the \code{locales} argument.
-#'  }
-#' }  
 #' 
 #' @examples
 #'    md <- ISOImageryProcessStepReport$new()
@@ -50,18 +27,22 @@ ISOImageryProcessStepReport <- R6Class("ISOImageryProcessStepReport",
   ),
   public = list(
   
-    #+ name [1..1]: character|ISOLocalisedCharacterString
+    #'@field name name [1..1]: character|ISOLocalisedCharacterString
     name = NULL,
-    #+ description [0..1]: character|ISOLocalisedCharacterString
+    #'@field description description [0..1]: character|ISOLocalisedCharacterString
     description = NULL,
-    #+ fileType [0..1]: character|ISOLocalisedCharacterString
+    #'@field fileType fileType [0..1]: character|ISOLocalisedCharacterString
     fileType = NULL,
     
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setName
+    #'@description Set name
+    #'@param name name
+    #'@param locales list of localized texts. Default is \code{NULL}
     setName = function(name, locales = NULL){
       if(!is.null(locales)){
         name <- self$createLocalisedProperty(name, locales)
@@ -69,7 +50,9 @@ ISOImageryProcessStepReport <- R6Class("ISOImageryProcessStepReport",
       self$name <- name
     },
     
-    #setDescription
+    #'@description Set description
+    #'@param description description
+    #'@param locales list of localized texts. Default is \code{NULL}
     setDescription = function(description, locales = NULL){
       if(!is.null(locales)){
         description <- self$createLocalisedProperty(description, locales)
@@ -77,7 +60,9 @@ ISOImageryProcessStepReport <- R6Class("ISOImageryProcessStepReport",
       self$description <- description
     },
     
-    #setFileType
+    #'@description Set file type
+    #'@param fileType file type
+    #'@param locales list of localized texts. Default is \code{NULL}
     setFileType = function(fileType, locales = NULL){
       if(!is.null(locales)){
         fileType <- self$createLocalisedProperty(fileType, locales)

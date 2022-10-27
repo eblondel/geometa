@@ -29,11 +29,20 @@ SWEElement <- R6Class("SWEElement",
     xmlNamespacePrefix = "SWE"
   ),
   public = list(
+    
+    #'@description Initializes a generic abstract SWE element
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param element element
+    #'@param attrs attrs
+    #'@param defaults defaults
+    #'@param xmlNamespacePrefix XML namespace prefix. Default is \code{"SWE"}
     initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), xmlNamespacePrefix = "SWE"){
       private$xmlNamespacePrefix <- xmlNamespacePrefix
       super$initialize(xml = xml, element = element, attrs = attrs, defaults = defaults, wrap = FALSE)
     },
     
+    #'@description Decodes object from XML
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     decode = function(xml){
       fieldName <- xmlName(xml)
       nsPrefix <- ""

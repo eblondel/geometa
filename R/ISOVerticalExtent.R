@@ -6,30 +6,6 @@
 #' @keywords ISO vertical extent
 #' @return Object of \code{\link{R6Class}} for modelling an ISO VerticalExtent
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field minimalValue [\code{\link{numeric}}] the minimum value for the vertical extent
-#' @field maximalValue [\code{\link{numeric}}] the maximum value for the vertical extent
-#' @field unitOfMeasure [\code{\link{character}}] the unit of measure
-#' @field verticalCRS [\code{\link{GMLVerticalCRS}}] the vertical CRS
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOVerticalExtent}}
-#'  }
-#'  \item{\code{setMinimumValue(minimumValue)}}{
-#'    Sets the minimum value, object of class \code{\link{numeric}}
-#'  }
-#'  \item{\code{setMaximumValue(maximumValue)}}{
-#'    Sets the maximum value, object of class \code{\link{numeric}}
-#'  }
-#'  \item{\code{setUnitOfMeasure(uom)}}{
-#'    Sets the unit of measure, object of class \code{\link{character}}
-#'  }
-#'  \item{\code{setVerticalCRS(verticalCRS)}}{
-#'    Sets the vertical CRS, object of class \code{\link{GMLVerticalCRS}}
-#'  }
-#' }
 #' 
 #' @examples
 #'   ve <- ISOVerticalExtent$new()
@@ -49,34 +25,41 @@ ISOVerticalExtent <- R6Class("ISOVerticalExtent",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    #+ minimumValue [1..1]: numeric
+    #'@field minimumValue minimumValue [1..1]: numeric
     minimumValue = NULL,
-    #+ maximumValue [1..1]: numeric
+    #'@field maximumValue maximumValue [1..1]: numeric
     maximumValue = NULL,
-    #+ unitOfMeasure [1..1]: character
+    #'@field unitOfMeasure unitOfMeasure [1..1]: character
     unitOfMeasure = NULL,
-    #+ verticalCRS [1..1]: GMLVerticalCRS
+    #'@field verticalCRS verticalCRS [1..1]: GMLVerticalCRS
     verticalCRS = NA,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setMinimumValue
+    #'@description Set minimum value
+    #'@param minimumValue minimum value
     setMinimumValue = function(minimumValue){
       self$minimumValue = minimumValue
     },
     
-    #setMaximumValue
+    #'@description Set maximum value
+    #'@param maximumValue maximum value
     setMaximumValue = function(maximumValue){
       self$maximumValue = maximumValue
     },
     
-    #setUnitOfMeasure
+    #'@description Set unit of measure
+    #'@param uom uom
     setUnitOfMeasure = function(uom){
       self$unitOfMeasure <- uom
     },
     
-    #setVerticalCRS
+    #'@description Set vertical CRS
+    #'@param verticalCRS verticalCRS
     setVerticalCRS = function(verticalCRS){
       if(!is(verticalCRS)){
         stop("The argument should be an object of class 'GMLVerticalCRS'")

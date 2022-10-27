@@ -6,15 +6,6 @@
 #' @keywords ISO OnLineFunction
 #' @return Object of \code{\link{R6Class}} for modelling an ISO OnLineFunction
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field value
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value, description)}}{
-#'    This method is used to instantiate an ISOOnLineFunction
-#'  }
-#' }
 #' 
 #' @examples 
 #'   #possible values
@@ -35,6 +26,11 @@ ISOOnLineFunction <- R6Class("ISOOnLineFunction",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param value value
+    #'@param description description
     initialize = function(xml = NULL, value, description = NULL){
       super$initialize(xml = xml, id = private$xmlElement, value = value, 
                        description = description)

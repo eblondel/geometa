@@ -7,27 +7,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an ISO imagery Georeferenceable
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field geolocationInformation [\code{list} of \code{\link{ISOImageryAbstractGeolocationInformation}}]
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISOImageryGeoreferenceable}}
-#'  }
-#'  \item{\code{addGeolocationInformation(geolocationInformation)}}{
-#'    Adds a geolocation information, an object of class \code{\link{ISOImageryAbstractGeolocationInformation}}
-#'  }
-#'  \item{\code{delGeolocationInformation(geolocationInformation)}}{
-#'    Deletes geolocation information, an object of class \code{\link{ISOImageryAbstractGeolocationInformation}}
-#'  }
-#' }
-#' 
-#' @section Methods inherited from \code{\link{ISOGridSpatialRepresentation}}:
-#' See \code{\link{ISOGridSpatialRepresentation}}
-#'
-#' @section Methods inherited from \code{\link{ISOGeoreferenceable}}:
-#' See \code{\link{ISOGeoreferenceable}}
-#'
 #' @references 
 #'   ISO 19115-2:2009 - Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data
 #' 
@@ -41,14 +20,18 @@ ISOImageryGeoreferenceable <- R6Class("ISOImageryGeoreferenceable",
   ),
   public = list(
     
-    #geolocationInformation [0..*]: ISOImageryGeolocationInformation
+    #'@field geolocationInformation geolocationInformation [0..*]: ISOImageryGeolocationInformation
     geolocationInformation = list(),
     
+    #'@description Initializes object 
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #addGeolocationInformation
+    #'@description Adds geolocation information
+    #'@param geolocationInfo object of class inheriting \link{ISOImageryAbstractGeolocationInformation}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addGeolocationInformation = function(geolocationInfo){
       if(!inherits(geolocationInfo, "ISOImageryAbstractGeolocationInformation")){
         stop("The argument should be an object inheriting 'ISOImageryAbstractGeolocationInformation")
@@ -56,7 +39,9 @@ ISOImageryGeoreferenceable <- R6Class("ISOImageryGeoreferenceable",
       return(self$addListElement("geolocationInformation", geolocationInfo))
     },
     
-    #delGeolocationInformation
+    #'@description Deletes geolocation information
+    #'@param geolocationInfo object of class inheriting \link{ISOImageryAbstractGeolocationInformation}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delGeolocationInformation = function(geolocationInfo){
       if(!inherits(geolocationInfo, "ISOImageryAbstractGeolocationInformation")){
         stop("The argument should be an object inheriting 'ISOImageryAbstractGeolocationInformation")

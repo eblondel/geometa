@@ -6,41 +6,6 @@
 #' @keywords ISO distribution
 #' @return Object of \code{\link{R6Class}} for modelling an ISO DigitalTransferOptions
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field unitsOfDistribution [\code{\link{character}}] units of distribution
-#' @field transferSize [\code{\link{character}}] transfer size
-#' @field onLine [\code{\link{ISOOnlineResource}}] online resource(s)
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml,value)}}{
-#'    This method is used to instantiate an \code{\link{ISODigitalTransferOptions}}
-#'  }
-#'  \item{\code{setUnitsOfDistribution(unit)}}{
-#'    Sets the units of distribution
-#'  }
-#'  \item{\code{setTransferSize(transferSize)}}{
-#'    Sets the transfer Size
-#'  }
-#'  \item{\code{addOnlineResource(onlineResource)}}{
-#'    Adds an object of class \code{\link{ISOOnlineResource}}
-#'  }
-#'  \item{\code{setOnlineResource(onlineResource)}}{
-#'    Sets an object of class \code{\link{ISOOnlineResource}}
-#'  }
-#'  \item{\code{delOnlineResource(onlineResource)}}{
-#'    Deletes an object of class \code{\link{ISOOnlineResource}}
-#'  }
-#'  \item{\code{addOfflineResource(offlineResource)}}{
-#'    Adds an object of class \code{\link{ISOMedium}}
-#'  }
-#'  \item{\code{setOfflineResource(offlineResource)}}{
-#'    Sets an object of class \code{\link{ISOMedium}}
-#'  }
-#'  \item{\code{delOfflineResource(offlineResource)}}{
-#'    Deletes an object of class \code{\link{ISOMedium}}
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISODigitalTransferOptions$new()  
@@ -66,29 +31,36 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
-     #+ unitsOfDistribution [0..1]: character
+     #'@field unitsOfDistribution unitsOfDistribution [0..1]: character
      unitsOfDistribution = NULL,
-     #transferSize [0..1]: integer
+     #'@field transferSize transferSize [0..1]: integer
      transferSize = NULL,
-     #+ onLine [0..*]: ISOOnlineResource
+     #'@field onLine onLine [0..*]: ISOOnlineResource
      onLine = list(),
-     #+ offLine [0..1]: MD_Medium
+     #'@field offLine offLine [0..1]: MD_Medium
      offLine = list(),
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setUnitsOfDistribution
+     #'@description Set units of distribution
+     #'@param unit unit
      setUnitsOfDistribution = function(unit){
        self$unitsOfDistribution = unit
      },
      
-     #setTransferSize
+     #'@description Set transfer size
+     #'@param transferSize transfer size
      setTransferSize = function(transferSize){
        self$transferSize = as.numeric(transferSize)
      },
      
-     #addOnlineResource
+     #'@description Adds online resource
+     #'@param onlineResource object of class \link{ISOOnlineResource}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addOnlineResource = function(onlineResource){
        if(!is(onlineResource, "ISOOnlineResource")){
          stop("The argument should be a 'ISOOnlineResource' object")
@@ -96,13 +68,18 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
        return(self$addListElement("onLine", onlineResource))
      },
      
-     #setOnlineResource
+     #'@description Sets online resource
+     #'@param onlineResource object of class \link{ISOOnlineResource}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setOnlineResource = function(onlineResource){
+       warning("Method 'setOnlineResource' is deprecated, please use 'addOnlineResource'!")
        self$onLine <- list()
        return(self$addOnlineResource(onlineResource))
      },
      
-     #delOnlineResource
+     #'@description Deletes online resource
+     #'@param onlineResource object of class \link{ISOOnlineResource}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delOnlineResource = function(onlineResource){
        if(!is(onlineResource, "ISOOnlineResource")){
          stop("The argument should be a 'ISOOnlineResource' object")
@@ -110,7 +87,9 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
        return(self$delListElement("onLine", onlineResource))
      },
      
-     #addOfflineResource
+     #'@description Adds offline resource
+     #'@param offlineResource object of class \link{ISOMedium}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addOfflineResource = function(offlineResource){
         if(!is(offlineResource, "ISOMedium")){
            stop("The argument should be a 'ISOMedium' object")
@@ -118,13 +97,18 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
         return(self$addListElement("offLine", offlineResource))
      },
      
-     #setOfflineResource
+     #'@description Sets offline resource
+     #'@param offlineResource object of class \link{ISOMedium}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setOfflineResource = function(offlineResource){
+        warning("Method 'setOfflineResource' is deprecated, please use 'addOfflineeResource'!")
         self$offLine <- list()
         return(self$addOfflineResource(offlineResource))
      },
      
-     #delOfflineResource
+     #'@description Deletes offline resource
+     #'@param offlineResource object of class \link{ISOMedium}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delOfflineResource = function(offlineResource){
         if(!is(offlineResource, "ISOMedium")){
            stop("The argument should be a 'ISOMedium' object")

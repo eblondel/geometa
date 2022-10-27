@@ -12,35 +12,9 @@ Object of \code{\link{R6Class}} for modelling a mapping format
 }
 \description{
 pivot_format
+
+pivot_format
 }
-\section{Fields}{
-
-\describe{
-\item{\code{id}}{(character) format identifier}
-
-\item{\code{pkg}}{(character) package(s) required for the format}
-
-\item{\code{reader}}{(function) handler used for reading a property}
-
-\item{\code{checker}}{(function) handler used for checking a property value}
-
-\item{\code{constructor}}{(function) handler used for object construction}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(id, pkg, reader, checker, constructor)}}{
-   This method is used to instantiate a pivot_format, given a unique \code{id},
-   the name of package used (for information only). A format is then defined by
-   string expressions (using \code{sprintf} formatting) to read metadata properties
-   (\code{reader}), one for checking existence of properties (\code{checker}), and an
-   expression to create metadata objects (\code{constructor}). In case the \code{constructor}
-   is NULL, then no conversion to this metadata format will be possible.
- }
-}
-}
-
 \examples{
   #example on how geometa format is defined as pivot format
   pivot_format$new(
@@ -56,3 +30,73 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{convert}
 \keyword{mapping}
 \keyword{metadata}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{id}}{id}
+
+\item{\code{pkg}}{pkg}
+
+\item{\code{reader}}{reader}
+
+\item{\code{checker}}{checker}
+
+\item{\code{constructor}}{constructor}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-pivot_format-new}{\code{pivot_format$new()}}
+\item \href{#method-pivot_format-clone}{\code{pivot_format$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-pivot_format-new"></a>}}
+\if{latex}{\out{\hypertarget{method-pivot_format-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes pivot format. Method is used to instantiate a pivot_format, given a unique \code{id},
+   the name of package used (for information only). A format is then defined by
+   string expressions (using \code{sprintf} formatting) to read metadata properties
+   (\code{reader}), one for checking existence of properties (\code{checker}), and an
+   expression to create metadata objects (\code{constructor}). In case the \code{constructor}
+   is NULL, then no conversion to this metadata format will be possible.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{pivot_format$new(id, pkg, reader = NULL, checker = NULL, constructor = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{id}}{id}
+
+\item{\code{pkg}}{pkg}
+
+\item{\code{reader}}{reader}
+
+\item{\code{checker}}{checker}
+
+\item{\code{constructor}}{constructor}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-pivot_format-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-pivot_format-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{pivot_format$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

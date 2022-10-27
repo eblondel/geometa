@@ -6,23 +6,6 @@
 #' @keywords ISO range dimension
 #' @return Object of \code{\link{R6Class}} for modelling an ISORangeDimension
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field sequenceIdentifier [\code{\link{ISOMemberName}}] sequence identifier
-#' @field descriptor [\code{\link{character}}] description
-#' 
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an ISORangeDimension
-#'  }
-#'  \item{\code{setSequenceIdentifier(memberName)}}{
-#'    Sets the sequence identifier, object of class \code{ISOMemberName}
-#'  }
-#'  \item{\code{setDescriptor(descriptor ,locales)}}{
-#'    Sets the descriptor, object of class \code{character}. Locale names can be specified 
-#'    as \code{list} with the \code{locales} argument.
-#'  }
-#' }
 #' 
 #' @examples
 #'    #create dimension
@@ -43,13 +26,19 @@ ISORangeDimension <- R6Class("ISORangeDimension",
       xmlNamespacePrefix = "GMD"
     ),
     public = list(
+      #'@field sequenceIdentifier sequenceIdentifier
       sequenceIdentifier = NULL,
+      #'@field descriptor descriptor
       descriptor = NULL,
+      
+      #'@description Initializes object
+      #'@param xml object of class \link{XMLInternalNode-class}
       initialize = function(xml = NULL){
         super$initialize(xml = xml)
       },
       
-      #setSequenceIdentifier
+      #'@description Set sequence identifier
+      #'@param memberName object of class \link{ISOMemberName}
       setSequenceIdentifier = function(memberName){
         if(!is(memberName, "ISOMemberName")){
           stop("The argument should be an object of class 'ISOMemberName'")
@@ -57,7 +46,9 @@ ISORangeDimension <- R6Class("ISORangeDimension",
         self$sequenceIdentifier <- memberName
       },
       
-      #setDescriptor
+      #'@description Set descriptor
+      #'@param descriptor descriptor
+      #'@param locales list of localized texts. Default is \code{NULL}
       setDescriptor = function(descriptor, locales = NULL){
         self$descriptor <- descriptor
         if(!is.null(locales)){

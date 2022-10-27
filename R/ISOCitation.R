@@ -6,93 +6,6 @@
 #' @keywords ISO citation
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Citation
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field title [\code{\link{character}}] title
-#' @field alternateTitle [list of \code{\link{character}}] alternateTitle
-#' @field date [\code{\link{ISODate}}] the citation date with date type
-#' @field edition [\code{\link{character}}] citation edition
-#' @field editionDate [\code{\link{Date}}|\code{\link{POSIXt}}] date or date/time of edition
-#' @field identifier [list of \code{\link{ISOMetaIdentifier}}] identifier
-#' @field citedResponsibleParty [list of \code{\link{ISOResponsibleParty}}] responsible party
-#' @field presentationForm [list of \code{\link{ISOPresentationForm}}] presentation form
-#' @field series [\code{link{ISOCitationSeries}}] series
-#' @field otherCitationDetails [\code{\link{character}}] other citation details
-#' @field collectiveTitle [\code{\link{character}}] collective title
-#' @field ISBN [\code{\link{character}}] ISBN
-#' @field ISSN [\code{\link{character}}] ISSN
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOCitation}}
-#'  }
-#'  \item{\code{setTitle(title, locales)}}{
-#'    Sets the title. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setAlternateTitle(alternateTitle, locales)}}{
-#'    Sets an alternate title. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{addAlternateTitle(alternateTitle, locales)}}{
-#'    Adds an alternate title. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{delAlternateTitle(alternateTitle, locales)}}{
-#'    Adds an alternate title. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{addDate(date)}}{
-#'    Adds the date (ISODate object containing date and dateType)
-#'  }
-#'  \item{\code{setEdition(edition)}}{
-#'    Sets the edition
-#'  }
-#'  \item{\code{setEditionDate(editionDate)}}{
-#'    Sets the edition date, either an ISODate object containing date and dateType or
-#'    a simple R date "POSIXct"/"POSIXt" object. For thesaurus citations, an ISODate
-#'    should be used while for the general citation of \code{\link{ISODataIdentification}},
-#'    a simple R date should be used.
-#'  }
-#'  \item{\code{setIdentifier(identifier)}}{
-#'    Sets the identifier as object of class \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{addIdentifier(identifier)}}{
-#'    Adds an identifier as object of class \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{delIdentifier(identifier)}}{
-#'    Deletes an identifier as object of class \code{\link{ISOMetaIdentifier}}
-#'  }
-#'  \item{\code{seCitedResponsibleParty(rp)}}{
-#'    Sets the cited responsiblep party, object of class \code{\link{ISOResponsibleParty}}
-#'  }
-#'  \item{\code{setPresentationForm(presentationForm)}}{
-#'    Sets the presentation form, object of class \code{\link{ISOPresentationForm}}
-#'  }
-#'  \item{\code{addPresentationForm(presentationForm)}}{
-#'    Adds a presentation form, object of class \code{\link{ISOPresentationForm}}
-#'  }
-#'  \item{\code{delPresentationForm(presentationForm)}}{
-#'    Deletes a presentation form, object of class \code{\link{ISOPresentationForm}}
-#'  }
-#'  \item{\code{setSeries(series)}}{
-#'    Set series, object of class \code{\link{ISOCitationSeries}}
-#'  }
-#'  \item{\code{setOtherCitationDetails(otherCitationDetails, locales)}}{
-#'    Set other citation details. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setCollectiveTitle(collectiveTitle, locales)}}{
-#'    Set collective title. Locale names can be specified as \code{list}
-#'    with the \code{locales} argument.
-#'  }
-#'  \item{\code{setISBN(isbn)}}{
-#'    Set the ISBN
-#'  }
-#'  \item{\code{setISSN(issn)}}{
-#'    Set the ISSN
-#'  }
-#' }
 #' 
 #' @examples
 #'  #create ISOCitation
@@ -141,24 +54,42 @@ ISOCitation<- R6Class("ISOCitation",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
+    #'@field title title
     title = NULL,
+    #'@field alternateTitle alternate title
     alternateTitle = list(),
+    #'@field date date list
     date = list(),
+    #'@field edition edition
     edition = NULL,
+    #'@field editionDate edition date
     editionDate = NULL,
+    #'@field identifier identifier list
     identifier = list(),
+    #'@field citedResponsibleParty list of cited responsible parties
     citedResponsibleParty = list(),
+    #'@field presentationForm list of presentation forms
     presentationForm = list(),
+    #'@field series series
     series = NULL,
+    #'@field otherCitationDetails other citation details
     otherCitationDetails = NULL,
+    #'@field collectiveTitle collective title
     collectiveTitle = NULL,
+    #'@field ISBN ISBN
     ISBN = NULL,
+    #'@field ISSN ISSN
     ISSN = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #setTitle
+    #'@description Set title
+    #'@param title title
+    #'@param locales list of localized names. Default is \code{NULL}
     setTitle = function(title, locales = NULL){
       classPass <- TRUE
       if(is.null(title)){
@@ -179,7 +110,9 @@ ISOCitation<- R6Class("ISOCitation",
       }
     },
     
-    #setAlternateTitle
+    #'@description Set alternate title
+    #'@param alternateTitle alternate title
+    #'@param locales list of localized names. Default is \code{NULL}
     setAlternateTitle = function(alternateTitle, locales = NULL){
       warning("'setAlternateTitle' is deprecated, use 'addAlternateTitle' instead")
       classPass <- TRUE
@@ -201,7 +134,10 @@ ISOCitation<- R6Class("ISOCitation",
       }
     },
     
-    #addAlternateTitle
+    #'@description Adds alternate title
+    #'@param alternateTitle alternate title
+    #'@param locales list of localized titles. Default is \code{NULL}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addAlternateTitle = function(alternateTitle, locales = NULL){
       classPass <- TRUE
       if(is.null(alternateTitle)){
@@ -222,7 +158,10 @@ ISOCitation<- R6Class("ISOCitation",
       return(self$addListElement("alternateTitle", alternateTitle))
     },
     
-    #delAlternateTitle
+    #'@description Deletes alternate title
+    #'@param alternateTitle alternate title
+    #'@param locales list of localized titles. Default is \code{NULL}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delAlternateTitle = function(alternateTitle, locales = NULL){
       classPass <- TRUE
       if(is.null(alternateTitle)){
@@ -243,7 +182,9 @@ ISOCitation<- R6Class("ISOCitation",
       return(self$delListElement("alternateTitle", alternateTitle))
     },
     
-    #addDate
+    #'@description Adds date
+    #'@param date date
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addDate = function(date){
       if(!is(date, "ISODate")){
         stop("The argument should be a 'ISODate' object")
@@ -251,12 +192,17 @@ ISOCitation<- R6Class("ISOCitation",
       self$date <- c(self$date, date)
     },
     
-    #setEdition
+    #'@description Set edition
+    #'@param edition edition
     setEdition = function(edition){
       self$edition = as.character(edition)
     },
     
-    #setEditionDate
+    #'@description Sets the edition date, either an ISODate object containing date and dateType or
+    #'    a simple R date "POSIXct"/"POSIXt" object. For thesaurus citations, an ISODate
+    #'    should be used while for the general citation of \code{\link{ISODataIdentification}},
+    #'    a simple R date should be used.
+    #'@param editionDate object of class \link{Date} or \link{POSIXct}
     setEditionDate = function(editionDate){
       if(!is(editionDate, "Date") && !all(class(editionDate) == c("POSIXct","POSIXt"))){ 
         stop("The argument should be either a 'Date' or 'POSIXct'/'POSIXt' object")
@@ -264,16 +210,20 @@ ISOCitation<- R6Class("ISOCitation",
       self$editionDate <- editionDate
     },
     
-    #setIdentifier
+    #'@description Set identifier
+    #'@param identifier identifier, object of class \link{ISOMetaIdentifier}
     setIdentifier = function(identifier){
       warning("'setIdentifier' method is deprecated, use 'addIdentifier' instead")
       if(!is(identifier, "ISOMetaIdentifier")){
         stop("The argument should be a 'ISOMetaIdentifier' object")
       }
-      self$identifier <- identifier
+      self$addIdentifier(identifier)
     },
     
-    #addIdentifier
+    #'@description Adds identifier
+    #'@param identifier identifier, object of class \link{ISOMetaIdentifier}
+    #'@param locales list of localized identifiers. Default is \code{NULL}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addIdentifier = function(identifier){
       if(!is(identifier, "ISOMetaIdentifier")){
         stop("The argument should be a 'ISOMetaIdentifier' object")
@@ -281,7 +231,10 @@ ISOCitation<- R6Class("ISOCitation",
       return(self$addListElement("identifier", identifier))
     },
 
-    #delIdentifier
+    #'@description Deletes identifier
+    #'@param identifier identifier, object of class \link{ISOMetaIdentifier}
+    #'@param locales list of localized identifiers. Default is \code{NULL}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delIdentifier = function(identifier){
       if(!is(identifier, "ISOMetaIdentifier")){
         stop("The argument should be a 'ISOMetaIdentifier' object")
@@ -289,16 +242,20 @@ ISOCitation<- R6Class("ISOCitation",
       return(self$delListElement("identifier", identifier))
     },
     
-    #setCitedResponsibleParty
+    #'@description Set cited responsible party
+    #'@param rp cited responsible party, object of class \link{ISOResponsibleParty}
     setCitedResponsibleParty = function(rp){
       warning("'setCitedResponsibleParty' method is deprecated, use 'addCitedResponsibleParty' instead")
       if(!is(rp, "ISOResponsibleParty")){
         stop("The argument should be a 'ISOResponsibleParty' object")
       }
-      self$citedResponsibleParty <- rp
+      self$addCitedResponsibleParty(rp)
     },
     
-    #addCitedResponsibleParty
+    #'@description Adds cited responsible party
+    #'@param rp cited responsible party, object of class \link{ISOResponsibleParty}
+    #'@param locales list of localized responsible parties. Default is \code{NULL}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addCitedResponsibleParty = function(rp){
       if(!is(rp, "ISOResponsibleParty")){
         stop("The argument should be a 'ISOResponsibleParty' object")
@@ -306,7 +263,10 @@ ISOCitation<- R6Class("ISOCitation",
       return(self$addListElement("citedResponsibleParty", rp))
     },
     
-    #delCitedResponsibleParty
+    #'@description Deletes cited responsible party
+    #'@param rp cited responsible party, object of class \link{ISOResponsibleParty}
+    #'@param locales list of localized responsible parties. Default is \code{NULL}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delCitedResponsibleParty = function(rp){
       if(!is(rp, "ISOResponsibleParty")){
         stop("The argument should be a 'ISOResponsibleParty' object")
@@ -314,16 +274,21 @@ ISOCitation<- R6Class("ISOCitation",
       return(self$delListElement("citedResponsibleParty", rp))
     },
     
-    #setPresentationForm
+    #'@description Sets presentation form
+    #'@param presentationForm presentation form, object of class \link{ISOPresentationForm} or \link{character} among values
+    #'  returned by \code{ISOPresentationForm$values()}
     setPresentationForm = function(presentationForm){
       warning("'setPresentationForm' method is deprecated, use 'addPresentationForm' instead")
       if(is(presentationForm, "character")){
         presentationForm <- ISOPresentationForm$new(value = presentationForm)
       }
-      self$presentationForm <- presentationForm
+      self$addPresentationForm(presentationForm)
     },
     
-    #addPresentationForm
+    #'@description Adds presentation form
+    #'@param presentationForm presentation form, object of class \link{ISOPresentationForm} or 
+    #'  \link{character} among values returned by \code{ISOPresentationForm$values()}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addPresentationForm = function(presentationForm){
       if(is(presentationForm, "character")){
         presentationForm <- ISOPresentationForm$new(value = presentationForm)
@@ -331,7 +296,10 @@ ISOCitation<- R6Class("ISOCitation",
       return(self$addListElement("presentationForm", presentationForm))
     },
     
-    #delPresentationForm
+    #'@description Deletes presentation form
+    #'@param presentationForm presentation form, object of class \link{ISOPresentationForm} or 
+    #'  \link{character} among values returned by \code{ISOPresentationForm$values()}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delPresentationForm = function(presentationForm){
       if(is(presentationForm, "character")){
         presentationForm <- ISOPresentationForm$new(value = presentationForm)
@@ -339,7 +307,8 @@ ISOCitation<- R6Class("ISOCitation",
       return(self$delListElement("presentationForm", presentationForm))
     },
     
-    #setSeries
+    #'@description Set series
+    #'@param series object of class \link{ISOCitationSeries}
     setSeries = function(series){
       if(!is(series, "ISOCitationSeries")){
         stop("The argument should be a 'ISOCitationSeries' object")
@@ -347,7 +316,9 @@ ISOCitation<- R6Class("ISOCitation",
       self$series <- series
     },
     
-    #setOtherCitationDetails
+    #'@description Set other citation details
+    #'@param otherCitationDetails other citation details
+    #'@param locales list of localized other citation details. Default is \code{NULL}
     setOtherCitationDetails = function(otherCitationDetails, locales = NULL){
       self$otherCitationDetails <- otherCitationDetails
       if(!is.null(locales)){
@@ -355,7 +326,9 @@ ISOCitation<- R6Class("ISOCitation",
       }
     },
     
-    #setCollectiveTitle
+    #'@description Set collective title
+    #'@param collectiveTitle collective title
+    #'@param locales list of localized titles. Default is \code{NULL}
     setCollectiveTitle = function(collectiveTitle, locales = NULL){
       self$collectiveTitle <- collectiveTitle
       if(!is.null(locales)){
@@ -363,12 +336,14 @@ ISOCitation<- R6Class("ISOCitation",
       }
     },
     
-    #setISBN
+    #'@description Set ISBN
+    #'@param isbn isbn
     setISBN = function(isbn){
       self$ISBN <- isbn
     },
     
-    #setISSN
+    #'@description Set ISSN
+    #'@param issn issn
     setISSN = function(issn){
       self$ISSN <- issn
     }

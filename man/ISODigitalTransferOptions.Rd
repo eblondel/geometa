@@ -12,50 +12,9 @@ Object of \code{\link{R6Class}} for modelling an ISO DigitalTransferOptions
 }
 \description{
 ISODigitalTransferOptions
+
+ISODigitalTransferOptions
 }
-\section{Fields}{
-
-\describe{
-\item{\code{unitsOfDistribution}}{[\code{\link{character}}] units of distribution}
-
-\item{\code{transferSize}}{[\code{\link{character}}] transfer size}
-
-\item{\code{onLine}}{[\code{\link{ISOOnlineResource}}] online resource(s)}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml,value)}}{
-   This method is used to instantiate an \code{\link{ISODigitalTransferOptions}}
- }
- \item{\code{setUnitsOfDistribution(unit)}}{
-   Sets the units of distribution
- }
- \item{\code{setTransferSize(transferSize)}}{
-   Sets the transfer Size
- }
- \item{\code{addOnlineResource(onlineResource)}}{
-   Adds an object of class \code{\link{ISOOnlineResource}}
- }
- \item{\code{setOnlineResource(onlineResource)}}{
-   Sets an object of class \code{\link{ISOOnlineResource}}
- }
- \item{\code{delOnlineResource(onlineResource)}}{
-   Deletes an object of class \code{\link{ISOOnlineResource}}
- }
- \item{\code{addOfflineResource(offlineResource)}}{
-   Adds an object of class \code{\link{ISOMedium}}
- }
- \item{\code{setOfflineResource(offlineResource)}}{
-   Sets an object of class \code{\link{ISOMedium}}
- }
- \item{\code{delOfflineResource(offlineResource)}}{
-   Deletes an object of class \code{\link{ISOMedium}}
- }
-}
-}
-
 \examples{
   md <- ISODigitalTransferOptions$new()  
   
@@ -77,3 +36,256 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{distribution}
+\section{Super classes}{
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISODigitalTransferOptions}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{unitsOfDistribution}}{unitsOfDistribution [0..1]: character}
+
+\item{\code{transferSize}}{transferSize [0..1]: integer}
+
+\item{\code{onLine}}{onLine [0..*]: ISOOnlineResource}
+
+\item{\code{offLine}}{offLine [0..1]: MD_Medium}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-ISODigitalTransferOptions-new}{\code{ISODigitalTransferOptions$new()}}
+\item \href{#method-ISODigitalTransferOptions-setUnitsOfDistribution}{\code{ISODigitalTransferOptions$setUnitsOfDistribution()}}
+\item \href{#method-ISODigitalTransferOptions-setTransferSize}{\code{ISODigitalTransferOptions$setTransferSize()}}
+\item \href{#method-ISODigitalTransferOptions-addOnlineResource}{\code{ISODigitalTransferOptions$addOnlineResource()}}
+\item \href{#method-ISODigitalTransferOptions-setOnlineResource}{\code{ISODigitalTransferOptions$setOnlineResource()}}
+\item \href{#method-ISODigitalTransferOptions-delOnlineResource}{\code{ISODigitalTransferOptions$delOnlineResource()}}
+\item \href{#method-ISODigitalTransferOptions-addOfflineResource}{\code{ISODigitalTransferOptions$addOfflineResource()}}
+\item \href{#method-ISODigitalTransferOptions-setOfflineResource}{\code{ISODigitalTransferOptions$setOfflineResource()}}
+\item \href{#method-ISODigitalTransferOptions-delOfflineResource}{\code{ISODigitalTransferOptions$delOfflineResource()}}
+\item \href{#method-ISODigitalTransferOptions-clone}{\code{ISODigitalTransferOptions$clone()}}
+}
+}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-ERROR'><code>geometa::geometaLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-INFO'><code>geometa::geometaLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="WARN"><a href='../../geometa/html/geometaLogger.html#method-geometaLogger-WARN'><code>geometa::geometaLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addFieldAttrs"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addFieldAttrs'><code>geometa::ISOAbstractObject$addFieldAttrs()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClassName"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClassName'><code>geometa::ISOAbstractObject$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getNamespaceDefinition"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getNamespaceDefinition'><code>geometa::ISOAbstractObject$getNamespaceDefinition()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isDocument"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isDocument'><code>geometa::ISOAbstractObject$isDocument()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="isFieldInheritedFrom"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-isFieldInheritedFrom'><code>geometa::ISOAbstractObject$isFieldInheritedFrom()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="print"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-print'><code>geometa::ISOAbstractObject$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="save"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-save'><code>geometa::ISOAbstractObject$save()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setAttr'><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeList'><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeListValue'><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setCodeSpace'><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setHref'><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setId'><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setIsNull'><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setValue"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-setValue'><code>geometa::ISOAbstractObject$setValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+</ul>
+</details>
+}}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-new"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes object
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-setUnitsOfDistribution"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-setUnitsOfDistribution}{}}}
+\subsection{Method \code{setUnitsOfDistribution()}}{
+Set units of distribution
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$setUnitsOfDistribution(unit)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{unit}}{unit}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-setTransferSize"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-setTransferSize}{}}}
+\subsection{Method \code{setTransferSize()}}{
+Set transfer size
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$setTransferSize(transferSize)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{transferSize}}{transfer size}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-addOnlineResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-addOnlineResource}{}}}
+\subsection{Method \code{addOnlineResource()}}{
+Adds online resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$addOnlineResource(onlineResource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{onlineResource}}{object of class \link{ISOOnlineResource}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-setOnlineResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-setOnlineResource}{}}}
+\subsection{Method \code{setOnlineResource()}}{
+Sets online resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$setOnlineResource(onlineResource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{onlineResource}}{object of class \link{ISOOnlineResource}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-delOnlineResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-delOnlineResource}{}}}
+\subsection{Method \code{delOnlineResource()}}{
+Deletes online resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$delOnlineResource(onlineResource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{onlineResource}}{object of class \link{ISOOnlineResource}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-addOfflineResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-addOfflineResource}{}}}
+\subsection{Method \code{addOfflineResource()}}{
+Adds offline resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$addOfflineResource(offlineResource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{offlineResource}}{object of class \link{ISOMedium}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-setOfflineResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-setOfflineResource}{}}}
+\subsection{Method \code{setOfflineResource()}}{
+Sets offline resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$setOfflineResource(offlineResource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{offlineResource}}{object of class \link{ISOMedium}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-delOfflineResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-delOfflineResource}{}}}
+\subsection{Method \code{delOfflineResource()}}{
+Deletes offline resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$delOfflineResource(offlineResource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{offlineResource}}{object of class \link{ISOMedium}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

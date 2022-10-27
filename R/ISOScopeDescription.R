@@ -6,43 +6,6 @@
 #' @keywords ISO browse graphic
 #' @return Object of \code{\link{R6Class}} for modelling an ISO ScopeDescription
 #' @format \code{\link{R6Class}} object.
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISOScopeDescription}}
-#'  }
-#'  \item{\code{addAttribute(attribute)}}{
-#'    Adds an attribute
-#'  }
-#'  \item{\code{delAttribute(attribute)}}{
-#'    Deletes an attribute
-#'  }
-#'  \item{\code{addAttributeInstance(attributeInstance)}}{
-#'    Adds an attribute instance
-#'  }
-#'  \item{\code{delAttributeInstance(attributeInstance)}}{
-#'    Deletes an attribute instance
-#'  }
-#'  \item{\code{addFeature(feature)}}{
-#'    Adds an feature
-#'  }
-#'  \item{\code{delFeature(feature)}}{
-#'    Deletes an feature
-#'  }
-#'  \item{\code{addFeatureInstance(featureInstance)}}{
-#'    Adds an feature instance
-#'  }
-#'  \item{\code{delFeatureInstance(featureInstance)}}{
-#'    Deletes an feature instance
-#'  }
-#'  \item{\code{setDataset(dataset)}}{
-#'    Set the dataset
-#'  }
-#'  \item{\code{setOther(other)}}{
-#'    Set other description
-#'  }
-#' }
 #' 
 #' @examples 
 #'  md <- ISOScopeDescription$new()
@@ -60,58 +23,75 @@ ISOScopeDescription <- R6Class("ISOScopeDescription",
     xmlNamespacePrefix = "GMD"
   ),
   public = list(
-    #attributes [1..*]
+    #'@field attributes attributes [1..*]
     attributes = list(),
-    #features [1..*]
+    #'@field features features [1..*]
     features = list(),
-    #featureInstances [1..*]
+    #'@field featureInstances featureInstances [1..*]
     featureInstances = list(),
-    #attributeInstances [1..*]
+    #'@field attributeInstances attributeInstances [1..*]
     attributeInstances = list(),
-    #dataset
+    #'@field dataset dataset
     dataset = NULL,
-    #other
+    #'@field other other
     other = NULL,
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
-    #addAttribute
+    #'@description Adds attribute
+    #'@param attribute attribute
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addAttribute = function(attribute){
       return(self$addListElement("attributes", attribute))
     },
     
-    #delAttribute
+    #'@description Deletes attribute
+    #'@param attribute attribute
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delAttribute = function(attribute){
       return(self$delListElement("attributes", attribute))
     },
     
-    #addAttributeInstance
+    #'@description Adds attribute instance
+    #'@param attributeInstance attribute instance
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addAttributeInstance = function(attributeInstance){
       return(self$addListElement("attributeInstances", attributeInstance))
     },
     
-    #delAttributeInstance
+    #'@description Deletes attribute instance
+    #'@param attributeInstance attribute instance
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delAttributeInstance = function(attributeInstance){
       return(self$delListElement("attributeInstances", attributeInstance))
     },
     
-    #addFeatureInstance
+    #'@description Adds feature instance
+    #'@param featureInstance feature instance
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addFeatureInstance = function(featureInstance){
       return(self$addListElement("featureInstances", featureInstance))
     },
     
-    #delFeatureInstance
+    #'@description Deletes feature instance
+    #'@param featureInstance feature instance
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delFeatureInstance = function(featureInstance){
       return(self$delListElement("featureInstances", featureInstance))
     },
     
-    #setDataset
+    #'@description Set dataset
+    #'@param dataset dataset
     setDataset = function(dataset){
       self$dataset <- dataset
     },
     
-    #setOther
+    #'@description Set other
+    #'@param other other
     setOther = function(other){
       self$other <- other
     }

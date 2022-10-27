@@ -6,22 +6,6 @@
 #' @keywords ISO date
 #' @return Object of \code{\link{R6Class}} for modelling an ISO Date
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field date [\code{\link{ISOBaseDate}}] the date
-#' @field dateType [\code{\link{ISODateType}}] the date type
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to instantiate an \code{\link{ISODate}}
-#'  }
-#'  \item{\code{setDate(date)}}{
-#'    Sets the date
-#'  }
-#'  \item{\code{setDateType(dateType)}}{
-#'    Sets the date type
-#'  }
-#' }
 #' 
 #' @examples 
 #'   md <- ISODate$new()
@@ -41,13 +25,19 @@ ISODate <- R6Class("ISODate",
       xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     #'@field date date
      date = NULL,
+     #'@field dateType date type
      dateType = NULL,
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
      
-     #setDate
+     #'@description Set date
+     #'@param date object of class \link{Date} or \link{POSIXct}
      setDate = function(date){
        if(!(is(date, "Date") | is(date, "POSIXt"))){
          stop("The date should be either a 'Date' or 'POSIXt' object")
@@ -55,7 +45,9 @@ ISODate <- R6Class("ISODate",
        self$date = date
      },
      
-     #setDateType
+     #'@description Set date type
+     #'@param dateType object of class \link{ISODateType} 
+     #'  or any \link{character} values returned by \code{ISODateType$values()}
      setDateType = function(dateType){
        if(!is(dateType, "ISODateType")){
          dateType <- ISODateType$new(value = dateType)
