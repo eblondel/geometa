@@ -88,7 +88,7 @@ test_that("encoding",{
   #adding extent
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   md$addExtent(extent)
   
   #add keywords
@@ -365,7 +365,7 @@ test_that("encoding - i18n",{
   #adding extent
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   md$addExtent(extent)
   
   #add keywords
