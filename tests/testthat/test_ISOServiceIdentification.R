@@ -301,7 +301,7 @@ test_that("encoding - i18n",{
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  md$setResourceMaintenance(mi)
+  md$addResourceMaintenance(mi)
   
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -403,7 +403,7 @@ test_that("encoding",{
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  md$setResourceMaintenance(mi)
+  md$addResourceMaintenance(mi)
   
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -443,7 +443,7 @@ test_that("encoding",{
   #adding extent
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   md$addExtent(extent)
   
   #coupling type
@@ -752,7 +752,7 @@ test_that("encoding - i18n",{
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
   mi$setMaintenanceFrequency("daily")
-  md$setResourceMaintenance(mi)
+  md$addResourceMaintenance(mi)
   
   #adding legal constraints
   lc <- ISOLegalConstraints$new()
@@ -863,7 +863,7 @@ test_that("encoding - i18n",{
   #adding extent
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   md$addExtent(extent)
   
   #coupling type

@@ -97,7 +97,7 @@ test_that("encoding",{
   gml$setIdentifier("conversion", "codespace")
   extent <- ISOExtent$new()
   bbox <- ISOGeographicBoundingBox$new(minx = -180, miny = -90, maxx = 180, maxy = 90)
-  extent$setGeographicElement(bbox)
+  extent$addGeographicElement(bbox)
   gml$setDomainOfValidity(extent)
   gml$addScope("scope")
   xml <- gml$encode()

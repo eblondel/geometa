@@ -59,10 +59,10 @@ test_that("encoding/decoding",{
   geomObject <- ISOGeometricObjects$new()
   geomObject$setGeometricObjectType("surface")
   geomObject$setGeometricObjectCount(5L)
-  vsr$setGeometricObjects(geomObject)
+  vsr$addGeometricObjects(geomObject)
   expect_true(md$addSpatialRepresentationInfo(vsr))
   expect_false(md$addSpatialRepresentationInfo(vsr))
-  geomObject$addGeometricObjectCount(6L)
+  geomObject$setGeometricObjectCount(6L)
   expect_true(md$delSpatialRepresentationInfo(vsr))
   
   #ReferenceSystem

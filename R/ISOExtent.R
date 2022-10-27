@@ -46,7 +46,7 @@ ISOExtent <- R6Class("ISOExtent",
      #'@param element object of class \link{ISOGeographicExtent}
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setGeographicElement = function(element){
-        warning("Method 'setGeographicElemnt' is deprecated, please use 'addGeographicElement'!")
+        warning("Method 'setGeographicElement' is deprecated, please use 'addGeographicElement'!")
         return(self$addGeographicElement(element))
      },
      

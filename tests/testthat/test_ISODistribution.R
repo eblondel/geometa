@@ -47,7 +47,7 @@ test_that("encoding",{
       ZH="protocol_ZH"
     ))
   dto$addOnlineResource(or)
-  md$setDigitalTransferOptions(dto)
+  md$addDigitalTransferOptions(dto)
   
   #format
   format <- ISOFormat$new()

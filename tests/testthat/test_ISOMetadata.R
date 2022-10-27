@@ -750,7 +750,7 @@ test_that("encoding/decoding - i18n",{
       ZH = "地图概述"
     )
   )
-  ident$setGraphicOverview(go)
+  ident$addGraphicOverview(go)
   
   #maintenance information
   mi <- ISOMaintenanceInformation$new()
@@ -786,7 +786,7 @@ test_that("encoding/decoding - i18n",{
   expect_equal(length(lc$useLimitation), 2L)
   expect_equal(length(lc$accessConstraints), 2L)
   expect_equal(length(lc$useConstraints), 2L)
-  ident$setResourceConstraints(lc)
+  ident$addResourceConstraints(lc)
   
   #adding extent
   extent <- ISOExtent$new()

@@ -52,9 +52,9 @@ test_that("encoding",{
     fat$setDefinition(
       sprintf("description %s",i),
       locales = list(
-        EN = sprintf("the description 1",i),
-        FR = sprintf("la description 1",i),
-        ES = sprintf("la descripción 1",i),
+        EN = sprintf("the description %s",i),
+        FR = sprintf("la description %s",i),
+        ES = sprintf("la descripción %s",i),
         AR = sprintf("%s الوصف)",i),
         RU = sprintf("описание %s",i),
         ZH = sprintf("描述 %s",i)
@@ -154,9 +154,9 @@ test_that("encoding",{
     fat$setDefinition(
       sprintf("description %s",i),
       locales = list(
-        EN = sprintf("the description 1",i),
-        FR = sprintf("la description 1",i),
-        ES = sprintf("la descripción 1",i),
+        EN = sprintf("the description %s",i),
+        FR = sprintf("la description %s",i),
+        ES = sprintf("la descripción %s",i),
         AR = sprintf("%s الوصف)",i),
         RU = sprintf("описание %s",i),
         ZH = sprintf("描述 %s",i)
