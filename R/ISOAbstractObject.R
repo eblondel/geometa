@@ -286,26 +286,35 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }
         }
         
+        print_attrs <- function(obj){
+          paste(
+            sapply(names(obj$attrs), function(attrName){
+              paste0( crayon::magenta(attrName,"=",sep=""), crayon::green(obj$attrs[[attrName]]))
+            }
+          ), 
+          collapse=",")
+        }
+        
         #user values management
         shift <- "...."
         if(!is.null(fieldObj)){
           if(is(fieldObj, "ISOAbstractObject")){
             attrs_str <- ""
             if(length(fieldObj$attrs)>0){
-              attrs <- paste(sapply(names(fieldObj$attrs), function(attrName){paste0(attrName,"=",fieldObj$attrs[[attrName]])}), collapse=",")
+              attrs <- print_attrs(fieldObj)
               attrs_str <- paste0(" [",attrs,"] ")
             }
             cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str))
             fieldObj$print(depth = depth+1, add_codelist_description = add_codelist_description)
           }else if(is(fieldObj, "ISOAttributes")){
-            attrs <- paste(sapply(names(fieldObj$attrs), function(attrName){paste0(attrName,"=",fieldObj$attrs[[attrName]])}), collapse=",")
+            attrs <- print_attrs(fieldObj)
             cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " [",attrs,"]"))
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
               if(is(item, "ISOAbstractObject")){
                 attrs_str <- ""
                 if(length(item$attrs)>0){
-                  attrs <- paste(sapply(names(item$attrs), function(attrName){paste0(attrName,"=",item$attrs[[attrName]])}), collapse=",")
+                  attrs <- print_attrs(item)
                   attrs_str <- paste0(" [",attrs,"] ")
                 }
                 cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str))
@@ -316,7 +325,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   cat(paste0(": ", clVal, if(add_codelist_description) crayon::cyan(paste0(" {",clDes,"}")) else ""))
                 }
               }else if(is(item, "ISOAttributes")){
-                attrs <- paste(sapply(names(item$attrs), function(attrName){paste0(attrName,"=",item$attrs[[attrName]])}), collapse=",")
+                attrs <- print_attrs(item)
                 cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " [",attrs,"]"))
               }else if(is(item, "matrix")){
                 m <- paste(apply(item, 1L, function(x){
