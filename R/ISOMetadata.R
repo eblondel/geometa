@@ -390,7 +390,7 @@ ISOMetadata <- R6Class("ISOMetadata",
        #default values
        defaults <- list(
          characterSet = ISOCharacterSet$new(value = "utf8"),
-         hierarchyLevel = ISOHierarchyLevel$new(value = "dataset")
+         hierarchyLevel = list(ISOHierarchyLevel$new(value = "dataset"))
        )
        
        if(!is.null(xml)){

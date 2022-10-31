@@ -121,7 +121,7 @@ ISODataIdentification <- R6Class("ISODataIdentification",
      #'@field language language [1..*]: character
      language = list(),
      #'@field characterSet characterSet [0..*]: ISOCharacterSet
-     characterSet = NULL,
+     characterSet = list(),
      #'@field topicCategory topicCategory [0..*]: ISOTopicCategory
      topicCategory = list(),
      #'@field extent extent [0..*]: ISOExtent
@@ -135,7 +135,7 @@ ISODataIdentification <- R6Class("ISODataIdentification",
        
        #default values
        defaults <- list(
-         characterSet = ISOCharacterSet$new(value = "utf8")
+         characterSet = list(ISOCharacterSet$new(value = "utf8"))
        )
        
        super$initialize(xml = xml, defaults = defaults)
