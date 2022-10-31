@@ -22,13 +22,13 @@ test_that("GML Element",{
   gml3 <- GMLElement$new(element = "tag3")
   gml3$attrs <- list(attr5 = "value5", attr6 = "value6")
   gml3$setValue("value")
-  gml2[["child"]] <- gml3
-  gml1[["child"]] <- gml2
+  gml2[["tag3"]] <- gml3
+  gml1[["tag2"]] <- gml2
   
   xml <- gml1$encode(validate = FALSE)
   expect_is(xml, "XMLInternalNode")
   
-  #decoding
+  #decodingnames
   gml1copy <- GMLElement$new(xml = xml)
   xmlcopy <- gml1copy$encode(validate = FALSE)
   
