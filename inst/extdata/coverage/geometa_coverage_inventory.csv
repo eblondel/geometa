@@ -296,7 +296,7 @@
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Scale","ISOScale",TRUE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","ScopedName","ISOScopedName",TRUE
 "ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","TypeName","ISOTypeName",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","UnlimitedInteger","ISOUnlimitedInteger",TRUE
+"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","UnlimitedInteger","ISOBaseUnlimitedInteger",TRUE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractContinuousCoverage","<missing>",FALSE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCoordinateOperation","GMLAbstractCoordinateOperation",TRUE
 "GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCoordinateSystem","GMLAbstractCoordinateSystem",TRUE
