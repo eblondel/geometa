@@ -366,7 +366,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #'@description Provides a custom print output (as tree) of the current class
     #'@param ... args
     #'@param depth class nesting depth
-    print = function(..., depth = 1){
+    #'@param add_codelist_description Add codelist description. Default is \code{TRUE}
+    print = function(..., depth = 1, add_codelist_description = TRUE){
       #list of fields to encode as XML
       fields <- rev(names(self))
       
@@ -383,7 +384,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         if(length(clDes)==0){
           clDes <- self$valueDescription
         }
-        cat(paste0(": ", clVal, crayon::cyan(paste0(" {",clDes,"}"))))
+        cat(paste0(": ", clVal, if(add_codelist_description) crayon::cyan(paste0(" {",clDes,"}")) else ""))
       }
       
       for(field in fields){
@@ -403,10 +404,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             attrs_str <- ""
             if(length(fieldObj$attrs)>0){
               attrs <- paste(sapply(names(fieldObj$attrs), function(attrName){paste0(attrName,"=",fieldObj$attrs[[attrName]])}), collapse=",")
-              attrs_str <- paste0("[",attrs,"]")
+              attrs_str <- paste0("[",attrs,"] ")
             }
-            cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str, " "))
-            fieldObj$print(depth = depth+1)
+            cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str))
+            fieldObj$print(depth = depth+1, add_codelist_description = add_codelist_description)
           }else if(is(fieldObj, "ISOAttributes")){
             attrs <- paste(sapply(names(fieldObj$attrs), function(attrName){paste0(attrName,"=",fieldObj$attrs[[attrName]])}), collapse=",")
             cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), "[",attrs,"]"))
@@ -416,14 +417,14 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 attrs_str <- ""
                 if(length(item$attrs)>0){
                   attrs <- paste(sapply(names(item$attrs), function(attrName){paste0(attrName,"=",item$attrs[[attrName]])}), collapse=",")
-                  attrs_str <- paste0("[",attrs,"]")
+                  attrs_str <- paste0("[",attrs,"] ")
                 }
                 cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str))
-                item$print(depth = depth+1)
+                item$print(depth = depth+1, add_codelist_description = add_codelist_description)
                 if(is(item, "ISOCodeListValue")){
                   clVal <- item$printAttrs$codeListValue
                   clDes <- item$codelistId$entries[item$codelistId$entries$value == clVal,"description"]
-                  cat(paste0(": ", clVal, crayon::cyan(paste0(" {",clDes,"}"))))
+                  cat(paste0(": ", clVal, if(add_codelist_description) crayon::cyan(paste0(" {",clDes,"}")) else ""))
                 }
               }else if(is(item, "ISOAttributes")){
                 attrs <- paste(sapply(names(item$attrs), function(attrName){paste0(attrName,"=",item$attrs[[attrName]])}), collapse=",")
@@ -1623,37 +1624,61 @@ ISOAbstractObject$getISOClassByNode = function(node){
   return(outClass)
 }
 
-ISOAbstractObject$compare = function(metadataElement1, metadataElement2){
-  text1 <- NULL
-  if(is(metadataElement1, "ISOAbstractObject")){
-    xml1 <-metadataElement1$encode(addNS = TRUE, validate = FALSE,
-                                   resetSerialID = FALSE, setSerialID = FALSE)
-    if(metadataElement1$isDocument()){
-      content1 <- as(xml1, "character")
-      content1 <- gsub("<!--.*?-->", "", content1)
-      xml1 <- xmlParse(content1) 
-    }else{
-      xml1 <- XML::xmlDoc(xml1)
+ISOAbstractObject$compare = function(metadataElement1, metadataElement2, method = NULL){
+  if(is.null(method)) method <- getGeometaOption("object_comparator")
+  same <- FALSE
+  switch(method,
+    "xml" = {
+      #base on XML representation
+      text1 <- NULL
+      if(is(metadataElement1, "ISOAbstractObject")){
+        xml1 <-metadataElement1$encode(addNS = TRUE, validate = FALSE,
+                                       resetSerialID = FALSE, setSerialID = FALSE)
+        if(metadataElement1$isDocument()){
+          content1 <- as(xml1, "character")
+          content1 <- gsub("<!--.*?-->", "", content1)
+          xml1 <- xmlParse(content1) 
+        }else{
+          xml1 <- XML::xmlDoc(xml1)
+        }
+        text1 <- as(xml1, "character")
+      }else{
+        text1 <- as.character(metadataElement1)
+      }
+      text2 <- NULL
+      if(is(metadataElement2, "ISOAbstractObject")){
+        xml2 <- metadataElement2$encode(addNS = TRUE, validate = FALSE, setSerialID = FALSE)
+        if(metadataElement2$isDocument()){
+          content2 <- as(xml2, "character")
+          content2 <- gsub("<!--.*?-->", "", content2)
+          xml2 <- xmlParse(content2) 
+        }else{
+          xml2 <- XML::xmlDoc(xml2)
+        }
+        text2 <- as(xml2, "character")
+      }else{
+        text2 <- as.character(metadataElement2)
+      }
+      same <- (text1 == text2)
+    },
+    "print" = {
+      #based on simplified print representation
+      text1 <- NULL
+      if(is(metadataElement1, "ISOAbstractObject")){
+        text1 <- paste(utils::capture.output(metadataElement1$print( add_codelist_description = F)), collapse="")
+      }else{
+        text1 <- as.character(metadataElement1)
+      }
+      text2 <- NULL
+      if(is(metadataElement2, "ISOAbstractObject")){
+        text2 <- paste(utils::capture.output(metadataElement2$print( add_codelist_description = F)), collapse="")
+      }else{
+        text2 <- as.character(metadataElement2)
+      }
+      same <- (text1 == text2)
     }
-    text1 <- as(xml1, "character")
-  }else{
-    text1 <- as.character(metadataElement1)
-  }
-  text2 <- NULL
-  if(is(metadataElement2, "ISOAbstractObject")){
-    xml2 <- metadataElement2$encode(addNS = TRUE, validate = FALSE, setSerialID = FALSE)
-    if(metadataElement2$isDocument()){
-      content2 <- as(xml2, "character")
-      content2 <- gsub("<!--.*?-->", "", content2)
-      xml2 <- xmlParse(content2) 
-    }else{
-      xml2 <- XML::xmlDoc(xml2)
-    }
-    text2 <- as(xml2, "character")
-  }else{
-    text2 <- as.character(metadataElement2)
-  }
-  return(text1 == text2)
+  )
+  return(same)
 }
 
 #' @name getClassesInheriting
@@ -1709,7 +1734,6 @@ getClassesInheriting <- function(classname, extended = FALSE, pretty = FALSE){
     std_infos <- do.call("rbind",lapply(list_of_classes, function(x){
       clazz <- try(eval(parse(text=x)),silent=TRUE)
       if(is(clazz,"try-error")) clazz <- try(eval(parse(text=paste0("geometa::",x))),silent=TRUE)
-      print(clazz)
       std_info <- data.frame(
         environment = environmentName(clazz$parent_env),
         ns_prefix = if(!is.null(clazz$private_fields$xmlNamespacePrefix))clazz$private_fields$xmlNamespacePrefix else NA,

@@ -281,7 +281,7 @@ Initializes object
 \subsection{Method \code{print()}}{
 Provides a custom print output (as tree) of the current class
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$print(..., depth = 1)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$print(..., depth = 1, add_codelist_description = TRUE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -290,6 +290,8 @@ Provides a custom print output (as tree) of the current class
 \item{\code{...}}{args}
 
 \item{\code{depth}}{class nesting depth}
+
+\item{\code{add_codelist_description}}{Add codelist description. Default is \code{TRUE}}
 }
 \if{html}{\out{</div>}}
 }

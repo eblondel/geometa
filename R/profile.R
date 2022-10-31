@@ -5,6 +5,7 @@
   .geometa.options$schemaBaseUrl = "http://www.isotc211.org/2005/resources"
   .geometa.options$codelistUrl <- "http://standards.iso.org/iso/19139/resources"
   .geometa.options$internalCodelists <- TRUE
+  .geometa.options$object_comparator <- "print"
   
   #hidden objects
   assign(".geometa.iso", new.env(), envir= asNamespace(pkgname))

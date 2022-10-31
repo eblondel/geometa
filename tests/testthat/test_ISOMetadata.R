@@ -197,7 +197,8 @@ test_that("encoding/decoding",{
   vert <- ISOVerticalExtent$new()
   vert$setMinimumValue(0)
   vert$setMaximumValue(500)
-  vert$setUnitOfMeasure("m")
+  #vert$setUnitOfMeasure("m")
+  vert$verticalCRS <- ISOAttributes$new("gco:nilReason" = "missing")
   extent$addVerticalElement(vert)
   #temporal element
   te <- ISOTemporalExtent$new()
@@ -332,8 +333,11 @@ test_that("encoding/decoding",{
   md2 <- ISOMetadata$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(ISOAbstractObject$compare(md, md2))
-  
+  elapsed_with_print_comparator <- system.time(expect_true(ISOAbstractObject$compare(md, md2)))[["elapsed"]]
+  setGeometaOption("object_comparator", "xml")
+  elapsed_with_xml_comparator <- system.time(expect_true(ISOAbstractObject$compare(md, md2)))[["elapsed"]]
+  setGeometaOption("object_comparator", "print")
+  expect_true(elapsed_with_print_comparator < elapsed_with_xml_comparator)
 })
 
 test_that("encoding/decoding - i18n",{

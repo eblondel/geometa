@@ -66,6 +66,41 @@ test_that("encoding - with keywords as anchors",{
   
 })
 
+test_that("encoding - with keywords as anchors / test object comparison methods",{
+  testthat::skip_on_cran()
+  
+  #encoding
+  md <- ISOKeywords$new()
+  md$addKeyword(ISOAnchor$new(name = "keyword1", href = "http://myvocabulary.geometa/keyword1"))
+  md$addKeyword(ISOAnchor$new(name = "keyword2", href = "http://myvocabulary.geometa/keyword2"))
+  md$setKeywordType("theme")
+  expect_is(md$keyword, "list")
+  expect_is(md$type, "ISOKeywordType")
+  th <- ISOCitation$new()
+  th$setTitle("General")
+  th$addAlternateTitle("General")
+  d <- ISODate$new()
+  d$setDate(ISOdate(2015,1,1))
+  d$setDateType("revision")
+  th$addDate(d)
+  md$setThesaurusName(th)
+  expect_is(md$thesaurusName, "ISOCitation")
+  
+  #encoding
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOKeywords$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  system.time(expect_true(ISOAbstractObject$compare(md, md2)))
+  setGeometaOption("object_comparator", "xml")
+  system.time(expect_true(ISOAbstractObject$compare(md, md2)))
+  setGeometaOption("object_comparator", "print")
+  
+})
+
 test_that("encoding - i18n - with keywords as character string",{
   testthat::skip_on_cran()
   #encoding
