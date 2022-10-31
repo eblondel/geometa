@@ -1,4 +1,4 @@
-#' ISOUnlimitedInteger
+#' ISOBaseUnlimitedInteger
 #'
 #' @docType class
 #' @importFrom R6 R6Class
@@ -14,7 +14,7 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOUnlimitedInteger <- R6Class("ISOUnlimitedInteger",
+ISOBaseUnlimitedInteger <- R6Class("ISOBaseUnlimitedInteger",
     inherit = ISOAbstractObject,
     private = list(
       xmlElement = "UnlimitedInteger",

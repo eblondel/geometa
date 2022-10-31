@@ -34,7 +34,7 @@ ISOProcessStep <- R6Class("ISOProcessStep",
      description = NULL,
      #'@field rationale rationale [0..1]: character
      rationale = NULL,
-     #'@field dateTime dateTime [0..1]: ISOBaseDateTime or POSIXct/POSIXt
+     #'@field dateTime dateTime [0..1]: POSIXct/POSIXt
      dateTime = NULL,
      #'@field processor processor [0..*]: ISOResponsibleParty
      processor = list(),
@@ -68,14 +68,10 @@ ISOProcessStep <- R6Class("ISOProcessStep",
      },
      
      #'@description Set date time
-     #'@param dateTime object of class \link{ISOBaseDateTime} or \link{POSIXct}
+     #'@param dateTime object of class \link{POSIXct}
      setDateTime = function(dateTime){
-       if(!is(dateTime, "ISOBaseDateTime")){
-         if(all(class(dateTime) == c("POSIXct","POSIXt"))){
-           dateTime <- ISOBaseDateTime$new(value = dateTime)
-         }else{
-           stop("The argument should be a 'ISOBaseDateTime' or POSIXct/POSIXt object")
-         }
+       if(!is(dateTime, "POSIXct")){
+         stop("The argument should be a 'ISOBaseDateTime' or POSIXct/POSIXt object")
        }
        self$dateTime = dateTime
      },

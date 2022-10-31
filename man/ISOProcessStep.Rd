@@ -45,7 +45,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{rationale}}{rationale [0..1]: character}
 
-\item{\code{dateTime}}{dateTime [0..1]: ISOBaseDateTime or POSIXct/POSIXt}
+\item{\code{dateTime}}{dateTime [0..1]: POSIXct/POSIXt}
 
 \item{\code{processor}}{processor [0..*]: ISOResponsibleParty}
 
@@ -167,7 +167,7 @@ Set date time
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{dateTime}}{object of class \link{ISOBaseDateTime} or \link{POSIXct}}
+\item{\code{dateTime}}{object of class \link{POSIXct}}
 }
 \if{html}{\out{</div>}}
 }
