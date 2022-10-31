@@ -60,7 +60,7 @@ SWEQuantityRange <- R6Class("SWEQuantityRange",
      #'@description setConstraint
      #'@param constraint constraint
      setConstraint = function(constraint){
-       self$constraint <- SWEElement$new(element = "constraint", value = constraint)
+       self$constraint <- SWEElement$create(element = "constraint", value = constraint)
      },
      
      #'@description setValue
@@ -80,7 +80,7 @@ SWEQuantityRange <- R6Class("SWEQuantityRange",
        }else{
          stop("Value should be either a vector or matrix")
        }
-       self$value <- SWEElement$new(element = "value", value = value)
+       self$value <- SWEElement$create(element = "value", value = value)
      }
    )                        
 )

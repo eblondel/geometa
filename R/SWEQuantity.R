@@ -60,7 +60,7 @@ SWEQuantity <- R6Class("SWEQuantity",
     #'@description setConstraint
     #'@param constraint constraint
     setConstraint = function(constraint){
-      self$constraint <- SWEElement$new(element = "constraint", value = constraint)
+      self$constraint <- SWEElement$create(element = "constraint", value = constraint)
     },
     
     #'@description setValue
@@ -69,7 +69,7 @@ SWEQuantity <- R6Class("SWEQuantity",
       if(!is.numeric(value)){
         stop("Value should be numeric")
       }
-      self$value <- SWEElement$new(element = "value", value = value)
+      self$value <- SWEElement$create(element = "value", value = value)
     }
   )                        
 )
