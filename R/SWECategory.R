@@ -53,13 +53,13 @@ SWECategory <- R6Class("SWECategory",
      #'@description setCodeSpace
      #'@param codeSpace codeSpace
      setCodeSpace = function(codeSpace){
-       self$codeSpace <- codeSpace
+       self$codeSpace <- SWEElement$create(element = "codeSpace", value = codeSpace)
      },
      
      #'@description setConstraint
      #'@param constraint constraint
      setConstraint = function(constraint){
-       self$constraint <- constraint
+       self$constraint <- SWEElement$create(element = "constraint", value = constraint)
      },
      
      #'@description setValue
@@ -68,7 +68,7 @@ SWECategory <- R6Class("SWECategory",
        if(!is.character(value)){
          stop("Value should be character")
        }
-       self$value <- value
+       self$value <- SWEElement$create(element = "value", value = value)
      }
    )                        
 )

@@ -27,7 +27,8 @@ getGeometaOption <- function(option){
 #'@name getGeometaOptions
 #'@aliases getGeometaOptions
 #'@title getGeometaOptions
-#' @description \code{getGeometaOptions} allows to get options from \pkg{geometa}
+#'@description \code{getGeometaOptions} allows to get options from \pkg{geometa}
+#'@export
 #' 
 #' @usage getGeometaOptions()
 #' 

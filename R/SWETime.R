@@ -60,7 +60,7 @@ SWETime <- R6Class("SWETime",
      #'@description setConstraint
      #'@param constraint constraint
      setConstraint = function(constraint){
-       self$constraint <- constraint
+       self$constraint <- SWEElement$new(element = "constraint", value = constraint)
      },
      
      #'@description setValue
@@ -69,7 +69,7 @@ SWETime <- R6Class("SWETime",
        if(!is(value,"Date") && !is(value, "POSIXt")){
          stop("Value should be either a Date or POSIX object")
        }
-       self$value <- value
+       self$value <- SWEElement$new(element = "value", value = value)
      }
    )                        
 )

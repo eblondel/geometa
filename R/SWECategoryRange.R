@@ -52,13 +52,13 @@ SWECategoryRange <- R6Class("SWECategoryRange",
     #'@description setCodeSpace
     #'@param codeSpace codeSpace
     setCodeSpace = function(codeSpace){
-      self$codeSpace <- codeSpace
+      self$codeSpace <- SWEElement$create(element = "codeSpace", value = codeSpace)
     },
     
     #'@description setConstraint
     #'@param constraint constraint
     setConstraint = function(constraint){
-      self$constraint <- constraint
+      self$constraint <- SWEElement$create(element = "constraint", value = constraint)
     },
     
     #'@description setValue
@@ -78,7 +78,7 @@ SWECategoryRange <- R6Class("SWECategoryRange",
       }else{
         stop("Value should be either a vector or matrix")
       }
-      self$value <- value
+      self$value <- SWEElement$create(element = "value", value = value)
     }
   )                        
 )

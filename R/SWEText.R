@@ -47,13 +47,13 @@ SWEText <- R6Class("SWEText",
     #'@description setConstraint
     #'@param constraint constraint
     setConstraint = function(constraint){
-      self$constraint <- constraint
+      self$constraint <- SWEElement$new(element = "constraint", value = constraint)
     },
     
     #'@description setValue
     #'@param value value
     setValue = function(value){
-      self$value <- value
+      self$value <- SWEElement$new(element = "value", value = value)
     }
   )                        
 )

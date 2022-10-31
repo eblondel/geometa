@@ -47,7 +47,7 @@ SWECount <- R6Class("SWECount",
     #'@description setConstraint
     #'@param constraint constraint
     setConstraint = function(constraint){
-      self$constraint <- constraint
+      self$constraint <- SWEElement$create(element = "constraint", value = constraint)
     },
     
     #'@description setValue
@@ -56,7 +56,7 @@ SWECount <- R6Class("SWECount",
       if(!is.integer(value)){
         stop("Value should be integer")
       }
-      self$value <- value
+      self$value <- SWEElement$create(element = "value", value = value)
     }
   )                        
 )

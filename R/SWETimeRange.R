@@ -61,14 +61,14 @@ SWETimeRange <- R6Class("SWETimeRange",
     #'@description setConstraint
     #'@param constraint constraint
     setConstraint = function(constraint){
-      self$constraint <- constraint
+      self$constraint <- SWEElement$create(element = "constraint", value = constraint)
     },
     
     #'@description setValue
     #'@param start start time
     #'@param end end time
     setValue = function(start, end){
-      self$value <- matrix(list(start, end), nrow = 1, ncol = 2, byrow = TRUE)
+      self$value <- SWEElement$create(element = "value", value = matrix(list(start, end), nrow = 1, ncol = 2, byrow = TRUE))
     }
   )                        
 )

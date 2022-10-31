@@ -47,7 +47,7 @@ SWECountRange <- R6Class("SWECountRange",
     #'@description setConstraint
     #'@param constraint constraint
     setConstraint = function(constraint){
-      self$constraint <- constraint
+      self$constraint <- SWEElement$create(element = "constraint", value = constraint)
     },
     
     #'@description setValue
@@ -67,7 +67,7 @@ SWECountRange <- R6Class("SWECountRange",
       }else{
         stop("Value should be either a vector or matrix")
       }
-      self$value <- value
+      self$value <- SWEElement$create(element = "value", value = value)
     }
   )                        
 )
