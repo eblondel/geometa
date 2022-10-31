@@ -198,7 +198,7 @@ test_that("encoding/decoding",{
   vert$setMinimumValue(0)
   vert$setMaximumValue(500)
   #vert$setUnitOfMeasure("m")
-  vert$verticalCRS <- ISOAttributes$new("gco:nilReason" = "missing")
+  vert$verticalCRS <- NA
   extent$addVerticalElement(vert)
   #temporal element
   te <- ISOTemporalExtent$new()
