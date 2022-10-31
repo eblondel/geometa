@@ -404,20 +404,20 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             attrs_str <- ""
             if(length(fieldObj$attrs)>0){
               attrs <- paste(sapply(names(fieldObj$attrs), function(attrName){paste0(attrName,"=",fieldObj$attrs[[attrName]])}), collapse=",")
-              attrs_str <- paste0("[",attrs,"] ")
+              attrs_str <- paste0(" [",attrs,"] ")
             }
             cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str))
             fieldObj$print(depth = depth+1, add_codelist_description = add_codelist_description)
           }else if(is(fieldObj, "ISOAttributes")){
             attrs <- paste(sapply(names(fieldObj$attrs), function(attrName){paste0(attrName,"=",fieldObj$attrs[[attrName]])}), collapse=",")
-            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), "[",attrs,"]"))
+            cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " [",attrs,"]"))
           }else if(is(fieldObj, "list")){
             for(item in fieldObj){
               if(is(item, "ISOAbstractObject")){
                 attrs_str <- ""
                 if(length(item$attrs)>0){
                   attrs <- paste(sapply(names(item$attrs), function(attrName){paste0(attrName,"=",item$attrs[[attrName]])}), collapse=",")
-                  attrs_str <- paste0("[",attrs,"] ")
+                  attrs_str <- paste0(" [",attrs,"] ")
                 }
                 cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str))
                 item$print(depth = depth+1, add_codelist_description = add_codelist_description)
@@ -428,7 +428,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 }
               }else if(is(item, "ISOAttributes")){
                 attrs <- paste(sapply(names(item$attrs), function(attrName){paste0(attrName,"=",item$attrs[[attrName]])}), collapse=",")
-                cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), "[",attrs,"]"))
+                cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " [",attrs,"]"))
               }else if(is(item, "matrix")){
                 m <- paste(apply(item, 1L, function(x){
                   x <- lapply(x, function(el){
@@ -565,7 +565,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           }else{
             fieldValue <- fieldClass$new(xml = child)
             fieldValue$parentAttrs <- parentAttrs
-            fieldValue$attrs <- as.list(xmlAttrs(child, TRUE, FALSE))
+            attrs <- as.list(xmlAttrs(child, TRUE, FALSE))
+            if(length(attrs)>0) attrs <- attrs[attrs != "gmd:PT_FreeText_PropertyType"]
+            fieldValue$attrs <- attrs
           }
           if(is(self[[fieldName]], "list")){
             self[[fieldName]] <- c(self[[fieldName]], fieldValue)
@@ -682,7 +684,14 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                     return(out)
                   })
                 }
-                value <- ISOAttributes$new(attrs)
+                
+                if(length(attrs)==1 && names(attrs)== "gco:nilReason"){
+                  #if only gco:nilReason attribute we resolve value as NA
+                  value <- NA
+                }else{
+                  #if others attributes we keep them
+                  value <- ISOAttributes$new(attrs[names(attrs)!="gco:nilReason"])
+                }
               }
             }
             if(fieldName == "text") fieldName <- "value"
@@ -702,7 +711,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         }
       }
       
-      self$attrs <- as.list(xmlattrs)
+      attrs <- as.list(xmlattrs)
+      if(length(attrs)>0) attrs <- attrs[attrs != "gmd:PT_FreeText_PropertyType"]
+      self$attrs <- attrs
       if("gco:nilReason" %in% names(xmlattrs)) self$isNull <- TRUE
     },
     
