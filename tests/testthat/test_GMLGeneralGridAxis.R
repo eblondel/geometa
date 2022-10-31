@@ -28,3 +28,20 @@ test_that("GMLGeneralGridAxis",{
   expect_true(ISOAbstractObject$compare(md, md2))
 })
 
+test_that("GMLGeneralGridAxis - no coefficients",{
+  testthat::skip_on_cran()
+  
+  #encoding
+  md <- GMLGeneralGridAxis$new()
+  md$setOffsetVector(c(0,0,0,1))
+  md$setGridAxesSpanned("elev")
+  md$setSequenceRule("Linear")
+  
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  #decoding
+  md2 <- GMLGeneralGridAxis$new(xml = xml)
+  xml2 <- md2$encode()
+  #assert object identity
+  expect_true(ISOAbstractObject$compare(md, md2))
+})
