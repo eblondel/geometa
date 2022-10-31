@@ -54,12 +54,8 @@ GMLGrid <- R6Class("GMLGrid",
        if(dim(m)[2]!=2){
          stop("Number of matrix columns should be equal to 2 (min/max)")
        }
-       envelope <- GMLElement$create(element = "GridEnvelope")
-       envelope[["low"]] <- GMLElement$create(element="low", value = t(m[,1L]))
-       envelope[["high"]] <- GMLElement$create(element="high", value = t(m[,2L]))
-       limits <- GMLElement$create(element = "limits")
-       limits[["GridEnvelope"]] <- envelope
-       self$limits <- limits
+       envelope <- GMLGridEnvelope$new(bbox = m)
+       self$limits <- envelope
        self$setAttr("dimension", dim(m)[1])
        
      },
