@@ -493,6 +493,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               (inherits(self,"GMLAbstractRing")|
                inherits(self,"GMLAbstractGeometricPrimitive")|
                inherits(self,"GMLEnvelope")|
+               inherits(self,"GMLGridEnvelope")|
                inherits(self,"GMLGeneralGridAxis"))){
               value <- xmlValue(child)
               if(value=="") value <- NA
