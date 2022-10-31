@@ -12,7 +12,7 @@ context("SWECount")
 test_that("SWECount",{
   testthat::skip_on_cran()
   #encoding
-  cnt <- SWECount$new(value = 1000)
+  cnt <- SWECount$new(value = 1000L)
   xml <- cnt$encode()
   expect_is(xml, "XMLInternalNode")
   #decoding
