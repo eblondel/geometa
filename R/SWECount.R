@@ -39,8 +39,8 @@ SWECount <- R6Class("SWECount",
       super$initialize(xml, element = private$xmlElement,
                        updatable = updatable, optional = optional, definition = definition)
       if(is.null(xml)){
-        self$constraint <- constraint
-        self$value <- value
+        self$setConstraint(constraint)
+        self$setValue(value)
       }
     },
     
