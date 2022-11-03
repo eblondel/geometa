@@ -1227,10 +1227,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #'@param fieldObj field object
     #'@param an object of class \link{R6Class}
     wrapBaseElement = function(field, fieldObj){
-      dataType <- class(fieldObj)
+      dataType <- class(fieldObj)[1]
       
       #specific coercing
-      if(all(dataType == c("POSIXct","POSIXt"))) dataType <- "datetime"
+      if(is(fieldObj, "POSIXt")) dataType <- "datetime"
       
       #re-encoding (if needed)
       if(tolower(dataType)=="character"){
