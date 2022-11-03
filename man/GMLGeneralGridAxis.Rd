@@ -49,6 +49,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-GMLGeneralGridAxis-new}{\code{GMLGeneralGridAxis$new()}}
+\item \href{#method-GMLGeneralGridAxis-decode}{\code{GMLGeneralGridAxis$decode()}}
 \item \href{#method-GMLGeneralGridAxis-setOffsetVector}{\code{GMLGeneralGridAxis$setOffsetVector()}}
 \item \href{#method-GMLGeneralGridAxis-setCoefficients}{\code{GMLGeneralGridAxis$setCoefficients()}}
 \item \href{#method-GMLGeneralGridAxis-setGridAxesSpanned}{\code{GMLGeneralGridAxis$setGridAxesSpanned()}}
@@ -66,7 +67,6 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-addListElement'><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-contains'><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-createLocalisedProperty'><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-decode'><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-delListElement'><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-encode'><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-getClass'><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
@@ -96,6 +96,23 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Initializes object
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{GMLGeneralGridAxis$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-GMLGeneralGridAxis-decode"></a>}}
+\if{latex}{\out{\hypertarget{method-GMLGeneralGridAxis-decode}{}}}
+\subsection{Method \code{decode()}}{
+Decodes XML
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{GMLGeneralGridAxis$decode(xml)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

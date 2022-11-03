@@ -452,11 +452,6 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             fieldValue <- switch(fieldClass$classname,
                                  "ISOBaseBoolean" = as.logical(fieldValue),
                                  "ISOBaseInteger" = as.integer(fieldValue),
-                                 "ISOBaseUnlimitedInteger" = {
-                                   int = as.integer(fieldValue)
-                                   class(int) = "unlimitedinteger"
-                                   int
-                                  },
                                  "ISOBaseReal" = as.numeric(fieldValue),
                                  "ISOBaseDecimal" = {
                                    fieldValue <- as.numeric(fieldValue)
@@ -1243,7 +1238,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                         "numeric"   = ISOBaseReal$new(value = fieldObj),
                         "decimal"   = ISOBaseDecimal$new(value = fieldObj), #Requires specific class call
                         "integer"   = ISOBaseInteger$new(value = fieldObj),
-                        "unlimitedinteger" = ISOBaseUnlimitedInteger$new(value = fieldObj),
+                        "unlimitedinteger" = ISOUnlimitedInteger$new(value = fieldObj),
                         "logical"   = ISOBaseBoolean$new(value = fieldObj),
                         "datetime"  = ISOBaseDateTime$new(value = fieldObj),
                         "date"      = ISOBaseDate$new(value = fieldObj),

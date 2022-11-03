@@ -8,7 +8,7 @@ require(testthat)
 
 context("ISOMultiplicityRange")
 
-test_that("encoding",{
+test_that("encoding - cardinality 1-1",{
   testthat::skip_on_cran()
   #encoding
   md <- ISOMultiplicityRange$new(lower = 1, upper = 1)
@@ -20,6 +20,22 @@ test_that("encoding",{
   md2 <- ISOMultiplicityRange$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(ISOAbstractObject$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2, "xml"))
+  
+})
+
+test_that("encoding - cardinality 1-N",{
+  testthat::skip_on_cran()
+  #encoding
+  md <- ISOMultiplicityRange$new(lower = 1, upper = Inf)
+  expect_is(md, "ISOMultiplicityRange")
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOMultiplicityRange$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2, "xml"))
   
 })
