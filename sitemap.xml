@@ -367,9 +367,6 @@
     <loc>/reference/ISOBaseReal.html</loc>
   </url>
   <url>
-    <loc>/reference/ISOBaseUnlimitedInteger.html</loc>
-  </url>
-  <url>
     <loc>/reference/ISOBinary.html</loc>
   </url>
   <url>
@@ -959,6 +956,9 @@
   </url>
   <url>
     <loc>/reference/ISOURL.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ISOUnlimitedInteger.html</loc>
   </url>
   <url>
     <loc>/reference/ISOUsage.html</loc>

@@ -106,6 +106,7 @@ GMLGeneralGridAxis"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-GMLGeneralGridAxis-new"><code>GMLGeneralGridAxis$new()</code></a></p></li>
+<li><p><a href="#method-GMLGeneralGridAxis-decode"><code>GMLGeneralGridAxis$decode()</code></a></p></li>
 <li><p><a href="#method-GMLGeneralGridAxis-setOffsetVector"><code>GMLGeneralGridAxis$setOffsetVector()</code></a></p></li>
 <li><p><a href="#method-GMLGeneralGridAxis-setCoefficients"><code>GMLGeneralGridAxis$setCoefficients()</code></a></p></li>
 <li><p><a href="#method-GMLGeneralGridAxis-setGridAxesSpanned"><code>GMLGeneralGridAxis$setGridAxesSpanned()</code></a></p></li>
@@ -118,7 +119,6 @@ GMLGeneralGridAxis"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="addListElement"><a href="ISOAbstractObject.html#method-addListElement"><code>geometa::ISOAbstractObject$addListElement()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="contains"><a href="ISOAbstractObject.html#method-contains"><code>geometa::ISOAbstractObject$contains()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="createLocalisedProperty"><a href="ISOAbstractObject.html#method-createLocalisedProperty"><code>geometa::ISOAbstractObject$createLocalisedProperty()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="decode"><a href="ISOAbstractObject.html#method-decode"><code>geometa::ISOAbstractObject$decode()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="delListElement"><a href="ISOAbstractObject.html#method-delListElement"><code>geometa::ISOAbstractObject$delListElement()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="encode"><a href="ISOAbstractObject.html#method-encode"><code>geometa::ISOAbstractObject$encode()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="getClass"><a href="ISOAbstractObject.html#method-getClass"><code>geometa::ISOAbstractObject$getClass()</code></a></span></li>
@@ -154,15 +154,31 @@ GMLGeneralGridAxis"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-GMLGeneralGridAxis-setOffsetVector"></a><div class="section">
-<h3 id="method-setoffsetvector-">Method <code>setOffsetVector()</code><a class="anchor" aria-label="anchor" href="#method-setoffsetvector-"></a></h3>
-<p>Set offset vector</p><div class="section">
+</div><p></p><hr><a id="method-GMLGeneralGridAxis-decode"></a><div class="section">
+<h3 id="method-decode-">Method <code>decode()</code><a class="anchor" aria-label="anchor" href="#method-decode-"></a></h3>
+<p>Decodes XML</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">GMLGeneralGridAxis</span><span class="op">$</span><span class="fu">setOffsetVector</span><span class="op">(</span><span class="va">offsetVector</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">GMLGeneralGridAxis</span><span class="op">$</span><span class="fu">decode</span><span class="op">(</span><span class="va">xml</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>xml</code></dt>
+<dd><p>object of class XMLInternalNode-class</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-GMLGeneralGridAxis-setOffsetVector"></a><div class="section">
+<h3 id="method-setoffsetvector-">Method <code>setOffsetVector()</code><a class="anchor" aria-label="anchor" href="#method-setoffsetvector-"></a></h3>
+<p>Set offset vector</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">GMLGeneralGridAxis</span><span class="op">$</span><span class="fu">setOffsetVector</span><span class="op">(</span><span class="va">offsetVector</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>offsetVector</code></dt>
 <dd><p>offset vector object of class <a href="https://rdrr.io/r/base/vector.html" class="external-link">vector</a></p></dd>
 
@@ -173,12 +189,12 @@ GMLGeneralGridAxis"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-GMLGeneralGridAxis-setCoefficients"></a><div class="section">
 <h3 id="method-setcoefficients-">Method <code>setCoefficients()</code><a class="anchor" aria-label="anchor" href="#method-setcoefficients-"></a></h3>
 <p>Set coefficients</p><div class="section">
-<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">GMLGeneralGridAxis</span><span class="op">$</span><span class="fu">setCoefficients</span><span class="op">(</span><span class="va">coefficients</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>coefficients</code></dt>
 <dd><p>coefficients object of class <a href="https://rdrr.io/r/base/vector.html" class="external-link">vector</a></p></dd>
 
@@ -189,12 +205,12 @@ GMLGeneralGridAxis"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-GMLGeneralGridAxis-setGridAxesSpanned"></a><div class="section">
 <h3 id="method-setgridaxesspanned-">Method <code>setGridAxesSpanned()</code><a class="anchor" aria-label="anchor" href="#method-setgridaxesspanned-"></a></h3>
 <p>Set grid axes spanned</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">GMLGeneralGridAxis</span><span class="op">$</span><span class="fu">setGridAxesSpanned</span><span class="op">(</span><span class="va">spanned</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>spanned</code></dt>
 <dd><p>spanned</p></dd>
 
@@ -205,12 +221,12 @@ GMLGeneralGridAxis"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-GMLGeneralGridAxis-setSequenceRule"></a><div class="section">
 <h3 id="method-setsequencerule-">Method <code>setSequenceRule()</code><a class="anchor" aria-label="anchor" href="#method-setsequencerule-"></a></h3>
 <p>Set sequence rule</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">GMLGeneralGridAxis</span><span class="op">$</span><span class="fu">setSequenceRule</span><span class="op">(</span><span class="va">sequenceRule</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>sequenceRule</code></dt>
 <dd><p>sequence rule</p></dd>
 
@@ -221,12 +237,12 @@ GMLGeneralGridAxis"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-GMLGeneralGridAxis-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">GMLGeneralGridAxis</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
