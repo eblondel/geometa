@@ -93,7 +93,7 @@ test_that("encoding",{
   fc2 <- ISOFeatureCatalogue$new(xml = xml)
   xml2 <- fc2$encode()
   
-  expect_true(ISOAbstractObject$compare(fc, fc2))
+  expect_true(ISOAbstractObject$compare(fc, fc2, "xml"))
   
 })
 
@@ -315,6 +315,6 @@ test_that("encoding - i18n",{
   fc2 <- ISOFeatureCatalogue$new(xml = xml)
   xml2 <- fc2$encode()
   
-  expect_true(ISOAbstractObject$compare(fc, fc2))
+  expect_true(ISOAbstractObject$compare(fc, fc2, "xml"))
   
 })

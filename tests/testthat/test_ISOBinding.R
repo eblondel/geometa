@@ -55,7 +55,7 @@ test_that("encoding",{
   md2 <- ISOBinding$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(ISOAbstractObject$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2, "xml"))
   
 })
 
@@ -116,6 +116,6 @@ test_that("encoding - i18n",{
   md2 <- ISOBinding$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(ISOAbstractObject$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2, "xml"))
   
 })
