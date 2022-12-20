@@ -1411,6 +1411,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
           stop("Each locale value should be of class 'character'")
         }
         localised <- ISOLocalisedCharacterString$new(locale = locale, value = localeValue)
+        if(!is.null(attr(localeValue, "uri"))){
+          localised$parentAttrs <- list("xlink:href" = attr(localeValue, "uri"))
+        }
         ft$addTextGroup(localised)
       }
       seq <- ISOElementSequence$new(xml=NULL, text, ft)
