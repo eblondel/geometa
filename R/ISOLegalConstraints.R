@@ -87,15 +87,19 @@ ISOLegalConstraints <- R6Class("ISOLegalConstraints",
     
     #'@description Adds other constraint
     #'@param constraint object of class \link{character}
+    #'@param locales list of localized names. Default is \code{NULL}
     #'@return \code{TRUE} if added, \code{FALSE} otherwise
-    addOtherConstraint = function(constraint){
+    addOtherConstraint = function(constraint, locales = NULL){
+      if(!is.null(locales)) constraint <- self$createLocalisedProperty(constraint, locales)
       return(self$addListElement("otherConstraints", constraint))
     },
     
     #'@description Deletes other constraint
     #'@param constraint object of class \link{character}
+    #'@param locales list of localized names. Default is \code{NULL}
     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
-    delOtherConstraint = function(constraint){
+    delOtherConstraint = function(constraint, locales = NULL){
+      if(!is.null(locales)) constraint <- self$createLocalisedProperty(constraint, locales)
       return(self$delListElement("otherConstraints", constraint))
     }
   )                                          

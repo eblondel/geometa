@@ -61,9 +61,21 @@ test_that("encoding - i18n",{
   md$addAccessConstraint("license")
   md$addUseConstraint("copyright")
   md$addUseConstraint("license")
+  md$addOtherConstraint(
+    "other constraint",
+    locales = list(
+      EN = "other constraint",
+      FR = "autre contrainte",
+      ES = "otra limitación",
+      AR = "قيد آخر",
+      RU = "другое ограничение",
+      ZH = "其他约束"
+    )
+  )
   expect_equal(length(md$useLimitation), 2L)
   expect_equal(length(md$accessConstraints), 2L)
   expect_equal(length(md$useConstraints), 2L)
+  expect_equal(length(md$otherConstraints), 1L)
   
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")

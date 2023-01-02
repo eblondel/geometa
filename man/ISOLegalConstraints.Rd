@@ -204,13 +204,15 @@ Deletes use constraint
 \subsection{Method \code{addOtherConstraint()}}{
 Adds other constraint
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOLegalConstraints$addOtherConstraint(constraint)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOLegalConstraints$addOtherConstraint(constraint, locales = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{constraint}}{object of class \link{character}}
+
+\item{\code{locales}}{list of localized names. Default is \code{NULL}}
 }
 \if{html}{\out{</div>}}
 }
@@ -224,13 +226,15 @@ Adds other constraint
 \subsection{Method \code{delOtherConstraint()}}{
 Deletes other constraint
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOLegalConstraints$delOtherConstraint(constraint)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOLegalConstraints$delOtherConstraint(constraint, locales = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{constraint}}{object of class \link{character}}
+
+\item{\code{locales}}{list of localized names. Default is \code{NULL}}
 }
 \if{html}{\out{</div>}}
 }
