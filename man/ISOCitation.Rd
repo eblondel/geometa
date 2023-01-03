@@ -279,13 +279,15 @@ Adds date
 \subsection{Method \code{setEdition()}}{
 Set edition
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setEdition(edition)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOCitation$setEdition(edition, locales = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{edition}}{edition}
+
+\item{\code{locales}}{list of localized editions. Default is \code{NULL}}
 }
 \if{html}{\out{</div>}}
 }

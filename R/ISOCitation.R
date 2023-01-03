@@ -194,8 +194,14 @@ ISOCitation<- R6Class("ISOCitation",
     
     #'@description Set edition
     #'@param edition edition
-    setEdition = function(edition){
-      self$edition = as.character(edition)
+    #'@param locales list of localized editions. Default is \code{NULL}
+    setEdition = function(edition, locales = NULL){
+      if(!is.null(locales)){
+        edition = self$createLocalisedProperty(edition, locales)
+      }else{
+        edition = as.character(edition)
+      }
+      self$edition = edition
     },
     
     #'@description Sets the edition date, either an ISODate object containing date and dateType or
