@@ -50,7 +50,7 @@ ISOMimeFileType <- R6Class("ISOMimeFileType",
      )                        
 )
 
-ISOMimeFileType$buildFrom = function(ext, add_iana_uri = TRUE){
+ISOMimeFileType$buildFrom = function(mimetype, add_iana_uri = TRUE){
 
   mime1 <- data.frame(mime::mimemap)
   mime1 <- data.frame(ext = row.names(mime1), mime = as.character(mime1[,1L]),
@@ -60,7 +60,9 @@ ISOMimeFileType$buildFrom = function(ext, add_iana_uri = TRUE){
                       stringsAsFactors = FALSE)
   mime.list <- rbind(mime1, mime2)
   
-  mime.sel <- mime.list[mime.list$ext == ext,]
+  mime.sel <- mime.list[mime.list$mime == mimetype,]
+  if(nrow(mime.sel)==0) mime.sel <- mime.list[mime.list$ext == mimetype,]
+  if(nrow(mime.sel)>1) mime.sel <- mime.sel[1L,]
   if(nrow(mime.sel)==0) return(NULL)
   
   mft <- ISOMimeFileType$new()
