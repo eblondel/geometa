@@ -96,6 +96,22 @@ ISOAbstractCatalogue"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 <dd><p>versionDate [1..1]: Date/Posix</p></dd>
 
 
+<dt><code>language</code></dt>
+<dd><p>language [0..1]: character</p></dd>
+
+
+<dt><code>characterSet</code></dt>
+<dd><p>character set [0..1]: character</p></dd>
+
+
+<dt><code>locale</code></dt>
+<dd><p>locale [0..*]: ISOLocale</p></dd>
+
+
+<dt><code>subCatalogue</code></dt>
+<dd><p>subCatalogue [0..*]: ISOAbstractCatalogue</p></dd>
+
+
 </dl><p></p></div>
     </div>
     <div id="methods">
@@ -112,6 +128,12 @@ ISOAbstractCatalogue"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 <li><p><a href="#method-ISOAbstractCatalogue-delFieldOfApplication"><code>ISOAbstractCatalogue$delFieldOfApplication()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractCatalogue-setVersionNumber"><code>ISOAbstractCatalogue$setVersionNumber()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractCatalogue-setVersionDate"><code>ISOAbstractCatalogue$setVersionDate()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractCatalogue-setLanguage"><code>ISOAbstractCatalogue$setLanguage()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractCatalogue-setCharacterSet"><code>ISOAbstractCatalogue$setCharacterSet()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractCatalogue-addLocale"><code>ISOAbstractCatalogue$addLocale()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractCatalogue-delLocale"><code>ISOAbstractCatalogue$delLocale()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractCatalogue-addSubCatalogue"><code>ISOAbstractCatalogue$addSubCatalogue()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractCatalogue-delSubCatalogue"><code>ISOAbstractCatalogue$delSubCatalogue()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractCatalogue-clone"><code>ISOAbstractCatalogue$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -304,15 +326,129 @@ ISOAbstractCatalogue"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOAbstractCatalogue-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISOAbstractCatalogue-setLanguage"></a><div class="section">
+<h3 id="method-setlanguage-">Method <code>setLanguage()</code><a class="anchor" aria-label="anchor" href="#method-setlanguage-"></a></h3>
+<p>Set language</p><div class="section">
 <h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractCatalogue</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractCatalogue</span><span class="op">$</span><span class="fu">setLanguage</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
+<dd><p>object of class <a href="ISOLanguage.html">ISOLanguage</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
+from values returned by <code>ISOLanguages$values()</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractCatalogue-setCharacterSet"></a><div class="section">
+<h3 id="method-setcharacterset-">Method <code>setCharacterSet()</code><a class="anchor" aria-label="anchor" href="#method-setcharacterset-"></a></h3>
+<p>Set charset</p><div class="section">
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractCatalogue</span><span class="op">$</span><span class="fu">setCharacterSet</span><span class="op">(</span><span class="va">charset</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>charset</code></dt>
+<dd><p>object of class <a href="ISOCharacterSet.html">ISOCharacterSet</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
+from values returned by <code>ISOCharacterSet$values()</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractCatalogue-addLocale"></a><div class="section">
+<h3 id="method-addlocale-">Method <code>addLocale()</code><a class="anchor" aria-label="anchor" href="#method-addlocale-"></a></h3>
+<p>Adds locale</p><div class="section">
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractCatalogue</span><span class="op">$</span><span class="fu">addLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
+<dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-4">Returns<a class="anchor" aria-label="anchor" href="#returns-4"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractCatalogue-delLocale"></a><div class="section">
+<h3 id="method-dellocale-">Method <code>delLocale()</code><a class="anchor" aria-label="anchor" href="#method-dellocale-"></a></h3>
+<p>Deletes locale</p><div class="section">
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractCatalogue</span><span class="op">$</span><span class="fu">delLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
+<dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-5">Returns<a class="anchor" aria-label="anchor" href="#returns-5"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractCatalogue-addSubCatalogue"></a><div class="section">
+<h3 id="method-addsubcatalogue-">Method <code>addSubCatalogue()</code><a class="anchor" aria-label="anchor" href="#method-addsubcatalogue-"></a></h3>
+<p>Add sub catalogue</p><div class="section">
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractCatalogue</span><span class="op">$</span><span class="fu">addSubCatalogue</span><span class="op">(</span><span class="va">subCatalogue</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>subCatalogue</code></dt>
+<dd><p>object of class ISOAbstractCatalogue</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-6">Returns<a class="anchor" aria-label="anchor" href="#returns-6"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractCatalogue-delSubCatalogue"></a><div class="section">
+<h3 id="method-delsubcatalogue-">Method <code>delSubCatalogue()</code><a class="anchor" aria-label="anchor" href="#method-delsubcatalogue-"></a></h3>
+<p>Deletes sub catalogue</p><div class="section">
+<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractCatalogue</span><span class="op">$</span><span class="fu">delSubCatalogue</span><span class="op">(</span><span class="va">subCatalogue</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>subCatalogue</code></dt>
+<dd><p>object of class ISOAbstractCatalogue</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-7">Returns<a class="anchor" aria-label="anchor" href="#returns-7"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractCatalogue-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractCatalogue</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
