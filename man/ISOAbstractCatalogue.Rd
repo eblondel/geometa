@@ -39,6 +39,14 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{versionNumber}}{versionNumber [1..1]: character}
 
 \item{\code{versionDate}}{versionDate [1..1]: Date/Posix}
+
+\item{\code{language}}{language [0..1]: character}
+
+\item{\code{characterSet}}{character set [0..1]: character}
+
+\item{\code{locale}}{locale [0..*]: ISOLocale}
+
+\item{\code{subCatalogue}}{subCatalogue [0..*]: ISOAbstractCatalogue}
 }
 \if{html}{\out{</div>}}
 }
@@ -53,6 +61,12 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOAbstractCatalogue-delFieldOfApplication}{\code{ISOAbstractCatalogue$delFieldOfApplication()}}
 \item \href{#method-ISOAbstractCatalogue-setVersionNumber}{\code{ISOAbstractCatalogue$setVersionNumber()}}
 \item \href{#method-ISOAbstractCatalogue-setVersionDate}{\code{ISOAbstractCatalogue$setVersionDate()}}
+\item \href{#method-ISOAbstractCatalogue-setLanguage}{\code{ISOAbstractCatalogue$setLanguage()}}
+\item \href{#method-ISOAbstractCatalogue-setCharacterSet}{\code{ISOAbstractCatalogue$setCharacterSet()}}
+\item \href{#method-ISOAbstractCatalogue-addLocale}{\code{ISOAbstractCatalogue$addLocale()}}
+\item \href{#method-ISOAbstractCatalogue-delLocale}{\code{ISOAbstractCatalogue$delLocale()}}
+\item \href{#method-ISOAbstractCatalogue-addSubCatalogue}{\code{ISOAbstractCatalogue$addSubCatalogue()}}
+\item \href{#method-ISOAbstractCatalogue-delSubCatalogue}{\code{ISOAbstractCatalogue$delSubCatalogue()}}
 \item \href{#method-ISOAbstractCatalogue-clone}{\code{ISOAbstractCatalogue$clone()}}
 }
 }
@@ -245,6 +259,122 @@ Set version date
 \item{\code{versionDate}}{version date}
 }
 \if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-setLanguage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-setLanguage}{}}}
+\subsection{Method \code{setLanguage()}}{
+Set language
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$setLanguage(locale)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locale}}{object of class \link{ISOLanguage} or any \link{character}
+from values returned by \code{ISOLanguages$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-setCharacterSet"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-setCharacterSet}{}}}
+\subsection{Method \code{setCharacterSet()}}{
+Set charset
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$setCharacterSet(charset)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{charset}}{object of class \link{ISOCharacterSet} or any \link{character}
+from values returned by \code{ISOCharacterSet$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-addLocale"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-addLocale}{}}}
+\subsection{Method \code{addLocale()}}{
+Adds locale
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$addLocale(locale)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locale}}{object of class \link{ISOLocale}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-delLocale"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-delLocale}{}}}
+\subsection{Method \code{delLocale()}}{
+Deletes locale
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$delLocale(locale)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locale}}{object of class \link{ISOLocale}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-addSubCatalogue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-addSubCatalogue}{}}}
+\subsection{Method \code{addSubCatalogue()}}{
+Add sub catalogue
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$addSubCatalogue(subCatalogue)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{subCatalogue}}{object of class \link{ISOAbstractCatalogue}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractCatalogue-delSubCatalogue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractCatalogue-delSubCatalogue}{}}}
+\subsection{Method \code{delSubCatalogue()}}{
+Deletes sub catalogue
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractCatalogue$delSubCatalogue(subCatalogue)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{subCatalogue}}{object of class \link{ISOAbstractCatalogue}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
 }
 }
 \if{html}{\out{<hr>}}

@@ -31,6 +31,14 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
      versionNumber = NULL,
      #'@field versionDate versionDate [1..1]: Date/Posix
      versionDate = NULL,
+     #'@field language language [0..1]: character
+     language = NULL,
+     #'@field characterSet character set [0..1]: character
+     characterSet = NULL,
+     #'@field locale locale [0..*]: ISOLocale
+     locale = list(),
+     #'@field subCatalogue subCatalogue [0..*]: ISOAbstractCatalogue
+     subCatalogue = list(),
      
      #'@description Initializes object
      #'@param xml object of class \link{XMLInternalNode-class}
@@ -104,6 +112,67 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
      #'@param versionDate version date
      setVersionDate = function(versionDate){
        self$versionDate <- versionDate
+     },
+     
+     #'@description Set language
+     #'@param locale object of class \link{ISOLanguage} or any \link{character}
+     #' from values returned by \code{ISOLanguages$values()}
+     setLanguage = function(locale){
+        if(is(locale, "character")){
+           locale <- ISOLanguage$new(value = locale)
+        }
+        self$language <- locale
+     },
+     
+     #'@description Set charset
+     #'@param charset object of class \link{ISOCharacterSet} or any \link{character}
+     #' from values returned by \code{ISOCharacterSet$values()}
+     setCharacterSet = function(charset){
+        if(is(charset, "character")){
+           charset <- ISOCharacterSet$new(value = charset)
+        }
+        self$characterSet <- charset
+     },
+     
+     #'@description Adds locale
+     #'@param locale object of class \link{ISOLocale}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addLocale = function(locale){
+        if(!is(locale,"ISOLocale")){
+           stop("The argument should be a 'ISOLocale' object")  
+        }
+        return(self$addListElement("locale", locale))
+     },
+     
+     #'@description Deletes locale
+     #'@param locale object of class \link{ISOLocale}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delLocale = function(locale){
+        if(!is(locale,"ISOLocale")){
+           stop("The argument should be a 'ISOLocale' object")  
+        }
+        return(self$delListElement("locale", locale))
+     },
+     
+     #'@description Add sub catalogue
+     #'@param subCatalogue object of class \link{ISOAbstractCatalogue}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addSubCatalogue = function(subCatalogue){
+        if(!is(subCatalogue, "ISOAbstractCatalogue")){
+           stop("The argument should be an object inheriting 'ISOAbstractCatalogue")
+        }
+        return(self$addListElement("subCatalogue", subCatalogue))
+     },
+     
+     #'@description Deletes sub catalogue
+     #'@param subCatalogue object of class \link{ISOAbstractCatalogue}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delSubCatalogue = function(subCatalogue){
+        if(!is(subCatalogue, "ISOAbstractCatalogue")){
+           stop("The argument should be an object inheriting 'ISOAbstractCatalogue")
+        }
+        return(self$delListElement("subCatalogue", subCatalogue))
      }
+     
    )                        
 )
