@@ -460,6 +460,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                                  },
                                  fieldValue
             )
+            if(length(fieldValue)==0) fieldValue = NA
           }else{
             fieldValue <- fieldClass$new(xml = child)
             fieldValue$parentAttrs <- parentAttrs
