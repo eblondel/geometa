@@ -7,16 +7,7 @@
 #' @description Provides facilities to handle reading and writing of geographic metadata 
 #' defined with OGC/ISO 19115 and 19110 geographic information metadata standards, and 
 #' encoded using the ISO 19139 (XML) standard.
-#' @details
-#'  \tabular{ll}{
-#'    Package: \tab geometa\cr
-#'    Type: \tab Package\cr
-#'    Version: \tab 0.6-7\cr
-#'    Date: \tab 2022-03-15\cr
-#'    License: \tab MIT\cr
-#'    LazyLoad: \tab yes\cr
-#'  }
 #'  
-#'@author Emmanuel Blondel \email{emmanuel.blondel1@@gmail.com}
+#' @author Emmanuel Blondel \email{emmanuel.blondel1@@gmail.com}
 #'
 NULL
