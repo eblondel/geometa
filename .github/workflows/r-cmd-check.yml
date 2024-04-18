@@ -21,6 +21,7 @@ jobs:
           - {os: ubuntu-latest, r: 'oldrel-1'}
     
     env:
+        PKG_SYSREQS: false
         INSPIRE_API_ENDPOINT: ${{ secrets.INSPIRE_API_ENDPOINT }}
         INSPIRE_API_KEY: ${{ secrets.INSPIRE_API_KEY }}
     
