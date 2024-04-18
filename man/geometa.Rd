@@ -4,12 +4,19 @@
 \name{geometa}
 \alias{geometa}
 \alias{geometa-package}
-\title{Tools for Reading and Writing ISO/OGC Geographic Metadata}
+\title{geometa: Tools for Reading and Writing ISO/OGC Geographic Metadata}
 \description{
-Provides facilities to handle reading and writing of geographic metadata 
-defined with OGC/ISO 19115 and 19110 geographic information metadata standards, and 
-encoded using the ISO 19139 (XML) standard.
+Provides facilities to handle reading and writing of geographic metadata defined with OGC/ISO 19115, 11119 and 19110 geographic information metadata standards, and encoded using the ISO 19139 (XML) standard. It includes also a facility to check the validity of ISO 19139 XML encoded metadata.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/eblondel/geometa/wiki}
+  \item Report bugs at \url{https://github.com/eblondel/geometa/issues}
+}
+
 }
 \author{
-Emmanuel Blondel \email{emmanuel.blondel1@gmail.com}
+\strong{Maintainer}: Emmanuel Blondel \email{emmanuel.blondel1@gmail.com} (\href{https://orcid.org/0000-0002-5870-5762}{ORCID})
+
 }
