@@ -36,7 +36,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \describe{
 \item{\code{verticalCS}}{[\code{\link{GMLVerticalCS}}]}
 
-\item{\code{verticalDatum}}{[code{GMLVerticalDatum}]}
+\item{\code{verticalDatum}}{[\code{GMLVerticalDatum}]}
 }
 \if{html}{\out{</div>}}
 }

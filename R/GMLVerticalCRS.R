@@ -24,7 +24,7 @@ GMLVerticalCRS <- R6Class("GMLVerticalCRS",
   public = list(
     #'@field verticalCS [\code{\link{GMLVerticalCS}}]
     verticalCS = NULL,
-    #'@field verticalDatum [code{GMLVerticalDatum}]
+    #'@field verticalDatum [\code{GMLVerticalDatum}]
     verticalDatum = NULL,
     
     #'@description Set vertical CS
