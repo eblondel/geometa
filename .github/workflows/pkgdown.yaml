@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      PKG_SYSREQS: false
     steps:
       - uses: actions/checkout@v3
 
@@ -34,7 +35,7 @@ jobs:
 
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4.1.4
+        uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
           clean: true
           branch: gh-pages
