@@ -44,7 +44,8 @@ GMLAbstractGeometry$fromSimpleFeatureGeometry = function(sfg){
   newvalue <- switch(class(sfg)[2],
                      "POINT" = GMLPoint$new(sfg=sfg),
                      "LINESTRING" = GMLLineString$new(sfg=sfg),
-                     "POLYGON" = GMLPolygon$new(sfg=sfg)
+                     "POLYGON" = GMLPolygon$new(sfg=sfg),
+                     "MULTIPOINT" = GMLMultiPoint$new(sfg=sfg)
   )
   return(newvalue)
 }
