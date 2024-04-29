@@ -45,7 +45,10 @@ GMLAbstractGeometry$fromSimpleFeatureGeometry = function(sfg){
                      "POINT" = GMLPoint$new(sfg=sfg),
                      "LINESTRING" = GMLLineString$new(sfg=sfg),
                      "POLYGON" = GMLPolygon$new(sfg=sfg),
-                     "MULTIPOINT" = GMLMultiPoint$new(sfg=sfg)
+                     "MULTIPOINT" = GMLMultiPoint$new(sfg=sfg),
+                     "MULTILINESTRING" = GMLMultiCurve$new(sfg=sfg),
+                     "MULTIPOLYGON" = GMLMultiSurface$new(sfg=sfg)
+                     
   )
   return(newvalue)
 }
