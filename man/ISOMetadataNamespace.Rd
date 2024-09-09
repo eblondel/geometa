@@ -30,6 +30,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{id}}{id}
 
 \item{\code{uri}}{uri}
+
+\item{\code{standard}}{standard}
 }
 \if{html}{\out{</div>}}
 }
@@ -38,6 +40,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \itemize{
 \item \href{#method-ISOMetadataNamespace-new}{\code{ISOMetadataNamespace$new()}}
 \item \href{#method-ISOMetadataNamespace-getDefinition}{\code{ISOMetadataNamespace$getDefinition()}}
+\item \href{#method-ISOMetadataNamespace-getStandard}{\code{ISOMetadataNamespace$getStandard()}}
 \item \href{#method-ISOMetadataNamespace-clone}{\code{ISOMetadataNamespace$clone()}}
 }
 }
@@ -47,7 +50,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes namespace object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOMetadataNamespace$new(id, uri)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadataNamespace$new(id, uri, standard)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -56,6 +59,8 @@ Initializes namespace object
 \item{\code{id}}{id}
 
 \item{\code{uri}}{uri}
+
+\item{\code{standard}}{standard}
 }
 \if{html}{\out{</div>}}
 }
@@ -71,6 +76,19 @@ Get definition
 
 \subsection{Returns}{
 an object of class \link{list}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadataNamespace-getStandard"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadataNamespace-getStandard}{}}}
+\subsection{Method \code{getStandard()}}{
+Get standard
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadataNamespace$getStandard()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \link{data.frame}
 }
 }
 \if{html}{\out{<hr>}}

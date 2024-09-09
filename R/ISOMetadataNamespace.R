@@ -17,13 +17,17 @@ ISOMetadataNamespace <- R6Class("ISOMetadataNamespace",
     id = NA,
     #'@field uri uri
     uri = NA,
+    #'@field standard standard
+    standard = data.frame(specification = NA, schema = NA, title = NA),
     
     #'@description Initializes namespace object
     #'@param id id
     #'@param uri uri
-    initialize = function(id, uri){
+    #'@param standard standard
+    initialize = function(id, uri, standard){
       self$id = id
       self$uri = uri
+      self$standard = standard
     },
     
     #'@description Get definition
@@ -32,41 +36,260 @@ ISOMetadataNamespace <- R6Class("ISOMetadataNamespace",
       ns <- list(self$uri)
       names(ns) <- self$id
       return(ns)
+    },
+    
+    #'@description Get standard
+    #'@return object of class \link{data.frame}
+    getStandard = function(){
+      return(self$standard)
     }
+    
   )
 )
-ISOMetadataNamespace$GCO = ISOMetadataNamespace$new("gco", "http://www.isotc211.org/2005/gco")
-ISOMetadataNamespace$GFC = ISOMetadataNamespace$new("gfc", "http://www.isotc211.org/2005/gfc")
-ISOMetadataNamespace$GMD = ISOMetadataNamespace$new("gmd", "http://www.isotc211.org/2005/gmd")
-ISOMetadataNamespace$GMI = ISOMetadataNamespace$new("gmi", "http://www.isotc211.org/2005/gmi") #http://standards.iso.org/iso/19115/-2/gmi/1.0
-ISOMetadataNamespace$GMX = ISOMetadataNamespace$new("gmx", "http://www.isotc211.org/2005/gmx")
-ISOMetadataNamespace$GTS = ISOMetadataNamespace$new("gts", "http://www.isotc211.org/2005/gts")
-ISOMetadataNamespace$SRV = ISOMetadataNamespace$new("srv", "http://www.isotc211.org/2005/srv")
-ISOMetadataNamespace$GML = ISOMetadataNamespace$new("gml", "http://www.opengis.net/gml/3.2")
-ISOMetadataNamespace$GMLCOV = ISOMetadataNamespace$new("gmlcov", "http://www.opengis.net/gmlcov/1.0")
-ISOMetadataNamespace$GMLRGRID = ISOMetadataNamespace$new("gmlrgrid", "http://www.opengis.net/gml/3.3/rgrid")
-ISOMetadataNamespace$SWE = ISOMetadataNamespace$new("swe", "http://www.opengis.net/swe/2.0")
-ISOMetadataNamespace$XLINK = ISOMetadataNamespace$new("xlink", "http://www.w3.org/1999/xlink")
-ISOMetadataNamespace$XSI = ISOMetadataNamespace$new("xsi", "http://www.w3.org/2001/XMLSchema-instance")
 
 #' setMetadataNamespaces
 #' @export
-setISOMetadataNamespaces <- function(){
-  .geometa.iso$namespaces <- list(
-    ISOMetadataNamespace$GCO,
-    ISOMetadataNamespace$GFC,
-    ISOMetadataNamespace$GMD,
-    ISOMetadataNamespace$GMI,
-    ISOMetadataNamespace$GMX,
-    ISOMetadataNamespace$GTS,
-    ISOMetadataNamespace$SRV,
-    ISOMetadataNamespace$GML,
-    ISOMetadataNamespace$GMLCOV,
-    ISOMetadataNamespace$GMLRGRID,
-    ISOMetadataNamespace$SWE,
-    ISOMetadataNamespace$XLINK,
-	  ISOMetadataNamespace$XSI
+setISOMetadataNamespaces <- function(version = "19115-1/2"){
+  
+  #XML 1.0
+  #----------------------------------------------------
+  xml_namespaces <- list(
+    #XLINK
+    ISOMetadataNamespace$new(
+      id = "xlink", uri = "http://www.w3.org/1999/xlink",
+      standard = data.frame(specification = "XML 1.0", schema = "XML 1.0", title = "Extensible Markup Language (XML) 1.0 (Fifth Edition)", stringsAsFactors = FALSE)
+    ),
+    #XSI
+    ISOMetadataNamespace$new(
+      id = "xsi", uri = "http://www.w3.org/2001/XMLSchema-instance",
+      standard = data.frame(specification = "XML 1.0", schema = "XML 1.0", title = "Extensible Markup Language (XML) 1.0 (Fifth Edition)", stringsAsFactors = FALSE)
+    )
   )
+  #GML and related
+  #----------------------------------------------------
+  gml_namespaces <- list(
+    #GML
+    ISOMetadataNamespace$new(
+      id = "gml", uri = "http://www.opengis.net/gml/3.2",
+      standard = data.frame(specification = "GML 3.2.1 (ISO 19136)", schema = "GML 3.2.1 (ISO 19136)", title = "Geographic Markup Language", stringsAsFactors = FALSE)
+    ),
+    #GMLCOV
+    ISOMetadataNamespace$new(
+      id = "gmlcov", uri = "http://www.opengis.net/gmlcov/1.0",
+      standard = data.frame(specification = "GML 3.2.1 Coverage (OGC GMLCOV)", schema = "GML 3.2.1 Coverage (OGC GMLCOV)", title = "OGC GML Coverage Implementation Schema", stringsAsFactors = FALSE)
+    ),
+    #GMLRGRID
+    ISOMetadataNamespace$new(
+      id = "gmlrgrid", uri = "http://www.opengis.net/gml/3.3/rgrid",
+      standard = data.frame(specification = "GML 3.3 Referenceable Grid (OGC GML)", schema = "GML 3.3 Referenceable Grid (OGC GML)", title = "OGC GML Referenceable Grid", stringsAsFactors = FALSE)
+    )
+  )
+  
+  #SWE
+  #----------------------------------------------------
+  swe_namespaces <- list(
+    #SWE
+    ISOMetadataNamespace$new(
+      id = "swe", uri = "http://www.opengis.net/swe/2.0",
+      standard = data.frame(specification = "SWE 2.0", schema = "SWE 2.0", title = "Sensor Web Enablement (SWE) Common Data Model", stringsAsFactors = FALSE)
+    )
+  )
+  
+  #ISO 19115 and related
+  #----------------------------------------------------
+  iso_namespaces <- switch(version,
+    "19115-1/2" = list(
+      #ISO 19110
+      #----------------------------------------------------
+      #GFC
+      ISOMetadataNamespace$new(
+        id = "gfc", uri = "http://www.isotc211.org/2005/gfc",
+        standard = data.frame(specification = "ISO/TS 19139:2007", schema = "ISO 19110:2005", title = "Geographic Information - Methodology for feature cataloguing", stringsAsFactors = FALSE)
+      ),
+      #ISO 19115-1 / 19115-2 / 19139
+      #----------------------------------------------------
+      #GCO
+      ISOMetadataNamespace$new(
+        id = "gco", uri = "http://www.isotc211.org/2005/gco",
+        standard = data.frame(specification = "ISO/TS 19139:2007", schema = "ISO/TS 19103:2005", title = "Geographic Common extensible markup language", stringsAsFactors = FALSE)
+      ),
+      #GMD
+      ISOMetadataNamespace$new(
+        id = "gmd", uri = "http://www.isotc211.org/2005/gmd",
+        standard = data.frame(specification = "ISO/TS 19139:2007", schema = "ISO 19115-1:2003", title = "Geographic Information - Metadata", stringsAsFactors = FALSE)
+      ),
+      #GMI
+      ISOMetadataNamespace$new(
+        id = "gmi", uri = "http://www.isotc211.org/2005/gmi",
+        standard = data.frame(specification = "ISO/TS 19139:2007", schema = "ISO 19115-2:2009", title = "Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data", stringsAsFactors = FALSE)
+      ),
+      #GMX
+      ISOMetadataNamespace$new(
+        id = "gmx", uri = "http://www.isotc211.org/2005/gmx",
+        standard = data.frame(specification = "ISO/TS 19139:2007", schema = "ISO/TS 19139:2007", title = "Geographic Metadata XML Schema", stringsAsFactors = FALSE)
+      ),
+      #GTS
+      ISOMetadataNamespace$new(
+        id = "gts", uri = "http://www.isotc211.org/2005/gts",
+        standard = data.frame(specification = "ISO/TS 19139:2007", schema = "ISO/TS 19139:2007", title = "Geographic Metadata XML Schema - Geographic Temporal Schema (GTS)", stringsAsFactors = FALSE)
+      ),
+      #ISO 19119
+      #----------------------------------------------------
+      #SRV
+      ISOMetadataNamespace$new(
+        id = "srv", uri = "http://www.isotc211.org/2005/srv",
+        standard = data.frame(specification = "ISO/TS 19139:2007", schema = "ISO 19119:2005", title = "Geographic Information - Service Metadata", stringsAsFactors = FALSE)
+      )
+    ),
+    "19115-3" = list(
+      #ISO 19115-3
+      #----------------------------------------------------
+      #CAT
+      ISOMetadataNamespace$new(
+        id = "cat", uri = "http://standards.iso.org/iso/19115/-3/cat/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO/TS 19139:2007", title = "CATalogue Objects (CAT) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #CIT
+      ISOMetadataNamespace$new(
+        id = "cit", uri = "http://standards.iso.org/iso/19115/-3/cit/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Citation and responsible party information (CIT) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #GCO
+      ISOMetadataNamespace$new(
+        id = "gco", uri = "http://standards.iso.org/iso/19115/-3/gco/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Geospatial COmmon Objects (GCO) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #GCX
+      ISOMetadataNamespace$new(
+        id = "gcx", uri = "http://standards.iso.org/iso/19115/-3/gcx/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Geospatial Common eXtension (GCX) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #GEX
+      ISOMetadataNamespace$new(
+        id = "gex", uri = "http://standards.iso.org/iso/19115/-3/gex/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Geospatial EXtent (GEX) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #GMW
+      ISOMetadataNamespace$new(
+        id = "gmw", uri = "http://standards.iso.org/iso/19115/-3/gmw/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Geographic Markup Wrappers (GMW) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #LAN
+      ISOMetadataNamespace$new(
+        id = "lan", uri = "http://standards.iso.org/iso/19115/-3/lan/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "metadata for LANguage and localization (LAN) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #MAC
+      ISOMetadataNamespace$new(
+        id = "mac", uri = "http://standards.iso.org/iso/19115/-3/mac/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for ACquisition (MAC) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #MAS
+      ISOMetadataNamespace$new(
+        id = "mas", uri = "http://standards.iso.org/iso/19115/-3/mas/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Application Schemas (MAS) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #MCC
+      ISOMetadataNamespace$new(
+        id = "mcc", uri = "http://standards.iso.org/iso/19115/-3/mcc/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata Common Classes (MCC) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #MCO
+      ISOMetadataNamespace$new(
+        id = "mco", uri = "http://standards.iso.org/iso/19115/-3/mco/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for COnstraints (MCO) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #MDA
+      ISOMetadataNamespace$new(
+        id = "mda", uri = "http://standards.iso.org/iso/19115/-3/mda/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "MetaData for Applications (MDA) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #MDB
+      ISOMetadataNamespace$new(
+        id = "mdb", uri = "http://standards.iso.org/iso/19115/-3/mdb/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "MetaData Base (MDB) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #MDs
+      ISOMetadataNamespace$new(
+        id = "mds", uri = "http://standards.iso.org/iso/19115/-3/mds/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "MetaData for Service identification (MDS) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #MDT
+      ISOMetadataNamespace$new(
+        id = "mdt", uri = "http://standards.iso.org/iso/19115/-3/mdt/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Data Transfer (MDT) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #MEX
+      ISOMetadataNamespace$new(
+        id = "mex", uri = "http://standards.iso.org/iso/19115/-3/mex/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata EXtensions (MEX) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #MMI
+      ISOMetadataNamespace$new(
+        id = "mmi", uri = "http://standards.iso.org/iso/19115/-3/mmi/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Maintennce Information (MMI) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #MPC
+      ISOMetadataNamespace$new(
+        id = "mpc", uri = "http://standards.iso.org/iso/19115/-3/mpc/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Portrayal Catalogues (MPC) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #MRC
+      ISOMetadataNamespace$new(
+        id = "mrc", uri = "http://standards.iso.org/iso/19115/-3/mrc/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Resource Content (MRC) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #MRD
+      ISOMetadataNamespace$new(
+        id = "mrd", uri = "http://standards.iso.org/iso/19115/-3/mrd/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Resource Distribution (MRD) Version: 1.0", stringsAsFactors = FALSE)
+      ), 
+      #MRI
+      ISOMetadataNamespace$new(
+        id = "mri", uri = "http://standards.iso.org/iso/19115/-3/mri/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Resource Identification (MRI) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #MRL
+      ISOMetadataNamespace$new(
+        id = "mrl", uri = "http://standards.iso.org/iso/19115/-3/mrl/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Resource Lineage (MRL) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #MRS
+      ISOMetadataNamespace$new(
+        id = "mrs", uri = "http://standards.iso.org/iso/19115/-3/mrs/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Reference Systems (MRS) Version: 1.0", stringsAsFactors = FALSE)
+      ),
+      #MSR
+      ISOMetadataNamespace$new(
+        id = "msr", uri = "http://standards.iso.org/iso/19115/-3/msr/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Spatial Representation (MSR) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #SRV
+      ISOMetadataNamespace$new(
+        id = "srv", uri = "http://standards.iso.org/iso/19115/-3/srv/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for SeRVices (SRV) Version: 2.0", stringsAsFactors = FALSE)
+      ),
+      #DQC
+      ISOMetadataNamespace$new(
+        id = "dqc", uri = "http://standards.iso.org/iso/19157/-2/dqc/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19157", title = "Data Quality abstract Classes (DQC) Version 1.0", stringsAsFactors = FALSE)
+      )
+    )
+  )
+  all_namespaces <- c(
+    #XML 1.0
+    xml_namespaces,
+    #GML
+    gml_namespaces,
+    #SWE
+    swe_namespaces,
+    #iso19115
+    iso_namespaces
+  )
+  for(ns in all_namespaces){
+    ISOMetadataNamespace[[toupper(ns$id)]] <- ns
+  }
+  .geometa.iso$namespaces <- all_namespaces
 }
 
 #' @name getISOMetadataNamespaces
@@ -102,6 +325,7 @@ getISOMetadataNamespaces = function(){
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 getISOMetadataNamespace = function(id){
+  if(is.list(id)) if(getMetadataStandard() %in% names(id)) id = id[[getMetadataStandard()]]
   return(ISOMetadataNamespace[[id]])
 }
 
@@ -125,6 +349,7 @@ getISOMetadataNamespace = function(id){
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 registerISOMetadataNamespace <- function(id, uri, force = FALSE){
+  if(is.list(id)) if(getMetadataStandard() %in% names(id)) id = id[[getMetadataStandard()]]
   ns <- getISOMetadataNamespace(toupper(id))
   if(!is.null(ns)){
     if(!force) stop(sprintf("ISOMetadataNamespace with id '%s' already exists. Use force = TRUE to force registration", id))

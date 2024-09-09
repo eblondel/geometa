@@ -1,33 +1,44 @@
 #compute coverage
 require(geometa, quietly = TRUE)
-cov <- geometa_coverage()
+cov_1 <- geometa_coverage(version = "19115-1/2")
+cov_2 <- geometa_coverage(version = "19115-3")
+cov <- unique(rbind(cov_1, cov_2))
 
 #coverage summary
-stds <- unique(cov$specification)
+cov$id = paste(cov$specification, " - ", cov$schema, " - ", cov$namespace)
+stds <- unique(cov$id)
 stds <- stds[order(stds)]
 cov_summary <- do.call("rbind", lapply(stds, function(std){
-  cov_std <- cov[cov$specification == std,]
+  cov_std <- cov[cov$id == std,]
   cov_std_per <- round(nrow(cov_std[cov_std$in_geometa,]) / nrow(cov_std) * 100,2)
   cov_std_in <- nrow(cov_std[cov_std$in_geometa,])
   cov_std_out <- nrow(cov_std[!cov_std$in_geometa,])
+  cov_std_refactored <- nrow(cov_std[cov_std$refactored,])
+  cov_std_torefactor <- nrow(cov_std[!cov_std$refactored,])
   cov_out <- data.frame(
-    Standard = std,
+    id = std,
+    Specification = cov_std$specification[1],
+    Schema = cov_std$schema[1],
     Title = cov_std$title[1],
-    Namespace = cov_std$ns_prefix[1],
+    Namespace = cov_std$namespace[1],
     Supported = cov_std_in,
     Missing = cov_std_out,
+    Refactored = cov_std_refactored,
+    Torefactor = cov_std_torefactor,
     Coverage = cov_std_per,
     stringsAsFactors = FALSE
   )
+  print(cov_out)
   return(cov_out)
 }))
 cov_summary$coverage_class <- floor(cov_summary$Coverage/20)
-row.names(cov_summary) <- cov_summary$Standard
+row.names(cov_summary) <- cov_summary$id
+cov_summary$id = NULL
 
 cov_summary <- rbind(
-  cov_summary[startsWith(cov_summary$Standard, "ISO"),],
-  cov_summary[startsWith(cov_summary$Standard, "GML"),],
-  cov_summary[startsWith(cov_summary$Standard, "SWE"),]
+  cov_summary[startsWith(cov_summary$Specification, "ISO"),],
+  cov_summary[startsWith(cov_summary$Specification, "GML"),],
+  cov_summary[startsWith(cov_summary$Specification, "SWE"),]
 )
 
 #cov_summary_md (for README)
@@ -51,8 +62,7 @@ cov_summary_md$Coverage <- sapply(1:nrow(cov_summary_md), function(i){
   )
 })
 cov_summary_md$coverage_class <- NULL
-cov_summary_md$Standard <- row.names(cov_summary_md) 
-cov_summary_md <- cov_summary_md[,c("Standard","Title","Namespace","Coverage","Supported","Missing")]
+cov_summary_md <- cov_summary_md[,c("Specification", "Schema", "Title","Namespace","Coverage","Supported","Missing", "Refactored", "Torefactor")]
 row.names(cov_summary_md) <- NULL
 cov_kable <- kableExtra::kable(cov_summary_md, format = "markdown")
 kableExtra::save_kable(cov_kable, file = file.path(getwd(), "inst/extdata/coverage/geometa_coverage_summary.md"))

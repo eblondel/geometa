@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.isotc211.org/2005/gmd" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" version="2012-07-13">
+	<!-- ================================= Annotation ================================ -->
+	<xs:annotation>
+		<xs:documentation>Geographic MetaData (GMD) extensible markup language is a component of the XML Schema Implementation of Geographic Information Metadata documented in ISO/TS 19139:2007. GMD includes all the definitions of http://www.isotc211.org/2005/gmd namespace. The root document of this namespace is the file gmd.xsd.</xs:documentation>
+	</xs:annotation>
+	<!-- ================================== Imports ================================== -->
+	<xs:include schemaLocation="metadataApplication.xsd"/>
+	
+	<!-- 20190320 @eblondel add ISO-19115-2 schemas -->
+	<xs:import namespace="http://www.isotc211.org/2005/gmi" schemaLocation="../../-2/gmi/gmi.xsd"/>
+	<!-- 20170706 @eblondel add service metadata and feature catalogue schemas -->
+	<xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="../../../19119/srv/srv.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gfc" schemaLocation="../../../19110/gfc/gfc.xsd"/>
+	<!-- 20221020 @eblondel add GMLCOV 1.0 -->
+	<xs:import namespace="http://www.opengis.net/gmlcov/1.0" schemaLocation="../../../gmlcov/gmlcovAll.xsd"/>
+	<!-- 20180910 @eblondel add GML 3.3. referenceableGrid.xsd inc for validation -->
+	<xs:import namespace="http://www.opengis.net/gml/3.3/rgrid" schemaLocation="../../../gmlrgrid/referenceableGrid.xsd"/>
+	<!-- 20220217 @eblondel add SWE schemas for validation -->
+	<xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="../../../sweCommon/swe.xsd"/>
+	<!-- ########################################################################### -->
+	<!-- ########################################################################### -->
+	<!-- ================================== Classes ================================= -->
+</xs:schema>

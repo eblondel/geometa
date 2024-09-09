@@ -12,6 +12,15 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCodelist <- R6Class("ISOCodelist",
+   inherit = ISOAbstractObject,
+   private = list(
+     metadataStandardCompliance = FALSE,
+     xmlElement = "CT_Codelist",
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMX",
+       "19115-3" = "CAT"
+     )
+   ),
   public = list(
     #'@field id id
     id =NA,
@@ -23,17 +32,40 @@ ISOCodelist <- R6Class("ISOCodelist",
     identifier = NA,
     #'@field description description
     description = NA,
-    #'@field entries entries
-    entries = NULL,
+    #'@field codeEntry code entries
+    codeEntry = list(),
     
     #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
     #'@param refFile ref file
     #'@param id id
-    initialize = function(refFile, id){
-      self$refFile <- refFile
-      self$parse(refFile, id)
+    initialize = function(xml = NULL, refFile = NULL, id = NULL){
+      super$initialize(xml = xml)
+      
+      #legacy
+      if(!is.null(refFile) && !is.null(id)){
+        self$refFile <- refFile
+        self$parse(refFile, id)
+      }
     },
      
+    #'@description get code entries
+    #'@param pretty prettify output as \code{data.frame}. Default is\code{FALSE}
+    #'@return an object of class \link{list} or \link{data.frame}
+    getCodeEntries = function(pretty = FALSE){
+      entries = self$codeEntry
+      if(pretty){
+        entries <- do.call("rbind", lapply(entries, function(entry){
+          data.frame(
+            identifier = entry$identifier,
+            description = entry$description,
+            stringsAsFactors = FALSE
+          )
+        }))
+      }
+      return(entries)
+    },
+    
     #'@description Parse codelist
     #'@param refFile ref file
     #'@param id id
@@ -57,9 +89,9 @@ ISOCodelist <- R6Class("ISOCodelist",
         self$identifier <- id
         self$codeSpace <- "ISO 639-2"
         self$description <- "Language : ISO 639-2 (3 characters)"
-        self$entries <- utils::read.csv(clFile, sep="|", stringsAsFactors = FALSE)
-        self$entries <- self$entries[,c("alpha3", "english", "english")]
-        colnames(self$entries) <- c("value","name", "description")
+        self$codeEntry <- utils::read.csv(clFile, sep="|", stringsAsFactors = FALSE)
+        self$codeEntry <- self$codeEntry[,c("alpha3", "english", "english")]
+        colnames(self$codeEntry) <- c("value","name", "description")
       }else{
       
         isML <- regexpr("ML", refFile) > 0
@@ -105,10 +137,10 @@ ISOCodelist <- R6Class("ISOCodelist",
           self$description <- XML::xmlValue(desXML[[1]])
         }
         
-        #codelist entries
+        #codelist codeEntry
         entriesXML <- XML::getNodeSet(clDictXML, "//gmx:codeEntry",
                                  c(gmx = nsdf[nsdf$id=="","uri"]))
-        self$entries <- do.call("rbind",lapply(entriesXML, function(x){
+        self$codeEntry <- do.call("rbind",lapply(entriesXML, function(x){
           entry.df <- data.frame(identifier = NA, name = NA, description = NA)
           identifier <- getNodeSet(xmlDoc(x), "//gml:identifier", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
           if(length(identifier)>0) entry.df$identifier <- xmlValue(identifier[[1]])
@@ -118,7 +150,7 @@ ISOCodelist <- R6Class("ISOCodelist",
           if(length(description)>0) entry.df$description <- xmlValue(description[[1]])
           return(entry.df)
         }))
-        colnames(self$entries) <- c("value", "name", "description")
+        colnames(self$codeEntry) <- c("value", "name", "description")
       }
     }
   )                      
@@ -135,54 +167,55 @@ setISOCodelists <- function(){
   gmxCL <- "gmxCodelists.xml"
   codelists <- list(
     #ISO 19110:2005 codelists
-    ISOCodelist$new(gmxCL, "FC_RoleType"),
+    ISOCodelist$new(refFile = gmxCL, id = "FC_RoleType"),
     #ISO 19115-1:2003 Codelists
-    ISOCodelist$new(gmxCL, "CI_DateTypeCode"),
-    ISOCodelist$new(gmxCL, "CI_PresentationFormCode"),
-    ISOCodelist$new(gmxCL, "CI_RoleCode"),
-    ISOCodelist$new(gmxCL, "CI_OnLineFunctionCode"),
-    ISOCodelist$new(ML_gmxCL, "Country"),
-    ISOCodelist$new(gmxCL, "DCPList"),
-    ISOCodelist$new(gmxCL, "DQ_EvaluationMethodTypeCode"),
-    ISOCodelist$new(gmxCL, "DS_AssociationTypeCode"),
-    ISOCodelist$new(gmxCL, "DS_InitiativeTypeCode"),
-    ISOCodelist$new(langCL, "LanguageCode"),
-    ISOCodelist$new(gmxCL, "MD_CellGeometryCode"),
-    ISOCodelist$new(ML_gmxCL, "MD_CharacterSetCode"),
-    ISOCodelist$new(gmxCL, "MD_ClassificationCode"),
-    ISOCodelist$new(gmxCL, "MD_CoverageContentTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_DatatypeCode"),
-    ISOCodelist$new(gmxCL, "MD_DimensionNameTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_DistributionUnits"),
-    ISOCodelist$new(gmxCL, "MD_GeometricObjectTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_KeywordTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_ImagingConditionCode"),
-    ISOCodelist$new(gmxCL, "MD_MaintenanceFrequencyCode"),
-    ISOCodelist$new(gmxCL, "MD_MediumFormatCode"),
-    ISOCodelist$new(gmxCL, "MD_MediumNameCode"),
-    ISOCodelist$new(gmxCL, "MD_ObligationCode"),
-    ISOCodelist$new(gmxCL, "MD_PixelOrientationCode"),
-    ISOCodelist$new(gmxCL, "MD_ProgressCode"),
-    ISOCodelist$new(gmxCL, "MD_RestrictionCode"),
-    ISOCodelist$new(gmxCL, "MD_SpatialRepresentationTypeCode"),
-    ISOCodelist$new(gmxCL, "MD_TopicCategoryCode"),
-    ISOCodelist$new(gmxCL, "MD_TopologyLevelCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "CI_DateTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "CI_PresentationFormCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "CI_RoleCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "CI_OnLineFunctionCode"),
+    ISOCodelist$new(refFile = ML_gmxCL, id = "Country"),
+    ISOCodelist$new(refFile = gmxCL, id = "DCPList"),
+    ISOCodelist$new(refFile = gmxCL, id = "DQ_EvaluationMethodTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "DS_AssociationTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "DS_InitiativeTypeCode"),
+    ISOCodelist$new(refFile = langCL, id = "LanguageCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_CellGeometryCode"),
+    ISOCodelist$new(refFile = ML_gmxCL, id = "MD_CharacterSetCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_ClassificationCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_CoverageContentTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_DatatypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_DimensionNameTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_DistributionUnits"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_GeometricObjectTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_KeywordTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_ImagingConditionCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_MaintenanceFrequencyCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_MediumFormatCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_MediumNameCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_ObligationCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_PixelOrientationCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_ProgressCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_RestrictionCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_SpatialRepresentationTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_TopicCategoryCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MD_TopologyLevelCode"),
     #ISO 19115-2:2009 codelists
-    ISOCodelist$new(gmxCL, "MI_BandDefinition"),
-    ISOCodelist$new(gmxCL, "MI_ContextCode"),
-    ISOCodelist$new(gmxCL, "MI_GeometryTypeCode"),
-    ISOCodelist$new(gmxCL, "MI_ObjectiveTypeCode"),
-    ISOCodelist$new(gmxCL, "MI_OperationTypeCode"),
-    ISOCodelist$new(gmxCL, "MI_PolarisationOrientationCode"),
-    ISOCodelist$new(gmxCL, "MI_PriorityCode"),
-    ISOCodelist$new(gmxCL, "MI_SequenceCode"),
-    ISOCodelist$new(gmxCL, "MI_TransferFunctionTypeCode"),
-    ISOCodelist$new(gmxCL, "MI_TriggerCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_BandDefinition"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_ContextCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_GeometryTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_ObjectiveTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_OperationTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_PolarisationOrientationCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_PriorityCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_SequenceCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_TransferFunctionTypeCode"),
+    ISOCodelist$new(refFile = gmxCL, id = "MI_TriggerCode"),
     #ISO 19119:2005 codelists
-    ISOCodelist$new(gmxCL, "SV_CouplingType"),
-    ISOCodelist$new(gmxCL, "SV_ParameterDirection"),
+    ISOCodelist$new(refFile = gmxCL, id = "SV_CouplingType"),
+    ISOCodelist$new(refFile = gmxCL, id = "SV_ParameterDirection"),
     #ISO 19139:2007 codelists
-    ISOCodelist$new(gmxCL, "MX_ScopeCode")
+    ISOCodelist$new(refFile = gmxCL, id = "MX_ScopeCode")
+    #ISO/TS 19115-3:2016
   )
   names(codelists) <- sapply(codelists, function(cl){cl$id})
   .geometa.iso$codelists <- codelists

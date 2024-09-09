@@ -4,7 +4,7 @@
 \alias{setISOMetadataSchemas}
 \title{setISOMetadataSchemas}
 \usage{
-setISOMetadataSchemas()
+setISOMetadataSchemas(version = "19115-1/2")
 }
 \description{
 setISOMetadataSchemas

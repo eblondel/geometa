@@ -24,7 +24,7 @@
 #'    The object returned is a \code{data.frame} containing the specification reference
 #'    and title.
 #'  }
-#'  \item{\code{getISOStandard(clazz)}}{
+#'  \item{\code{getISOStandard(clazz, version)}}{
 #'    Inherit the ISO (and/or OGC) standard reference for a given \pkg{geometa} class.
 #'    The object returned is a \code{data.frame} containing the specification reference
 #'    and title.
@@ -55,6 +55,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
   inherit = geometaLogger,
   cloneable = FALSE,
   private = list(
+    metadataStandardCompliance = TRUE,
     xmlElement = "AbstractObject",
     xmlNamespacePrefix = "GCO",
     encoding = options("encoding"),
@@ -236,6 +237,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     initialize = function(xml = NULL, element = NULL, namespace = NULL,
                           attrs = list(), defaults = list(),
                           wrap = TRUE, value_as_field = FALSE){
+      self$checkMetadataStandardCompliance()
       if(!is.null(element)){ private$xmlElement <- element }
       if(!is.null(namespace)){ private$xmlNamespacePrefix <- toupper(namespace)}
       self$element = private$xmlElement
@@ -249,8 +251,31 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       }
     },
     
+    #Metadata standard compliance methods
+    #---------------------------------------------------------------------------
+    
+    #'@description Check if object can be instantiated vs. the current metadata standard
+    checkMetadataStandardCompliance = function(){
+      if(private$metadataStandardCompliance){
+        xmlnsp = private$xmlNamespacePrefix
+        if(is.list(xmlnsp)) if(!getMetadataStandard() %in% names(xmlnsp)) {
+          stop(sprintf("Class '%s' can't be loaded with current metadata standard '%s'", self$getClassName(), getMetadataStandard()))
+        }
+      }
+    },
+    
+    #'@description Utility to stop in case a the current metadata standard does not match the one required for the code. This utility
+    #' can be used to check applicability of a certain method, depending on on the current metadata standard.
+    #'@param version version
+    stopIfMetadataStandardIsNot = function(version){
+      if(getMetadataStandard() != version){
+        stop(sprintf("The method can't be used with current metadata standard '%s'", getMetadataStandard()))
+      }
+    },
+    
     #Main methods
     #---------------------------------------------------------------------------
+    
     
     #'@description Provides a custom print output (as tree) of the current class
     #'@param ... args
@@ -460,12 +485,13 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                                  },
                                  fieldValue
             )
-            if(length(fieldValue)==0) fieldValue = NA
+			if(length(fieldValue)==0) fieldValue = NA										 
           }else{
             fieldValue <- fieldClass$new(xml = child)
             fieldValue$parentAttrs <- parentAttrs
             attrs <- as.list(xmlAttrs(child, TRUE, FALSE))
             if(length(attrs)>0) attrs <- attrs[attrs != "gmd:PT_FreeText_PropertyType"]
+            if(length(attrs)>0) attrs <- attrs[attrs != "lan:PT_FreeText_PropertyType"]
             fieldValue$attrs <- attrs
           }
           if(is(self[[fieldName]], "list")){
@@ -613,6 +639,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       
       attrs <- as.list(xmlattrs)
       if(length(attrs)>0) attrs <- attrs[attrs != "gmd:PT_FreeText_PropertyType"]
+      if(length(attrs)>0) attrs <- attrs[attrs != "lan:PT_FreeText_PropertyType"]
       self$attrs <- attrs
       if("gco:nilReason" %in% names(xmlattrs)) self$isNull <- TRUE
     },
@@ -670,7 +697,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         rootXMLAttrs <- self[["attrs"]]
         rootXMLAttrs <- rootXMLAttrs[!is.na(rootXMLAttrs)]
       }
-      freeTextAttr <- list("xsi:type" = "gmd:PT_FreeText_PropertyType")
+      freeTextAttr <- list("xsi:type" = switch(getMetadataStandard(),
+        "19115-1/2" = "gmd:PT_FreeText_PropertyType",
+        "19115-3" = "lan:PT_FreeText_PropertyType",
+      ))
       
       #fields
       fields <- fields[!sapply(fields, function(x){
@@ -726,7 +756,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         if(field != "value"){
           klass <- self$isFieldInheritedFrom(field)
           if(!is.null(klass)){
-            ns <- ISOMetadataNamespace[[klass$private_fields$xmlNamespacePrefix]]$getDefinition()
+            xmlnsp <- klass$private_fields$xmlNamespacePrefix
+            if(is.list(xmlnsp)) if(getMetadataStandard() %in% names(xmlnsp)) xmlnsp <- xmlnsp[[getMetadataStandard()]]
+            ns <- ISOMetadataNamespace[[xmlnsp]]$getDefinition()
           }
         }
         namespaceId <- names(ns)
@@ -1131,7 +1163,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
               if(x != "value"){
                 klass <- self$isFieldInheritedFrom(x)
                 if(!is.null(klass)){
-                  ns <- ISOMetadataNamespace[[klass$private_fields$xmlNamespacePrefix]]$getDefinition()
+                  xmlnsp <- klass$private_fields$xmlNamespacePrefix
+                  if(is.list(xmlnsp)) if(getMetadataStandard() %in% names(xmlnsp)) xmlnsp <- xmlnsp[[getMetadataStandard()]]
+                  ns <- ISOMetadataNamespace[[xmlnsp]]$getDefinition()
                   if(!(ns %in% nsdefs)){
                     nsdefs <<- c(nsdefs, ns)
                   }
@@ -1336,7 +1370,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #'@param addNS add namespace definition? Default is \code{FALSE}
     setId = function(id, addNS = FALSE){
       attrKey <- "id"
-      prefix <- tolower(private$xmlNamespacePrefix)
+      xmlnsp <- private$xmlNamespacePrefix
+      if(is.list(xmlnsp)) if(getMetadataStandard() %in% names(xmlnsp)) xmlnsp <- xmlnsp[[getMetadataStandard()]]
+      prefix <- tolower(xmlnsp)
       if(startsWith(prefix, "gml")) prefix <- "gml"
       if(addNS) attrKey <- paste(prefix, attrKey, sep=":")
       self$attrs[[attrKey]] <- id
@@ -1424,27 +1460,22 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
 )
 
 ISOAbstractObject$getStandardByPrefix = function(prefix){
-  std <- switch(prefix,
-    "GCO" = data.frame(specification = "ISO/TS 19103:2005", title = "Geographic Common extensible markup language", stringsAsFactors = FALSE),
-    "GFC" = data.frame(specification = "ISO/TC211 19110:2005", title = "Geographic Information - Methodology for feature cataloguing", stringsAsFactors = FALSE),
-    "GMD" = data.frame(specification = "ISO/TC211 19115-1:2003", title = "Geographic Information - Metadata", stringsAsFactors = FALSE),
-    "GMI" = data.frame(specification = "ISO/TC211 19115-2:2009", title = "Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data", stringsAsFactors = FALSE),
-    "GTS" = data.frame(specification = "ISO/TC211 19139:2007", title = "Geographic Metadata XML Schema - Geographic Temporal Schema (GTS)", stringsAsFactors = FALSE),
-    "SRV" = data.frame(specification = "ISO/TC211 19119:2005", title = "Geographic Information - Service Metadata", stringsAsFactors = FALSE),
-    "GMX" = data.frame(specification = "ISO/TC211 19139:2007", title = "Geographic Metadata XML Schema", stringsAsFactors = FALSE),
-    "GML" = data.frame(specification = "GML 3.2.1 (ISO 19136)", title = "Geographic Markup Language", stringsAsFactors = FALSE),
-    "GMLCOV" = data.frame(specification = "GML 3.2.1 Coverage (OGC GMLCOV)", title = "OGC GML Coverage Implementation Schema", stringsAsFactors = FALSE),
-    "GMLRGRID" = data.frame(specification = "GML 3.3 Referenceable Grid (OGC GML)", title = "OGC GML Referenceable Grid", stringsAsFactors = FALSE),
-    "SWE" = data.frame(specification = "SWE 2.0", title = "Sensor Web Enablement (SWE) Common Data Model", stringsAsFactors = FALSE)
-  )
+  ns <- getISOMetadataNamespace(prefix)
+  std <- ns$getStandard()
   return(std)
 }
 
-ISOAbstractObject$getISOStandard = function(clazz){
+ISOAbstractObject$getISOStandard = function(clazz, version = "19115-1/2"){
   std <- NA
   if(is.null(clazz$private_fields)) return(std)
   if(is.null(clazz$private_fields$xmlNamespacePrefix)) return(std)
-  std <- ISOAbstractObject$getStandardByPrefix(clazz$private_fields$xmlNamespacePrefix)
+  xmlnsp <- clazz$private_fields$xmlNamespacePrefix
+  if(is.list(xmlnsp)) if(version %in% names(xmlnsp)){
+    xmlnsp <- xmlnsp[[version]]
+  }else{
+    xmlnsp <- xmlnsp[[1]]
+  }
+  std <- ISOAbstractObject$getStandardByPrefix(xmlnsp)
   return(std)
 }
 
@@ -1474,15 +1505,26 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
   if(pretty){
     std_info <- do.call("rbind",lapply(list_of_classes, function(x){
       clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
-      std <- ISOAbstractObject$getISOStandard(clazz)
-      std_info <- cbind(
+      std <- ISOAbstractObject$getISOStandard(clazz, version = getMetadataStandard())
+      xmlnsp <- clazz$private_fields$xmlNamespacePrefix
+      refactored = FALSE
+      if(is.list(xmlnsp)){
+        refactored = TRUE
+        if(getMetadataStandard() %in% names(xmlnsp)){
+          xmlnsp <- xmlnsp[[getMetadataStandard()]]
+        }else{
+          xmlnsp <- xmlnsp[[1]]
+        }
+      }
+      stdinfo <- cbind(
         std,
-        ns_prefix = clazz$private_fields$xmlNamespacePrefix,
-        ns_uri = ISOMetadataNamespace[[clazz$private_fields$xmlNamespacePrefix]]$uri,
+        ns_prefix = if(!is.null(xmlnsp)) xmlnsp else NA,
+        ns_uri = if(!is.null(xmlnsp)) ISOMetadataNamespace[[xmlnsp]]$uri else NA,
         element = clazz$private_fields$xmlElement,
+        refactored = refactored,
         stringsAsFactors = FALSE
       )
-      return(std_info)
+      return(stdinfo)
     }))
     
     list_of_classes <- data.frame(
@@ -1496,7 +1538,7 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
 
 ISOAbstractObject$getISOClassByNode = function(node){
   outClass <- NULL
-  if(!is(node, "XMLInternalDocument")) node <- xmlDoc(node)
+  if(!is(node, "XMLInternalDocument") & !is(node, "XMLInternalCommentNode")) node <- xmlDoc(node)
   nodeElement <- xmlRoot(node)
   nodeElementName <- xmlName(nodeElement)
   nodeElementNames <- unlist(strsplit(nodeElementName, ":"))
@@ -1648,10 +1690,14 @@ getClassesInheriting <- function(classname, extended = FALSE, pretty = FALSE){
     std_infos <- do.call("rbind",lapply(list_of_classes, function(x){
       clazz <- try(eval(parse(text=x)),silent=TRUE)
       if(is(clazz,"try-error")) clazz <- try(eval(parse(text=paste0("geometa::",x))),silent=TRUE)
+      
+      xmlnsp <- clazz$private_fields$xmlNamespacePrefix
+      if(is.list(xmlnsp)) if(getMetadataStandard() %in% names(xmlnsp)) xmlnsp <- xmlnsp[[getMetadataStandard()]]
+      
       std_info <- data.frame(
         environment = environmentName(clazz$parent_env),
-        ns_prefix = if(!is.null(clazz$private_fields$xmlNamespacePrefix))clazz$private_fields$xmlNamespacePrefix else NA,
-        ns_uri = if(!is.null(clazz$private_fields$xmlNamespacePrefix)) ISOMetadataNamespace[[clazz$private_fields$xmlNamespacePrefix]]$uri else NA,
+        ns_prefix = if(!is.null(xmlnsp)) xmlnsp else NA,
+        ns_uri = if(!is.null(xmlnsp)) ISOMetadataNamespace[[xmlnsp]]$uri else NA,
         element = if(!is.null(clazz$private_fields$xmlElement)) clazz$private_fields$xmlElement else NA,
         stringsAsFactors = FALSE
       )

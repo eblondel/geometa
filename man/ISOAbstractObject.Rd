@@ -26,7 +26,7 @@ Abstract ISO Metadata class used internally by geometa
    The object returned is a \code{data.frame} containing the specification reference
    and title.
  }
- \item{\code{getISOStandard(clazz)}}{
+ \item{\code{getISOStandard(clazz, version)}}{
    Inherit the ISO (and/or OGC) standard reference for a given \pkg{geometa} class.
    The object returned is a \code{data.frame} containing the specification reference
    and title.
@@ -90,6 +90,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOAbstractObject-new}{\code{ISOAbstractObject$new()}}
+\item \href{#method-ISOAbstractObject-checkMetadataStandardCompliance}{\code{ISOAbstractObject$checkMetadataStandardCompliance()}}
+\item \href{#method-ISOAbstractObject-stopIfMetadataStandardIsNot}{\code{ISOAbstractObject$stopIfMetadataStandardIsNot()}}
 \item \href{#method-ISOAbstractObject-print}{\code{ISOAbstractObject$print()}}
 \item \href{#method-ISOAbstractObject-decode}{\code{ISOAbstractObject$decode()}}
 \item \href{#method-ISOAbstractObject-encode}{\code{ISOAbstractObject$encode()}}
@@ -158,6 +160,34 @@ Initializes object
 \item{\code{wrap}}{wrap?}
 
 \item{\code{value_as_field}}{value as field?}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-checkMetadataStandardCompliance"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-checkMetadataStandardCompliance}{}}}
+\subsection{Method \code{checkMetadataStandardCompliance()}}{
+Check if object can be instantiated vs. the current metadata standard
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$checkMetadataStandardCompliance()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-stopIfMetadataStandardIsNot"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-stopIfMetadataStandardIsNot}{}}}
+\subsection{Method \code{stopIfMetadataStandardIsNot()}}{
+Utility to stop in case a the current metadata standard does not match the one required for the code. This utility
+can be used to check applicability of a certain method, depending on on the current metadata standard.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$stopIfMetadataStandardIsNot(version)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{version}}{version}
 }
 \if{html}{\out{</div>}}
 }

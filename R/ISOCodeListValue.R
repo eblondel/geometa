@@ -17,7 +17,9 @@
 ISOCodeListValue <- R6Class("ISOCodeListValue",
    inherit = ISOAbstractObject,
    private = list(
-     printAttrs = list()
+      printAttrs = list(),
+      xmlElement = "CodeListValue",
+      xmlNamespacePrefix = "GCO"
    ),
    public = list(
      #'@field codelistId codelist ID
@@ -67,13 +69,12 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        clName <- NA
        clDescription <- ""
        
-       if(length(cl$entries)>0){
+       if(length(cl$codeEntry)>0){
          if(!is.null(value)){
-           clEntry <- cl$entries[cl$entries$value == value,]
+           clEntry <- cl$codeEntry[cl$codeEntry$value == value,]
            if(nrow(clEntry)==0){
              warning(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
              clValue <- value
-             clCodeSpace <- cl$codeSpace
              if(!is.null(description)){
                setValue <- TRUE
                clName <- description
@@ -82,7 +83,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
              }
            }
          }else{
-           clEntry <- cl$entries[1,]
+           clEntry <- cl$codeEntry[1,]
          }
          
          if(!is.null(value) & nrow(clEntry)>0){
@@ -95,7 +96,6 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          }
        }else{
          clValue <- value
-         clCodeSpace <- cl$codeSpace
          if(!is.null(description)){
            setValue <- TRUE
            clName <- description
@@ -141,7 +141,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
      #'@description Get accepted values
      #'@return a vector of class \link{character}
      getAcceptedValues = function(){
-       return(self$codelistId$entries$value)
+       return(self$codelistId$codeEntry$value)
      }
    )                        
 )
@@ -151,5 +151,5 @@ ISOCodeListValue$values = function(class, labels = FALSE){
   if(labels) fields <- c(fields, "name", "description")
   element <- class$private_fields$xmlElement
   if(element == "MD_ScopeCode") element <- "MX_ScopeCode"
-  return(getISOCodelist(element)$entries[,fields])
+  return(getISOCodelist(element)$codeEntry[,fields])
 }

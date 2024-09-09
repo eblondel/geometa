@@ -24,15 +24,33 @@ registerISOMetadataSchema <- function(xsdFile){
   .geometa.iso$schemas <- schemas
 }
 
+#'getISOMetadataSchemaFile
+#'@export
+getISOMetadataSchemaFile <- function(version = "19115-1/2"){
+  available_versions <- c("19115-1/2","19115-3")
+  if(!version %in% available_versions){
+    errMsg <- sprintf("Version '%s' not among available schema versions (%s)",
+                      version, paste0(available_versions, collapse = ","))
+    stop(errMsg)
+  }
+  schemaPath <- "extdata/schemas"
+  namespace <- switch(version,
+                      "19115-1/2" = "19115/-1/gmd",
+                      "19115-3" = "19115/-3/mdb/2.0" 
+  )
+  xsdFilename <- switch(version,
+                        "19115-1/2" = "gmd.xsd",
+                        "19115-3" = "mdb.xsd"
+  )
+  defaultXsdFile <- system.file(paste(schemaPath, namespace, sep="/"), xsdFilename, package = "geometa", mustWork = TRUE)
+  return(defaultXsdFile)
+}
+
 #'setISOMetadataSchemas
 #'@export
-setISOMetadataSchemas <- function(){
+setISOMetadataSchemas <- function(version = "19115-1/2"){
   packageStartupMessage("Loading ISO 19139 XML schemas...")
-  schemaPath <- "extdata/schemas"
-  namespace <- "gmd"
-  defaultXsdFile <- system.file(paste(schemaPath, namespace, sep="/"), paste0(namespace,".xsd"),
-                                package = "geometa", mustWork = TRUE)
-  registerISOMetadataSchema(defaultXsdFile)
+  registerISOMetadataSchema(getISOMetadataSchemaFile(version = version))
 }
 
 #' @name getISOMetadataSchemas
@@ -51,3 +69,49 @@ setISOMetadataSchemas <- function(){
 getISOMetadataSchemas <- function(){
   return(.geometa.iso$schemas)
 }
+
+
+#' @name setMetadataStandard
+#' @aliases setMetadataStandard
+#' @title setMetadataStandard
+#' @export
+#' @description \code{setMetadataStandard} allows to set the standard to use for encoding/decoding in \pkg{geometa}.
+#'  By default the standard "19115-1/2" will be used. Possible alternative value "19115-3"
+#' 
+#' @usage setMetadataStandard(version)
+#' 
+#' @param version the standard version
+#' 
+#' @examples             
+#'   setMetadataStandard(version = "19115-3")
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+setMetadataStandard <- function(version = "19115-1/2"){
+  available_versions <- c("19115-1/2","19115-3")
+  if(!version %in% available_versions){
+    errMsg <- sprintf("Version '%s' not among available schema versions (%s)",
+                      version, paste0(available_versions, collapse = ","))
+    stop(errMsg)
+  }
+  .geometa.iso$version <- version
+  setISOMetadataNamespaces(version = version)
+}
+
+#' @name getMetadataStandard
+#' @aliases getMetadataStandard
+#' @title getMetadataStandard
+#' @export
+#' @description \code{getMetadataStandard} allows to set the standard to use for encoding/decoding in \pkg{geometa}.
+#' 
+#' @usage getMetadataStandard()
+#' 
+#' @examples             
+#'   getMetadataStandard()
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+getMetadataStandard <- function(){
+  return(.geometa.iso$version)
+}
+

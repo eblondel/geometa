@@ -1,509 +1,609 @@
-"specification","title","ns_prefix","element","geometa_class","in_geometa"
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_CarrierOfCharacteristics","ISOAbstractCarrierOfCharacteristics",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_PropertyType","ISOAbstractPropertyType",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_AssociationRole","ISOAssociationRole",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_Binding","ISOBinding",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_BoundAssociationRole","ISOBoundAssociationRole",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_BoundFeatureAttribute","ISOBoundFeatureAttribute",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_Constraint","ISOConstraint",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_DefinitionReference","ISODefinitionReference",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_DefinitionSource","ISODefinitionSource",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureAssociation","ISOFeatureAssociation",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureAttribute","ISOFeatureAttribute",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureCatalogue","ISOFeatureCatalogue",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureOperation","ISOFeatureOperation",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureType","ISOFeatureType",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_InheritanceRelation","ISOInheritanceRelation",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_ListedValue","ISOListedValue",TRUE
-"ISO/TC211 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_RoleType","ISORoleType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Completeness","ISOAbstractCompleteness",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Element","ISODataQualityAbstractElement",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_LogicalConsistency","ISOAbstractLogicalConsistency",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_PositionalAccuracy","ISOAbstractPositionalAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Result","ISOAbstractResult",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_TemporalAccuracy","ISOAbstractTemporalAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_ThematicAccuracy","ISOAbstractThematicAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDS_Aggregate","ISOAbstractAggregate",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractEX_GeographicExtent","ISOGeographicExtent",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractMD_ContentInformation","ISOContentInformation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractMD_Identification","ISOIdentification",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractMD_SpatialRepresentation","ISOSpatialRepresentation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","AbstractRS_ReferenceSystem","ISOAbstractReferenceSystem",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Address","ISOAddress",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Citation","ISOCitation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Contact","ISOContact",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Date","ISODate",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_DateTypeCode","ISODateType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_OnLineFunctionCode","ISOOnLineFunction",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_OnlineResource","ISOOnlineResource",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_PresentationFormCode","ISOPresentationForm",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_ResponsibleParty","ISOResponsibleParty",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_RoleCode","ISORole",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Series","ISOCitationSeries",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","CI_Telephone","ISOTelephone",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","Country","ISOCountry",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_AbsoluteExternalPositionalAccuracy","ISOAbsoluteExternalPositionalAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_AccuracyOfATimeMeasurement","ISOAccuracyOfATimeMeasurement",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_CompletenessCommission","ISOCompletenessCommission",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_CompletenessOmission","ISOCompletenessOmission",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_ConceptualConsistency","ISOConceptualConsistency",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_ConformanceResult","ISOConformanceResult",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_DataQuality","ISODataQuality",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_DomainConsistency","ISODomainConsistency",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_EvaluationMethodTypeCode","ISOEvaluationMethodType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_FormatConsistency","ISOFormatConsistency",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_GriddedDataPositionalAccuracy","ISOGriddedDataPositionalAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_NonQuantitativeAttributeAccuracy","ISONonQuantitativeAttributeAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeAttributeAccuracy","ISOQuantitativeAttributeAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeResult","ISOQuantitativeResult",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_RelativeInternalPositionalAccuracy","ISORelativeInternalPositionalAccuracy",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_Scope","ISOScope",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TemporalConsistency","ISOTemporalConsistency",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TemporalValidity","ISOTemporalValidity",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_ThematicClassificationCorrectness","ISOThematicClassificationCorrectness",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TopologicalConsistency","ISOTopologicalConsistency",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Association","ISOAssociation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_AssociationTypeCode","ISOAssociationType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_DataSet","ISODataSet",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Initiative","ISOInitiative",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_InitiativeTypeCode","ISOInitiativeType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_OtherAggregate","ISOOtherAggregate",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Platform","ISOPlatform",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_ProductionSeries","ISOProductionSeries",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Sensor","ISOSensor",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_Series","ISOSeries",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","DS_StereoMate","ISOStereoMate",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_BoundingPolygon","ISOBoundingPolygon",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_Extent","ISOExtent",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_GeographicBoundingBox","ISOGeographicBoundingBox",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_GeographicDescription","ISOGeographicDescription",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_SpatialTemporalExtent","ISOSpatialTemporalExtent",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_TemporalExtent","ISOTemporalExtent",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","EX_VerticalExtent","ISOVerticalExtent",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","LanguageCode","ISOLanguage",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","LI_Lineage","ISOLineage",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","LI_ProcessStep","ISOProcessStep",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","LI_Source","ISOSource",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","LocalisedCharacterString","ISOLocalisedCharacterString",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_AggregateInformation","ISOAggregateInformation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ApplicationSchemaInformation","ISOApplicationSchemaInformation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Band","ISOBand",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_BrowseGraphic","ISOBrowseGraphic",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_CellGeometryCode","ISOCellGeometry",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_CharacterSetCode","ISOCharacterSet",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ClassificationCode","ISOClassification",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Constraints","ISOConstraints",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_CoverageContentTypeCode","ISOCoverageContentType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_CoverageDescription","ISOCoverageDescription",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_DataIdentification","ISODataIdentification",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_DatatypeCode","ISODatatype",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_DigitalTransferOptions","ISODigitalTransferOptions",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Dimension","ISODimension",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_DimensionNameTypeCode","ISODimensionNameType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Distribution","ISODistribution",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_DistributionUnits","ISODistributionUnits",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Distributor","ISODistributor",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ExtendedElementInformation","ISOExtendedElementInformation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_FeatureCatalogueDescription","ISOFeatureCatalogueDescription",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Format","ISOFormat",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_GeometricObjects","ISOGeometricObjects",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_GeometricObjectTypeCode","ISOGeometricObjectType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georectified","ISOGeorectified",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georeferenceable","ISOGeoreferenceable",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_GridSpatialRepresentation","ISOGridSpatialRepresentation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Identifier","ISOMetaIdentifier",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ImageDescription","ISOImageDescription",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ImagingConditionCode","ISOImagingCondition",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Keywords","ISOKeywords",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_KeywordTypeCode","ISOKeywordType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_LegalConstraints","ISOLegalConstraints",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MaintenanceFrequencyCode","ISOMaintenanceFrequency",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MaintenanceInformation","ISOMaintenanceInformation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Medium","ISOMedium",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumFormatCode","ISOMediumFormat",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumNameCode","ISOMediumName",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Metadata","ISOMetadata",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_MetadataExtensionInformation","ISOMetadataExtensionInformation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ObligationCode","ISOObligation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_PixelOrientationCode","ISOPixelOrientation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_PortrayalCatalogueReference","ISOPortrayalCatalogueReference",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ProgressCode","ISOStatus",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_RangeDimension","ISORangeDimension",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ReferenceSystem","ISOReferenceSystem",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_RepresentativeFraction","ISORepresentativeFraction",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Resolution","ISOResolution",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_RestrictionCode","ISORestriction",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeCode","ISOHierarchyLevel",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeDescription","ISOScopeDescription",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_SecurityConstraints","ISOSecurityConstraints",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_ServiceIdentification","ISOServiceIdentification",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_SpatialRepresentationTypeCode","ISOSpatialRepresentationType",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_StandardOrderProcess","ISOStandardOrderProcess",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_TopicCategoryCode","ISOTopicCategory",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_TopologyLevelCode","ISOTopologyLevel",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_Usage","ISOUsage",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","MD_VectorSpatialRepresentation","ISOVectorSpatialRepresentation",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","PT_FreeText","ISOFreeText",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","PT_Locale","ISOLocale",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","PT_LocaleContainer","ISOLocaleContainer",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","RS_Identifier","ISOReferenceIdentifier",TRUE
-"ISO/TC211 19115-1:2003","Geographic Information - Metadata","GMD","URL","ISOURL",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","AbstractMI_GeolocationInformation","ISOImageryAbstractGeolocationInformation",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Algorithm","ISOImageryAlgorithm",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_NominalResolution","ISOImageryNominalResolution",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Processing","ISOImageryProcessing",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_ProcessStep","ISOImageryProcessStep",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_ProcessStepReport","ISOImageryProcessStepReport",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Source","ISOImagerySource",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_AcquisitionInformation","ISOImageryAcquisitionInformation",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Band","ISOImageryBand",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_BandDefinition","ISOImageryBandDefinition",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ContextCode","ISOImageryContext",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_CoverageDescription","ISOImageryCoverageDescription",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_EnvironmentalRecord","ISOImageryEnvironmentalRecord",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Event","ISOImageryEvent",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GCP","ISOImageryGCP",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GCPCollection","ISOImageryGCPCollection",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GeometryTypeCode","ISOImageryGeometryType",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georectified","ISOImageryGeorectified",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georeferenceable","ISOImageryGeoreferenceable",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ImageDescription","ISOImageryImageDescription",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Instrument","ISOImageryInstrument",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Metadata","ISOImageryMetadata",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Objective","ISOImageryObjective",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ObjectiveTypeCode","ISOImageryObjectiveType",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Operation","ISOImageryOperation",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_OperationTypeCode","ISOImageryOperationType",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Plan","ISOImageryPlan",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Platform","ISOImageryPlatform",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PlatformPass","ISOImageryPlatformPass",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PolarisationOrientationCode","ISOImageryPolarisationOrientation",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PriorityCode","ISOImageryPriority",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_RangeElementDescription","ISOImageryRangeElementDescription",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_RequestedDate","ISOImageryRequestedDate",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Requirement","ISOImageryRequirement",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_SensorTypeCode","ISOImagerySensorType",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_SequenceCode","ISOImagerySequence",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_TransferFunctionTypeCode","ISOImageryTransferFunctionType",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_TriggerCode","ISOImageryTrigger",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","QE_CoverageResult","ISOImageryCoverageResult",TRUE
-"ISO/TC211 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","QE_Usability","ISOImageryUsability",TRUE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","DCPList","ISODCPList",TRUE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_CoupledResource","ISOCoupledResource",TRUE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_CouplingType","ISOCouplingType",TRUE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_Interface","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_Operation","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_OperationChain","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_OperationChainMetadata","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_OperationMetadata","ISOOperationMetadata",TRUE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_OperationModel","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_Parameter","ISOParameter",TRUE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_ParameterDirection","ISOParameterDirection",TRUE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_PlatformNeutralServiceSpecification","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_PlatformSpecificServiceSpecification","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_Port","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_PortSpecification","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_Service","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceIdentification","ISOSRVServiceIdentification",TRUE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceSpecification","<missing>",FALSE
-"ISO/TC211 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceType","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","AbstractCT_Catalogue","ISOAbstractCatalogue",TRUE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","AbstractMX_File","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","Anchor","ISOAnchor",TRUE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ClAlternativeExpression","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","CodeAlternativeExpression","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","CodeDefinition","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","CodeListDictionary","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","CoordinateSystemAlt","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","CoordinateSystemAxisAlt","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","CrsAlt","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","CT_CodelistCatalogue","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","CT_CrsCatalogue","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","CT_UomCatalogue","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","DatumAlt","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","EllipsoidAlt","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","FileName","ISOFileName",TRUE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MimeFileType","ISOMimeFileType",TRUE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_AffineCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_BaseUnit","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_CartesianCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_CodeDefinition","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_CodeListDictionary","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_CompoundCRS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_ConcatenatedOperation","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_ConventionalUnit","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_Conversion","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_CoordinateSystemAxis","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_CylindricalCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_DerivedCRS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_DerivedUnit","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_Ellipsoid","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_EllipsoidalCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_EngineeringCRS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_EngineeringDatum","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_GeodeticCRS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_GeodeticDatum","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_ImageCRS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_ImageDatum","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_LinearCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_OperationMethod","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_OperationParameter","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_OperationParameterGroup","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_PassThroughOperation","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_PolarCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_PrimeMeridian","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_ProjectedCRS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_SphericalCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_TemporalCRS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_TemporalDatum","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_TimeCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_Transformation","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_UnitDefinition","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_UserDefinedCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalCRS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalCS","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalDatum","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_Aggregate","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataFile","ISODataFile",TRUE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataSet","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_ScopeCode","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","MX_SupportFile","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","OperationAlt","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","OperationMethodAlt","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","OperationParameterAlt","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","PrimeMeridianAlt","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema","GMX","UomAlternativeExpression","<missing>",FALSE
-"ISO/TC211 19139:2007","Geographic Metadata XML Schema - Geographic Temporal Schema (GTS)","GTS","TM_PeriodDuration","<missing>",FALSE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","AbstractObject","ISOAbstractObject",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Angle","ISOAngle",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Binary","ISOBinary",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Boolean","ISOBaseBoolean",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Boolean","ISOBaseBoolean",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","CharacterString","ISOBaseCharacterString",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Date","ISOBaseDate",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","DateTime","ISOBaseDateTime",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Decimal","ISOBaseDecimal",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Distance","ISODistance",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Integer","ISOBaseInteger",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Length","ISOLength",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","LocalName","ISOLocalName",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Measure","ISOMeasure",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","MemberName","ISOMemberName",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Multiplicity","ISOMultiplicity",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","MultiplicityRange","ISOMultiplicityRange",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Real","ISOBaseReal",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","RecordType","ISORecordType",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Scale","ISOScale",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","ScopedName","ISOScopedName",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","TypeName","ISOTypeName",TRUE
-"ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","UnlimitedInteger","ISOUnlimitedInteger",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractContinuousCoverage","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCoordinateOperation","GMLAbstractCoordinateOperation",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCoordinateSystem","GMLAbstractCoordinateSystem",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCRS","GMLAbstractCRS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCurve","GMLAbstractCurve",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCurveSegment","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractDatum","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractFeature","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractFeatureCollection","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralConversion","GMLAbstractGeneralConversion",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralDerivedCRS","GMLAbstractGeneralDerivedCRS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralOperationParameter","GMLAbstractGeneralOperationParameter",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralParameterValue","GMLAbstractGeneralParameterValue",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralTransformation","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeometricAggregate","GMLAbstractGeometricAggregate",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeometricPrimitive","GMLAbstractGeometricPrimitive",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeometry","GMLAbstractGeometry",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGML","GMLAbstractGML",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGriddedSurface","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractMetaData","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractObject","GMLAbstractObject",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractParametricCurveSurface","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractRing","GMLAbstractRing",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractSolid","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractSurface","GMLAbstractSurface",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractSurfacePatch","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeComplex","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeGeometricPrimitive","GMLAbstractTimeGeometricPrimitive",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeObject","GMLAbstractTimeObject",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimePrimitive","GMLAbstractTimePrimitive",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeSlice","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeTopologyPrimitive","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTopology","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTopoPrimitive","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AffineCS","GMLAffineCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AffinePlacement","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Arc","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ArcByBulge","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ArcByCenterPoint","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ArcString","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ArcStringByBulge","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Array","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Bag","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","BaseUnit","GMLBaseUnit",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Bezier","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","BSpline","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CartesianCS","GMLCartesianCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CategoryExtent","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Circle","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CircleByCenterPoint","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Clothoid","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompositeCurve","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompositeSolid","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompositeSurface","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompositeValue","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompoundCRS","GMLCompoundCRS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ConcatenatedOperation","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Cone","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ConventionalUnit","GMLConventionalUnit",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Conversion","GMLConversion",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CoordinateSystemAxis","GMLCoordinateSystemAxis",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CubicSpline","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Curve","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Cylinder","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CylindricalCS","GMLCylindricalCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DataBlock","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Definition","GMLDefinition",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DefinitionProxy","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DerivedCRS","GMLDerivedCRS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DerivedUnit","GMLDerivedUnit",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Dictionary","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DirectedObservation","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DirectedObservationAtDistance","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DirectionDescription","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DirectionVector","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DynamicFeature","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DynamicFeatureCollection","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Edge","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Ellipsoid","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","EllipsoidalCS","GMLEllipsoidalCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","EngineeringCRS","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","EngineeringDatum","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Envelope","GMLEnvelope",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","EnvelopeWithTimePeriod","GMLEnvelopeWithTimePeriod",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Face","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","FeatureCollection","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","File","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GenericMetaData","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeocentricCRS","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Geodesic","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeodesicString","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeodeticCRS","GMLGeodeticCRS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeodeticDatum","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeographicCRS","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeometricComplex","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Grid","GMLGrid",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GridEnvelope","GMLGridEnvelope",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GridFunction","GMLGridFunction",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ImageCRS","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ImageDatum","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Knot","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","LinearCS","GMLLinearCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","LinearRing","GMLLinearRing",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","LineString","GMLLineString",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","LineStringSegment","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MovingObjectStatus","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiCurve","GMLMultiCurve",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiGeometry","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiPoint","GMLMultiPoint",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiSolid","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiSurface","GMLMultiSurface",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Node","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ObliqueCartesianCS","GMLObliqueCartesianCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Observation","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OffsetCurve","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OperationMethod","GMLOperationMethod",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OperationParameter","GMLOperationParameter",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OperationParameterGroup","GMLOperationParameterGroup",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OrientableCurve","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OrientableSurface","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ParameterValue","GMLParameterValue",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ParameterValueGroup","GMLParameterValueGroup",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","PassThroughOperation","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Point","GMLPoint",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","PolarCS","GMLPolarCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Polygon","GMLPolygon",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","PolygonPatch","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","PrimeMeridian","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ProjectedCRS","GMLProjectedCRS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","QuantityExtent","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Rectangle","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","RectifiedGrid","GMLRectifiedGrid",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Ring","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Shell","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Solid","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Sphere","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","SphericalCS","GMLSphericalCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Surface","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TemporalCRS","GMLTemporalCRS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TemporalCS","GMLTemporalCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TemporalDatum","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeCalendar","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeCalendarEra","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeClock","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeCoordinateSystem","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeCS","GMLTimeCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeEdge","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeInstant","GMLTimeInstant",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeNode","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeOrdinalEra","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeOrdinalReferenceSystem","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimePeriod","GMLTimePeriod",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeReferenceSystem","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeTopologyComplex","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Tin","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoComplex","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoCurve","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoPoint","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoSolid","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoSurface","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoVolume","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Transformation","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Triangle","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","UnitDefinition","GMLUnitDefinition",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","UserDefinedCS","GMLUserDefinedCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ValueArray","<missing>",FALSE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","VerticalCRS","GMLVerticalCRS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","VerticalCS","GMLVerticalCS",TRUE
-"GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","VerticalDatum","<missing>",FALSE
-"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","AbstractContinuousCoverage","<missing>",FALSE
-"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","AbstractCoverage","GMLCOVAbstractCoverage",TRUE
-"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","AbstractDiscreteCoverage","<missing>",FALSE
-"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","Extension","GMLCOVExtension",TRUE
-"GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","SimpleMultiPoint","<missing>",FALSE
-"GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","AbstractReferenceableGrid","GMLAbstractReferenceableGrid",TRUE
-"GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","AbstractReferenceableGrid","GMLAbstractReferenceableGrid",TRUE
-"GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","GeneralGridAxis","GMLGeneralGridAxis",TRUE
-"GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","ReferenceableGridByArray","GMLReferenceableGridByArray",TRUE
-"GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","ReferenceableGridByTransformation","GMLReferenceableGridByTransformation",TRUE
-"GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","ReferenceableGridByVectors","GMLReferenceableGridByVectors",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractDataComponent","SWEAbstractDataComponent",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractEncoding","SWEAbstractEncoding",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractObject","SWEAbstractObject",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSimpleComponent","SWEAbstractSimpleComponent",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWE","SWEAbstractSWE",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWEIdentifiable","SWEAbstractSWEIdentifiable",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedTimes","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedTokens","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedValues","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","BinaryEncoding","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Block","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Category","SWECategory",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","CategoryRange","SWECategoryRange",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Component","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Count","SWECount",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","CountRange","SWECountRange",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataArray","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataChoice","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataRecord","SWEDataRecord",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataStream","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Matrix","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","NilValues","SWENilValues",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Quantity","SWEQuantity",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","QuantityRange","SWEQuantityRange",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Text","SWEText",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TextEncoding","SWETextEncoding",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Time","SWETime",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TimeRange","SWETimeRange",TRUE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Vector","<missing>",FALSE
-"SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","XMLEncoding","SWEXMLEncoding",TRUE
+"specification","schema","title","namespace","element","geometa_class","in_geometa","refactored","id"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_CarrierOfCharacteristics","ISOAbstractCarrierOfCharacteristics",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","AbstractFC_PropertyType","ISOAbstractPropertyType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_AssociationRole","ISOAssociationRole",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_Binding","ISOBinding",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_BoundAssociationRole","ISOBoundAssociationRole",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_BoundFeatureAttribute","ISOBoundFeatureAttribute",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_Constraint","ISOConstraint",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_DefinitionReference","ISODefinitionReference",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_DefinitionSource","ISODefinitionSource",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureAssociation","ISOFeatureAssociation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureAttribute","ISOFeatureAttribute",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureCatalogue","ISOFeatureCatalogue",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureOperation","ISOFeatureOperation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_FeatureType","ISOFeatureType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_InheritanceRelation","ISOInheritanceRelation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_ListedValue","ISOListedValue",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC","FC_RoleType","ISORoleType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19110:2005  -  GFC"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Completeness","ISOAbstractCompleteness",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Element","ISODataQualityAbstractElement",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_LogicalConsistency","ISOAbstractLogicalConsistency",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_PositionalAccuracy","ISOAbstractPositionalAccuracy",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_Result","ISOAbstractResult",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_TemporalAccuracy","ISOAbstractTemporalAccuracy",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDQ_ThematicAccuracy","ISOAbstractThematicAccuracy",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractDS_Aggregate","ISOAbstractAggregate",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractEX_GeographicExtent","ISOGeographicExtent",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractMD_ContentInformation","ISOContentInformation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractMD_Identification","ISOIdentification",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractMD_SpatialRepresentation","ISOSpatialRepresentation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","AbstractRS_ReferenceSystem","ISOAbstractReferenceSystem",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_Address","ISOAddress",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_Citation","ISOCitation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_Contact","ISOContact",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_Date","ISODate",TRUE,TRUE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_DateTypeCode","ISODateType",TRUE,TRUE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_OnLineFunctionCode","ISOOnLineFunction",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_OnlineResource","ISOOnlineResource",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_PresentationFormCode","ISOPresentationForm",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_ResponsibleParty","ISOResponsibleParty",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_RoleCode","ISORole",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_Series","ISOCitationSeries",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","CI_Telephone","ISOTelephone",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","Country","ISOCountry",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_AbsoluteExternalPositionalAccuracy","ISOAbsoluteExternalPositionalAccuracy",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_AccuracyOfATimeMeasurement","ISOAccuracyOfATimeMeasurement",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_CompletenessCommission","ISOCompletenessCommission",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_CompletenessOmission","ISOCompletenessOmission",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_ConceptualConsistency","ISOConceptualConsistency",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_ConformanceResult","ISOConformanceResult",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_DataQuality","ISODataQuality",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_DomainConsistency","ISODomainConsistency",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_EvaluationMethodTypeCode","ISOEvaluationMethodType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_FormatConsistency","ISOFormatConsistency",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_GriddedDataPositionalAccuracy","ISOGriddedDataPositionalAccuracy",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_NonQuantitativeAttributeAccuracy","ISONonQuantitativeAttributeAccuracy",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeAttributeAccuracy","ISOQuantitativeAttributeAccuracy",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_QuantitativeResult","ISOQuantitativeResult",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_RelativeInternalPositionalAccuracy","ISORelativeInternalPositionalAccuracy",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_Scope","ISOScope",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TemporalConsistency","ISOTemporalConsistency",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TemporalValidity","ISOTemporalValidity",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_ThematicClassificationCorrectness","ISOThematicClassificationCorrectness",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DQ_TopologicalConsistency","ISOTopologicalConsistency",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_Association","ISOAssociation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_AssociationTypeCode","ISOAssociationType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_DataSet","ISODataSet",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_Initiative","ISOInitiative",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_InitiativeTypeCode","ISOInitiativeType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_OtherAggregate","ISOOtherAggregate",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_Platform","ISOPlatform",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_ProductionSeries","ISOProductionSeries",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_Sensor","ISOSensor",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_Series","ISOSeries",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","DS_StereoMate","ISOStereoMate",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","EX_BoundingPolygon","ISOBoundingPolygon",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","EX_Extent","ISOExtent",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","EX_GeographicBoundingBox","ISOGeographicBoundingBox",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","EX_GeographicDescription","ISOGeographicDescription",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","EX_SpatialTemporalExtent","ISOSpatialTemporalExtent",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","EX_TemporalExtent","ISOTemporalExtent",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","EX_VerticalExtent","ISOVerticalExtent",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","LanguageCode","ISOLanguage",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","LI_Lineage","ISOLineage",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","LI_ProcessStep","ISOProcessStep",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","LI_Source","ISOSource",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","LocalisedCharacterString","ISOLocalisedCharacterString",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_AggregateInformation","ISOAggregateInformation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ApplicationSchemaInformation","ISOApplicationSchemaInformation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Band","ISOBand",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_BrowseGraphic","ISOBrowseGraphic",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_CellGeometryCode","ISOCellGeometry",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_CharacterSetCode","ISOCharacterSet",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ClassificationCode","ISOClassification",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Constraints","ISOConstraints",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_CoverageContentTypeCode","ISOCoverageContentType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_CoverageDescription","ISOCoverageDescription",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_DataIdentification","ISODataIdentification",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_DatatypeCode","ISODatatype",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_DigitalTransferOptions","ISODigitalTransferOptions",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Dimension","ISODimension",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_DimensionNameTypeCode","ISODimensionNameType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Distribution","ISODistribution",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_DistributionUnits","ISODistributionUnits",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Distributor","ISODistributor",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ExtendedElementInformation","ISOExtendedElementInformation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_FeatureCatalogueDescription","ISOFeatureCatalogueDescription",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Format","ISOFormat",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_GeometricObjects","ISOGeometricObjects",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_GeometricObjectTypeCode","ISOGeometricObjectType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georectified","ISOGeorectified",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Georeferenceable","ISOGeoreferenceable",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_GridSpatialRepresentation","ISOGridSpatialRepresentation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Identifier","ISOMetaIdentifier",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ImageDescription","ISOImageDescription",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ImagingConditionCode","ISOImagingCondition",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Keywords","ISOKeywords",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_KeywordTypeCode","ISOKeywordType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_LegalConstraints","ISOLegalConstraints",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_MaintenanceFrequencyCode","ISOMaintenanceFrequency",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_MaintenanceInformation","ISOMaintenanceInformation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Medium","ISOMedium",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumFormatCode","ISOMediumFormat",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_MediumNameCode","ISOMediumName",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Metadata","ISOMetadata",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_MetadataExtensionInformation","ISOMetadataExtensionInformation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ObligationCode","ISOObligation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_PixelOrientationCode","ISOPixelOrientation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_PortrayalCatalogueReference","ISOPortrayalCatalogueReference",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ProgressCode","ISOStatus",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_RangeDimension","ISORangeDimension",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ReferenceSystem","ISOReferenceSystem",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_RepresentativeFraction","ISORepresentativeFraction",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Resolution","ISOResolution",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_RestrictionCode","ISORestriction",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeCode","ISOHierarchyLevel",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ScopeDescription","ISOScopeDescription",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_SecurityConstraints","ISOSecurityConstraints",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_ServiceIdentification","ISOServiceIdentification",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_SpatialRepresentationTypeCode","ISOSpatialRepresentationType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_StandardOrderProcess","ISOStandardOrderProcess",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_TopicCategoryCode","ISOTopicCategory",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_TopologyLevelCode","ISOTopologyLevel",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_Usage","ISOUsage",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","MD_VectorSpatialRepresentation","ISOVectorSpatialRepresentation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","PT_FreeText","ISOFreeText",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","PT_Locale","ISOLocale",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","PT_LocaleContainer","ISOLocaleContainer",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","RS_Identifier","ISOReferenceIdentifier",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD","URL","ISOURL",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-1:2003  -  GMD"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","AbstractMI_GeolocationInformation","ISOImageryAbstractGeolocationInformation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Algorithm","ISOImageryAlgorithm",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_NominalResolution","ISOImageryNominalResolution",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Processing","ISOImageryProcessing",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_ProcessStep","ISOImageryProcessStep",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_ProcessStepReport","ISOImageryProcessStepReport",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","LE_Source","ISOImagerySource",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_AcquisitionInformation","ISOImageryAcquisitionInformation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Band","ISOImageryBand",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_BandDefinition","ISOImageryBandDefinition",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ContextCode","ISOImageryContext",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_CoverageDescription","ISOImageryCoverageDescription",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_EnvironmentalRecord","ISOImageryEnvironmentalRecord",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Event","ISOImageryEvent",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GCP","ISOImageryGCP",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GCPCollection","ISOImageryGCPCollection",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_GeometryTypeCode","ISOImageryGeometryType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georectified","ISOImageryGeorectified",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Georeferenceable","ISOImageryGeoreferenceable",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ImageDescription","ISOImageryImageDescription",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Instrument","ISOImageryInstrument",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Metadata","ISOImageryMetadata",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Objective","ISOImageryObjective",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_ObjectiveTypeCode","ISOImageryObjectiveType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Operation","ISOImageryOperation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_OperationTypeCode","ISOImageryOperationType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Plan","ISOImageryPlan",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Platform","ISOImageryPlatform",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PlatformPass","ISOImageryPlatformPass",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PolarisationOrientationCode","ISOImageryPolarisationOrientation",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_PriorityCode","ISOImageryPriority",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_RangeElementDescription","ISOImageryRangeElementDescription",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_RequestedDate","ISOImageryRequestedDate",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_Requirement","ISOImageryRequirement",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_SensorTypeCode","ISOImagerySensorType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_SequenceCode","ISOImagerySequence",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_TransferFunctionTypeCode","ISOImageryTransferFunctionType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","MI_TriggerCode","ISOImageryTrigger",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","QE_CoverageResult","ISOImageryCoverageResult",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI","QE_Usability","ISOImageryUsability",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19115-2:2009  -  GMI"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","DCPList","ISODCPList",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_CoupledResource","ISOCoupledResource",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_CouplingType","ISOCouplingType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_Interface","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_Operation","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_OperationChain","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_OperationChainMetadata","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_OperationMetadata","ISOOperationMetadata",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_OperationModel","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_Parameter","ISOParameter",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_ParameterDirection","ISOParameterDirection",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_PlatformNeutralServiceSpecification","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_PlatformSpecificServiceSpecification","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_Port","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_PortSpecification","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_Service","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceIdentification","ISOSRVServiceIdentification",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceSpecification","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV","SV_ServiceType","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO 19119:2005  -  SRV"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","AbstractObject","ISOAbstractObject",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Angle","ISOAngle",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Binary","ISOBinary",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Boolean","ISOBaseBoolean",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","CharacterString","ISOBaseCharacterString",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Date","ISOBaseDate",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","DateTime","ISOBaseDateTime",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Decimal","ISOBaseDecimal",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Distance","ISODistance",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Integer","ISOBaseInteger",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Length","ISOLength",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","LocalName","ISOLocalName",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Measure","ISOMeasure",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","MemberName","ISOMemberName",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Multiplicity","ISOMultiplicity",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","MultiplicityRange","ISOMultiplicityRange",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Real","ISOBaseReal",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","RecordType","ISORecordType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","Scale","ISOScale",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","ScopedName","ISOScopedName",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","TypeName","ISOTypeName",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO","UnlimitedInteger","ISOUnlimitedInteger",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19103:2005  -  GCO"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","AbstractCT_Catalogue","ISOAbstractCatalogue",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","AbstractMX_File","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","Anchor","ISOAnchor",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ClAlternativeExpression","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","CodeAlternativeExpression","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","CodeDefinition","ISOCodeDefinition",TRUE,TRUE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","CodeListDictionary","ISOCodeListDictionary",TRUE,TRUE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","CoordinateSystemAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","CoordinateSystemAxisAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","CrsAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","CT_CodelistCatalogue","ISOCodelistCatalogue",TRUE,TRUE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","CT_CrsCatalogue","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","CT_UomCatalogue","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","DatumAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","EllipsoidAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","FileName","ISOFileName",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","MimeFileType","ISOMimeFileType",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_AffineCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_BaseUnit","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_CartesianCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_CodeDefinition","ISOMLCodeDefinition",TRUE,TRUE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_CodeListDictionary","ISOMLCodeListDictionary",TRUE,TRUE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_CompoundCRS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_ConcatenatedOperation","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_ConventionalUnit","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_Conversion","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_CoordinateSystemAxis","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_CylindricalCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_DerivedCRS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_DerivedUnit","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_Ellipsoid","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_EllipsoidalCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_EngineeringCRS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_EngineeringDatum","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_GeodeticCRS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_GeodeticDatum","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_ImageCRS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_ImageDatum","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_LinearCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_OperationMethod","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_OperationParameter","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_OperationParameterGroup","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_PassThroughOperation","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_PolarCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_PrimeMeridian","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_ProjectedCRS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_SphericalCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_TemporalCRS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_TemporalDatum","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_TimeCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_Transformation","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_UnitDefinition","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_UserDefinedCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalCRS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalCS","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","ML_VerticalDatum","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","MX_Aggregate","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataFile","ISODataFile",TRUE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","MX_DataSet","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","MX_ScopeCode","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","MX_SupportFile","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","OperationAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","OperationMethodAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","OperationParameterAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","PrimeMeridianAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","UomAlternativeExpression","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema - Geographic Temporal Schema (GTS)","GTS","TM_PeriodDuration","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GTS"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractContinuousCoverage","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCoordinateOperation","GMLAbstractCoordinateOperation",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCoordinateSystem","GMLAbstractCoordinateSystem",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCoverage","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCRS","GMLAbstractCRS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCurve","GMLAbstractCurve",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCurveSegment","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractDatum","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractFeature","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractFeatureCollection","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralConversion","GMLAbstractGeneralConversion",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralDerivedCRS","GMLAbstractGeneralDerivedCRS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralOperationParameter","GMLAbstractGeneralOperationParameter",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralParameterValue","GMLAbstractGeneralParameterValue",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeneralTransformation","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeometricAggregate","GMLAbstractGeometricAggregate",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeometricPrimitive","GMLAbstractGeometricPrimitive",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGeometry","GMLAbstractGeometry",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGML","GMLAbstractGML",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractGriddedSurface","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractMetaData","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractParametricCurveSurface","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractRing","GMLAbstractRing",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractSolid","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractSurface","GMLAbstractSurface",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractSurfacePatch","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeComplex","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeGeometricPrimitive","GMLAbstractTimeGeometricPrimitive",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeObject","GMLAbstractTimeObject",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimePrimitive","GMLAbstractTimePrimitive",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeSlice","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTimeTopologyPrimitive","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTopology","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractTopoPrimitive","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AffineCS","GMLAffineCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AffinePlacement","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Arc","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ArcByBulge","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ArcByCenterPoint","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ArcString","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ArcStringByBulge","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Array","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Bag","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","BaseUnit","GMLBaseUnit",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Bezier","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","BSpline","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CartesianCS","GMLCartesianCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CategoryExtent","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Circle","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CircleByCenterPoint","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Clothoid","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompositeCurve","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompositeSolid","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompositeSurface","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompositeValue","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CompoundCRS","GMLCompoundCRS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ConcatenatedOperation","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Cone","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ConventionalUnit","GMLConventionalUnit",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Conversion","GMLConversion",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CoordinateSystemAxis","GMLCoordinateSystemAxis",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CubicSpline","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Curve","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Cylinder","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","CylindricalCS","GMLCylindricalCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DataBlock","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Definition","GMLDefinition",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DefinitionProxy","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DerivedCRS","GMLDerivedCRS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DerivedUnit","GMLDerivedUnit",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Dictionary","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DirectedObservation","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DirectedObservationAtDistance","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DirectionDescription","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DirectionVector","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DynamicFeature","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","DynamicFeatureCollection","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Edge","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Ellipsoid","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","EllipsoidalCS","GMLEllipsoidalCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","EngineeringCRS","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","EngineeringDatum","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Envelope","GMLEnvelope",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","EnvelopeWithTimePeriod","GMLEnvelopeWithTimePeriod",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Face","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","FeatureCollection","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","File","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GenericMetaData","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeocentricCRS","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Geodesic","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeodesicString","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeodeticCRS","GMLGeodeticCRS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeodeticDatum","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeographicCRS","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GeometricComplex","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Grid","GMLGrid",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GridEnvelope","GMLGridEnvelope",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","GridFunction","GMLGridFunction",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ImageCRS","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ImageDatum","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Knot","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","LinearCS","GMLLinearCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","LinearRing","GMLLinearRing",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","LineString","GMLLineString",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","LineStringSegment","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MovingObjectStatus","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiCurve","GMLMultiCurve",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiGeometry","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiPoint","GMLMultiPoint",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiSolid","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","MultiSurface","GMLMultiSurface",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Node","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ObliqueCartesianCS","GMLObliqueCartesianCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Observation","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OffsetCurve","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OperationMethod","GMLOperationMethod",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OperationParameter","GMLOperationParameter",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OperationParameterGroup","GMLOperationParameterGroup",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OrientableCurve","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","OrientableSurface","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ParameterValue","GMLParameterValue",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ParameterValueGroup","GMLParameterValueGroup",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","PassThroughOperation","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Point","GMLPoint",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","PolarCS","GMLPolarCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Polygon","GMLPolygon",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","PolygonPatch","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","PrimeMeridian","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ProjectedCRS","GMLProjectedCRS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","QuantityExtent","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Rectangle","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","RectifiedGrid","GMLRectifiedGrid",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Ring","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Shell","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Solid","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Sphere","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","SphericalCS","GMLSphericalCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Surface","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TemporalCRS","GMLTemporalCRS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TemporalCS","GMLTemporalCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TemporalDatum","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeCalendar","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeCalendarEra","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeClock","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeCoordinateSystem","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeCS","GMLTimeCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeEdge","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeInstant","GMLTimeInstant",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeNode","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeOrdinalEra","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeOrdinalReferenceSystem","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimePeriod","GMLTimePeriod",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeReferenceSystem","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TimeTopologyComplex","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Tin","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoComplex","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoCurve","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoPoint","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoSolid","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoSurface","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","TopoVolume","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Transformation","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","Triangle","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","UnitDefinition","GMLUnitDefinition",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","UserDefinedCS","GMLUserDefinedCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","ValueArray","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","VerticalCRS","GMLVerticalCRS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","VerticalCS","GMLVerticalCS",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","VerticalDatum","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
+"GML 3.2.1 Coverage (OGC GMLCOV)","GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","AbstractContinuousCoverage","<missing>",FALSE,FALSE,"GML 3.2.1 Coverage (OGC GMLCOV)  -  GML 3.2.1 Coverage (OGC GMLCOV)  -  GMLCOV"
+"GML 3.2.1 Coverage (OGC GMLCOV)","GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","AbstractDiscreteCoverage","<missing>",FALSE,FALSE,"GML 3.2.1 Coverage (OGC GMLCOV)  -  GML 3.2.1 Coverage (OGC GMLCOV)  -  GMLCOV"
+"GML 3.2.1 Coverage (OGC GMLCOV)","GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","AbstractReferenceableGrid","<missing>",FALSE,FALSE,"GML 3.2.1 Coverage (OGC GMLCOV)  -  GML 3.2.1 Coverage (OGC GMLCOV)  -  GMLCOV"
+"GML 3.2.1 Coverage (OGC GMLCOV)","GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","Extension","GMLCOVExtension",TRUE,FALSE,"GML 3.2.1 Coverage (OGC GMLCOV)  -  GML 3.2.1 Coverage (OGC GMLCOV)  -  GMLCOV"
+"GML 3.2.1 Coverage (OGC GMLCOV)","GML 3.2.1 Coverage (OGC GMLCOV)","OGC GML Coverage Implementation Schema","GMLCOV","SimpleMultiPoint","<missing>",FALSE,FALSE,"GML 3.2.1 Coverage (OGC GMLCOV)  -  GML 3.2.1 Coverage (OGC GMLCOV)  -  GMLCOV"
+"GML 3.3 Referenceable Grid (OGC GML)","GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","AbstractReferenceableGrid","GMLAbstractReferenceableGrid",TRUE,FALSE,"GML 3.3 Referenceable Grid (OGC GML)  -  GML 3.3 Referenceable Grid (OGC GML)  -  GMLRGRID"
+"GML 3.3 Referenceable Grid (OGC GML)","GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","GeneralGridAxis","GMLGeneralGridAxis",TRUE,FALSE,"GML 3.3 Referenceable Grid (OGC GML)  -  GML 3.3 Referenceable Grid (OGC GML)  -  GMLRGRID"
+"GML 3.3 Referenceable Grid (OGC GML)","GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","ReferenceableGridByArray","GMLReferenceableGridByArray",TRUE,FALSE,"GML 3.3 Referenceable Grid (OGC GML)  -  GML 3.3 Referenceable Grid (OGC GML)  -  GMLRGRID"
+"GML 3.3 Referenceable Grid (OGC GML)","GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","ReferenceableGridByTransformation","GMLReferenceableGridByTransformation",TRUE,FALSE,"GML 3.3 Referenceable Grid (OGC GML)  -  GML 3.3 Referenceable Grid (OGC GML)  -  GMLRGRID"
+"GML 3.3 Referenceable Grid (OGC GML)","GML 3.3 Referenceable Grid (OGC GML)","OGC GML Referenceable Grid","GMLRGRID","ReferenceableGridByVectors","GMLReferenceableGridByVectors",TRUE,FALSE,"GML 3.3 Referenceable Grid (OGC GML)  -  GML 3.3 Referenceable Grid (OGC GML)  -  GMLRGRID"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractDataComponent","SWEAbstractDataComponent",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractEncoding","SWEAbstractEncoding",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSimpleComponent","SWEAbstractSimpleComponent",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWE","SWEAbstractSWE",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AbstractSWEIdentifiable","SWEAbstractSWEIdentifiable",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedTimes","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedTokens","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","AllowedValues","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","BinaryEncoding","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Block","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Boolean","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Category","SWECategory",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","CategoryRange","SWECategoryRange",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Component","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Count","SWECount",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","CountRange","SWECountRange",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataArray","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataChoice","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataRecord","SWEDataRecord",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","DataStream","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Matrix","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","NilValues","SWENilValues",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Quantity","SWEQuantity",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","QuantityRange","SWEQuantityRange",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Text","SWEText",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TextEncoding","SWETextEncoding",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Time","SWETime",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","TimeRange","SWETimeRange",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","Vector","<missing>",FALSE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"SWE 2.0","SWE 2.0","Sensor Web Enablement (SWE) Common Data Model","SWE","XMLEncoding","SWEXMLEncoding",TRUE,FALSE,"SWE 2.0  -  SWE 2.0  -  SWE"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","AbstractCI_Party","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_Address","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_Citation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_Contact","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_Date","ISODate",TRUE,TRUE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_DateTypeCode","ISODateType",TRUE,TRUE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_Individual","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_OnLineFunctionCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_OnlineResource","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_Organisation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_PresentationFormCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_Responsibility","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_RoleCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_Series","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_Telephone","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT","CI_TelephoneTypeCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  CIT"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","AbstractObject","ISOAbstractObject",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Angle","ISOAngle",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Binary","ISOBinary",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Boolean","ISOBaseBoolean",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","CharacterString","ISOBaseCharacterString",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Date","ISOBaseDate",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","DateTime","ISOBaseDateTime",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Decimal","ISOBaseDecimal",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Distance","ISODistance",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Integer","ISOBaseInteger",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Length","ISOLength",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","LocalName","ISOLocalName",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Measure","ISOMeasure",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","MemberName","ISOMemberName",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Multiplicity","ISOMultiplicity",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","MultiplicityRange","ISOMultiplicityRange",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Real","ISOBaseReal",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","RecordType","ISORecordType",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","Scale","ISOScale",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","ScopedName","ISOScopedName",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","TM_PeriodDuration","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","TypeName","ISOTypeName",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","UnlimitedInteger","ISOUnlimitedInteger",TRUE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO","UomIdentifier","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GCO"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX","AbstractEX_GeographicExtent","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GEX"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX","EX_BoundingPolygon","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GEX"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX","EX_Extent","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GEX"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX","EX_GeographicBoundingBox","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GEX"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX","EX_GeographicDescription","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GEX"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX","EX_SpatialTemporalExtent","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GEX"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX","EX_TemporalExtent","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GEX"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX","EX_VerticalExtent","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  GEX"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN","CountryCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  LAN"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN","LanguageCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  LAN"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN","LocalisedCharacterString","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  LAN"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN","MD_CharacterSetCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  LAN"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN","PT_FreeText","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  LAN"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN","PT_Locale","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  LAN"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN","PT_LocaleContainer","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  LAN"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_AcquisitionInformation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_ApplicationSchemaInformation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_Citation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_Constraints","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_ContentInformation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_Distribution","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_Extent","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_Format","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_LineageInformation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_MaintenanceInformation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_Metadata","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_MetadataExtension","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_OnlineResource","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_Parameter","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_Platform","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_PortrayalCatalogueInformation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_ReferenceSystem","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_ResourceDescription","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_Responsibility","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_SpatialRepresentation","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_SpatialResolution","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_StandardOrderProcess","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","Abstract_TypedDate","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","MD_BrowseGraphic","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","MD_Identifier","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","MD_ProgressCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","MD_Scope","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","MD_ScopeCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","MD_ScopeDescription","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","MD_SpatialRepresentationTypeCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","URI","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","MetaData Base (MDB) Version: 2.0","MDB","MD_Metadata","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MDB"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","MetaData Base (MDB) Version: 2.0","MDB","MD_MetadataScope","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MDB"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","AbstractMD_Identification","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","DS_AssociationTypeCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","DS_InitiativeTypeCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","MD_AssociatedResource","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","MD_DataIdentification","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","MD_KeywordClass","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","MD_Keywords","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","MD_KeywordTypeCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","MD_RepresentativeFraction","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","MD_Resolution","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","MD_TopicCategoryCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","MD_Usage","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
+"ISO/TS 19115-3:2016","ISO 19157","Data Quality abstract Classes (DQC) Version 1.0","DQC","Abstract_DataQuality","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19157  -  DQC"
+"ISO/TS 19115-3:2016","ISO 19157","Data Quality abstract Classes (DQC) Version 1.0","DQC","Abstract_QualityElement","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19157  -  DQC"
