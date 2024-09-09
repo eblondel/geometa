@@ -4,7 +4,7 @@ registered in geometa"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-reference-topic">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -29,20 +29,20 @@ registered in geometa"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/eblondel/geometa/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>getISOInternalCodelists</h1>
-    <small class="dont-index">Source: <a href="https://github.com/eblondel/geometa/blob/HEAD/R/ISOCodelist.R" class="external-link"><code>R/ISOCodelist.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/eblondel/geometa/blob/master/R/ISOCodelist.R" class="external-link"><code>R/ISOCodelist.R</code></a></small>
     <div class="hidden name"><code>getISOInternalCodelists.Rd</code></div>
     </div>
 
@@ -65,577 +65,516 @@ registered in <span class="pkg">geometa</span></p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>            </span></span>
 <span class="r-in"><span>  <span class="fu">getISOInternalCodelists</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $FC_RoleType</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description:  code list for the classification of roles </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: FC_RoleType</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: FC_RoleType</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">FC_RoleType</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19110</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">FC_RoleType</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;"> code list for the classification of roles </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("ordinary", "aggregation", "composition")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("indicates an ordinary association", "indicates a UML aggregation (part role)", "indicates a UML composition (member role)")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $CI_DateTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: identification of when a given event occurred</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: CI_DateTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: CI_DateTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">CI_DateTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">CI_DateTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">identification of when a given event occurred</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("creation", "publication", "revision", "expiry", "lastUpdate", "lastRevision", "nextUpdate", "unavailable", "inForce", "adopted", "deprecated", "superseded", "validityBegins", "validityExpires", "released", "distribution")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("date identifies when the resource was brought into existence", "date identifies when the resource was issued", "date identifies when the resource was examined or re-examined and improved or amended", "date identifies when resource expires", "date identifies when resource was last updated", "date identifies when resource was last reviewed", "date identifies when resource will be next updated", "date identifies when resource became not available or obtainable", "date identifies when resource became in force", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"date identifies when resource was adopted", "date identifies when resource was deprecated", "date identifies when resource was superseded or replaced by another resource", "time at which the data are considered to become valid. NOTE: There could be quite a delay between creation and validity begins", "time at which the data are no longer considered to be valid", "the date that the resource shall be released for public access", "date identifies when an instance of the resource was distributed")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $CI_PresentationFormCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: mode in which the data is represented</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: CI_PresentationFormCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: CI_PresentationFormCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">CI_PresentationFormCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">CI_PresentationFormCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">mode in which the data is represented</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("documentDigital", "imageDigital", "documentHardcopy", "imageHardcopy", "mapDigital", "mapHardcopy", "modelDigital", "modelHardcopy", "profileDigital", "profileHardcopy", "tableDigital", "tableHardcopy", "videoDigital", "videoHardcopy", "audioDigital", "audioHardcopy", "multimediaDigital", "multimediaHardcopy", "physicalSample", "diagramDigital", "diagramHardcopy")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("digital representation of a primarily textual item (can contain illustrations also)", "representation of a primarily textual item (can contain illustrations also) on paper, photograhic material, or other media", "likeness of natural or man-made features, objects, and activities acquired through the sensing of visual or any other segment of the electromagnetic spectrum by sensors, such as thermal infrared, and high resolution radar and stored in digital format", "likeness of natural or man-made features, objects, and activities acquired through the sensing of visual or any other segment of the electromagnetic spectrum by sensors, such as thermal infrared, and high resolution radar and reproduced on paper, photographic material, or other media for use directly by the human user", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"map represented in raster or vector form", "map printed on paper, photographic material, or other media for use directly by the human user", "multi-dimensional digital representation of a feature, process, etc.", "3-dimensional, physical model", "vertical cross-section in digital form", "vertical cross-section printed on paper, etc.", "digital representation of facts or figures systematically displayed, especially in columns", "representation of facts or figures systematically displayed, especially in columns, printed onpapers, photographic material, or other media", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"digital video recording", "video recording on film", "digital audio recording", "audio recording delivered by analog media, such as a magnetic tape", "information representation using simultaneously various digital modes for text, sound, image", "information representation using simultaneously various analog modes for text, sound, image", "a physical object, e.g. Rock or mineral sample, microscope slide", "information represented graphically by charts such as pie chart, bar chart, and other type of diagrams and recorded in digital format", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"information represented graphically by charts such as pie chart, bar chart, and other type of diagrams and printed on paper, phototographic material, or other media")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $CI_RoleCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: function performed by the responsible party</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: CI_RoleCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: CI_RoleCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">CI_RoleCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">CI_RoleCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">function performed by the responsible party</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("resourceProvider", "custodian", "owner", "sponsor", "user", "distributor", "originator", "pointOfContact", "principalInvestigator", "processor", "publisher", "author", "coAuthor", "collaborator", "editor", "mediator", "rightsHolder", "contributor", "funder", "stakeholder")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("party that supplies the resource", "party that accepts accountability and responsability for the data and ensures appropriate care and maintenance of the resource", "party that owns the resource", "party that sponsors the resource", "party who uses the resource", "party who distributes the resource", "party who created the resource", "party who can be contacted for acquiring knowledge about or acquisition of the resource", "key party responsible for gathering information and conducting research", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"party who has processed the data in a manner such that the resource has been modified", "party who published the resource", "party who authored the resource", "party who jointly authors the resource", "party who assists with the generation of the resource other than the principal investigator", "party who reviewed or modified the resource to improve the content", "a class of entity that mediates access to the resource and for whom the resource is intended or useful", "party owning or managing rights over the resource", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"party contributing to the resource", "party providing monetary support for the resource", "party who has an interest in the resource or the use of the resource")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $CI_OnLineFunctionCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: function performed by the resource</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: CI_OnLineFunctionCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: CI_OnLineFunctionCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">CI_OnLineFunctionCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">CI_OnLineFunctionCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">function performed by the resource</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("download", "information", "offlineAccess", "order", "search", "completeMetadata", "browseGraphic", "upload", "emailService", "browsing", "fileAccess")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("online instructions for transferring data from one storage device or system to another", "online information about the resource", "online instructions for requesting the resource from the provider", "online order process for obtening the resource", "online search interface for seeking out information about the resource", "complete metadata provided", "browse graphic provided", "online resource upload capability provided", "online email service provided", "online browsing provided", "online file access provided"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Country</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISO 3166-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: Country : ISO 3166-2 (2 characters)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: Country</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: Country</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: ML_gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">Country</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">ML_gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISO 3166-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">Country</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">Country : ISO 3166-2 (2 characters)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("UK", "FR")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("United Kingdom", "France")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("United Kingdom", "France")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $DCPList</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: distributed computing platforms on which the operation h ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: DCPList</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: DCPList</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">DCPList</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19119</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">DCPList</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">distributed computing platforms on which the operation has been implemented</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("COM", "CORBA", "JAVA", "SQL", "WebServices", "XML")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("component object model - Microsoft's framework for developing and supporting program component objects ", "common object request broker architecture", "JAVA programming language", "structured query language - a standard interactive and programming language for getting information from and updating a database ", "Web based services", "extensible markup language")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $DQ_EvaluationMethodTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: type or method for evaluating an identified data quality ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: DQ_EvaluationMethodTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: DQ_EvaluationMethodTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">DQ_EvaluationMethodTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">DQ_EvaluationMethodTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">type or method for evaluating an identified data quality measure</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("directInternal", "directExternal", "indirect")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("method of evaluating the quality of a dataset based on inspection of items within the dataset, where all data required is internal to the dataset being evaluated", "method of evaluating the quality of a dataset based on inspection of items within the dataset, where reference data external to the dataset being evaluated is required", "method of evaluating the quality of a dataset based on external knowledge")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $DS_AssociationTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: justification for the correlation of two datasets</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: DS_AssociationTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: DS_AssociationTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">DS_AssociationTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">DS_AssociationTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">justification for the correlation of two datasets</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("crossReference", "largerWorkCitation", "partOfSeamlessDatabase", "source", "stereoMate", "isComposedOf", "collectiveTitle", "series", "dependency", "revisionOf")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("reference from one dataset to another", "reference to a master dataset of which this one is a part", "part of the same structured set of data held in a computer", "mapping and charting information from which the dataset content originates", "part of a set of imagery that when used together, provides three-dimensional images", "reference to resources that are parts of this resource", "common title for a collection of resources. NOTE: title identifies elements of a series collectively, combined with information about what volumes are available at the source cite", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"associated through a common heritage such as produced to a common product specification", "associated through a dependency", "resource is a revision of associated resource")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $DS_InitiativeTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: type of aggregation activity in which datasets are related</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: DS_InitiativeTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: DS_InitiativeTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">DS_InitiativeTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">DS_InitiativeTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">type of aggregation activity in which datasets are related</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("campaign", "collection", "dataDictionary", "exercise", "experiment", "investigation", "mission", "sensor", "operation", "platform", "process", "program", "project", "sciencePaper", "study", "task", "trial", "userGuide")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("series of organized planned actions", "accumulation of datasets assembled for a specific purpose", "element and entity definitions", "specific performance of a function or group of functions", "process designed to find if something is effective or valid", "search or systematic inquiry", "specific operation of a data collection system", "device or piece of equipment which detects or records", "action that is part of a series of actions", "vehicle or other support base that holds a sensor", "method of doing something involving a number of steps", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"specific planned activity", "organized undertaking, research, or development", "document based on an experiment or research", "examination or investigation", "piece of work", "process of testing to discover or demonstrate something", "operating manual for users")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $LanguageCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISO 639-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: Language : ISO 639-2 (3 characters)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: LanguageCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: LanguageCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: ISO-639-2_utf-8.txt</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">LanguageCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">ISO-639-2_utf-8.txt</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISO 639-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">LanguageCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">Language : ISO 639-2 (3 characters)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("aar", "abk", "ace", "ach", "ada", "ady", "afa", "afh", "afr", "ain", "aka", "akk", "alb", "sqi", "ale", "alg", "alt", "amh", "ang", "anp", "apa", "ara", "arc", "arg", "arm", "hye", "arn", "arp", "art", "arw", "asm", "ast", "ath", "aus", "ava", "ave", "awa", "aym", "aze", "bad", "bai", "bak", "bal", "bam", "ban", "baq", "eus", "bas", "bat", "bej", "bel", "bem", "ben", "ber", "bho", "bih", "bik", "bin", "bis", "bla", "bnt", "bos", "bra", "bre", "btk", "bua", "bug", "bul", "bur", "mya", "byn", "cad", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"cai", "car", "cat", "cau", "ceb", "cel", "cha", "chb", "che", "chg", "chi", "zho", "chk", "chm", "chn", "cho", "chp", "chr", "chu", "chv", "chy", "cmc", "cop", "cor", "cos", "cpe", "cpf", "cpp", "cre", "crh", "crp", "csb", "cus", "cze", "ces", "dak", "dan", "dar", "day", "del", "den", "dgr", "din", "div", "doi", "dra", "dsb", "dua", "dum", "dut", "nld", "dyu", "dzo", "efi", "egy", "eka", "elx", "eng", "enm", "epo", "est", "ewe", "ewo", "fan", "fao", "fat", "fij", "fil", "fin", "fiu", "fon", "fre", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"fra", "frm", "fro", "frr", "frs", "fry", "ful", "fur", "gaa", "gay", "gba", "gem", "geo", "kat", "ger", "deu", "gez", "gil", "gla", "gle", "glg", "glv", "gmh", "goh", "gon", "gor", "got", "grb", "grc", "gre", "ell", "grn", "gsw", "guj", "gwi", "hai", "hat", "hau", "haw", "heb", "her", "hil", "him", "hin", "hit", "hmn", "hmo", "hrv", "hsb", "hun", "hup", "iba", "ibo", "ice", "isl", "ido", "iii", "ijo", "iku", "ile", "ilo", "ina", "inc", "ind", "ine", "inh", "ipk", "ira", "iro", "ita", "jav", "jbo", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"jpn", "jpr", "jrb", "kaa", "kab", "kac", "kal", "kam", "kan", "kar", "kas", "kau", "kaw", "kaz", "kbd", "kha", "khi", "khm", "kho", "kik", "kin", "kir", "kmb", "kok", "kom", "kon", "kor", "kos", "kpe", "krc", "krl", "kro", "kru", "kua", "kum", "kur", "kut", "lad", "lah", "lam", "lao", "lat", "lav", "lez", "lim", "lin", "lit", "lol", "loz", "ltz", "lua", "lub", "lug", "lui", "lun", "luo", "lus", "mac", "mkd", "mad", "mag", "mah", "mai", "mak", "mal", "man", "mao", "mri", "map", "mar", "mas", "may", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"msa", "mdf", "mdr", "men", "mga", "mic", "min", "mis", "mkh", "mlg", "mlt", "mnc", "mni", "mno", "moh", "mon", "mos", "mul", "mun", "mus", "mwl", "mwr", "myn", "myv", "nah", "nai", "nap", "nau", "nav", "nbl", "nde", "ndo", "nds", "nep", "new", "nia", "nic", "niu", "nno", "nob", "nog", "non", "nor", "nqo", "nso", "nub", "nwc", "nya", "nym", "nyn", "nyo", "nzi", "oci", "oji", "ori", "orm", "osa", "oss", "ota", "oto", "paa", "pag", "pal", "pam", "pan", "pap", "pau", "peo", "per", "fas", "phi", "phn", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"pli", "pol", "pon", "por", "pra", "pro", "pus", "qaa-qtz", "que", "raj", "rap", "rar", "roa", "roh", "rom", "rum", "ron", "run", "rup", "rus", "sad", "sag", "sah", "sai", "sal", "sam", "san", "sas", "sat", "scn", "sco", "sel", "sem", "sga", "sgn", "shn", "sid", "sin", "sio", "sit", "sla", "slo", "slk", "slv", "sma", "sme", "smi", "smj", "smn", "smo", "sms", "sna", "snd", "snk", "sog", "som", "son", "sot", "spa", "srd", "srn", "srp", "srr", "ssa", "ssw", "suk", "sun", "sus", "sux", "swa", "swe", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"syc", "syr", "tah", "tai", "tam", "tat", "tel", "tem", "ter", "tet", "tgk", "tgl", "tha", "tib", "bod", "tig", "tir", "tiv", "tkl", "tlh", "tli", "tmh", "tog", "ton", "tpi", "tsi", "tsn", "tso", "tuk", "tum", "tup", "tur", "tut", "tvl", "twi", "tyv", "udm", "uga", "uig", "ukr", "umb", "und", "urd", "uzb", "vai", "ven", "vie", "vol", "vot", "wak", "wal", "war", "was", "wel", "cym", "wen", "wln", "wol", "xal", "xho", "yao", "yap", "yid", "yor", "ypk", "zap", "zbl", "zen", "zgh", "zha", "znd", "zul", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"zun", "zxx", "zza")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("Afar", "Abkhazian", "Achinese", "Acoli", "Adangme", "Adyghe, Adygei", "Afro-Asiatic languages", "Afrihili", "Afrikaans", "Ainu", "Akan", "Akkadian", "Albanian", "Albanian", "Aleut", "Algonquian languages", "Southern Altai", "Amharic", "English, Old (ca.450-1100)", "Angika", "Apache languages", "Arabic", "Official Aramaic (700-300 BCE), Imperial Aramaic (700-300 BCE)", "Aragonese", "Armenian", "Armenian", "Mapudungun, Mapuche", "Arapaho", "Artificial languages", "Arawak", "Assamese", "Asturian, Bable, Leonese, Asturleonese", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Athapascan languages", "Australian languages", "Avaric", "Avestan", "Awadhi", "Aymara", "Azerbaijani", "Banda languages", "Bamileke languages", "Bashkir", "Baluchi", "Bambara", "Balinese", "Basque", "Basque", "Basa", "Baltic languages", "Beja, Bedawiyet", "Belarusian", "Bemba", "Bengali", "Berber languages", "Bhojpuri", "Bihari languages", "Bikol", "Bini, Edo", "Bislama", "Siksika", "Bantu (Other)", "Bosnian", "Braj", "Breton", "Batak languages", "Buriat", "Buginese", "Bulgarian", "Burmese", "Burmese", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Blin, Bilin", "Caddo", "Central American Indian languages", "Galibi Carib", "Catalan, Valencian", "Caucasian languages", "Cebuano", "Celtic languages", "Chamorro", "Chibcha", "Chechen", "Chagatai", "Chinese", "Chinese", "Chuukese", "Mari", "Chinook jargon", "Choctaw", "Chipewyan, Dene Suline", "Cherokee", "Church Slavic, Old Slavonic, Church Slavonic, Old Bulgarian, Old Church Slavonic", "Chuvash", "Cheyenne", "Chamic languages", "Coptic", "Cornish", "Corsican", "Creoles and pidgins, English based", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Creoles and pidgins, French-based ", "Creoles and pidgins, Portuguese-based ", "Cree", "Crimean Tatar, Crimean Turkish", "Creoles and pidgins ", "Kashubian", "Cushitic languages", "Czech", "Czech", "Dakota", "Danish", "Dargwa", "Land Dayak languages", "Delaware", "Slave (Athapascan)", "Dogrib", "Dinka", "Divehi, Dhivehi, Maldivian", "Dogri", "Dravidian languages", "Lower Sorbian", "Duala", "Dutch, Middle (ca.1050-1350)", "Dutch, Flemish", "Dutch, Flemish", "Dyula", "Dzongkha", "Efik", "Egyptian (Ancient)", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Ekajuk", "Elamite", "English", "English, Middle (1100-1500)", "Esperanto", "Estonian", "Ewe", "Ewondo", "Fang", "Faroese", "Fanti", "Fijian", "Filipino, Pilipino", "Finnish", "Finno-Ugrian languages", "Fon", "French", "French", "French, Middle (ca.1400-1600)", "French, Old (842-ca.1400)", "Northern Frisian", "Eastern Frisian", "Western Frisian", "Fulah", "Friulian", "Ga", "Gayo", "Gbaya", "Germanic languages", "Georgian", "Georgian", "German", "German", "Geez", "Gilbertese", "Gaelic, Scottish Gaelic", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Irish", "Galician", "Manx", "German, Middle High (ca.1050-1500)", "German, Old High (ca.750-1050)", "Gondi", "Gorontalo", "Gothic", "Grebo", "Greek, Ancient (to 1453)", "Greek, Modern (1453-)", "Greek, Modern (1453-)", "Guarani", "Swiss German, Alemannic, Alsatian", "Gujarati", "Gwich'in", "Haida", "Haitian, Haitian Creole", "Hausa", "Hawaiian", "Hebrew", "Herero", "Hiligaynon", "Himachali languages, Western Pahari languages", "Hindi", "Hittite", "Hmong, Mong", "Hiri Motu", "Croatian", "Upper Sorbian", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Hungarian", "Hupa", "Iban", "Igbo", "Icelandic", "Icelandic", "Ido", "Sichuan Yi, Nuosu", "Ijo languages", "Inuktitut", "Interlingue, Occidental", "Iloko", "Interlingua (International Auxiliary Language Association)", "Indic languages", "Indonesian", "Indo-European languages", "Ingush", "Inupiaq", "Iranian languages", "Iroquoian languages", "Italian", "Javanese", "Lojban", "Japanese", "Judeo-Persian", "Judeo-Arabic", "Kara-Kalpak", "Kabyle", "Kachin, Jingpho", "Kalaallisut, Greenlandic", "Kamba", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Kannada", "Karen languages", "Kashmiri", "Kanuri", "Kawi", "Kazakh", "Kabardian", "Khasi", "Khoisan languages", "Central Khmer", "Khotanese, Sakan", "Kikuyu, Gikuyu", "Kinyarwanda", "Kirghiz, Kyrgyz", "Kimbundu", "Konkani", "Komi", "Kongo", "Korean", "Kosraean", "Kpelle", "Karachay-Balkar", "Karelian", "Kru languages", "Kurukh", "Kuanyama, Kwanyama", "Kumyk", "Kurdish", "Kutenai", "Ladino", "Lahnda", "Lamba", "Lao", "Latin", "Latvian", "Lezghian", "Limburgan, Limburger, Limburgish", "Lingala", "Lithuanian", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Mongo", "Lozi", "Luxembourgish, Letzeburgesch", "Luba-Lulua", "Luba-Katanga", "Ganda", "Luiseno", "Lunda", "Luo (Kenya and Tanzania)", "Lushai", "Macedonian", "Macedonian", "Madurese", "Magahi", "Marshallese", "Maithili", "Makasar", "Malayalam", "Mandingo", "Maori", "Maori", "Austronesian languages", "Marathi", "Masai", "Malay", "Malay", "Moksha", "Mandar", "Mende", "Irish, Middle (900-1200)", "Mi'kmaq, Micmac", "Minangkabau", "Uncoded languages", "Mon-Khmer languages", "Malagasy", "Maltese", "Manchu", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Manipuri", "Manobo languages", "Mohawk", "Mongolian", "Mossi", "Multiple languages", "Munda languages", "Creek", "Mirandese", "Marwari", "Mayan languages", "Erzya", "Nahuatl languages", "North American Indian languages", "Neapolitan", "Nauru", "Navajo, Navaho", "Ndebele, South, South Ndebele", "Ndebele, North, North Ndebele", "Ndonga", "Low German, Low Saxon, German, Low, Saxon, Low", "Nepali", "Nepal Bhasa, Newari", "Nias", "Niger-Kordofanian languages", "Niuean", "Norwegian Nynorsk, Nynorsk, Norwegian", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Bokmål, Norwegian, Norwegian Bokmål", "Nogai", "Norse, Old", "Norwegian", "N'Ko", "Pedi, Sepedi, Northern Sotho", "Nubian languages", "Classical Newari, Old Newari, Classical Nepal Bhasa", "Chichewa, Chewa, Nyanja", "Nyamwezi", "Nyankole", "Nyoro", "Nzima", "Occitan (post 1500), Provençal", "Ojibwa", "Oriya", "Oromo", "Osage", "Ossetian, Ossetic", "Turkish, Ottoman (1500-1928)", "Otomian languages", "Papuan languages", "Pangasinan", "Pahlavi", "Pampanga, Kapampangan", "Panjabi, Punjabi", "Papiamento", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Palauan", "Persian, Old (ca.600-400 B.C.)", "Persian", "Persian", "Philippine languages", "Phoenician", "Pali", "Polish", "Pohnpeian", "Portuguese", "Prakrit languages", "Provençal, Old (to 1500)", "Pushto, Pashto", "Reserved for local use", "Quechua", "Rajasthani", "Rapanui", "Rarotongan, Cook Islands Maori", "Romance languages", "Romansh", "Romany", "Romanian, Moldavian, Moldovan", "Romanian, Moldavian, Moldovan", "Rundi", "Aromanian, Arumanian, Macedo-Romanian", "Russian", "Sandawe", "Sango", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Yakut", "South American Indian (Other)", "Salishan languages", "Samaritan Aramaic", "Sanskrit", "Sasak", "Santali", "Sicilian", "Scots", "Selkup", "Semitic languages", "Irish, Old (to 900)", "Sign Languages", "Shan", "Sidamo", "Sinhala, Sinhalese", "Siouan languages", "Sino-Tibetan languages", "Slavic languages", "Slovak", "Slovak", "Slovenian", "Southern Sami", "Northern Sami", "Sami languages", "Lule Sami", "Inari Sami", "Samoan", "Skolt Sami", "Shona", "Sindhi", "Soninke", "Sogdian", "Somali", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Songhai languages", "Sotho, Southern", "Spanish, Castilian", "Sardinian", "Sranan Tongo", "Serbian", "Serer", "Nilo-Saharan languages", "Swati", "Sukuma", "Sundanese", "Susu", "Sumerian", "Swahili", "Swedish", "Classical Syriac", "Syriac", "Tahitian", "Tai languages", "Tamil", "Tatar", "Telugu", "Timne", "Tereno", "Tetum", "Tajik", "Tagalog", "Thai", "Tibetan", "Tibetan", "Tigre", "Tigrinya", "Tiv", "Tokelau", "Klingon, tlhIngan-Hol", "Tlingit", "Tamashek", "Tonga (Nyasa)", "Tonga (Tonga Islands)", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Tok Pisin", "Tsimshian", "Tswana", "Tsonga", "Turkmen", "Tumbuka", "Tupi languages", "Turkish", "Altaic languages", "Tuvalu", "Twi", "Tuvinian", "Udmurt", "Ugaritic", "Uighur, Uyghur", "Ukrainian", "Umbundu", "Undetermined", "Urdu", "Uzbek", "Vai", "Venda", "Vietnamese", "Volapük", "Votic", "Wakashan languages", "Walamo", "Waray", "Washo", "Welsh", "Welsh", "Sorbian languages", "Walloon", "Wolof", "Kalmyk, Oirat", "Xhosa", "Yao", "Yapese", "Yiddish", "Yoruba", "Yupik languages", "Zapotec", "Blissymbols, Blissymbolics, Bliss", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Zenaga", "Standard Moroccan Tamazight", "Zhuang, Chuang", "Zande languages", "Zulu", "Zuni", "No linguistic content, Not applicable", "Zaza, Dimili, Dimli, Kirdki, Kirmanjki, Zazaki")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("Afar", "Abkhazian", "Achinese", "Acoli", "Adangme", "Adyghe, Adygei", "Afro-Asiatic languages", "Afrihili", "Afrikaans", "Ainu", "Akan", "Akkadian", "Albanian", "Albanian", "Aleut", "Algonquian languages", "Southern Altai", "Amharic", "English, Old (ca.450-1100)", "Angika", "Apache languages", "Arabic", "Official Aramaic (700-300 BCE), Imperial Aramaic (700-300 BCE)", "Aragonese", "Armenian", "Armenian", "Mapudungun, Mapuche", "Arapaho", "Artificial languages", "Arawak", "Assamese", "Asturian, Bable, Leonese, Asturleonese", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Athapascan languages", "Australian languages", "Avaric", "Avestan", "Awadhi", "Aymara", "Azerbaijani", "Banda languages", "Bamileke languages", "Bashkir", "Baluchi", "Bambara", "Balinese", "Basque", "Basque", "Basa", "Baltic languages", "Beja, Bedawiyet", "Belarusian", "Bemba", "Bengali", "Berber languages", "Bhojpuri", "Bihari languages", "Bikol", "Bini, Edo", "Bislama", "Siksika", "Bantu (Other)", "Bosnian", "Braj", "Breton", "Batak languages", "Buriat", "Buginese", "Bulgarian", "Burmese", "Burmese", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Blin, Bilin", "Caddo", "Central American Indian languages", "Galibi Carib", "Catalan, Valencian", "Caucasian languages", "Cebuano", "Celtic languages", "Chamorro", "Chibcha", "Chechen", "Chagatai", "Chinese", "Chinese", "Chuukese", "Mari", "Chinook jargon", "Choctaw", "Chipewyan, Dene Suline", "Cherokee", "Church Slavic, Old Slavonic, Church Slavonic, Old Bulgarian, Old Church Slavonic", "Chuvash", "Cheyenne", "Chamic languages", "Coptic", "Cornish", "Corsican", "Creoles and pidgins, English based", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Creoles and pidgins, French-based ", "Creoles and pidgins, Portuguese-based ", "Cree", "Crimean Tatar, Crimean Turkish", "Creoles and pidgins ", "Kashubian", "Cushitic languages", "Czech", "Czech", "Dakota", "Danish", "Dargwa", "Land Dayak languages", "Delaware", "Slave (Athapascan)", "Dogrib", "Dinka", "Divehi, Dhivehi, Maldivian", "Dogri", "Dravidian languages", "Lower Sorbian", "Duala", "Dutch, Middle (ca.1050-1350)", "Dutch, Flemish", "Dutch, Flemish", "Dyula", "Dzongkha", "Efik", "Egyptian (Ancient)", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Ekajuk", "Elamite", "English", "English, Middle (1100-1500)", "Esperanto", "Estonian", "Ewe", "Ewondo", "Fang", "Faroese", "Fanti", "Fijian", "Filipino, Pilipino", "Finnish", "Finno-Ugrian languages", "Fon", "French", "French", "French, Middle (ca.1400-1600)", "French, Old (842-ca.1400)", "Northern Frisian", "Eastern Frisian", "Western Frisian", "Fulah", "Friulian", "Ga", "Gayo", "Gbaya", "Germanic languages", "Georgian", "Georgian", "German", "German", "Geez", "Gilbertese", "Gaelic, Scottish Gaelic", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Irish", "Galician", "Manx", "German, Middle High (ca.1050-1500)", "German, Old High (ca.750-1050)", "Gondi", "Gorontalo", "Gothic", "Grebo", "Greek, Ancient (to 1453)", "Greek, Modern (1453-)", "Greek, Modern (1453-)", "Guarani", "Swiss German, Alemannic, Alsatian", "Gujarati", "Gwich'in", "Haida", "Haitian, Haitian Creole", "Hausa", "Hawaiian", "Hebrew", "Herero", "Hiligaynon", "Himachali languages, Western Pahari languages", "Hindi", "Hittite", "Hmong, Mong", "Hiri Motu", "Croatian", "Upper Sorbian", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Hungarian", "Hupa", "Iban", "Igbo", "Icelandic", "Icelandic", "Ido", "Sichuan Yi, Nuosu", "Ijo languages", "Inuktitut", "Interlingue, Occidental", "Iloko", "Interlingua (International Auxiliary Language Association)", "Indic languages", "Indonesian", "Indo-European languages", "Ingush", "Inupiaq", "Iranian languages", "Iroquoian languages", "Italian", "Javanese", "Lojban", "Japanese", "Judeo-Persian", "Judeo-Arabic", "Kara-Kalpak", "Kabyle", "Kachin, Jingpho", "Kalaallisut, Greenlandic", "Kamba", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Kannada", "Karen languages", "Kashmiri", "Kanuri", "Kawi", "Kazakh", "Kabardian", "Khasi", "Khoisan languages", "Central Khmer", "Khotanese, Sakan", "Kikuyu, Gikuyu", "Kinyarwanda", "Kirghiz, Kyrgyz", "Kimbundu", "Konkani", "Komi", "Kongo", "Korean", "Kosraean", "Kpelle", "Karachay-Balkar", "Karelian", "Kru languages", "Kurukh", "Kuanyama, Kwanyama", "Kumyk", "Kurdish", "Kutenai", "Ladino", "Lahnda", "Lamba", "Lao", "Latin", "Latvian", "Lezghian", "Limburgan, Limburger, Limburgish", "Lingala", "Lithuanian", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Mongo", "Lozi", "Luxembourgish, Letzeburgesch", "Luba-Lulua", "Luba-Katanga", "Ganda", "Luiseno", "Lunda", "Luo (Kenya and Tanzania)", "Lushai", "Macedonian", "Macedonian", "Madurese", "Magahi", "Marshallese", "Maithili", "Makasar", "Malayalam", "Mandingo", "Maori", "Maori", "Austronesian languages", "Marathi", "Masai", "Malay", "Malay", "Moksha", "Mandar", "Mende", "Irish, Middle (900-1200)", "Mi'kmaq, Micmac", "Minangkabau", "Uncoded languages", "Mon-Khmer languages", "Malagasy", "Maltese", "Manchu", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Manipuri", "Manobo languages", "Mohawk", "Mongolian", "Mossi", "Multiple languages", "Munda languages", "Creek", "Mirandese", "Marwari", "Mayan languages", "Erzya", "Nahuatl languages", "North American Indian languages", "Neapolitan", "Nauru", "Navajo, Navaho", "Ndebele, South, South Ndebele", "Ndebele, North, North Ndebele", "Ndonga", "Low German, Low Saxon, German, Low, Saxon, Low", "Nepali", "Nepal Bhasa, Newari", "Nias", "Niger-Kordofanian languages", "Niuean", "Norwegian Nynorsk, Nynorsk, Norwegian", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Bokmål, Norwegian, Norwegian Bokmål", "Nogai", "Norse, Old", "Norwegian", "N'Ko", "Pedi, Sepedi, Northern Sotho", "Nubian languages", "Classical Newari, Old Newari, Classical Nepal Bhasa", "Chichewa, Chewa, Nyanja", "Nyamwezi", "Nyankole", "Nyoro", "Nzima", "Occitan (post 1500), Provençal", "Ojibwa", "Oriya", "Oromo", "Osage", "Ossetian, Ossetic", "Turkish, Ottoman (1500-1928)", "Otomian languages", "Papuan languages", "Pangasinan", "Pahlavi", "Pampanga, Kapampangan", "Panjabi, Punjabi", "Papiamento", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Palauan", "Persian, Old (ca.600-400 B.C.)", "Persian", "Persian", "Philippine languages", "Phoenician", "Pali", "Polish", "Pohnpeian", "Portuguese", "Prakrit languages", "Provençal, Old (to 1500)", "Pushto, Pashto", "Reserved for local use", "Quechua", "Rajasthani", "Rapanui", "Rarotongan, Cook Islands Maori", "Romance languages", "Romansh", "Romany", "Romanian, Moldavian, Moldovan", "Romanian, Moldavian, Moldovan", "Rundi", "Aromanian, Arumanian, Macedo-Romanian", "Russian", "Sandawe", "Sango", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Yakut", "South American Indian (Other)", "Salishan languages", "Samaritan Aramaic", "Sanskrit", "Sasak", "Santali", "Sicilian", "Scots", "Selkup", "Semitic languages", "Irish, Old (to 900)", "Sign Languages", "Shan", "Sidamo", "Sinhala, Sinhalese", "Siouan languages", "Sino-Tibetan languages", "Slavic languages", "Slovak", "Slovak", "Slovenian", "Southern Sami", "Northern Sami", "Sami languages", "Lule Sami", "Inari Sami", "Samoan", "Skolt Sami", "Shona", "Sindhi", "Soninke", "Sogdian", "Somali", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Songhai languages", "Sotho, Southern", "Spanish, Castilian", "Sardinian", "Sranan Tongo", "Serbian", "Serer", "Nilo-Saharan languages", "Swati", "Sukuma", "Sundanese", "Susu", "Sumerian", "Swahili", "Swedish", "Classical Syriac", "Syriac", "Tahitian", "Tai languages", "Tamil", "Tatar", "Telugu", "Timne", "Tereno", "Tetum", "Tajik", "Tagalog", "Thai", "Tibetan", "Tibetan", "Tigre", "Tigrinya", "Tiv", "Tokelau", "Klingon, tlhIngan-Hol", "Tlingit", "Tamashek", "Tonga (Nyasa)", "Tonga (Tonga Islands)", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Tok Pisin", "Tsimshian", "Tswana", "Tsonga", "Turkmen", "Tumbuka", "Tupi languages", "Turkish", "Altaic languages", "Tuvalu", "Twi", "Tuvinian", "Udmurt", "Ugaritic", "Uighur, Uyghur", "Ukrainian", "Umbundu", "Undetermined", "Urdu", "Uzbek", "Vai", "Venda", "Vietnamese", "Volapük", "Votic", "Wakashan languages", "Walamo", "Waray", "Washo", "Welsh", "Welsh", "Sorbian languages", "Walloon", "Wolof", "Kalmyk, Oirat", "Xhosa", "Yao", "Yapese", "Yiddish", "Yoruba", "Yupik languages", "Zapotec", "Blissymbols, Blissymbolics, Bliss", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Zenaga", "Standard Moroccan Tamazight", "Zhuang, Chuang", "Zande languages", "Zulu", "Zuni", "No linguistic content, Not applicable", "Zaza, Dimili, Dimli, Kirdki, Kirmanjki, Zazaki")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_CellGeometryCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: code indicating whether grid data is point or area</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_CellGeometryCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_CellGeometryCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_CellGeometryCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_CellGeometryCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">code indicating whether grid data is point or area</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("point", "area", "voxel", "stratum")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("each cell represents a point", "each cell represents an area", "each cell represents a volumetric measurement on a regular grid in three dimensional space", "height range for a single point vertical profile")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_CharacterSetCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: name of the character coding standard used in the resource</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_CharacterSetCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_CharacterSetCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: ML_gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_CharacterSetCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">ML_gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_CharacterSetCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">name of the character coding standard used in the resource</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("ucs2", "ucs4", "utf7", "utf8", "utf16", "8859part1", "8859part2", "8859part3", "8859part4", "8859part5", "8859part6", "8859part7", "8859part8", "8859part9", "8859part10", "8859part11", "8859part13", "8859part14", "8859part15", "8859part16", "jis", "shiftJIS", "eucJP", "usAscii", "ebcdic", "eucKR", "big5", "GB2312")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("16-bit fixed size Universal Character Set, based on ISO/IEC 10646", "32-bit fixed size Universal Character Set, based on ISO/IEC 10646", "7-bit variable size UCS Transfer Format, based on ISO/IEC 10646", "8-bit variable size UCS Transfer Format, based on ISO/IEC 10646", "16-bit variable size UCS Transfer Format, based on ISO/IEC 10646", "ISO/IEC 8859-1, Information technology - 8-bit single byte coded graphic character sets - Part 1 : Latin alphabet No.1", "ISO/IEC 8859-2, Information technology - 8-bit single byte coded graphic character sets - Part 2 : Latin alphabet No.2", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"ISO/IEC 8859-3, Information technology - 8-bit single byte coded graphic character sets - Part 3 : Latin alphabet No.3", "ISO/IEC 8859-4, Information technology - 8-bit single byte coded graphic character sets - Part 4 : Latin alphabet No.4", "ISO/IEC 8859-5, Information technology - 8-bit single byte coded graphic character sets - Part 5 : Latin/Cyrillic alphabet", "ISO/IEC 8859-6, Information technology - 8-bit single byte coded graphic character sets - Part 6 : Latin/Arabic alphabet", "ISO/IEC 8859-7, Information technology - 8-bit single byte coded graphic character sets - Part 7 : Latin/Greek alphabet", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"ISO/IEC 8859-8, Information technology - 8-bit single byte coded graphic character sets - Part 8 : Latin/Hebrew alphabet", "ISO/IEC 8859-9, Information technology - 8-bit single byte coded graphic character sets - Part 9 : Latin alphabet No.5", "ISO/IEC 8859-10, Information technology - 8-bit single byte coded graphic character sets - Part 10 : Latin alphabet No.6", "ISO/IEC 8859-11, Information technology - 8-bit single byte coded graphic character sets - Part 11 : Latin/Thai alphabet", "ISO/IEC 8859-13, Information technology - 8-bit single byte coded graphic character sets - Part 13 : Latin alphabet No.7", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"ISO/IEC 8859-14, Information technology - 8-bit single byte coded graphic character sets - Part 14 : Latin alphabet No.8 (Celtic)", "ISO/IEC 8859-15, Information technology - 8-bit single byte coded graphic character sets - Part 15 : Latin alphabet No.9", "ISO/IEC 8859-16, Information technology - 8-bit single byte coded graphic character sets - Part 16 : Latin alphabet No.10", "japanese code set used for electronic transmission", "japanese code set used on MS-DOS machines", "japanese code set used on UNIX based machines", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"United States ASCII code set (ISO 646 US)", "IBM mainframe code set", "Korean code set", "traditional Chinese code set used in Taiwan, Hong Kong of China and other areas", "simplified Chinese code set")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_ClassificationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: name of the handling restrictions on the dataset</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_ClassificationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_ClassificationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_ClassificationCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_ClassificationCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">name of the handling restrictions on the dataset</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("unclassified", "restricted", "confidential", "secret", "topSecret", "SBU", "forOfficialUseOnly", "protected", "limitedDistribution")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("available for general disclosure", "not for general disclosure", "available for someone who can be entrusted with information", "kept or meant to be kept private, unknown, or hidden from all but a select group of people", "of the highest secrecy", "although unclassified, requires strict controls over its distribution", "unclassified information that is to be used only for official purposes determined by the designating body", "compromise of the information could cause damage", "desimination limited by designating body"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_CoverageContentTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: specific type of information represented in the cell</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_CoverageContentTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_CoverageContentTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_CoverageContentTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_CoverageContentTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">specific type of information represented in the cell</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("image", "thematicClassification", "physicalMeasurement", "auxillaryInformation", "qualityInformation", "referenceInformation", "modelResult", "coordinate", "auxilliaryData")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("meaningful numerical representation of a physical parameter that is not the actual value of the physical parameter", "code value with no quantitative meaning, used to represent a physical quantity", "value in physical units of the quantity being measured", "data, usually a physical measurement, used to support the calculation of the primary physicalMeasurement coverages in the dataset (e.g. grid of aerosol optical thickness used in the calculation of a sea surface temperature product).", "data used to characterize the quality of the physicalMeasurement coverages in the dataset. Typically included in a gmi:QE_CoverageResult.", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"reference information used to support the calculation or use of the physicalMeasurement coverages in the dataset (e.g. grids of latitude/longitude used to geolocate the physical measurements).", "resources with values that are calculated using a model rather than being observed or calculated from observations.", "data used to provide coordinate axis values", "values of extraneous data that are not part of the physical measurement")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_DatatypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: datatype of element or entity</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_DatatypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_DatatypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_DatatypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_DatatypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">datatype of element or entity</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("class", "codelist", "enumeration", "codelistElement", "abstractClass", "aggregateClass", "specifiedClass", "datatypeClass", "interfaceClass", "unionClass", "metaClass", "typeClass", "characterString", "integer", "association")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("descriptor of a set of objects that share the same attributes, operations, methods, relationships, and behavior", "descriptor of a set of objects that share the same attributes, operations, methods, relationships, and behavior", "data type whose instances form a list of named literal values, not extendable", "permissible value for a codelist or enumeration", "class that cannot be directly instantiated", "class that is composed of classes it is connected to by an aggregate relationship", "subclass that may be substituted for its superclass", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"class with few or no operations whose primary purpose is to hold the abstract state of another class for transmittal, storage, encoding or persistent storage", "named set of operations that characterize the behavior of an element", "class describing a selection of one of the specified types", "class whose instances are classes", "class used for specification of a domain of instances (objects), together with the operations applicable to the objects. A type may have attributes and associations", "free text field", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"numerical field", "semantic relationship between two classes that involves connections among their instances")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_DimensionNameTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: name of the dimension</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_DimensionNameTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_DimensionNameTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_DimensionNameTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_DimensionNameTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">name of the dimension</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("row", "column", "vertical", "track", "crossTrack", "line", "sample", "time")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("ordinate (y) axis", "abscissa (x) axis", "vertical (z) axis", "along the direction of motion of the scan point", "perpendicular to the direction of motion of the scan point", "scan line of a sensor", "element along a scan line", "duration")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_DistributionUnits</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_DistributionUnits</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_DistributionUnits</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">NA</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_GeometricObjectTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: name of point or vector objects used to locate zero-, on ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_GeometricObjectTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_GeometricObjectTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_GeometricObjectTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_GeometricObjectTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">name of point or vector objects used to locate zero-, one-, two-, or three-dimensional spatial locations in the dataset</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("complex", "composite", "curve", "point", "solid", "surface")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("set of geometric primitives such that their boundaries can be represented as a union of other primitives", "connected set of curves, solids or surfaces", "bounded, 1-dimensional geometric primitive, representing the continuous image of a line", "zero-dimensional geometric primitive, representing a position but not having an extent", "bounded, connected 3-dimensional geometric primitive, representing the continuous image of a region of space", "bounded, connected 2-dimensional geometric primitive, representing the continuous image of a region of a plane"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_KeywordTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: methods used to group similar keywords</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_KeywordTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_KeywordTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_KeywordTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_KeywordTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">methods used to group similar keywords</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("dataCenter", "discipline", "place", "dataResolution", "stratum", "temporal", "theme", "dataCentre", "featureType", "instrument", "platform", "process", "project", "service", "product", "subTopicCategory")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("keyword identifies a data center related to the resource", "keyword identifies a branch of instruction or specialized learning", "keyword identifies a location", "keyword identifies a temporal or spatial resolution", "keyword identifies the layer(s) of any deposited substance", "keyword identifies a time period related to the dataset", "keyword identifies a particular subject or topic", "keyword identifies a repository or archive that manages and distributes data", "keyword identifies a resource containing or about a collection of feature instances with common characteristics", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"keyword identifies a device used to measure or compare physical properties", "keyword identifies a structure upon which an instrument is mounted", "keyword identifies a series of actions or natural occurrences", "keyword identifies an endeavour undertaken to create or modify a product or service", "keyword identifies an activity carried out by one party for the benefit of another", "keyword identifies a type of product", "refinement of a topic category for the purpose of geographic data classification"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_ImagingConditionCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: code which indicates conditions which may affect the image</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_ImagingConditionCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_ImagingConditionCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_ImagingConditionCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_ImagingConditionCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">code which indicates conditions which may affect the image</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("blurredImage", "cloud", "degradingObliquity", "fog", "heavySmokeOrDust", "night", "rain", "semiDarkness", "shadow", "snow", "terrainMasking")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("portion of the image is blurred", "portion of the image is partially obscured by cloud cover", "acute angle between the plane of the ecliptic (the plane of the Earth s orbit) and the plane of the celestial equator", "portion of the image is partially obscured by fog", "portion of the image is partially obscured by heavy smoke or dust", "image was taken at night", "image was taken during rainfall", "image was taken during semi-dark conditions -- twilight conditions", "portion of the image is obscured by shadow", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"portion of the image is obscured by snow", "the absence of collection data of a given point or area caused by the relative location of topographic features which obstruct the collection path between the collector(s) and the subject(s) of interest")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_MaintenanceFrequencyCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: frequency with which modifications and deletions are mad ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_MaintenanceFrequencyCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_MaintenanceFrequencyCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_MaintenanceFrequencyCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_MaintenanceFrequencyCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">frequency with which modifications and deletions are made to the data after it is first produced</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("continual", "daily", "weekly", "fortnightly", "monthly", "quarterly", "biannually", "annually", "asNeeded", "irregular", "notPlanned", "unknown")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("data is repeatedly and frequently updated", "data is updated each day", "data is updated on a weekly basis", "data is updated every two weeks", "data is updated each month", "data is updated every three months", "data is updated twice each year", "data is updated every year", "data is updated as deemed necessary", "data is updated in intervals that are uneven in duration", "there are no plans to update the data", "frequency of maintenance for the data is not known")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_MediumFormatCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: method used to write to the medium</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_MediumFormatCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_MediumFormatCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_MediumFormatCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_MediumFormatCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">method used to write to the medium</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("cpio", "tar", "highSierra", "iso9660", "iso9660RockRidge", "iso9660AppleHFS", "udf")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("CoPy In / Out (UNIX file format and command)", "Tape ARchive", "high sierra file system", "information processing volume and file structure of CD-ROM", "rock ridge interchange protocol (UNIX)", "hierarchical file system (Macintosh)", "universal disk format")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_MediumNameCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: name of the medium</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_MediumNameCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_MediumNameCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_MediumNameCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_MediumNameCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">name of the medium</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("cdRom", "dvd", "dvdRom", "3halfInchFloppy", "5quarterInchFloppy", "7trackTape", "9trackType", "3480Cartridge", "3490Cartridge", "3580Cartridge", "4mmCartridgeTape", "8mmCartridgeTape", "1quarterInchCartridgeTape", "digitalLinearTape", "onLine", "satellite", "telephoneLink", "hardcopy")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("read-only optical disk", "digital versatile disk", "digital versatile disk, read only", "3,5 inch magnetic disk", "5,25 inch magnetic disk", "7 track magnetic tape", "9 track magnetic tape", "3480 cartridge tape drive", "3490 cartridge tape drive", "3580 cartridge tape drive", "4 millimetre magnetic tape", "8 millimetre magnetic tape", "0,25 inch magnetic tape", "half inch cartridge streaming tape drive", "direct computer linkage", "linkage through a satellite communication system", "communication through a telephone network", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"pamphlet or leaflet giving descriptive information")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_ObligationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: obligation of the element or entity</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_ObligationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_ObligationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_ObligationCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_ObligationCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">obligation of the element or entity</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("mandatory", "optional", "conditional")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("element is always required", "element is not required", "element is required when a specific condition is met")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_PixelOrientationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: point in a pixel corresponding to the Earth location of  ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_PixelOrientationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_PixelOrientationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_PixelOrientationCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_PixelOrientationCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">point in a pixel corresponding to the Earth location of the pixel</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("center", "lowerLeft", "lowerRight", "upperRight", "upperLeft")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("point halfway between the lower left and the upper right of the pixel", "the corner in the pixel closest to the origin of the SRS; if two are at the same distance from the origin, the one with the smallest x-value", "next corner counterclockwise from the lower left", "next corner counterclockwise from the lower right", "next corner counterclockwise from the upper right")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_ProgressCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: status of the dataset or progress of a review</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_ProgressCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_ProgressCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_ProgressCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_ProgressCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">status of the dataset or progress of a review</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("completed", "historicalArchive", "obsolete", "onGoing", "planned", "required", "underDevelopment", "final", "pending", "retired", "superseded", "tentative", "valid", "accepted", "notAccepted", "withdrawn", "proposed", "deprecated")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("production of the data has been completed", "data has been stored in an offline storage facility", "data is no longer relevant", "data is continually being updated", "fixed date has been established upon or by which the data will be created or updated", "data needs to be generated or updated", "data is currently in the process of being created", "progress concluded and no changes will be accepted", "committed to, but not yet addressed", "item is no longer recommended for use. It has not been superseded by another item", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"replaced by new", "provisional changes likely before resource becomes final or complete", "acceptable under specific conditions", "agreed to by sponsor", "rejected by sponsor", "removed from consideration", "suggested that development needs to be undertaken", "resource superseded and will become obsolete, use only for historical purposes")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_RestrictionCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: limitation(s) placed upon the access or use of the data</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_RestrictionCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_RestrictionCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_RestrictionCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_RestrictionCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">limitation(s) placed upon the access or use of the data</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("copyright", "patent", "patentPending", "trademark", "license", "intellectualPropertyRights", "restricted", "otherRestrictions", "unrestricted", "licenceUnrestricted", "licenceEndUser", "licenceDistributor", "private", "statutory", "confidential", "SBU", "in-confidence")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("exclusive right to the publication, production, or sale of the rights to a literary, dramatic, musical, or artistic work, or to the use of a commercial print or label, granted by law for a specified period of time to an author, composer, artist, distributor", "government has granted exclusive right to make, sell, use or license an invention or discovery", "produced or sold information awaiting a patent", "a name, symbol, or other device identifying a product, officially registered and legally restricted to the use of the owner or manufacturer", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"formal permission to do something", "rights to financial benefit from and control of distribution of non-tangible property that is a result of creativity", "withheld from general circulation or disclosure", "limitation not listed", "no constraints exist", "formal permission not required to use the resource", "formal permission required for a person or an entity to use the resource and that may differ from the person that orders or purchases it", "formal permission required for a person or an entity to commercialize or distribute the resource", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"protects rights of individual or organisations from observation, intrusion, or attention of others", "prescribed by law", "not available to the public contains information that could be prejudicial to a commercial, industrial, or national interest", "although unclassified, requires strict controls over its distribution.", "with trust")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_SpatialRepresentationTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: method used to represent geographic information in the d ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_SpatialRepresentationTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_SpatialRepresentationTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_SpatialRepresentationTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_SpatialRepresentationTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">method used to represent geographic information in the dataset</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("vector", "grid", "textTable", "tin", "stereoModel", "video")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("vector data is used to represent geographic data", "grid data is used to represent geographic data", "textual or tabular data is used to represent geographic data", "triangulated irregular network", "three-dimensional view formed by the intersecting homologous rays of an overlapping pair of images", "scene from a video recording")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_TopicCategoryCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: high-level geographic data thematic classification to as ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_TopicCategoryCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_TopicCategoryCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_TopicCategoryCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_TopicCategoryCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">high-level geographic data thematic classification to assist in the grouping and search of available geographic data sets. Can be used to group keywords as well. Listed examples are not exhaustive.</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("farming", "biota", "boundaries", "climatologyMeteorologyAtmosphere", "economy", "elevation", "environment", "geoscientificInformation", "health", "imageryBaseMapsEarthCover", "intelligenceMilitary", "inlandWaters", "location", "oceans", "planningCadastre", "society", "structure", "transportation", "utilitiesCommunication", "extraTerrestrial", "disaster")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("rearing of animals and/or cultivation of plants. Examples: agriculture, irrigation, aquaculture, plantations, herding, pests and diseases affecting crops and livestock", "flora and/or fauna in natural environment. Examples: wildlife, vegetation, biological sciences, ecology, wilderness, sealife, wetlands, habitat", "legal land descriptions. Examples: political and administrative boundaries", "processes and phenomena of the atmosphere. Examples: cloud cover, weather, climate, atmospheric conditions, climate change, precipitation", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"economic activities, conditions and employment. Examples: production, labour, revenue, commerce, industry, tourism and ecotourism, forestry, fisheries, commercial or subsistence hunting, exploration and exploitation of resources such as minerals, oil and gas", "height above or below sea level. Examples: altitude, bathymetry, digital elevation models, slope, derived products", "environmental resources, protection and conservation. Examples: environmental pollution, waste storage and treatment, environmental impact assessment, monitoring environmental risk, nature reserves, landscape", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"information pertaining to earth sciences. Examples: geophysical features and processes, geology, minerals, sciences dealing with the composition, structure and origin of the earth s rocks, risks of earthquakes, volcanic activity, landslides, gravity information, soils, permafrost, hydrogeology, erosion", "health, health services, human ecology, and safety. Examples: disease and illness, factors affecting health, hygiene, substance abuse, mental and physical health, health services", "base maps. Examples: land cover, topographic maps, imagery, unclassified images, annotations", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"military bases, structures, activities. Examples: barracks, training grounds, military transportation, information collection", "inland water features, drainage systems and their characteristics. Examples: rivers and glaciers, salt lakes, water utilization plans, dams, currents, floods, water quality, hydrographic charts", "positional information and services. Examples: addresses, geodetic networks, control points, postal zones and services, place names", "features and characteristics of salt water bodies (excluding inland waters). Examples: tides, tidal waves, coastal information, reefs", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"information used for appropriate actions for future use of the land. Examples: land use maps, zoning maps, cadastral surveys, land ownership", "characteristics of society and cultures. Examples: settlements, anthropology, archaeology, education, traditional beliefs, manners and customs, demographic data, recreational areas and activities, social impact assessments, crime and justice, census information", "man-made construction. Examples: buildings, museums, churches, factories, housing, monuments, shops, towers", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"means and aids for conveying persons and/or goods. Examples: roads, airports/airstrips, shipping routes, tunnels, nautical charts, vehicle or vessel location, aeronautical charts, railways", "energy, water and waste systems and communications infrastructure and services. Examples: hydroelectricity, geothermal, solar and nuclear sources of energy, water purification and distribution, sewage collection and disposal, electricity and gas distribution, data communication, telecommunication, radio, communication networks", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"region more than 100 km above the surface of the Earth", "Information related to disasters. Examples: site of the disaster, evacuation zone, disaster-prevention facility, disaster relief activities")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MD_TopologyLevelCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: degree of complexity of the spatial relationships</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MD_TopologyLevelCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MD_TopologyLevelCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MD_TopologyLevelCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MD_TopologyLevelCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">degree of complexity of the spatial relationships</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("geometryOnly", "topology1D", "planarGraph", "fullPlanarGraph", "surfaceGraph", "fullSurfaceGraph", "topology3D", "fullTopology3D", "abstract")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("geometry objects without any additional structure which describes topology", "1-dimensional topological complex -- commonly called chain-node topology", "1-dimensional topological complex that is planar. (A planar graph is a graph that can be drawn in a plane in such a way that no two edges intersect except at a vertex.)", "2-dimensional topological complex that is planar. (A 2-dimensional topological complex is commonly called full topology in a cartographic 2D environment.)", "1-dimensional topological complex that is isomorphic to a subset of a surface. (A geometric complex is isomorphic to a topological complex if their elements are in a one-to-one, dimensional-and boundry-preserving correspondence to one another.)", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"2-dimensional topological complex that is isomorphic to a subset of a surface", "3-dimensional topological complex. (A topological complex is a collection of topological primitives that are closed under the boundary operations.)", "complete coverage of a 3D Euclidean coordinate space", "topological complex without any specified geometric realisation")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_BandDefinition</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: designation of criterion for defining maximum and minimu ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_BandDefinition</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_BandDefinition</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_BandDefinition</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_BandDefinition</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">designation of criterion for defining maximum and minimum wavelengths for a spectral band</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("3db", "halfMaximum", "fiftyPercent", "oneOverE", "equivalentWidth")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("width of a distribution equal to the distance between the outer two points on the distribution having power level half of that at the peak", "width of a distribution equal to the distance between the outer two points on the distribution having power level half of that at the peak", "full spectral width of a spectral power density measured at 50% of its peak height", "width of a distribution equal to the distance between the outer two points on the distribution having power level 1/e that of the peak", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"width of a band with full sensitivity or absorption at every wavelength that detects or absorbs the same amount of energy as the band described")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_ContextCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: designation of criterion for defining the context of the ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_ContextCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_ContextCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_ContextCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_ContextCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">designation of criterion for defining the context of the scanning process event</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("acqisition", "pass", "wayPoint")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("event related to a specific domain", "event related to a sequence of collections", "event related to navigational manoeuvre")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_GeometryTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: geometric description of the collection</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_GeometryTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_GeometryTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_GeometryTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_GeometryTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">geometric description of the collection</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("point", "linear", "areal", "strip")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("single geographic point of interest", "extended collection in a single vector", "collection of a geographic area defined by a polygon (coverage)", "series of linear collections grouped by way points")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_ObjectiveTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: temporal persistence of collection objective</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_ObjectiveTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_ObjectiveTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_ObjectiveTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_ObjectiveTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">temporal persistence of collection objective</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("instantaneousCollection", "persistentView", "survey")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("single instance of collection", "multiple instances of collection", "collection over specified domain")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_OperationTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: code indicating whether the data contained in this packe ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_OperationTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_OperationTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_OperationTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_OperationTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">code indicating whether the data contained in this packet is real, simulated, or synthesized</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("real", "simulated", "synthesized")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("originates from live-fly or other non-simulated operational source", "originates from target simulator sources", "mix of real and simulated data")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_PolarisationOrientationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: Polarisation of the antenna relative to the waveform</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_PolarisationOrientationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_PolarisationOrientationCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_PolarisationOrientationCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_PolarisationOrientationCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">Polarisation of the antenna relative to the waveform</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("horizontal", "vertical", "leftCircular", "rightCircular", "theta", "phi")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("Polarisation of the sensor oriented in the horizontal plane in realtion to the swath direction", "Polarisation of the sensor oriented in the vertical plane in realtion to the swath direction", "Polarisation of the sensor oriented in the left circular plane in realtion to the swath direction", "Polarisation of the sensor oriented in the right circular plane in realtion to the swath direction", "Polarisation of the sensor oriented in the angle between +90 deg and 0 deg parallel to swath direction", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"Polarisation of the sensor oriented in the angle between +90 deg and 0 deg perpendicular to swath direction")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_PriorityCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: ordered list of priorities</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_PriorityCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_PriorityCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_PriorityCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_PriorityCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">ordered list of priorities</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("critical", "highImportance", "mediumImportance", "lowImportance")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("decisive importance", "requires resources to be made available", "normal operation priority", "to be completed when resources are available")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_SequenceCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: temporal relation of activation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_SequenceCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_SequenceCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_SequenceCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_SequenceCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">temporal relation of activation</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("start", "end", "instantaneous")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("beginning of a collection", "end of a collection", "collection without a significant duration")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_TransferFunctionTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: transform function to be used when scaling a physical va ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_TransferFunctionTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_TransferFunctionTypeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_TransferFunctionTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_TransferFunctionTypeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">transform function to be used when scaling a physical value for a given element</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("linear", "logarithmic", "exponential")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("beginning of a collection", "end of a collection", "collection without a significant duration")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MI_TriggerCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: mechanism of activation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MI_TriggerCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MI_TriggerCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MI_TriggerCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115-2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MI_TriggerCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">mechanism of activation</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("automatic", "manual", "preProgrammed")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("event due to external stimuli", "event manually instigated", "event instigated by planned internal stimuli")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $SV_CouplingType</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: indication of service instance coupling</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: SV_CouplingType</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: SV_CouplingType</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">SV_CouplingType</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19119</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">SV_CouplingType</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">indication of service instance coupling</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("loose", "mixed", "tight")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("service instance is loosely coupled with a data instance, i.e. no MD_DataIdentification class has to be described", "service instance is mixed coupled with a data instance, i.e. MD_DataIdentification describes the associated data instance and additionally the service instance might work with other external data instances", "service instance is tightly coupled with a data instance, i.e. MD_DataIdentification class MUST be described")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $SV_ParameterDirection</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description:  indication if the parameter is an input to the service, ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: SV_ParameterDirection</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: SV_ParameterDirection</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">SV_ParameterDirection</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19119</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">SV_ParameterDirection</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;"> indication if the parameter is an input to the service, an output or both</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("in", "out", "inout")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("indication if the parameter is an input to the service, an output or both", "the parameter is an output parameter to the service instance", "the parameter is both an input and output parameter to the service instance")</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MX_ScopeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ISOCodelist&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Public:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     clone: function (deep = FALSE) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     codeSpace: ISOTC211/19115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     description: Extension of MD_ScopeCode for the needs of GMX applicati ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     entries: data.frame</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id: MX_ScopeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     identifier: MX_ScopeCode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     initialize: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     parse: function (refFile, id) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     refFile: gmxCodelists.xml</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCodelist</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">id</span>: <span style="background-color: #BBBBBB;">MX_ScopeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">refFile</span>: <span style="background-color: #BBBBBB;">gmxCodelists.xml</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeSpace</span>: <span style="background-color: #BBBBBB;">ISOTC211/19115</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span>: <span style="background-color: #BBBBBB;">MX_ScopeCode</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">description</span>: <span style="background-color: #BBBBBB;">Extension of MD_ScopeCode for the needs of GMX application schemas and in the context of a transfer</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("attribute", "attributeType", "collectionHardware", "collectionSession", "dataset", "series", "nonGeographicDataset", "dimensionGroup", "feature", "featureType", "propertyType", "fieldSession", "software", "service", "model", "tile", "initiative", "stereomate", "sensor", "platformSeries", "sensorSeries", "productionSeries", "transferAggregate", "otherAggregate")</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">codeEntry</span>: <span style="background-color: #BBBBBB;">c("information applies to the attribute class", "information applies to the characteristic of a feature", "information applies to the collection hardware class", "information applies to the collection session", "information applies to the dataset", "information applies to the series", "information applies to non-geographic data", "information applies to a dimension group", "information applies to a feature", "information applies to a feature type", "information applies to a property type", "information applies to a field session", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"information applies to a computer program or routine", "information applies to a capability which a service provider entity makes available to a service user entity through a set of interfaces that define a behaviour, such as a use case", "information applies to a copy or imitation of an existing or hypothetical object", "information applies to a tile, a spatial subset of geographic data", "The referencing entity applies to a transfer aggregate which was originally identified as an initiative (DS_Initiative)", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"The referencing entity applies to a transfer aggregate which was originally identified as a stereo mate (DS_StereoMate)", "The referencing entity applies to a transfer aggregate which was originally identified as a sensor (DS_Sensor)", "The referencing entity applies to a transfer aggregate which was originally identified as a platform series (DS_PlatformSeries)", "The referencing entity applies to a transfer aggregate which was originally identified as a sensor series (DS_SensorSeries)", "The referencing entity applies to a transfer aggregate which was originally identified as a production series (DS_ProductionSeries)", </span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="background-color: #BBBBBB;">"The referencing entity applies to a transfer aggregate which has no existence outside of the transfer context", "The referencing entity applies to a transfer aggregate which has an existence outside of the transfer context, but which does not pertains to a specific aggregate type.")</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -651,15 +590,15 @@ registered in <span class="pkg">geometa</span></p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer></div>
 
-  
 
 
-  
+
+
 
   </body></html>
 
