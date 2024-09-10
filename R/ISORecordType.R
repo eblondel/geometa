@@ -16,7 +16,10 @@ ISORecordType <- R6Class("ISORecordType",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "RecordType",
-     xmlNamespacePrefix = "GCO"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GCO",
+       "19115-3" = "GCO"
+     )
    ),
    public = list(
      #'@field value value

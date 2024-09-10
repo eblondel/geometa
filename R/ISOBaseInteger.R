@@ -18,7 +18,10 @@ ISOBaseInteger <- R6Class("ISOBaseInteger",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "Integer",
-    xmlNamespacePrefix = "GCO"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GCO",
+      "19115-3" = "GCO"
+    )
   ),
   public = list(
     #'@field value value

@@ -17,7 +17,10 @@ ISOBaseDecimal <- R6Class("ISOBaseDecimal",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "Decimal",
-     xmlNamespacePrefix = "GCO",
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GCO",
+       "19115-3" = "GCO"
+     ),
      
      #decimal places
      decimalplaces = function(x) {

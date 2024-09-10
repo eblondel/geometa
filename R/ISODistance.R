@@ -25,7 +25,10 @@ ISODistance <- R6Class("ISODistance",
    inherit = ISOLength,
    private = list(
      xmlElement = "Distance",
-     xmlNamespacePrefix = "GCO"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GCO",
+       "19115-3" = "GCO"
+     )
    ),
    public = list(
       

@@ -20,7 +20,10 @@ ISOTypeName <- R6Class("ISOTypeName",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "TypeName",
-     xmlNamespacePrefix = "GCO"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GCO",
+       "19115-3" = "GCO"
+     )
    ),
    public = list(
      

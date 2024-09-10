@@ -16,7 +16,10 @@ ISOAngle <- R6Class("ISOAngle",
    inherit = ISOMeasure,
    private = list(
      xmlElement = "Angle",
-     xmlNamespacePrefix = "GCO"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GCO",
+       "19115-3" = "GCO"
+     )
    ),
    public = list(
       

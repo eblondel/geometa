@@ -18,7 +18,10 @@ ISOBaseCharacterString <- R6Class("ISOBaseCharacterString",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "CharacterString",
-     xmlNamespacePrefix = "GCO"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GCO",
+       "19115-3" = "GCO"
+     )
    ),
    public = list(
      #'@field value value

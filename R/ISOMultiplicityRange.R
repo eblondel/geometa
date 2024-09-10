@@ -21,7 +21,10 @@ ISOMultiplicityRange <- R6Class("ISOMultiplicityRange",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MultiplicityRange",
-    xmlNamespacePrefix = "GCO"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GCO",
+      "19115-3" = "GCO"
+    )
   ),
   public = list(
     #'@field lower lower

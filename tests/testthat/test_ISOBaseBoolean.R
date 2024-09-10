@@ -8,7 +8,7 @@ require(testthat)
 
 context("ISOBaseBoolean")
 
-test_that("encoding",{
+test_that("encoding - ISO 19115-1",{
   #encoding
   md <- ISOBaseBoolean$new(value = TRUE)
   expect_is(md, "ISOBaseBoolean")
@@ -24,7 +24,7 @@ test_that("encoding",{
   
 })
 
-test_that("encoding with coercing",{
+test_that("encoding - ISO 19115-1 -  with coercing",{
   
   #encoding
   md <- ISOBaseBoolean$new(value = "true")
@@ -39,4 +39,21 @@ test_that("encoding with coercing",{
   
   expect_true(ISOAbstractObject$compare(md, md2))
   
+})
+
+test_that("encoding - ISO 19115-3",{
+  setMetadataStandard("19115-3")
+  #encoding
+  md <- ISOBaseBoolean$new(value = TRUE)
+  expect_is(md, "ISOBaseBoolean")
+  expect_equal(md$value, "true")
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOBaseBoolean$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+  setMetadataStandard("19115-1/2")
 })

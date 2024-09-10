@@ -23,7 +23,10 @@ ISOPresentationForm <- R6Class("ISOPresentationForm",
    inherit = ISOCodeListValue,
    private = list(
      xmlElement = "CI_PresentationFormCode",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "CIT"
+     )
    ),
    public = list(
       

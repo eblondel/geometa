@@ -57,7 +57,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
   private = list(
     metadataStandardCompliance = TRUE,
     xmlElement = "AbstractObject",
-    xmlNamespacePrefix = "GCO",
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GCO",
+      "19115-3" = "GCO"
+    ),
     encoding = options("encoding"),
     document = FALSE,
     system_fields = c("wrap", "value_as_field", "valueDescription",
