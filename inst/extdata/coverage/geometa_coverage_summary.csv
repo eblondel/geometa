@@ -1,6 +1,6 @@
 "Specification","Schema","Title","Namespace","Supported","Missing","Refactored","Torefactor","Coverage"
-"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT",2,14,2,14,12.5
-"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO",22,2,0,24,91.67
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT",11,5,11,5,68.75
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO",22,2,22,2,91.67
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX",0,8,0,8,0
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN",0,7,0,7,0
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC",0,31,0,31,0
@@ -8,10 +8,10 @@
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI",0,12,0,12,0
 "ISO/TS 19115-3:2016","ISO 19157","Data Quality abstract Classes (DQC) Version 1.0","DQC",0,2,0,2,0
 "ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC",17,0,0,17,100
-"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD",132,0,2,130,100
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD",132,0,11,121,100
 "ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI",40,0,0,40,100
 "ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV",7,12,0,19,36.84
-"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO",22,0,0,22,100
+"ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO",22,0,22,0,100
 "ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX",10,56,5,61,15.15
 "ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema - Geographic Temporal Schema (GTS)","GTS",0,1,0,1,0
 "GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML",62,107,0,169,36.69
