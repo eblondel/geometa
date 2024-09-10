@@ -22,7 +22,10 @@ ISOTelephone <- R6Class("ISOTelephone",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "CI_Telephone",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "CIT"
+     )
    ),
    public = list(
      #'@field voice voice

@@ -25,7 +25,10 @@ ISOAddress <- R6Class("ISOAddress",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "CI_Address",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "CIT"
+    )
   ),
   public = list(
     #'@field deliveryPoint delivery point

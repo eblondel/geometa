@@ -16,7 +16,10 @@ ISOCitationSeries <- R6Class("ISOCitationSeries",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "CI_Series",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "CIT"
+     )
    ),
    public = list(
      #'@field name name [0..1]

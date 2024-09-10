@@ -25,7 +25,10 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "CI_OnlineResource",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "CIT"
+    )
   ),
   public = list(
     #'@field linkage linkage
