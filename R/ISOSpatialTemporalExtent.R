@@ -28,7 +28,10 @@ ISOSpatialTemporalExtent <- R6Class("ISOSpatialTemporalExtent",
    inherit = ISOTemporalExtent,
    private = list(
      xmlElement = "EX_SpatialTemporalExtent",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "GEX"
+     )
    ),
    public = list(
      #'@field spatialExtent spatialExtent [1..*]: ISOGeographicExtent

@@ -22,7 +22,10 @@ ISOVerticalExtent <- R6Class("ISOVerticalExtent",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "EX_VerticalExtent",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "GEX"
+    )
   ),
   public = list(
     #'@field minimumValue minimumValue [1..1]: numeric

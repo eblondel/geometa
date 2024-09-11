@@ -9,7 +9,7 @@ require(testthat)
 
 context("ISOBoundingPolygon")
 
-test_that("encoding",{
+test_that("encoding - ISO 19115-1/2",{
   testthat::skip_on_cran()
   #encoding
   outer = matrix(c(0,0,10,0,10,10,0,10,0,0),ncol=2, byrow=TRUE)
@@ -29,4 +29,27 @@ test_that("encoding",{
   
   expect_true(ISOAbstractObject$compare(md, md2))
   
+})
+
+test_that("encoding - ISO 19115-3",{
+  testthat::skip_on_cran()
+  setMetadataStandard("19115-3")
+  #encoding
+  outer = matrix(c(0,0,10,0,10,10,0,10,0,0),ncol=2, byrow=TRUE)
+  hole1 = matrix(c(1,1,1,2,2,2,2,1,1,1),ncol=2, byrow=TRUE)
+  hole2 = matrix(c(5,5,5,6,6,6,6,5,5,5),ncol=2, byrow=TRUE)
+  pts = list(outer, hole1, hole2)
+  sfg = st_polygon(pts) 
+  md <- ISOBoundingPolygon$new()
+  md$addPolygon(sfg)
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  #TODO decoding for matrices of coordinates
+  md2 <- ISOBoundingPolygon$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+  setMetadataStandard()
 })

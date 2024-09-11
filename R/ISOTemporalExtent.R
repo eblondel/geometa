@@ -23,7 +23,10 @@ ISOTemporalExtent <- R6Class("ISOTemporalExtent",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "EX_TemporalExtent",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "GEX"
+    )
   ),
   public = list(
     #'@field extent extent

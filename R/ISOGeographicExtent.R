@@ -18,7 +18,10 @@ ISOGeographicExtent <- R6Class("ISOGeographicExtent",
     inherit = ISOAbstractObject,
     private = list(
       xmlElement = "AbstractEX_GeographicExtent",
-      xmlNamespacePrefix = "GMD"
+      xmlNamespacePrefix = list(
+        "19115-1/2" = "GMD",
+        "19115-3" = "GEX"
+      )
     ),
     public = list(
       #'@field extentTypeCode extentTypeCode [0..1]: ISOBaseBoolean default "true"

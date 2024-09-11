@@ -8,7 +8,7 @@ require(testthat)
 
 context("ISOGeographicDescription")
 
-test_that("encoding",{
+test_that("encoding - ISO 19115-1/2",{
   testthat::skip_on_cran()
   #encoding
   md <- ISOGeographicDescription$new()
@@ -21,5 +21,23 @@ test_that("encoding",{
   xml2 <- md2$encode()
   
   expect_true(ISOAbstractObject$compare(md, md2))
+  
+})
+
+test_that("encoding - ISO 19115-3",{
+  testthat::skip_on_cran()
+  setMetadataStandard("19115-3")
+  #encoding
+  md <- ISOGeographicDescription$new()
+  md$setGeographicIdentifier(ISOMetaIdentifier$new(code = "identifier"))
+  xml <- md$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  md2 <- ISOGeographicDescription$new(xml = xml)
+  xml2 <- md2$encode()
+  
+  expect_true(ISOAbstractObject$compare(md, md2))
+  setMetadataStandard("19115-1/2")
   
 })

@@ -21,7 +21,10 @@ ISOGeographicDescription <- R6Class("ISOGeographicDescription",
   inherit = ISOGeographicExtent,
   private = list(
     xmlElement = "EX_GeographicDescription",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "GEX"
+    )
   ),
   public = list(
     #'@field geographicIdentifier geographicIdentifier [1..1]: character
