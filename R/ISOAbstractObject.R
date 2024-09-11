@@ -244,6 +244,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       if(!is.null(element)){ private$xmlElement <- element }
       if(!is.null(namespace)){ private$xmlNamespacePrefix <- toupper(namespace)}
       self$element = private$xmlElement
+      if(is.list(private$xmlElement)) if(getMetadataStandard() %in% names(private$xmlElement)) {
+        private$xmlElement = private$xmlElement[[getMetadataStandard()]]
+        self$element = private$xmlElement
+      }
       self$namespace = getISOMetadataNamespace(private$xmlNamespacePrefix)
       self$attrs = attrs
       self$defaults = defaults
@@ -1523,7 +1527,11 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
         std,
         ns_prefix = if(!is.null(xmlnsp)) xmlnsp else NA,
         ns_uri = if(!is.null(xmlnsp)) ISOMetadataNamespace[[xmlnsp]]$uri else NA,
-        element = clazz$private_fields$xmlElement,
+        element = if(is.list(clazz$private_fields$xmlElement)){
+          clazz$private_fields$xmlElement[[getMetadataStandard()]]
+        }else{
+          clazz$private_fields$xmlElement
+        },
         refactored = refactored,
         stringsAsFactors = FALSE
       )
@@ -1555,7 +1563,9 @@ ISOAbstractObject$getISOClassByNode = function(node){
    
   for(classname in list_of_classes){
     clazz <- try(eval(parse(text=classname)))
-    if(nodeElementName %in% clazz$private_fields$xmlElement){
+    xmlElement = clazz$private_fields$xmlElement
+    if(is.list(xmlElement)) xmlElement = xmlElement[[getMetadataStandard()]]
+    if(nodeElementName %in% xmlElement){
       geometa_inherits <- FALSE
       superclazz <- clazz
       while(!geometa_inherits && !is.null(superclazz)){
@@ -1701,7 +1711,15 @@ getClassesInheriting <- function(classname, extended = FALSE, pretty = FALSE){
         environment = environmentName(clazz$parent_env),
         ns_prefix = if(!is.null(xmlnsp)) xmlnsp else NA,
         ns_uri = if(!is.null(xmlnsp)) ISOMetadataNamespace[[xmlnsp]]$uri else NA,
-        element = if(!is.null(clazz$private_fields$xmlElement)) clazz$private_fields$xmlElement else NA,
+        element = if(!is.null(clazz$private_fields$xmlElement)){
+          if(is.list(clazz$private_fields$xmlElement)){
+            clazz$private_fields$xmlElement[[getMetadataStandard()]]
+          }else{
+            clazz$private_fields$xmlElement
+          }
+        }else{
+          NA
+        },
         stringsAsFactors = FALSE
       )
       
