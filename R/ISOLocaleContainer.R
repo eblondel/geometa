@@ -16,7 +16,10 @@ ISOLocaleContainer <- R6Class("ISOLocaleContainer",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "PT_LocaleContainer",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "LAN"
+    )
   ),
   public = list(
     

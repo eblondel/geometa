@@ -23,7 +23,10 @@ ISOLocale <- R6Class("ISOLocale",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "PT_Locale",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "LAN"
+     )
    ),
    public = list(
      #'@field languageCode languageCode [1..1]: ISOLanguage

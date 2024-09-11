@@ -22,8 +22,14 @@
 ISOCountry <- R6Class("ISOCountry",
    inherit = ISOCodeListValue,
    private = list(
-     xmlElement = "Country",
-     xmlNamespacePrefix = "GMD"
+     xmlElement = list(
+       "19115-1/2" = "Country",
+       "19115-3" = "CountryCode"
+     ),
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "LAN"
+     )
    ),
    public = list(
       

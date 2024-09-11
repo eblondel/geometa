@@ -23,7 +23,10 @@ ISOCharacterSet <- R6Class("ISOCharacterSet",
  inherit = ISOCodeListValue,
  private = list(
    xmlElement = "MD_CharacterSetCode",
-   xmlNamespacePrefix = "GMD"
+   xmlNamespacePrefix = list(
+     "19115-1/2" = "GMD",
+     "19115-3" = "LAN"
+   )
  ),
  public = list(
     

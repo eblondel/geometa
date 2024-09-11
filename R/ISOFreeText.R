@@ -19,7 +19,10 @@ ISOFreeText <- R6Class("ISOFreeText",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "PT_FreeText",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+        "19115-1/2" = "GMD",
+        "19115-3" = "LAN"
+     )
    ),
    public = list(
      #'@field textGroup textGroup [1..*]: ISOLocalisedCharacterString

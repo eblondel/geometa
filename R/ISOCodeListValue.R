@@ -57,7 +57,9 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          description <- xmlValue(xml) #try to pick up value instead
          if(is.null(value)) value <- description
        }
+       if(is.list(id)) id = id[[getMetadataStandard()]]
        if(id=="MD_ScopeCode") id <- "MX_ScopeCode"
+       if(id=="CountryCode") id <- "Country"
        cl <- getISOCodelist(id)
        if(is.null(cl)){
          stop(sprintf("No ISO codelist for identifier '%s'", id))

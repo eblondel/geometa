@@ -20,7 +20,10 @@ ISOLocalisedCharacterString <- R6Class("ISOLocalisedCharacterString",
   inherit = ISOBaseCharacterString,
   private = list(
     xmlElement = "LocalisedCharacterString",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "LAN"
+    )
   ),
   public = list(
     
