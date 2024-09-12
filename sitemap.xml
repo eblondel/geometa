@@ -157,6 +157,7 @@
 <url><loc>/reference/ISODataIdentification.html</loc></url>
 <url><loc>/reference/ISODataQuality.html</loc></url>
 <url><loc>/reference/ISODataQualityAbstractElement.html</loc></url>
+<url><loc>/reference/ISODataQualityScope.html</loc></url>
 <url><loc>/reference/ISODataSet.html</loc></url>
 <url><loc>/reference/ISODatatype.html</loc></url>
 <url><loc>/reference/ISODate.html</loc></url>
@@ -194,7 +195,6 @@
 <url><loc>/reference/ISOGeoreferenceable.html</loc></url>
 <url><loc>/reference/ISOGridSpatialRepresentation.html</loc></url>
 <url><loc>/reference/ISOGriddedDataPositionalAccuracy.html</loc></url>
-<url><loc>/reference/ISOHierarchyLevel.html</loc></url>
 <url><loc>/reference/ISOIdentification.html</loc></url>
 <url><loc>/reference/ISOIdentifier.html</loc></url>
 <url><loc>/reference/ISOImageDescription.html</loc></url>
@@ -266,6 +266,7 @@
 <url><loc>/reference/ISOMetadata.html</loc></url>
 <url><loc>/reference/ISOMetadataExtensionInformation.html</loc></url>
 <url><loc>/reference/ISOMetadataNamespace.html</loc></url>
+<url><loc>/reference/ISOMetadataScope.html</loc></url>
 <url><loc>/reference/ISOMimeFileType.html</loc></url>
 <url><loc>/reference/ISOMultiplicity.html</loc></url>
 <url><loc>/reference/ISOMultiplicityRange.html</loc></url>
@@ -283,6 +284,7 @@
 <url><loc>/reference/ISOPresentationForm.html</loc></url>
 <url><loc>/reference/ISOProcessStep.html</loc></url>
 <url><loc>/reference/ISOProductionSeries.html</loc></url>
+<url><loc>/reference/ISOProgress.html</loc></url>
 <url><loc>/reference/ISOPropertyType.html</loc></url>
 <url><loc>/reference/ISOQuantitativeAttributeAccuracy.html</loc></url>
 <url><loc>/reference/ISOQuantitativeResult.html</loc></url>

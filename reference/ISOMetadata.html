@@ -91,7 +91,7 @@ ISOMetadata"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 
 
 <dt><code>hierarchyLevel</code></dt>
-<dd><p>hierarchyLevel [0..*] : ISOHierarchyLevel = "dataset"</p></dd>
+<dd><p>hierarchyLevel [0..*] : ISOScope = "dataset"</p></dd>
 
 
 <dt><code>hierarchyLevelName</code></dt>
@@ -328,8 +328,8 @@ from values returned by <code>ISOCharacterSet$values()</code></p></dd>
 <div class="section">
 <h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>level</code></dt>
-<dd><p>object of class <a href="ISOHierarchyLevel.html">ISOHierarchyLevel</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
-from values returned by <code>ISOHierarchyLevel$values()</code></p></dd>
+<dd><p>object of class <a href="ISOScope.html">ISOScope</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
+from values returned by <code>ISOScope$values()</code></p></dd>
 
 
 </dl><p></p></div>
@@ -349,8 +349,8 @@ from values returned by <code>ISOHierarchyLevel$values()</code></p></dd>
 <div class="section">
 <h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>level</code></dt>
-<dd><p>object of class <a href="ISOHierarchyLevel.html">ISOHierarchyLevel</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
-from values returned by <code>ISOHierarchyLevel$values()</code></p></dd>
+<dd><p>object of class <a href="ISOScope.html">ISOScope</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
+from values returned by <code>ISOScope$values()</code></p></dd>
 
 
 </dl><p></p></div>
@@ -370,8 +370,8 @@ from values returned by <code>ISOHierarchyLevel$values()</code></p></dd>
 <div class="section">
 <h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>level</code></dt>
-<dd><p>object of class <a href="ISOHierarchyLevel.html">ISOHierarchyLevel</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
-from values returned by <code>ISOHierarchyLevel$values()</code></p></dd>
+<dd><p>object of class <a href="ISOScope.html">ISOScope</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
+from values returned by <code>ISOScope$values()</code></p></dd>
 
 
 </dl><p></p></div>
@@ -1192,7 +1192,7 @@ from values returned by <code>ISOHierarchyLevel$values()</code></p></dd>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#create dataQuality object with a 'dataset' scope</span></span></span>
 <span class="r-in"><span>   <span class="va">dq</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODataQuality.html">ISODataQuality</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-in"><span>   <span class="va">scope</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOScope.html">ISOScope</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">scope</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODataQualityScope.html">ISODataQualityScope</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">scope</span><span class="op">$</span><span class="fu">setLevel</span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">dq</span><span class="op">$</span><span class="fu">setScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  </span></span>
