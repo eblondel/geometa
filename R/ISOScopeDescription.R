@@ -20,7 +20,10 @@ ISOScopeDescription <- R6Class("ISOScopeDescription",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MD_ScopeDescription",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "MCC"
+    )
   ),
   public = list(
     #'@field attributes attributes [1..*]

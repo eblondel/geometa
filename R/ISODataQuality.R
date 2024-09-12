@@ -10,7 +10,7 @@
 #' @examples
 #'   #create dataQuality object with a 'dataset' scope
 #'   dq <- ISODataQuality$new()
-#'   scope <- ISOScope$new()
+#'   scope <- ISODataQualityScope$new()
 #'   scope$setLevel("dataset")
 #'   dq$setScope(scope)
 #'   
@@ -107,8 +107,8 @@ ISODataQuality <- R6Class("ISODataQuality",
     #'@description Set scope
     #'@param scope scope
     setScope = function(scope){
-      if(!is(scope, "ISOScope")){
-        stop("The argument should be a 'ISOScope' object")
+      if(!is(scope, "ISODataQualityScope")){
+        stop("The argument should be a 'ISODataQualityScope' object")
       }
       self$scope <- scope
     },

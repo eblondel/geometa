@@ -1505,7 +1505,11 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
           "pivot_format"))
       }
     }
-    return(r6Predicate & envPredicate & includePredicate)
+    notDeprecated <- FALSE
+    if(r6Predicate & envPredicate & includePredicate){
+      notDeprecated = !isTRUE(clazz$private_fields$deprecated)
+    }
+    return(r6Predicate & envPredicate & includePredicate & notDeprecated)
   })]
   list_of_classes <- as.vector(list_of_classes)
   list_of_classes <- list_of_classes[!startsWith(list_of_classes, "pivot")]

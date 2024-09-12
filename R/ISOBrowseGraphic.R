@@ -24,7 +24,10 @@ ISOBrowseGraphic <- R6Class("ISOBrowseGraphic",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MD_BrowseGraphic",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "MCC"
+     )
    ),
    public = list(
      #'@field fileName file name

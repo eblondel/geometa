@@ -216,7 +216,7 @@
 #'    
 #'    #create dataQuality object with a 'dataset' scope
 #'    dq <- ISODataQuality$new()
-#'    scope <- ISOScope$new()
+#'    scope <- ISODataQualityScope$new()
 #'    scope$setLevel("dataset")
 #'    dq$setScope(scope)
 #'   
@@ -332,7 +332,10 @@ ISOMetadata <- R6Class("ISOMetadata",
   private = list(
     document = TRUE,
     xmlElement = "MD_Metadata",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+     "19115-1/2" = "GMD",
+     "19115-3" = "MDB"
+    )
   ),
   public = list(
      #'@field fileIdentifier fileIdentifier [0..1] : character
@@ -343,7 +346,7 @@ ISOMetadata <- R6Class("ISOMetadata",
      characterSet = NULL,
      #'@field parentIdentifier parentIdentifier [0..1] : character
      parentIdentifier = NULL,
-     #'@field hierarchyLevel hierarchyLevel [0..*] : ISOHierarchyLevel = "dataset"
+     #'@field hierarchyLevel hierarchyLevel [0..*] : ISOScope = "dataset"
      hierarchyLevel = list(),
      #'@field hierarchyLevelName hierarchyLevelName [0..*] : character
      hierarchyLevelName = list(),
@@ -390,7 +393,7 @@ ISOMetadata <- R6Class("ISOMetadata",
        #default values
        defaults <- list(
          characterSet = ISOCharacterSet$new(value = "utf8"),
-         hierarchyLevel = list(ISOHierarchyLevel$new(value = "dataset"))
+         hierarchyLevel = list(ISOScope$new(value = "dataset"))
        )
        
        if(!is.null(xml)){
@@ -439,19 +442,19 @@ ISOMetadata <- R6Class("ISOMetadata",
      },
      
      #'@description Adds hierarchy level
-     #'@param level object of class \link{ISOHierarchyLevel} or any \link{character}
-     #' from values returned by \code{ISOHierarchyLevel$values()}
+     #'@param level object of class \link{ISOScope} or any \link{character}
+     #' from values returned by \code{ISOScope$values()}
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addHierarchyLevel = function(level){
-       if(!is(level, "ISOHierarchyLevel")){
-         level <- ISOHierarchyLevel$new(value = level)
+       if(!is(level, "ISOScope")){
+         level <- ISOScope$new(value = level)
        }
        return(self$addListElement("hierarchyLevel", level))
      },
      
      #'@description Sets hierarchy level
-     #'@param level object of class \link{ISOHierarchyLevel} or any \link{character}
-     #' from values returned by \code{ISOHierarchyLevel$values()}
+     #'@param level object of class \link{ISOScope} or any \link{character}
+     #' from values returned by \code{ISOScope$values()}
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      setHierarchyLevel = function(level){
        warning("Method 'setHierarchyLevel' is deprecated, please use 'addHierarchyLevel'!")
@@ -460,12 +463,12 @@ ISOMetadata <- R6Class("ISOMetadata",
      },
 
      #'@description Deletes hierarchy level
-     #'@param level object of class \link{ISOHierarchyLevel} or any \link{character}
-     #' from values returned by \code{ISOHierarchyLevel$values()}
+     #'@param level object of class \link{ISOScope} or any \link{character}
+     #' from values returned by \code{ISOScope$values()}
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delHierarchyLevel = function(level){
-       if(!is(level, "ISOHierarchyLevel")){
-         level <- ISOHierarchyLevel$new(value = level)
+       if(!is(level, "ISOScope")){
+         level <- ISOScope$new(value = level)
        }
        return(self$delListElement("hierarchyLevel", level))
      },

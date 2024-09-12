@@ -16,6 +16,7 @@
 #' 
 #' @references 
 #'   ISO 19115:2003 - Geographic information -- Metadata
+#'   ISO/TS 19115-3:2016 - Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -23,7 +24,10 @@ ISOSpatialRepresentationType <- R6Class("ISOSpatialRepresentationType",
    inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_SpatialRepresentationTypeCode",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+        "19115-1/2" = "GMD",
+        "19115-3" = "MCC"
+     )
    ),
    public = list(
       

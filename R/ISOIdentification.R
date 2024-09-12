@@ -28,7 +28,7 @@ ISOIdentification <- R6Class("ISOIdentification",
      purpose = NULL,
      #'@field credit credit [0..*]: character
      credit = list(),
-     #'@field status status [0..*]: ISOStatus
+     #'@field status status [0..*]: ISOProgress
      status = list(),
      #'@field pointOfContact pointOfContact [0..*]: ISOResponsibleParty
      pointOfContact = list(),
@@ -109,23 +109,23 @@ ISOIdentification <- R6Class("ISOIdentification",
      },
      
      #'@description Adds status
-     #'@param status object of class \link{ISOStatus} or any \link{character} among
-     #' values returned by \code{ISOStatus$values()}
+     #'@param status object of class \link{ISOProgress} or any \link{character} among
+     #' values returned by \code{ISOProgress$values()}
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addStatus = function(status){
-       if(!is(status,"ISOStatus")){
-         status <- ISOStatus$new(value = status)
+       if(!is(status,"ISOProgress")){
+         status <- ISOProgress$new(value = status)
        }
        return(self$addListElement("status", status))
      },
      
      #'@description Deletes status
-     #'@param status object of class \link{ISOStatus} or any \link{character} among
-     #' values returned by \code{ISOStatus$values()}
+     #'@param status object of class \link{ISOProgress} or any \link{character} among
+     #' values returned by \code{ISOProgress$values()}
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delStatus = function(status){
-       if(!is(status,"ISOStatus")){
-         status <- ISOStatus$new(value = status)
+       if(!is(status,"ISOProgress")){
+         status <- ISOProgress$new(value = status)
        }
        return(self$delListElement("status", status))
      },

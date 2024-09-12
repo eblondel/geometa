@@ -20,7 +20,10 @@ ISOMetaIdentifier <- R6Class("ISOMetaIdentifier",
    inherit = ISOIdentifier,
    private = list(
      xmlElement = "MD_Identifier",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "MCC"
+     )
    ),
    public = list(
      #'@description Initializes object

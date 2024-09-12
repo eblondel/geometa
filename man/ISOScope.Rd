@@ -5,9 +5,11 @@
 \alias{ISOScope}
 \title{ISOScope}
 \format{
-\code{\link{R6Class}} object.
+\code{\link{R6Class}} object
 }
 \value{
+Object of \code{\link{R6Class}} for modelling an ISO Scope
+
 Object of \code{\link{R6Class}} for modelling an ISO Scope
 }
 \description{
@@ -16,10 +18,12 @@ ISOScope
 ISOScope
 }
 \examples{
-  md <- ISOScope$new()
-  md$setLevel("dataset")
-  xml <- md$encode()
+  #possible values
+  values <- ISOScope$values(labels = TRUE)
   
+  #dataset scope
+  ds <- ISOScope$new(value = "dataset")
+
 }
 \references{
 ISO 19115:2003 - Geographic information -- Metadata
@@ -28,22 +32,16 @@ ISO 19115:2003 - Geographic information -- Metadata
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
-\keyword{extent}
+\keyword{hierarchy}
+\keyword{level}
+\keyword{scope}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOScope}
-}
-\section{Public fields}{
-\if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{level}}{level}
-}
-\if{html}{\out{</div>}}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOScope}
 }
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOScope-new}{\code{ISOScope$new()}}
-\item \href{#method-ISOScope-setLevel}{\code{ISOScope$setLevel()}}
 \item \href{#method-ISOScope-clone}{\code{ISOScope$clone()}}
 }
 }
@@ -79,6 +77,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="stopIfMetadataStandardIsNot"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-stopIfMetadataStandardIsNot'><code>geometa::ISOAbstractObject$stopIfMetadataStandardIsNot()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCodeListValue" data-id="getAcceptedValues"><a href='../../geometa/html/ISOCodeListValue.html#method-ISOCodeListValue-getAcceptedValues'><code>geometa::ISOCodeListValue$getAcceptedValues()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -88,31 +87,17 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOScope$new(xml = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOScope$new(xml = NULL, value, description = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
-}
-\if{html}{\out{</div>}}
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ISOScope-setLevel"></a>}}
-\if{latex}{\out{\hypertarget{method-ISOScope-setLevel}{}}}
-\subsection{Method \code{setLevel()}}{
-Set level
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOScope$setLevel(level)}\if{html}{\out{</div>}}
-}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{level}}{object of class \link{ISOHierarchyLevel} or any \link{character}
-among values returned by \link{ISOHierarchyLevel}}
+\item{\code{value}}{value}
+
+\item{\code{description}}{description}
 }
 \if{html}{\out{</div>}}
 }

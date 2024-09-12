@@ -37,7 +37,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{credit}}{credit [0..*]: character}
 
-\item{\code{status}}{status [0..*]: ISOStatus}
+\item{\code{status}}{status [0..*]: ISOProgress}
 
 \item{\code{pointOfContact}}{pointOfContact [0..*]: ISOResponsibleParty}
 
@@ -254,8 +254,8 @@ Adds status
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{status}}{object of class \link{ISOStatus} or any \link{character} among
-values returned by \code{ISOStatus$values()}}
+\item{\code{status}}{object of class \link{ISOProgress} or any \link{character} among
+values returned by \code{ISOProgress$values()}}
 }
 \if{html}{\out{</div>}}
 }
@@ -275,8 +275,8 @@ Deletes status
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{status}}{object of class \link{ISOStatus} or any \link{character} among
-values returned by \code{ISOStatus$values()}}
+\item{\code{status}}{object of class \link{ISOProgress} or any \link{character} among
+values returned by \code{ISOProgress$values()}}
 }
 \if{html}{\out{</div>}}
 }

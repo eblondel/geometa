@@ -223,7 +223,7 @@ ISOMetadata
    
    #create dataQuality object with a 'dataset' scope
    dq <- ISODataQuality$new()
-   scope <- ISOScope$new()
+   scope <- ISODataQualityScope$new()
    scope$setLevel("dataset")
    dq$setScope(scope)
   
@@ -353,7 +353,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{parentIdentifier}}{parentIdentifier [0..1] : character}
 
-\item{\code{hierarchyLevel}}{hierarchyLevel [0..*] : ISOHierarchyLevel = "dataset"}
+\item{\code{hierarchyLevel}}{hierarchyLevel [0..*] : ISOScope = "dataset"}
 
 \item{\code{hierarchyLevelName}}{hierarchyLevelName [0..*] : character}
 
@@ -567,8 +567,8 @@ Adds hierarchy level
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{level}}{object of class \link{ISOHierarchyLevel} or any \link{character}
-from values returned by \code{ISOHierarchyLevel$values()}}
+\item{\code{level}}{object of class \link{ISOScope} or any \link{character}
+from values returned by \code{ISOScope$values()}}
 }
 \if{html}{\out{</div>}}
 }
@@ -588,8 +588,8 @@ Sets hierarchy level
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{level}}{object of class \link{ISOHierarchyLevel} or any \link{character}
-from values returned by \code{ISOHierarchyLevel$values()}}
+\item{\code{level}}{object of class \link{ISOScope} or any \link{character}
+from values returned by \code{ISOScope$values()}}
 }
 \if{html}{\out{</div>}}
 }
@@ -609,8 +609,8 @@ Deletes hierarchy level
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{level}}{object of class \link{ISOHierarchyLevel} or any \link{character}
-from values returned by \code{ISOHierarchyLevel$values()}}
+\item{\code{level}}{object of class \link{ISOScope} or any \link{character}
+from values returned by \code{ISOScope$values()}}
 }
 \if{html}{\out{</div>}}
 }
