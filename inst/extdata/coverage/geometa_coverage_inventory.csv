@@ -592,7 +592,7 @@
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","MD_SpatialRepresentationTypeCode","ISOSpatialRepresentationType",TRUE,TRUE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC","URI","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MCC"
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","MetaData Base (MDB) Version: 2.0","MDB","MD_Metadata","ISOMetadata",TRUE,TRUE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MDB"
-"ISO/TS 19115-3:2016","ISO 19115-1:2014","MetaData Base (MDB) Version: 2.0","MDB","MD_MetadataScope","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MDB"
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","MetaData Base (MDB) Version: 2.0","MDB","MD_MetadataScope","ISOMetadataScope",TRUE,TRUE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MDB"
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","AbstractMD_Identification","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","DS_AssociationTypeCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI","DS_InitiativeTypeCode","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2016  -  ISO 19115-1:2014  -  MRI"

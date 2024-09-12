@@ -4,7 +4,7 @@
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX",8,0,8,0,100
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN",7,0,7,0,100
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC",6,25,6,25,19.35
-"ISO/TS 19115-3:2016","ISO 19115-1:2014","MetaData Base (MDB) Version: 2.0","MDB",1,1,1,1,50
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","MetaData Base (MDB) Version: 2.0","MDB",2,0,2,0,100
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI",0,12,0,12,0
 "ISO/TS 19115-3:2016","ISO 19157","Data Quality abstract Classes (DQC) Version 1.0","DQC",0,2,0,2,0
 "ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC",17,0,0,17,100
