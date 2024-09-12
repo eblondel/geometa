@@ -142,6 +142,13 @@ setISOMetadataNamespaces <- function(version = "19115-1/2"){
       )
     ),
     "19115-3" = list(
+      #ISO 19110
+      #----------------------------------------------------
+      #FCC
+      ISOMetadataNamespace$new(
+        id = "fcc", uri = "https://standards.iso.org/iso/19110/fcc/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO/TS 19139:2007", title = "Feature Catalog Common (FCC) Version: 1.0", stringsAsFactors = FALSE)
+      ),
       #ISO 19115-3
       #----------------------------------------------------
       #CAT
@@ -209,7 +216,7 @@ setISOMetadataNamespaces <- function(version = "19115-1/2"){
         id = "mdb", uri = "http://standards.iso.org/iso/19115/-3/mdb/2.0",
         standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "MetaData Base (MDB) Version: 2.0", stringsAsFactors = FALSE)
       ),
-      #MDs
+      #MDS
       ISOMetadataNamespace$new(
         id = "mds", uri = "http://standards.iso.org/iso/19115/-3/mds/2.0",
         standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "MetaData for Service identification (MDS) Version: 2.0", stringsAsFactors = FALSE)
@@ -227,7 +234,7 @@ setISOMetadataNamespaces <- function(version = "19115-1/2"){
       #MMI
       ISOMetadataNamespace$new(
         id = "mmi", uri = "http://standards.iso.org/iso/19115/-3/mmi/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Maintennce Information (MMI) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Maintenance Information (MMI) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MPC
       ISOMetadataNamespace$new(
@@ -273,6 +280,11 @@ setISOMetadataNamespaces <- function(version = "19115-1/2"){
       ISOMetadataNamespace$new(
         id = "dqc", uri = "http://standards.iso.org/iso/19157/-2/dqc/1.0",
         standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19157", title = "Data Quality abstract Classes (DQC) Version 1.0", stringsAsFactors = FALSE)
+      ),
+      #MDQ
+      ISOMetadataNamespace$new(
+        id = "mdq", uri = "http://standards.iso.org/iso/19157/-2/mdq/1.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19157", title = "Metadata for Data Quality (MDQ) Version: 1.0", stringsAsFactors = FALSE)
       )
     )
   )
