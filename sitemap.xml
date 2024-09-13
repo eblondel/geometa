@@ -98,6 +98,7 @@
 <url><loc>/reference/ISOAbstractGenericName.html</loc></url>
 <url><loc>/reference/ISOAbstractLogicalConsistency.html</loc></url>
 <url><loc>/reference/ISOAbstractObject.html</loc></url>
+<url><loc>/reference/ISOAbstractParty.html</loc></url>
 <url><loc>/reference/ISOAbstractPositionalAccuracy.html</loc></url>
 <url><loc>/reference/ISOAbstractPropertyType.html</loc></url>
 <url><loc>/reference/ISOAbstractReferenceSystem.html</loc></url>
@@ -239,6 +240,7 @@
 <url><loc>/reference/ISOImageryTrigger.html</loc></url>
 <url><loc>/reference/ISOImageryUsability.html</loc></url>
 <url><loc>/reference/ISOImagingCondition.html</loc></url>
+<url><loc>/reference/ISOIndividual.html</loc></url>
 <url><loc>/reference/ISOInheritanceRelation.html</loc></url>
 <url><loc>/reference/ISOInitiative.html</loc></url>
 <url><loc>/reference/ISOInitiativeType.html</loc></url>
@@ -275,6 +277,7 @@
 <url><loc>/reference/ISOOnLineFunction.html</loc></url>
 <url><loc>/reference/ISOOnlineResource.html</loc></url>
 <url><loc>/reference/ISOOperationMetadata.html</loc></url>
+<url><loc>/reference/ISOOrganisation.html</loc></url>
 <url><loc>/reference/ISOOtherAggregate.html</loc></url>
 <url><loc>/reference/ISOParameter.html</loc></url>
 <url><loc>/reference/ISOParameterDirection.html</loc></url>
@@ -296,6 +299,7 @@
 <url><loc>/reference/ISORelativeInternalPositionalAccuracy.html</loc></url>
 <url><loc>/reference/ISORepresentativeFraction.html</loc></url>
 <url><loc>/reference/ISOResolution.html</loc></url>
+<url><loc>/reference/ISOResponsibility.html</loc></url>
 <url><loc>/reference/ISOResponsibleParty.html</loc></url>
 <url><loc>/reference/ISORestriction.html</loc></url>
 <url><loc>/reference/ISORole.html</loc></url>
