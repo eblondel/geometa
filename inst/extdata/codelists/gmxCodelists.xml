@@ -1311,10 +1311,9 @@
       <gml:description>methods used to group similar keywords</gml:description>
       <gml:identifier codeSpace="ISOTC211/19115">MD_KeywordTypeCode</gml:identifier>
       <codeEntry>
-        <!-- dataCenter is deprecated; use dataCentre instead-->
-        <CodeDefinition gml:id="MD_KeywordTypeCode_dataCenter">
-          <gml:description>keyword identifies a data center related to the resource</gml:description>
-          <gml:identifier codeSpace="local">dataCenter</gml:identifier>
+        <CodeDefinition gml:id="MD_KeywordTypeCode_dataCentre">
+          <gml:description>keyword identifies a data centre related to the resource</gml:description>
+          <gml:identifier codeSpace="local">dataCentre</gml:identifier>
         </CodeDefinition>
       </codeEntry>
       <codeEntry>
@@ -1448,13 +1447,9 @@
         </CodeDefinition>
       </codeEntry>
       <codeEntry>
-        <!-- CHANGE 2008-09-11 #02 -->
         <CodeDefinition gml:id="MD_MaintenanceFrequencyCode_quarterly">
-          <!-- CHANGE 2008-09-11 #02 <CodeDefinition gml:id="MD_MaintenanceFrequencyCode_quartely"> -->
           <gml:description>data is updated every three months</gml:description>
-          <!-- CHANGE 2008-09-11 #03 -->
           <gml:identifier codeSpace="ISOTC211/19115">quarterly</gml:identifier>
-          <!-- CHANGE 2008-09-11 #03 <gml:identifier codeSpace="ISOTC211/19115">quartely</gml:identifier> -->
         </CodeDefinition>
       </codeEntry>
       <codeEntry>
@@ -1490,9 +1485,7 @@
       <codeEntry>
         <CodeDefinition gml:id="MD_MaintenanceFrequencyCode_unknown">
           <gml:description>frequency of maintenance for the data is not known</gml:description>
-          <!-- CHANGE 2008-09-11 #01-->
           <gml:identifier codeSpace="ISOTC211/19115">unknown</gml:identifier>
-          <!-- CHANGE 2008-09-11 #01 <gml:identifier codeSpace="ISOTC211/19115">unknwon</gml:identifier> -->
         </CodeDefinition>
       </codeEntry>
     </CodeListDictionary>
