@@ -23,7 +23,10 @@ ISORestriction <- R6Class("ISORestriction",
    inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_RestrictionCode",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "MCO"
+     )
    ),
    public = list(
       

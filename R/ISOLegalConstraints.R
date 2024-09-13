@@ -29,7 +29,10 @@ ISOLegalConstraints <- R6Class("ISOLegalConstraints",
   inherit = ISOConstraints,
   private = list(
     xmlElement = "MD_LegalConstraints",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "MCO"
+    )
   ),
   public = list(
     #'@field accessConstraints accessConstraints [0..*]: ISORestriction

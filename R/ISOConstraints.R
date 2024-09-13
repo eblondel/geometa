@@ -18,11 +18,21 @@ ISOConstraints<- R6Class("ISOConstraints",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MD_Constraints",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMD",
+      "19115-3" = "MCO"
+    )
   ),
   public = list(
     #'@field useLimitation useLimitation [0..*]: character
     useLimitation = list(),
+    
+    #TODO 19115-3 fields (and associated methods)
+    constraintApplicationScope = NULL, #mcc:MD_Scope
+    graphic = list(), #mcc:MD_BrowseGraphic
+    reference = list(), #cit:CI_Citation
+    releasability = NULL, #mco:MD_Releasability
+    responsibleParty = list(), #cit:CI_Responsibility
     
     #'@description Initializes object
     #'@param xml object of class \link{XMLInternalNode-class}

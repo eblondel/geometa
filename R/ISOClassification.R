@@ -23,7 +23,10 @@ ISOClassification <- R6Class("ISOClassification",
    inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_ClassificationCode",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "MCO"
+     )
    ),
    public = list(
       

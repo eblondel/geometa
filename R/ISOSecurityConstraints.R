@@ -26,7 +26,10 @@ ISOSecurityConstraints <- R6Class("ISOSecurityConstraints",
    inherit = ISOConstraints,
    private = list(
      xmlElement = "MD_SecurityConstraints",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19115-1/2" = "GMD",
+       "19115-3" = "MCO"
+     )
    ),
    public = list(
      #'@field classification classification: ISOClassification
