@@ -20,7 +20,10 @@ ISOFileName <- R6Class("ISOFileName",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "FileName",
-    xmlNamespacePrefix = "GMX"
+    xmlNamespacePrefix = list(
+      "19115-1/2" = "GMX",
+      "19115-3" = "GCX"
+    )
   ),
   public = list(
     #'@field attrs attrs
