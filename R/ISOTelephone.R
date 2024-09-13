@@ -28,10 +28,17 @@ ISOTelephone <- R6Class("ISOTelephone",
      )
    ),
    public = list(
+     #ISO 19115-1:2003 / 19139
      #'@field voice voice
      voice = NULL,
      #'@field facsimile facsimile
      facsimile = NULL,
+     
+     #ISO 19115-1:2014 / 19115-3:2016
+     #'@field number number
+     number = NULL,
+     #'@field numberType  numberType
+     numberType = NULL,
      
      #'@description Initializes object
      #'@param xml object of class \link{XMLInternalNode-class}  
@@ -43,6 +50,7 @@ ISOTelephone <- R6Class("ISOTelephone",
      #'@param voice voice
      #'@param locales list of localized voices. Default is \code{NULL}
      setVoice = function(voice, locales = NULL){
+       self$stopIfMetadataStandardIsNot("19115-1/2")
        if(!is(voice,"character")) voice <- as.character(voice)
        self$voice = voice
        if(!is.null(locales)){
@@ -54,11 +62,35 @@ ISOTelephone <- R6Class("ISOTelephone",
      #'@param facsimile facsimile
      #'@param locales list of localized facsimiles. Default is \code{NULL}
      setFacsimile = function(facsimile, locales = NULL){
+       self$stopIfMetadataStandardIsNot("19115-1/2")
        if(!is(facsimile,"character")) facsimile <- as.character(facsimile)
        self$facsimile = facsimile
        if(!is.null(locales)){
          self$facsimile <- self$createLocalisedProperty(facsimile, locales)
        }
+     },
+     
+     #'@description Set number
+     #'@param number number
+     #'@param locales list of localized numbers Default is \code{NULL}
+     setNumber = function(number, locales = NULL){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(number,"character")) number <- as.character(number)
+       self$number = number
+       if(!is.null(locales)){
+         self$number <- self$createLocalisedProperty(number, locales)
+       }
+     },
+     
+     #'@description Set numberType
+     #'@param numberType numberType object of class \link{ISOTelephoneType} or any \link{character}
+     #' among values returned by \code{ISOTelephoneType$values()}
+     setNumberType = function(numberType){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(is(numberType, "character")){
+         numberType <- ISOTelephoneType$new(value = numberType)
+       }
+       self$numberType <- numberType
      }
    )                        
 )
