@@ -5,7 +5,7 @@
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX",8,0,8,0,100
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN",7,0,7,0,100
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for ACquisition (MAC) Version: 2.0","MAC",0,24,0,24,0
-"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Application Schemas (MAS) Version: 2.0","MAS",0,1,0,1,0
+"ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for Application Schemas (MAS) Version: 2.0","MAS",1,0,1,0,100
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata Common Classes (MCC) Version: 1.0","MCC",6,25,6,25,19.35
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","Metadata for COnstraints (MCO) Version: 1.0","MCO",0,6,0,6,0
 "ISO/TS 19115-3:2016","ISO 19115-1:2014","MetaData Base (MDB) Version: 2.0","MDB",2,0,2,0,100
@@ -23,7 +23,7 @@
 "ISO/TS 19115-3:2016","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT",2,15,2,15,11.76
 "ISO/TS 19115-3:2016","ISO/TS 19139:2007","Feature Catalog Common (FCC) Version: 1.0","FCC",0,2,0,2,0
 "ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC",17,0,0,17,100
-"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD",132,0,33,99,100
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD",132,0,34,98,100
 "ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI",40,0,0,40,100
 "ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV",7,12,0,19,36.84
 "ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO",22,0,22,0,100
