@@ -12,7 +12,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 GMLCOVAbstractCoverage <-  R6Class("GMLCOVAbstractCoverage",
-  inherit = geometa::GMLAbstractCoverage,
+  inherit = GMLAbstractCoverage,
   private = list(
     xmlElement = "AbstractCoverage",
     xmlNamespacePrefix = "GMLCOV"
