@@ -1562,9 +1562,8 @@ ISOAbstractObject$getISOClassByNode = function(node){
   }
   
   list_of_classes <- getISOClasses()
-  if(is.null(list_of_classes))
+  if(length(list_of_classes)==0)
     list_of_classes <- ISOAbstractObject$getISOClasses(extended = TRUE, pretty = FALSE)
-   
   for(classname in list_of_classes){
     clazz <- try(eval(parse(text=classname)))
     xmlElement = clazz$private_fields$xmlElement
@@ -1670,14 +1669,14 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2, method 
 #' @examples
 #'   getClassesInheriting("ISAbstractObject")
 getClassesInheriting <- function(classname, extended = FALSE, pretty = FALSE){
-  list_of_classes <- ls(getNamespaceInfo("geometa", "exports"))
+  list_of_classes <- geometa_namespace_exports()
   if(extended) {
     search_envs <- search()
     search_envs <- search_envs[search_envs!="package:geometa"]
     list_of_other_classes <- unlist(sapply(search_envs, ls))
     list_of_classes <- c(list_of_classes, list_of_other_classes)
   }
-  
+
   list_of_classes <- list_of_classes[sapply(list_of_classes, function(x){
     clazz <- try(eval(parse(text=x)),silent=TRUE)
     if(is(clazz, "try-error")) clazz <- try(eval(parse(text=paste0("geometa::",x))),silent=TRUE)
@@ -1766,7 +1765,9 @@ cacheISOClasses <- function(){
 #' @aliases getISOClasses
 #' @title getISOClasses
 #' @export
-#' @description get the list of cached ISO classes
+#' @description get the list of ISO classes, ie classes extending \link{ISOAbstractObject} super class,
+#' including classes eventually defined outside \pkg{geometa}. In case the latter is on the search path,
+#' the list of ISO classes will be cached for optimized used by \pkg{geometa} encoder/decoder.
 #' 
 #' @usage getISOClasses()
 #' 
@@ -1776,6 +1777,10 @@ cacheISOClasses <- function(){
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 getISOClasses <- function(){
-  if(length(.geometa.iso$classes)==0) cacheISOClasses()
-  return(.geometa.iso$classes)
+  if("package:geometa" %in% search()){
+    if(length(.geometa.iso$classes)==0) cacheISOClasses()
+    return(.geometa.iso$classes)
+  }else{
+    getClassesInheriting(classname = "ISOAbstractObject", extended = TRUE, pretty = FALSE)
+  }
 }
