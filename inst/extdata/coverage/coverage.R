@@ -1,6 +1,6 @@
 #compute coverage
 require(geometa, quietly = TRUE)
-cov_1 <- geometa_coverage(version = "19115-1/2")
+cov_1 <- geometa_coverage(version = "19139")
 cov_2 <- geometa_coverage(version = "19115-3")
 cov <- unique(rbind(cov_1, cov_2))
 

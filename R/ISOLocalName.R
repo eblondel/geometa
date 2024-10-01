@@ -17,7 +17,7 @@ ISOLocalName <- R6Class("ISOLocalName",
     private = list(
       xmlElement = "LocalName",
       xmlNamespacePrefix = list(
-        "19115-1/2" = "GCO",
+        "19139" = "GCO",
         "19115-3" = "GCO"
       )
     ),

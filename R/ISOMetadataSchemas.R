@@ -26,8 +26,8 @@ registerISOMetadataSchema <- function(xsdFile){
 
 #'getISOMetadataSchemaFile
 #'@export
-getISOMetadataSchemaFile <- function(version = "19115-1/2"){
-  available_versions <- c("19115-1/2","19115-3")
+getISOMetadataSchemaFile <- function(version = "19139"){
+  available_versions <- c("19139","19115-3")
   if(!version %in% available_versions){
     errMsg <- sprintf("Version '%s' not among available schema versions (%s)",
                       version, paste0(available_versions, collapse = ","))
@@ -35,11 +35,11 @@ getISOMetadataSchemaFile <- function(version = "19115-1/2"){
   }
   schemaPath <- "extdata/schemas"
   namespace <- switch(version,
-                      "19115-1/2" = "19115/-1/gmd",
+                      "19139" = "19115/-1/gmd",
                       "19115-3" = "19115/-3/mdb/2.0" 
   )
   xsdFilename <- switch(version,
-                        "19115-1/2" = "gmd.xsd",
+                        "19139" = "gmd.xsd",
                         "19115-3" = "mdb.xsd"
   )
   defaultXsdFile <- system.file(paste(schemaPath, namespace, sep="/"), xsdFilename, package = "geometa", mustWork = TRUE)
@@ -48,7 +48,7 @@ getISOMetadataSchemaFile <- function(version = "19115-1/2"){
 
 #'setISOMetadataSchemas
 #'@export
-setISOMetadataSchemas <- function(version = "19115-1/2"){
+setISOMetadataSchemas <- function(version = "19139"){
   packageStartupMessage("Loading ISO 19139 XML schemas...")
   registerISOMetadataSchema(getISOMetadataSchemaFile(version = version))
 }
@@ -76,7 +76,7 @@ getISOMetadataSchemas <- function(){
 #' @title setMetadataStandard
 #' @export
 #' @description \code{setMetadataStandard} allows to set the standard to use for encoding/decoding in \pkg{geometa}.
-#'  By default the standard "19115-1/2" will be used. Possible alternative value "19115-3"
+#'  By default the standard "19139" will be used. Possible alternative value "19115-3"
 #' 
 #' @usage setMetadataStandard(version)
 #' 
@@ -87,15 +87,17 @@ getISOMetadataSchemas <- function(){
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
-setMetadataStandard <- function(version = "19115-1/2"){
-  available_versions <- c("19115-1/2","19115-3")
+setMetadataStandard <- function(version = "19139"){
+  available_versions <- c("19139","19115-3")
   if(!version %in% available_versions){
     errMsg <- sprintf("Version '%s' not among available schema versions (%s)",
                       version, paste0(available_versions, collapse = ","))
     stop(errMsg)
   }
   .geometa.iso$version <- version
+  setISOMetadataSchemas(version = version)
   setISOMetadataNamespaces(version = version)
+  setISOCodelists()
 }
 
 #' @name getMetadataStandard

@@ -19,7 +19,7 @@ ISOBaseCharacterString <- R6Class("ISOBaseCharacterString",
    private = list(
      xmlElement = "CharacterString",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GCO",
+       "19139" = "GCO",
        "19115-3" = "GCO"
      )
    ),

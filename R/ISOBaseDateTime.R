@@ -19,7 +19,7 @@ ISOBaseDateTime <- R6Class("ISOBaseDateTime",
   private = list(
     xmlElement = "DateTime",
     xmlNamespacePrefix = list(
-      "19115-1/2" = "GCO",
+      "19139" = "GCO",
       "19115-3" = "GCO"
     )
   ),

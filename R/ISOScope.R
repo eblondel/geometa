@@ -30,7 +30,7 @@ ISOScope <- R6Class("ISOScope",
    private = list(
      xmlElement = "MD_ScopeCode",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GMD",
+       "19139" = "GMD",
        "19115-3" = "MCC"
      )
    ),

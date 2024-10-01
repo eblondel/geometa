@@ -27,7 +27,7 @@ ISOSecurityConstraints <- R6Class("ISOSecurityConstraints",
    private = list(
      xmlElement = "MD_SecurityConstraints",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GMD",
+       "19139" = "GMD",
        "19115-3" = "MCO"
      )
    ),

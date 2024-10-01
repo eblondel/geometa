@@ -21,7 +21,7 @@ ISOMetaIdentifier <- R6Class("ISOMetaIdentifier",
    private = list(
      xmlElement = "MD_Identifier",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GMD",
+       "19139" = "GMD",
        "19115-3" = "MCC"
      )
    ),

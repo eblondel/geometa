@@ -21,7 +21,7 @@ ISOMimeFileType <- R6Class("ISOMimeFileType",
      private = list(
        xmlElement = "MimeFileType",
        xmlNamespacePrefix = list(
-         "19115-1/2" = "GMX",
+         "19139" = "GMX",
          "19115-3" = "GCX"
        )
      ),

@@ -19,7 +19,7 @@ ISOMLCodeDefinition <- R6Class("ISOMLCodeDefinition",
    private = list(
      xmlElement = "ML_CodeDefinition",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GMX"
+       "19139" = "GMX"
      )
    ),
    public = list(

@@ -238,7 +238,7 @@ get_schema_elements <- function(url, verbose = FALSE, schemaCollector = new.env(
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #'
-geometa_coverage <- function(version = "19115-1/2"){
+geometa_coverage <- function(version = "19139"){
   setMetadataStandard(version = version)
   xsd_filepath = getISOMetadataSchemaFile(version = version)
   elements <- get_schema_elements(xsd_filepath)

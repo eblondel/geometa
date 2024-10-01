@@ -58,7 +58,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     metadataStandardCompliance = TRUE,
     xmlElement = "AbstractObject",
     xmlNamespacePrefix = list(
-      "19115-1/2" = "GCO",
+      "19139" = "GCO",
       "19115-3" = "GCO"
     ),
     encoding = options("encoding"),
@@ -705,7 +705,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
         rootXMLAttrs <- rootXMLAttrs[!is.na(rootXMLAttrs)]
       }
       freeTextAttr <- list("xsi:type" = switch(getMetadataStandard(),
-        "19115-1/2" = "gmd:PT_FreeText_PropertyType",
+        "19139" = "gmd:PT_FreeText_PropertyType",
         "19115-3" = "lan:PT_FreeText_PropertyType",
       ))
       
@@ -1472,7 +1472,7 @@ ISOAbstractObject$getStandardByPrefix = function(prefix){
   return(std)
 }
 
-ISOAbstractObject$getISOStandard = function(clazz, version = "19115-1/2"){
+ISOAbstractObject$getISOStandard = function(clazz, version = "19139"){
   std <- NA
   if(is.null(clazz$private_fields)) return(std)
   if(is.null(clazz$private_fields$xmlNamespacePrefix)) return(std)

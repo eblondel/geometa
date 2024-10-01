@@ -24,7 +24,7 @@ ISOLanguage <- R6Class("ISOLanguage",
   private = list(
     xmlElement = "LanguageCode",
     xmlNamespacePrefix = list(
-      "19115-1/2" = "GMD",
+      "19139" = "GMD",
       "19115-3" = "LAN"
     )
   ),

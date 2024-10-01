@@ -17,7 +17,7 @@ ISOApplicationSchemaInformation <- R6Class("ISOApplicationSchemaInformation",
    private = list(
      xmlElement = "MD_ApplicationSchemaInformation",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GMD",
+       "19139" = "GMD",
        "19115-3" = "MAS"
      )
    ),

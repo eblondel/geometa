@@ -19,7 +19,7 @@ ISOCodeListDictionary <- R6Class("ISOCodeListDictionary",
     private = list(
       xmlElement = "CodeListDictionary",
       xmlNamespacePrefix = list(
-        "19115-1/2" = "GMX"
+        "19139" = "GMX"
       )
     ),
     public = list(

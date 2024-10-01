@@ -17,7 +17,7 @@ ISOScale <- R6Class("ISOScale",
     private = list(
       xmlElement = "Scale",
       xmlNamespacePrefix = list(
-        "19115-1/2" = "GCO",
+        "19139" = "GCO",
         "19115-3" = "GCO"
       )
     ),

@@ -36,7 +36,7 @@ ISOContact <- R6Class("ISOContact",
    private = list(
      xmlElement = "CI_Contact",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GMD",
+       "19139" = "GMD",
        "19115-3" = "CIT"
      )
    ),

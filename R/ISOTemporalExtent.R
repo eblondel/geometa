@@ -24,7 +24,7 @@ ISOTemporalExtent <- R6Class("ISOTemporalExtent",
   private = list(
     xmlElement = "EX_TemporalExtent",
     xmlNamespacePrefix = list(
-      "19115-1/2" = "GMD",
+      "19139" = "GMD",
       "19115-3" = "GEX"
     )
   ),

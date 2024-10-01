@@ -26,7 +26,7 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
   private = list(
     xmlElement = "CI_OnlineResource",
     xmlNamespacePrefix = list(
-      "19115-1/2" = "GMD",
+      "19139" = "GMD",
       "19115-3" = "CIT"
     )
   ),

@@ -21,7 +21,7 @@ ISOAnchor <- R6Class("ISOAnchor",
    private = list(
      xmlElement = "Anchor",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GMX",
+       "19139" = "GMX",
        "19115-3" = "GCX"
      )
    ),

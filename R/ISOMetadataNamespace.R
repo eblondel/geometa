@@ -49,7 +49,7 @@ ISOMetadataNamespace <- R6Class("ISOMetadataNamespace",
 
 #' setMetadataNamespaces
 #' @export
-setISOMetadataNamespaces <- function(version = "19115-1/2"){
+setISOMetadataNamespaces <- function(version = "19139"){
   
   #XML 1.0
   #----------------------------------------------------
@@ -98,7 +98,7 @@ setISOMetadataNamespaces <- function(version = "19115-1/2"){
   #ISO 19115 and related
   #----------------------------------------------------
   iso_namespaces <- switch(version,
-    "19115-1/2" = list(
+    "19139" = list(
       #ISO 19110
       #----------------------------------------------------
       #GFC
@@ -147,144 +147,144 @@ setISOMetadataNamespaces <- function(version = "19115-1/2"){
       #FCC
       ISOMetadataNamespace$new(
         id = "fcc", uri = "https://standards.iso.org/iso/19110/fcc/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO/TS 19139:2007", title = "Feature Catalog Common (FCC) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO/TS 19139:2007", title = "Feature Catalog Common (FCC) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #ISO 19115-3
       #----------------------------------------------------
       #CAT
       ISOMetadataNamespace$new(
         id = "cat", uri = "http://standards.iso.org/iso/19115/-3/cat/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO/TS 19139:2007", title = "CATalogue Objects (CAT) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO/TS 19139:2007", title = "CATalogue Objects (CAT) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #CIT
       ISOMetadataNamespace$new(
         id = "cit", uri = "http://standards.iso.org/iso/19115/-3/cit/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Citation and responsible party information (CIT) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Citation and responsible party information (CIT) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #GCO
       ISOMetadataNamespace$new(
         id = "gco", uri = "http://standards.iso.org/iso/19115/-3/gco/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Geospatial COmmon Objects (GCO) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Geospatial COmmon Objects (GCO) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #GCX
       ISOMetadataNamespace$new(
         id = "gcx", uri = "http://standards.iso.org/iso/19115/-3/gcx/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Geospatial Common eXtension (GCX) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Geospatial Common eXtension (GCX) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #GEX
       ISOMetadataNamespace$new(
         id = "gex", uri = "http://standards.iso.org/iso/19115/-3/gex/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Geospatial EXtent (GEX) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Geospatial EXtent (GEX) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #GMW
       ISOMetadataNamespace$new(
         id = "gmw", uri = "http://standards.iso.org/iso/19115/-3/gmw/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Geographic Markup Wrappers (GMW) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Geographic Markup Wrappers (GMW) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #LAN
       ISOMetadataNamespace$new(
         id = "lan", uri = "http://standards.iso.org/iso/19115/-3/lan/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "metadata for LANguage and localization (LAN) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "metadata for LANguage and localization (LAN) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MAC
       ISOMetadataNamespace$new(
         id = "mac", uri = "http://standards.iso.org/iso/19115/-3/mac/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for ACquisition (MAC) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for ACquisition (MAC) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #MAS
       ISOMetadataNamespace$new(
         id = "mas", uri = "http://standards.iso.org/iso/19115/-3/mas/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Application Schemas (MAS) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Application Schemas (MAS) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #MCC
       ISOMetadataNamespace$new(
         id = "mcc", uri = "http://standards.iso.org/iso/19115/-3/mcc/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata Common Classes (MCC) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata Common Classes (MCC) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MCO
       ISOMetadataNamespace$new(
         id = "mco", uri = "http://standards.iso.org/iso/19115/-3/mco/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for COnstraints (MCO) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for COnstraints (MCO) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MDA
       ISOMetadataNamespace$new(
         id = "mda", uri = "http://standards.iso.org/iso/19115/-3/mda/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "MetaData for Applications (MDA) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "MetaData for Applications (MDA) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #MDB
       ISOMetadataNamespace$new(
         id = "mdb", uri = "http://standards.iso.org/iso/19115/-3/mdb/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "MetaData Base (MDB) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "MetaData Base (MDB) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #MDS
       ISOMetadataNamespace$new(
         id = "mds", uri = "http://standards.iso.org/iso/19115/-3/mds/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "MetaData for Service identification (MDS) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "MetaData for Service identification (MDS) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #MDT
       ISOMetadataNamespace$new(
         id = "mdt", uri = "http://standards.iso.org/iso/19115/-3/mdt/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Data Transfer (MDT) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Data Transfer (MDT) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #MEX
       ISOMetadataNamespace$new(
         id = "mex", uri = "http://standards.iso.org/iso/19115/-3/mex/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata EXtensions (MEX) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata EXtensions (MEX) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MMI
       ISOMetadataNamespace$new(
         id = "mmi", uri = "http://standards.iso.org/iso/19115/-3/mmi/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Maintenance Information (MMI) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Maintenance Information (MMI) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MPC
       ISOMetadataNamespace$new(
         id = "mpc", uri = "http://standards.iso.org/iso/19115/-3/mpc/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Portrayal Catalogues (MPC) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Portrayal Catalogues (MPC) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MRC
       ISOMetadataNamespace$new(
         id = "mrc", uri = "http://standards.iso.org/iso/19115/-3/mrc/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Resource Content (MRC) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Resource Content (MRC) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MRD
       ISOMetadataNamespace$new(
         id = "mrd", uri = "http://standards.iso.org/iso/19115/-3/mrd/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Resource Distribution (MRD) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Resource Distribution (MRD) Version: 1.0", stringsAsFactors = FALSE)
       ), 
       #MRI
       ISOMetadataNamespace$new(
         id = "mri", uri = "http://standards.iso.org/iso/19115/-3/mri/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Resource Identification (MRI) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Resource Identification (MRI) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MRL
       ISOMetadataNamespace$new(
         id = "mrl", uri = "http://standards.iso.org/iso/19115/-3/mrl/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Resource Lineage (MRL) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Resource Lineage (MRL) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #MRS
       ISOMetadataNamespace$new(
         id = "mrs", uri = "http://standards.iso.org/iso/19115/-3/mrs/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Reference Systems (MRS) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Reference Systems (MRS) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #MSR
       ISOMetadataNamespace$new(
         id = "msr", uri = "http://standards.iso.org/iso/19115/-3/msr/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for Spatial Representation (MSR) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Spatial Representation (MSR) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #SRV
       ISOMetadataNamespace$new(
         id = "srv", uri = "http://standards.iso.org/iso/19115/-3/srv/2.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19115-1:2014", title = "Metadata for SeRVices (SRV) Version: 2.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for SeRVices (SRV) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #DQC
       ISOMetadataNamespace$new(
         id = "dqc", uri = "http://standards.iso.org/iso/19157/-2/dqc/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19157", title = "Data Quality abstract Classes (DQC) Version 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19157", title = "Data Quality abstract Classes (DQC) Version 1.0", stringsAsFactors = FALSE)
       ),
       #MDQ
       ISOMetadataNamespace$new(
         id = "mdq", uri = "http://standards.iso.org/iso/19157/-2/mdq/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2016", schema = "ISO 19157", title = "Metadata for Data Quality (MDQ) Version: 1.0", stringsAsFactors = FALSE)
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19157", title = "Metadata for Data Quality (MDQ) Version: 1.0", stringsAsFactors = FALSE)
       )
     )
   )

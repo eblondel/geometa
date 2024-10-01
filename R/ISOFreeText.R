@@ -20,7 +20,7 @@ ISOFreeText <- R6Class("ISOFreeText",
    private = list(
      xmlElement = "PT_FreeText",
      xmlNamespacePrefix = list(
-        "19115-1/2" = "GMD",
+        "19139" = "GMD",
         "19115-3" = "LAN"
      )
    ),

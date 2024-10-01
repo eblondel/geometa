@@ -21,7 +21,7 @@ ISOFileName <- R6Class("ISOFileName",
   private = list(
     xmlElement = "FileName",
     xmlNamespacePrefix = list(
-      "19115-1/2" = "GMX",
+      "19139" = "GMX",
       "19115-3" = "GCX"
     )
   ),

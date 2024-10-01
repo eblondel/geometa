@@ -20,7 +20,7 @@ ISOCodelistValue <- R6Class("ISOCodelistValue",
      metadataStandardCompliance = FALSE,
      xmlElement = "CT_CodelistValue",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GCO", #fake to allow codelist value harmonization
+       "19139" = "GCO", #fake to allow codelist value harmonization
        "19115-3" = "CAT"
      )
    ),
