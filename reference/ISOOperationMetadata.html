@@ -417,7 +417,7 @@ among values returned by <code>ISODCPList$values()</code></p></dd>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOOperationMetadata</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/srv}SV_OperationMetadata': No matching global declaration available for the validation root at line 1. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/srv}SV_OperationMetadata': Missing child element(s). Expected is ( {http://www.isotc211.org/2005/srv}operationName ) at line 1. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOOperationMetadata' is INVALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
