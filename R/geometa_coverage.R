@@ -268,3 +268,13 @@ geometa_coverage <- function(version = "19115-1/2"){
   elements <- elements[!is.na(elements$specification),]
   return(elements)
 }
+
+geometa_namespace_exports = function(){
+  if(is.null(.geometa.iso$exports)){
+    f <- base::system.file("NAMESPACE", package="geometa")
+    objs <- readLines(f)
+    exps <- objs[grepl("export", objs)]
+    .geometa.iso$exports = sub("^export[^\\(]*\\(([^\\)]+)\\)", "\\1", exps)
+  }
+  return(.geometa.iso$exports)
+}
