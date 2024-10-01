@@ -294,8 +294,8 @@ getISOCodelists <- function(){
 #
 getISOCodelist <- function(id){
   codelist <- NULL
-  invisible(lapply(getISOInternalCodelists(), function(cl){
-    if(cl$id == id){
+  invisible(lapply(getISOInternalCodelists()[[getMetadataStandard()]], function(cl){
+    if(cl$identifier$value == id){
       codelist <<- cl
     }
   }))
