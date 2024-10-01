@@ -15,10 +15,6 @@
   setISOMetadataSchemas(version = "19139")
   setISOMetadataSchemas(version = "19115-3")
   
-  #metadata namespaces
-  setISOMetadataNamespaces(version = "19139")
-  setISOMetadataNamespaces(version = "19115-3")
-  
   #set default metadata standard
   setMetadataStandard(version = "19139")
   

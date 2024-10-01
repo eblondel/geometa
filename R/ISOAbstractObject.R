@@ -1514,6 +1514,7 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
   })]
   list_of_classes <- as.vector(list_of_classes)
   list_of_classes <- list_of_classes[!startsWith(list_of_classes, "pivot")]
+  exclusions = list()
   if(pretty){
     std_info <- do.call("rbind",lapply(list_of_classes, function(x){
       clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
@@ -1536,7 +1537,7 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
           ns_uri = if(!is.null(xmlnsp)) ISOMetadataNamespace[[xmlnsp]]$uri else NA,
           element = if(is.list(clazz$private_fields$xmlElement)){
             if(getMetadataStandard() %in% names(clazz$private_fields$xmlElement)){
-              clazz$private_fields$xmlElement[[getMetadataS]]
+              clazz$private_fields$xmlElement[[getMetadataStandard()]]
             }else{
               clazz$private_fields$xmlElement[[1]]
             }
@@ -1546,12 +1547,14 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
           refactored = refactored,
           stringsAsFactors = FALSE
         )
+      }else{
+        exclusions <<- c(exclusions, x)
       }
       return(stdinfo)
     }))
     
     list_of_classes <- data.frame(
-      geometa_class = list_of_classes,
+      geometa_class = list_of_classes[sapply(list_of_classes, function(cc){!cc %in% exclusions})],
       std_info,
       stringsAsFactors = FALSE
     )
