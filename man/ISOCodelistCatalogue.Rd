@@ -94,7 +94,33 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOCodelistCatalogue$new(xml = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOCodelistCatalogue$new(xml = NULL, refFile = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{refFile}}{ref file}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOCodelistCatalogue-getCodelists"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCodelistCatalogue-getCodelists}{}}}
+\subsection{Method \code{getCodelists()}}{
+Decodes and builds an \code{ISOCodelistCatalogue} from XML. This is done
+specifically for this class, without using the generic \code{ISOAbstractObject}
+decoder, to make it fully decodable on package load.
+
+
+Get codelists. The method ensure an harmonized output made of objects of
+class \link{ISOCodelist}. In the catalogue is built of objects of class \link{ISOCodeListDictionary}, these
+will be mapped as \link{ISOCodelist}, to facilitate the consumption of codelists by \pkg{geometa}
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOCodelistCatalogue$getCodelists()}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -104,18 +130,6 @@ Initializes object
 }
 \if{html}{\out{</div>}}
 }
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ISOCodelistCatalogue-getCodelists"></a>}}
-\if{latex}{\out{\hypertarget{method-ISOCodelistCatalogue-getCodelists}{}}}
-\subsection{Method \code{getCodelists()}}{
-Get codelists. The method ensure an harmonized output made of objects of
-class \link{ISOCodelist}. In the catalogue is built of objects of class \link{ISOCodeListDictionary}, these
-will be mapped as \link{ISOCodelist}, to facilitate the consumption of codelists by \pkg{geometa}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOCodelistCatalogue$getCodelists()}\if{html}{\out{</div>}}
-}
-
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ISOCodelistCatalogue-getCodelist"></a>}}

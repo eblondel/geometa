@@ -4,7 +4,7 @@
 \alias{setISOMetadataNamespaces}
 \title{setMetadataNamespaces}
 \usage{
-setISOMetadataNamespaces(version = "19115-1/2")
+setISOMetadataNamespaces(version = "19139")
 }
 \description{
 setMetadataNamespaces

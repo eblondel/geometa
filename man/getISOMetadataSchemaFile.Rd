@@ -4,7 +4,7 @@
 \alias{getISOMetadataSchemaFile}
 \title{getISOMetadataSchemaFile}
 \usage{
-getISOMetadataSchemaFile(version = "19115-1/2")
+getISOMetadataSchemaFile(version = "19139")
 }
 \description{
 getISOMetadataSchemaFile

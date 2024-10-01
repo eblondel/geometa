@@ -50,7 +50,7 @@ ISOTelephone <- R6Class("ISOTelephone",
      #'@param voice voice
      #'@param locales list of localized voices. Default is \code{NULL}
      setVoice = function(voice, locales = NULL){
-       self$stopIfMetadataStandardIsNot("19115-1/2")
+       self$stopIfMetadataStandardIsNot("19139")
        if(!is(voice,"character")) voice <- as.character(voice)
        self$voice = voice
        if(!is.null(locales)){
@@ -62,7 +62,7 @@ ISOTelephone <- R6Class("ISOTelephone",
      #'@param facsimile facsimile
      #'@param locales list of localized facsimiles. Default is \code{NULL}
      setFacsimile = function(facsimile, locales = NULL){
-       self$stopIfMetadataStandardIsNot("19115-1/2")
+       self$stopIfMetadataStandardIsNot("19139")
        if(!is(facsimile,"character")) facsimile <- as.character(facsimile)
        self$facsimile = facsimile
        if(!is.null(locales)){

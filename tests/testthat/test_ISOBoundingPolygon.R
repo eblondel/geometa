@@ -9,7 +9,7 @@ require(testthat)
 
 context("ISOBoundingPolygon")
 
-test_that("encoding - ISO 19115-1/2",{
+test_that("encoding - ISO 19139",{
   testthat::skip_on_cran()
   #encoding
   outer = matrix(c(0,0,10,0,10,10,0,10,0,0),ncol=2, byrow=TRUE)

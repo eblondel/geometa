@@ -8,7 +8,7 @@ require(testthat)
 
 context("ISOTemporalExtent")
 
-test_that("encoding - with GMLTimeInstant - ISO 19115-1/2",{
+test_that("encoding - with GMLTimeInstant - ISO 19139",{
   testthat::skip_on_cran()
   #encoding
   te <- ISOTemporalExtent$new()
@@ -48,7 +48,7 @@ test_that("encoding - with GMLTimeInstant - ISO 19115-3",{
   
 })
 
-test_that("encoding - with GMLTimePeriod - ISO 19115-1/2",{
+test_that("encoding - with GMLTimePeriod - ISO 19139",{
   testthat::skip_on_cran()
   #encoding
   te <- ISOTemporalExtent$new()

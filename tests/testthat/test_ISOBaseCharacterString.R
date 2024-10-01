@@ -37,5 +37,5 @@ test_that("encoding - ISO 19115-3",{
   xml2 <- md2$encode()
   
   expect_true(ISOAbstractObject$compare(md, md2))
-  setMetadataStandard("19115-1/2")
+  setMetadataStandard("19139")
 })

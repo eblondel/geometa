@@ -17,7 +17,7 @@ ISOCodelist <- R6Class("ISOCodelist",
      metadataStandardCompliance = FALSE,
      xmlElement = "CT_Codelist",
      xmlNamespacePrefix = list(
-       "19115-1/2" = "GMX",
+       "19139" = "GMX",
        "19115-3" = "CAT"
      )
    ),

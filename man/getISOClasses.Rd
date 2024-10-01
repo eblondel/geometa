@@ -7,7 +7,9 @@
 getISOClasses()
 }
 \description{
-get the list of cached ISO classes
+get the list of ISO classes, ie classes extending \link{ISOAbstractObject} super class,
+including classes eventually defined outside \pkg{geometa}. In case the latter is on the search path,
+the list of ISO classes will be cached for optimized used by \pkg{geometa} encoder/decoder.
 }
 \examples{
             

@@ -8,7 +8,7 @@ require(testthat)
 
 context("ISOVerticalExtent")
 
-test_that("encoding - ISO 19115-1/2",{
+test_that("encoding - ISO 19139",{
   testthat::skip_on_cran()
   #encoding
   ve <- ISOVerticalExtent$new()

@@ -11,7 +11,7 @@ setMetadataStandard(version)
 }
 \description{
 \code{setMetadataStandard} allows to set the standard to use for encoding/decoding in \pkg{geometa}.
- By default the standard "19115-1/2" will be used. Possible alternative value "19115-3"
+ By default the standard "19139" will be used. Possible alternative value "19115-3"
 }
 \examples{
             
