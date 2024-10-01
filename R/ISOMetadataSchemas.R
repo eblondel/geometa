@@ -97,7 +97,7 @@ setMetadataStandard <- function(version = "19139"){
   .geometa.iso$version <- version
   setISOMetadataSchemas(version = version)
   setISOMetadataNamespaces(version = version)
-  setISOCodelists()
+  setISOCodelists(version = version)
 }
 
 #' @name getMetadataStandard

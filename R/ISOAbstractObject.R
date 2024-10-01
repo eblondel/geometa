@@ -1777,10 +1777,6 @@ cacheISOClasses <- function(){
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 getISOClasses <- function(){
-  if("package:geometa" %in% search()){
-    if(length(.geometa.iso$classes)==0) cacheISOClasses()
-    return(.geometa.iso$classes)
-  }else{
-    getClassesInheriting(classname = "ISOAbstractObject", extended = TRUE, pretty = FALSE)
-  }
+  if(length(.geometa.iso$classes)==0) cacheISOClasses()
+  return(.geometa.iso$classes)
 }

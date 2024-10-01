@@ -21,204 +21,196 @@ ISOCodelist <- R6Class("ISOCodelist",
        "19115-3" = "CAT"
      )
    ),
-  public = list(
-    #'@field id id
-    id =NA,
-    #'@field refFile ref file
-    refFile = NA,
-    #'@field codeSpace code space
-    codeSpace = NA,
-    #'@field identifier identifier
-    identifier = NA,
-    #'@field description description
-    description = NA,
-    #'@field codeEntry code entries
-    codeEntry = list(),
-    
-    #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
-    #'@param refFile ref file
-    #'@param id id
-    initialize = function(xml = NULL, refFile = NULL, id = NULL){
-      super$initialize(xml = xml)
-      
-      #legacy
-      if(!is.null(refFile) && !is.null(id)){
-        self$refFile <- refFile
-        self$parse(refFile, id)
-      }
-    },
+   public = list(
+     #'@field id id
+     id =NA,
+     #'@field refFile ref file
+     refFile = NA,
+     #'@field codeSpace code space
+     codeSpace = NA,
+     #'@field identifier identifier
+     identifier = NA,
+     #'@field description description
+     description = NA,
+     #'@field codeEntry code entries
+     codeEntry = list(),
      
-    #'@description get code entries
-    #'@param pretty prettify output as \code{data.frame}. Default is\code{FALSE}
-    #'@return an object of class \link{list} or \link{data.frame}
-    getCodeEntries = function(pretty = FALSE){
-      entries = self$codeEntry
-      if(pretty){
-        entries <- do.call("rbind", lapply(entries, function(entry){
-          data.frame(
-            identifier = entry$identifier,
-            description = entry$description,
-            stringsAsFactors = FALSE
-          )
-        }))
-      }
-      return(entries)
-    },
-    
-    #'@description Parse codelist
-    #'@param refFile ref file
-    #'@param id id
-    parse = function(refFile, id){
-      
-      #query ISO XML Codelist file
-      clFile <- refFile
-      isLocalFile <- !grepl("^http", refFile) & !grepl("^https", refFile)
-      if(isLocalFile){
-        if(getGeometaOption("internalCodelists")){
-          clFile <- system.file("extdata/codelists", refFile, package = "geometa", mustWork = TRUE)
-        }
-      }
-      if(nchar(clFile)==0){
-        stop(sprintf("Reference file '%s' missing in geometa files", refFile))
-      }
-      
-      self$id <- id
-      
-      if(id == "LanguageCode" & isLocalFile & getGeometaOption("internalCodelists")){
-        self$identifier <- id
-        self$codeSpace <- "ISO 639-2"
-        self$description <- "Language : ISO 639-2 (3 characters)"
-        self$codeEntry <- utils::read.csv(clFile, sep="|", stringsAsFactors = FALSE)
-        self$codeEntry <- self$codeEntry[,c("alpha3", "english", "english")]
-        colnames(self$codeEntry) <- c("value","name", "description")
-      }else{
-      
-        isML <- regexpr("ML", refFile) > 0
-        
-        #parse ISO XML codelist file
-        url_regex <- '(http|https)[^([:blank:]|\\"|<|&|#\n\r)]+'
-        isURL <- regexpr(url_regex, refFile) > 0
-        #parse ISO XML codelist file
-        if(isURL){
-          clXML <- httr::GET(clFile)
-          clXML <- httr::content(clXML, "text", encoding = "UTF-8")
-        }else{
-          clXML <- XML::xmlParse(clFile)
-          clXML <- methods::as(clXML, "character")
-        }
-        clXML <- gsub("<!--.*?-->", "", clXML)
-        clXML <- XML::xmlParse(clXML, asText = TRUE) 
-        ns <- XML::xmlNamespaceDefinitions(clXML)
-        nsdf <- do.call("rbind", lapply(ns, function(x){
-          return(data.frame(id = x$id, uri = x$uri, stringsAsFactors = FALSE))
-        }))
-        clDicts <- XML::xpathApply(clXML,"//gmx:codelistItem", function(x){XML::xmlChildren(x)[[1]]},
-                              namespaces = c(gmx = nsdf[nsdf$id == "","uri"]))
-        clDictXML <- NULL
-        invisible(lapply(clDicts, function(x){
-          clId <- XML::xmlGetAttr(x, "gml:id")
-          if(clId == id || regexpr(id, clId) != -1){
-            clDictXML <<- XML::xmlDoc(x)
-          }
-        }))
-        if(is.null(clDictXML)) return(NULL)
-        
-        #codelist identification
-        idXML <- XML::getNodeSet(clDictXML, "//gml:identifier",
-                            namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
-        if(length(idXML)>1){
-          self$identifier <- XML::xmlValue(idXML[[1]])
-          self$codeSpace <- XML::xmlGetAttr(idXML[[1]], "codeSpace")
-        }
-        desXML <- XML::getNodeSet(clDictXML, "//gml:description",
-                             namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
-        if(length(desXML)>1){
-          self$description <- XML::xmlValue(desXML[[1]])
-        }
-        
-        #codelist codeEntry
-        entriesXML <- XML::getNodeSet(clDictXML, "//gmx:codeEntry",
-                                 c(gmx = nsdf[nsdf$id=="","uri"]))
-        self$codeEntry <- do.call("rbind",lapply(entriesXML, function(x){
-          entry.df <- data.frame(identifier = NA, name = NA, description = NA)
-          identifier <- getNodeSet(xmlDoc(x), "//gml:identifier", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
-          if(length(identifier)>0) entry.df$identifier <- xmlValue(identifier[[1]])
-          name <- getNodeSet(xmlDoc(x), "//gml:name", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
-          if(length(name)>0) entry.df$name <- xmlValue(name[[1]])
-          description <- getNodeSet(xmlDoc(x), "//gml:description", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
-          if(length(description)>0) entry.df$description <- xmlValue(description[[1]])
-          return(entry.df)
-        }))
-        colnames(self$codeEntry) <- c("value", "name", "description")
-      }
-    }
-  )                      
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param refFile ref file
+     #'@param id id
+     initialize = function(xml = NULL, refFile = NULL, id = NULL){
+       super$initialize(xml = xml)
+       
+       #legacy
+       if(!is.null(refFile) && !is.null(id)){
+         self$refFile <- refFile
+         self$parse(refFile, id)
+       }
+     },
+     
+     #'@description get code entries
+     #'@param pretty prettify output as \code{data.frame}. Default is\code{FALSE}
+     #'@return an object of class \link{list} or \link{data.frame}
+     getCodeEntries = function(pretty = FALSE){
+       entries = self$codeEntry
+       if(pretty){
+         entries <- do.call("rbind", lapply(entries, function(entry){
+           data.frame(
+             identifier = entry$identifier,
+             description = entry$description,
+             stringsAsFactors = FALSE
+           )
+         }))
+       }
+       return(entries)
+     },
+     
+     #'@description Parse codelist
+     #'@param refFile ref file
+     #'@param id id
+     parse = function(refFile, id){
+       
+       #query ISO XML Codelist file
+       clFile <- refFile
+       isLocalFile <- !grepl("^http", refFile) & !grepl("^https", refFile)
+       # if(isLocalFile){
+       #   if(getGeometaOption("internalCodelists")){
+       #     clFile <- system.file("extdata/codelists", refFile, package = "geometa", mustWork = TRUE)
+       #   }
+       # }
+       if(nchar(clFile)==0){
+         stop(sprintf("Reference file '%s' missing in geometa files", refFile))
+       }
+       
+       self$id <- id
+       
+       if(id == "LanguageCode" & isLocalFile & getGeometaOption("internalCodelists")){
+         identifier = ISOScopedName$new(value = id)
+         identifier$setCodeSpace("ISO 639-2")
+         self$identifier <- identifier
+         self$codeSpace <- "ISO 639-2"
+         self$description <- "Language : ISO 639-2 (3 characters)"
+         codeEntry <- utils::read.csv(clFile, sep="|", stringsAsFactors = FALSE)
+         codeEntry <- codeEntry[,c("alpha3", "english", "english")]
+         colnames(codeEntry) <- c("value","name", "description")
+         # self$codeEntry = lapply(1:nrow(codeEntry), function(i){
+         #   clv = ISOCodelistValue$new()
+         #   clv$identifier = codeEntry[i,]$value; clv$description = codeEntry[i,]$description;
+         #   return(clv)
+         # })
+       }else{
+         
+         isML <- regexpr("ML", refFile) > 0
+         
+         #parse ISO XML codelist file
+         url_regex <- '(http|https)[^([:blank:]|\\"|<|&|#\n\r)]+'
+         isURL <- regexpr(url_regex, refFile) > 0
+         #parse ISO XML codelist file
+         if(isURL){
+           clXML <- httr::GET(clFile)
+           clXML <- httr::content(clXML, "text", encoding = "UTF-8")
+         }else{
+           clXML <- XML::xmlParse(clFile)
+           clXML <- methods::as(clXML, "character")
+         }
+         clXML <- gsub("<!--.*?-->", "", clXML)
+         clXML <- XML::xmlParse(clXML, asText = TRUE) 
+         ns <- XML::xmlNamespaceDefinitions(clXML)
+         nsdf <- do.call("rbind", lapply(ns, function(x){
+           return(data.frame(id = x$id, uri = x$uri, stringsAsFactors = FALSE))
+         }))
+         clDicts <- XML::xpathApply(clXML,"//gmx:codelistItem", function(x){XML::xmlChildren(x)[[1]]},
+                                    namespaces = c(gmx = nsdf[nsdf$id == "","uri"]))
+         clDictXML <- NULL
+         invisible(lapply(clDicts, function(x){
+           clId <- XML::xmlGetAttr(x, "gml:id")
+           if(is.null(clId)) clId <- XML::xmlGetAttr(x, "id")
+           if(clId == id || regexpr(id, clId) != -1){
+             clDictXML <<- XML::xmlDoc(x)
+           }
+         }))
+         if(is.null(clDictXML)) return(NULL)
+         
+         #codelist identification
+         idXML <- XML::getNodeSet(clDictXML, "//gml:identifier",
+                                  namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+         if(length(idXML)>1){
+           codeSpace <- XML::xmlGetAttr(idXML[[1]], "codeSpace")
+           identifier = ISOScopedName$new(value = XML::xmlValue(idXML[[1]]))
+           identifier$setCodeSpace(codeSpace)
+           self$identifier <- identifier
+           self$codeSpace = codeSpace
+         }
+         desXML <- XML::getNodeSet(clDictXML, "//gml:description",
+                                   namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+         if(length(desXML)>1){
+           self$description <- XML::xmlValue(desXML[[1]])
+         }
+         
+         #codelist codeEntry
+         entriesXML <- XML::getNodeSet(clDictXML, "//gmx:codeEntry",
+                                       c(gmx = nsdf[nsdf$id=="","uri"]))
+         codeEntry <- do.call("rbind",lapply(entriesXML, function(x){
+           entry.df <- data.frame(identifier = NA, name = NA, description = NA)
+           identifier <- getNodeSet(xmlDoc(x), "//gml:identifier", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+           if(length(identifier)>0) entry.df$identifier <- xmlValue(identifier[[1]])
+           name <- getNodeSet(xmlDoc(x), "//gml:name", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+           if(length(name)>0) entry.df$name <- xmlValue(name[[1]])
+           description <- getNodeSet(xmlDoc(x), "//gml:description", namespaces = c(gml = nsdf[nsdf$id == "gml","uri"]))
+           if(length(description)>0) entry.df$description <- xmlValue(description[[1]])
+           return(entry.df)
+         }))
+         colnames(codeEntry) <- c("value", "name", "description")
+         # self$codeEntry = lapply(1:nrow(codeEntry), function(i){
+         #   clv = ISOCodelistValue$new()
+         #   clv$identifier = codeEntry[i,]$value; clv$description = codeEntry[i,]$description;
+         #   return(clv)
+         # })
+       }
+     }
+   )                      
 )
 
 #' setISOCodelists
 #' @export
-setISOCodelists <- function(){
-  packageStartupMessage("Loading ISO 19115 codelists...")
+setISOCodelists <- function(version = "19139"){
+  langCL <- system.file("extdata/codelists", "ISO-639-2_utf-8.txt", package = "geometa", mustWork = TRUE) #from http://www.loc.gov/standards/iso639-2/
+  ML_gmxCL <- system.file("extdata/codelists", "ML_gmxCodelists.xml", package = "geometa", mustWork = TRUE)
   
-  #parse other ISO codelists
-  langCL <- "ISO-639-2_utf-8.txt" #from http://www.loc.gov/standards/iso639-2/
-  ML_gmxCL <- "ML_gmxCodelists.xml"
-  gmxCL <- "gmxCodelists.xml"
-  codelists <- list(
-    #ISO 19110:2005 codelists
-    ISOCodelist$new(refFile = gmxCL, id = "FC_RoleType"),
-    #ISO 19115-1:2003 Codelists
-    ISOCodelist$new(refFile = gmxCL, id = "CI_DateTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "CI_PresentationFormCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "CI_RoleCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "CI_OnLineFunctionCode"),
-    ISOCodelist$new(refFile = ML_gmxCL, id = "Country"),
-    ISOCodelist$new(refFile = gmxCL, id = "DCPList"),
-    ISOCodelist$new(refFile = gmxCL, id = "DQ_EvaluationMethodTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "DS_AssociationTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "DS_InitiativeTypeCode"),
-    ISOCodelist$new(refFile = langCL, id = "LanguageCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_CellGeometryCode"),
-    ISOCodelist$new(refFile = ML_gmxCL, id = "MD_CharacterSetCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_ClassificationCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_CoverageContentTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_DatatypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_DimensionNameTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_DistributionUnits"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_GeometricObjectTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_KeywordTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_ImagingConditionCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_MaintenanceFrequencyCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_MediumFormatCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_MediumNameCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_ObligationCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_PixelOrientationCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_ProgressCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_RestrictionCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_SpatialRepresentationTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_TopicCategoryCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MD_TopologyLevelCode"),
-    #ISO 19115-2:2009 codelists
-    ISOCodelist$new(refFile = gmxCL, id = "MI_BandDefinition"),
-    ISOCodelist$new(refFile = gmxCL, id = "MI_ContextCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MI_GeometryTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MI_ObjectiveTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MI_OperationTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MI_PolarisationOrientationCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MI_PriorityCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MI_SequenceCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MI_TransferFunctionTypeCode"),
-    ISOCodelist$new(refFile = gmxCL, id = "MI_TriggerCode"),
-    #ISO 19119:2005 codelists
-    ISOCodelist$new(refFile = gmxCL, id = "SV_CouplingType"),
-    ISOCodelist$new(refFile = gmxCL, id = "SV_ParameterDirection"),
-    #ISO 19139:2007 codelists
-    ISOCodelist$new(refFile = gmxCL, id = "MX_ScopeCode")
-    #ISO/TS 19115-3:2016
-  )
-  names(codelists) <- sapply(codelists, function(cl){cl$id})
-  .geometa.iso$codelists <- codelists
+  if(is.null(.geometa.iso$codelists)) .geometa.iso$codelists = list()
+  if(is.null(.geometa.iso$codelists[[version]])){
+    packageStartupMessage(sprintf("Loading ISO %s codelists...", version))
+    codelists <- switch(version,
+      "19139" = {
+        cls = c(
+          ISOCodelist$new(refFile = ML_gmxCL, id = "Country"),
+          ISOCodelist$new(refFile = langCL, id = "LanguageCode"), #from http://www.loc.gov/standards/iso639-2/
+          {
+            cat <- ISOCodelistCatalogue$new(refFile = system.file("extdata/codelists", "gmxCodelists.xml", package = "geometa", mustWork = TRUE))
+            cat$getCodelists()
+          }
+        )
+        cls = cls[!sapply(cls, is.null)]
+        names(cls) <- sapply(cls, function(cl){cl$identifier$value})
+        cls
+      },
+      "19115-3" = {
+        cls = c(
+          ISOCodelist$new(refFile = ML_gmxCL, id = "Country"),
+          ISOCodelist$new(refFile = langCL, id = "LanguageCode"), #from http://www.loc.gov/standards/iso639-2/
+          {
+            cat <- ISOCodelistCatalogue$new(refFile = system.file("extdata/schemas/19115/resources/Codelists/cat", "codelists.xml", package = "geometa", mustWork = TRUE))
+            cat$getCodelists()
+          }
+        )
+        cls = cls[!sapply(cls, is.null)]
+        names(cls) <- sapply(cls, function(cl){cl$identifier$value})
+        cls
+      }
+    )
+    .geometa.iso$codelists[[version]] <- codelists
+  }
 }
 
 #' @name getISOInternalCodelists
