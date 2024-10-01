@@ -167,7 +167,7 @@ ISOCellGeometry"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co">#possible values</span></span></span>
 <span class="r-in"><span>  <span class="va">values</span> <span class="op">&lt;-</span> <span class="va">ISOCellGeometry</span><span class="op">$</span><span class="fu">values</span><span class="op">(</span>labels <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in getISOCodelist(element)$codeEntry[, fields]:</span> incorrect number of dimensions</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in x$identifier$value:</span> $ operator is invalid for atomic vectors</span>
 <span class="r-in"><span>  </span></span>
 <span class="r-in"><span>  <span class="co">#example of 'point' cell geometry code</span></span></span>
 <span class="r-in"><span>  <span class="va">pointCode</span> <span class="op">&lt;-</span> <span class="va">ISOCellGeometry</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>value <span class="op">=</span> <span class="st">"point"</span><span class="op">)</span></span></span>
