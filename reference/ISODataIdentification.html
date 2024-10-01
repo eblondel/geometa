@@ -599,16 +599,19 @@ value among those returned by <code>ISOTopicCategory$values()</code></p></dd>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>   <span class="co">#create dataIdentification</span></span></span>
 <span class="r-in"><span>   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISODataIdentification</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setAbstract</span><span class="op">(</span><span class="st">"abstract"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setPurpose</span><span class="op">(</span><span class="st">"purpose"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addLanguage</span><span class="op">(</span><span class="st">"eng"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addCharacterSet</span><span class="op">(</span><span class="st">"utf8"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addTopicCategory</span><span class="op">(</span><span class="st">"biota"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addTopicCategory</span><span class="op">(</span><span class="st">"oceans"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#adding a point of contact</span></span></span>
 <span class="r-in"><span>   <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -616,6 +619,7 @@ value among those returned by <code>ISOTopicCategory$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="st">"someposition"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="st">"myphonenumber"</span><span class="op">)</span></span></span>
@@ -634,7 +638,7 @@ value among those returned by <code>ISOTopicCategory$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addPointOfContact</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#citation</span></span></span>
 <span class="r-in"><span>   <span class="va">ct</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -642,16 +646,18 @@ value among those returned by <code>ISOTopicCategory$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addIdentifier</span><span class="op">(</span><span class="va"><a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"identifier"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addPresentationForm</span><span class="op">(</span><span class="st">"mapDigital"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setCitation</span><span class="op">(</span><span class="va">ct</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#graphic overview</span></span></span>
 <span class="r-in"><span>   <span class="va">go</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOBrowseGraphic.html">ISOBrowseGraphic</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
@@ -660,13 +666,14 @@ value among those returned by <code>ISOTopicCategory$values()</code></p></dd>
 <span class="r-in"><span>     fileType <span class="op">=</span> <span class="st">"image/png"</span></span></span>
 <span class="r-in"><span>   <span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addGraphicOverview</span><span class="op">(</span><span class="va">go</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#maintenance information</span></span></span>
 <span class="r-in"><span>   <span class="va">mi</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">mi</span><span class="op">$</span><span class="fu">setMaintenanceFrequency</span><span class="op">(</span><span class="st">"daily"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addResourceMaintenance</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#adding legal constraints</span></span></span>
 <span class="r-in"><span>   <span class="va">lc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOLegalConstraints.html">ISOLegalConstraints</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -677,15 +684,15 @@ value among those returned by <code>ISOTopicCategory$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseLimitation</span><span class="op">(</span><span class="st">"limitation3"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#adding extent</span></span></span>
 <span class="r-in"><span>   <span class="va">extent</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOExtent.html">ISOExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -693,7 +700,7 @@ value among those returned by <code>ISOTopicCategory$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">extent</span><span class="op">$</span><span class="fu">addGeographicElement</span><span class="op">(</span><span class="va">bbox</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#add keywords</span></span></span>
 <span class="r-in"><span>   <span class="va">kwds</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOKeywords.html">ISOKeywords</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -702,18 +709,20 @@ value among those returned by <code>ISOTopicCategory$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">kwds</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword2"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">kwds</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
 <span class="r-in"><span>   <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"General"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">kwds</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addKeywords</span><span class="op">(</span><span class="va">kwds</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#supplementalInformation</span></span></span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setSupplementalInformation</span><span class="op">(</span><span class="st">"some additional information"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISODataIdentification' is VALID according to ISO 19139 XML schemas! </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>   </span></span>
 </code></pre></div>
     </div>
