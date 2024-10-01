@@ -1467,8 +1467,9 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
 )
 
 ISOAbstractObject$getStandardByPrefix = function(prefix){
+  std <- NULL
   ns <- getISOMetadataNamespace(prefix)
-  std <- ns$getStandard()
+  if(!is.null(ns)) std <- ns$getStandard()
   return(std)
 }
 
@@ -1527,18 +1528,25 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
           xmlnsp <- xmlnsp[[1]]
         }
       }
-      stdinfo <- cbind(
-        std,
-        ns_prefix = if(!is.null(xmlnsp)) xmlnsp else NA,
-        ns_uri = if(!is.null(xmlnsp)) ISOMetadataNamespace[[xmlnsp]]$uri else NA,
-        element = if(is.list(clazz$private_fields$xmlElement)){
-          clazz$private_fields$xmlElement[[getMetadataStandard()]]
-        }else{
-          clazz$private_fields$xmlElement
-        },
-        refactored = refactored,
-        stringsAsFactors = FALSE
-      )
+      stdinfo = NULL
+      if(!is.null(std)){
+        stdinfo <- cbind(
+          std,
+          ns_prefix = if(!is.null(xmlnsp)) xmlnsp else NA,
+          ns_uri = if(!is.null(xmlnsp)) ISOMetadataNamespace[[xmlnsp]]$uri else NA,
+          element = if(is.list(clazz$private_fields$xmlElement)){
+            if(getMetadataStandard() %in% names(clazz$private_fields$xmlElement)){
+              clazz$private_fields$xmlElement[[getMetadataS]]
+            }else{
+              clazz$private_fields$xmlElement[[1]]
+            }
+          }else{
+            clazz$private_fields$xmlElement
+          },
+          refactored = refactored,
+          stringsAsFactors = FALSE
+        )
+      }
       return(stdinfo)
     }))
     
