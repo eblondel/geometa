@@ -950,7 +950,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>    <span class="co">#example 1 - WRITE: Create an ISO metadata and encode it as XML</span></span></span>
 <span class="r-in"><span>    <span class="co">#######################################################</span></span></span>
 <span class="r-in"><span>    <span class="va">md</span> <span class="op">=</span> <span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setFileIdentifier</span><span class="op">(</span><span class="st">"my-metadata-identifier"</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>    <span class="va">md</span><span class="op">$</span><span class="fu">setParentIdentifier</span><span class="op">(</span><span class="st">"my-parent-metadata-identifier"</span><span class="op">)</span></span></span>
@@ -994,15 +994,15 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>      <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
 <span class="r-in"><span>      <span class="va">md</span><span class="op">$</span><span class="fu">addContact</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="op">}</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#VectorSpatialRepresentation</span></span></span>
 <span class="r-in"><span>   <span class="va">vsr</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOVectorSpatialRepresentation.html">ISOVectorSpatialRepresentation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">vsr</span><span class="op">$</span><span class="fu">setTopologyLevel</span><span class="op">(</span><span class="st">"geometryOnly"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">geomObject</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeometricObjects.html">ISOGeometricObjects</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">geomObject</span><span class="op">$</span><span class="fu">setGeometricObjectType</span><span class="op">(</span><span class="st">"surface"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">geomObject</span><span class="op">$</span><span class="fu">setGeometricObjectCount</span><span class="op">(</span><span class="fl">5L</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">vsr</span><span class="op">$</span><span class="fu">addGeometricObjects</span><span class="op">(</span><span class="va">geomObject</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
@@ -1018,7 +1018,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#data identification</span></span></span>
 <span class="r-in"><span>   <span class="va">ident</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODataIdentification.html">ISODataIdentification</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setAbstract</span><span class="op">(</span><span class="st">"abstract"</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'ident' not found</span>
 <span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setPurpose</span><span class="op">(</span><span class="st">"purpose"</span><span class="op">)</span></span></span>
@@ -1046,7 +1046,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="st">"someposition"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="st">"myphonenumber"</span><span class="op">)</span></span></span>
@@ -1073,14 +1073,14 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addIdentifier</span><span class="op">(</span><span class="va"><a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"identifier"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addPresentationForm</span><span class="op">(</span><span class="st">"mapDigital"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">ct</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">setCitation</span><span class="op">(</span><span class="va">ct</span><span class="op">)</span></span></span>
@@ -1105,7 +1105,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="co">#maintenance information</span></span></span>
 <span class="r-in"><span>   <span class="va">mi</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">mi</span><span class="op">$</span><span class="fu">setMaintenanceFrequency</span><span class="op">(</span><span class="st">"daily"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addResourceMaintenance</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'ident' not found</span>
 <span class="r-in"><span>   </span></span>
@@ -1118,20 +1118,20 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseLimitation</span><span class="op">(</span><span class="st">"limitation3"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'ident' not found</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#adding security constraints</span></span></span>
 <span class="r-in"><span>   <span class="va">sc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOSecurityConstraints.html">ISOSecurityConstraints</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">sc</span><span class="op">$</span><span class="fu">setClassification</span><span class="op">(</span><span class="st">"secret"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">sc</span><span class="op">$</span><span class="fu">setUserNote</span><span class="op">(</span><span class="st">"ultra secret"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">sc</span><span class="op">$</span><span class="fu">setClassificationSystem</span><span class="op">(</span><span class="st">"no classification in particular"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">sc</span><span class="op">$</span><span class="fu">setHandlingDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span></span>
@@ -1153,7 +1153,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">kwds</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword2"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">kwds</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"General"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
@@ -1170,7 +1170,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="va">anc1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span></span></span>
 <span class="r-in"><span>     <span class="va"><a href="ISOAnchor.html">ISOAnchor</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
@@ -1181,7 +1181,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">inspire_date</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2008-06-01"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">inspire_date</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">inspire_date</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">inspire_kwd</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">ident</span><span class="op">$</span><span class="fu">addKeywords</span><span class="op">(</span><span class="va">inspire_kwd</span><span class="op">)</span></span></span>
@@ -1219,7 +1219,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">dq</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODataQuality.html">ISODataQuality</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">scope</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODataQualityScope.html">ISODataQualityScope</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">scope</span><span class="op">$</span><span class="fu">setLevel</span><span class="op">(</span><span class="st">"dataset"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">dq</span><span class="op">$</span><span class="fu">setScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  </span></span>
 <span class="r-in"><span>   <span class="co">#add data quality reports...</span></span></span>
@@ -1234,7 +1234,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">spec</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">result</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">spec</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">result</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="st">"some explanation about the conformance"</span><span class="op">)</span></span></span>
@@ -1258,7 +1258,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">cr_inspire_date1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2010</span>,<span class="fl">12</span>,<span class="fl">8</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cr_inspire_date1</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">cr_inspire_spec1</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date1</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec1</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cr_inspire1</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
@@ -1278,7 +1278,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">cr_inspire_date2</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2008</span>,<span class="fl">12</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cr_inspire_date2</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">cr_inspire_spec2</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">cr_inspire_date2</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">cr_inspire_spec2</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cr_inspire2</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
@@ -1307,7 +1307,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">cit</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cit</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cit</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
@@ -1317,7 +1317,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">fcLink</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">rp</span> <span class="op">=</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"publisher"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">cit</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
@@ -1337,7 +1337,7 @@ from values returned by <code>ISOScope$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">xmlfile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/examples"</span>, <span class="st">"metadata.xml"</span>, package <span class="op">=</span> <span class="st">"geometa"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/XML/man/xmlTreeParse.html" class="external-link">xmlParse</a></span><span class="op">(</span><span class="va">xmlfile</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="va">xml</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   <span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

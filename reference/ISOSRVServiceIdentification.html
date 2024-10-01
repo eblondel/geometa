@@ -537,7 +537,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co">#encoding</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOSRVServiceIdentification</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setAbstract</span><span class="op">(</span><span class="st">"abstract"</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setPurpose</span><span class="op">(</span><span class="st">"purpose"</span><span class="op">)</span></span></span>
@@ -549,7 +549,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="st">"someposition"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="st">"myphonenumber"</span><span class="op">)</span></span></span>
@@ -576,14 +576,14 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">d</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">d</span><span class="op">$</span><span class="fu">setDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">d</span><span class="op">$</span><span class="fu">setDateType</span><span class="op">(</span><span class="st">"publication"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">ct</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">ct</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">ct</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2015</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">ct</span><span class="op">$</span><span class="fu">addIdentifier</span><span class="op">(</span><span class="va"><a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>code <span class="op">=</span> <span class="st">"identifier"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">ct</span><span class="op">$</span><span class="fu">addPresentationForm</span><span class="op">(</span><span class="st">"mapDigital"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">ct</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setCitation</span><span class="op">(</span><span class="va">ct</span><span class="op">)</span></span></span>
@@ -601,7 +601,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="co">#maintenance information</span></span></span>
 <span class="r-in"><span>  <span class="va">mi</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">mi</span><span class="op">$</span><span class="fu">setMaintenanceFrequency</span><span class="op">(</span><span class="st">"daily"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addResourceMaintenance</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span></span></span>
@@ -614,13 +614,13 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">lc</span><span class="op">$</span><span class="fu">addUseLimitation</span><span class="op">(</span><span class="st">"limitation3"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">lc</span><span class="op">$</span><span class="fu">addAccessConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"copyright"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span></span></span>
@@ -645,7 +645,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">kwds</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword2"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">kwds</span><span class="op">$</span><span class="fu">setKeywordType</span><span class="op">(</span><span class="st">"theme"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">th</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">th</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"General"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
@@ -681,7 +681,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">scriptOp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOperationMetadata.html">ISOOperationMetadata</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">scriptOp</span><span class="op">$</span><span class="fu">setOperationName</span><span class="op">(</span><span class="st">"Rscript"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">scriptOp</span><span class="op">$</span><span class="fu">addDCP</span><span class="op">(</span><span class="st">"WebServices"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">scriptOp</span><span class="op">$</span><span class="fu">setOperationDescription</span><span class="op">(</span><span class="st">"WPS Execute"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">scriptOp</span><span class="op">$</span><span class="fu">setInvocationName</span><span class="op">(</span><span class="st">"identifier"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span></span>
@@ -694,11 +694,11 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setValueType</span><span class="op">(</span><span class="st">"xs:string"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">scriptOp</span><span class="op">$</span><span class="fu">addParameter</span><span class="op">(</span><span class="va">param</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">outParam</span> <span class="op">&lt;-</span><span class="va"><a href="ISOParameter.html">ISOParameter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"outputname"</span>, <span class="st">"xs:string"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setDirection</span><span class="op">(</span><span class="st">"out"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="st">"outputdescription"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setOptionality</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setRepeatability</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
@@ -718,7 +718,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">wpsOp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOperationMetadata.html">ISOOperationMetadata</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">setOperationName</span><span class="op">(</span><span class="st">"WPS:Execute"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">addDCP</span><span class="op">(</span><span class="st">"WebServices"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">setOperationDescription</span><span class="op">(</span><span class="st">"WPS Execute"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">invocationName</span> <span class="op">&lt;-</span> <span class="st">"mywpsidentifier"</span></span></span>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">setInvocationName</span><span class="op">(</span><span class="va">invocationName</span><span class="op">)</span></span></span>
@@ -732,11 +732,11 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setValueType</span><span class="op">(</span><span class="st">"xs:string"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">wpsOp</span><span class="op">$</span><span class="fu">addParameter</span><span class="op">(</span><span class="va">param</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">outParam</span> <span class="op">&lt;-</span><span class="va"><a href="ISOParameter.html">ISOParameter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"outputname"</span>, <span class="st">"xs:string"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setDirection</span><span class="op">(</span><span class="st">"out"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (cl$id == id) {    codelist &lt;&lt;- cl}:</span> argument is of length zero</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="st">"outputdescription"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setOptionality</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setRepeatability</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
