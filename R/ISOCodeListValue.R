@@ -152,6 +152,22 @@ ISOCodeListValue$values = function(class, labels = FALSE){
   fields <- "value"
   if(labels) fields <- c(fields, "name", "description")
   element <- class$private_fields$xmlElement
+  if(is.list(element)){
+   if(getMetadataStandard() %in% names(element)){
+     element[[getMetadataStandard()]]
+   }else{
+     element[[1]]
+   }
+  }
   if(element == "MD_ScopeCode") element <- "MX_ScopeCode"
-  return(getISOCodelist(element)$codeEntry[,fields])
+  cl = getISOCodelist(element)
+  out = sapply(cl$codeEntry, function(x){x$identifier$value})
+  if(labels){
+    out = data.frame(
+      out,
+      name = sapply(cl$codeEntry, function(x){x$description}),
+      description = sapply(cl$codeEntry, function(x){x$description})
+    )
+  }
+  return(out)
 }
