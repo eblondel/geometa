@@ -178,12 +178,10 @@ ISORepresentativeFraction"><!-- mathjax --><script src="https://cdnjs.cloudflare
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">fr</span> <span class="op">&lt;-</span> <span class="va">ISORepresentativeFraction</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>denominator <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">xml1</span> <span class="op">&lt;-</span> <span class="va">fr</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://standards.iso.org/iso/19115/-3/gco/1.0}Integer': This element is not expected. Expected is ( {http://www.isotc211.org/2005/gco}Integer ) at line 3. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISORepresentativeFraction' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISORepresentativeFraction' is VALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span>  <span class="va">fr</span><span class="op">$</span><span class="fu">setDenominator</span><span class="op">(</span><span class="fl">2L</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">xml2</span> <span class="op">&lt;-</span> <span class="va">fr</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://standards.iso.org/iso/19115/-3/gco/1.0}Integer': This element is not expected. Expected is ( {http://www.isotc211.org/2005/gco}Integer ) at line 3. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISORepresentativeFraction' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISORepresentativeFraction' is VALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span>  </span></span>
 </code></pre></div>
     </div>
