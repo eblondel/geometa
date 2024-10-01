@@ -4,7 +4,7 @@
 \alias{setISOCodelists}
 \title{setISOCodelists}
 \usage{
-setISOCodelists()
+setISOCodelists(version = "19139")
 }
 \description{
 setISOCodelists
