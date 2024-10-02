@@ -1,6 +1,6 @@
 "Specification","Schema","Title","Namespace","Supported","Missing","Refactored","Torefactor","Coverage"
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Citation and responsible party information (CIT) Version: 2.0","CIT",16,0,16,0,100
-"ISO/TS 19115-3:2023","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO",22,2,22,2,91.67
+"ISO/TS 19115-3:2023","ISO 19115-1:2014","Geospatial COmmon Objects (GCO) Version: 1.0","GCO",24,0,24,0,100
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Geospatial Common eXtension (GCX) Version: 1.0","GCX",3,0,3,0,100
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Geospatial EXtent (GEX) Version: 1.0","GEX",8,0,8,0,100
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","metadata for LANguage and localization (LAN) Version: 1.0","LAN",7,0,7,0,100
