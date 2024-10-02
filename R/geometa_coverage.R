@@ -242,8 +242,8 @@ geometa_coverage <- function(version = "19139"){
   setMetadataStandard(version = version)
   xsd_filepath = getISOMetadataSchemaFile(version = version)
   elements <- get_schema_elements(xsd_filepath)
+  elements <- elements[elements$namespace %in% sapply(getISOMetadataNamespaces(), function(x){x$id}),]
   elements$namespace <- toupper(elements$namespace)
-  if(version == "19115-3") elements <- elements[elements$namespace != "GMD",]
   classes <- ISOAbstractObject$getISOClasses(pretty = TRUE)
   colnames(classes)[colnames(classes)=="ns_prefix"] <- "namespace"
   elements <- merge(
