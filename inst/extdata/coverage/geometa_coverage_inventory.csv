@@ -295,7 +295,7 @@
 "ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","OperationParameterAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
 "ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","PrimeMeridianAlt","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
 "ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema","GMX","UomAlternativeExpression","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GMX"
-"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema - Geographic Temporal Schema (GTS)","GTS","TM_PeriodDuration","<missing>",FALSE,FALSE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GTS"
+"ISO/TS 19139:2007","ISO/TS 19139:2007","Geographic Metadata XML Schema - Geographic Temporal Schema (GTS)","GTS","TM_PeriodDuration","ISOPeriodDuration",TRUE,TRUE,"ISO/TS 19139:2007  -  ISO/TS 19139:2007  -  GTS"
 "GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractContinuousCoverage","<missing>",FALSE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
 "GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCoordinateOperation","GMLAbstractCoordinateOperation",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
 "GML 3.2.1 (ISO 19136)","GML 3.2.1 (ISO 19136)","Geographic Markup Language","GML","AbstractCoordinateSystem","GMLAbstractCoordinateSystem",TRUE,FALSE,"GML 3.2.1 (ISO 19136)  -  GML 3.2.1 (ISO 19136)  -  GML"
