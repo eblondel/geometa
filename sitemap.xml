@@ -281,6 +281,7 @@
 <url><loc>/reference/ISOOtherAggregate.html</loc></url>
 <url><loc>/reference/ISOParameter.html</loc></url>
 <url><loc>/reference/ISOParameterDirection.html</loc></url>
+<url><loc>/reference/ISOPeriodDuration.html</loc></url>
 <url><loc>/reference/ISOPixelOrientation.html</loc></url>
 <url><loc>/reference/ISOPlatform.html</loc></url>
 <url><loc>/reference/ISOPortrayalCatalogueReference.html</loc></url>
@@ -333,6 +334,7 @@
 <url><loc>/reference/ISOTypeName.html</loc></url>
 <url><loc>/reference/ISOURL.html</loc></url>
 <url><loc>/reference/ISOUnlimitedInteger.html</loc></url>
+<url><loc>/reference/ISOUomIdentifier.html</loc></url>
 <url><loc>/reference/ISOUsage.html</loc></url>
 <url><loc>/reference/ISOVectorSpatialRepresentation.html</loc></url>
 <url><loc>/reference/ISOVerticalExtent.html</loc></url>
