@@ -95,6 +95,7 @@
 <url><loc>/reference/ISOAbstractCarrierOfCharacteristics.html</loc></url>
 <url><loc>/reference/ISOAbstractCatalogue.html</loc></url>
 <url><loc>/reference/ISOAbstractCompleteness.html</loc></url>
+<url><loc>/reference/ISOAbstractContentInformation.html</loc></url>
 <url><loc>/reference/ISOAbstractGenericName.html</loc></url>
 <url><loc>/reference/ISOAbstractLogicalConsistency.html</loc></url>
 <url><loc>/reference/ISOAbstractObject.html</loc></url>
@@ -147,7 +148,6 @@
 <url><loc>/reference/ISOConstraint.html</loc></url>
 <url><loc>/reference/ISOConstraints.html</loc></url>
 <url><loc>/reference/ISOContact.html</loc></url>
-<url><loc>/reference/ISOContentInformation.html</loc></url>
 <url><loc>/reference/ISOCountry.html</loc></url>
 <url><loc>/reference/ISOCoupledResource.html</loc></url>
 <url><loc>/reference/ISOCouplingType.html</loc></url>
@@ -305,6 +305,7 @@
 <url><loc>/reference/ISORole.html</loc></url>
 <url><loc>/reference/ISORoleType.html</loc></url>
 <url><loc>/reference/ISOSRVServiceIdentification.html</loc></url>
+<url><loc>/reference/ISOSampleDimension.html</loc></url>
 <url><loc>/reference/ISOScale.html</loc></url>
 <url><loc>/reference/ISOScope.html</loc></url>
 <url><loc>/reference/ISOScopeDescription.html</loc></url>
