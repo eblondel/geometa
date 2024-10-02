@@ -1138,7 +1138,7 @@ Adds content information
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{contentInfo}}{object of class inheriting \link{ISOContentInformation}}
+\item{\code{contentInfo}}{object of class inheriting \link{ISOAbstractContentInformation}}
 }
 \if{html}{\out{</div>}}
 }
@@ -1158,7 +1158,7 @@ Deletes content information
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{contentInfo}}{object of class inheriting \link{ISOContentInformation}}
+\item{\code{contentInfo}}{object of class inheriting \link{ISOAbstractContentInformation}}
 }
 \if{html}{\out{</div>}}
 }

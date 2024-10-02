@@ -56,7 +56,9 @@ ISOImageryCoverageDescription
 
 }
 \references{
-ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
+- 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_CoverageDescription}
+  
+  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrc/1.0/mrc/#element_MI_CoverageDescription}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -66,7 +68,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{image}
 \keyword{imagery}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOContentInformation]{geometa::ISOContentInformation}} -> \code{\link[geometa:ISOCoverageDescription]{geometa::ISOCoverageDescription}} -> \code{ISOImageryCoverageDescription}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractContentInformation]{geometa::ISOAbstractContentInformation}} -> \code{\link[geometa:ISOCoverageDescription]{geometa::ISOCoverageDescription}} -> \code{ISOImageryCoverageDescription}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

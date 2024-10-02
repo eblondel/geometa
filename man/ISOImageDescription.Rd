@@ -63,7 +63,9 @@ ISOImageDescription
    
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_ImageDescription}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrc/1.0/mrc/#element_MD_ImageDescription}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -72,7 +74,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{coverage}
 \keyword{description}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOContentInformation]{geometa::ISOContentInformation}} -> \code{\link[geometa:ISOCoverageDescription]{geometa::ISOCoverageDescription}} -> \code{ISOImageDescription}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractContentInformation]{geometa::ISOAbstractContentInformation}} -> \code{\link[geometa:ISOCoverageDescription]{geometa::ISOCoverageDescription}} -> \code{ISOImageDescription}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

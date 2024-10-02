@@ -19,8 +19,7 @@ ISOTelephoneType
   #possible values
   values <- ISOTelephoneType$values(labels = TRUE)
   
-  #biota topic
-  biota <- ISOTelephoneType$new(value = "biota")
+  voice <- ISOTelephoneType$new(value = "voice")
   
 }
 \references{

@@ -734,21 +734,21 @@ ISOMetadata <- R6Class("ISOMetadata",
      #--------------------------------------------------------------------------     
      
      #'@description Adds content information
-     #'@param contentInfo object of class inheriting \link{ISOContentInformation}
+     #'@param contentInfo object of class inheriting \link{ISOAbstractContentInformation}
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addContentInfo = function(contentInfo){
-       if(!is(contentInfo,"ISOContentInformation")){
-         stop("The argument should be a 'ISOContentInformation' object")
+       if(!is(contentInfo,"ISOAbstractContentInformation")){
+         stop("The argument should be a 'ISOAbstractContentInformation' object")
        }
        return(self$addListElement("contentInfo", contentInfo))
      },
      
      #'@description Deletes content information
-     #'@param contentInfo object of class inheriting \link{ISOContentInformation}
+     #'@param contentInfo object of class inheriting \link{ISOAbstractContentInformation}
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delContentInfo = function(contentInfo){
-       if(!is(contentInfo,"ISOContentInformation")){
-         stop("The argument should be a 'ISOContentInformation' object")
+       if(!is(contentInfo,"ISOAbstractContentInformation")){
+         stop("The argument should be a 'ISOAbstractContentInformation' object")
        }
        return(self$delListElement("contentInfo", contentInfo))
      }

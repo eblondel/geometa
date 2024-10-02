@@ -31,12 +31,20 @@
 #'    xml <- md$encode()
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#' 
+#' @references
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Band}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrc/1.0/mrc/#element_MD_Band}
 #'
 ISOBand <- R6Class("ISOBand",
    inherit = ISORangeDimension,
    private = list(
      xmlElement = "MD_Band",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19139" = "GMD",
+       "19115-3" = "MRC"
+     )
    ),
    public = list(
      

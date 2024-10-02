@@ -24,7 +24,9 @@ ISORangeDimension
    
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_RangeDimension}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrc/1.0/mrc/#element_MD_RangeDimension}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -40,7 +42,11 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \describe{
 \item{\code{sequenceIdentifier}}{sequenceIdentifier}
 
-\item{\code{descriptor}}{descriptor}
+\item{\code{descriptor}}{descriptor (=> ISO 19139)}
+
+\item{\code{description}}{description (=> ISO 19115-3)}
+
+\item{\code{name}}{name (=> ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }
@@ -50,6 +56,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISORangeDimension-new}{\code{ISORangeDimension$new()}}
 \item \href{#method-ISORangeDimension-setSequenceIdentifier}{\code{ISORangeDimension$setSequenceIdentifier()}}
 \item \href{#method-ISORangeDimension-setDescriptor}{\code{ISORangeDimension$setDescriptor()}}
+\item \href{#method-ISORangeDimension-setDescription}{\code{ISORangeDimension$setDescription()}}
+\item \href{#method-ISORangeDimension-setName}{\code{ISORangeDimension$setName()}}
 \item \href{#method-ISORangeDimension-clone}{\code{ISORangeDimension$clone()}}
 }
 }
@@ -135,6 +143,44 @@ Set descriptor
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{descriptor}}{descriptor}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISORangeDimension-setDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISORangeDimension-setDescription}{}}}
+\subsection{Method \code{setDescription()}}{
+Set description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISORangeDimension$setDescription(description, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{description}}{description}
+
+\item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISORangeDimension-setName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISORangeDimension-setName}{}}}
+\subsection{Method \code{setName()}}{
+Set name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISORangeDimension$setName(name, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
 
 \item{\code{locales}}{list of localized texts. Default is \code{NULL}}
 }
