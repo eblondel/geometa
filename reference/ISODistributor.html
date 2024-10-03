@@ -62,7 +62,8 @@ ISODistributor"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 <a href="https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Distributor" class="external-link">https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Distributor</a></p>
+<p>- ISO 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd/#element_MD_Distributor" class="external-link">https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd/#element_MD_Distributor</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -78,8 +79,16 @@ ISODistributor"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 <dd><p>distributorContact : ISOResponsibleParty</p></dd>
 
 
+<dt><code>distributionOrderProcess</code></dt>
+<dd><p>distributionOrderProcess : ISOStandardOrderProcess</p></dd>
+
+
 <dt><code>distributorFormat</code></dt>
 <dd><p>distributorFormat : ISOFormat</p></dd>
+
+
+<dt><code>distributorTransferOptions</code></dt>
+<dd><p>distributorTransferOptions : ISODigitalTransferOptions</p></dd>
 
 
 </dl><p></p></div>
@@ -92,8 +101,12 @@ ISODistributor"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 
 <ul><li><p><a href="#method-ISODistributor-new"><code>ISODistributor$new()</code></a></p></li>
 <li><p><a href="#method-ISODistributor-setContact"><code>ISODistributor$setContact()</code></a></p></li>
+<li><p><a href="#method-ISODistributor-addStandardOrderProcess"><code>ISODistributor$addStandardOrderProcess()</code></a></p></li>
+<li><p><a href="#method-ISODistributor-delStandardOrderProcess"><code>ISODistributor$delStandardOrderProcess()</code></a></p></li>
 <li><p><a href="#method-ISODistributor-addFormat"><code>ISODistributor$addFormat()</code></a></p></li>
 <li><p><a href="#method-ISODistributor-delFormat"><code>ISODistributor$delFormat()</code></a></p></li>
+<li><p><a href="#method-ISODistributor-addDigitalTransferOptions"><code>ISODistributor$addDigitalTransferOptions()</code></a></p></li>
+<li><p><a href="#method-ISODistributor-delDigitalTransferOptions"><code>ISODistributor$delDigitalTransferOptions()</code></a></p></li>
 <li><p><a href="#method-ISODistributor-clone"><code>ISODistributor$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -156,17 +169,17 @@ ISODistributor"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISODistributor-addFormat"></a><div class="section">
-<h3 id="method-addformat-">Method <code>addFormat()</code><a class="anchor" aria-label="anchor" href="#method-addformat-"></a></h3>
-<p>Adds format</p><div class="section">
+</div><p></p><hr><a id="method-ISODistributor-addStandardOrderProcess"></a><div class="section">
+<h3 id="method-addstandardorderprocess-">Method <code>addStandardOrderProcess()</code><a class="anchor" aria-label="anchor" href="#method-addstandardorderprocess-"></a></h3>
+<p>Adds standard order process</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">addFormat</span><span class="op">(</span><span class="va">format</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">addStandardOrderProcess</span><span class="op">(</span><span class="va">standardOrderProcess</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>format</code></dt>
-<dd><p>format object of class <a href="ISOFormat.html">ISOFormat</a></p></dd>
+<p></p><div class="arguments"><dl><dt><code>standardOrderProcess</code></dt>
+<dd><p>standardOrderProcess object of class <a href="ISOStandardOrderProcess.html">ISOStandardOrderProcess</a></p></dd>
 
 
 </dl><p></p></div>
@@ -176,17 +189,17 @@ ISODistributor"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISODistributor-delFormat"></a><div class="section">
-<h3 id="method-delformat-">Method <code>delFormat()</code><a class="anchor" aria-label="anchor" href="#method-delformat-"></a></h3>
-<p>Deletes format</p><div class="section">
+</div><p></p><hr><a id="method-ISODistributor-delStandardOrderProcess"></a><div class="section">
+<h3 id="method-delstandardorderprocess-">Method <code>delStandardOrderProcess()</code><a class="anchor" aria-label="anchor" href="#method-delstandardorderprocess-"></a></h3>
+<p>Deletes standard order process</p><div class="section">
 <h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">delFormat</span><span class="op">(</span><span class="va">format</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">delStandardOrderProcess</span><span class="op">(</span><span class="va">standardOrderProcess</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>format</code></dt>
-<dd><p>format object of class <a href="ISOFormat.html">ISOFormat</a></p></dd>
+<p></p><div class="arguments"><dl><dt><code>standardOrderProcess</code></dt>
+<dd><p>standardOrderProcess object of class <a href="ISOStandardOrderProcess.html">ISOStandardOrderProcess</a></p></dd>
 
 
 </dl><p></p></div>
@@ -196,15 +209,95 @@ ISODistributor"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISODistributor-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISODistributor-addFormat"></a><div class="section">
+<h3 id="method-addformat-">Method <code>addFormat()</code><a class="anchor" aria-label="anchor" href="#method-addformat-"></a></h3>
+<p>Adds format</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">addFormat</span><span class="op">(</span><span class="va">format</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>format</code></dt>
+<dd><p>format object of class <a href="ISOFormat.html">ISOFormat</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISODistributor-delFormat"></a><div class="section">
+<h3 id="method-delformat-">Method <code>delFormat()</code><a class="anchor" aria-label="anchor" href="#method-delformat-"></a></h3>
+<p>Deletes format</p><div class="section">
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">delFormat</span><span class="op">(</span><span class="va">format</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>format</code></dt>
+<dd><p>format object of class <a href="ISOFormat.html">ISOFormat</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISODistributor-addDigitalTransferOptions"></a><div class="section">
+<h3 id="method-adddigitaltransferoptions-">Method <code>addDigitalTransferOptions()</code><a class="anchor" aria-label="anchor" href="#method-adddigitaltransferoptions-"></a></h3>
+<p>Adds digital transfer options</p><div class="section">
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">addDigitalTransferOptions</span><span class="op">(</span><span class="va">digitalTransferOptions</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>digitalTransferOptions</code></dt>
+<dd><p>object of class <a href="ISODigitalTransferOptions.html">ISODigitalTransferOptions</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-4">Returns<a class="anchor" aria-label="anchor" href="#returns-4"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISODistributor-delDigitalTransferOptions"></a><div class="section">
+<h3 id="method-deldigitaltransferoptions-">Method <code>delDigitalTransferOptions()</code><a class="anchor" aria-label="anchor" href="#method-deldigitaltransferoptions-"></a></h3>
+<p>Deletes digital transfer options</p><div class="section">
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">delDigitalTransferOptions</span><span class="op">(</span><span class="va">digitalTransferOptions</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>digitalTransferOptions</code></dt>
+<dd><p>object of class <a href="ISODigitalTransferOptions.html">ISODigitalTransferOptions</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-5">Returns<a class="anchor" aria-label="anchor" href="#returns-5"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISODistributor-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISODistributor</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
