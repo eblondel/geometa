@@ -133,7 +133,7 @@ ISOSampleDimension <- R6Class("ISOSampleDimension",
      
      #'@description setOtherProperty
      #'@param otherProperty otherProperty object of class \link{ISORecord}
-     setOtherProperty = function(otherPropertyType){
+     setOtherProperty = function(otherProperty){
        if(!is(otherProperty, "ISORecord")){
          otherProperty = ISORecord$new(value = otherProperty)
        }
