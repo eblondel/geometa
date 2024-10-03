@@ -13,7 +13,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOResponsibility <- R6Class("ISOResponsibility",
-  inherit = ISOAbstractObject,
+  inherit = ISOAbstractResponsibility,
   private = list(
     xmlElement = "CI_Responsibility",
     xmlNamespacePrefix = list(
