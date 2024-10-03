@@ -15,7 +15,9 @@
 #'   daily <- ISOMaintenanceFrequency$new(value = "daily")
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_MaintenanceFrequencyCode}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mmi/1.0/mmi/#element_MD_MaintenanceFrequencyCode}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -23,7 +25,10 @@ ISOMaintenanceFrequency <- R6Class("ISOMaintenanceFrequency",
    inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_MaintenanceFrequencyCode",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19139" = "GMD",
+       "19115-3" = "MMI"
+     )
    ),
    public = list(
       
