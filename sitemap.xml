@@ -103,6 +103,7 @@
 <url><loc>/reference/ISOAbstractPositionalAccuracy.html</loc></url>
 <url><loc>/reference/ISOAbstractPropertyType.html</loc></url>
 <url><loc>/reference/ISOAbstractReferenceSystem.html</loc></url>
+<url><loc>/reference/ISOAbstractResponsibility.html</loc></url>
 <url><loc>/reference/ISOAbstractResult.html</loc></url>
 <url><loc>/reference/ISOAbstractTemporalAccuracy.html</loc></url>
 <url><loc>/reference/ISOAbstractThematicAccuracy.html</loc></url>
@@ -299,6 +300,7 @@
 <url><loc>/reference/ISOReferenceSystem.html</loc></url>
 <url><loc>/reference/ISOReferenceSystemType.html</loc></url>
 <url><loc>/reference/ISORelativeInternalPositionalAccuracy.html</loc></url>
+<url><loc>/reference/ISOReleasability.html</loc></url>
 <url><loc>/reference/ISORepresentativeFraction.html</loc></url>
 <url><loc>/reference/ISOResolution.html</loc></url>
 <url><loc>/reference/ISOResponsibility.html</loc></url>
