@@ -15,7 +15,9 @@
 #'  md$setSpecification("specification")
 #'  
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Format}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd/#element_MD_Format} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -23,7 +25,10 @@ ISOFormat <- R6Class("ISOFormat",
     inherit = ISOAbstractObject,
     private = list(
       xmlElement = "MD_Format",
-      xmlNamespacePrefix = "GMD"
+      xmlNamespacePrefix = list(
+        "19139" = "GMD",
+        "19115-3" = "MRD"
+      )
     ),
     public = list(
       
@@ -37,8 +42,8 @@ ISOFormat <- R6Class("ISOFormat",
       specification = NULL,
       #'@field fileDecompressionTechnique fileDecompressionTechnique [0..1] : CharacterString
       fileDecompressionTechnique = NULL,
-      #'@field FormatDistributor FormatDistributor [0..*]: ISODistributor
-      FormatDistributor = list(),
+      #'@field formatDistributor formatDistributor [0..*]: ISODistributor
+      formatDistributor = list(),
       
       #'@description Initializes object
       #'@param xml object of class \link{XMLInternalNode-class}
@@ -91,7 +96,7 @@ ISOFormat <- R6Class("ISOFormat",
         if(!is(distributor, "ISODistributor")){
           stop("The argument value should an object of class 'ISODistributor")
         }
-        return(self$addListElement("FormatDistributor", distributor))
+        return(self$addListElement("formatDistributor", distributor))
       },
       
       #'@description Deletes distributor
@@ -101,7 +106,7 @@ ISOFormat <- R6Class("ISOFormat",
         if(!is(distributor, "ISODistributor")){
           stop("The argument value should an object of class 'ISODistributor")
         }
-        return(self$delListElement("FormatDistributor", distributor))
+        return(self$delListElement("formatDistributor", distributor))
       }
     )                        
 )

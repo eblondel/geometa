@@ -20,7 +20,9 @@
 #'   xml <- md$encode()
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_DigitalTransferOptions}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd/#element_MD_DigitalTransferOptions}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -28,7 +30,10 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "MD_DigitalTransferOptions",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19139" = "GMD",
+       "19115-3" = "MRD"
+     )
    ),
    public = list(
      #'@field unitsOfDistribution unitsOfDistribution [0..1]: character
@@ -39,6 +44,8 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
      onLine = list(),
      #'@field offLine offLine [0..1]: MD_Medium
      offLine = list(),
+     #'@field distributionFormat distributionFormat [0..*]: ISOFormat (=> ISO 19115-3)
+     distributionFormat = list(),
      
      #'@description Initializes object
      #'@param xml object of class \link{XMLInternalNode-class}
@@ -114,6 +121,28 @@ ISODigitalTransferOptions <- R6Class("ISODigitalTransferOptions",
            stop("The argument should be a 'ISOMedium' object")
         }
         return(self$delListElement("offLine", offlineResource))
+     },
+     
+     #'@description Adds distribution format
+     #'@param distributionFormat object of class \link{ISOFormat}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addDistributionFormat = function(distributionFormat){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(distributionFormat, "ISOFormat")){
+         stop("The argument should be a 'ISOFormat' object")
+       }
+       return(self$addListElement("distributionFormat", distributionFormat))
+     },
+     
+     #'@description Deletes distribution format
+     #'@param distributionFormat object of class \link{ISOFormat}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delDistributionFormat = function(distributionFormat){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(distributionFormat, "ISOFormat")){
+         stop("The argument should be a 'ISOFormat' object")
+       }
+       return(self$delListElement("distributionFormat", distributionFormat))
      }
      
      

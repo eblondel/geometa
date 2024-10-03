@@ -24,7 +24,9 @@ ISOFormat
  
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Format}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd/#element_MD_Format}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -47,7 +49,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{fileDecompressionTechnique}}{fileDecompressionTechnique [0..1] : CharacterString}
 
-\item{\code{FormatDistributor}}{FormatDistributor [0..*]: ISODistributor}
+\item{\code{formatDistributor}}{formatDistributor [0..*]: ISODistributor}
 }
 \if{html}{\out{</div>}}
 }

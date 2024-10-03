@@ -53,7 +53,9 @@ ISODistributor
  
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Distributor}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd/#element_MD_Distributor}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -68,7 +70,11 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \describe{
 \item{\code{distributorContact}}{distributorContact : ISOResponsibleParty}
 
+\item{\code{distributionOrderProcess}}{distributionOrderProcess : ISOStandardOrderProcess}
+
 \item{\code{distributorFormat}}{distributorFormat : ISOFormat}
+
+\item{\code{distributorTransferOptions}}{distributorTransferOptions : ISODigitalTransferOptions}
 }
 \if{html}{\out{</div>}}
 }
@@ -77,8 +83,12 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \itemize{
 \item \href{#method-ISODistributor-new}{\code{ISODistributor$new()}}
 \item \href{#method-ISODistributor-setContact}{\code{ISODistributor$setContact()}}
+\item \href{#method-ISODistributor-addStandardOrderProcess}{\code{ISODistributor$addStandardOrderProcess()}}
+\item \href{#method-ISODistributor-delStandardOrderProcess}{\code{ISODistributor$delStandardOrderProcess()}}
 \item \href{#method-ISODistributor-addFormat}{\code{ISODistributor$addFormat()}}
 \item \href{#method-ISODistributor-delFormat}{\code{ISODistributor$delFormat()}}
+\item \href{#method-ISODistributor-addDigitalTransferOptions}{\code{ISODistributor$addDigitalTransferOptions()}}
+\item \href{#method-ISODistributor-delDigitalTransferOptions}{\code{ISODistributor$delDigitalTransferOptions()}}
 \item \href{#method-ISODistributor-clone}{\code{ISODistributor$clone()}}
 }
 }
@@ -152,6 +162,46 @@ Set contact
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODistributor-addStandardOrderProcess"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODistributor-addStandardOrderProcess}{}}}
+\subsection{Method \code{addStandardOrderProcess()}}{
+Adds standard order process
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODistributor$addStandardOrderProcess(standardOrderProcess)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{standardOrderProcess}}{standardOrderProcess object of class \link{ISOStandardOrderProcess}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODistributor-delStandardOrderProcess"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODistributor-delStandardOrderProcess}{}}}
+\subsection{Method \code{delStandardOrderProcess()}}{
+Deletes standard order process
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODistributor$delStandardOrderProcess(standardOrderProcess)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{standardOrderProcess}}{standardOrderProcess object of class \link{ISOStandardOrderProcess}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ISODistributor-addFormat"></a>}}
 \if{latex}{\out{\hypertarget{method-ISODistributor-addFormat}{}}}
 \subsection{Method \code{addFormat()}}{
@@ -184,6 +234,46 @@ Deletes format
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{format}}{format object of class \link{ISOFormat}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODistributor-addDigitalTransferOptions"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODistributor-addDigitalTransferOptions}{}}}
+\subsection{Method \code{addDigitalTransferOptions()}}{
+Adds digital transfer options
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODistributor$addDigitalTransferOptions(digitalTransferOptions)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{digitalTransferOptions}}{object of class \link{ISODigitalTransferOptions}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODistributor-delDigitalTransferOptions"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODistributor-delDigitalTransferOptions}{}}}
+\subsection{Method \code{delDigitalTransferOptions()}}{
+Deletes digital transfer options
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODistributor$delDigitalTransferOptions(digitalTransferOptions)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{digitalTransferOptions}}{object of class \link{ISODigitalTransferOptions}}
 }
 \if{html}{\out{</div>}}
 }

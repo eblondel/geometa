@@ -24,7 +24,9 @@
 #'   xml <- md$encode()
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Distribution}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd/#element_MD_Distribution}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -32,7 +34,10 @@ ISODistribution <- R6Class("ISODistribution",
    inherit = ISOAbstractObject,
    private = list(
       xmlElement = "MD_Distribution",
-      xmlNamespacePrefix = "GMD"
+      xmlNamespacePrefix = list(
+        "19139" = "GMD",
+        "19115-3" = "MRD"
+      )
    ),
    public = list(
      

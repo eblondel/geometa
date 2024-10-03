@@ -29,7 +29,9 @@ ISODigitalTransferOptions
   
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_DigitalTransferOptions}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd/#element_MD_DigitalTransferOptions}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -49,6 +51,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{onLine}}{onLine [0..*]: ISOOnlineResource}
 
 \item{\code{offLine}}{offLine [0..1]: MD_Medium}
+
+\item{\code{distributionFormat}}{distributionFormat [0..*]: ISOFormat (=> ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }
@@ -64,6 +68,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISODigitalTransferOptions-addOfflineResource}{\code{ISODigitalTransferOptions$addOfflineResource()}}
 \item \href{#method-ISODigitalTransferOptions-setOfflineResource}{\code{ISODigitalTransferOptions$setOfflineResource()}}
 \item \href{#method-ISODigitalTransferOptions-delOfflineResource}{\code{ISODigitalTransferOptions$delOfflineResource()}}
+\item \href{#method-ISODigitalTransferOptions-addDistributionFormat}{\code{ISODigitalTransferOptions$addDistributionFormat()}}
+\item \href{#method-ISODigitalTransferOptions-delDistributionFormat}{\code{ISODigitalTransferOptions$delDistributionFormat()}}
 \item \href{#method-ISODigitalTransferOptions-clone}{\code{ISODigitalTransferOptions$clone()}}
 }
 }
@@ -266,6 +272,46 @@ Deletes offline resource
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{offlineResource}}{object of class \link{ISOMedium}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-addDistributionFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-addDistributionFormat}{}}}
+\subsection{Method \code{addDistributionFormat()}}{
+Adds distribution format
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$addDistributionFormat(distributionFormat)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{distributionFormat}}{object of class \link{ISOFormat}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODigitalTransferOptions-delDistributionFormat"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODigitalTransferOptions-delDistributionFormat}{}}}
+\subsection{Method \code{delDistributionFormat()}}{
+Deletes distribution format
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODigitalTransferOptions$delDistributionFormat(distributionFormat)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{distributionFormat}}{object of class \link{ISOFormat}}
 }
 \if{html}{\out{</div>}}
 }
