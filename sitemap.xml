@@ -137,6 +137,7 @@
 <url><loc>/reference/ISOAnchor.html</loc></url>
 <url><loc>/reference/ISOAngle.html</loc></url>
 <url><loc>/reference/ISOApplicationSchemaInformation.html</loc></url>
+<url><loc>/reference/ISOAssociatedResource.html</loc></url>
 <url><loc>/reference/ISOAssociation.html</loc></url>
 <url><loc>/reference/ISOAssociationRole.html</loc></url>
 <url><loc>/reference/ISOAssociationType.html</loc></url>
@@ -269,6 +270,7 @@
 <url><loc>/reference/ISOInheritanceRelation.html</loc></url>
 <url><loc>/reference/ISOInitiative.html</loc></url>
 <url><loc>/reference/ISOInitiativeType.html</loc></url>
+<url><loc>/reference/ISOKeywordClass.html</loc></url>
 <url><loc>/reference/ISOKeywordType.html</loc></url>
 <url><loc>/reference/ISOKeywords.html</loc></url>
 <url><loc>/reference/ISOLanguage.html</loc></url>
