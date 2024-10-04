@@ -535,10 +535,8 @@ value among those returned by <code>ISODatatype$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setDomainCode</span><span class="op">(</span><span class="fl">1L</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setDefinition</span><span class="op">(</span><span class="st">"some definition"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setObligation</span><span class="op">(</span><span class="st">"mandatory"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setCondition</span><span class="op">(</span><span class="st">"no condition"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setDatatype</span><span class="op">(</span><span class="st">"characterString"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setMaximumOccurrence</span><span class="op">(</span><span class="st">"string"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setDomainValue</span><span class="op">(</span><span class="st">"value"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addParentEntity</span><span class="op">(</span><span class="st">"none"</span><span class="op">)</span></span></span>
@@ -553,7 +551,6 @@ value among those returned by <code>ISODatatype$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setOrganisationName</span><span class="op">(</span><span class="st">"somewhere"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setPositionName</span><span class="op">(</span><span class="st">"someposition"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setRole</span><span class="op">(</span><span class="st">"pointOfContact"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">contact</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOContact.html">ISOContact</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">phone</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOTelephone.html">ISOTelephone</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">phone</span><span class="op">$</span><span class="fu">setVoice</span><span class="op">(</span><span class="st">"myphonenumber"</span><span class="op">)</span></span></span>
@@ -576,8 +573,7 @@ value among those returned by <code>ISODatatype$values()</code></p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  </span></span>
 <span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmd}CI_ResponsibleParty': Missing child element(s). Expected is ( {http://www.isotc211.org/2005/gmd}role ) at line 34. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOExtendedElementInformation' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISOExtendedElementInformation' is VALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span>  </span></span>
 </code></pre></div>
     </div>

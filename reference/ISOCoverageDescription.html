@@ -244,7 +244,6 @@ ISOCoverageDescription"><!-- mathjax --><script src="https://cdnjs.cloudflare.co
 <span class="r-in"><span>   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOCoverageDescription</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setAttributeDescription</span><span class="op">(</span><span class="st">"test"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">setContentType</span><span class="op">(</span><span class="st">"modelResult"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#adding 3 arbitrary dimensions</span></span></span>
 <span class="r-in"><span>   <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span></span>
@@ -271,8 +270,7 @@ ISOCoverageDescription"><!-- mathjax --><script src="https://cdnjs.cloudflare.co
 <span class="r-in"><span>      <span class="va">md</span><span class="op">$</span><span class="fu">addDimension</span><span class="op">(</span><span class="va">band</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="op">}</span></span></span>
 <span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmd}dimension': This element is not expected. Expected is ( {http://www.isotc211.org/2005/gmd}contentType ) at line 5. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOCoverageDescription' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISOCoverageDescription' is VALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span>   </span></span>
 </code></pre></div>
     </div>
