@@ -63,6 +63,7 @@ cov_summary_md$Coverage <- sapply(1:nrow(cov_summary_md), function(i){
 })
 cov_summary_md$coverage_class <- NULL
 cov_summary_md <- cov_summary_md[,c("Specification", "Schema", "Title","Namespace","Coverage","Supported","Missing", "Refactored", "Torefactor")]
+cov_summary_md[cov_summary_md$Specification == "ISO/TS 19115-3:2023",]$Specification = paste(cov_summary_md[cov_summary_md$Specification == "ISO/TS 19115-3:2023",]$Specification, emo::ji("new"))
 row.names(cov_summary_md) <- NULL
 cov_kable <- kableExtra::kable(cov_summary_md, format = "markdown")
 kableExtra::save_kable(cov_kable, file = file.path(getwd(), "inst/extdata/coverage/geometa_coverage_summary.md"))
