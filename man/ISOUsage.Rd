@@ -16,7 +16,9 @@ ISOUsage
 ISOUsage
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Usage}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mri/1.0/mri/#element_MD_Usage}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -173,7 +175,8 @@ Adds user contact
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{contact}}{object of class \link{ISOResponsibleParty}}
+\item{\code{contact}}{object of class \link{ISOResponsibleParty} (in ISO 19139) 
+or \link{ISOAbstractResponsibility} (in ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }
@@ -193,7 +196,8 @@ Deletes user contact
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{contact}}{object of class \link{ISOResponsibleParty}}
+\item{\code{contact}}{object of class \link{ISOResponsibleParty} (in ISO 19139) 
+or \link{ISOAbstractResponsibility} (in ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }

@@ -14,7 +14,9 @@
 #'   xml2 <- fr$encode()
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_RepresentativeFraction}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mri/1.0/mri/#element_MD_RepresentativeFraction}
 #'  
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -22,7 +24,10 @@ ISORepresentativeFraction <- R6Class("ISORepresentativeFraction",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "MD_RepresentativeFraction",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19139" = "GMD",
+      "19115-3" = "MRI"
+    )
   ),
   public = list(
     #'@field denominator denominator

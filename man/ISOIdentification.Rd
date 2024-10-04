@@ -16,7 +16,9 @@ ISOIdentification
 ISOIdentification
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractMD_Identification}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mri/1.0/mri/#element_AbstractMD_Identification}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -51,7 +53,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{resourceConstraints}}{resourceConstraints [0..*]: ISOLegalConstraints}
 
-\item{\code{resourceSpecificUsage}}{resourceSpecificUsage [0..*]: MD_Usage (ISOUsage - to implement)}
+\item{\code{resourceSpecificUsage}}{resourceSpecificUsage [0..*]: ISOUsage}
 
 \item{\code{aggregationInfo}}{aggregationInfo [0..*]: ISOAggregateInformation}
 }
@@ -84,6 +86,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOIdentification-addResourceConstraints}{\code{ISOIdentification$addResourceConstraints()}}
 \item \href{#method-ISOIdentification-setResourceConstraints}{\code{ISOIdentification$setResourceConstraints()}}
 \item \href{#method-ISOIdentification-delResourceConstraints}{\code{ISOIdentification$delResourceConstraints()}}
+\item \href{#method-ISOIdentification-addResourceSpecificUsage}{\code{ISOIdentification$addResourceSpecificUsage()}}
+\item \href{#method-ISOIdentification-delResourceSpecificUsage}{\code{ISOIdentification$delResourceSpecificUsage()}}
 \item \href{#method-ISOIdentification-addAggregateInformation}{\code{ISOIdentification$addAggregateInformation()}}
 \item \href{#method-ISOIdentification-delAggregateInformation}{\code{ISOIdentification$delAggregateInformation()}}
 \item \href{#method-ISOIdentification-clone}{\code{ISOIdentification$clone()}}
@@ -597,6 +601,46 @@ Deletes resource constraints
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{resourceConstraints}}{object of class \link{ISOConstraints}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-addResourceSpecificUsage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-addResourceSpecificUsage}{}}}
+\subsection{Method \code{addResourceSpecificUsage()}}{
+Adds resource specific usage
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$addResourceSpecificUsage(usage)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{usage}}{object of class \link{ISOUsage}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOIdentification-delResourceSpecificUsage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOIdentification-delResourceSpecificUsage}{}}}
+\subsection{Method \code{delResourceSpecificUsage()}}{
+Deletes resource specific usage
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOIdentification$delResourceSpecificUsage(usage)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{usage}}{object of class \link{ISOUsage}}
 }
 \if{html}{\out{</div>}}
 }
