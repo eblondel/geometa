@@ -14,7 +14,7 @@
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for Resource Content (MRC) Version: 1.0","MRC",16,3,16,3,84.21
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for Resource Distribution (MRD) Version: 1.0","MRD",7,0,7,0,100
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for Resource Identification (MRI) Version: 1.0","MRI",12,0,12,0,100
-"ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for Resource Lineage (MRL) Version: 2.0","MRL",0,11,0,11,0
+"ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for Resource Lineage (MRL) Version: 2.0","MRL",3,8,3,8,27.27
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for Reference Systems (MRS) Version: 1.0","MRS",2,0,2,0,100
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for Spatial Representation (MSR) Version: 2.0","MSR",0,17,0,17,0
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for SeRVices (SRV) Version: 2.0","SRV",7,1,0,8,87.5
@@ -23,7 +23,7 @@
 "ISO/TS 19115-3:2023","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT",2,15,2,15,11.76
 "ISO/TS 19115-3:2023","ISO/TS 19139:2007","Feature Catalog Common (FCC) Version: 1.0","FCC",0,2,0,2,0
 "ISO/TS 19139:2007","ISO 19110:2005","Geographic Information - Methodology for feature cataloguing","GFC",17,0,0,17,100
-"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD",132,0,68,64,100
+"ISO/TS 19139:2007","ISO 19115-1:2003","Geographic Information - Metadata","GMD",132,0,71,61,100
 "ISO/TS 19139:2007","ISO 19115-2:2009","Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data","GMI",40,0,7,33,100
 "ISO/TS 19139:2007","ISO 19119:2005","Geographic Information - Service Metadata","SRV",7,12,0,19,36.84
 "ISO/TS 19139:2007","ISO/TS 19103:2005","Geographic Common extensible markup language","GCO",22,0,22,0,100
