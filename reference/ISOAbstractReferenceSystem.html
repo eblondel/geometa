@@ -58,15 +58,11 @@ ISOAbstractReferenceSystem"><!-- mathjax --><script src="https://cdnjs.cloudflar
     </div>
     <div id="value">
     <h2>Value</h2>
-    <p>Object of <code>R6Class</code> for modelling an ISO abstract RS Reference system</p>
-    </div>
-    <div id="note">
-    <h2>Note</h2>
-    <p>abstract class</p>
+    <p>Object of <code>R6Class</code> for modelling an ISO abstract parameter</p>
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_ReferenceSystem" class="external-link">https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_ReferenceSystem</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -76,18 +72,6 @@ ISOAbstractReferenceSystem"><!-- mathjax --><script src="https://cdnjs.cloudflar
     <h2>Super classes</h2>
     <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code>ISOAbstractReferenceSystem</code></p>
     </div>
-    <div id="public-fields">
-    <h2>Public fields</h2>
-    <p></p><div class="r6-fields"><dl><dt><code>name</code></dt>
-<dd><p>name</p></dd>
-
-
-<dt><code>domainOfValidity</code></dt>
-<dd><p>domain of validity</p></dd>
-
-
-</dl><p></p></div>
-    </div>
     <div id="methods">
     <h2>Methods</h2>
 
@@ -95,9 +79,6 @@ ISOAbstractReferenceSystem"><!-- mathjax --><script src="https://cdnjs.cloudflar
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOAbstractReferenceSystem-new"><code>ISOAbstractReferenceSystem$new()</code></a></p></li>
-<li><p><a href="#method-ISOAbstractReferenceSystem-setName"><code>ISOAbstractReferenceSystem$setName()</code></a></p></li>
-<li><p><a href="#method-ISOAbstractReferenceSystem-addDomainOfValidity"><code>ISOAbstractReferenceSystem$addDomainOfValidity()</code></a></p></li>
-<li><p><a href="#method-ISOAbstractReferenceSystem-delDomainOfValidity"><code>ISOAbstractReferenceSystem$delDomainOfValidity()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractReferenceSystem-clone"><code>ISOAbstractReferenceSystem$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -144,71 +125,15 @@ ISOAbstractReferenceSystem"><!-- mathjax --><script src="https://cdnjs.cloudflar
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOAbstractReferenceSystem-setName"></a><div class="section">
-<h3 id="method-setname-">Method <code>setName()</code><a class="anchor" aria-label="anchor" href="#method-setname-"></a></h3>
-<p>Set name</p><div class="section">
-<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractReferenceSystem</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>name</code></dt>
-<dd><p>name, object of class <a href="ISOReferenceIdentifier.html">ISOReferenceIdentifier</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
-</div><p></p><hr><a id="method-ISOAbstractReferenceSystem-addDomainOfValidity"></a><div class="section">
-<h3 id="method-adddomainofvalidity-">Method <code>addDomainOfValidity()</code><a class="anchor" aria-label="anchor" href="#method-adddomainofvalidity-"></a></h3>
-<p>Adds domain of validity</p><div class="section">
-<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractReferenceSystem</span><span class="op">$</span><span class="fu">addDomainOfValidity</span><span class="op">(</span><span class="va">domainOfValidity</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>domainOfValidity</code></dt>
-<dd><p>object of class <a href="ISOExtent.html">ISOExtent</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOAbstractReferenceSystem-delDomainOfValidity"></a><div class="section">
-<h3 id="method-deldomainofvalidity-">Method <code>delDomainOfValidity()</code><a class="anchor" aria-label="anchor" href="#method-deldomainofvalidity-"></a></h3>
-<p>Deletes domain of validity</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractReferenceSystem</span><span class="op">$</span><span class="fu">delDomainOfValidity</span><span class="op">(</span><span class="va">domainOfValidity</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>domainOfValidity</code></dt>
-<dd><p>object of class <a href="ISOExtent.html">ISOExtent</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
-</div>
-
 </div><p></p><hr><a id="method-ISOAbstractReferenceSystem-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractReferenceSystem</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

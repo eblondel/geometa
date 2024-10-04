@@ -66,7 +66,8 @@ ISOConstraints"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 <a href="https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Constraints" class="external-link">https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Constraints</a></p>
+<p>- ISO 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mco/1.0/mco/#element_MD_Constraints" class="external-link">https://schemas.isotc211.org/19115/-3/mco/1.0/mco/#element_MD_Constraints</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -82,6 +83,26 @@ ISOConstraints"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 <dd><p>useLimitation [0..*]: character</p></dd>
 
 
+<dt><code>constraintApplicationScope</code></dt>
+<dd><p>constraintApplicationScope [0..1]: ISOScope (=&gt; ISO 19115-3)</p></dd>
+
+
+<dt><code>graphic</code></dt>
+<dd><p>graphic [0..*]: ISOBrowseGraphic (=&gt; ISO 19115-3)</p></dd>
+
+
+<dt><code>reference</code></dt>
+<dd><p>reference [0..*]: ISOCitation (=&gt; ISO 19115-3)</p></dd>
+
+
+<dt><code>releasability</code></dt>
+<dd><p>releasability [0..1]: ISOReleasability (=&gt; ISO 19115-3)</p></dd>
+
+
+<dt><code>responsibleParty</code></dt>
+<dd><p>responsibleParty [0..*]: ISOAbstractResponsibility (=&gt; ISO 19115-3)</p></dd>
+
+
 </dl><p></p></div>
     </div>
     <div id="methods">
@@ -94,6 +115,14 @@ ISOConstraints"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 <li><p><a href="#method-ISOConstraints-addUseLimitation"><code>ISOConstraints$addUseLimitation()</code></a></p></li>
 <li><p><a href="#method-ISOConstraints-setUseLimitation"><code>ISOConstraints$setUseLimitation()</code></a></p></li>
 <li><p><a href="#method-ISOConstraints-delUseLimitation"><code>ISOConstraints$delUseLimitation()</code></a></p></li>
+<li><p><a href="#method-ISOConstraints-setScope"><code>ISOConstraints$setScope()</code></a></p></li>
+<li><p><a href="#method-ISOConstraints-addGraphic"><code>ISOConstraints$addGraphic()</code></a></p></li>
+<li><p><a href="#method-ISOConstraints-delGraphic"><code>ISOConstraints$delGraphic()</code></a></p></li>
+<li><p><a href="#method-ISOConstraints-addReference"><code>ISOConstraints$addReference()</code></a></p></li>
+<li><p><a href="#method-ISOConstraints-delReference"><code>ISOConstraints$delReference()</code></a></p></li>
+<li><p><a href="#method-ISOConstraints-setReleasability"><code>ISOConstraints$setReleasability()</code></a></p></li>
+<li><p><a href="#method-ISOConstraints-addResponsibleParty"><code>ISOConstraints$addResponsibleParty()</code></a></p></li>
+<li><p><a href="#method-ISOConstraints-delResponsibleParty"><code>ISOConstraints$delResponsibleParty()</code></a></p></li>
 <li><p><a href="#method-ISOConstraints-clone"><code>ISOConstraints$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -212,15 +241,167 @@ ISOConstraints"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOConstraints-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISOConstraints-setScope"></a><div class="section">
+<h3 id="method-setscope-">Method <code>setScope()</code><a class="anchor" aria-label="anchor" href="#method-setscope-"></a></h3>
+<p>Set scope</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">setScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>scope</code></dt>
+<dd><p>object of class <a href="ISOScope.html">ISOScope</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOConstraints-addGraphic"></a><div class="section">
+<h3 id="method-addgraphic-">Method <code>addGraphic()</code><a class="anchor" aria-label="anchor" href="#method-addgraphic-"></a></h3>
+<p>Adds a graphic</p><div class="section">
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">addGraphic</span><span class="op">(</span><span class="va">graphic</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>graphic</code></dt>
+<dd><p>graphic</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOConstraints-delGraphic"></a><div class="section">
+<h3 id="method-delgraphic-">Method <code>delGraphic()</code><a class="anchor" aria-label="anchor" href="#method-delgraphic-"></a></h3>
+<p>Deletes a graphic</p><div class="section">
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">delGraphic</span><span class="op">(</span><span class="va">graphic</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>graphic</code></dt>
+<dd><p>graphic</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOConstraints-addReference"></a><div class="section">
+<h3 id="method-addreference-">Method <code>addReference()</code><a class="anchor" aria-label="anchor" href="#method-addreference-"></a></h3>
+<p>Adds a reference</p><div class="section">
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">addReference</span><span class="op">(</span><span class="va">reference</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>reference</code></dt>
+<dd><p>reference</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-4">Returns<a class="anchor" aria-label="anchor" href="#returns-4"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOConstraints-delReference"></a><div class="section">
+<h3 id="method-delreference-">Method <code>delReference()</code><a class="anchor" aria-label="anchor" href="#method-delreference-"></a></h3>
+<p>Deletes a reference</p><div class="section">
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">delReference</span><span class="op">(</span><span class="va">reference</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>reference</code></dt>
+<dd><p>reference</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-5">Returns<a class="anchor" aria-label="anchor" href="#returns-5"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOConstraints-setReleasability"></a><div class="section">
+<h3 id="method-setreleasability-">Method <code>setReleasability()</code><a class="anchor" aria-label="anchor" href="#method-setreleasability-"></a></h3>
+<p>Set releasbility</p><div class="section">
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">setReleasability</span><span class="op">(</span><span class="va">releasability</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>releasability</code></dt>
+<dd><p>object of class <a href="ISOReleasability.html">ISOReleasability</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOConstraints-addResponsibleParty"></a><div class="section">
+<h3 id="method-addresponsibleparty-">Method <code>addResponsibleParty()</code><a class="anchor" aria-label="anchor" href="#method-addresponsibleparty-"></a></h3>
+<p>Adds a responsible party</p><div class="section">
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">addResponsibleParty</span><span class="op">(</span><span class="va">party</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>party</code></dt>
+<dd><p>party object of class inheriting <a href="ISOAbstractResponsibility.html">ISOAbstractResponsibility</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-6">Returns<a class="anchor" aria-label="anchor" href="#returns-6"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOConstraints-delResponsibleParty"></a><div class="section">
+<h3 id="method-delresponsibleparty-">Method <code>delResponsibleParty()</code><a class="anchor" aria-label="anchor" href="#method-delresponsibleparty-"></a></h3>
+<p>Deletes a responsible party</p><div class="section">
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">delResponsibleParty</span><span class="op">(</span><span class="va">party</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>party</code></dt>
+<dd><p>party object of class inheriting <a href="ISOAbstractResponsibility.html">ISOAbstractResponsibility</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-7">Returns<a class="anchor" aria-label="anchor" href="#returns-7"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOConstraints-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConstraints</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

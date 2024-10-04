@@ -54,16 +54,15 @@ ISOScope"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/ma
 
     <div id="format">
     <h2>Format</h2>
-    <p><code>R6Class</code> object</p>
+    <p><code>R6Class</code> object.</p>
     </div>
     <div id="value">
     <h2>Value</h2>
-    <p>Object of <code>R6Class</code> for modelling an ISO Scope</p>
-<p>Object of <code>R6Class</code> for modelling an ISO Scope</p>
+    <p>Object of <code>R6Class</code> for modelling a scope</p>
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mco/1.0/mco/#element_MD_Scope" class="external-link">https://schemas.isotc211.org/19115/-3/mco/1.0/mco/#element_MD_Scope</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -71,7 +70,23 @@ ISOScope"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/ma
     </div>
     <div id="super-classes">
     <h2>Super classes</h2>
-    <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code>geometa::ISOCodeListValue</code> -&gt; <code>ISOScope</code></p>
+    <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code>ISOScope</code></p>
+    </div>
+    <div id="public-fields">
+    <h2>Public fields</h2>
+    <p></p><div class="r6-fields"><dl><dt><code>level</code></dt>
+<dd><p>level [0..1]: ISOScope</p></dd>
+
+
+<dt><code>extent</code></dt>
+<dd><p>extent [0..*]: ISOAbstractExtent</p></dd>
+
+
+<dt><code>levelDescription</code></dt>
+<dd><p>levelDescription [0..*]: ISOScopeDescription</p></dd>
+
+
+</dl><p></p></div>
     </div>
     <div id="methods">
     <h2>Methods</h2>
@@ -80,6 +95,11 @@ ISOScope"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/ma
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOScope-new"><code>ISOScope$new()</code></a></p></li>
+<li><p><a href="#method-ISOScope-setLevel"><code>ISOScope$setLevel()</code></a></p></li>
+<li><p><a href="#method-ISOScope-addExtent"><code>ISOScope$addExtent()</code></a></p></li>
+<li><p><a href="#method-ISOScope-delExtent"><code>ISOScope$delExtent()</code></a></p></li>
+<li><p><a href="#method-ISOScope-addLevelDescription"><code>ISOScope$addLevelDescription()</code></a></p></li>
+<li><p><a href="#method-ISOScope-delLevelDescription"><code>ISOScope$delLevelDescription()</code></a></p></li>
 <li><p><a href="#method-ISOScope-clone"><code>ISOScope$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -110,12 +130,11 @@ ISOScope"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/ma
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="stopIfMetadataStandardIsNot"><a href="ISOAbstractObject.html#method-stopIfMetadataStandardIsNot"><code>geometa::ISOAbstractObject$stopIfMetadataStandardIsNot()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href="ISOAbstractObject.html#method-validate"><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href="ISOAbstractObject.html#method-wrapBaseElement"><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCodeListValue" data-id="getAcceptedValues"><a href="ISOCodeListValue.html#method-getAcceptedValues"><code>geometa::ISOCodeListValue$getAcceptedValues()</code></a></span></li>
 </ul></details></p><hr><a id="method-ISOScope-new"></a><div class="section">
 <h3 id="method-new-">Method <code><a href="https://rdrr.io/r/methods/new.html" class="external-link">new()</a></code><a class="anchor" aria-label="anchor" href="#method-new-"></a></h3>
 <p>Initializes object</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/ISOScope.html">ISOScope</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">value</span>, description <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/ISOScope.html">ISOScope</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -124,26 +143,115 @@ ISOScope"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/ma
 <dd><p>object of class <a href="https://rdrr.io/pkg/XML/man/XMLNode-class.html" class="external-link">XMLInternalNode-class</a></p></dd>
 
 
-<dt><code>value</code></dt>
-<dd><p>value</p></dd>
+</dl><p></p></div>
+</div>
 
+</div><p></p><hr><a id="method-ISOScope-setLevel"></a><div class="section">
+<h3 id="method-setlevel-">Method <code>setLevel()</code><a class="anchor" aria-label="anchor" href="#method-setlevel-"></a></h3>
+<p>Set level</p><div class="section">
+<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOScope</span><span class="op">$</span><span class="fu">setLevel</span><span class="op">(</span><span class="va">level</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
 
-<dt><code>description</code></dt>
-<dd><p>description</p></dd>
+<div class="section">
+<h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>level</code></dt>
+<dd><p>scope code, object of class <a href="ISOScopeCode.html">ISOScopeCode</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> among values
+listed by <code>ISOScopeCode$values()</code></p></dd>
 
 
 </dl><p></p></div>
 </div>
 
+</div><p></p><hr><a id="method-ISOScope-addExtent"></a><div class="section">
+<h3 id="method-addextent-">Method <code>addExtent()</code><a class="anchor" aria-label="anchor" href="#method-addextent-"></a></h3>
+<p>Adds extent</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOScope</span><span class="op">$</span><span class="fu">addExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>extent</code></dt>
+<dd><p>extent of class <a href="ISOAbstractExtent.html">ISOAbstractExtent</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOScope-delExtent"></a><div class="section">
+<h3 id="method-delextent-">Method <code>delExtent()</code><a class="anchor" aria-label="anchor" href="#method-delextent-"></a></h3>
+<p>Deletes extent</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOScope</span><span class="op">$</span><span class="fu">delExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>extent</code></dt>
+<dd><p>extent of class <a href="ISOAbstractExtent.html">ISOAbstractExtent</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOScope-addLevelDescription"></a><div class="section">
+<h3 id="method-addleveldescription-">Method <code>addLevelDescription()</code><a class="anchor" aria-label="anchor" href="#method-addleveldescription-"></a></h3>
+<p>Adds level description</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOScope</span><span class="op">$</span><span class="fu">addLevelDescription</span><span class="op">(</span><span class="va">levelDescription</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>levelDescription</code></dt>
+<dd><p>levelDescription of class <a href="ISOScopeDescription.html">ISOScopeDescription</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOScope-delLevelDescription"></a><div class="section">
+<h3 id="method-delleveldescription-">Method <code>delLevelDescription()</code><a class="anchor" aria-label="anchor" href="#method-delleveldescription-"></a></h3>
+<p>Deletes level description</p><div class="section">
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOScope</span><span class="op">$</span><span class="fu">delLevelDescription</span><span class="op">(</span><span class="va">levelDescription</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>levelDescription</code></dt>
+<dd><p>levelDescription of class <a href="ISOScopeDescription.html">ISOScopeDescription</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
 </div><p></p><hr><a id="method-ISOScope-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOScope</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
@@ -155,18 +263,6 @@ ISOScope"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/ma
 
     </div>
 
-    <div id="ref-examples">
-    <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co">#possible values</span></span></span>
-<span class="r-in"><span>  <span class="va">values</span> <span class="op">&lt;-</span> <span class="va">ISOScope</span><span class="op">$</span><span class="fu">values</span><span class="op">(</span>labels <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in x$identifier$value:</span> $ operator is invalid for atomic vectors</span>
-<span class="r-in"><span>  </span></span>
-<span class="r-in"><span>  <span class="co">#dataset scope</span></span></span>
-<span class="r-in"><span>  <span class="va">ds</span> <span class="op">&lt;-</span> <span class="va">ISOScope</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>value <span class="op">=</span> <span class="st">"dataset"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
-<span class="r-in"><span></span></span>
-</code></pre></div>
-    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
