@@ -165,6 +165,6 @@ ISOConstraints<- R6Class("ISOConstraints",
         stop("The argument 'party' should be an object inheriting class 'ISOAbstractResponsibility'")
       }
       return(self$delListElement("responsibleParty", party))
-    },
+    }
   )                                          
 )
