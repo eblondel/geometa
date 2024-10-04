@@ -62,7 +62,8 @@ ISOIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 <a href="https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractMD_Identification" class="external-link">https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractMD_Identification</a></p>
+<p>- ISO 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mri/1.0/mri/#element_AbstractMD_Identification" class="external-link">https://schemas.isotc211.org/19115/-3/mri/1.0/mri/#element_AbstractMD_Identification</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -119,7 +120,7 @@ ISOIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 
 
 <dt><code>resourceSpecificUsage</code></dt>
-<dd><p>resourceSpecificUsage [0..*]: MD_Usage (ISOUsage - to implement)</p></dd>
+<dd><p>resourceSpecificUsage [0..*]: ISOUsage</p></dd>
 
 
 <dt><code>aggregationInfo</code></dt>
@@ -158,6 +159,8 @@ ISOIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 <li><p><a href="#method-ISOIdentification-addResourceConstraints"><code>ISOIdentification$addResourceConstraints()</code></a></p></li>
 <li><p><a href="#method-ISOIdentification-setResourceConstraints"><code>ISOIdentification$setResourceConstraints()</code></a></p></li>
 <li><p><a href="#method-ISOIdentification-delResourceConstraints"><code>ISOIdentification$delResourceConstraints()</code></a></p></li>
+<li><p><a href="#method-ISOIdentification-addResourceSpecificUsage"><code>ISOIdentification$addResourceSpecificUsage()</code></a></p></li>
+<li><p><a href="#method-ISOIdentification-delResourceSpecificUsage"><code>ISOIdentification$delResourceSpecificUsage()</code></a></p></li>
 <li><p><a href="#method-ISOIdentification-addAggregateInformation"><code>ISOIdentification$addAggregateInformation()</code></a></p></li>
 <li><p><a href="#method-ISOIdentification-delAggregateInformation"><code>ISOIdentification$delAggregateInformation()</code></a></p></li>
 <li><p><a href="#method-ISOIdentification-clone"><code>ISOIdentification$clone()</code></a></p></li>
@@ -676,17 +679,17 @@ values returned by <code>ISOProgress$values()</code></p></dd>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOIdentification-addAggregateInformation"></a><div class="section">
-<h3 id="method-addaggregateinformation-">Method <code>addAggregateInformation()</code><a class="anchor" aria-label="anchor" href="#method-addaggregateinformation-"></a></h3>
-<p>Adds aggregate information</p><div class="section">
+</div><p></p><hr><a id="method-ISOIdentification-addResourceSpecificUsage"></a><div class="section">
+<h3 id="method-addresourcespecificusage-">Method <code>addResourceSpecificUsage()</code><a class="anchor" aria-label="anchor" href="#method-addresourcespecificusage-"></a></h3>
+<p>Adds resource specific usage</p><div class="section">
 <h4 id="usage-24">Usage<a class="anchor" aria-label="anchor" href="#usage-24"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOIdentification</span><span class="op">$</span><span class="fu">addAggregateInformation</span><span class="op">(</span><span class="va">aggregateInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOIdentification</span><span class="op">$</span><span class="fu">addResourceSpecificUsage</span><span class="op">(</span><span class="va">usage</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-24">Arguments<a class="anchor" aria-label="anchor" href="#arguments-24"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>aggregateInfo</code></dt>
-<dd><p>object of class <a href="ISOAggregateInformation.html">ISOAggregateInformation</a></p></dd>
+<p></p><div class="arguments"><dl><dt><code>usage</code></dt>
+<dd><p>object of class <a href="ISOUsage.html">ISOUsage</a></p></dd>
 
 
 </dl><p></p></div>
@@ -696,17 +699,17 @@ values returned by <code>ISOProgress$values()</code></p></dd>
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOIdentification-delAggregateInformation"></a><div class="section">
-<h3 id="method-delaggregateinformation-">Method <code>delAggregateInformation()</code><a class="anchor" aria-label="anchor" href="#method-delaggregateinformation-"></a></h3>
-<p>Deletes aggregate information</p><div class="section">
+</div><p></p><hr><a id="method-ISOIdentification-delResourceSpecificUsage"></a><div class="section">
+<h3 id="method-delresourcespecificusage-">Method <code>delResourceSpecificUsage()</code><a class="anchor" aria-label="anchor" href="#method-delresourcespecificusage-"></a></h3>
+<p>Deletes resource specific usage</p><div class="section">
 <h4 id="usage-25">Usage<a class="anchor" aria-label="anchor" href="#usage-25"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOIdentification</span><span class="op">$</span><span class="fu">delAggregateInformation</span><span class="op">(</span><span class="va">aggregateInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOIdentification</span><span class="op">$</span><span class="fu">delResourceSpecificUsage</span><span class="op">(</span><span class="va">usage</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-25">Arguments<a class="anchor" aria-label="anchor" href="#arguments-25"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>aggregateInfo</code></dt>
-<dd><p>object of class <a href="ISOAggregateInformation.html">ISOAggregateInformation</a></p></dd>
+<p></p><div class="arguments"><dl><dt><code>usage</code></dt>
+<dd><p>object of class <a href="ISOUsage.html">ISOUsage</a></p></dd>
 
 
 </dl><p></p></div>
@@ -716,15 +719,55 @@ values returned by <code>ISOProgress$values()</code></p></dd>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOIdentification-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISOIdentification-addAggregateInformation"></a><div class="section">
+<h3 id="method-addaggregateinformation-">Method <code>addAggregateInformation()</code><a class="anchor" aria-label="anchor" href="#method-addaggregateinformation-"></a></h3>
+<p>Adds aggregate information</p><div class="section">
 <h4 id="usage-26">Usage<a class="anchor" aria-label="anchor" href="#usage-26"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOIdentification</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOIdentification</span><span class="op">$</span><span class="fu">addAggregateInformation</span><span class="op">(</span><span class="va">aggregateInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-26">Arguments<a class="anchor" aria-label="anchor" href="#arguments-26"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>aggregateInfo</code></dt>
+<dd><p>object of class <a href="ISOAggregateInformation.html">ISOAggregateInformation</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-22">Returns<a class="anchor" aria-label="anchor" href="#returns-22"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOIdentification-delAggregateInformation"></a><div class="section">
+<h3 id="method-delaggregateinformation-">Method <code>delAggregateInformation()</code><a class="anchor" aria-label="anchor" href="#method-delaggregateinformation-"></a></h3>
+<p>Deletes aggregate information</p><div class="section">
+<h4 id="usage-27">Usage<a class="anchor" aria-label="anchor" href="#usage-27"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOIdentification</span><span class="op">$</span><span class="fu">delAggregateInformation</span><span class="op">(</span><span class="va">aggregateInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-27">Arguments<a class="anchor" aria-label="anchor" href="#arguments-27"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>aggregateInfo</code></dt>
+<dd><p>object of class <a href="ISOAggregateInformation.html">ISOAggregateInformation</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-23">Returns<a class="anchor" aria-label="anchor" href="#returns-23"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOIdentification-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-28">Usage<a class="anchor" aria-label="anchor" href="#usage-28"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOIdentification</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-28">Arguments<a class="anchor" aria-label="anchor" href="#arguments-28"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
