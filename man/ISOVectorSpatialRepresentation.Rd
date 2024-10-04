@@ -26,7 +26,9 @@ ISOVectorSpatialRepresentation
   
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_VectorSpatialRepresentation}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MD_VectorSpatialRepresentation}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -34,7 +36,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{address}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOSpatialRepresentation]{geometa::ISOSpatialRepresentation}} -> \code{ISOVectorSpatialRepresentation}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractSpatialRepresentation]{geometa::ISOAbstractSpatialRepresentation}} -> \code{\link[geometa:ISOSpatialRepresentation]{geometa::ISOSpatialRepresentation}} -> \code{ISOVectorSpatialRepresentation}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

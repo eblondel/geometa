@@ -24,7 +24,9 @@ ISOTopologyLevel
   
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_TopologyLevelCode}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MD_TopologyLevelCode}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

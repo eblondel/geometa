@@ -16,7 +16,9 @@ ISOImageryGeoreferenceable
 ISOImageryGeoreferenceable
 }
 \references{
-ISO 19115-2:2009 - Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data
+- ISO 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Georeferenceable}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MI_Georeferenceable}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -25,7 +27,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{imagery}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOSpatialRepresentation]{geometa::ISOSpatialRepresentation}} -> \code{\link[geometa:ISOGridSpatialRepresentation]{geometa::ISOGridSpatialRepresentation}} -> \code{\link[geometa:ISOGeoreferenceable]{geometa::ISOGeoreferenceable}} -> \code{ISOImageryGeoreferenceable}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractSpatialRepresentation]{geometa::ISOAbstractSpatialRepresentation}} -> \code{\link[geometa:ISOSpatialRepresentation]{geometa::ISOSpatialRepresentation}} -> \code{\link[geometa:ISOGridSpatialRepresentation]{geometa::ISOGridSpatialRepresentation}} -> \code{\link[geometa:ISOGeoreferenceable]{geometa::ISOGeoreferenceable}} -> \code{ISOImageryGeoreferenceable}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

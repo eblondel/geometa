@@ -31,7 +31,9 @@
 #'   xml <- md$encode()
 #' 
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Georeferenceable}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MD_Georeferenceable}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -39,7 +41,10 @@ ISOGeoreferenceable <- R6Class("ISOGeoreferenceable",
     inherit = ISOGridSpatialRepresentation,
     private = list(
       xmlElement = "MD_Georeferenceable",
-      xmlNamespacePrefix = "GMD"
+      xmlNamespacePrefix = list(
+        "19139" = "GMD",
+        "19115-3" = "MSR"
+      )
     ),
     public = list(
       

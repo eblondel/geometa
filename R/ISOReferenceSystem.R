@@ -21,7 +21,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOReferenceSystem <- R6Class("ISOReferenceSystem",
-  inherit = ISOAbstractObject,
+  inherit = ISOAbstractReferenceSystem,
   private = list(
     xmlElement = "MD_ReferenceSystem",
     xmlNamespacePrefix = list(

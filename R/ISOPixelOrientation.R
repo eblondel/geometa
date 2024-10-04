@@ -15,7 +15,9 @@
 #'   PixelOrientation <- ISOPixelOrientation$new(value = "center")
 #' 
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_PixelOrientationCode}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MD_PixelOrientationCode}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -23,7 +25,10 @@ ISOPixelOrientation <- R6Class("ISOPixelOrientation",
   inherit = ISOCodeListValue,
   private = list(
     xmlElement = "MD_PixelOrientationCode",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19139" = "GMD",
+      "19115-3" = "MSR"
+    )
   ),
   public = list(
     

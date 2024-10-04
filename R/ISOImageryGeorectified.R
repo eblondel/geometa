@@ -8,7 +8,9 @@
 #' @format \code{\link{R6Class}} object.
 #'
 #' @references 
-#'   ISO 19115-2:2009 - Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Georectified}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MI_Georectified}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -16,7 +18,10 @@ ISOImageryGeorectified <- R6Class("ISOImageryGeorectified",
    inherit = ISOGeorectified,
    private = list(
      xmlElement = "MI_Georectified",
-     xmlNamespacePrefix = "GMI"
+     xmlNamespacePrefix = list(
+       "19139" = "GMI",
+       "19115-3" = "MSR"
+     )
    ),
    public = list(
     

@@ -15,15 +15,6 @@ ISOCellGeometry
 
 ISOCellGeometry
 }
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml,value, description)}}{
-   This method is used to instantiate an \code{\link{ISOCellGeometry}}
- }
-}
-}
-
 \examples{
   #possible values
   values <- ISOCellGeometry$values(labels = TRUE)
@@ -33,7 +24,9 @@ ISOCellGeometry
   
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_CellGeometryCode}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MD_CellGeometryCode}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
