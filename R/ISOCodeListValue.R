@@ -73,8 +73,8 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        
        if(length(cl$codeEntry)>0){
          if(!is.null(value)){
-           clEntry <- cl$codeEntry[cl$codeEntry$value == value,]
-           if(nrow(clEntry)==0){
+           clEntry <- cl$codeEntry[sapply(cl$codeEntry, function(x){x$identifier == value})]
+           if(length(clEntry)==0){
              warning(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
              clValue <- value
              if(!is.null(description)){
@@ -85,14 +85,14 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
              }
            }
          }else{
-           clEntry <- cl$codeEntry[1,]
+           clEntry <- cl$codeEntry[[1]]$identifier
          }
          
-         if(!is.null(value) & nrow(clEntry)>0){
-           clEntry <- clEntry[1L,]
-           clValue <- clEntry$value
-           clName <- clEntry$name
-           clDescription <- ifelse(!is.na(clName), clEntry$name, clEntry$description)
+         if(!is.null(value) & length(clEntry)>0){
+           clEntry <- clEntry[[1]]
+           clValue <- clEntry$identifier
+           clName <- clEntry$description
+           clDescription <- clEntry$description
            if(setValueDescription) clDescription <- clEntry$description
            self$valueDescription <- clDescription
          }
@@ -105,16 +105,18 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
            self$valueDescription <- clDescription
          }
        }
-           
-       isLocalFile <- !grepl("^http", cl$refFile) & !grepl("^https", cl$refFile)
-       clUrl <- paste(cl$refFile, id, sep="#")
-       clUrl <- gsub("ML_", "", clUrl)
-       if(isLocalFile) clUrl <- paste(getGeometaOption("codelistUrl"), clUrl, sep="/")
-       if(id == "LanguageCode"){
-         langUrlOp <- getGeometaOption("languageUrl")
-         if(!is.null(langUrlOp)) clUrl <- langUrlOp
+        
+       clUrl = ""
+       if(!is.na(cl$refFile)){
+         isLocalFile <- !grepl("^http", cl$refFile) & !grepl("^https", cl$refFile)
+         clUrl <- paste(cl$refFile, id, sep="#")
+         clUrl <- gsub("ML_", "", clUrl)
+         if(isLocalFile) clUrl <- paste(getGeometaOption("codelistUrl"), clUrl, sep="/")
+         if(id == "LanguageCode"){
+           langUrlOp <- getGeometaOption("languageUrl")
+           if(!is.null(langUrlOp)) clUrl <- langUrlOp
+         }
        }
-       
        
        if(addCodeListAttrs){
          self$attrs <- list(
