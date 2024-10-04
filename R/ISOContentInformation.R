@@ -1,10 +1,10 @@
-#' ISOAbstractContentInformation
+#' ISOAbstractMDContentInformation
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO abstract content information
-#' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractContentInformation
+#' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractMDContentInformation
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @note Abstract class. Used internally by \pkg{geometa}
@@ -16,7 +16,7 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOAbstractContentInformation <- R6Class("ISOAbstractContentInformation",
+ISOAbstractMDContentInformation <- R6Class("ISOAbstractMDContentInformation",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "AbstractMD_ContentInformation",

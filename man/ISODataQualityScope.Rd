@@ -111,8 +111,8 @@ Set level
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{level}}{object of class \link{ISOScope} or any \link{character}
-among values returned by \link{ISOScope}}
+\item{\code{level}}{object of class \link{ISOScopeCode} or any \link{character}
+among values returned by \link{ISOScopeCode}}
 }
 \if{html}{\out{</div>}}
 }

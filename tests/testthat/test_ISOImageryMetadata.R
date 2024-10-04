@@ -271,7 +271,7 @@ test_that("encoding/decoding",{
   dq <- ISODataQuality$new()
   
   #add scope
-  scope <- ISOScope$new()
+  scope <- ISOScopeCode$new()
   scope$setLevel("dataset")
   dq$setScope(scope)
   
@@ -559,7 +559,7 @@ test_that("encoding/decoding",{
   dq <- ISODataQuality$new()
   
   #add scope
-  scope <- ISOScope$new()
+  scope <- ISOScopeCode$new()
   scope$setLevel("dataset")
   dq$setScope(scope)
   
@@ -1196,7 +1196,7 @@ test_that("encoding/decoding - i18n",{
   dq <- ISODataQuality$new()
   
   #add scope
-  scope <- ISOScope$new()
+  scope <- ISOScopeCode$new()
   scope$setLevel("dataset")
   dq$setScope(scope)
   

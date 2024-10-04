@@ -5,43 +5,47 @@
 \alias{ISOScope}
 \title{ISOScope}
 \format{
-\code{\link{R6Class}} object
+\code{\link{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO Scope
-
-Object of \code{\link{R6Class}} for modelling an ISO Scope
+Object of \code{\link{R6Class}} for modelling a scope
 }
 \description{
 ISOScope
 
 ISOScope
 }
-\examples{
-  #possible values
-  values <- ISOScope$values(labels = TRUE)
-  
-  #dataset scope
-  ds <- ISOScope$new(value = "dataset")
-
-}
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mco/1.0/mco/#element_MD_Scope}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
-\keyword{hierarchy}
-\keyword{level}
 \keyword{scope}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOScope}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOScope}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{level}}{level [0..1]: ISOScope}
+
+\item{\code{extent}}{extent [0..*]: ISOAbstractExtent}
+
+\item{\code{levelDescription}}{levelDescription [0..*]: ISOScopeDescription}
+}
+\if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOScope-new}{\code{ISOScope$new()}}
+\item \href{#method-ISOScope-setLevel}{\code{ISOScope$setLevel()}}
+\item \href{#method-ISOScope-addExtent}{\code{ISOScope$addExtent()}}
+\item \href{#method-ISOScope-delExtent}{\code{ISOScope$delExtent()}}
+\item \href{#method-ISOScope-addLevelDescription}{\code{ISOScope$addLevelDescription()}}
+\item \href{#method-ISOScope-delLevelDescription}{\code{ISOScope$delLevelDescription()}}
 \item \href{#method-ISOScope-clone}{\code{ISOScope$clone()}}
 }
 }
@@ -77,7 +81,6 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="stopIfMetadataStandardIsNot"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-stopIfMetadataStandardIsNot'><code>geometa::ISOAbstractObject$stopIfMetadataStandardIsNot()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCodeListValue" data-id="getAcceptedValues"><a href='../../geometa/html/ISOCodeListValue.html#method-ISOCodeListValue-getAcceptedValues'><code>geometa::ISOCodeListValue$getAcceptedValues()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -87,19 +90,113 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOScope$new(xml = NULL, value, description = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOScope$new(xml = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
-
-\item{\code{value}}{value}
-
-\item{\code{description}}{description}
 }
 \if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScope-setLevel"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScope-setLevel}{}}}
+\subsection{Method \code{setLevel()}}{
+Set level
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScope$setLevel(level)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{level}}{scope code, object of class \link{ISOScopeCode} or \link{character} among values
+listed by \code{ISOScopeCode$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScope-addExtent"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScope-addExtent}{}}}
+\subsection{Method \code{addExtent()}}{
+Adds extent
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScope$addExtent(extent)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{extent}}{extent of class \link{ISOAbstractExtent}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScope-delExtent"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScope-delExtent}{}}}
+\subsection{Method \code{delExtent()}}{
+Deletes extent
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScope$delExtent(extent)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{extent}}{extent of class \link{ISOAbstractExtent}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScope-addLevelDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScope-addLevelDescription}{}}}
+\subsection{Method \code{addLevelDescription()}}{
+Adds level description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScope$addLevelDescription(levelDescription)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{levelDescription}}{levelDescription of class \link{ISOScopeDescription}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOScope-delLevelDescription"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOScope-delLevelDescription}{}}}
+\subsection{Method \code{delLevelDescription()}}{
+Deletes level description
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOScope$delLevelDescription(levelDescription)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{levelDescription}}{levelDescription of class \link{ISOScopeDescription}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
 }
 }
 \if{html}{\out{<hr>}}

@@ -253,7 +253,7 @@ test_that("encoding",{
   dq <- ISODataQuality$new()
   
   #add scope
-  scope <- ISOScope$new()
+  scope <- ISOScopeCode$new()
   scope$setLevel("dataset")
   dq$setScope(scope)
   

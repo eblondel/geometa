@@ -49,7 +49,7 @@ ISOMetadataScope <- R6Class("ISOMetadataScope",
       #'@param resourceScope resource scope
       setResourceScope = function(resourceScope){
         if(is(resourceScope, "character")){
-          resourceScope <- ISOScope$new(value = resourceScope)
+          resourceScope <- ISOScopeCode$new(value = resourceScope)
         }
         self$resourceScope = resourceScope
       },

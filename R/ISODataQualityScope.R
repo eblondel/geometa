@@ -34,11 +34,11 @@ ISODataQualityScope <- R6Class("ISODataQualityScope",
      },
      
      #'@description Set level
-     #'@param level object of class \link{ISOScope} or any \link{character}
-     #'  among values returned by \link{ISOScope}
+     #'@param level object of class \link{ISOScopeCode} or any \link{character}
+     #'  among values returned by \link{ISOScopeCode}
      setLevel = function(level){
        if(is(level, "character")){
-         level <- ISOScope$new(value = level)
+         level <- ISOScopeCode$new(value = level)
        }
        self$level <- level
      }

@@ -30,10 +30,15 @@ ISOConstraints<- R6Class("ISOConstraints",
     useLimitation = list(),
     
     #TODO 19115-3 fields (and associated methods)
-    constraintApplicationScope = NULL, #mcc:MD_Scope
-    graphic = list(), #mcc:MD_BrowseGraphic
+    #'@field constraintApplicationScope constraintApplicationScope [0..1]: ISOScope (=> ISO 19115-3)
+    constraintApplicationScope = NULL,
+    #'@field graphic graphic [0..*]: ISOBrowseGraphic (=> ISO 19115-3)
+    graphic = list(),
+    #'@field reference reference [0..*]: ISOCitation (=> ISO 19115-3)
     reference = list(), #cit:CI_Citation
+    #'@field releasability releasability [0..1]: ISOReleasability (=> ISO 19115-3)
     releasability = NULL, #mco:MD_Releasability
+    #'@field responsibleParty responsibleParty [0..*]: ISOAbstractResponsibility (=> ISO 19115-3)
     responsibleParty = list(), #cit:CI_Responsibility
     
     #'@description Initializes object
@@ -74,6 +79,92 @@ ISOConstraints<- R6Class("ISOConstraints",
         useLimitation <- self$createLocalisedProperty(useLimitation, locales)
       }
       return(self$delListElement("useLimitation", useLimitation))
-    }
+    },
+    
+    #'@description Set scope
+    #'@param scope object of class \link{ISOScope}
+    setScope = function(scope){
+      self$checkMetadataStandardCompliance("19115-3")
+      if(!is(scope, "ISOScope")){
+        stop("The argument 'scope' should be an object of class 'ISOScope'")
+      }
+      self$constraintApplicationScope = scope
+    },
+    
+    #'@description Adds a graphic
+    #'@param graphic graphic
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
+    addGraphic = function(graphic){
+      self$checkMetadataStandardCompliance("19115-3")
+      if(!is(graphic, "ISOBrowseGraphic")){
+        stop("The argument 'graphic' should be an object of class 'ISOBrowseGraphic'")
+      }
+      return(self$addListElement("graphic", graphic))
+    },
+    
+    #'@description Deletes a graphic
+    #'@param graphic graphic
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+    delGraphic = function(graphic){
+      self$checkMetadataStandardCompliance("19115-3")
+      if(!is(graphic, "ISOBrowseGraphic")){
+        stop("The argument 'graphic' should be an object of class 'ISOBrowseGraphic'")
+      }
+      return(self$delListElement("graphic", graphic))
+    },
+    
+    #'@description Adds a reference
+    #'@param reference reference
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
+    addReference = function(reference){
+      self$checkMetadataStandardCompliance("19115-3")
+      if(!is(reference, "ISOCitation")){
+        stop("The argument 'reference' should be an object of class 'ISOCitation'")
+      }
+      return(self$addListElement("reference", reference))
+    },
+    
+    #'@description Deletes a reference
+    #'@param reference reference
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+    delReference = function(reference){
+      self$checkMetadataStandardCompliance("19115-3")
+      if(!is(reference, "ISOCitation")){
+        stop("The argument 'reference' should be an object of class 'ISOCitation'")
+      }
+      return(self$delListElement("reference", reference))
+    },
+    
+    #'@description Set releasbility
+    #'@param releasability object of class \link{ISOReleasability}
+    setReleasability = function(releasability){
+      self$checkMetadataStandardCompliance("19115-3")
+      if(!is(releasability, "ISOReleasability")){
+        stop("The argument 'releasability' should be an object of class 'ISOReleasability'")
+      }
+      self$releasability = releasability
+    },
+    
+    #'@description Adds a responsible party
+    #'@param party party object of class inheriting \link{ISOAbstractResponsibility}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
+    addResponsibleParty = function(party){
+      self$checkMetadataStandardCompliance("19115-3")
+      if(!is(party, "ISOAbstractResponsibility")){
+        stop("The argument 'party' should be an object inheriting class 'ISOAbstractResponsibility'")
+      }
+      return(self$addListElement("responsibleParty", party))
+    },
+    
+    #'@description Deletes a responsible party
+    #'@param party party object of class inheriting \link{ISOAbstractResponsibility}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+    delResponsibleParty = function(party){
+      self$checkMetadataStandardCompliance("19115-3")
+      if(!is(party, "ISOAbstractResponsibility")){
+        stop("The argument 'party' should be an object inheriting class 'ISOAbstractResponsibility'")
+      }
+      return(self$delListElement("responsibleParty", party))
+    },
   )                                          
 )

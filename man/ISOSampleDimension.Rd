@@ -308,7 +308,7 @@ setOtherPropertyType
 \subsection{Method \code{setOtherProperty()}}{
 setOtherProperty
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOSampleDimension$setOtherProperty(otherPropertyType)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOSampleDimension$setOtherProperty(otherProperty)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

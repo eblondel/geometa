@@ -570,7 +570,7 @@ md$setDistributionInfo(distrib)
 dq <- ISODataQuality$new()
 
 #add scope
-scope <- ISOScope$new()
+scope <- ISOScopeCode$new()
 scope$setLevel("dataset")
 dq$setScope(scope)
 

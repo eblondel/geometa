@@ -8,45 +8,29 @@
 \code{\link{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO abstract RS Reference system
+Object of \code{\link{R6Class}} for modelling an ISO abstract parameter
 }
 \description{
 ISOAbstractReferenceSystem
 
 ISOAbstractReferenceSystem
 }
-\note{
-abstract class
-}
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_ReferenceSystem}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{ISO}
 \keyword{abstract}
-\keyword{reference}
-\keyword{system}
+\keyword{parameter}
 \section{Super classes}{
 \code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractReferenceSystem}
-}
-\section{Public fields}{
-\if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{name}}{name}
-
-\item{\code{domainOfValidity}}{domain of validity}
-}
-\if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOAbstractReferenceSystem-new}{\code{ISOAbstractReferenceSystem$new()}}
-\item \href{#method-ISOAbstractReferenceSystem-setName}{\code{ISOAbstractReferenceSystem$setName()}}
-\item \href{#method-ISOAbstractReferenceSystem-addDomainOfValidity}{\code{ISOAbstractReferenceSystem$addDomainOfValidity()}}
-\item \href{#method-ISOAbstractReferenceSystem-delDomainOfValidity}{\code{ISOAbstractReferenceSystem$delDomainOfValidity()}}
 \item \href{#method-ISOAbstractReferenceSystem-clone}{\code{ISOAbstractReferenceSystem$clone()}}
 }
 }
@@ -100,63 +84,6 @@ Initializes object
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
 }
 \if{html}{\out{</div>}}
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ISOAbstractReferenceSystem-setName"></a>}}
-\if{latex}{\out{\hypertarget{method-ISOAbstractReferenceSystem-setName}{}}}
-\subsection{Method \code{setName()}}{
-Set name
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractReferenceSystem$setName(name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{name}}{name, object of class \link{ISOReferenceIdentifier}}
-}
-\if{html}{\out{</div>}}
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ISOAbstractReferenceSystem-addDomainOfValidity"></a>}}
-\if{latex}{\out{\hypertarget{method-ISOAbstractReferenceSystem-addDomainOfValidity}{}}}
-\subsection{Method \code{addDomainOfValidity()}}{
-Adds domain of validity
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractReferenceSystem$addDomainOfValidity(domainOfValidity)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{domainOfValidity}}{object of class \link{ISOExtent}}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-\code{TRUE} if added, \code{FALSE} otherwise
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ISOAbstractReferenceSystem-delDomainOfValidity"></a>}}
-\if{latex}{\out{\hypertarget{method-ISOAbstractReferenceSystem-delDomainOfValidity}{}}}
-\subsection{Method \code{delDomainOfValidity()}}{
-Deletes domain of validity
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractReferenceSystem$delDomainOfValidity(domainOfValidity)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{domainOfValidity}}{object of class \link{ISOExtent}}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-\code{TRUE} if deleted, \code{FALSE} otherwise
 }
 }
 \if{html}{\out{<hr>}}

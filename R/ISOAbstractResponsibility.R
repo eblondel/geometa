@@ -8,7 +8,7 @@
 #' @format \code{\link{R6Class}} object.
 #'   
 #' @references 
-#'   ISO 19115-1:2014 Geographic information — Metadata Part 1: Fundamentals
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_Responsibility}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
