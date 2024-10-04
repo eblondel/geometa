@@ -62,7 +62,8 @@ ISOGeoreferenceable"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/a
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 <a href="https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Georeferenceable" class="external-link">https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Georeferenceable</a></p>
+<p>- ISO 19115-3 <a href="https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MD_Georeferenceable" class="external-link">https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MD_Georeferenceable</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -70,7 +71,7 @@ ISOGeoreferenceable"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/a
     </div>
     <div id="super-classes">
     <h2>Super classes</h2>
-    <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code><a href="ISOSpatialRepresentation.html">geometa::ISOSpatialRepresentation</a></code> -&gt; <code><a href="ISOGridSpatialRepresentation.html">geometa::ISOGridSpatialRepresentation</a></code> -&gt; <code>ISOGeoreferenceable</code></p>
+    <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code><a href="ISOAbstractSpatialRepresentation.html">geometa::ISOAbstractSpatialRepresentation</a></code> -&gt; <code><a href="ISOSpatialRepresentation.html">geometa::ISOSpatialRepresentation</a></code> -&gt; <code><a href="ISOGridSpatialRepresentation.html">geometa::ISOGridSpatialRepresentation</a></code> -&gt; <code>ISOGeoreferenceable</code></p>
     </div>
     <div id="public-fields">
     <h2>Public fields</h2>
@@ -294,33 +295,37 @@ ISOGeoreferenceable"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/a
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOGeoreferenceable</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml, defaults = defaults):</span> unused argument (defaults = defaults)</span>
 <span class="r-in"><span>  </span></span>
 <span class="r-in"><span>  <span class="co">#inherited methods from ISOGridSpatialRepresentation</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setNumberOfDimensions</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  <span class="va">dim1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISODimension.html">ISODimension</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">dim1</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"row"</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
 <span class="r-in"><span>  <span class="va">dim1</span><span class="op">$</span><span class="fu">setSize</span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">dim1</span><span class="op">$</span><span class="fu">setResolution</span><span class="op">(</span><span class="va"><a href="ISOMeasure.html">ISOMeasure</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>value<span class="op">=</span><span class="fl">1</span>,uom<span class="op">=</span><span class="st">"m"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addDimension</span><span class="op">(</span><span class="va">dim1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setCellGeometry</span><span class="op">(</span><span class="st">"area"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cl$codeEntry[cl$codeEntry$value == value, ]:</span> incorrect number of dimensions</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  </span></span>
 <span class="r-in"><span>  <span class="co">#parameters</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setControlPointAvailability</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setOrientationParameterAvailability</span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setOrientationParameterDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setGeoreferencedParameters</span><span class="op">(</span><span class="st">"record"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  <span class="va">ct</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">ct</span><span class="op">$</span><span class="fu">setTitle</span><span class="op">(</span><span class="st">"citation"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addParameterCitation</span><span class="op">(</span><span class="va">ct</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  </span></span>
 <span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmd}dimensionSize': This element is not expected. Expected is ( {http://www.isotc211.org/2005/gmd}dimensionName ) at line 7. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmd}controlPointAvailability': This element is not expected. Expected is one of ( {http://www.isotc211.org/2005/gmd}axisDimensionProperties, {http://www.isotc211.org/2005/gmd}cellGeometry ) at line 15. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOGeoreferenceable' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

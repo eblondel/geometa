@@ -60,34 +60,10 @@ ISOImageryGCPCollection"><!-- mathjax --><script src="https://cdnjs.cloudflare.c
     <h2>Value</h2>
     <p>Object of <code>R6Class</code> for modelling an ISO imagery gcp collection</p>
     </div>
-    <div id="methods">
-    <h2>Methods</h2>
-
-
-<dl><dt><code>new(xml)</code></dt>
-<dd><p>This method is used to instantiate an <code>ISOImageryGCPCollection</code></p></dd>
-
- <dt><code>setCollectionIdentification(id)</code></dt>
-<dd><p>Set the identifier, object of class <code>integer</code></p></dd>
-
- <dt><code>setCollectionName(name, locales)</code></dt>
-<dd><p>Sets a name (object of class "character"). Locale names can be
-   specified as <code>list</code> with the <code>locales</code> argument.</p></dd>
-
- <dt><code>setCoordinateReferenceSystem(crs)</code></dt>
-<dd><p>Sets the crs, object of class <code><a href="ISOReferenceSystem.html">ISOReferenceSystem</a></code></p></dd>
-
- <dt><code>addGCP(gcp)</code></dt>
-<dd><p>Adds a GCP, object of class <code><a href="ISOImageryGCP.html">ISOImageryGCP</a></code></p></dd>
-
- <dt><code>delGCP(gcp)</code></dt>
-<dd><p>Deletes a GCP, object of class <code><a href="ISOImageryGCP.html">ISOImageryGCP</a></code></p></dd>
-
-
-</dl></div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115-2:2009 - Geographic information – Metadata Part 2: Extensions for imagery and gridded data</p>
+    <p>- ISO 19139 <a href="https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_GCPCollection" class="external-link">https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_GCPCollection</a></p>
+<p>- ISO 19115-3 <a href="https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MI_GCPCollection" class="external-link">https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MI_GCPCollection</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -108,7 +84,7 @@ ISOImageryGCPCollection"><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 
 
 <dt><code>coordinateReferenceSystem</code></dt>
-<dd><p>coordinateReferenceSystem [1..1]: ISOReferenceSystem</p></dd>
+<dd><p>coordinateReferenceSystem [1..1]: ISOAbstractReferenceSystem</p></dd>
 
 
 <dt><code>gcp</code></dt>
@@ -221,7 +197,7 @@ ISOImageryGCPCollection"><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 <div class="section">
 <h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>crs</code></dt>
-<dd><p>object of class <a href="ISOReferenceSystem.html">ISOReferenceSystem</a></p></dd>
+<dd><p>object of class inheriting <a href="ISOAbstractReferenceSystem.html">ISOAbstractReferenceSystem</a></p></dd>
 
 
 </dl><p></p></div>
