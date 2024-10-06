@@ -22,7 +22,9 @@ ISOImageryAcquisitionInformation
 
 }
 \references{
-ISO 19115-2:2009 - Geographic information -- AcquisitionInformation -- Part 2: Extensions for imagery and gridded data
+- 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_AcquisitionInformation}
+  
+  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_AcquisitionInformation}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -32,7 +34,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{element}
 \keyword{imagery}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOImageryAcquisitionInformation}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractAcquisitionInformation]{geometa::ISOAbstractAcquisitionInformation}} -> \code{ISOImageryAcquisitionInformation}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

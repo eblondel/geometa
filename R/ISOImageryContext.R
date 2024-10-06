@@ -15,7 +15,9 @@
 #'   acquisition <- ISOImageryContext$new(value = "acquisition")
 #' 
 #' @references 
-#'   ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
+#'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_ContextCode}
+#'   
+#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_ContextCode}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -23,7 +25,10 @@ ISOImageryContext <- R6Class("ISOImageryContext",
   inherit = ISOCodeListValue,
   private = list(
     xmlElement = "MI_ContextCode",
-    xmlNamespacePrefix = "GMI"
+    xmlNamespacePrefix = list(
+      "19139" = "GMI",
+      "19115-3" = "MAC"
+    )
   ),
   public = list(
     

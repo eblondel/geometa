@@ -24,7 +24,9 @@ ISOImageryTrigger
 
 }
 \references{
-ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
+- 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_TriggerCode}
+  
+  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_TriggerCode}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

@@ -11,22 +11,34 @@
 #'   md <- ISOImagerySensorType$new()
 #' 
 #' @references 
-#'   ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
+#'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_SensoryTypeCode}
+#'   
+#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_SensoryTypeCode}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImagerySensorType <- R6Class("ISOImagerySensorType",
-   inherit = ISOAbstractObject,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MI_SensorTypeCode",
-     xmlNamespacePrefix = "GMI"
-   ),
+     xmlNamespacePrefix = list(
+       "19139" = "GMI",
+       "19115-3" = "MAC"
+     )
+  ),
    public = list(
-      
-      #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
-      initialize = function(xml = NULL){
-       super$initialize(xml = xml)
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param value value
+     #'@param description description
+     initialize = function(xml = NULL, value, description = NULL){
+       super$initialize(xml = xml, id = private$xmlElement, value = value, description = description, 
+                        addCodeSpaceAttr = FALSE)
      }
    )                        
 )
+
+ISOImagerySensorType$values <- function(labels = FALSE){
+  return(ISOCodeListValue$values(ISOImagerySensorType, labels))
+}

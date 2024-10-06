@@ -20,7 +20,9 @@ ISOImagerySensorType
 
 }
 \references{
-ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
+- 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_SensoryTypeCode}
+  
+  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_SensoryTypeCode}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -30,7 +32,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{sensor}
 \keyword{type}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOImagerySensorType}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOImagerySensorType}
 }
 \section{Methods}{
 \subsection{Public methods}{
@@ -71,6 +73,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="stopIfMetadataStandardIsNot"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-stopIfMetadataStandardIsNot'><code>geometa::ISOAbstractObject$stopIfMetadataStandardIsNot()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCodeListValue" data-id="getAcceptedValues"><a href='../../geometa/html/ISOCodeListValue.html#method-ISOCodeListValue-getAcceptedValues'><code>geometa::ISOCodeListValue$getAcceptedValues()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -80,13 +83,17 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOImagerySensorType$new(xml = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOImagerySensorType$new(xml = NULL, value, description = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{value}}{value}
+
+\item{\code{description}}{description}
 }
 \if{html}{\out{</div>}}
 }
