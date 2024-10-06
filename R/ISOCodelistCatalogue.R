@@ -8,12 +8,14 @@
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @references 
-#'  ISO/TS 19139:2007 Geographic information -- XML
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/cat/1.2.0/cat/#element_CT_CodelistCatalogue}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/cat/1.0/cat/#element_CT_CodelistCatalogue}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCodelistCatalogue <- R6Class("ISOCodelistCatalogue",
-   inherit = ISOAbstractObject,
+   inherit = ISOAbstractCatalogue,
    private = list(
      xmlElement = "CT_CodelistCatalogue",
      xmlNamespacePrefix = list(
@@ -22,16 +24,6 @@ ISOCodelistCatalogue <- R6Class("ISOCodelistCatalogue",
      )
    ),
    public = list(
-     #'@field name name 
-     name = NULL,
-     #'@field scope scope
-     scope = NULL,
-     #'@field fieldOfApplication field of application
-     fieldOfApplication = NULL,
-     #'@field versionNumber version number
-     versionNumber = NULL,
-     #'@field versionDate version date
-     versionDate = NULL,
      #'@field codelistItem codelist items
      codelistItem = list(),
      

@@ -8,7 +8,9 @@
 #' @format \code{\link{R6Class}} object.
 #'  
 #' @references 
-#'   ISO 19139:2007 Metadata - XML schema implementation
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/cat/1.2.0/cat/#element_AbstractCT_Catalogue}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/cat/1.0/cat/#element_AbstractCT_Catalogue}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -17,7 +19,10 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
    private = list(
      document = TRUE,
      xmlElement = "AbstractCT_Catalogue",
-     xmlNamespacePrefix = "GMX"
+     xmlNamespacePrefix = list(
+       "19139" = "GMX",
+       "19115-3" = "CAT"
+     )
    ),
    public = list(
      
@@ -37,7 +42,7 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
      characterSet = NULL,
      #'@field locale locale [0..*]: ISOLocale
      locale = list(),
-     #'@field subCatalogue subCatalogue [0..*]: ISOAbstractCatalogue
+     #'@field subCatalogue subCatalogue [0..*]: ISOAbstractCatalogue (=> 19139)
      subCatalogue = list(),
      
      #'@description Initializes object
@@ -158,6 +163,7 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
      #'@param subCatalogue object of class \link{ISOAbstractCatalogue}
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addSubCatalogue = function(subCatalogue){
+        self$stopIfMetadataStandardIsNot("19139")
         if(!is(subCatalogue, "ISOAbstractCatalogue")){
            stop("The argument should be an object inheriting 'ISOAbstractCatalogue")
         }
@@ -168,6 +174,7 @@ ISOAbstractCatalogue <- R6Class("ISOAbstractCatalogue",
      #'@param subCatalogue object of class \link{ISOAbstractCatalogue}
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delSubCatalogue = function(subCatalogue){
+        self$stopIfMetadataStandardIsNot("19139")
         if(!is(subCatalogue, "ISOAbstractCatalogue")){
            stop("The argument should be an object inheriting 'ISOAbstractCatalogue")
         }
