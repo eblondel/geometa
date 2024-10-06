@@ -103,6 +103,7 @@
 <url><loc>/reference/ISOAbstractDataQuality.html</loc></url>
 <url><loc>/reference/ISOAbstractDistribution.html</loc></url>
 <url><loc>/reference/ISOAbstractExtent.html</loc></url>
+<url><loc>/reference/ISOAbstractFeatureType.html</loc></url>
 <url><loc>/reference/ISOAbstractFormat.html</loc></url>
 <url><loc>/reference/ISOAbstractGenericName.html</loc></url>
 <url><loc>/reference/ISOAbstractLineageInformation.html</loc></url>
@@ -141,6 +142,7 @@
 <url><loc>/reference/ISOAssociation.html</loc></url>
 <url><loc>/reference/ISOAssociationRole.html</loc></url>
 <url><loc>/reference/ISOAssociationType.html</loc></url>
+<url><loc>/reference/ISOAttributeGroup.html</loc></url>
 <url><loc>/reference/ISOAttributes.html</loc></url>
 <url><loc>/reference/ISOBand.html</loc></url>
 <url><loc>/reference/ISOBaseBoolean.html</loc></url>
@@ -209,6 +211,7 @@
 <url><loc>/reference/ISOFeatureCatalogueDescription.html</loc></url>
 <url><loc>/reference/ISOFeatureOperation.html</loc></url>
 <url><loc>/reference/ISOFeatureType.html</loc></url>
+<url><loc>/reference/ISOFeatureTypeInfo.html</loc></url>
 <url><loc>/reference/ISOFileName.html</loc></url>
 <url><loc>/reference/ISOFormat.html</loc></url>
 <url><loc>/reference/ISOFormatConsistency.html</loc></url>
@@ -282,6 +285,7 @@
 <url><loc>/reference/ISOLocale.html</loc></url>
 <url><loc>/reference/ISOLocaleContainer.html</loc></url>
 <url><loc>/reference/ISOLocalisedCharacterString.html</loc></url>
+<url><loc>/reference/ISOMDFeatureCatalogue.html</loc></url>
 <url><loc>/reference/ISOMLCodeDefinition.html</loc></url>
 <url><loc>/reference/ISOMLCodeListDictionary.html</loc></url>
 <url><loc>/reference/ISOMaintenanceFrequency.html</loc></url>
@@ -369,6 +373,7 @@
 <url><loc>/reference/ISOUsage.html</loc></url>
 <url><loc>/reference/ISOVectorSpatialRepresentation.html</loc></url>
 <url><loc>/reference/ISOVerticalExtent.html</loc></url>
+<url><loc>/reference/ISoAbstractFeatureCatalogue.html</loc></url>
 <url><loc>/reference/SWEAbstractDataComponent.html</loc></url>
 <url><loc>/reference/SWEAbstractEncoding.html</loc></url>
 <url><loc>/reference/SWEAbstractObject.html</loc></url>
