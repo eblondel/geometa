@@ -63,7 +63,7 @@ ISOImageryEnvironmentalRecord"><!-- mathjax --><script src="https://cdnjs.cloudf
     <div id="references">
     <h2>References</h2>
     <p>- 19139 <a href="https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_EnvironmentalRecord" class="external-link">https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_EnvironmentalRecord</a></p>
-<p>- 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_EnvironmentalRecord" class="external-link">https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_EnvironmentalRecord</a></p>
+<p>- 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_EnvironmentalRecord" class="external-link">https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_EnvironmentalRecord</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -91,6 +91,14 @@ ISOImageryEnvironmentalRecord"><!-- mathjax --><script src="https://cdnjs.cloudf
 <dd><p>meterologicalConditions</p></dd>
 
 
+<dt><code>solarAzimuth</code></dt>
+<dd><p>solarAzimuth</p></dd>
+
+
+<dt><code>solarElevation</code></dt>
+<dd><p>solarElevation</p></dd>
+
+
 </dl><p></p></div>
     </div>
     <div id="methods">
@@ -104,6 +112,8 @@ ISOImageryEnvironmentalRecord"><!-- mathjax --><script src="https://cdnjs.cloudf
 <li><p><a href="#method-ISOImageryEnvironmentalRecord-setMaxRelativeHumidity"><code>ISOImageryEnvironmentalRecord$setMaxRelativeHumidity()</code></a></p></li>
 <li><p><a href="#method-ISOImageryEnvironmentalRecord-setMaxAltitude"><code>ISOImageryEnvironmentalRecord$setMaxAltitude()</code></a></p></li>
 <li><p><a href="#method-ISOImageryEnvironmentalRecord-setMeterologicalConditions"><code>ISOImageryEnvironmentalRecord$setMeterologicalConditions()</code></a></p></li>
+<li><p><a href="#method-ISOImageryEnvironmentalRecord-setSolarAzimuth"><code>ISOImageryEnvironmentalRecord$setSolarAzimuth()</code></a></p></li>
+<li><p><a href="#method-ISOImageryEnvironmentalRecord-setSolarElevation"><code>ISOImageryEnvironmentalRecord$setSolarElevation()</code></a></p></li>
 <li><p><a href="#method-ISOImageryEnvironmentalRecord-clone"><code>ISOImageryEnvironmentalRecord$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -221,15 +231,47 @@ ISOImageryEnvironmentalRecord"><!-- mathjax --><script src="https://cdnjs.cloudf
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOImageryEnvironmentalRecord-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISOImageryEnvironmentalRecord-setSolarAzimuth"></a><div class="section">
+<h3 id="method-setsolarazimuth-">Method <code>setSolarAzimuth()</code><a class="anchor" aria-label="anchor" href="#method-setsolarazimuth-"></a></h3>
+<p>Set solar azimuth</p><div class="section">
 <h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryEnvironmentalRecord</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryEnvironmentalRecord</span><span class="op">$</span><span class="fu">setSolarAzimuth</span><span class="op">(</span><span class="va">solarAzimuth</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>solarAzimuth</code></dt>
+<dd><p>object of class <a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOImageryEnvironmentalRecord-setSolarElevation"></a><div class="section">
+<h3 id="method-setsolarelevation-">Method <code>setSolarElevation()</code><a class="anchor" aria-label="anchor" href="#method-setsolarelevation-"></a></h3>
+<p>Set solar elevation</p><div class="section">
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryEnvironmentalRecord</span><span class="op">$</span><span class="fu">setSolarElevation</span><span class="op">(</span><span class="va">solarElevation</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>solarElevation</code></dt>
+<dd><p>object of class <a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOImageryEnvironmentalRecord-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryEnvironmentalRecord</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

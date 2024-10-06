@@ -63,7 +63,7 @@ ISOImageryPlatform"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
     <div id="references">
     <h2>References</h2>
     <p>- 19139 <a href="https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Platform" class="external-link">https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Platform</a></p>
-<p>- 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_Platform" class="external-link">https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_Platform</a></p>
+<p>- 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Platform" class="external-link">https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Platform</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -95,6 +95,18 @@ ISOImageryPlatform"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 <dd><p>instrument [0..*]: ISOImageryInstrument</p></dd>
 
 
+<dt><code>otherPropertyType</code></dt>
+<dd><p>otherPropertyType [0..1] : ISORecordType (=&gt; ISO 19115-3)</p></dd>
+
+
+<dt><code>otherProperty</code></dt>
+<dd><p>otherProperty [0..1] : ISORecord (=&gt; ISO 19115-3)</p></dd>
+
+
+<dt><code>history</code></dt>
+<dd><p>history [0..*] : ISOInstrumentationEventList (=&gt; ISO 19115-3)</p></dd>
+
+
 </dl><p></p></div>
     </div>
     <div id="methods">
@@ -112,6 +124,10 @@ ISOImageryPlatform"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 <li><p><a href="#method-ISOImageryPlatform-delSponsor"><code>ISOImageryPlatform$delSponsor()</code></a></p></li>
 <li><p><a href="#method-ISOImageryPlatform-addInstrument"><code>ISOImageryPlatform$addInstrument()</code></a></p></li>
 <li><p><a href="#method-ISOImageryPlatform-delInstrument"><code>ISOImageryPlatform$delInstrument()</code></a></p></li>
+<li><p><a href="#method-ISOImageryPlatform-setOtherPropertyType"><code>ISOImageryPlatform$setOtherPropertyType()</code></a></p></li>
+<li><p><a href="#method-ISOImageryPlatform-setOtherProperty"><code>ISOImageryPlatform$setOtherProperty()</code></a></p></li>
+<li><p><a href="#method-ISOImageryPlatform-addInstrumentationEventList"><code>ISOImageryPlatform$addInstrumentationEventList()</code></a></p></li>
+<li><p><a href="#method-ISOImageryPlatform-delInstrumentationEventList"><code>ISOImageryPlatform$delInstrumentationEventList()</code></a></p></li>
 <li><p><a href="#method-ISOImageryPlatform-clone"><code>ISOImageryPlatform$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -314,15 +330,87 @@ ISOImageryPlatform"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOImageryPlatform-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISOImageryPlatform-setOtherPropertyType"></a><div class="section">
+<h3 id="method-setotherpropertytype-">Method <code>setOtherPropertyType()</code><a class="anchor" aria-label="anchor" href="#method-setotherpropertytype-"></a></h3>
+<p>setOtherPropertyType</p><div class="section">
 <h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryPlatform</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryPlatform</span><span class="op">$</span><span class="fu">setOtherPropertyType</span><span class="op">(</span><span class="va">otherPropertyType</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>otherPropertyType</code></dt>
+<dd><p>otherPropertyType object of class <a href="ISORecordType.html">ISORecordType</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOImageryPlatform-setOtherProperty"></a><div class="section">
+<h3 id="method-setotherproperty-">Method <code>setOtherProperty()</code><a class="anchor" aria-label="anchor" href="#method-setotherproperty-"></a></h3>
+<p>setOtherProperty</p><div class="section">
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryPlatform</span><span class="op">$</span><span class="fu">setOtherProperty</span><span class="op">(</span><span class="va">otherProperty</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>otherProperty</code></dt>
+<dd><p>otherProperty object of class <a href="ISORecord.html">ISORecord</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOImageryPlatform-addInstrumentationEventList"></a><div class="section">
+<h3 id="method-addinstrumentationeventlist-">Method <code>addInstrumentationEventList()</code><a class="anchor" aria-label="anchor" href="#method-addinstrumentationeventlist-"></a></h3>
+<p>Adds instrumentation event list</p><div class="section">
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryPlatform</span><span class="op">$</span><span class="fu">addInstrumentationEventList</span><span class="op">(</span><span class="va">instrumentEventList</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>instrumentEventList</code></dt>
+<dd><p>object of class ISOInstrumentationEventList</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-6">Returns<a class="anchor" aria-label="anchor" href="#returns-6"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOImageryPlatform-delInstrumentationEventList"></a><div class="section">
+<h3 id="method-delinstrumentationeventlist-">Method <code>delInstrumentationEventList()</code><a class="anchor" aria-label="anchor" href="#method-delinstrumentationeventlist-"></a></h3>
+<p>Adds instrumentation event list</p><div class="section">
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryPlatform</span><span class="op">$</span><span class="fu">delInstrumentationEventList</span><span class="op">(</span><span class="va">instrumentEventList</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>instrumentEventList</code></dt>
+<dd><p>object of class ISOInstrumentationEventList</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-7">Returns<a class="anchor" aria-label="anchor" href="#returns-7"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOImageryPlatform-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryPlatform</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

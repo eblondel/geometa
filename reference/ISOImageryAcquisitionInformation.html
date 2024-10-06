@@ -63,7 +63,7 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
     <div id="references">
     <h2>References</h2>
     <p>- 19139 <a href="https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_AcquisitionInformation" class="external-link">https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_AcquisitionInformation</a></p>
-<p>- 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_AcquisitionInformation" class="external-link">https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_AcquisitionInformation</a></p>
+<p>- 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_AcquisitionInformation" class="external-link">https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_AcquisitionInformation</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -75,7 +75,11 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
     </div>
     <div id="public-fields">
     <h2>Public fields</h2>
-    <p></p><div class="r6-fields"><dl><dt><code>instrument</code></dt>
+    <p></p><div class="r6-fields"><dl><dt><code>scope</code></dt>
+<dd><p>scope [0..1]: ISOScope</p></dd>
+
+
+<dt><code>instrument</code></dt>
 <dd><p>instrument [0..*]: ISOImageryInstrument</p></dd>
 
 
@@ -112,6 +116,7 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOImageryAcquisitionInformation-new"><code>ISOImageryAcquisitionInformation$new()</code></a></p></li>
+<li><p><a href="#method-ISOImageryAcquisitionInformation-setScope"><code>ISOImageryAcquisitionInformation$setScope()</code></a></p></li>
 <li><p><a href="#method-ISOImageryAcquisitionInformation-addInstrument"><code>ISOImageryAcquisitionInformation$addInstrument()</code></a></p></li>
 <li><p><a href="#method-ISOImageryAcquisitionInformation-delInstrument"><code>ISOImageryAcquisitionInformation$delInstrument()</code></a></p></li>
 <li><p><a href="#method-ISOImageryAcquisitionInformation-addOperation"><code>ISOImageryAcquisitionInformation$addOperation()</code></a></p></li>
@@ -171,15 +176,31 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-addInstrument"></a><div class="section">
-<h3 id="method-addinstrument-">Method <code>addInstrument()</code><a class="anchor" aria-label="anchor" href="#method-addinstrument-"></a></h3>
-<p>Adds instrument</p><div class="section">
+</div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-setScope"></a><div class="section">
+<h3 id="method-setscope-">Method <code>setScope()</code><a class="anchor" aria-label="anchor" href="#method-setscope-"></a></h3>
+<p>Set scope</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">addInstrument</span><span class="op">(</span><span class="va">instrument</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">setScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>scope</code></dt>
+<dd><p>object of class <a href="ISOScope.html">ISOScope</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-addInstrument"></a><div class="section">
+<h3 id="method-addinstrument-">Method <code>addInstrument()</code><a class="anchor" aria-label="anchor" href="#method-addinstrument-"></a></h3>
+<p>Adds instrument</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">addInstrument</span><span class="op">(</span><span class="va">instrument</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>instrument</code></dt>
 <dd><p>object of class <a href="ISOImageryInstrument.html">ISOImageryInstrument</a></p></dd>
 
@@ -194,12 +215,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-delInstrument"></a><div class="section">
 <h3 id="method-delinstrument-">Method <code>delInstrument()</code><a class="anchor" aria-label="anchor" href="#method-delinstrument-"></a></h3>
 <p>Deletes instrument</p><div class="section">
-<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">delInstrument</span><span class="op">(</span><span class="va">instrument</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>instrument</code></dt>
 <dd><p>object of class <a href="ISOImageryInstrument.html">ISOImageryInstrument</a></p></dd>
 
@@ -214,12 +235,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-addOperation"></a><div class="section">
 <h3 id="method-addoperation-">Method <code>addOperation()</code><a class="anchor" aria-label="anchor" href="#method-addoperation-"></a></h3>
 <p>Adds operation</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">addOperation</span><span class="op">(</span><span class="va">operation</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>operation</code></dt>
 <dd><p>object of class <a href="ISOImageryOperation.html">ISOImageryOperation</a></p></dd>
 
@@ -234,12 +255,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-delOperation"></a><div class="section">
 <h3 id="method-deloperation-">Method <code>delOperation()</code><a class="anchor" aria-label="anchor" href="#method-deloperation-"></a></h3>
 <p>Deletes operation</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">delOperation</span><span class="op">(</span><span class="va">operation</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>operation</code></dt>
 <dd><p>object of class <a href="ISOImageryOperation.html">ISOImageryOperation</a></p></dd>
 
@@ -254,12 +275,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-addPlatform"></a><div class="section">
 <h3 id="method-addplatform-">Method <code>addPlatform()</code><a class="anchor" aria-label="anchor" href="#method-addplatform-"></a></h3>
 <p>Adds platform</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">addPlatform</span><span class="op">(</span><span class="va">platform</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>platform</code></dt>
 <dd><p>object of class <a href="ISOImageryPlatform.html">ISOImageryPlatform</a></p></dd>
 
@@ -274,12 +295,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-delPlatform"></a><div class="section">
 <h3 id="method-delplatform-">Method <code>delPlatform()</code><a class="anchor" aria-label="anchor" href="#method-delplatform-"></a></h3>
 <p>Deletes platform</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">delPlatform</span><span class="op">(</span><span class="va">platform</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>platform</code></dt>
 <dd><p>object of class <a href="ISOImageryPlatform.html">ISOImageryPlatform</a></p></dd>
 
@@ -294,12 +315,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-addPlan"></a><div class="section">
 <h3 id="method-addplan-">Method <code>addPlan()</code><a class="anchor" aria-label="anchor" href="#method-addplan-"></a></h3>
 <p>Adds plan</p><div class="section">
-<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">addPlan</span><span class="op">(</span><span class="va">plan</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>plan</code></dt>
 <dd><p>object of class <a href="ISOImageryPlan.html">ISOImageryPlan</a></p></dd>
 
@@ -314,12 +335,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-delPlan"></a><div class="section">
 <h3 id="method-delplan-">Method <code>delPlan()</code><a class="anchor" aria-label="anchor" href="#method-delplan-"></a></h3>
 <p>Deletes plan</p><div class="section">
-<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">delPlan</span><span class="op">(</span><span class="va">plan</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>plan</code></dt>
 <dd><p>object of class <a href="ISOImageryPlan.html">ISOImageryPlan</a></p></dd>
 
@@ -334,12 +355,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-addObjective"></a><div class="section">
 <h3 id="method-addobjective-">Method <code>addObjective()</code><a class="anchor" aria-label="anchor" href="#method-addobjective-"></a></h3>
 <p>Adds objective</p><div class="section">
-<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">addObjective</span><span class="op">(</span><span class="va">objective</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>objective</code></dt>
 <dd><p>object of class <a href="ISOImageryObjective.html">ISOImageryObjective</a></p></dd>
 
@@ -354,12 +375,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-delObjective"></a><div class="section">
 <h3 id="method-delobjective-">Method <code>delObjective()</code><a class="anchor" aria-label="anchor" href="#method-delobjective-"></a></h3>
 <p>Deletes objective</p><div class="section">
-<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">delObjective</span><span class="op">(</span><span class="va">objective</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>objective</code></dt>
 <dd><p>object of class <a href="ISOImageryObjective.html">ISOImageryObjective</a></p></dd>
 
@@ -374,12 +395,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-addRequirement"></a><div class="section">
 <h3 id="method-addrequirement-">Method <code>addRequirement()</code><a class="anchor" aria-label="anchor" href="#method-addrequirement-"></a></h3>
 <p>Adds requirement</p><div class="section">
-<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">addRequirement</span><span class="op">(</span><span class="va">requirement</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
+<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>requirement</code></dt>
 <dd><p>object of class <a href="ISOImageryRequirement.html">ISOImageryRequirement</a></p></dd>
 
@@ -394,12 +415,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-delRequirement"></a><div class="section">
 <h3 id="method-delrequirement-">Method <code>delRequirement()</code><a class="anchor" aria-label="anchor" href="#method-delrequirement-"></a></h3>
 <p>Deletes requirement</p><div class="section">
-<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">delRequirement</span><span class="op">(</span><span class="va">requirement</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
+<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>requirement</code></dt>
 <dd><p>object of class <a href="ISOImageryRequirement.html">ISOImageryRequirement</a></p></dd>
 
@@ -414,12 +435,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-setEnvironmentConditions"></a><div class="section">
 <h3 id="method-setenvironmentconditions-">Method <code>setEnvironmentConditions()</code><a class="anchor" aria-label="anchor" href="#method-setenvironmentconditions-"></a></h3>
 <p>Set environment conditions</p><div class="section">
-<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
+<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">setEnvironmentConditions</span><span class="op">(</span><span class="va">conditions</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
+<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>conditions</code></dt>
 <dd><p>object of class <a href="ISOImageryEnvironmentalRecord.html">ISOImageryEnvironmentalRecord</a></p></dd>
 
@@ -430,12 +451,12 @@ ISOImageryAcquisitionInformation"><!-- mathjax --><script src="https://cdnjs.clo
 </div><p></p><hr><a id="method-ISOImageryAcquisitionInformation-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
+<h4 id="usage-15">Usage<a class="anchor" aria-label="anchor" href="#usage-15"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOImageryAcquisitionInformation</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
+<h4 id="arguments-15">Arguments<a class="anchor" aria-label="anchor" href="#arguments-15"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
