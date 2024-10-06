@@ -56,7 +56,7 @@
 #' @references 
 #'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Platform}
 #'   
-#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_Platform}
+#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Platform}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #' 
@@ -81,6 +81,12 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
    sponsor =list(),
    #'@field instrument instrument [0..*]: ISOImageryInstrument
    instrument = list(),
+   #'@field otherPropertyType otherPropertyType [0..1] : ISORecordType (=> ISO 19115-3)
+   otherPropertyType = NULL,
+   #'@field otherProperty otherProperty [0..1] : ISORecord (=> ISO 19115-3)
+   otherProperty = NULL,
+   #'@field history history [0..*] : ISOInstrumentationEventList (=> ISO 19115-3)
+   history = list(),
    
    #'@description Initializes object
    #'@param xml object of class \link{XMLInternalNode-class}
@@ -169,6 +175,44 @@ ISOImageryPlatform <- R6Class("ISOImageryPlatform",
        stop("The argument should be an object of class 'ISOImageryInstrument'")
      }
      return(self$delListElement("instrument", instrument))
+   },
+   
+   #'@description setOtherPropertyType
+   #'@param otherPropertyType otherPropertyType object of class \link{ISORecordType}
+   setOtherPropertyType = function(otherPropertyType){
+     if(!is(otherPropertyType, "ISORecordType")){
+       otherPropertyType = ISORecordType$new(value = otherPropertyType)
+     }
+     self$otherPropertyType = otherPropertyType
+   },
+   
+   #'@description setOtherProperty
+   #'@param otherProperty otherProperty object of class \link{ISORecord}
+   setOtherProperty = function(otherProperty){
+     if(!is(otherProperty, "ISORecord")){
+       otherProperty = ISORecord$new(value = otherProperty)
+     }
+     self$otherProperty = otherProperty
+   },
+   
+   #'@description Adds instrumentation event list
+   #'@param instrumentEventList object of class \link{ISOInstrumentationEventList}
+   #'@return \code{TRUE} if added, \code{FALSE} otherwise
+   addInstrumentationEventList = function(instrumentEventList){
+     if(!is(instrumentEventList, "ISOInstrumentationEventList")){
+       stop("The argument should be an object of class 'ISOInstrumentationEventList'")
+     }
+     return(self$addListElement("history", instrumentEventList))
+   },
+   
+   #'@description Adds instrumentation event list
+   #'@param instrumentEventList object of class \link{ISOInstrumentationEventList}
+   #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+   delInstrumentationEventList = function(instrumentEventList){
+     if(!is(instrumentEventList, "ISOInstrumentationEventList")){
+       stop("The argument should be an object of class 'ISOInstrumentationEventList'")
+     }
+     return(self$delListElement("history", instrumentEventList))
    }
    
  )                        

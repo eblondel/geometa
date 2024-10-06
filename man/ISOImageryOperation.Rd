@@ -18,7 +18,7 @@ ISOImageryOperation
 \references{
 - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Operation}
   
-  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_Operation}
+  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Operation}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -53,6 +53,10 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{plan}}{plan [0..1]: ISOImageryPlan}
 
 \item{\code{significantEvent}}{significantEvent [0..*]: ISOImageryEvent}
+
+\item{\code{otherPropertyType}}{otherPropertyType [0..1] : ISORecordType (=> ISO 19115-3)}
+
+\item{\code{otherProperty}}{otherProperty [0..1] : ISORecord (=> ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }
@@ -75,6 +79,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOImageryOperation-setPlan}{\code{ISOImageryOperation$setPlan()}}
 \item \href{#method-ISOImageryOperation-addSignificantEvent}{\code{ISOImageryOperation$addSignificantEvent()}}
 \item \href{#method-ISOImageryOperation-delSignificantEvent}{\code{ISOImageryOperation$delSignificantEvent()}}
+\item \href{#method-ISOImageryOperation-setOtherPropertyType}{\code{ISOImageryOperation$setOtherPropertyType()}}
+\item \href{#method-ISOImageryOperation-setOtherProperty}{\code{ISOImageryOperation$setOtherProperty()}}
 \item \href{#method-ISOImageryOperation-clone}{\code{ISOImageryOperation$clone()}}
 }
 }
@@ -411,6 +417,40 @@ Deletes significative event
 }
 \subsection{Returns}{
 \code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-setOtherPropertyType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-setOtherPropertyType}{}}}
+\subsection{Method \code{setOtherPropertyType()}}{
+setOtherPropertyType
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$setOtherPropertyType(otherPropertyType)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{otherPropertyType}}{otherPropertyType object of class \link{ISORecordType}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryOperation-setOtherProperty"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryOperation-setOtherProperty}{}}}
+\subsection{Method \code{setOtherProperty()}}{
+setOtherProperty
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryOperation$setOtherProperty(otherProperty)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{otherProperty}}{otherProperty object of class \link{ISORecord}}
+}
+\if{html}{\out{</div>}}
 }
 }
 \if{html}{\out{<hr>}}

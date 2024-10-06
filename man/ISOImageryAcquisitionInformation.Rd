@@ -24,7 +24,7 @@ ISOImageryAcquisitionInformation
 \references{
 - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_AcquisitionInformation}
   
-  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_AcquisitionInformation}
+  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_AcquisitionInformation}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -39,6 +39,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
+\item{\code{scope}}{scope [0..1]: ISOScope}
+
 \item{\code{instrument}}{instrument [0..*]: ISOImageryInstrument}
 
 \item{\code{operation}}{operation [0..*]: ISOImageryOperation}
@@ -59,6 +61,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOImageryAcquisitionInformation-new}{\code{ISOImageryAcquisitionInformation$new()}}
+\item \href{#method-ISOImageryAcquisitionInformation-setScope}{\code{ISOImageryAcquisitionInformation$setScope()}}
 \item \href{#method-ISOImageryAcquisitionInformation-addInstrument}{\code{ISOImageryAcquisitionInformation$addInstrument()}}
 \item \href{#method-ISOImageryAcquisitionInformation-delInstrument}{\code{ISOImageryAcquisitionInformation$delInstrument()}}
 \item \href{#method-ISOImageryAcquisitionInformation-addOperation}{\code{ISOImageryAcquisitionInformation$addOperation()}}
@@ -123,6 +126,23 @@ Initializes object
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryAcquisitionInformation-setScope"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryAcquisitionInformation-setScope}{}}}
+\subsection{Method \code{setScope()}}{
+Set scope
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryAcquisitionInformation$setScope(scope)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{scope}}{object of class \link{ISOScope}}
 }
 \if{html}{\out{</div>}}
 }

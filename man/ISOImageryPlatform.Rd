@@ -65,7 +65,7 @@ ISOImageryPlatform
 \references{
 - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Platform}
   
-  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_Platform}
+  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Platform}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -88,6 +88,12 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{sponsor}}{sponsor [0..*]: ISOResponsibleParty}
 
 \item{\code{instrument}}{instrument [0..*]: ISOImageryInstrument}
+
+\item{\code{otherPropertyType}}{otherPropertyType [0..1] : ISORecordType (=> ISO 19115-3)}
+
+\item{\code{otherProperty}}{otherProperty [0..1] : ISORecord (=> ISO 19115-3)}
+
+\item{\code{history}}{history [0..*] : ISOInstrumentationEventList (=> ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }
@@ -103,6 +109,10 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOImageryPlatform-delSponsor}{\code{ISOImageryPlatform$delSponsor()}}
 \item \href{#method-ISOImageryPlatform-addInstrument}{\code{ISOImageryPlatform$addInstrument()}}
 \item \href{#method-ISOImageryPlatform-delInstrument}{\code{ISOImageryPlatform$delInstrument()}}
+\item \href{#method-ISOImageryPlatform-setOtherPropertyType}{\code{ISOImageryPlatform$setOtherPropertyType()}}
+\item \href{#method-ISOImageryPlatform-setOtherProperty}{\code{ISOImageryPlatform$setOtherProperty()}}
+\item \href{#method-ISOImageryPlatform-addInstrumentationEventList}{\code{ISOImageryPlatform$addInstrumentationEventList()}}
+\item \href{#method-ISOImageryPlatform-delInstrumentationEventList}{\code{ISOImageryPlatform$delInstrumentationEventList()}}
 \item \href{#method-ISOImageryPlatform-clone}{\code{ISOImageryPlatform$clone()}}
 }
 }
@@ -307,6 +317,80 @@ Deletes instrument
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{instrument}}{object of class \link{ISOImageryInstrument}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-setOtherPropertyType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-setOtherPropertyType}{}}}
+\subsection{Method \code{setOtherPropertyType()}}{
+setOtherPropertyType
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$setOtherPropertyType(otherPropertyType)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{otherPropertyType}}{otherPropertyType object of class \link{ISORecordType}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-setOtherProperty"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-setOtherProperty}{}}}
+\subsection{Method \code{setOtherProperty()}}{
+setOtherProperty
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$setOtherProperty(otherProperty)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{otherProperty}}{otherProperty object of class \link{ISORecord}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-addInstrumentationEventList"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-addInstrumentationEventList}{}}}
+\subsection{Method \code{addInstrumentationEventList()}}{
+Adds instrumentation event list
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$addInstrumentationEventList(instrumentEventList)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{instrumentEventList}}{object of class \link{ISOInstrumentationEventList}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryPlatform-delInstrumentationEventList"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryPlatform-delInstrumentationEventList}{}}}
+\subsection{Method \code{delInstrumentationEventList()}}{
+Adds instrumentation event list
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryPlatform$delInstrumentationEventList(instrumentEventList)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{instrumentEventList}}{object of class \link{ISOInstrumentationEventList}}
 }
 \if{html}{\out{</div>}}
 }

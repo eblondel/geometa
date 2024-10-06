@@ -27,7 +27,7 @@ ISOImageryEnvironmentalRecord
 \references{
 - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_EnvironmentalRecord}
   
-  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_EnvironmentalRecord}
+  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_EnvironmentalRecord}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -49,6 +49,10 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{maxAltitude}}{maxAltitude}
 
 \item{\code{meterologicalConditions}}{meterologicalConditions}
+
+\item{\code{solarAzimuth}}{solarAzimuth}
+
+\item{\code{solarElevation}}{solarElevation}
 }
 \if{html}{\out{</div>}}
 }
@@ -60,6 +64,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOImageryEnvironmentalRecord-setMaxRelativeHumidity}{\code{ISOImageryEnvironmentalRecord$setMaxRelativeHumidity()}}
 \item \href{#method-ISOImageryEnvironmentalRecord-setMaxAltitude}{\code{ISOImageryEnvironmentalRecord$setMaxAltitude()}}
 \item \href{#method-ISOImageryEnvironmentalRecord-setMeterologicalConditions}{\code{ISOImageryEnvironmentalRecord$setMeterologicalConditions()}}
+\item \href{#method-ISOImageryEnvironmentalRecord-setSolarAzimuth}{\code{ISOImageryEnvironmentalRecord$setSolarAzimuth()}}
+\item \href{#method-ISOImageryEnvironmentalRecord-setSolarElevation}{\code{ISOImageryEnvironmentalRecord$setSolarElevation()}}
 \item \href{#method-ISOImageryEnvironmentalRecord-clone}{\code{ISOImageryEnvironmentalRecord$clone()}}
 }
 }
@@ -184,6 +190,40 @@ Set meterological conditions
 \item{\code{conditions}}{conditions}
 
 \item{\code{locales}}{list of localized texts. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryEnvironmentalRecord-setSolarAzimuth"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryEnvironmentalRecord-setSolarAzimuth}{}}}
+\subsection{Method \code{setSolarAzimuth()}}{
+Set solar azimuth
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryEnvironmentalRecord$setSolarAzimuth(solarAzimuth)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{solarAzimuth}}{object of class \link{numeric}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryEnvironmentalRecord-setSolarElevation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryEnvironmentalRecord-setSolarElevation}{}}}
+\subsection{Method \code{setSolarElevation()}}{
+Set solar elevation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryEnvironmentalRecord$setSolarElevation(solarElevation)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{solarElevation}}{object of class \link{numeric}}
 }
 \if{html}{\out{</div>}}
 }

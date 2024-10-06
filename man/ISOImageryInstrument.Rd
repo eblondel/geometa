@@ -26,7 +26,7 @@ ISOImageryPlatform
 \references{
 - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Instrument}
   
-  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_Instrument}
+  - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Instrument}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -49,6 +49,14 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{description}}{description [0..1]: character|ISOLocalisedCharacterString}
 
 \item{\code{mountedOn}}{mountedOn [0..*]: ISOImageryPlatform}
+
+\item{\code{otherPropertyType}}{otherPropertyType [0..1] : ISORecordType (=> ISO 19115-3)}
+
+\item{\code{otherProperty}}{otherProperty [0..1] : ISORecord (=> ISO 19115-3)}
+
+\item{\code{sensor}}{sensor [0..*] : ISOImagerySensor (=> ISO 19115-3)}
+
+\item{\code{history}}{history [0..*] : ISOInstrumentationEventList (=> ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }
@@ -63,6 +71,12 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOImageryInstrument-setDescription}{\code{ISOImageryInstrument$setDescription()}}
 \item \href{#method-ISOImageryInstrument-addPlatform}{\code{ISOImageryInstrument$addPlatform()}}
 \item \href{#method-ISOImageryInstrument-delPlatform}{\code{ISOImageryInstrument$delPlatform()}}
+\item \href{#method-ISOImageryInstrument-setOtherPropertyType}{\code{ISOImageryInstrument$setOtherPropertyType()}}
+\item \href{#method-ISOImageryInstrument-setOtherProperty}{\code{ISOImageryInstrument$setOtherProperty()}}
+\item \href{#method-ISOImageryInstrument-addSensor}{\code{ISOImageryInstrument$addSensor()}}
+\item \href{#method-ISOImageryInstrument-delSensor}{\code{ISOImageryInstrument$delSensor()}}
+\item \href{#method-ISOImageryInstrument-addInstrumentationEventList}{\code{ISOImageryInstrument$addInstrumentationEventList()}}
+\item \href{#method-ISOImageryInstrument-delInstrumentationEventList}{\code{ISOImageryInstrument$delInstrumentationEventList()}}
 \item \href{#method-ISOImageryInstrument-clone}{\code{ISOImageryInstrument$clone()}}
 }
 }
@@ -246,6 +260,120 @@ Deletes platform
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{platform}}{object of class \link{ISOImageryPlatform}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryInstrument-setOtherPropertyType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryInstrument-setOtherPropertyType}{}}}
+\subsection{Method \code{setOtherPropertyType()}}{
+setOtherPropertyType
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryInstrument$setOtherPropertyType(otherPropertyType)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{otherPropertyType}}{otherPropertyType object of class \link{ISORecordType}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryInstrument-setOtherProperty"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryInstrument-setOtherProperty}{}}}
+\subsection{Method \code{setOtherProperty()}}{
+setOtherProperty
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryInstrument$setOtherProperty(otherProperty)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{otherProperty}}{otherProperty object of class \link{ISORecord}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryInstrument-addSensor"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryInstrument-addSensor}{}}}
+\subsection{Method \code{addSensor()}}{
+Adds sensor
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryInstrument$addSensor(sensor)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sensor}}{object of class \link{ISOImagerySensor}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryInstrument-delSensor"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryInstrument-delSensor}{}}}
+\subsection{Method \code{delSensor()}}{
+Deletes sensor
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryInstrument$delSensor(sensor)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sensor}}{object of class \link{ISOImagerySensor}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryInstrument-addInstrumentationEventList"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryInstrument-addInstrumentationEventList}{}}}
+\subsection{Method \code{addInstrumentationEventList()}}{
+Adds instrumentation event list
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryInstrument$addInstrumentationEventList(instrumentEventList)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{instrumentEventList}}{object of class \link{ISOInstrumentationEventList}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryInstrument-delInstrumentationEventList"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryInstrument-delInstrumentationEventList}{}}}
+\subsection{Method \code{delInstrumentationEventList()}}{
+Adds instrumentation event list
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryInstrument$delInstrumentationEventList(instrumentEventList)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{instrumentEventList}}{object of class \link{ISOInstrumentationEventList}}
 }
 \if{html}{\out{</div>}}
 }

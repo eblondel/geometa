@@ -10,7 +10,7 @@
 #' @references 
 #'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Operation}
 #'   
-#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_Operation}
+#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Operation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #' 
@@ -47,6 +47,10 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
      plan = NULL,
      #'@field significantEvent significantEvent [0..*]: ISOImageryEvent
      significantEvent = list(),
+     #'@field otherPropertyType otherPropertyType [0..1] : ISORecordType (=> ISO 19115-3)
+     otherPropertyType = NULL,
+     #'@field otherProperty otherProperty [0..1] : ISORecord (=> ISO 19115-3)
+     otherProperty = NULL,
 
      #'@description Initializes object
      #'@param xml object of class \link{XMLInternalNode-class}
@@ -210,6 +214,24 @@ ISOImageryOperation <- R6Class("ISOImageryOperation",
          stop("The argument should be an object of class 'ISOImageryEvent")
        }
        return(self$delListElement("significantEvent", event))
+     },
+     
+     #'@description setOtherPropertyType
+     #'@param otherPropertyType otherPropertyType object of class \link{ISORecordType}
+     setOtherPropertyType = function(otherPropertyType){
+       if(!is(otherPropertyType, "ISORecordType")){
+         otherPropertyType = ISORecordType$new(value = otherPropertyType)
+       }
+       self$otherPropertyType = otherPropertyType
+     },
+     
+     #'@description setOtherProperty
+     #'@param otherProperty otherProperty object of class \link{ISORecord}
+     setOtherProperty = function(otherProperty){
+       if(!is(otherProperty, "ISORecord")){
+         otherProperty = ISORecord$new(value = otherProperty)
+       }
+       self$otherProperty = otherProperty
      }
      
    )                        

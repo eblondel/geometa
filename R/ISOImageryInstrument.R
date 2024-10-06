@@ -17,7 +17,7 @@
 #' @references 
 #'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Instrument}
 #'   
-#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_Instrument}
+#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Instrument}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #' 
@@ -42,6 +42,14 @@ ISOImageryInstrument <- R6Class("ISOImageryInstrument",
     description = NULL,
     #'@field mountedOn mountedOn [0..*]: ISOImageryPlatform
     mountedOn = list(),
+    #'@field otherPropertyType otherPropertyType [0..1] : ISORecordType (=> ISO 19115-3)
+    otherPropertyType = NULL,
+    #'@field otherProperty otherProperty [0..1] : ISORecord (=> ISO 19115-3)
+    otherProperty = NULL,
+    #'@field sensor sensor [0..*] : ISOImagerySensor (=> ISO 19115-3)
+    sensor = list(),
+    #'@field history history [0..*] : ISOInstrumentationEventList (=> ISO 19115-3)
+    history = list(),
     
     #'@description Initializes object
     #'@param xml object of class \link{XMLInternalNode-class}
@@ -120,6 +128,64 @@ ISOImageryInstrument <- R6Class("ISOImageryInstrument",
         stop("The argument should be an object of class 'ISOImageryPlatform'")
       }
       return(self$delListElement("mountedOn", platform))
+    },
+    
+    #'@description setOtherPropertyType
+    #'@param otherPropertyType otherPropertyType object of class \link{ISORecordType}
+    setOtherPropertyType = function(otherPropertyType){
+      if(!is(otherPropertyType, "ISORecordType")){
+        otherPropertyType = ISORecordType$new(value = otherPropertyType)
+      }
+      self$otherPropertyType = otherPropertyType
+    },
+    
+    #'@description setOtherProperty
+    #'@param otherProperty otherProperty object of class \link{ISORecord}
+    setOtherProperty = function(otherProperty){
+      if(!is(otherProperty, "ISORecord")){
+        otherProperty = ISORecord$new(value = otherProperty)
+      }
+      self$otherProperty = otherProperty
+    },
+    
+    #'@description Adds sensor
+    #'@param sensor object of class \link{ISOImagerySensor}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
+    addSensor = function(sensor){
+      if(!is(sensor, "ISOImagerySensor")){
+        stop("The argument should be an object of class 'ISOImagerySensor'")
+      }
+      return(self$addListElement("sensor", sensor))
+    },
+    
+    #'@description Deletes sensor
+    #'@param sensor object of class \link{ISOImagerySensor}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+    delSensor = function(sensor){
+      if(!is(sensor, "ISOImagerySensor")){
+        stop("The argument should be an object of class 'ISOImagerySensor'")
+      }
+      return(self$delListElement("sensor", sensor))
+    },
+    
+    #'@description Adds instrumentation event list
+    #'@param instrumentEventList object of class \link{ISOInstrumentationEventList}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
+    addInstrumentationEventList = function(instrumentEventList){
+      if(!is(instrumentEventList, "ISOInstrumentationEventList")){
+        stop("The argument should be an object of class 'ISOInstrumentationEventList'")
+      }
+      return(self$addListElement("history", instrumentEventList))
+    },
+    
+    #'@description Adds instrumentation event list
+    #'@param instrumentEventList object of class \link{ISOInstrumentationEventList}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+    delInstrumentationEventList = function(instrumentEventList){
+      if(!is(instrumentEventList, "ISOInstrumentationEventList")){
+        stop("The argument should be an object of class 'ISOInstrumentationEventList'")
+      }
+      return(self$delListElement("history", instrumentEventList))
     }
     
   )                        

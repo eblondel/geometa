@@ -16,7 +16,7 @@
 #' @references 
 #'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_AcquisitionInformation}
 #'   
-#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_AcquisitionInformation}
+#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_AcquisitionInformation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -31,7 +31,8 @@ ISOImageryAcquisitionInformation <- R6Class("ISOImageryAcquisitionInformation",
       )
     ),
     public = list(
-      
+      #'@field scope scope [0..1]: ISOScope
+      scope = NULL,
       #'@field instrument instrument [0..*]: ISOImageryInstrument
       instrument = list(),
       #'@field operation operation [0..*]: ISOImageryOperation
@@ -51,6 +52,15 @@ ISOImageryAcquisitionInformation <- R6Class("ISOImageryAcquisitionInformation",
       #'@param xml object of class \link{XMLInternalNode-class}
       initialize = function(xml = NULL){
         super$initialize(xml = xml)
+      },
+      
+      #'@description Set scope
+      #'@param scope object of class \link{ISOScope}
+      setScope = function(scope){
+        if(!is(scope, "ISOScope")){
+          stop("The argument should be an object of class 'ISOScope'")
+        }
+        self$scope = scope
       },
       
       #'@description Adds instrument

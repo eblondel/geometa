@@ -1,30 +1,26 @@
-#' ISOImageryContext
+#' ISOInstrumentationEventType
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO imagery context
-#' @return Object of \code{\link{R6Class}} for modelling an ISO Imagery Context
+#' @keywords ISO instrumenetation event type
+#' @return Object of \code{\link{R6Class}} for modelling an ISO instrumentation event type
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @examples
-#'   #possible values
-#'   values <- ISOImageryContext$values(labels = TRUE)
-#'   
-#'   #some def
-#'   acquisition <- ISOImageryContext$new(value = "acquisition")
+#'   md <- ISOInstrumentationEventType$new()
 #' 
 #' @references 
-#'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_ContextCode}
+#'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_InstrumentationEventTypeCode}
 #'   
-#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_ContextCode}
+#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_InstrumentationEventTypeCode}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOImageryContext <- R6Class("ISOImageryContext",
+ISOInstrumentationEventType <- R6Class("ISOInstrumentationEventType",
   inherit = ISOCodeListValue,
   private = list(
-    xmlElement = "MI_ContextCode",
+    xmlElement = "MI_InstrumentationEventTypeCode",
     xmlNamespacePrefix = list(
       "19139" = "GMI",
       "19115-3" = "MAC"
@@ -43,6 +39,6 @@ ISOImageryContext <- R6Class("ISOImageryContext",
   )                        
 )
 
-ISOImageryContext$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOImageryContext, labels))
+ISOInstrumentationEventType$values <- function(labels = FALSE){
+  return(ISOCodeListValue$values(ISOInstrumentationEventType, labels))
 }
