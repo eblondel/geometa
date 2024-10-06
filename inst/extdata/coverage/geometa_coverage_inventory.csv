@@ -566,7 +566,7 @@
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for ACquisition (MAC) Version: 2.0","MAC","MI_AcquisitionInformation","ISOImageryAcquisitionInformation",TRUE,TRUE,"ISO/TS 19115-3:2023  -  ISO 19115-1:2014  -  MAC"
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for ACquisition (MAC) Version: 2.0","MAC","MI_ContextCode","ISOImageryContext",TRUE,TRUE,"ISO/TS 19115-3:2023  -  ISO 19115-1:2014  -  MAC"
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for ACquisition (MAC) Version: 2.0","MAC","MI_EnvironmentalRecord","ISOImageryEnvironmentalRecord",TRUE,TRUE,"ISO/TS 19115-3:2023  -  ISO 19115-1:2014  -  MAC"
-"ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for ACquisition (MAC) Version: 2.0","MAC","MI_Event","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2023  -  ISO 19115-1:2014  -  MAC"
+"ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for ACquisition (MAC) Version: 2.0","MAC","MI_Event","ISOImageryEvent",TRUE,TRUE,"ISO/TS 19115-3:2023  -  ISO 19115-1:2014  -  MAC"
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for ACquisition (MAC) Version: 2.0","MAC","MI_GeometryTypeCode","ISOImageryGeometryType",TRUE,TRUE,"ISO/TS 19115-3:2023  -  ISO 19115-1:2014  -  MAC"
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for ACquisition (MAC) Version: 2.0","MAC","MI_Instrument","ISOImageryInstrument",TRUE,TRUE,"ISO/TS 19115-3:2023  -  ISO 19115-1:2014  -  MAC"
 "ISO/TS 19115-3:2023","ISO 19115-1:2014","Metadata for ACquisition (MAC) Version: 2.0","MAC","MI_InstrumentationEvent","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2023  -  ISO 19115-1:2014  -  MAC"

@@ -29,8 +29,8 @@ ISOImageryEvent <- R6Class("ISOImageryEvent",
   private = list(
     xmlElement = "MI_Event",
     xmlNamespacePrefix = list(
-      "19139" = "GMI","
-      19115-3" = "MAC"
+      "19139" = "GMI",
+      "19115-3" = "MAC"
     )
   ),
   public = list(
