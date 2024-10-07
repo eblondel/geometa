@@ -73,7 +73,11 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        
        if(length(cl$codeEntry)>0){
          if(!is.null(value)){
-           clEntry <- cl$codeEntry[sapply(cl$codeEntry, function(x){x$identifier == value})]
+           clEntry <- cl$codeEntry[sapply(cl$codeEntry, function(x){
+             id = x$identifier
+             if("value" %in% names(id)) id = id$value
+             return(id == value)
+            })]
            if(length(clEntry)==0){
              warning(sprintf("No ISO '%s' codelist entry for value '%s'", id, value))
              clValue <- value

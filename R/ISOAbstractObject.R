@@ -301,9 +301,16 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       if(!inherits(self, "GMLElement") && !inherits(self, "SWEElement")) cat(crayon::white(paste0("<", crayon::underline(self$getClassName()), ">")))
       if(is(self, "ISOCodeListValue")){
         clVal <- self$printAttrs$codeListValue
-        clDes <- self$codelistId$entries[self$codelistId$entries$value == clVal,"description"]
+        if("value" %in% names(clVal)) clVal = clVal$value
+        clDes <- self$codelistId$codeEntry[sapply(self$codelistId$codeEntry, function(ce){
+          id = ce$identifier
+          if("value" %in% names(id)) id = id$value
+          return(id == clVal)
+        })]
         if(length(clDes)==0){
           clDes <- self$valueDescription
+        }else{
+          clDes <- clDes[[1]]$description
         }
         cat(paste0(": ", clVal, if(add_codelist_description) crayon::cyan(paste0(" {",clDes,"}")) else ""))
       }

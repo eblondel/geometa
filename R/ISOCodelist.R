@@ -94,11 +94,11 @@ ISOCodelist <- R6Class("ISOCodelist",
          codeEntry <- utils::read.csv(clFile, sep="|", stringsAsFactors = FALSE)
          codeEntry <- codeEntry[,c("alpha3", "english", "english")]
          colnames(codeEntry) <- c("value","name", "description")
-         # self$codeEntry = lapply(1:nrow(codeEntry), function(i){
-         #   clv = ISOCodelistValue$new()
-         #   clv$identifier = codeEntry[i,]$value; clv$description = codeEntry[i,]$description;
-         #   return(clv)
-         # })
+         self$codeEntry = lapply(1:nrow(codeEntry), function(i){
+           clv = ISOCodelistValue$new()
+           clv$identifier = codeEntry[i,]$value; clv$description = codeEntry[i,]$description
+           return(clv)
+         })
        }else{
          
          isML <- regexpr("ML", refFile) > 0
