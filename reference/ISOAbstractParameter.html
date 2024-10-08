@@ -72,6 +72,42 @@ ISOAbstractParameter"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
     <h2>Super classes</h2>
     <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code>ISOAbstractParameter</code></p>
     </div>
+    <div id="public-fields">
+    <h2>Public fields</h2>
+    <p></p><div class="r6-fields"><dl><dt><code>name</code></dt>
+<dd><p>name [1..1]: character|ISOMemberName</p></dd>
+
+
+<dt><code>direction</code></dt>
+<dd><p>direction [0..1]: ISOParameterDirection</p></dd>
+
+
+<dt><code>description</code></dt>
+<dd><p>description [0..1]: character</p></dd>
+
+
+<dt><code>optionality</code></dt>
+<dd><p>optionality [1..1]: logical</p></dd>
+
+
+<dt><code>repeatability</code></dt>
+<dd><p>repeatability [1..1]: logical</p></dd>
+
+
+<dt><code>valueType</code></dt>
+<dd><p>valueType [1..1]: ISORecordType</p></dd>
+
+
+<dt><code>value</code></dt>
+<dd><p>value [0..*] : ISORecord</p></dd>
+
+
+<dt><code>resource</code></dt>
+<dd><p>resource [0..*] : ISOSource</p></dd>
+
+
+</dl><p></p></div>
+    </div>
     <div id="methods">
     <h2>Methods</h2>
 
@@ -79,6 +115,16 @@ ISOAbstractParameter"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOAbstractParameter-new"><code>ISOAbstractParameter$new()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-setName"><code>ISOAbstractParameter$setName()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-setDirection"><code>ISOAbstractParameter$setDirection()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-setDescription"><code>ISOAbstractParameter$setDescription()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-setOptionality"><code>ISOAbstractParameter$setOptionality()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-setRepeatability"><code>ISOAbstractParameter$setRepeatability()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-setValueType"><code>ISOAbstractParameter$setValueType()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-addValue"><code>ISOAbstractParameter$addValue()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-delValue"><code>ISOAbstractParameter$delValue()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-addResource"><code>ISOAbstractParameter$addResource()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractParameter-delResource"><code>ISOAbstractParameter$delResource()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractParameter-clone"><code>ISOAbstractParameter$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -125,15 +171,204 @@ ISOAbstractParameter"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOAbstractParameter-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISOAbstractParameter-setName"></a><div class="section">
+<h3 id="method-setname-">Method <code>setName()</code><a class="anchor" aria-label="anchor" href="#method-setname-"></a></h3>
+<p>Set name</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="va">name</span>, <span class="va">attributeType</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>name</code></dt>
+<dd><p>name</p></dd>
+
+
+<dt><code>attributeType</code></dt>
+<dd><p>attribute type</p></dd>
+
+
+<dt><code>locales</code></dt>
+<dd><p>list of localized texts. Default is <code>NULL</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-setDirection"></a><div class="section">
+<h3 id="method-setdirection-">Method <code>setDirection()</code><a class="anchor" aria-label="anchor" href="#method-setdirection-"></a></h3>
+<p>Set direction</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">setDirection</span><span class="op">(</span><span class="va">direction</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>direction</code></dt>
+<dd><p>object of class <a href="ISOParameterDirection.html">ISOParameterDirection</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
+among values returned by <code>ISOParameterDirection$values()</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-setDescription"></a><div class="section">
+<h3 id="method-setdescription-">Method <code>setDescription()</code><a class="anchor" aria-label="anchor" href="#method-setdescription-"></a></h3>
+<p>Set description</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="va">description</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>description</code></dt>
+<dd><p>description</p></dd>
+
+
+<dt><code>locales</code></dt>
+<dd><p>list of localized texts. Default is <code>NULL</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-setOptionality"></a><div class="section">
+<h3 id="method-setoptionality-">Method <code>setOptionality()</code><a class="anchor" aria-label="anchor" href="#method-setoptionality-"></a></h3>
+<p>Set optionality</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">setOptionality</span><span class="op">(</span><span class="va">optional</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>optional</code></dt>
+<dd><p>object of class <a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-setRepeatability"></a><div class="section">
+<h3 id="method-setrepeatability-">Method <code>setRepeatability()</code><a class="anchor" aria-label="anchor" href="#method-setrepeatability-"></a></h3>
+<p>Set repeatability</p><div class="section">
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">setRepeatability</span><span class="op">(</span><span class="va">repeatable</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>repeatable</code></dt>
+<dd><p>object of class <a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-setValueType"></a><div class="section">
+<h3 id="method-setvaluetype-">Method <code>setValueType()</code><a class="anchor" aria-label="anchor" href="#method-setvaluetype-"></a></h3>
+<p>Set value type</p><div class="section">
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">setValueType</span><span class="op">(</span><span class="va">valueType</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>valueType</code></dt>
+<dd><p>object of class <a href="ISORecordType.html">ISORecordType</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-addValue"></a><div class="section">
+<h3 id="method-addvalue-">Method <code>addValue()</code><a class="anchor" aria-label="anchor" href="#method-addvalue-"></a></h3>
+<p>Adds value</p><div class="section">
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">addValue</span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>value</code></dt>
+<dd><p>object of class <a href="ISORecord.html">ISORecord</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-delValue"></a><div class="section">
+<h3 id="method-delvalue-">Method <code>delValue()</code><a class="anchor" aria-label="anchor" href="#method-delvalue-"></a></h3>
+<p>Deletes value</p><div class="section">
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">delValue</span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>value</code></dt>
+<dd><p>object of class <a href="ISORecord.html">ISORecord</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-addResource"></a><div class="section">
+<h3 id="method-addresource-">Method <code>addResource()</code><a class="anchor" aria-label="anchor" href="#method-addresource-"></a></h3>
+<p>Adds resource</p><div class="section">
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">addResource</span><span class="op">(</span><span class="va">resource</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>resource</code></dt>
+<dd><p>object of class <a href="ISOSource.html">ISOSource</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-delResource"></a><div class="section">
+<h3 id="method-delresource-">Method <code>delResource()</code><a class="anchor" aria-label="anchor" href="#method-delresource-"></a></h3>
+<p>Deletes resource</p><div class="section">
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">delResource</span><span class="op">(</span><span class="va">resource</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>resource</code></dt>
+<dd><p>object of class <a href="ISOSource.html">ISOSource</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractParameter-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractParameter</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

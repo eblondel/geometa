@@ -316,13 +316,13 @@
 <url><loc>/reference/ISOOperationMetadata.html</loc></url>
 <url><loc>/reference/ISOOrganisation.html</loc></url>
 <url><loc>/reference/ISOOtherAggregate.html</loc></url>
-<url><loc>/reference/ISOParameter.html</loc></url>
 <url><loc>/reference/ISOParameterDirection.html</loc></url>
 <url><loc>/reference/ISOPeriodDuration.html</loc></url>
 <url><loc>/reference/ISOPixelOrientation.html</loc></url>
 <url><loc>/reference/ISOPlatform.html</loc></url>
 <url><loc>/reference/ISOPortrayalCatalogueReference.html</loc></url>
 <url><loc>/reference/ISOPresentationForm.html</loc></url>
+<url><loc>/reference/ISOProcessParameter.html</loc></url>
 <url><loc>/reference/ISOProcessStep.html</loc></url>
 <url><loc>/reference/ISOProductionSeries.html</loc></url>
 <url><loc>/reference/ISOProgress.html</loc></url>
@@ -344,6 +344,8 @@
 <url><loc>/reference/ISORestriction.html</loc></url>
 <url><loc>/reference/ISORole.html</loc></url>
 <url><loc>/reference/ISORoleType.html</loc></url>
+<url><loc>/reference/ISOSRVParameter.html</loc></url>
+<url><loc>/reference/ISOSRVParameterDirection.html</loc></url>
 <url><loc>/reference/ISOSRVServiceIdentification.html</loc></url>
 <url><loc>/reference/ISOSampleDimension.html</loc></url>
 <url><loc>/reference/ISOScale.html</loc></url>

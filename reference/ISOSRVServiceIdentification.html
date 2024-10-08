@@ -675,7 +675,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">scriptOp</span><span class="op">$</span><span class="fu">setOperationDescription</span><span class="op">(</span><span class="st">"WPS Execute"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">scriptOp</span><span class="op">$</span><span class="fu">setInvocationName</span><span class="op">(</span><span class="st">"identifier"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span></span>
-<span class="r-in"><span>    <span class="va">param</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOParameter.html">ISOParameter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">param</span> <span class="op">&lt;-</span> <span class="va">ISOParameter</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"name%s"</span>,<span class="va">i</span><span class="op">)</span>, <span class="st">"xs:string"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setDirection</span><span class="op">(</span><span class="st">"in"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"description%s"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span></span>
@@ -684,15 +684,23 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setValueType</span><span class="op">(</span><span class="st">"xs:string"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">scriptOp</span><span class="op">$</span><span class="fu">addParameter</span><span class="op">(</span><span class="va">param</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span></span></span>
-<span class="r-in"><span>  <span class="va">outParam</span> <span class="op">&lt;-</span><span class="va"><a href="ISOParameter.html">ISOParameter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'ISOParameter' not found</span>
+<span class="r-in"><span>  <span class="va">outParam</span> <span class="op">&lt;-</span><span class="va">ISOParameter</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'ISOParameter' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"outputname"</span>, <span class="st">"xs:string"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setDirection</span><span class="op">(</span><span class="st">"out"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="st">"outputdescription"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setOptionality</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setRepeatability</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setValueType</span><span class="op">(</span><span class="st">"xs:string"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">scriptOp</span><span class="op">$</span><span class="fu">addParameter</span><span class="op">(</span><span class="va">outParam</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">or</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">or</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span><span class="st">"http://somelink/myrscript.R"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">or</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"R script name"</span><span class="op">)</span></span></span>
@@ -711,7 +719,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">invocationName</span> <span class="op">&lt;-</span> <span class="st">"mywpsidentifier"</span></span></span>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">setInvocationName</span><span class="op">(</span><span class="va">invocationName</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span></span>
-<span class="r-in"><span>    <span class="va">param</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOParameter.html">ISOParameter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">param</span> <span class="op">&lt;-</span> <span class="va">ISOParameter</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"name%s"</span>,<span class="va">i</span><span class="op">)</span>, <span class="st">"xs:string"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setDirection</span><span class="op">(</span><span class="st">"in"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"description%s"</span>,<span class="va">i</span><span class="op">)</span><span class="op">)</span></span></span>
@@ -720,15 +728,23 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>    <span class="va">param</span><span class="op">$</span><span class="fu">setValueType</span><span class="op">(</span><span class="st">"xs:string"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">wpsOp</span><span class="op">$</span><span class="fu">addParameter</span><span class="op">(</span><span class="va">param</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span></span></span>
-<span class="r-in"><span>  <span class="va">outParam</span> <span class="op">&lt;-</span><span class="va"><a href="ISOParameter.html">ISOParameter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'ISOParameter' not found</span>
+<span class="r-in"><span>  <span class="va">outParam</span> <span class="op">&lt;-</span><span class="va">ISOParameter</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'ISOParameter' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"outputname"</span>, <span class="st">"xs:string"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setDirection</span><span class="op">(</span><span class="st">"out"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="st">"outputdescription"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setOptionality</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setRepeatability</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">outParam</span><span class="op">$</span><span class="fu">setValueType</span><span class="op">(</span><span class="st">"xs:string"</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">addParameter</span><span class="op">(</span><span class="va">outParam</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'outParam' not found</span>
 <span class="r-in"><span>  <span class="va">or1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOnlineResource.html">ISOOnlineResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">or1</span><span class="op">$</span><span class="fu">setLinkage</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"http://somelink/wps?request=Execute&amp;version=1.0.0&amp;Identifier=%s"</span>,</span></span>
