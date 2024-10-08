@@ -262,6 +262,8 @@
 <url><loc>/reference/ISOImageryRangeElementDescription.html</loc></url>
 <url><loc>/reference/ISOImageryRequestedDate.html</loc></url>
 <url><loc>/reference/ISOImageryRequirement.html</loc></url>
+<url><loc>/reference/ISOImageryRevision.html</loc></url>
+<url><loc>/reference/ISOImagerySensor.html</loc></url>
 <url><loc>/reference/ISOImagerySensorType.html</loc></url>
 <url><loc>/reference/ISOImagerySequence.html</loc></url>
 <url><loc>/reference/ISOImagerySource.html</loc></url>
@@ -273,6 +275,8 @@
 <url><loc>/reference/ISOInheritanceRelation.html</loc></url>
 <url><loc>/reference/ISOInitiative.html</loc></url>
 <url><loc>/reference/ISOInitiativeType.html</loc></url>
+<url><loc>/reference/ISOInstrumentationEvent.html</loc></url>
+<url><loc>/reference/ISOInstrumentationEventList.html</loc></url>
 <url><loc>/reference/ISOInstrumentationEventType.html</loc></url>
 <url><loc>/reference/ISOKeywordClass.html</loc></url>
 <url><loc>/reference/ISOKeywordType.html</loc></url>
