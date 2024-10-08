@@ -1,14 +1,14 @@
-#' ISOParameter
+#' ISOSRVParameter
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO parameter
-#' @return Object of \code{\link{R6Class}} for modelling an ISOParameter
+#' @return Object of \code{\link{R6Class}} for modelling an ISOSRVParameter
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @examples
-#'   md <- ISOParameter$new()
+#'   md <- ISOSRVParameter$new()
 #'   md$setName("name", "attType")
 #'   md$setDirection("in")
 #'   md$setDescription("description")
@@ -18,15 +18,20 @@
 #'   xml <- md$encode()
 #' 
 #' @references 
-#'   ISO 19119:2005 - Geographic information -- Services
+#'   - ISO 19119 \url{https://schemas.isotc211.org/19119/srv/srv/#element_SV_Parameter}
+
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_Parameter}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOParameter <- R6Class("ISOParameter",
+ISOSRVParameter <- R6Class("ISOSRVParameter",
      inherit = ISOAbstractObject,
      private = list(
        xmlElement = "SV_Parameter",
-       xmlNamespacePrefix = "SRV"
+       xmlNamespacePrefix = list(
+         "19139" = "SRV",
+         "19115-3" = "SRV"
+       )
      ),
      public = list(
        
@@ -40,7 +45,7 @@ ISOParameter <- R6Class("ISOParameter",
        optionality = "Mandatory",
        #'@field repeatability repeatability [1..1]: logical
        repeatability = FALSE,
-       #'@field valueType valueType [1..1]: ISOTypeName
+       #'@field valueType valueType [1..1]: ISOTypeName (=> ISO 19139)
        valueType = NULL,
        
        #'@description Initializes object
@@ -54,8 +59,8 @@ ISOParameter <- R6Class("ISOParameter",
        #'@param attributeType attribute type
        #'@param locales list of localized texts. Default is \code{NULL}
        setName = function(name, attributeType, locales = NULL){
-         if(!is(attributeType, "ISOTypeName")){
-           attrType <- ISOTypeName$new()
+         if(!is(attributeType, "ISOMemberName")){
+           attrType <- ISOMemberName$new()
            attrType$setName(attributeType)
            if(!is.null(locales)){
              attrType$setName(attributeType, locales = locales)
