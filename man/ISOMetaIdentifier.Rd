@@ -99,7 +99,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOMetaIdentifier$new(xml = NULL, code, codeSpace = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetaIdentifier$new(xml = NULL, code = NULL, codeSpace = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

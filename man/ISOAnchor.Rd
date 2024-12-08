@@ -21,7 +21,9 @@ ISOAnchor
 
 }
 \references{
-ISO/TS 19139:2007 Geographic information -- XML
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmx/1.0/gmx/#element_Anchor}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/gcx/1.0/gcx/#element_Anchor}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
