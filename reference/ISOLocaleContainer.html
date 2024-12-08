@@ -62,7 +62,8 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_PT_LocaleContainer</p>
+<p>- ISO 19115-3 https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_PT_LocaleContainer</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -74,7 +75,19 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
     </div>
     <div id="public-fields">
     <h2>Public fields</h2>
-    <p></p><div class="r6-fields"><dl><dt><code>description</code></dt>
+    <p></p><div class="r6-fields"><dl><dt><code>language</code></dt>
+<dd><p>language [1..1]: ISOLanguage</p></dd>
+
+
+<dt><code>country</code></dt>
+<dd><p>country [0..1]: ISOCountry</p></dd>
+
+
+<dt><code>characterEncoding</code></dt>
+<dd><p>character encoding [0..1]: ISOCharacterSet</p></dd>
+
+
+<dt><code>description</code></dt>
 <dd><p>description [1..1]</p></dd>
 
 
@@ -103,6 +116,9 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOLocaleContainer-new"><code>ISOLocaleContainer$new()</code></a></p></li>
+<li><p><a href="#method-ISOLocaleContainer-setLanguage"><code>ISOLocaleContainer$setLanguage()</code></a></p></li>
+<li><p><a href="#method-ISOLocaleContainer-setCountry"><code>ISOLocaleContainer$setCountry()</code></a></p></li>
+<li><p><a href="#method-ISOLocaleContainer-setCharacterEncoding"><code>ISOLocaleContainer$setCharacterEncoding()</code></a></p></li>
 <li><p><a href="#method-ISOLocaleContainer-setDescription"><code>ISOLocaleContainer$setDescription()</code></a></p></li>
 <li><p><a href="#method-ISOLocaleContainer-setLocale"><code>ISOLocaleContainer$setLocale()</code></a></p></li>
 <li><p><a href="#method-ISOLocaleContainer-addDate"><code>ISOLocaleContainer$addDate()</code></a></p></li>
@@ -157,15 +173,63 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOLocaleContainer-setDescription"></a><div class="section">
-<h3 id="method-setdescription-">Method <code>setDescription()</code><a class="anchor" aria-label="anchor" href="#method-setdescription-"></a></h3>
-<p>Set description</p><div class="section">
+</div><p></p><hr><a id="method-ISOLocaleContainer-setLanguage"></a><div class="section">
+<h3 id="method-setlanguage-">Method <code>setLanguage()</code><a class="anchor" aria-label="anchor" href="#method-setlanguage-"></a></h3>
+<p>Set language</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="va">description</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">setLanguage</span><span class="op">(</span><span class="va">language</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>language</code></dt>
+<dd><p>object of class <a href="ISOLanguage.html">ISOLanguage</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOLocaleContainer-setCountry"></a><div class="section">
+<h3 id="method-setcountry-">Method <code>setCountry()</code><a class="anchor" aria-label="anchor" href="#method-setcountry-"></a></h3>
+<p>Set country</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">setCountry</span><span class="op">(</span><span class="va">country</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>country</code></dt>
+<dd><p>object of class <a href="ISOCountry.html">ISOCountry</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOLocaleContainer-setCharacterEncoding"></a><div class="section">
+<h3 id="method-setcharacterencoding-">Method <code>setCharacterEncoding()</code><a class="anchor" aria-label="anchor" href="#method-setcharacterencoding-"></a></h3>
+<p>Set character encoding</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">setCharacterEncoding</span><span class="op">(</span><span class="va">characterEncoding</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>characterEncoding</code></dt>
+<dd><p>object of class <a href="ISOCharacterSet.html">ISOCharacterSet</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOLocaleContainer-setDescription"></a><div class="section">
+<h3 id="method-setdescription-">Method <code>setDescription()</code><a class="anchor" aria-label="anchor" href="#method-setdescription-"></a></h3>
+<p>Set description</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="va">description</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>description</code></dt>
 <dd><p>description</p></dd>
 
@@ -180,12 +244,12 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-ISOLocaleContainer-setLocale"></a><div class="section">
 <h3 id="method-setlocale-">Method <code>setLocale()</code><a class="anchor" aria-label="anchor" href="#method-setlocale-"></a></h3>
 <p>Set locale</p><div class="section">
-<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">setLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>locale</code></dt>
 <dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
 
@@ -196,12 +260,12 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-ISOLocaleContainer-addDate"></a><div class="section">
 <h3 id="method-adddate-">Method <code>addDate()</code><a class="anchor" aria-label="anchor" href="#method-adddate-"></a></h3>
 <p>Adds date</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">date</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>date</code></dt>
 <dd><p>object of class <a href="ISODate.html">ISODate</a></p></dd>
 
@@ -216,12 +280,12 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-ISOLocaleContainer-delDate"></a><div class="section">
 <h3 id="method-deldate-">Method <code>delDate()</code><a class="anchor" aria-label="anchor" href="#method-deldate-"></a></h3>
 <p>Deletes date</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">delDate</span><span class="op">(</span><span class="va">date</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>date</code></dt>
 <dd><p>object of class <a href="ISODate.html">ISODate</a></p></dd>
 
@@ -236,14 +300,15 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-ISOLocaleContainer-addResponsibleParty"></a><div class="section">
 <h3 id="method-addresponsibleparty-">Method <code>addResponsibleParty()</code><a class="anchor" aria-label="anchor" href="#method-addresponsibleparty-"></a></h3>
 <p>Adds responsible party</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">addResponsibleParty</span><span class="op">(</span><span class="va">responsibleParty</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>responsibleParty</code></dt>
-<dd><p>object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a></p></dd>
+<dd><p>object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a> (in ISO 19139) or
+<a href="ISOResponsibility.html">ISOResponsibility</a> (in ISO 19115-3)</p></dd>
 
 
 </dl><p></p></div>
@@ -256,14 +321,15 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-ISOLocaleContainer-delResponsibleParty"></a><div class="section">
 <h3 id="method-delresponsibleparty-">Method <code>delResponsibleParty()</code><a class="anchor" aria-label="anchor" href="#method-delresponsibleparty-"></a></h3>
 <p>Deletes responsible party</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">delResponsibleParty</span><span class="op">(</span><span class="va">responsibleParty</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>responsibleParty</code></dt>
-<dd><p>object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a></p></dd>
+<dd><p>object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a> (in ISO 19139) or
+<a href="ISOResponsibility.html">ISOResponsibility</a> (in ISO 19115-3)</p></dd>
 
 
 </dl><p></p></div>
@@ -276,12 +342,12 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-ISOLocaleContainer-addLocalisedString"></a><div class="section">
 <h3 id="method-addlocalisedstring-">Method <code>addLocalisedString()</code><a class="anchor" aria-label="anchor" href="#method-addlocalisedstring-"></a></h3>
 <p>Adds localised string</p><div class="section">
-<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">addLocalisedString</span><span class="op">(</span><span class="va">string</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>string</code></dt>
 <dd><p>object of class <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
@@ -296,12 +362,12 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-ISOLocaleContainer-delLocalisedString"></a><div class="section">
 <h3 id="method-dellocalisedstring-">Method <code>delLocalisedString()</code><a class="anchor" aria-label="anchor" href="#method-dellocalisedstring-"></a></h3>
 <p>Deletes localised string</p><div class="section">
-<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">delLocalisedString</span><span class="op">(</span><span class="va">string</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>string</code></dt>
 <dd><p>object of class <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
@@ -316,12 +382,12 @@ ISOLocaleContainer"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
 </div><p></p><hr><a id="method-ISOLocaleContainer-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOLocaleContainer</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
