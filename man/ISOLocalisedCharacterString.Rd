@@ -21,7 +21,9 @@ ISOLocalisedCharacterString
 
 }
 \references{
-ISO/TS 19103:2005 Geographic information -- Conceptual schema language
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_LocalisedCharacterString}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_LocalisedCharacterString}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

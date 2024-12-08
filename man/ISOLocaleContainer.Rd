@@ -16,7 +16,9 @@ ISOLocaleContainer
 ISOLocaleContainer
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_PT_LocaleContainer}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_PT_LocaleContainer}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -30,6 +32,12 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
+\item{\code{language}}{language [1..1]: ISOLanguage}
+
+\item{\code{country}}{country [0..1]: ISOCountry}
+
+\item{\code{characterEncoding}}{character encoding [0..1]: ISOCharacterSet}
+
 \item{\code{description}}{description [1..1]}
 
 \item{\code{locale}}{locale [1..1]}
@@ -46,6 +54,9 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOLocaleContainer-new}{\code{ISOLocaleContainer$new()}}
+\item \href{#method-ISOLocaleContainer-setLanguage}{\code{ISOLocaleContainer$setLanguage()}}
+\item \href{#method-ISOLocaleContainer-setCountry}{\code{ISOLocaleContainer$setCountry()}}
+\item \href{#method-ISOLocaleContainer-setCharacterEncoding}{\code{ISOLocaleContainer$setCharacterEncoding()}}
 \item \href{#method-ISOLocaleContainer-setDescription}{\code{ISOLocaleContainer$setDescription()}}
 \item \href{#method-ISOLocaleContainer-setLocale}{\code{ISOLocaleContainer$setLocale()}}
 \item \href{#method-ISOLocaleContainer-addDate}{\code{ISOLocaleContainer$addDate()}}
@@ -105,6 +116,57 @@ Initializes object
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-setLanguage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-setLanguage}{}}}
+\subsection{Method \code{setLanguage()}}{
+Set language
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$setLanguage(language)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{language}}{object of class \link{ISOLanguage} or \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-setCountry"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-setCountry}{}}}
+\subsection{Method \code{setCountry()}}{
+Set country
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$setCountry(country)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{country}}{object of class \link{ISOCountry} or \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOLocaleContainer-setCharacterEncoding"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOLocaleContainer-setCharacterEncoding}{}}}
+\subsection{Method \code{setCharacterEncoding()}}{
+Set character encoding
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOLocaleContainer$setCharacterEncoding(characterEncoding)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{characterEncoding}}{object of class \link{ISOCharacterSet} or \link{character}}
 }
 \if{html}{\out{</div>}}
 }
@@ -197,7 +259,8 @@ Adds responsible party
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{responsibleParty}}{object of class \link{ISOResponsibleParty}}
+\item{\code{responsibleParty}}{object of class \link{ISOResponsibleParty} (in ISO 19139) or 
+\link{ISOResponsibility} (in ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }
@@ -217,7 +280,8 @@ Deletes responsible party
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{responsibleParty}}{object of class \link{ISOResponsibleParty}}
+\item{\code{responsibleParty}}{object of class \link{ISOResponsibleParty} (in ISO 19139) or 
+\link{ISOResponsibility} (in ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }
