@@ -70,16 +70,19 @@ ISOPeriodDuration <- R6Class("ISOPeriodDuration",
       if(!is.null(start) & !is.null(end)){
         if(is(start,"numeric")) start <- as(start, "character")
         if(!(is(start, "character") & nchar(start) %in% c(4,7))){
-          if(!all(class(start)==c("POSIXct","POSIXt")) | is(start, "Date")){
+          if(!all(class(start)==c("POSIXct","POSIXt")) & !is(start, "Date")){
             stop("For a date, the value should be of class ('POSIXct','POSIXt') or 'Date'")
           }
         }
         if(is(end,"numeric")) end <- as(end, "character")
         if(!(is(end, "character") & nchar(end) %in% c(4,7))){
-          if(!all(class(end)==c("POSIXct","POSIXt")) | is(end, "Date")){
+          if(!all(class(end)==c("POSIXct","POSIXt")) & !is(end, "Date")){
             stop("For a date, the value should be of class ('POSIXct','POSIXt') or 'Date'")
           }
         }
+        posix = FALSE
+        if(is(start,"POSIXt") & is(end, "POSIXt")) posix = TRUE
+        
         if(nchar(start)==4 && nchar(end)==4){
           years <- length(as.numeric(start):as.numeric(end))
           months <- 0; days <- 0; hours <- 0; mins <- 0; secs <- 0;
@@ -104,17 +107,22 @@ ISOPeriodDuration <- R6Class("ISOPeriodDuration",
           months.seq <- seq(months.start, end, by = "months")
           months <- length(months.seq)-1
           days.start <- months.seq[length(months.seq)]
-          days.seq <- seq(days.start, end, by = "DSTdays")
+          days.seq <- seq(days.start, end, by = if(posix) "DSTdays" else "days")
           days <- length(days.seq)-1
-          hours.start <- days.seq[length(days.seq)]
-          hours.seq <- seq(hours.start, end, by = "hours")
-          hours <- length(hours.seq)-1
-          mins.start <- hours.seq[length(hours.seq)]
-          mins.seq <- seq(mins.start, end, by = "mins")
-          mins <- length(mins.seq)-1
-          secs.start <- mins.seq[length(mins.seq)]
-          secs.seq <- seq(secs.start, end, by = "secs")
-          secs <- length(secs.seq)-1
+          hours = 0
+          mins = 0
+          secs = 0
+          if(posix){
+            hours.start <- days.seq[length(days.seq)]
+            hours.seq <- seq(hours.start, end, by = "hours")
+            hours <- length(hours.seq)-1
+            mins.start <- hours.seq[length(hours.seq)]
+            mins.seq <- seq(mins.start, end, by = "mins")
+            mins <- length(mins.seq)-1
+            secs.start <- mins.seq[length(mins.seq)]
+            secs.seq <- seq(secs.start, end, by = "secs")
+            secs <- length(secs.seq)-1
+          }
         }
       }
       
