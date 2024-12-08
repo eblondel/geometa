@@ -323,7 +323,9 @@
 #'    }
 #' 
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Metadata}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mdb/2.0/mdb/#element_MD_Metadata}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -338,30 +340,63 @@ ISOMetadata <- R6Class("ISOMetadata",
     )
   ),
   public = list(
-     #'@field fileIdentifier fileIdentifier [0..1] : character
+     
+     #identification -----------------------------------------------------------
+     #'@field fileIdentifier fileIdentifier [0..1] : character (ISO 19139)
      fileIdentifier = NULL,
-     #'@field language language [0..1] : character
+     #'@field metadataIdentifier metadataIdentifier [0..1] : ISOMetaIdentifier (ISO 19115-3)
+     metadataIdentifier = NULL,
+     #language/defaultLocale ---------------------------------------------------
+     #'@field language language [0..1] : character (ISO 19139)
      language = NULL,
+     #'@field defaultLocale [0..1] : ISOLocale (ISO 19115-3)
+     defaultLocale = NULL,
+     #characterSet -------------------------------------------------------------
      #'@field characterSet characterSet [0..1] : ISOCharacterSet = "utf8"
      characterSet = NULL,
+     #parent identification ----------------------------------------------------
      #'@field parentIdentifier parentIdentifier [0..1] : character
      parentIdentifier = NULL,
+     #'@field parentMetadata parentMetadata [0..1]: ISOCitation (ISO 19115-3)
+     parentMetadata = NULL,
+     #scope --------------------------------------------------------------------
      #'@field hierarchyLevel hierarchyLevel [0..*] : ISOScopeCode = "dataset"
      hierarchyLevel = list(),
      #'@field hierarchyLevelName hierarchyLevelName [0..*] : character
      hierarchyLevelName = list(),
+     #'@field metadataScope metadataScope [0..*] : ISOMetadataScope (ISO 19115-3)
+     metadataScope = list(),
+     #contact ------------------------------------------------------------------
      #'@field contact contact [1..*] : ISOResponsibleParty
      contact = list(),
+     #date info ----------------------------------------------------------------
      #'@field dateStamp dateStamp : POSIXct/POSIXt
-     dateStamp = Sys.time(),
-     #'@field metadataStandardName metadataStandardName [0..1] : character
+     dateStamp = NULL,
+     #'@field dateInfo dateInfo [1..*] : ISODate
+     dateInfo = list(),
+     #--------------------------------------------------------------------------
+     #'@field metadataStandardName metadataStandardName [0..1] : character (ISO 19139)
      metadataStandardName = NULL,
-     #'@field metadataStandardVersion metadataStandardVersion [0..1] : character
+     #'@field metadataStandardVersion metadataStandardVersion [0..1] : character (ISO 19139)
      metadataStandardVersion = NULL,
-     #'@field dataSetURI dataSetURI [0..1] : character
+     #'@field metadataStandard metadataStandard [0..*] : ISOCitation (ISO 19115-3)
+     metadataStandard = list(),
+     #'@field metadataProfile metadataProfile [0..*] : ISOCitation (ISO 19115-3)
+     metadataProfile = list(),
+     #'@field alternativeMetadataReference alternativeMetadataReference [0..*] : ISOCitation (ISO 19115-3)
+     alternativeMetadataReference = list(),
+     #linkage-------------------------------------------------------------------
+     #'@field otherLocale otherLocale [0..*]  : ISOLocale (ISO 19115-3)
+     otherLocale = list(),
+     #linkage-------------------------------------------------------------------
+     #'@field dataSetURI dataSetURI [0..1] : character (ISO 19139)
      dataSetURI = NULL,
-     #'@field locale locale [0..*]: ISOLocale
+     #'@field metadataLinkage metadataLinkage [0..*] : ISOOnlineResource (ISO 19115-3)
+     metadataLinkage = list(),
+     #--------------------------------------------------------------------------
+     #'@field locale locale [0..*]: ISOLocale (ISO 19139)
      locale = list(),
+     #--------------------------------------------------------------------------
      #'@field spatialRepresentationInfo spatialRepresentationInfo [0..*]: ISOSpatialRepresentation
      spatialRepresentationInfo = list(),
      #'@field referenceSystemInfo referenceSystemInfo [0..*]: ISOReferenceSystem
@@ -391,9 +426,16 @@ ISOMetadata <- R6Class("ISOMetadata",
      initialize = function(xml = NULL){
        
        #default values
-       defaults <- list(
-         characterSet = ISOCharacterSet$new(value = "utf8"),
-         hierarchyLevel = list(ISOScopeCode$new(value = "dataset"))
+       defaults <- list()
+       switch(getMetadataStandard(),
+        "19139" = {
+          defaults = list(
+            characterSet = ISOCharacterSet$new(value = "utf8"),
+            hierarchyLevel = list(ISOScopeCode$new(value = "dataset"))
+          )
+          self$dateStamp = Sys.time()
+        },
+        "19115-3" = {}
        )
        
        if(!is.null(xml)){
@@ -407,23 +449,64 @@ ISOMetadata <- R6Class("ISOMetadata",
      },
      
      #MD_Metadata
-     #--------------------------------------------------------------------------
+     #==========================================================================
      
      #'@description Set file identifier
      #'@param fileIdentifier file identifier
      setFileIdentifier = function(fileIdentifier){
-       self$fileIdentifier <- fileIdentifier
+       switch(getMetadataStandard(),
+         "19139" = {
+           self$fileIdentifier <- fileIdentifier
+         },
+         "19115-3" = {
+           self$setMetadataIdentifier(fileIdentifier)
+         }
+       )
      },
+     
+     #'@description set metadata identifier
+     #'@param metadataIdentifier metadata identifier
+     setMetadataIdentifier = function(metadataIdentifier){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(metadataIdentifier, "ISOMetaIdentifier")){
+         metadataIdentifier = ISOMetaIdentifier$new(code = metadataIdentifier)
+       }
+       self$metadataIdentifier = metadataIdentifier
+     },
+     
+     #--------------------------------------------------------------------------
 
      #'@description Set language
      #'@param locale object of class \link{ISOLanguage} or any \link{character}
      #' from values returned by \code{ISOLanguages$values()}
      setLanguage = function(locale){
-       if(is(locale, "character")){
-         locale <- ISOLanguage$new(value = locale)
-       }
-       self$language <- locale
+       switch(getMetadataStandard(),
+        "19139" = {
+           if(is(locale, "character")){
+             locale <- ISOLanguage$new(value = locale)
+           }
+           self$language <- locale
+        },
+        "19115-3" = {
+           if(is(locale, "character")){
+             locale <- ISOLocale$new(language = locale, country = NA, characterEncoding = NA)
+           }
+           self$setDefaultLocale(locale)
+        }
+       )
      },
+     
+     #'@description Set default locale
+     #'@param locale object of class \link{ISOLocale}
+     setDefaultLocale = function(locale){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(locale,"ISOLocale")){
+         stop("The argument should be a 'ISOLocale' object")  
+       }
+       self$defaultLocale = locale
+     },
+     
+     #--------------------------------------------------------------------------
 
      #'@description Set charset
      #'@param charset object of class \link{ISOCharacterSet} or any \link{character}
@@ -435,11 +518,35 @@ ISOMetadata <- R6Class("ISOMetadata",
        self$characterSet <- charset
      },
      
+     #--------------------------------------------------------------------------
+     
      #'@description Set parent identifier
      #'@param parentIdentifier parent identifier
      setParentIdentifier = function(parentIdentifier){
-       self$parentIdentifier <- parentIdentifier
+       switch(getMetadataStandard(),
+        "19139" = {
+          self$parentIdentifier <- parentIdentifier
+        },
+        "19115-3" = {
+          parent_md = ISOCitation$new()
+          parent_md$title = NA
+          parent_md$addIdentifier(ISOMetaIdentifier$new(code = parentIdentifier))
+          self$setParentMetadata(parent_md)
+        }
+       )
      },
+     
+     #'@description Set parent metadata
+     #'@param parentMetadata parent metadata
+     setParentMetadata = function(parentMetadata){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!inherits(parentMetadata,"ISOAbstractCitation")){
+         stop("The argument should be an object inheriting 'ISOAbstractCitation'")  
+       }
+       self$parentMetadata = parentMetadata
+     },
+     
+     #--------------------------------------------------------------------------
      
      #'@description Adds hierarchy level
      #'@param level object of class \link{ISOScopeCode} or any \link{character}
@@ -450,16 +557,6 @@ ISOMetadata <- R6Class("ISOMetadata",
          level <- ISOScopeCode$new(value = level)
        }
        return(self$addListElement("hierarchyLevel", level))
-     },
-     
-     #'@description Sets hierarchy level
-     #'@param level object of class \link{ISOScopeCode} or any \link{character}
-     #' from values returned by \code{ISOScopeCode$values()}
-     #'@return \code{TRUE} if added, \code{FALSE} otherwise
-     setHierarchyLevel = function(level){
-       warning("Method 'setHierarchyLevel' is deprecated, please use 'addHierarchyLevel'!")
-       self$hierarchyLevel <- list()
-       self$addHierarchyLevel(level)
      },
 
      #'@description Deletes hierarchy level
@@ -487,36 +584,108 @@ ISOMetadata <- R6Class("ISOMetadata",
        return(self$delListElement("hierarchyLevelName", levelName))
      },
      
+     #'@description Adds metadata scope
+     #'@param metadataScope object of class \link{ISOMetadataScope} or any \link{character} among
+     #'values returned by \code{ISOScopeCode$values()}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addMetadataScope = function(metadataScope){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(metadataScope, "ISOMetadataScope")){
+         metadataScope = ISOMetadataScope$new(resourceScope = ISOScopeCode$new(value = metadataScope))
+       }
+       return(self$addListElement("metadataScope", metadataScope))
+     },
+     
+     #'@description Deletes metadata scope
+     #'@param metadataScope object of class \link{ISOMetadataScope} or any \link{character} among
+     #'values returned by \code{ISOScopeCode$values()}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delMetadataScope = function(metadataScope){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(metadataScope, "ISOMetadataScope")){
+         metadataScope = ISOMetadataScope$new(resourceScope = ISOScopeCode$new(value = metadataScope))
+       }
+       return(self$delListElement("metadataScope", metadataScope))
+     },
+     
+     #--------------------------------------------------------------------------
+     
      #'@description Adds contact
-     #'@param contact object of class \link{ISOResponsibleParty}
+     #'@param contact object of class \link{ISOResponsibleParty} for ISO 19139 or
+     #'inheriting class \link{ISOAbstractResponsibility} for ISO 19115-3
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addContact = function(contact){
-       if(!is(contact,"ISOResponsibleParty")){
-         stop("The argument should be a 'ISOResponsibleParty' object")
-       }
+       switch(getMetadataStandard(),
+              "19139" = {
+                if(!is(contact,"ISOResponsibleParty")){
+                  stop("The argument should be a 'ISOResponsibleParty' object")
+                }
+              },
+              "19115-3" = {
+                if(!inherits(contact,"ISOAbstractResponsibility")){
+                  stop("The argument should inherit class 'ISOAbstractResponsibility'")
+                }
+              }
+       )
        return(self$addListElement("contact", contact))
      },
      
      #'@description Deletes contact
-     #'@param contact object of class \link{ISOResponsibleParty}
+     #'@param contact object of class \link{ISOResponsibleParty} for ISO 19139 or
+     #'inheriting class \link{ISOAbstractResponsibility} for ISO 19115-3
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delContact = function(contact){
-       if(!is(contact,"ISOResponsibleParty")){
-         stop("The argument should be a 'ISOResponsibleParty' object")
-       }
+       switch(getMetadataStandard(),
+              "19139" = {
+                if(!is(contact,"ISOResponsibleParty")){
+                  stop("The argument should be a 'ISOResponsibleParty' object")
+                }
+              },
+              "19115-3" = {
+                if(!inherits(contact,"ISOAbstractResponsibility")){
+                  stop("The argument should inherit class 'ISOAbstractResponsibility'")
+                }
+              }
+       )
        return(self$delListElement("contact", contact))
      },
      
-     
+     #--------------------------------------------------------------------------
+
      #'@description Set date stamp
      #'@param date date
      setDateStamp = function(date){
        self$dateStamp = date
      },
      
+     #'@description Adds date
+     #'@param date object of class \link{ISODate}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addDate = function(date){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(date, "ISODate")){
+         stop("The argument should be an 'ISODate' object")
+       }
+       return(self$addListElement("dateInfo", date))
+     },
+     
+     #'@description Deletes date
+     #'@param date object of class \link{ISODate}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delDate = function(date){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(date, "ISODate")){
+         stop("The argument should be an 'ISODate' object")
+       }
+       return(self$addListElement("dateInfo", date))
+     },
+     
+     #--------------------------------------------------------------------------     
+     
      #'@description Set metadata standard name
      #'@param name name
      setMetadataStandardName = function(name){
+       self$stopIfMetadataStandardIsNot("19139")
        if(!is(name, "character")) name <- as.character(name)
        self$metadataStandardName <- name
      },
@@ -524,34 +693,170 @@ ISOMetadata <- R6Class("ISOMetadata",
      #'@description Set metadata standard version
      #'@param version version
      setMetadataStandardVersion = function(version){
+       self$stopIfMetadataStandardIsNot("19139")
        if(!is(version, "character")) version <- as.character(version)
        self$metadataStandardVersion <- version
      },
      
+     #'@description Adds metadata standard
+     #'@param metadataStandard object of class \link{ISOCitation} or \link{character}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addMetadataStandard = function(metadataStandard){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(metadataStandard, "ISOCitation")){
+         if(is(metadataStandard, "character")){
+           metadataStandardCit = ISOCitation$new()
+           metadataStandardCit$setTitle(metadataStandard)
+           metadataStandard = metadataStandardCit
+         }else{
+           stop("The argument should be an object of class 'ISOCitation' or 'character'")
+         }
+       }
+       return(self$addListElement("metadataStandard", metadataStandard))
+     },
+     
+     #'@description Deletes metadata standard
+     #'@param metadataStandard object of class \link{ISOCitation} or \link{character}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delMetadataStandard = function(metadataStandard){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(metadataStandard, "ISOCitation")){
+         if(is(metadataStandard, "character")){
+           metadataStandardCit = ISOCitation$new()
+           metadataStandardCit$setTitle(metadataStandard)
+           metadataStandard = metadataStandardCit
+         }else{
+           stop("The argument should be an object of class 'ISOCitation' or 'character'")
+         }
+       }
+       return(self$delListElement("metadataStandard", metadataStandard))
+     },
+     
+     #'@description Adds metadata profile
+     #'@param metadataProfile object of class \link{ISOCitation} or \link{character}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addMetadataProfile = function(metadataProfile){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(metadataProfile, "ISOCitation")){
+         if(is(metadataProfile, "character")){
+           metadataProfileCit = ISOCitation$new()
+           metadataProfileCit$setTitle(metadataProfile)
+           metadataProfile = metadataProfileCit
+         }else{
+           stop("The argument should be an object of class 'ISOCitation' or 'character'")
+         }
+       }
+       return(self$addListElement("metadataProfile", metadataProfile))
+     },
+     
+     #'@description Deletes metadata profile
+     #'@param metadataProfile object of class \link{ISOCitation} or \link{character}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delMetadataProfile = function(metadataProfile){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(metadataProfile, "ISOCitation")){
+         if(is(metadataProfile, "character")){
+           metadataProfile = ISOCitation$new()
+           metadataProfileCit$setTitle(metadataProfile)
+           metadataProfile = metadataProfileCit
+         }else{
+           stop("The argument should be an object of class 'ISOCitation' or 'character'")
+         }
+       }
+       return(self$delListElement("metadataProfile", metadataProfile))
+     },
+     
+     #'@description Adds alternative metadata reference
+     #'@param alternativeMetadataReference object of class \link{ISOCitation} or \link{character}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addAlternativeMetadataReference = function(alternativeMetadataReference){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(alternativeMetadataReference, "ISOCitation")){
+         if(is(alternativeMetadataReference, "character")){
+           alternativeMetadataReferenceCit = ISOCitation$new()
+           alternativeMetadataReferenceCit$setTitle(alternativeMetadataReference)
+           alternativeMetadataReference = alternativeMetadataReferenceCit
+         }else{
+           stop("The argument should be an object of class 'ISOCitation' or 'character'")
+         }
+       }
+       return(self$addListElement("alternativeMetadataReference", alternativeMetadataReference))
+     },
+     
+     #'@description Deletes alternative metadata reference
+     #'@param alternativeMetadataReference object of class \link{ISOCitation} or \link{character}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delAlternativeMetadataReference = function(alternativeMetadataReference){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(alternativeMetadataReference, "ISOCitation")){
+         if(is(alternativeMetadataReference, "character")){
+           alternativeMetadataReferenceCit = ISOCitation$new()
+           alternativeMetadataReferenceCit$setTitle(alternativeMetadataReference)
+           alternativeMetadataReference = alternativeMetadataReferenceCit
+         }else{
+           stop("The argument should be an object of class 'ISOCitation' or 'character'")
+         }
+       }
+       return(self$delListElement("alternativeMetadataReference", alternativeMetadataReference))
+     },
+
+     #--------------------------------------------------------------------------
+     
      #'@description Set dataset URI
      #'@param dataSetURI dataset URI
      setDataSetURI = function(dataSetURI){
+       self$stopIfMetadataStandardIsNot("19139")
        self$dataSetURI = dataSetURI
      },
+     
+     #'@description Adds metadata linkage
+     #'@param metadataLinkage object of class \link{ISOOnlineResource}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addMetadataLinkage = function(metadataLinkage){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(metadataLinkage, "ISOOnlineResource")){
+         stop("The argument should be an object of class 'ISOOnlineResource'")
+       }
+       return(self$addListElement("metadataLinkage", metadataLinkage))
+     },
+     
+     #'@description Deletes metadata linkage
+     #'@param metadataLinkage object of class \link{ISOOnlineResource}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delMetadataLinkage = function(metadataLinkage){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(metadataLinkage, "ISOOnlineResource")){
+         stop("The argument should be an object of class 'ISOOnlineResource'")
+       }
+       return(self$delListElement("metadataLinkage", metadataLinkage))
+     },
+     
+     #--------------------------------------------------------------------------
      
      #'@description Adds locale
      #'@param locale object of class \link{ISOLocale}
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addLocale = function(locale){
+       localeElement = switch(getMetadataStandard(),
+        "19139" = "locale", "19115-3" = "otherLocale"                       
+       )
        if(!is(locale,"ISOLocale")){
          stop("The argument should be a 'ISOLocale' object")  
        }
-       return(self$addListElement("locale", locale))
+       return(self$addListElement(localeElement, locale))
      },
      
      #'@description Deletes locale
      #'@param locale object of class \link{ISOLocale}
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delLocale = function(locale){
+       localeElement = switch(getMetadataStandard(),
+         "19139" = "locale", "19115-3" = "otherLocale"                       
+       )
        if(!is(locale,"ISOLocale")){
          stop("The argument should be a 'ISOLocale' object")  
        }
-       return(self$delListElement("locale", locale))
+       return(self$delListElement(localeElement, locale))
      },
      #MD_SpatialRepresentation
      #--------------------------------------------------------------------------

@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOOnlineResource <- R6Class("ISOOnlineResource",
-  inherit = ISOAbstractObject,
+  inherit = ISOAbstractOnlineResource,
   private = list(
     xmlElement = "CI_OnlineResource",
     xmlNamespacePrefix = list(
@@ -35,12 +35,16 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     linkage = NA,
     #'@field protocol protocol
     protocol = NULL,
+    #'@field applicationProfile application profile
+    applicationProfile = NULL,
     #'@field name name
     name = NULL,
     #'@field description description
     description = NULL,
     #'@field function function
     "function" = NULL,
+    #'@field protocolRequest protocol request
+    protocolRequest = NULL,
     
     
     #'@description Initializes object
@@ -54,7 +58,7 @@ ISOOnlineResource <- R6Class("ISOOnlineResource",
     setLinkage = function(linkage){
       if(!is.null(linkage)){
         if(!is.na(linkage)){ 
-          if(!is(linkage, "ISOURL")){
+          if(getMetadataStandard() == "19139" & !is(linkage, "ISOURL")){
             linkage <- ISOURL$new(value = as.character(linkage))
           }
           self$linkage <- linkage

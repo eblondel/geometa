@@ -42,11 +42,17 @@ ISOContact <- R6Class("ISOContact",
    ),
    public = list(
      #'@field phone phone
-     phone = NULL,
+     phone = list(),
      #'@field address address
-     address = NULL,
+     address = list(),
      #'@field onlineResource online resource
-     onlineResource = NULL,
+     onlineResource = list(),
+     #'@field hoursOfService hours of service
+     hoursOfService = list(),
+     #'@field contactInstructions contact instructions
+     contactInstructions = NULL,
+     #'@field contactType contact type
+     contactType = NULL,
      
      #'@description Initializes object
      #'@param xml object of class \link{XMLInternalNode-class}
@@ -54,31 +60,106 @@ ISOContact <- R6Class("ISOContact",
        super$initialize(xml = xml)
      },
      
-     #'@description Set phone
+     #'@description Set phone (with ISO 19139)
      #'@param phone object of class \link{ISOTelephone}
      setPhone = function(phone){
+       self$stopIfMetadataStandardIsNot("19139")
        if(!is(phone, "ISOTelephone")){
          stop("The argument should be a 'ISOTelephone' object")
        }
        self$phone = phone
      },
      
-     #'@description Set address
+     #'@description Adds phone (with ISO 19115-3)
+     #'@param phone object tof class \link{ISOTelephone}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addPhone = function(phone){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(phone, "ISOTelephone")){
+         stop("The argument should be a 'ISOTelephone' object")
+       }
+       if(is.null(self$phone)) self$phone = list()
+       return(self$addListElement("phone", phone))
+     },
+     
+     #'@description Deletes phone (with ISO 19115-3)
+     #'@param phone object tof class \link{ISOTelephone}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delPhone = function(phone){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(phone, "ISOTelephone")){
+         stop("The argument should be a 'ISOTelephone' object")
+       }
+       if(is.null(self$phone)) self$phone = list()
+       return(self$delListElement("phone", phone))
+     },
+     
+     #'@description Set address (with ISO 19139)
      #'@param address object of class \link{ISOAddress}
      setAddress = function(address){
+       self$stopIfMetadataStandardIsNot("19139")
        if(!is(address, "ISOAddress")){
          stop("The argument should be a 'ISOAddress' object")
        }
        self$address = address
      },
      
-     #'@description Set online resource
+     #'@description Adds address (with ISO 19115-3)
+     #'@param address object of class \link{ISOAddress}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addAddress = function(address){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(address, "ISOAddress")){
+         stop("The argument should be a 'ISOAddress' object")
+       }
+       if(is.null(self$address)) self$address = list()
+       return(self$addListElement("address", address))
+     },
+     
+     #'@description Deletes address (with ISO 19115-3)
+     #'@param address object of class \link{ISOAddress}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delAddress = function(address){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(address, "ISOAddress")){
+         stop("The argument should be a 'ISOAddress' object")
+       }
+       if(is.null(self$address)) self$address = list()
+       return(self$delListElement("address", address))
+     },
+     
+     #'@description Set online resource (with ISO 19139)
      #'@param onlineResource online resource, object of class \link{ISOOnlineResource}
      setOnlineResource = function(onlineResource){
+       self$stopIfMetadataStandardIsNot("19139")
        if(!is(onlineResource, "ISOOnlineResource")){
          stop("The argument should be a 'ISOOnlineResource' object")
        }
        self$onlineResource = onlineResource
+     },
+     
+     #'@description Adds online resource (with ISO 19115-3)
+     #'@param onlineResource online resource, object of class \link{ISOOnlineResource}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addOnlineResource = function(onlineResource){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(onlineResource, "ISOOnlineResource")){
+         stop("The argument should be a 'ISOOnlineResource' object")
+       }
+       if(is.null(self$onlineResource)) self$onlineResource = list()
+       return(self$addListElement("onlineResource", onlineResource))
+     },
+     
+     #'@description Deletes online resource (with ISO 19115-3)
+     #'@param onlineResource online resource, object of class \link{ISOOnlineResource}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delOnlineResource = function(onlineResource){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(onlineResource, "ISOOnlineResource")){
+         stop("The argument should be a 'ISOOnlineResource' object")
+       }
+       if(is.null(self$onlineResource)) self$onlineResource = list()
+       return(self$delListElement("onlineResource", onlineResource))
      }
    )                        
 )

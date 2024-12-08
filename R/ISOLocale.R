@@ -29,8 +29,10 @@ ISOLocale <- R6Class("ISOLocale",
      )
    ),
    public = list(
-     #'@field languageCode languageCode [1..1]: ISOLanguage
+     #'@field languageCode languageCode [1..1]: ISOLanguage (ISO 19139)
      languageCode = NULL,
+     #'@field language language [1..1]: ISOLanguage (ISO 19115-3)
+     language = NULL,
      #'@field country country [0..1]: ISOCountry
      country = NULL,
      #'@field characterEncoding characterEncoding [1..1]: ISOCharacterSet
@@ -41,14 +43,14 @@ ISOLocale <- R6Class("ISOLocale",
      #'@param id id
      #'@param language language
      #'@param country country
-     #'@param encoding encoding
+     #'@param characterEncoding characterEncoding
      initialize = function(xml = NULL, id = NULL, language = NULL,
-                           country = NULL, encoding = NULL){
+                           country = NULL, characterEncoding = NULL){
        super$initialize(xml = xml)
        if(!is.null(id)) self$setId(id)
        if(!is.null(language)) self$setLanguage(language)
        if(!is.null(country)) self$setCountry(country)
-       if(!is.null(encoding)) self$setCharacterSet(encoding)
+       if(!is.null(characterEncoding)) self$setCharacterSet(characterEncoding)
      },
      
      #'@description Set ID
@@ -64,7 +66,14 @@ ISOLocale <- R6Class("ISOLocale",
        if(is(language, "character")){
          language <- ISOLanguage$new(value = language)
        }
-       self$languageCode <- language
+       switch(getMetadataStandard(),
+        "19139" = {
+          self$languageCode <- language
+        },
+        "19115-3" = {
+          self$language = language
+        }
+       )
      },
      
      #'@description Set country

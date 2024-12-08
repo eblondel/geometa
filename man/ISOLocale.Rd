@@ -37,7 +37,9 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{languageCode}}{languageCode [1..1]: ISOLanguage}
+\item{\code{languageCode}}{languageCode [1..1]: ISOLanguage (ISO 19139)}
+
+\item{\code{language}}{language [1..1]: ISOLanguage (ISO 19115-3)}
 
 \item{\code{country}}{country [0..1]: ISOCountry}
 
@@ -101,7 +103,7 @@ Initializes object
   id = NULL,
   language = NULL,
   country = NULL,
-  encoding = NULL
+  characterEncoding = NULL
 )}\if{html}{\out{</div>}}
 }
 
@@ -116,7 +118,7 @@ Initializes object
 
 \item{\code{country}}{country}
 
-\item{\code{encoding}}{encoding}
+\item{\code{characterEncoding}}{characterEncoding}
 }
 \if{html}{\out{</div>}}
 }

@@ -60,7 +60,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{citation}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOCitation}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractCitation]{geometa::ISOAbstractCitation}} -> \code{ISOCitation}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -404,7 +404,8 @@ Adds cited responsible party
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{rp}}{cited responsible party, object of class \link{ISOResponsibleParty}}
+\item{\code{rp}}{cited responsible party, object of class \link{ISOResponsibleParty} (in ISO 19139) or
+\link{ISOResponsibility} (in ISO 19115-3)}
 
 \item{\code{locales}}{list of localized responsible parties. Default is \code{NULL}}
 }
@@ -426,7 +427,8 @@ Deletes cited responsible party
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{rp}}{cited responsible party, object of class \link{ISOResponsibleParty}}
+\item{\code{rp}}{cited responsible party, object of class \link{ISOResponsibleParty} (in ISO 19139) or
+\link{ISOResponsibility} (in ISO 19115-3)}
 
 \item{\code{locales}}{list of localized responsible parties. Default is \code{NULL}}
 }

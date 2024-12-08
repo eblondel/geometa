@@ -94,7 +94,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
          
          if(!is.null(value) & length(clEntry)>0){
            clEntry <- clEntry[[1]]
-           clValue <- clEntry$identifier
+           clValue <- if(is(clEntry$identifier, "ISOScopedName")) clEntry$identifier$value else clEntry$identifier
            clName <- clEntry$description
            clDescription <- clEntry$description
            if(setValueDescription) clDescription <- clEntry$description

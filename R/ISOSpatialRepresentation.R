@@ -31,7 +31,7 @@ ISOSpatialRepresentation <- R6Class("ISOSpatialRepresentation",
     #'@param xml object of class \link{XMLInternalNode-class}  
     #'@param defaults list of defaults 
     initialize = function(xml = NULL, defaults = list()){
-      super$initialize(xml, defaults = defaults)
+      super$initialize(xml)
     }    
   )                        
 )

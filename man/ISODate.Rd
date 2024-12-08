@@ -31,7 +31,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{date}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISODate}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractTypedDate]{geometa::ISOAbstractTypedDate}} -> \code{ISODate}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -92,13 +92,18 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISODate$new(xml = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISODate$new(xml = NULL, date = NULL, dateType = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{date}}{object of class \link{Date} or \link{POSIXt}}
+
+\item{\code{dateType}}{object of class \link{ISODateType} or any \link{character}
+value among values returned by \code{ISODateType$values()}}
 }
 \if{html}{\out{</div>}}
 }

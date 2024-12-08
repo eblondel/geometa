@@ -54,6 +54,12 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{address}}{address}
 
 \item{\code{onlineResource}}{online resource}
+
+\item{\code{hoursOfService}}{hours of service}
+
+\item{\code{contactInstructions}}{contact instructions}
+
+\item{\code{contactType}}{contact type}
 }
 \if{html}{\out{</div>}}
 }
@@ -62,8 +68,14 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \itemize{
 \item \href{#method-ISOContact-new}{\code{ISOContact$new()}}
 \item \href{#method-ISOContact-setPhone}{\code{ISOContact$setPhone()}}
+\item \href{#method-ISOContact-addPhone}{\code{ISOContact$addPhone()}}
+\item \href{#method-ISOContact-delPhone}{\code{ISOContact$delPhone()}}
 \item \href{#method-ISOContact-setAddress}{\code{ISOContact$setAddress()}}
+\item \href{#method-ISOContact-addAddress}{\code{ISOContact$addAddress()}}
+\item \href{#method-ISOContact-delAddress}{\code{ISOContact$delAddress()}}
 \item \href{#method-ISOContact-setOnlineResource}{\code{ISOContact$setOnlineResource()}}
+\item \href{#method-ISOContact-addOnlineResource}{\code{ISOContact$addOnlineResource()}}
+\item \href{#method-ISOContact-delOnlineResource}{\code{ISOContact$delOnlineResource()}}
 \item \href{#method-ISOContact-clone}{\code{ISOContact$clone()}}
 }
 }
@@ -123,7 +135,7 @@ Initializes object
 \if{html}{\out{<a id="method-ISOContact-setPhone"></a>}}
 \if{latex}{\out{\hypertarget{method-ISOContact-setPhone}{}}}
 \subsection{Method \code{setPhone()}}{
-Set phone
+Set phone (with ISO 19139)
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ISOContact$setPhone(phone)}\if{html}{\out{</div>}}
 }
@@ -137,10 +149,50 @@ Set phone
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-addPhone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-addPhone}{}}}
+\subsection{Method \code{addPhone()}}{
+Adds phone (with ISO 19115-3)
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$addPhone(phone)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{phone}}{object tof class \link{ISOTelephone}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-delPhone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-delPhone}{}}}
+\subsection{Method \code{delPhone()}}{
+Deletes phone (with ISO 19115-3)
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$delPhone(phone)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{phone}}{object tof class \link{ISOTelephone}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ISOContact-setAddress"></a>}}
 \if{latex}{\out{\hypertarget{method-ISOContact-setAddress}{}}}
 \subsection{Method \code{setAddress()}}{
-Set address
+Set address (with ISO 19139)
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ISOContact$setAddress(address)}\if{html}{\out{</div>}}
 }
@@ -154,10 +206,50 @@ Set address
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-addAddress"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-addAddress}{}}}
+\subsection{Method \code{addAddress()}}{
+Adds address (with ISO 19115-3)
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$addAddress(address)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{address}}{object of class \link{ISOAddress}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-delAddress"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-delAddress}{}}}
+\subsection{Method \code{delAddress()}}{
+Deletes address (with ISO 19115-3)
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$delAddress(address)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{address}}{object of class \link{ISOAddress}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ISOContact-setOnlineResource"></a>}}
 \if{latex}{\out{\hypertarget{method-ISOContact-setOnlineResource}{}}}
 \subsection{Method \code{setOnlineResource()}}{
-Set online resource
+Set online resource (with ISO 19139)
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ISOContact$setOnlineResource(onlineResource)}\if{html}{\out{</div>}}
 }
@@ -168,6 +260,46 @@ Set online resource
 \item{\code{onlineResource}}{online resource, object of class \link{ISOOnlineResource}}
 }
 \if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-addOnlineResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-addOnlineResource}{}}}
+\subsection{Method \code{addOnlineResource()}}{
+Adds online resource (with ISO 19115-3)
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$addOnlineResource(onlineResource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{onlineResource}}{online resource, object of class \link{ISOOnlineResource}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-delOnlineResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-delOnlineResource}{}}}
+\subsection{Method \code{delOnlineResource()}}{
+Deletes online resource (with ISO 19115-3)
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$delOnlineResource(onlineResource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{onlineResource}}{online resource, object of class \link{ISOOnlineResource}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
 }
 }
 \if{html}{\out{<hr>}}

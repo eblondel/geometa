@@ -35,7 +35,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{online}
 \keyword{resource}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOOnlineResource}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractOnlineResource]{geometa::ISOAbstractOnlineResource}} -> \code{ISOOnlineResource}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -44,11 +44,15 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{protocol}}{protocol}
 
+\item{\code{applicationProfile}}{application profile}
+
 \item{\code{name}}{name}
 
 \item{\code{description}}{description}
 
 \item{\code{function}}{function}
+
+\item{\code{protocolRequest}}{protocol request}
 }
 \if{html}{\out{</div>}}
 }

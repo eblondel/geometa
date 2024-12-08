@@ -37,18 +37,27 @@ ISOReferenceSystem <- R6Class("ISOReferenceSystem",
     
     #'@description Initializes object
     #'@param xml object of class \link{XMLInternalNode-class}
-    #'@param prefix prefix
-    #'@param code code
-    initialize = function(xml = NULL, prefix, code){
+    initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
     
     #'@description Set reference system identifier
-    #'@param identifier object of class \link{ISOReferenceIdentifier}
+    #'@param identifier object of class \link{ISOReferenceIdentifier} (in 19139) or
+    #'\link{ISOMetaIdentifier} (in 19115-3)
     setReferenceSystemIdentifier = function(identifier){
-      if(!is(identifier, "ISOReferenceIdentifier")){
-        stop("The argument should be an object of class 'ISOReferenceIdentifier")
-      }
+      switch(getMetadataStandard(),
+        "19139" = {
+          if(!is(identifier, "ISOReferenceIdentifier")){
+            stop("The argument should be an object of class 'ISOReferenceIdentifier")
+          }
+        },
+        "19115-3" = {
+          if(!is(identifier, "ISOMetaIdentifier")){
+            stop("The argument should be an object of class 'ISOMetaIdentifier")
+          }
+        }
+      )
+      
       self$referenceSystemIdentifier <- identifier
     },
     

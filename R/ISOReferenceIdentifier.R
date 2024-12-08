@@ -17,12 +17,17 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOReferenceIdentifier <- R6Class("ISOReferenceIdentifier",
-   inherit = ISOIdentifier,
+   inherit = ISOAbstractObject,
    private = list(
      xmlElement = "RS_Identifier",
      xmlNamespacePrefix = "GMD"
    ),
    public = list(
+     
+     #'@field authority authority [0..1]: ISOCitation
+     authority = NULL,
+     #'@field code code [1..1]: character
+     code = NULL,
      #'@field codeSpace codeSpace [0..1]: character
      codeSpace = NULL,
      #'@field version version [0..1]: character
@@ -33,8 +38,23 @@ ISOReferenceIdentifier <- R6Class("ISOReferenceIdentifier",
      #'@param code code
      #'@param codeSpace code space
      initialize = function(xml = NULL, code, codeSpace = NULL){
-       super$initialize(xml = xml, code = code)
+       self$setCode(code)
        if(!is.null(codeSpace)) self$setCodeSpace(codeSpace)
+     },
+     
+     #'@description Set authority
+     #'@param authority object of class \link{ISOCitation}
+     setAuthority = function(authority){
+       if(!is(authority, "ISOCitation")){
+         stop("The argument should be an object of class 'ISOCitation")
+       }
+       self$authority = authority
+     },
+     
+     #'@description Set code
+     #'@param code code
+     setCode = function(code){
+       self$code = code
      },
      
      #'@description Set code space

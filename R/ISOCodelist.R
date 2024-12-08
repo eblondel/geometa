@@ -299,6 +299,13 @@ getISOCodelist <- function(id){
       codelist <<- cl
     }
   }))
+  if(getMetadataStandard()=="19115-3" & is.null(codelist)){
+    invisible(lapply(getISOInternalCodelists()[["19139"]], function(cl){
+      if(cl$identifier$value == id){
+        codelist <<- cl
+      }
+    }))
+  }
   return(codelist)
 }
 

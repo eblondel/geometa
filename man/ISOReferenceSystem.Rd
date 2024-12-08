@@ -95,17 +95,13 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOReferenceSystem$new(xml = NULL, prefix, code)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOReferenceSystem$new(xml = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
-
-\item{\code{prefix}}{prefix}
-
-\item{\code{code}}{code}
 }
 \if{html}{\out{</div>}}
 }
@@ -122,7 +118,8 @@ Set reference system identifier
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{identifier}}{object of class \link{ISOReferenceIdentifier}}
+\item{\code{identifier}}{object of class \link{ISOReferenceIdentifier} (in 19139) or
+\link{ISOMetaIdentifier} (in 19115-3)}
 }
 \if{html}{\out{</div>}}
 }

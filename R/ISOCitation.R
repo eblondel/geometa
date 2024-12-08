@@ -48,7 +48,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCitation<- R6Class("ISOCitation",
-  inherit = ISOAbstractObject,
+  inherit = ISOAbstractCitation,
   private = list(
     xmlElement = "CI_Citation",
     xmlNamespacePrefix = list(
@@ -262,24 +262,44 @@ ISOCitation<- R6Class("ISOCitation",
     },
     
     #'@description Adds cited responsible party
-    #'@param rp cited responsible party, object of class \link{ISOResponsibleParty}
+    #'@param rp cited responsible party, object of class \link{ISOResponsibleParty} (in ISO 19139) or
+    #'\link{ISOResponsibility} (in ISO 19115-3)
     #'@param locales list of localized responsible parties. Default is \code{NULL}
     #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addCitedResponsibleParty = function(rp){
-      if(!is(rp, "ISOResponsibleParty")){
-        stop("The argument should be a 'ISOResponsibleParty' object")
-      }
+      switch(getMetadataStandard(),
+        "19139" = {
+          if(!is(rp, "ISOResponsibleParty")){
+            stop("The argument should be a 'ISOResponsibleParty' object")
+          }
+        },
+        "19115-3" = {
+          if(!is(rp, "ISOResponsibility")){
+            stop("The argument should be a 'ISOResponsibility' object")
+          }
+        }
+      )
       return(self$addListElement("citedResponsibleParty", rp))
     },
     
     #'@description Deletes cited responsible party
-    #'@param rp cited responsible party, object of class \link{ISOResponsibleParty}
+    #'@param rp cited responsible party, object of class \link{ISOResponsibleParty} (in ISO 19139) or
+    #'\link{ISOResponsibility} (in ISO 19115-3)
     #'@param locales list of localized responsible parties. Default is \code{NULL}
     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delCitedResponsibleParty = function(rp){
-      if(!is(rp, "ISOResponsibleParty")){
-        stop("The argument should be a 'ISOResponsibleParty' object")
-      }
+      switch(getMetadataStandard(),
+       "19139" = {
+         if(!is(rp, "ISOResponsibleParty")){
+           stop("The argument should be a 'ISOResponsibleParty' object")
+         }
+       },
+       "19115-3" = {
+         if(!is(rp, "ISOResponsibility")){
+           stop("The argument should be a 'ISOResponsibility' object")
+         }
+       }
+      )
       return(self$delListElement("citedResponsibleParty", rp))
     },
     

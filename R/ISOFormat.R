@@ -32,16 +32,20 @@ ISOFormat <- R6Class("ISOFormat",
     ),
     public = list(
       
-      #'@field name name : CharacterString
+      #'@field name name : CharacterString (ISO 19139)
       name = NULL,
-      #'@field version version : CharacterString
+      #'@field formatSpecificationCitation format specification citation [1]: ISOCitation
+      formatSpecificationCitation = NULL,
+      #'@field version version : CharacterString (ISO 19139)
       version = NULL,
       #'@field amendmentNumber amendmentNumber [0..1] : CharacterString
       amendmentNumber = NULL,
-      #'@field specification specification [0..1] : CharacterString
+      #'@field specification specification [0..1] : CharacterString (ISO 19139)
       specification = NULL,
       #'@field fileDecompressionTechnique fileDecompressionTechnique [0..1] : CharacterString
       fileDecompressionTechnique = NULL,
+      #'@field medium medium [0..*] : ISOMedium [0..*] (ISO 19115-3)
+      medium = list(),
       #'@field formatDistributor formatDistributor [0..*]: ISODistributor
       formatDistributor = list(),
       
@@ -55,15 +59,27 @@ ISOFormat <- R6Class("ISOFormat",
       #'@param name name
       #'@param locales list of localized names. Default is \code{NULL}
       setName = function(name, locales = NULL){
+        self$stopIfMetadataStandardIsNot("19139")
         self$name <- name
         if(!is.null(locales)){
           self$name <- self$createLocalisedProperty(name, locales)
         }
       },
       
+      #'@description Set format specification citation
+      #'@param citation citation
+      setFormatSpecificationCitation = function(citation){
+        self$stopIfMetadataStandardIsNot("19115-3")
+        if(!is(citation, "ISOCitation")){
+          stop("The argument value should be an object of class 'ISOCitation'")
+        }
+        self$formatSpecificationCitation = citation
+      },
+      
       #'@description Set version
       #'@param version version
       setVersion = function(version){
+        self$stopIfMetadataStandardIsNot("19139")
         self$version <- as.character(version)
       },
       
@@ -77,6 +93,7 @@ ISOFormat <- R6Class("ISOFormat",
       #'@param specification specification
       #'@param locales list of localized specifications. Default is \code{NULL}
       setSpecification = function(specification, locales = NULL){
+        self$stopIfMetadataStandardIsNot("19139")
         self$specification <- specification
         if(!is.null(locales)){
           self$specification <- self$createLocalisedProperty(specification, locales)
@@ -99,6 +116,28 @@ ISOFormat <- R6Class("ISOFormat",
         return(self$addListElement("formatDistributor", distributor))
       },
       
+      #'@description Adds medium
+      #'@param medium object of class \link{ISOMedium}
+      #'@return \code{TRUE} if added, \code{FALSE} otherwise
+      addMedium = function(medium){
+        self$stopIfMetadataStandardIsNot("19115-3")
+        if(!is(medium, "ISOMedium")){
+          stop("The argument value should be an object of class 'ISOMedium'")
+        }
+        return(self$addListElement("medium", medium))
+      },
+      
+      #'@description Deletes medium
+      #'@param medium object of class \link{ISOMedium}
+      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+      delMedium = function(medium){
+        self$stopIfMetadataStandardIsNot("19115-3")
+        if(!is(medium, "ISOMedium")){
+          stop("The argument value should be an object of class 'ISOMedium'")
+        }
+        return(self$delListElement("medium", medium))
+      },
+      
       #'@description Deletes distributor
       #'@param distributor object of class \link{ISODistributor}
       #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
@@ -117,18 +156,48 @@ ISOFormat$buildFrom = function(mimetype){
   mime = mimetypes[mimetypes$name == mimetype,]
   
   format = ISOFormat$new()
-  format$setVersion(NA)
+  if(getMetadataStandard()=="19139") format$setVersion(NA)
   if(!is.null(mime)){
     if(nrow(mime)>0){
-      format$setName(ISOAnchor$new(name = mimetype, href = mime$uri))
-      if(!is.na(mime$rfc)){
-        format$setSpecification(ISOAnchor$new(name = toupper(mime$rfc), href = mime$rfc_uri))
-      }
+      switch(getMetadataStandard(),
+        "19139" = {
+          format$setName(ISOAnchor$new(name = mimetype, href = mime$uri))
+          if(!is.na(mime$rfc)){
+            format$setSpecification(ISOAnchor$new(name = toupper(mime$rfc), href = mime$rfc_uri))
+          }
+        },
+        "19115-3" = {
+          cit = ISOCitation$new()
+          cit$setTitle(ISOAnchor$new(name = mimetype, href = mime$uri))
+          if(!is.na(mime$rfc)){
+            cit$addAlternateTitle(ISOAnchor$new(name = toupper(mime$rfc), href = mime$rfc_uri))
+          }
+          format$setFormatSpecificationCitation(cit)
+        }
+      )
     }else{
-      format$setName(mimetype)
+      switch(getMetadataStandard(),
+       "19139" = {
+         format$setName(name = mimetype)
+       },
+       "19115-3" = {
+         cit = ISOCitation$new()
+         cit$setTitle(mimetype)
+         format$setFormatSpecificationCitation(cit)
+       }
+      )
     }
   }else{
-    format$setName(mimetype)
+    switch(getMetadataStandard(),
+       "19139" = {
+         format$setName(name = mimetype)
+       },
+       "19115-3" = {
+         cit = ISOCitation$new()
+         cit$setTitle(mimetype)
+         format$setFormatSpecificationCitation(cit)
+       }
+    )
   }
   return(format)
 }

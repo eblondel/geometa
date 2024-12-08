@@ -19,7 +19,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODate <- R6Class("ISODate",
-   inherit = ISOAbstractObject,
+   inherit = ISOAbstractTypedDate,
    private = list(
       xmlElement = "CI_Date",
       xmlNamespacePrefix = list(
@@ -35,8 +35,13 @@ ISODate <- R6Class("ISODate",
      
      #'@description Initializes object
      #'@param xml object of class \link{XMLInternalNode-class}
-     initialize = function(xml = NULL){
+     #'@param date object of class \link{Date} or \link{POSIXt}
+     #'@param dateType object of class \link{ISODateType} or any \link{character}
+     #'value among values returned by \code{ISODateType$values()}
+     initialize = function(xml = NULL, date = NULL, dateType = NULL){
        super$initialize(xml = xml)
+       if(!is.null(date)) self$setDate(date)
+       if(!is.null(dateType)) self$setDateType(dateType)
      },
      
      #'@description Set date

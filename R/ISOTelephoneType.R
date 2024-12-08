@@ -36,7 +36,7 @@ ISOTelephoneType <- R6Class("ISOTelephoneType",
     #'@param description description   
     initialize = function(xml = NULL, value, description = NULL){
       super$initialize(xml = xml, id = private$xmlElement, value = value, description = description,
-                       addCodeListAttrs = FALSE)
+                       addCodeListAttrs = TRUE)
     }
   )                        
 )
