@@ -62,7 +62,8 @@ ISOMetadata"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 <a href="https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Metadata" class="external-link">https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Metadata</a></p>
+<p>- ISO 19115-3 <a href="https://schemas.isotc211.org/19115/-3/mdb/2.0/mdb/#element_MD_Metadata" class="external-link">https://schemas.isotc211.org/19115/-3/mdb/2.0/mdb/#element_MD_Metadata</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -75,11 +76,19 @@ ISOMetadata"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
     <div id="public-fields">
     <h2>Public fields</h2>
     <p></p><div class="r6-fields"><dl><dt><code>fileIdentifier</code></dt>
-<dd><p>fileIdentifier [0..1] : character</p></dd>
+<dd><p>fileIdentifier [0..1] : character (ISO 19139)</p></dd>
+
+
+<dt><code>metadataIdentifier</code></dt>
+<dd><p>metadataIdentifier [0..1] : ISOMetaIdentifier (ISO 19115-3)</p></dd>
 
 
 <dt><code>language</code></dt>
-<dd><p>language [0..1] : character</p></dd>
+<dd><p>language [0..1] : character (ISO 19139)</p></dd>
+
+
+<dt><code>defaultLocale</code></dt>
+<dd><p>[0..1] : ISOLocale (ISO 19115-3)</p></dd>
 
 
 <dt><code>characterSet</code></dt>
@@ -90,12 +99,20 @@ ISOMetadata"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <dd><p>parentIdentifier [0..1] : character</p></dd>
 
 
+<dt><code>parentMetadata</code></dt>
+<dd><p>parentMetadata [0..1]: ISOCitation (ISO 19115-3)</p></dd>
+
+
 <dt><code>hierarchyLevel</code></dt>
 <dd><p>hierarchyLevel [0..*] : ISOScopeCode = "dataset"</p></dd>
 
 
 <dt><code>hierarchyLevelName</code></dt>
 <dd><p>hierarchyLevelName [0..*] : character</p></dd>
+
+
+<dt><code>metadataScope</code></dt>
+<dd><p>metadataScope [0..*] : ISOMetadataScope (ISO 19115-3)</p></dd>
 
 
 <dt><code>contact</code></dt>
@@ -106,20 +123,44 @@ ISOMetadata"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <dd><p>dateStamp : POSIXct/POSIXt</p></dd>
 
 
+<dt><code>dateInfo</code></dt>
+<dd><p>dateInfo [1..*] : ISODate</p></dd>
+
+
 <dt><code>metadataStandardName</code></dt>
-<dd><p>metadataStandardName [0..1] : character</p></dd>
+<dd><p>metadataStandardName [0..1] : character (ISO 19139)</p></dd>
 
 
 <dt><code>metadataStandardVersion</code></dt>
-<dd><p>metadataStandardVersion [0..1] : character</p></dd>
+<dd><p>metadataStandardVersion [0..1] : character (ISO 19139)</p></dd>
+
+
+<dt><code>metadataStandard</code></dt>
+<dd><p>metadataStandard [0..*] : ISOCitation (ISO 19115-3)</p></dd>
+
+
+<dt><code>metadataProfile</code></dt>
+<dd><p>metadataProfile [0..*] : ISOCitation (ISO 19115-3)</p></dd>
+
+
+<dt><code>alternativeMetadataReference</code></dt>
+<dd><p>alternativeMetadataReference [0..*] : ISOCitation (ISO 19115-3)</p></dd>
+
+
+<dt><code>otherLocale</code></dt>
+<dd><p>otherLocale [0..*]  : ISOLocale (ISO 19115-3)</p></dd>
 
 
 <dt><code>dataSetURI</code></dt>
-<dd><p>dataSetURI [0..1] : character</p></dd>
+<dd><p>dataSetURI [0..1] : character (ISO 19139)</p></dd>
+
+
+<dt><code>metadataLinkage</code></dt>
+<dd><p>metadataLinkage [0..*] : ISOOnlineResource (ISO 19115-3)</p></dd>
 
 
 <dt><code>locale</code></dt>
-<dd><p>locale [0..*]: ISOLocale</p></dd>
+<dd><p>locale [0..*]: ISOLocale (ISO 19139)</p></dd>
 
 
 <dt><code>spatialRepresentationInfo</code></dt>
@@ -172,20 +213,34 @@ ISOMetadata"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 
 <ul><li><p><a href="#method-ISOMetadata-new"><code>ISOMetadata$new()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setFileIdentifier"><code>ISOMetadata$setFileIdentifier()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-setMetadataIdentifier"><code>ISOMetadata$setMetadataIdentifier()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setLanguage"><code>ISOMetadata$setLanguage()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-setDefaultLocale"><code>ISOMetadata$setDefaultLocale()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setCharacterSet"><code>ISOMetadata$setCharacterSet()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setParentIdentifier"><code>ISOMetadata$setParentIdentifier()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-setParentMetadata"><code>ISOMetadata$setParentMetadata()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-addHierarchyLevel"><code>ISOMetadata$addHierarchyLevel()</code></a></p></li>
-<li><p><a href="#method-ISOMetadata-setHierarchyLevel"><code>ISOMetadata$setHierarchyLevel()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-delHierarchyLevel"><code>ISOMetadata$delHierarchyLevel()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-addHierarchyLevelName"><code>ISOMetadata$addHierarchyLevelName()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-delHierarchyLevelName"><code>ISOMetadata$delHierarchyLevelName()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-addMetadataScope"><code>ISOMetadata$addMetadataScope()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-delMetadataScope"><code>ISOMetadata$delMetadataScope()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-addContact"><code>ISOMetadata$addContact()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-delContact"><code>ISOMetadata$delContact()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setDateStamp"><code>ISOMetadata$setDateStamp()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-addDate"><code>ISOMetadata$addDate()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-delDate"><code>ISOMetadata$delDate()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setMetadataStandardName"><code>ISOMetadata$setMetadataStandardName()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setMetadataStandardVersion"><code>ISOMetadata$setMetadataStandardVersion()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-addMetadataStandard"><code>ISOMetadata$addMetadataStandard()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-delMetadataStandard"><code>ISOMetadata$delMetadataStandard()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-addMetadataProfile"><code>ISOMetadata$addMetadataProfile()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-delMetadataProfile"><code>ISOMetadata$delMetadataProfile()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-addAlternativeMetadataReference"><code>ISOMetadata$addAlternativeMetadataReference()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-delAlternativeMetadataReference"><code>ISOMetadata$delAlternativeMetadataReference()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setDataSetURI"><code>ISOMetadata$setDataSetURI()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-addMetadataLinkage"><code>ISOMetadata$addMetadataLinkage()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-delMetadataLinkage"><code>ISOMetadata$delMetadataLinkage()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-addLocale"><code>ISOMetadata$addLocale()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-delLocale"><code>ISOMetadata$delLocale()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-addSpatialRepresentationInfo"><code>ISOMetadata$addSpatialRepresentationInfo()</code></a></p></li>
@@ -268,15 +323,31 @@ ISOMetadata"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-setLanguage"></a><div class="section">
-<h3 id="method-setlanguage-">Method <code>setLanguage()</code><a class="anchor" aria-label="anchor" href="#method-setlanguage-"></a></h3>
-<p>Set language</p><div class="section">
+</div><p></p><hr><a id="method-ISOMetadata-setMetadataIdentifier"></a><div class="section">
+<h3 id="method-setmetadataidentifier-">Method <code>setMetadataIdentifier()</code><a class="anchor" aria-label="anchor" href="#method-setmetadataidentifier-"></a></h3>
+<p>set metadata identifier</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setLanguage</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setMetadataIdentifier</span><span class="op">(</span><span class="va">metadataIdentifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataIdentifier</code></dt>
+<dd><p>metadata identifier</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-setLanguage"></a><div class="section">
+<h3 id="method-setlanguage-">Method <code>setLanguage()</code><a class="anchor" aria-label="anchor" href="#method-setlanguage-"></a></h3>
+<p>Set language</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setLanguage</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>locale</code></dt>
 <dd><p>object of class <a href="ISOLanguage.html">ISOLanguage</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
 from values returned by <code>ISOLanguages$values()</code></p></dd>
@@ -285,15 +356,31 @@ from values returned by <code>ISOLanguages$values()</code></p></dd>
 </dl><p></p></div>
 </div>
 
+</div><p></p><hr><a id="method-ISOMetadata-setDefaultLocale"></a><div class="section">
+<h3 id="method-setdefaultlocale-">Method <code>setDefaultLocale()</code><a class="anchor" aria-label="anchor" href="#method-setdefaultlocale-"></a></h3>
+<p>Set default locale</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setDefaultLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
+<dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
 </div><p></p><hr><a id="method-ISOMetadata-setCharacterSet"></a><div class="section">
 <h3 id="method-setcharacterset-">Method <code>setCharacterSet()</code><a class="anchor" aria-label="anchor" href="#method-setcharacterset-"></a></h3>
 <p>Set charset</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setCharacterSet</span><span class="op">(</span><span class="va">charset</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>charset</code></dt>
 <dd><p>object of class <a href="ISOCharacterSet.html">ISOCharacterSet</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
 from values returned by <code>ISOCharacterSet$values()</code></p></dd>
@@ -305,14 +392,30 @@ from values returned by <code>ISOCharacterSet$values()</code></p></dd>
 </div><p></p><hr><a id="method-ISOMetadata-setParentIdentifier"></a><div class="section">
 <h3 id="method-setparentidentifier-">Method <code>setParentIdentifier()</code><a class="anchor" aria-label="anchor" href="#method-setparentidentifier-"></a></h3>
 <p>Set parent identifier</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setParentIdentifier</span><span class="op">(</span><span class="va">parentIdentifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>parentIdentifier</code></dt>
 <dd><p>parent identifier</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-setParentMetadata"></a><div class="section">
+<h3 id="method-setparentmetadata-">Method <code>setParentMetadata()</code><a class="anchor" aria-label="anchor" href="#method-setparentmetadata-"></a></h3>
+<p>Set parent metadata</p><div class="section">
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setParentMetadata</span><span class="op">(</span><span class="va">parentMetadata</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>parentMetadata</code></dt>
+<dd><p>parent metadata</p></dd>
 
 
 </dl><p></p></div>
@@ -321,12 +424,12 @@ from values returned by <code>ISOCharacterSet$values()</code></p></dd>
 </div><p></p><hr><a id="method-ISOMetadata-addHierarchyLevel"></a><div class="section">
 <h3 id="method-addhierarchylevel-">Method <code>addHierarchyLevel()</code><a class="anchor" aria-label="anchor" href="#method-addhierarchylevel-"></a></h3>
 <p>Adds hierarchy level</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addHierarchyLevel</span><span class="op">(</span><span class="va">level</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>level</code></dt>
 <dd><p>object of class <a href="ISOScopeCode.html">ISOScopeCode</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
 from values returned by <code>ISOScopeCode$values()</code></p></dd>
@@ -339,15 +442,15 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-setHierarchyLevel"></a><div class="section">
-<h3 id="method-sethierarchylevel-">Method <code>setHierarchyLevel()</code><a class="anchor" aria-label="anchor" href="#method-sethierarchylevel-"></a></h3>
-<p>Sets hierarchy level</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setHierarchyLevel</span><span class="op">(</span><span class="va">level</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-delHierarchyLevel"></a><div class="section">
+<h3 id="method-delhierarchylevel-">Method <code>delHierarchyLevel()</code><a class="anchor" aria-label="anchor" href="#method-delhierarchylevel-"></a></h3>
+<p>Deletes hierarchy level</p><div class="section">
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delHierarchyLevel</span><span class="op">(</span><span class="va">level</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>level</code></dt>
 <dd><p>object of class <a href="ISOScopeCode.html">ISOScopeCode</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
 from values returned by <code>ISOScopeCode$values()</code></p></dd>
@@ -357,39 +460,38 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 </div>
 <div class="section">
 <h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOMetadata-delHierarchyLevel"></a><div class="section">
-<h3 id="method-delhierarchylevel-">Method <code>delHierarchyLevel()</code><a class="anchor" aria-label="anchor" href="#method-delhierarchylevel-"></a></h3>
-<p>Deletes hierarchy level</p><div class="section">
-<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delHierarchyLevel</span><span class="op">(</span><span class="va">level</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>level</code></dt>
-<dd><p>object of class <a href="ISOScopeCode.html">ISOScopeCode</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
-from values returned by <code>ISOScopeCode$values()</code></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
 </div><p></p><hr><a id="method-ISOMetadata-addHierarchyLevelName"></a><div class="section">
 <h3 id="method-addhierarchylevelname-">Method <code>addHierarchyLevelName()</code><a class="anchor" aria-label="anchor" href="#method-addhierarchylevelname-"></a></h3>
 <p>Adds hierarchy level name</p><div class="section">
-<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addHierarchyLevelName</span><span class="op">(</span><span class="va">levelName</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>levelName</code></dt>
+<dd><p>object of class <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-delHierarchyLevelName"></a><div class="section">
+<h3 id="method-delhierarchylevelname-">Method <code>delHierarchyLevelName()</code><a class="anchor" aria-label="anchor" href="#method-delhierarchylevelname-"></a></h3>
+<p>Deletes hierarchy level name</p><div class="section">
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delHierarchyLevelName</span><span class="op">(</span><span class="va">levelName</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>levelName</code></dt>
 <dd><p>object of class <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
@@ -398,78 +500,102 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 </div>
 <div class="section">
 <h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-delHierarchyLevelName"></a><div class="section">
-<h3 id="method-delhierarchylevelname-">Method <code>delHierarchyLevelName()</code><a class="anchor" aria-label="anchor" href="#method-delhierarchylevelname-"></a></h3>
-<p>Deletes hierarchy level name</p><div class="section">
-<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delHierarchyLevelName</span><span class="op">(</span><span class="va">levelName</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-addMetadataScope"></a><div class="section">
+<h3 id="method-addmetadatascope-">Method <code>addMetadataScope()</code><a class="anchor" aria-label="anchor" href="#method-addmetadatascope-"></a></h3>
+<p>Adds metadata scope</p><div class="section">
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addMetadataScope</span><span class="op">(</span><span class="va">metadataScope</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>levelName</code></dt>
-<dd><p>object of class <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
+<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataScope</code></dt>
+<dd><p>object of class <a href="ISOMetadataScope.html">ISOMetadataScope</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> among
+values returned by <code>ISOScopeCode$values()</code></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-4">Returns<a class="anchor" aria-label="anchor" href="#returns-4"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-addContact"></a><div class="section">
-<h3 id="method-addcontact-">Method <code>addContact()</code><a class="anchor" aria-label="anchor" href="#method-addcontact-"></a></h3>
-<p>Adds contact</p><div class="section">
-<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addContact</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-delMetadataScope"></a><div class="section">
+<h3 id="method-delmetadatascope-">Method <code>delMetadataScope()</code><a class="anchor" aria-label="anchor" href="#method-delmetadatascope-"></a></h3>
+<p>Deletes metadata scope</p><div class="section">
+<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delMetadataScope</span><span class="op">(</span><span class="va">metadataScope</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>contact</code></dt>
-<dd><p>object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a></p></dd>
+<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataScope</code></dt>
+<dd><p>object of class <a href="ISOMetadataScope.html">ISOMetadataScope</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> among
+values returned by <code>ISOScopeCode$values()</code></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-5">Returns<a class="anchor" aria-label="anchor" href="#returns-5"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-delContact"></a><div class="section">
-<h3 id="method-delcontact-">Method <code>delContact()</code><a class="anchor" aria-label="anchor" href="#method-delcontact-"></a></h3>
-<p>Deletes contact</p><div class="section">
-<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delContact</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-addContact"></a><div class="section">
+<h3 id="method-addcontact-">Method <code>addContact()</code><a class="anchor" aria-label="anchor" href="#method-addcontact-"></a></h3>
+<p>Adds contact</p><div class="section">
+<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addContact</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
+<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>contact</code></dt>
-<dd><p>object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a></p></dd>
+<dd><p>object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a> for ISO 19139 or
+inheriting class <a href="ISOAbstractResponsibility.html">ISOAbstractResponsibility</a> for ISO 19115-3</p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-6">Returns<a class="anchor" aria-label="anchor" href="#returns-6"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-delContact"></a><div class="section">
+<h3 id="method-delcontact-">Method <code>delContact()</code><a class="anchor" aria-label="anchor" href="#method-delcontact-"></a></h3>
+<p>Deletes contact</p><div class="section">
+<h4 id="usage-15">Usage<a class="anchor" aria-label="anchor" href="#usage-15"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delContact</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-15">Arguments<a class="anchor" aria-label="anchor" href="#arguments-15"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>contact</code></dt>
+<dd><p>object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a> for ISO 19139 or
+inheriting class <a href="ISOAbstractResponsibility.html">ISOAbstractResponsibility</a> for ISO 19115-3</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-7">Returns<a class="anchor" aria-label="anchor" href="#returns-7"></a></h4>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
 </div><p></p><hr><a id="method-ISOMetadata-setDateStamp"></a><div class="section">
 <h3 id="method-setdatestamp-">Method <code>setDateStamp()</code><a class="anchor" aria-label="anchor" href="#method-setdatestamp-"></a></h3>
 <p>Set date stamp</p><div class="section">
-<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<h4 id="usage-16">Usage<a class="anchor" aria-label="anchor" href="#usage-16"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setDateStamp</span><span class="op">(</span><span class="va">date</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
+<h4 id="arguments-16">Arguments<a class="anchor" aria-label="anchor" href="#arguments-16"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>date</code></dt>
 <dd><p>date</p></dd>
 
@@ -477,15 +603,55 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 </dl><p></p></div>
 </div>
 
+</div><p></p><hr><a id="method-ISOMetadata-addDate"></a><div class="section">
+<h3 id="method-adddate-">Method <code>addDate()</code><a class="anchor" aria-label="anchor" href="#method-adddate-"></a></h3>
+<p>Adds date</p><div class="section">
+<h4 id="usage-17">Usage<a class="anchor" aria-label="anchor" href="#usage-17"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">date</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-17">Arguments<a class="anchor" aria-label="anchor" href="#arguments-17"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>date</code></dt>
+<dd><p>object of class <a href="ISODate.html">ISODate</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-8">Returns<a class="anchor" aria-label="anchor" href="#returns-8"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-delDate"></a><div class="section">
+<h3 id="method-deldate-">Method <code>delDate()</code><a class="anchor" aria-label="anchor" href="#method-deldate-"></a></h3>
+<p>Deletes date</p><div class="section">
+<h4 id="usage-18">Usage<a class="anchor" aria-label="anchor" href="#usage-18"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delDate</span><span class="op">(</span><span class="va">date</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-18">Arguments<a class="anchor" aria-label="anchor" href="#arguments-18"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>date</code></dt>
+<dd><p>object of class <a href="ISODate.html">ISODate</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-9">Returns<a class="anchor" aria-label="anchor" href="#returns-9"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
 </div><p></p><hr><a id="method-ISOMetadata-setMetadataStandardName"></a><div class="section">
 <h3 id="method-setmetadatastandardname-">Method <code>setMetadataStandardName()</code><a class="anchor" aria-label="anchor" href="#method-setmetadatastandardname-"></a></h3>
 <p>Set metadata standard name</p><div class="section">
-<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
+<h4 id="usage-19">Usage<a class="anchor" aria-label="anchor" href="#usage-19"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setMetadataStandardName</span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
+<h4 id="arguments-19">Arguments<a class="anchor" aria-label="anchor" href="#arguments-19"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>name</code></dt>
 <dd><p>name</p></dd>
 
@@ -496,12 +662,12 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 </div><p></p><hr><a id="method-ISOMetadata-setMetadataStandardVersion"></a><div class="section">
 <h3 id="method-setmetadatastandardversion-">Method <code>setMetadataStandardVersion()</code><a class="anchor" aria-label="anchor" href="#method-setmetadatastandardversion-"></a></h3>
 <p>Set metadata standard version</p><div class="section">
-<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
+<h4 id="usage-20">Usage<a class="anchor" aria-label="anchor" href="#usage-20"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setMetadataStandardVersion</span><span class="op">(</span><span class="va">version</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
+<h4 id="arguments-20">Arguments<a class="anchor" aria-label="anchor" href="#arguments-20"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>version</code></dt>
 <dd><p>version</p></dd>
 
@@ -509,93 +675,17 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-setDataSetURI"></a><div class="section">
-<h3 id="method-setdataseturi-">Method <code>setDataSetURI()</code><a class="anchor" aria-label="anchor" href="#method-setdataseturi-"></a></h3>
-<p>Set dataset URI</p><div class="section">
-<h4 id="usage-15">Usage<a class="anchor" aria-label="anchor" href="#usage-15"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setDataSetURI</span><span class="op">(</span><span class="va">dataSetURI</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-addMetadataStandard"></a><div class="section">
+<h3 id="method-addmetadatastandard-">Method <code>addMetadataStandard()</code><a class="anchor" aria-label="anchor" href="#method-addmetadatastandard-"></a></h3>
+<p>Adds metadata standard</p><div class="section">
+<h4 id="usage-21">Usage<a class="anchor" aria-label="anchor" href="#usage-21"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addMetadataStandard</span><span class="op">(</span><span class="va">metadataStandard</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-15">Arguments<a class="anchor" aria-label="anchor" href="#arguments-15"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>dataSetURI</code></dt>
-<dd><p>dataset URI</p></dd>
-
-
-</dl><p></p></div>
-</div>
-
-</div><p></p><hr><a id="method-ISOMetadata-addLocale"></a><div class="section">
-<h3 id="method-addlocale-">Method <code>addLocale()</code><a class="anchor" aria-label="anchor" href="#method-addlocale-"></a></h3>
-<p>Adds locale</p><div class="section">
-<h4 id="usage-16">Usage<a class="anchor" aria-label="anchor" href="#usage-16"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-16">Arguments<a class="anchor" aria-label="anchor" href="#arguments-16"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
-<dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-7">Returns<a class="anchor" aria-label="anchor" href="#returns-7"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOMetadata-delLocale"></a><div class="section">
-<h3 id="method-dellocale-">Method <code>delLocale()</code><a class="anchor" aria-label="anchor" href="#method-dellocale-"></a></h3>
-<p>Deletes locale</p><div class="section">
-<h4 id="usage-17">Usage<a class="anchor" aria-label="anchor" href="#usage-17"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-17">Arguments<a class="anchor" aria-label="anchor" href="#arguments-17"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
-<dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-8">Returns<a class="anchor" aria-label="anchor" href="#returns-8"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOMetadata-addSpatialRepresentationInfo"></a><div class="section">
-<h3 id="method-addspatialrepresentationinfo-">Method <code>addSpatialRepresentationInfo()</code><a class="anchor" aria-label="anchor" href="#method-addspatialrepresentationinfo-"></a></h3>
-<p>Adds spatial representation info</p><div class="section">
-<h4 id="usage-18">Usage<a class="anchor" aria-label="anchor" href="#usage-18"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addSpatialRepresentationInfo</span><span class="op">(</span><span class="va">spatialRepresentationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-18">Arguments<a class="anchor" aria-label="anchor" href="#arguments-18"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>spatialRepresentationInfo</code></dt>
-<dd><p>object of class <a href="ISOSpatialRepresentation.html">ISOSpatialRepresentation</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-9">Returns<a class="anchor" aria-label="anchor" href="#returns-9"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOMetadata-setSpatialRepresentationInfo"></a><div class="section">
-<h3 id="method-setspatialrepresentationinfo-">Method <code>setSpatialRepresentationInfo()</code><a class="anchor" aria-label="anchor" href="#method-setspatialrepresentationinfo-"></a></h3>
-<p>Sets spatial representation info</p><div class="section">
-<h4 id="usage-19">Usage<a class="anchor" aria-label="anchor" href="#usage-19"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setSpatialRepresentationInfo</span><span class="op">(</span><span class="va">spatialRepresentationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-19">Arguments<a class="anchor" aria-label="anchor" href="#arguments-19"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>spatialRepresentationInfo</code></dt>
-<dd><p>object of class <a href="ISOSpatialRepresentation.html">ISOSpatialRepresentation</a></p></dd>
+<h4 id="arguments-21">Arguments<a class="anchor" aria-label="anchor" href="#arguments-21"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataStandard</code></dt>
+<dd><p>object of class <a href="ISOCitation.html">ISOCitation</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
 
 </dl><p></p></div>
@@ -605,17 +695,17 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-delSpatialRepresentationInfo"></a><div class="section">
-<h3 id="method-delspatialrepresentationinfo-">Method <code>delSpatialRepresentationInfo()</code><a class="anchor" aria-label="anchor" href="#method-delspatialrepresentationinfo-"></a></h3>
-<p>Deletes spatial representation info</p><div class="section">
-<h4 id="usage-20">Usage<a class="anchor" aria-label="anchor" href="#usage-20"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delSpatialRepresentationInfo</span><span class="op">(</span><span class="va">spatialRepresentationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-delMetadataStandard"></a><div class="section">
+<h3 id="method-delmetadatastandard-">Method <code>delMetadataStandard()</code><a class="anchor" aria-label="anchor" href="#method-delmetadatastandard-"></a></h3>
+<p>Deletes metadata standard</p><div class="section">
+<h4 id="usage-22">Usage<a class="anchor" aria-label="anchor" href="#usage-22"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delMetadataStandard</span><span class="op">(</span><span class="va">metadataStandard</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-20">Arguments<a class="anchor" aria-label="anchor" href="#arguments-20"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>spatialRepresentationInfo</code></dt>
-<dd><p>object of class <a href="ISOSpatialRepresentation.html">ISOSpatialRepresentation</a></p></dd>
+<h4 id="arguments-22">Arguments<a class="anchor" aria-label="anchor" href="#arguments-22"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataStandard</code></dt>
+<dd><p>object of class <a href="ISOCitation.html">ISOCitation</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
 
 </dl><p></p></div>
@@ -625,17 +715,17 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-addReferenceSystemInfo"></a><div class="section">
-<h3 id="method-addreferencesysteminfo-">Method <code>addReferenceSystemInfo()</code><a class="anchor" aria-label="anchor" href="#method-addreferencesysteminfo-"></a></h3>
-<p>Adds reference system info</p><div class="section">
-<h4 id="usage-21">Usage<a class="anchor" aria-label="anchor" href="#usage-21"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addReferenceSystemInfo</span><span class="op">(</span><span class="va">referenceSystemInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-addMetadataProfile"></a><div class="section">
+<h3 id="method-addmetadataprofile-">Method <code>addMetadataProfile()</code><a class="anchor" aria-label="anchor" href="#method-addmetadataprofile-"></a></h3>
+<p>Adds metadata profile</p><div class="section">
+<h4 id="usage-23">Usage<a class="anchor" aria-label="anchor" href="#usage-23"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addMetadataProfile</span><span class="op">(</span><span class="va">metadataProfile</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-21">Arguments<a class="anchor" aria-label="anchor" href="#arguments-21"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>referenceSystemInfo</code></dt>
-<dd><p>object of class <a href="ISOReferenceSystem.html">ISOReferenceSystem</a></p></dd>
+<h4 id="arguments-23">Arguments<a class="anchor" aria-label="anchor" href="#arguments-23"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataProfile</code></dt>
+<dd><p>object of class <a href="ISOCitation.html">ISOCitation</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
 
 </dl><p></p></div>
@@ -645,117 +735,133 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-setReferenceSystemInfo"></a><div class="section">
-<h3 id="method-setreferencesysteminfo-">Method <code>setReferenceSystemInfo()</code><a class="anchor" aria-label="anchor" href="#method-setreferencesysteminfo-"></a></h3>
-<p>Sets reference system info</p><div class="section">
-<h4 id="usage-22">Usage<a class="anchor" aria-label="anchor" href="#usage-22"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setReferenceSystemInfo</span><span class="op">(</span><span class="va">referenceSystemInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-delMetadataProfile"></a><div class="section">
+<h3 id="method-delmetadataprofile-">Method <code>delMetadataProfile()</code><a class="anchor" aria-label="anchor" href="#method-delmetadataprofile-"></a></h3>
+<p>Deletes metadata profile</p><div class="section">
+<h4 id="usage-24">Usage<a class="anchor" aria-label="anchor" href="#usage-24"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delMetadataProfile</span><span class="op">(</span><span class="va">metadataProfile</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-22">Arguments<a class="anchor" aria-label="anchor" href="#arguments-22"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>referenceSystemInfo</code></dt>
-<dd><p>object of class <a href="ISOReferenceSystem.html">ISOReferenceSystem</a></p></dd>
+<h4 id="arguments-24">Arguments<a class="anchor" aria-label="anchor" href="#arguments-24"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataProfile</code></dt>
+<dd><p>object of class <a href="ISOCitation.html">ISOCitation</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-13">Returns<a class="anchor" aria-label="anchor" href="#returns-13"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-delReferenceSystemInfo"></a><div class="section">
-<h3 id="method-delreferencesysteminfo-">Method <code>delReferenceSystemInfo()</code><a class="anchor" aria-label="anchor" href="#method-delreferencesysteminfo-"></a></h3>
-<p>Deletes reference system info</p><div class="section">
-<h4 id="usage-23">Usage<a class="anchor" aria-label="anchor" href="#usage-23"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delReferenceSystemInfo</span><span class="op">(</span><span class="va">referenceSystemInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-addAlternativeMetadataReference"></a><div class="section">
+<h3 id="method-addalternativemetadatareference-">Method <code>addAlternativeMetadataReference()</code><a class="anchor" aria-label="anchor" href="#method-addalternativemetadatareference-"></a></h3>
+<p>Adds alternative metadata reference</p><div class="section">
+<h4 id="usage-25">Usage<a class="anchor" aria-label="anchor" href="#usage-25"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addAlternativeMetadataReference</span><span class="op">(</span><span class="va">alternativeMetadataReference</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-23">Arguments<a class="anchor" aria-label="anchor" href="#arguments-23"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>referenceSystemInfo</code></dt>
-<dd><p>object of class <a href="ISOReferenceSystem.html">ISOReferenceSystem</a></p></dd>
+<h4 id="arguments-25">Arguments<a class="anchor" aria-label="anchor" href="#arguments-25"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>alternativeMetadataReference</code></dt>
+<dd><p>object of class <a href="ISOCitation.html">ISOCitation</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-14">Returns<a class="anchor" aria-label="anchor" href="#returns-14"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-addMetadataExtensionInfo"></a><div class="section">
-<h3 id="method-addmetadataextensioninfo-">Method <code>addMetadataExtensionInfo()</code><a class="anchor" aria-label="anchor" href="#method-addmetadataextensioninfo-"></a></h3>
-<p>Adds metadata extension info</p><div class="section">
-<h4 id="usage-24">Usage<a class="anchor" aria-label="anchor" href="#usage-24"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addMetadataExtensionInfo</span><span class="op">(</span><span class="va">metadataExtensionInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-delAlternativeMetadataReference"></a><div class="section">
+<h3 id="method-delalternativemetadatareference-">Method <code>delAlternativeMetadataReference()</code><a class="anchor" aria-label="anchor" href="#method-delalternativemetadatareference-"></a></h3>
+<p>Deletes alternative metadata reference</p><div class="section">
+<h4 id="usage-26">Usage<a class="anchor" aria-label="anchor" href="#usage-26"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delAlternativeMetadataReference</span><span class="op">(</span><span class="va">alternativeMetadataReference</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-24">Arguments<a class="anchor" aria-label="anchor" href="#arguments-24"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>metadataExtensionInfo</code></dt>
-<dd><p>object of class <a href="ISOMetadataExtensionInformation.html">ISOMetadataExtensionInformation</a></p></dd>
+<h4 id="arguments-26">Arguments<a class="anchor" aria-label="anchor" href="#arguments-26"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>alternativeMetadataReference</code></dt>
+<dd><p>object of class <a href="ISOCitation.html">ISOCitation</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-15">Returns<a class="anchor" aria-label="anchor" href="#returns-15"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-delMetadataExtensionInfo"></a><div class="section">
-<h3 id="method-delmetadataextensioninfo-">Method <code>delMetadataExtensionInfo()</code><a class="anchor" aria-label="anchor" href="#method-delmetadataextensioninfo-"></a></h3>
-<p>Deletes metadata extension info</p><div class="section">
-<h4 id="usage-25">Usage<a class="anchor" aria-label="anchor" href="#usage-25"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delMetadataExtensionInfo</span><span class="op">(</span><span class="va">metadataExtensionInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-setDataSetURI"></a><div class="section">
+<h3 id="method-setdataseturi-">Method <code>setDataSetURI()</code><a class="anchor" aria-label="anchor" href="#method-setdataseturi-"></a></h3>
+<p>Set dataset URI</p><div class="section">
+<h4 id="usage-27">Usage<a class="anchor" aria-label="anchor" href="#usage-27"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setDataSetURI</span><span class="op">(</span><span class="va">dataSetURI</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-25">Arguments<a class="anchor" aria-label="anchor" href="#arguments-25"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>metadataExtensionInfo</code></dt>
-<dd><p>object of class <a href="ISOMetadataExtensionInformation.html">ISOMetadataExtensionInformation</a></p></dd>
+<h4 id="arguments-27">Arguments<a class="anchor" aria-label="anchor" href="#arguments-27"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>dataSetURI</code></dt>
+<dd><p>dataset URI</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-addMetadataLinkage"></a><div class="section">
+<h3 id="method-addmetadatalinkage-">Method <code>addMetadataLinkage()</code><a class="anchor" aria-label="anchor" href="#method-addmetadatalinkage-"></a></h3>
+<p>Adds metadata linkage</p><div class="section">
+<h4 id="usage-28">Usage<a class="anchor" aria-label="anchor" href="#usage-28"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addMetadataLinkage</span><span class="op">(</span><span class="va">metadataLinkage</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-28">Arguments<a class="anchor" aria-label="anchor" href="#arguments-28"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataLinkage</code></dt>
+<dd><p>object of class <a href="ISOOnlineResource.html">ISOOnlineResource</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-16">Returns<a class="anchor" aria-label="anchor" href="#returns-16"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-addIdentificationInfo"></a><div class="section">
-<h3 id="method-addidentificationinfo-">Method <code>addIdentificationInfo()</code><a class="anchor" aria-label="anchor" href="#method-addidentificationinfo-"></a></h3>
-<p>Adds metadata extension info</p><div class="section">
-<h4 id="usage-26">Usage<a class="anchor" aria-label="anchor" href="#usage-26"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addIdentificationInfo</span><span class="op">(</span><span class="va">identificationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-delMetadataLinkage"></a><div class="section">
+<h3 id="method-delmetadatalinkage-">Method <code>delMetadataLinkage()</code><a class="anchor" aria-label="anchor" href="#method-delmetadatalinkage-"></a></h3>
+<p>Deletes metadata linkage</p><div class="section">
+<h4 id="usage-29">Usage<a class="anchor" aria-label="anchor" href="#usage-29"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delMetadataLinkage</span><span class="op">(</span><span class="va">metadataLinkage</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-26">Arguments<a class="anchor" aria-label="anchor" href="#arguments-26"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>identificationInfo</code></dt>
-<dd><p>object of class inheriting <a href="ISOIdentification.html">ISOIdentification</a></p></dd>
+<h4 id="arguments-29">Arguments<a class="anchor" aria-label="anchor" href="#arguments-29"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataLinkage</code></dt>
+<dd><p>object of class <a href="ISOOnlineResource.html">ISOOnlineResource</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-17">Returns<a class="anchor" aria-label="anchor" href="#returns-17"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-setIdentificationInfo"></a><div class="section">
-<h3 id="method-setidentificationinfo-">Method <code>setIdentificationInfo()</code><a class="anchor" aria-label="anchor" href="#method-setidentificationinfo-"></a></h3>
-<p>Sets metadata extension info</p><div class="section">
-<h4 id="usage-27">Usage<a class="anchor" aria-label="anchor" href="#usage-27"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setIdentificationInfo</span><span class="op">(</span><span class="va">identificationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-addLocale"></a><div class="section">
+<h3 id="method-addlocale-">Method <code>addLocale()</code><a class="anchor" aria-label="anchor" href="#method-addlocale-"></a></h3>
+<p>Adds locale</p><div class="section">
+<h4 id="usage-30">Usage<a class="anchor" aria-label="anchor" href="#usage-30"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-27">Arguments<a class="anchor" aria-label="anchor" href="#arguments-27"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>identificationInfo</code></dt>
-<dd><p>object of class inheriting <a href="ISOIdentification.html">ISOIdentification</a></p></dd>
+<h4 id="arguments-30">Arguments<a class="anchor" aria-label="anchor" href="#arguments-30"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
+<dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
 
 
 </dl><p></p></div>
@@ -765,17 +871,17 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-delIdentificationInfo"></a><div class="section">
-<h3 id="method-delidentificationinfo-">Method <code>delIdentificationInfo()</code><a class="anchor" aria-label="anchor" href="#method-delidentificationinfo-"></a></h3>
-<p>Deletes metadata extension info</p><div class="section">
-<h4 id="usage-28">Usage<a class="anchor" aria-label="anchor" href="#usage-28"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delIdentificationInfo</span><span class="op">(</span><span class="va">identificationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-delLocale"></a><div class="section">
+<h3 id="method-dellocale-">Method <code>delLocale()</code><a class="anchor" aria-label="anchor" href="#method-dellocale-"></a></h3>
+<p>Deletes locale</p><div class="section">
+<h4 id="usage-31">Usage<a class="anchor" aria-label="anchor" href="#usage-31"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-28">Arguments<a class="anchor" aria-label="anchor" href="#arguments-28"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>identificationInfo</code></dt>
-<dd><p>object of class inheriting <a href="ISOIdentification.html">ISOIdentification</a></p></dd>
+<h4 id="arguments-31">Arguments<a class="anchor" aria-label="anchor" href="#arguments-31"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
+<dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
 
 
 </dl><p></p></div>
@@ -785,37 +891,37 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-setDistributionInfo"></a><div class="section">
-<h3 id="method-setdistributioninfo-">Method <code>setDistributionInfo()</code><a class="anchor" aria-label="anchor" href="#method-setdistributioninfo-"></a></h3>
-<p>Sets metadata extension info</p><div class="section">
-<h4 id="usage-29">Usage<a class="anchor" aria-label="anchor" href="#usage-29"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setDistributionInfo</span><span class="op">(</span><span class="va">distributionInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-addSpatialRepresentationInfo"></a><div class="section">
+<h3 id="method-addspatialrepresentationinfo-">Method <code>addSpatialRepresentationInfo()</code><a class="anchor" aria-label="anchor" href="#method-addspatialrepresentationinfo-"></a></h3>
+<p>Adds spatial representation info</p><div class="section">
+<h4 id="usage-32">Usage<a class="anchor" aria-label="anchor" href="#usage-32"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addSpatialRepresentationInfo</span><span class="op">(</span><span class="va">spatialRepresentationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-29">Arguments<a class="anchor" aria-label="anchor" href="#arguments-29"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>distributionInfo</code></dt>
-<dd><p>object of class <a href="ISODistribution.html">ISODistribution</a></p></dd>
+<h4 id="arguments-32">Arguments<a class="anchor" aria-label="anchor" href="#arguments-32"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>spatialRepresentationInfo</code></dt>
+<dd><p>object of class <a href="ISOSpatialRepresentation.html">ISOSpatialRepresentation</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-20">Returns<a class="anchor" aria-label="anchor" href="#returns-20"></a></h4>
-<p><code>TRUE</code> if set, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-addDataQualityInfo"></a><div class="section">
-<h3 id="method-adddataqualityinfo-">Method <code>addDataQualityInfo()</code><a class="anchor" aria-label="anchor" href="#method-adddataqualityinfo-"></a></h3>
-<p>Adds data quality info</p><div class="section">
-<h4 id="usage-30">Usage<a class="anchor" aria-label="anchor" href="#usage-30"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addDataQualityInfo</span><span class="op">(</span><span class="va">dataQualityInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-setSpatialRepresentationInfo"></a><div class="section">
+<h3 id="method-setspatialrepresentationinfo-">Method <code>setSpatialRepresentationInfo()</code><a class="anchor" aria-label="anchor" href="#method-setspatialrepresentationinfo-"></a></h3>
+<p>Sets spatial representation info</p><div class="section">
+<h4 id="usage-33">Usage<a class="anchor" aria-label="anchor" href="#usage-33"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setSpatialRepresentationInfo</span><span class="op">(</span><span class="va">spatialRepresentationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-30">Arguments<a class="anchor" aria-label="anchor" href="#arguments-30"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>dataQualityInfo</code></dt>
-<dd><p>object of class <a href="ISODataQuality.html">ISODataQuality</a></p></dd>
+<h4 id="arguments-33">Arguments<a class="anchor" aria-label="anchor" href="#arguments-33"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>spatialRepresentationInfo</code></dt>
+<dd><p>object of class <a href="ISOSpatialRepresentation.html">ISOSpatialRepresentation</a></p></dd>
 
 
 </dl><p></p></div>
@@ -825,57 +931,57 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-setDataQualityInfo"></a><div class="section">
-<h3 id="method-setdataqualityinfo-">Method <code>setDataQualityInfo()</code><a class="anchor" aria-label="anchor" href="#method-setdataqualityinfo-"></a></h3>
-<p>Sets data quality info</p><div class="section">
-<h4 id="usage-31">Usage<a class="anchor" aria-label="anchor" href="#usage-31"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setDataQualityInfo</span><span class="op">(</span><span class="va">dataQualityInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-delSpatialRepresentationInfo"></a><div class="section">
+<h3 id="method-delspatialrepresentationinfo-">Method <code>delSpatialRepresentationInfo()</code><a class="anchor" aria-label="anchor" href="#method-delspatialrepresentationinfo-"></a></h3>
+<p>Deletes spatial representation info</p><div class="section">
+<h4 id="usage-34">Usage<a class="anchor" aria-label="anchor" href="#usage-34"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delSpatialRepresentationInfo</span><span class="op">(</span><span class="va">spatialRepresentationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-31">Arguments<a class="anchor" aria-label="anchor" href="#arguments-31"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>dataQualityInfo</code></dt>
-<dd><p>object of class <a href="ISODataQuality.html">ISODataQuality</a></p></dd>
+<h4 id="arguments-34">Arguments<a class="anchor" aria-label="anchor" href="#arguments-34"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>spatialRepresentationInfo</code></dt>
+<dd><p>object of class <a href="ISOSpatialRepresentation.html">ISOSpatialRepresentation</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-22">Returns<a class="anchor" aria-label="anchor" href="#returns-22"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-delDataQualityInfo"></a><div class="section">
-<h3 id="method-deldataqualityinfo-">Method <code>delDataQualityInfo()</code><a class="anchor" aria-label="anchor" href="#method-deldataqualityinfo-"></a></h3>
-<p>Deletes data quality info</p><div class="section">
-<h4 id="usage-32">Usage<a class="anchor" aria-label="anchor" href="#usage-32"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delDataQualityInfo</span><span class="op">(</span><span class="va">dataQualityInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-addReferenceSystemInfo"></a><div class="section">
+<h3 id="method-addreferencesysteminfo-">Method <code>addReferenceSystemInfo()</code><a class="anchor" aria-label="anchor" href="#method-addreferencesysteminfo-"></a></h3>
+<p>Adds reference system info</p><div class="section">
+<h4 id="usage-35">Usage<a class="anchor" aria-label="anchor" href="#usage-35"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addReferenceSystemInfo</span><span class="op">(</span><span class="va">referenceSystemInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-32">Arguments<a class="anchor" aria-label="anchor" href="#arguments-32"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>dataQualityInfo</code></dt>
-<dd><p>object of class <a href="ISODataQuality.html">ISODataQuality</a></p></dd>
+<h4 id="arguments-35">Arguments<a class="anchor" aria-label="anchor" href="#arguments-35"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>referenceSystemInfo</code></dt>
+<dd><p>object of class <a href="ISOReferenceSystem.html">ISOReferenceSystem</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-23">Returns<a class="anchor" aria-label="anchor" href="#returns-23"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-setMetadataMaintenance"></a><div class="section">
-<h3 id="method-setmetadatamaintenance-">Method <code>setMetadataMaintenance()</code><a class="anchor" aria-label="anchor" href="#method-setmetadatamaintenance-"></a></h3>
-<p>Sets metadata maintenance</p><div class="section">
-<h4 id="usage-33">Usage<a class="anchor" aria-label="anchor" href="#usage-33"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setMetadataMaintenance</span><span class="op">(</span><span class="va">metadataMaintenance</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-setReferenceSystemInfo"></a><div class="section">
+<h3 id="method-setreferencesysteminfo-">Method <code>setReferenceSystemInfo()</code><a class="anchor" aria-label="anchor" href="#method-setreferencesysteminfo-"></a></h3>
+<p>Sets reference system info</p><div class="section">
+<h4 id="usage-36">Usage<a class="anchor" aria-label="anchor" href="#usage-36"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setReferenceSystemInfo</span><span class="op">(</span><span class="va">referenceSystemInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-33">Arguments<a class="anchor" aria-label="anchor" href="#arguments-33"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>metadataMaintenance</code></dt>
-<dd><p>object of class <a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></p></dd>
+<h4 id="arguments-36">Arguments<a class="anchor" aria-label="anchor" href="#arguments-36"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>referenceSystemInfo</code></dt>
+<dd><p>object of class <a href="ISOReferenceSystem.html">ISOReferenceSystem</a></p></dd>
 
 
 </dl><p></p></div>
@@ -885,35 +991,235 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-addContentInfo"></a><div class="section">
-<h3 id="method-addcontentinfo-">Method <code>addContentInfo()</code><a class="anchor" aria-label="anchor" href="#method-addcontentinfo-"></a></h3>
-<p>Adds content information</p><div class="section">
-<h4 id="usage-34">Usage<a class="anchor" aria-label="anchor" href="#usage-34"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addContentInfo</span><span class="op">(</span><span class="va">contentInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-delReferenceSystemInfo"></a><div class="section">
+<h3 id="method-delreferencesysteminfo-">Method <code>delReferenceSystemInfo()</code><a class="anchor" aria-label="anchor" href="#method-delreferencesysteminfo-"></a></h3>
+<p>Deletes reference system info</p><div class="section">
+<h4 id="usage-37">Usage<a class="anchor" aria-label="anchor" href="#usage-37"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delReferenceSystemInfo</span><span class="op">(</span><span class="va">referenceSystemInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-34">Arguments<a class="anchor" aria-label="anchor" href="#arguments-34"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>contentInfo</code></dt>
-<dd><p>object of class inheriting <a href="ISOAbstractContentInformation.html">ISOAbstractContentInformation</a></p></dd>
+<h4 id="arguments-37">Arguments<a class="anchor" aria-label="anchor" href="#arguments-37"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>referenceSystemInfo</code></dt>
+<dd><p>object of class <a href="ISOReferenceSystem.html">ISOReferenceSystem</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-25">Returns<a class="anchor" aria-label="anchor" href="#returns-25"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-delContentInfo"></a><div class="section">
-<h3 id="method-delcontentinfo-">Method <code>delContentInfo()</code><a class="anchor" aria-label="anchor" href="#method-delcontentinfo-"></a></h3>
-<p>Deletes content information</p><div class="section">
-<h4 id="usage-35">Usage<a class="anchor" aria-label="anchor" href="#usage-35"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delContentInfo</span><span class="op">(</span><span class="va">contentInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-ISOMetadata-addMetadataExtensionInfo"></a><div class="section">
+<h3 id="method-addmetadataextensioninfo-">Method <code>addMetadataExtensionInfo()</code><a class="anchor" aria-label="anchor" href="#method-addmetadataextensioninfo-"></a></h3>
+<p>Adds metadata extension info</p><div class="section">
+<h4 id="usage-38">Usage<a class="anchor" aria-label="anchor" href="#usage-38"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addMetadataExtensionInfo</span><span class="op">(</span><span class="va">metadataExtensionInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-35">Arguments<a class="anchor" aria-label="anchor" href="#arguments-35"></a></h4>
+<h4 id="arguments-38">Arguments<a class="anchor" aria-label="anchor" href="#arguments-38"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataExtensionInfo</code></dt>
+<dd><p>object of class <a href="ISOMetadataExtensionInformation.html">ISOMetadataExtensionInformation</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-26">Returns<a class="anchor" aria-label="anchor" href="#returns-26"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-delMetadataExtensionInfo"></a><div class="section">
+<h3 id="method-delmetadataextensioninfo-">Method <code>delMetadataExtensionInfo()</code><a class="anchor" aria-label="anchor" href="#method-delmetadataextensioninfo-"></a></h3>
+<p>Deletes metadata extension info</p><div class="section">
+<h4 id="usage-39">Usage<a class="anchor" aria-label="anchor" href="#usage-39"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delMetadataExtensionInfo</span><span class="op">(</span><span class="va">metadataExtensionInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-39">Arguments<a class="anchor" aria-label="anchor" href="#arguments-39"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataExtensionInfo</code></dt>
+<dd><p>object of class <a href="ISOMetadataExtensionInformation.html">ISOMetadataExtensionInformation</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-27">Returns<a class="anchor" aria-label="anchor" href="#returns-27"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-addIdentificationInfo"></a><div class="section">
+<h3 id="method-addidentificationinfo-">Method <code>addIdentificationInfo()</code><a class="anchor" aria-label="anchor" href="#method-addidentificationinfo-"></a></h3>
+<p>Adds metadata extension info</p><div class="section">
+<h4 id="usage-40">Usage<a class="anchor" aria-label="anchor" href="#usage-40"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addIdentificationInfo</span><span class="op">(</span><span class="va">identificationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-40">Arguments<a class="anchor" aria-label="anchor" href="#arguments-40"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>identificationInfo</code></dt>
+<dd><p>object of class inheriting <a href="ISOIdentification.html">ISOIdentification</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-28">Returns<a class="anchor" aria-label="anchor" href="#returns-28"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-setIdentificationInfo"></a><div class="section">
+<h3 id="method-setidentificationinfo-">Method <code>setIdentificationInfo()</code><a class="anchor" aria-label="anchor" href="#method-setidentificationinfo-"></a></h3>
+<p>Sets metadata extension info</p><div class="section">
+<h4 id="usage-41">Usage<a class="anchor" aria-label="anchor" href="#usage-41"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setIdentificationInfo</span><span class="op">(</span><span class="va">identificationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-41">Arguments<a class="anchor" aria-label="anchor" href="#arguments-41"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>identificationInfo</code></dt>
+<dd><p>object of class inheriting <a href="ISOIdentification.html">ISOIdentification</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-29">Returns<a class="anchor" aria-label="anchor" href="#returns-29"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-delIdentificationInfo"></a><div class="section">
+<h3 id="method-delidentificationinfo-">Method <code>delIdentificationInfo()</code><a class="anchor" aria-label="anchor" href="#method-delidentificationinfo-"></a></h3>
+<p>Deletes metadata extension info</p><div class="section">
+<h4 id="usage-42">Usage<a class="anchor" aria-label="anchor" href="#usage-42"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delIdentificationInfo</span><span class="op">(</span><span class="va">identificationInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-42">Arguments<a class="anchor" aria-label="anchor" href="#arguments-42"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>identificationInfo</code></dt>
+<dd><p>object of class inheriting <a href="ISOIdentification.html">ISOIdentification</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-30">Returns<a class="anchor" aria-label="anchor" href="#returns-30"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-setDistributionInfo"></a><div class="section">
+<h3 id="method-setdistributioninfo-">Method <code>setDistributionInfo()</code><a class="anchor" aria-label="anchor" href="#method-setdistributioninfo-"></a></h3>
+<p>Sets metadata extension info</p><div class="section">
+<h4 id="usage-43">Usage<a class="anchor" aria-label="anchor" href="#usage-43"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setDistributionInfo</span><span class="op">(</span><span class="va">distributionInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-43">Arguments<a class="anchor" aria-label="anchor" href="#arguments-43"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>distributionInfo</code></dt>
+<dd><p>object of class <a href="ISODistribution.html">ISODistribution</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-31">Returns<a class="anchor" aria-label="anchor" href="#returns-31"></a></h4>
+<p><code>TRUE</code> if set, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-addDataQualityInfo"></a><div class="section">
+<h3 id="method-adddataqualityinfo-">Method <code>addDataQualityInfo()</code><a class="anchor" aria-label="anchor" href="#method-adddataqualityinfo-"></a></h3>
+<p>Adds data quality info</p><div class="section">
+<h4 id="usage-44">Usage<a class="anchor" aria-label="anchor" href="#usage-44"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addDataQualityInfo</span><span class="op">(</span><span class="va">dataQualityInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-44">Arguments<a class="anchor" aria-label="anchor" href="#arguments-44"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>dataQualityInfo</code></dt>
+<dd><p>object of class <a href="ISODataQuality.html">ISODataQuality</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-32">Returns<a class="anchor" aria-label="anchor" href="#returns-32"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-setDataQualityInfo"></a><div class="section">
+<h3 id="method-setdataqualityinfo-">Method <code>setDataQualityInfo()</code><a class="anchor" aria-label="anchor" href="#method-setdataqualityinfo-"></a></h3>
+<p>Sets data quality info</p><div class="section">
+<h4 id="usage-45">Usage<a class="anchor" aria-label="anchor" href="#usage-45"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setDataQualityInfo</span><span class="op">(</span><span class="va">dataQualityInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-45">Arguments<a class="anchor" aria-label="anchor" href="#arguments-45"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>dataQualityInfo</code></dt>
+<dd><p>object of class <a href="ISODataQuality.html">ISODataQuality</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-33">Returns<a class="anchor" aria-label="anchor" href="#returns-33"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-delDataQualityInfo"></a><div class="section">
+<h3 id="method-deldataqualityinfo-">Method <code>delDataQualityInfo()</code><a class="anchor" aria-label="anchor" href="#method-deldataqualityinfo-"></a></h3>
+<p>Deletes data quality info</p><div class="section">
+<h4 id="usage-46">Usage<a class="anchor" aria-label="anchor" href="#usage-46"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delDataQualityInfo</span><span class="op">(</span><span class="va">dataQualityInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-46">Arguments<a class="anchor" aria-label="anchor" href="#arguments-46"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>dataQualityInfo</code></dt>
+<dd><p>object of class <a href="ISODataQuality.html">ISODataQuality</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-34">Returns<a class="anchor" aria-label="anchor" href="#returns-34"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-setMetadataMaintenance"></a><div class="section">
+<h3 id="method-setmetadatamaintenance-">Method <code>setMetadataMaintenance()</code><a class="anchor" aria-label="anchor" href="#method-setmetadatamaintenance-"></a></h3>
+<p>Sets metadata maintenance</p><div class="section">
+<h4 id="usage-47">Usage<a class="anchor" aria-label="anchor" href="#usage-47"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setMetadataMaintenance</span><span class="op">(</span><span class="va">metadataMaintenance</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-47">Arguments<a class="anchor" aria-label="anchor" href="#arguments-47"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataMaintenance</code></dt>
+<dd><p>object of class <a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-35">Returns<a class="anchor" aria-label="anchor" href="#returns-35"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-addContentInfo"></a><div class="section">
+<h3 id="method-addcontentinfo-">Method <code>addContentInfo()</code><a class="anchor" aria-label="anchor" href="#method-addcontentinfo-"></a></h3>
+<p>Adds content information</p><div class="section">
+<h4 id="usage-48">Usage<a class="anchor" aria-label="anchor" href="#usage-48"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addContentInfo</span><span class="op">(</span><span class="va">contentInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-48">Arguments<a class="anchor" aria-label="anchor" href="#arguments-48"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>contentInfo</code></dt>
 <dd><p>object of class inheriting <a href="ISOAbstractContentInformation.html">ISOAbstractContentInformation</a></p></dd>
 
@@ -921,19 +1227,39 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 </dl><p></p></div>
 </div>
 <div class="section">
-<h4 id="returns-26">Returns<a class="anchor" aria-label="anchor" href="#returns-26"></a></h4>
+<h4 id="returns-36">Returns<a class="anchor" aria-label="anchor" href="#returns-36"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-delContentInfo"></a><div class="section">
+<h3 id="method-delcontentinfo-">Method <code>delContentInfo()</code><a class="anchor" aria-label="anchor" href="#method-delcontentinfo-"></a></h3>
+<p>Deletes content information</p><div class="section">
+<h4 id="usage-49">Usage<a class="anchor" aria-label="anchor" href="#usage-49"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delContentInfo</span><span class="op">(</span><span class="va">contentInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-49">Arguments<a class="anchor" aria-label="anchor" href="#arguments-49"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>contentInfo</code></dt>
+<dd><p>object of class inheriting <a href="ISOAbstractContentInformation.html">ISOAbstractContentInformation</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-37">Returns<a class="anchor" aria-label="anchor" href="#returns-37"></a></h4>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
 </div><p></p><hr><a id="method-ISOMetadata-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-36">Usage<a class="anchor" aria-label="anchor" href="#usage-36"></a></h4>
+<h4 id="usage-50">Usage<a class="anchor" aria-label="anchor" href="#usage-50"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-36">Arguments<a class="anchor" aria-label="anchor" href="#arguments-36"></a></h4>
+<h4 id="arguments-50">Arguments<a class="anchor" aria-label="anchor" href="#arguments-50"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
@@ -988,16 +1314,14 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#VectorSpatialRepresentation</span></span></span>
 <span class="r-in"><span>   <span class="va">vsr</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOVectorSpatialRepresentation.html">ISOVectorSpatialRepresentation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml, defaults = defaults):</span> unused argument (defaults = defaults)</span>
 <span class="r-in"><span>   <span class="va">vsr</span><span class="op">$</span><span class="fu">setTopologyLevel</span><span class="op">(</span><span class="st">"geometryOnly"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'vsr' not found</span>
 <span class="r-in"><span>   <span class="va">geomObject</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOGeometricObjects.html">ISOGeometricObjects</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">geomObject</span><span class="op">$</span><span class="fu">setGeometricObjectType</span><span class="op">(</span><span class="st">"surface"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">geomObject</span><span class="op">$</span><span class="fu">setGeometricObjectCount</span><span class="op">(</span><span class="fl">5L</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">vsr</span><span class="op">$</span><span class="fu">addGeometricObjects</span><span class="op">(</span><span class="va">geomObject</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'vsr' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addSpatialRepresentationInfo</span><span class="op">(</span><span class="va">vsr</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'vsr' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#ReferenceSystem</span></span></span>
 <span class="r-in"><span>   <span class="va">rs</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOReferenceSystem.html">ISOReferenceSystem</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -1299,9 +1623,7 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#XML representation of the ISOMetadata</span></span></span>
 <span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmx}Anchor': This element is not expected. Expected is one of ( {http://www.isotc211.org/2005/gco}CharacterString, {http://www.isotc211.org/2005/gmd}CI_RoleCode, {http://www.isotc211.org/2005/gmd}CI_PresentationFormCode, {http://www.isotc211.org/2005/gmd}CI_OnLineFunctionCode, {http://www.isotc211.org/2005/gmd}CI_DateTypeCode, {http://www.isotc211.org/2005/gmd}MD_PixelOrientationCode, {http://www.isotc211.org/2005/gmd}MD_TopologyLevelCode, {http://www.isotc211.org/2005/gmd}MD_GeometricObjectTypeCode, {http://www.isotc211.org/2005/gmd}MD_CellGeometryCode, {http://www.isotc211.org/2005/gmd}MD_DimensionNameTypeCode ) at line 457. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmx}Anchor': This element is not expected. Expected is one of ( {http://www.isotc211.org/2005/gco}CharacterString, {http://www.isotc211.org/2005/gmd}CI_RoleCode, {http://www.isotc211.org/2005/gmd}CI_PresentationFormCode, {http://www.isotc211.org/2005/gmd}CI_OnLineFunctionCode, {http://www.isotc211.org/2005/gmd}CI_DateTypeCode, {http://www.isotc211.org/2005/gmd}MD_PixelOrientationCode, {http://www.isotc211.org/2005/gmd}MD_TopologyLevelCode, {http://www.isotc211.org/2005/gmd}MD_GeometricObjectTypeCode, {http://www.isotc211.org/2005/gmd}MD_CellGeometryCode, {http://www.isotc211.org/2005/gmd}MD_DimensionNameTypeCode ) at line 465. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOMetadata' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in self$namespace$id:</span> $ operator is invalid for atomic vectors</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co">#example 2 - READ: Create an ISO metadata reading from XML</span></span></span>
 <span class="r-in"><span>   <span class="co">######################################################</span></span></span>
@@ -1310,7 +1632,7 @@ from values returned by <code>ISOScopeCode$values()</code></p></dd>
 <span class="r-in"><span>   <span class="va">xmlfile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/examples"</span>, <span class="st">"metadata.xml"</span>, package <span class="op">=</span> <span class="st">"geometa"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/XML/man/xmlTreeParse.html" class="external-link">xmlParse</a></span><span class="op">(</span><span class="va">xmlfile</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="va">xml</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml, defaults = defaults):</span> unused argument (defaults = defaults)</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in initialize(...):</span> argument "code" is missing, with no default</span>
 <span class="r-in"><span>   <span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

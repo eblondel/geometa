@@ -86,6 +86,18 @@ ISOContact"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 <dd><p>online resource</p></dd>
 
 
+<dt><code>hoursOfService</code></dt>
+<dd><p>hours of service</p></dd>
+
+
+<dt><code>contactInstructions</code></dt>
+<dd><p>contact instructions</p></dd>
+
+
+<dt><code>contactType</code></dt>
+<dd><p>contact type</p></dd>
+
+
 </dl><p></p></div>
     </div>
     <div id="methods">
@@ -96,8 +108,14 @@ ISOContact"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 
 <ul><li><p><a href="#method-ISOContact-new"><code>ISOContact$new()</code></a></p></li>
 <li><p><a href="#method-ISOContact-setPhone"><code>ISOContact$setPhone()</code></a></p></li>
+<li><p><a href="#method-ISOContact-addPhone"><code>ISOContact$addPhone()</code></a></p></li>
+<li><p><a href="#method-ISOContact-delPhone"><code>ISOContact$delPhone()</code></a></p></li>
 <li><p><a href="#method-ISOContact-setAddress"><code>ISOContact$setAddress()</code></a></p></li>
+<li><p><a href="#method-ISOContact-addAddress"><code>ISOContact$addAddress()</code></a></p></li>
+<li><p><a href="#method-ISOContact-delAddress"><code>ISOContact$delAddress()</code></a></p></li>
 <li><p><a href="#method-ISOContact-setOnlineResource"><code>ISOContact$setOnlineResource()</code></a></p></li>
+<li><p><a href="#method-ISOContact-addOnlineResource"><code>ISOContact$addOnlineResource()</code></a></p></li>
+<li><p><a href="#method-ISOContact-delOnlineResource"><code>ISOContact$delOnlineResource()</code></a></p></li>
 <li><p><a href="#method-ISOContact-clone"><code>ISOContact$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -146,7 +164,7 @@ ISOContact"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 
 </div><p></p><hr><a id="method-ISOContact-setPhone"></a><div class="section">
 <h3 id="method-setphone-">Method <code>setPhone()</code><a class="anchor" aria-label="anchor" href="#method-setphone-"></a></h3>
-<p>Set phone</p><div class="section">
+<p>Set phone (with ISO 19139)</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">setPhone</span><span class="op">(</span><span class="va">phone</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
@@ -160,15 +178,55 @@ ISOContact"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOContact-setAddress"></a><div class="section">
-<h3 id="method-setaddress-">Method <code>setAddress()</code><a class="anchor" aria-label="anchor" href="#method-setaddress-"></a></h3>
-<p>Set address</p><div class="section">
+</div><p></p><hr><a id="method-ISOContact-addPhone"></a><div class="section">
+<h3 id="method-addphone-">Method <code>addPhone()</code><a class="anchor" aria-label="anchor" href="#method-addphone-"></a></h3>
+<p>Adds phone (with ISO 19115-3)</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">setAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">addPhone</span><span class="op">(</span><span class="va">phone</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>phone</code></dt>
+<dd><p>object tof class <a href="ISOTelephone.html">ISOTelephone</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOContact-delPhone"></a><div class="section">
+<h3 id="method-delphone-">Method <code>delPhone()</code><a class="anchor" aria-label="anchor" href="#method-delphone-"></a></h3>
+<p>Deletes phone (with ISO 19115-3)</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">delPhone</span><span class="op">(</span><span class="va">phone</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>phone</code></dt>
+<dd><p>object tof class <a href="ISOTelephone.html">ISOTelephone</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOContact-setAddress"></a><div class="section">
+<h3 id="method-setaddress-">Method <code>setAddress()</code><a class="anchor" aria-label="anchor" href="#method-setaddress-"></a></h3>
+<p>Set address (with ISO 19139)</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">setAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>address</code></dt>
 <dd><p>object of class <a href="ISOAddress.html">ISOAddress</a></p></dd>
 
@@ -176,15 +234,55 @@ ISOContact"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 </dl><p></p></div>
 </div>
 
+</div><p></p><hr><a id="method-ISOContact-addAddress"></a><div class="section">
+<h3 id="method-addaddress-">Method <code>addAddress()</code><a class="anchor" aria-label="anchor" href="#method-addaddress-"></a></h3>
+<p>Adds address (with ISO 19115-3)</p><div class="section">
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">addAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>address</code></dt>
+<dd><p>object of class <a href="ISOAddress.html">ISOAddress</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOContact-delAddress"></a><div class="section">
+<h3 id="method-deladdress-">Method <code>delAddress()</code><a class="anchor" aria-label="anchor" href="#method-deladdress-"></a></h3>
+<p>Deletes address (with ISO 19115-3)</p><div class="section">
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">delAddress</span><span class="op">(</span><span class="va">address</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>address</code></dt>
+<dd><p>object of class <a href="ISOAddress.html">ISOAddress</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
 </div><p></p><hr><a id="method-ISOContact-setOnlineResource"></a><div class="section">
 <h3 id="method-setonlineresource-">Method <code>setOnlineResource()</code><a class="anchor" aria-label="anchor" href="#method-setonlineresource-"></a></h3>
-<p>Set online resource</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p>Set online resource (with ISO 19139)</p><div class="section">
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">onlineResource</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>onlineResource</code></dt>
 <dd><p>online resource, object of class <a href="ISOOnlineResource.html">ISOOnlineResource</a></p></dd>
 
@@ -192,15 +290,55 @@ ISOContact"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 </dl><p></p></div>
 </div>
 
+</div><p></p><hr><a id="method-ISOContact-addOnlineResource"></a><div class="section">
+<h3 id="method-addonlineresource-">Method <code>addOnlineResource()</code><a class="anchor" aria-label="anchor" href="#method-addonlineresource-"></a></h3>
+<p>Adds online resource (with ISO 19115-3)</p><div class="section">
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">addOnlineResource</span><span class="op">(</span><span class="va">onlineResource</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>onlineResource</code></dt>
+<dd><p>online resource, object of class <a href="ISOOnlineResource.html">ISOOnlineResource</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-4">Returns<a class="anchor" aria-label="anchor" href="#returns-4"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOContact-delOnlineResource"></a><div class="section">
+<h3 id="method-delonlineresource-">Method <code>delOnlineResource()</code><a class="anchor" aria-label="anchor" href="#method-delonlineresource-"></a></h3>
+<p>Deletes online resource (with ISO 19115-3)</p><div class="section">
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">delOnlineResource</span><span class="op">(</span><span class="va">onlineResource</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>onlineResource</code></dt>
+<dd><p>online resource, object of class <a href="ISOOnlineResource.html">ISOOnlineResource</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-5">Returns<a class="anchor" aria-label="anchor" href="#returns-5"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
 </div><p></p><hr><a id="method-ISOContact-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

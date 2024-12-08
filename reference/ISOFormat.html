@@ -76,11 +76,15 @@ ISOFormat"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
     <div id="public-fields">
     <h2>Public fields</h2>
     <p></p><div class="r6-fields"><dl><dt><code>name</code></dt>
-<dd><p>name : CharacterString</p></dd>
+<dd><p>name : CharacterString (ISO 19139)</p></dd>
+
+
+<dt><code>formatSpecificationCitation</code></dt>
+<dd><p>format specification citation [1]: ISOCitation</p></dd>
 
 
 <dt><code>version</code></dt>
-<dd><p>version : CharacterString</p></dd>
+<dd><p>version : CharacterString (ISO 19139)</p></dd>
 
 
 <dt><code>amendmentNumber</code></dt>
@@ -88,11 +92,15 @@ ISOFormat"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 
 
 <dt><code>specification</code></dt>
-<dd><p>specification [0..1] : CharacterString</p></dd>
+<dd><p>specification [0..1] : CharacterString (ISO 19139)</p></dd>
 
 
 <dt><code>fileDecompressionTechnique</code></dt>
 <dd><p>fileDecompressionTechnique [0..1] : CharacterString</p></dd>
+
+
+<dt><code>medium</code></dt>
+<dd><p>medium [0..*] : ISOMedium [0..*] (ISO 19115-3)</p></dd>
 
 
 <dt><code>formatDistributor</code></dt>
@@ -109,11 +117,14 @@ ISOFormat"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 
 <ul><li><p><a href="#method-ISOFormat-new"><code>ISOFormat$new()</code></a></p></li>
 <li><p><a href="#method-ISOFormat-setName"><code>ISOFormat$setName()</code></a></p></li>
+<li><p><a href="#method-ISOFormat-setFormatSpecificationCitation"><code>ISOFormat$setFormatSpecificationCitation()</code></a></p></li>
 <li><p><a href="#method-ISOFormat-setVersion"><code>ISOFormat$setVersion()</code></a></p></li>
 <li><p><a href="#method-ISOFormat-setAmendmentNumber"><code>ISOFormat$setAmendmentNumber()</code></a></p></li>
 <li><p><a href="#method-ISOFormat-setSpecification"><code>ISOFormat$setSpecification()</code></a></p></li>
 <li><p><a href="#method-ISOFormat-setFileDecompressionTechnique"><code>ISOFormat$setFileDecompressionTechnique()</code></a></p></li>
 <li><p><a href="#method-ISOFormat-addDistributor"><code>ISOFormat$addDistributor()</code></a></p></li>
+<li><p><a href="#method-ISOFormat-addMedium"><code>ISOFormat$addMedium()</code></a></p></li>
+<li><p><a href="#method-ISOFormat-delMedium"><code>ISOFormat$delMedium()</code></a></p></li>
 <li><p><a href="#method-ISOFormat-delDistributor"><code>ISOFormat$delDistributor()</code></a></p></li>
 <li><p><a href="#method-ISOFormat-clone"><code>ISOFormat$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
@@ -181,15 +192,31 @@ ISOFormat"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOFormat-setVersion"></a><div class="section">
-<h3 id="method-setversion-">Method <code>setVersion()</code><a class="anchor" aria-label="anchor" href="#method-setversion-"></a></h3>
-<p>Set version</p><div class="section">
+</div><p></p><hr><a id="method-ISOFormat-setFormatSpecificationCitation"></a><div class="section">
+<h3 id="method-setformatspecificationcitation-">Method <code>setFormatSpecificationCitation()</code><a class="anchor" aria-label="anchor" href="#method-setformatspecificationcitation-"></a></h3>
+<p>Set format specification citation</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">setVersion</span><span class="op">(</span><span class="va">version</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">setFormatSpecificationCitation</span><span class="op">(</span><span class="va">citation</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>citation</code></dt>
+<dd><p>citation</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOFormat-setVersion"></a><div class="section">
+<h3 id="method-setversion-">Method <code>setVersion()</code><a class="anchor" aria-label="anchor" href="#method-setversion-"></a></h3>
+<p>Set version</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">setVersion</span><span class="op">(</span><span class="va">version</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>version</code></dt>
 <dd><p>version</p></dd>
 
@@ -200,12 +227,12 @@ ISOFormat"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </div><p></p><hr><a id="method-ISOFormat-setAmendmentNumber"></a><div class="section">
 <h3 id="method-setamendmentnumber-">Method <code>setAmendmentNumber()</code><a class="anchor" aria-label="anchor" href="#method-setamendmentnumber-"></a></h3>
 <p>Set amendment number</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">setAmendmentNumber</span><span class="op">(</span><span class="va">amendmentNumber</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>amendmentNumber</code></dt>
 <dd><p>amendment number</p></dd>
 
@@ -216,12 +243,12 @@ ISOFormat"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </div><p></p><hr><a id="method-ISOFormat-setSpecification"></a><div class="section">
 <h3 id="method-setspecification-">Method <code>setSpecification()</code><a class="anchor" aria-label="anchor" href="#method-setspecification-"></a></h3>
 <p>Set specification</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">specification</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>specification</code></dt>
 <dd><p>specification</p></dd>
 
@@ -236,12 +263,12 @@ ISOFormat"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </div><p></p><hr><a id="method-ISOFormat-setFileDecompressionTechnique"></a><div class="section">
 <h3 id="method-setfiledecompressiontechnique-">Method <code>setFileDecompressionTechnique()</code><a class="anchor" aria-label="anchor" href="#method-setfiledecompressiontechnique-"></a></h3>
 <p>Set file decompression technique</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">setFileDecompressionTechnique</span><span class="op">(</span><span class="va">technique</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>technique</code></dt>
 <dd><p>technique</p></dd>
 
@@ -252,28 +279,8 @@ ISOFormat"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </div><p></p><hr><a id="method-ISOFormat-addDistributor"></a><div class="section">
 <h3 id="method-adddistributor-">Method <code>addDistributor()</code><a class="anchor" aria-label="anchor" href="#method-adddistributor-"></a></h3>
 <p>Adds distributor</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">addDistributor</span><span class="op">(</span><span class="va">distributor</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>distributor</code></dt>
-<dd><p>object of class <a href="ISODistributor.html">ISODistributor</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFormat-delDistributor"></a><div class="section">
-<h3 id="method-deldistributor-">Method <code>delDistributor()</code><a class="anchor" aria-label="anchor" href="#method-deldistributor-"></a></h3>
-<p>Deletes distributor</p><div class="section">
 <h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">delDistributor</span><span class="op">(</span><span class="va">distributor</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">addDistributor</span><span class="op">(</span><span class="va">distributor</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -285,19 +292,79 @@ ISOFormat"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </dl><p></p></div>
 </div>
 <div class="section">
+<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOFormat-addMedium"></a><div class="section">
+<h3 id="method-addmedium-">Method <code>addMedium()</code><a class="anchor" aria-label="anchor" href="#method-addmedium-"></a></h3>
+<p>Adds medium</p><div class="section">
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">addMedium</span><span class="op">(</span><span class="va">medium</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>medium</code></dt>
+<dd><p>object of class <a href="ISOMedium.html">ISOMedium</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
 <h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOFormat-delMedium"></a><div class="section">
+<h3 id="method-delmedium-">Method <code>delMedium()</code><a class="anchor" aria-label="anchor" href="#method-delmedium-"></a></h3>
+<p>Deletes medium</p><div class="section">
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">delMedium</span><span class="op">(</span><span class="va">medium</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>medium</code></dt>
+<dd><p>object of class <a href="ISOMedium.html">ISOMedium</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOFormat-delDistributor"></a><div class="section">
+<h3 id="method-deldistributor-">Method <code>delDistributor()</code><a class="anchor" aria-label="anchor" href="#method-deldistributor-"></a></h3>
+<p>Deletes distributor</p><div class="section">
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">delDistributor</span><span class="op">(</span><span class="va">distributor</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>distributor</code></dt>
+<dd><p>object of class <a href="ISODistributor.html">ISODistributor</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
 </div><p></p><hr><a id="method-ISOFormat-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFormat</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

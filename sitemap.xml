@@ -184,6 +184,8 @@
 <url><loc>/reference/ISODCPList.html</loc></url>
 <url><loc>/reference/ISODataFile.html</loc></url>
 <url><loc>/reference/ISODataIdentification.html</loc></url>
+<url><loc>/reference/ISODataIdentification19115_3.html</loc></url>
+<url><loc>/reference/ISODataIdentification19139.html</loc></url>
 <url><loc>/reference/ISODataQuality.html</loc></url>
 <url><loc>/reference/ISODataQualityAbstractElement.html</loc></url>
 <url><loc>/reference/ISODataQualityScope.html</loc></url>
@@ -226,7 +228,8 @@
 <url><loc>/reference/ISOGridSpatialRepresentation.html</loc></url>
 <url><loc>/reference/ISOGriddedDataPositionalAccuracy.html</loc></url>
 <url><loc>/reference/ISOIdentification.html</loc></url>
-<url><loc>/reference/ISOIdentifier.html</loc></url>
+<url><loc>/reference/ISOIdentification19115_3.html</loc></url>
+<url><loc>/reference/ISOIdentification19139.html</loc></url>
 <url><loc>/reference/ISOImageDescription.html</loc></url>
 <url><loc>/reference/ISOImageryAbstractGeolocationInformation.html</loc></url>
 <url><loc>/reference/ISOImageryAcquisitionInformation.html</loc></url>

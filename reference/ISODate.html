@@ -70,7 +70,7 @@ ISODate"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mat
     </div>
     <div id="super-classes">
     <h2>Super classes</h2>
-    <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code>ISODate</code></p>
+    <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code><a href="ISOAbstractTypedDate.html">geometa::ISOAbstractTypedDate</a></code> -&gt; <code>ISODate</code></p>
     </div>
     <div id="public-fields">
     <h2>Public fields</h2>
@@ -127,13 +127,22 @@ ISODate"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mat
 <h3 id="method-new-">Method <code>new()</code><a class="anchor" aria-label="anchor" href="#method-new-"></a></h3>
 <p>Initializes object</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/ISODate.html">ISODate</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="cn">NULL</span>, date <span class="op">=</span> <span class="cn">NULL</span>, dateType <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>xml</code></dt>
 <dd><p>object of class XMLInternalNode-class</p></dd>
+
+
+<dt><code>date</code></dt>
+<dd><p>object of class <a href="https://rdrr.io/r/base/Dates.html" class="external-link">Date</a> or <a href="https://rdrr.io/r/base/DateTimeClasses.html" class="external-link">POSIXt</a></p></dd>
+
+
+<dt><code>dateType</code></dt>
+<dd><p>object of class <a href="ISODateType.html">ISODateType</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
+value among values returned by <code>ISODateType$values()</code></p></dd>
 
 
 </dl><p></p></div>

@@ -70,7 +70,31 @@ ISOMetaIdentifier"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
     </div>
     <div id="super-classes">
     <h2>Super classes</h2>
-    <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code><a href="ISOIdentifier.html">geometa::ISOIdentifier</a></code> -&gt; <code>ISOMetaIdentifier</code></p>
+    <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code>ISOMetaIdentifier</code></p>
+    </div>
+    <div id="public-fields">
+    <h2>Public fields</h2>
+    <p></p><div class="r6-fields"><dl><dt><code>authority</code></dt>
+<dd><p>authority [0..1]: ISOCitation</p></dd>
+
+
+<dt><code>code</code></dt>
+<dd><p>code [1..1]: character</p></dd>
+
+
+<dt><code>codeSpace</code></dt>
+<dd><p>codeSpace [0..1]: character (ISO 19115-3)</p></dd>
+
+
+<dt><code>version</code></dt>
+<dd><p>version [0..1]: character (ISO 19115-3)</p></dd>
+
+
+<dt><code>description</code></dt>
+<dd><p>description [0..1]: character (ISO 19115-3)</p></dd>
+
+
+</dl><p></p></div>
     </div>
     <div id="methods">
     <h2>Methods</h2>
@@ -79,6 +103,11 @@ ISOMetaIdentifier"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOMetaIdentifier-new"><code>ISOMetaIdentifier$new()</code></a></p></li>
+<li><p><a href="#method-ISOMetaIdentifier-setAuthority"><code>ISOMetaIdentifier$setAuthority()</code></a></p></li>
+<li><p><a href="#method-ISOMetaIdentifier-setCode"><code>ISOMetaIdentifier$setCode()</code></a></p></li>
+<li><p><a href="#method-ISOMetaIdentifier-setCodeSpace"><code>ISOMetaIdentifier$setCodeSpace()</code></a></p></li>
+<li><p><a href="#method-ISOMetaIdentifier-setVersion"><code>ISOMetaIdentifier$setVersion()</code></a></p></li>
+<li><p><a href="#method-ISOMetaIdentifier-setDescription"><code>ISOMetaIdentifier$setDescription()</code></a></p></li>
 <li><p><a href="#method-ISOMetaIdentifier-clone"><code>ISOMetaIdentifier$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -101,7 +130,6 @@ ISOMetaIdentifier"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setAttr"><a href="ISOAbstractObject.html#method-setAttr"><code>geometa::ISOAbstractObject$setAttr()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeList"><a href="ISOAbstractObject.html#method-setCodeList"><code>geometa::ISOAbstractObject$setCodeList()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeListValue"><a href="ISOAbstractObject.html#method-setCodeListValue"><code>geometa::ISOAbstractObject$setCodeListValue()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setCodeSpace"><a href="ISOAbstractObject.html#method-setCodeSpace"><code>geometa::ISOAbstractObject$setCodeSpace()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setHref"><a href="ISOAbstractObject.html#method-setHref"><code>geometa::ISOAbstractObject$setHref()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setId"><a href="ISOAbstractObject.html#method-setId"><code>geometa::ISOAbstractObject$setId()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="setIsNull"><a href="ISOAbstractObject.html#method-setIsNull"><code>geometa::ISOAbstractObject$setIsNull()</code></a></span></li>
@@ -109,12 +137,11 @@ ISOMetaIdentifier"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="stopIfMetadataStandardIsNot"><a href="ISOAbstractObject.html#method-stopIfMetadataStandardIsNot"><code>geometa::ISOAbstractObject$stopIfMetadataStandardIsNot()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href="ISOAbstractObject.html#method-validate"><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href="ISOAbstractObject.html#method-wrapBaseElement"><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentifier" data-id="setAuthority"><a href="ISOIdentifier.html#method-setAuthority"><code>geometa::ISOIdentifier$setAuthority()</code></a></span></li>
 </ul></details></p><hr><a id="method-ISOMetaIdentifier-new"></a><div class="section">
 <h3 id="method-new-">Method <code><a href="https://rdrr.io/r/methods/new.html" class="external-link">new()</a></code><a class="anchor" aria-label="anchor" href="#method-new-"></a></h3>
 <p>Initializes object</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/ISOMetaIdentifier.html">ISOMetaIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">code</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/ISOMetaIdentifier.html">ISOMetaIdentifier</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>xml <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">code</span>, codeSpace <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -127,18 +154,102 @@ ISOMetaIdentifier"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aja
 <dd><p>code</p></dd>
 
 
+<dt><code>codeSpace</code></dt>
+<dd><p>code space</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetaIdentifier-setAuthority"></a><div class="section">
+<h3 id="method-setauthority-">Method <code>setAuthority()</code><a class="anchor" aria-label="anchor" href="#method-setauthority-"></a></h3>
+<p>Set authority</p><div class="section">
+<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetaIdentifier</span><span class="op">$</span><span class="fu">setAuthority</span><span class="op">(</span><span class="va">authority</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>authority</code></dt>
+<dd><p>object of class <a href="ISOCitation.html">ISOCitation</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetaIdentifier-setCode"></a><div class="section">
+<h3 id="method-setcode-">Method <code>setCode()</code><a class="anchor" aria-label="anchor" href="#method-setcode-"></a></h3>
+<p>Set code</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetaIdentifier</span><span class="op">$</span><span class="fu">setCode</span><span class="op">(</span><span class="va">code</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>code</code></dt>
+<dd><p>code</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetaIdentifier-setCodeSpace"></a><div class="section">
+<h3 id="method-setcodespace-">Method <code>setCodeSpace()</code><a class="anchor" aria-label="anchor" href="#method-setcodespace-"></a></h3>
+<p>Set codeSpace</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetaIdentifier</span><span class="op">$</span><span class="fu">setCodeSpace</span><span class="op">(</span><span class="va">codeSpace</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>codeSpace</code></dt>
+<dd><p>codeSpace</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetaIdentifier-setVersion"></a><div class="section">
+<h3 id="method-setversion-">Method <code>setVersion()</code><a class="anchor" aria-label="anchor" href="#method-setversion-"></a></h3>
+<p>Set version</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetaIdentifier</span><span class="op">$</span><span class="fu">setVersion</span><span class="op">(</span><span class="va">version</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>version</code></dt>
+<dd><p>version</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetaIdentifier-setDescription"></a><div class="section">
+<h3 id="method-setdescription-">Method <code>setDescription()</code><a class="anchor" aria-label="anchor" href="#method-setdescription-"></a></h3>
+<p>Set description</p><div class="section">
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetaIdentifier</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="va">description</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>description</code></dt>
+<dd><p>description</p></dd>
+
+
 </dl><p></p></div>
 </div>
 
 </div><p></p><hr><a id="method-ISOMetaIdentifier-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetaIdentifier</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
