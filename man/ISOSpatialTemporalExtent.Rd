@@ -29,7 +29,9 @@ ISOSpatialTemporalExtent
   
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_EX_SpatialTemporalExtent}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/gex/1.0/gex/#element_EX_SpatialTemporalExtent}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
