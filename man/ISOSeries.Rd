@@ -159,6 +159,8 @@ Set page
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
+\item{\code{page}}{page}
+
 \item{\code{locales}}{list of localized titles. Default is \code{NULL}}
 }
 \if{html}{\out{</div>}}

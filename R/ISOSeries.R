@@ -56,7 +56,7 @@ ISOSeries <- R6Class("ISOSeries",
     },
     
     #'@description Set page
-    #'@param page
+    #'@param page page
     #'@param locales list of localized titles. Default is \code{NULL}
     setPage = function(page, locales = NULL){
       self$page <- page

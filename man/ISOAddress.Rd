@@ -153,6 +153,8 @@ Adds delivery point
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{deliveryPoint}}{delivery point}
+
+\item{\code{locales}}{list of localized names}
 }
 \if{html}{\out{</div>}}
 }
@@ -173,6 +175,8 @@ Deletes delivery point
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{deliveryPoint}}{delivery point}
+
+\item{\code{locales}}{list of localized names}
 }
 \if{html}{\out{</div>}}
 }
@@ -269,6 +273,8 @@ Adds email
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{email}}{email}
+
+\item{\code{locales}}{list of localized names}
 }
 \if{html}{\out{</div>}}
 }
@@ -289,6 +295,8 @@ Deletes email
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{email}}{email}
+
+\item{\code{locales}}{list of localized names}
 }
 \if{html}{\out{</div>}}
 }

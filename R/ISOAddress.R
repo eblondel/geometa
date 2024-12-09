@@ -64,6 +64,7 @@ ISOAddress <- R6Class("ISOAddress",
     
     #'@description Adds delivery point
     #'@param deliveryPoint delivery point
+    #'@param locales list of localized names
     #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addDeliveryPoint = function(deliveryPoint, locales = NULL){
       self$stopIfMetadataStandardIsNot("19115-3")
@@ -76,6 +77,7 @@ ISOAddress <- R6Class("ISOAddress",
     
     #'@description Deletes delivery point
     #'@param deliveryPoint delivery point
+    #'@param locales list of localized names
     #'@return \code{TRUE} if added, \code{FALSE} otherwise
     delDeliveryPoint = function(deliveryPoint, locales = NULL){
       self$stopIfMetadataStandardIsNot("19115-3")
@@ -131,6 +133,7 @@ ISOAddress <- R6Class("ISOAddress",
     
     #'@description Adds email
     #'@param email email
+    #'@param locales list of localized names
     #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addEmail = function(email, locales = NULL){
       self$stopIfMetadataStandardIsNot("19115-3")
@@ -143,6 +146,7 @@ ISOAddress <- R6Class("ISOAddress",
     
     #'@description Deletes email
     #'@param email email
+    #'@param locales list of localized names
     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delEmail = function(email, locales = NULL){
       self$stopIfMetadataStandardIsNot("19115-3")
