@@ -16,7 +16,9 @@ ISOApplicationSchemaInformation
 ISOApplicationSchemaInformation
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_ApplicationSchemaInformation}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/mas/1.0/mas/#element_MD_ApplicationSchemaInformation}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -39,9 +41,9 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{schemaAscii}}{schemaAscii [0..1]}
 
-\item{\code{graphicsFile}}{graphicsFile [0..1]}
+\item{\code{graphicsFile}}{graphicsFile [0..1]: ISOOnlineResource}
 
-\item{\code{softwareDevelopmentFile}}{softwareDevelopmentFile [0..1]}
+\item{\code{softwareDevelopmentFile}}{softwareDevelopmentFile [0..1]: ISOOnlineResource}
 
 \item{\code{softwareDevelopmentFileFormat}}{softwareDevelopmentFileFormat [0..1]}
 }

@@ -8,7 +8,9 @@
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'  - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_ApplicationSchemaInformation}
+#'  
+#'  - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/mas/1.0/mas/#element_MD_ApplicationSchemaInformation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -31,9 +33,9 @@ ISOApplicationSchemaInformation <- R6Class("ISOApplicationSchemaInformation",
      constraintLanguage = NULL,
      #'@field schemaAscii schemaAscii [0..1]
      schemaAscii = NULL,
-     #'@field graphicsFile graphicsFile [0..1] 
+     #'@field graphicsFile graphicsFile [0..1]: ISOOnlineResource
      graphicsFile = NULL,
-     #'@field softwareDevelopmentFile softwareDevelopmentFile [0..1]
+     #'@field softwareDevelopmentFile softwareDevelopmentFile [0..1]: ISOOnlineResource
      softwareDevelopmentFile = NULL,
      #'@field softwareDevelopmentFileFormat softwareDevelopmentFileFormat [0..1]
      softwareDevelopmentFileFormat = NULL,
