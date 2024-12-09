@@ -62,7 +62,8 @@ ISOAddress"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Address</p>
+<p>- ISO 19115-3 https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Address</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -104,10 +105,14 @@ ISOAddress"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 
 <ul><li><p><a href="#method-ISOAddress-new"><code>ISOAddress$new()</code></a></p></li>
 <li><p><a href="#method-ISOAddress-setDeliveryPoint"><code>ISOAddress$setDeliveryPoint()</code></a></p></li>
+<li><p><a href="#method-ISOAddress-addDeliveryPoint"><code>ISOAddress$addDeliveryPoint()</code></a></p></li>
+<li><p><a href="#method-ISOAddress-delDeliveryPoint"><code>ISOAddress$delDeliveryPoint()</code></a></p></li>
 <li><p><a href="#method-ISOAddress-setCity"><code>ISOAddress$setCity()</code></a></p></li>
 <li><p><a href="#method-ISOAddress-setPostalCode"><code>ISOAddress$setPostalCode()</code></a></p></li>
 <li><p><a href="#method-ISOAddress-setCountry"><code>ISOAddress$setCountry()</code></a></p></li>
 <li><p><a href="#method-ISOAddress-setEmail"><code>ISOAddress$setEmail()</code></a></p></li>
+<li><p><a href="#method-ISOAddress-addEmail"><code>ISOAddress$addEmail()</code></a></p></li>
+<li><p><a href="#method-ISOAddress-delEmail"><code>ISOAddress$delEmail()</code></a></p></li>
 <li><p><a href="#method-ISOAddress-clone"><code>ISOAddress$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -174,15 +179,55 @@ ISOAddress"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOAddress-setCity"></a><div class="section">
-<h3 id="method-setcity-">Method <code>setCity()</code><a class="anchor" aria-label="anchor" href="#method-setcity-"></a></h3>
-<p>Set city</p><div class="section">
+</div><p></p><hr><a id="method-ISOAddress-addDeliveryPoint"></a><div class="section">
+<h3 id="method-adddeliverypoint-">Method <code>addDeliveryPoint()</code><a class="anchor" aria-label="anchor" href="#method-adddeliverypoint-"></a></h3>
+<p>Adds delivery point</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">setCity</span><span class="op">(</span><span class="va">city</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">addDeliveryPoint</span><span class="op">(</span><span class="va">deliveryPoint</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>deliveryPoint</code></dt>
+<dd><p>delivery point</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAddress-delDeliveryPoint"></a><div class="section">
+<h3 id="method-deldeliverypoint-">Method <code>delDeliveryPoint()</code><a class="anchor" aria-label="anchor" href="#method-deldeliverypoint-"></a></h3>
+<p>Deletes delivery point</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">delDeliveryPoint</span><span class="op">(</span><span class="va">deliveryPoint</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>deliveryPoint</code></dt>
+<dd><p>delivery point</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAddress-setCity"></a><div class="section">
+<h3 id="method-setcity-">Method <code>setCity()</code><a class="anchor" aria-label="anchor" href="#method-setcity-"></a></h3>
+<p>Set city</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">setCity</span><span class="op">(</span><span class="va">city</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>city</code></dt>
 <dd><p>city</p></dd>
 
@@ -197,12 +242,12 @@ ISOAddress"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 </div><p></p><hr><a id="method-ISOAddress-setPostalCode"></a><div class="section">
 <h3 id="method-setpostalcode-">Method <code>setPostalCode()</code><a class="anchor" aria-label="anchor" href="#method-setpostalcode-"></a></h3>
 <p>Set postal code</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">setPostalCode</span><span class="op">(</span><span class="va">postalCode</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>postalCode</code></dt>
 <dd><p>postal code</p></dd>
 
@@ -217,12 +262,12 @@ ISOAddress"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 </div><p></p><hr><a id="method-ISOAddress-setCountry"></a><div class="section">
 <h3 id="method-setcountry-">Method <code>setCountry()</code><a class="anchor" aria-label="anchor" href="#method-setcountry-"></a></h3>
 <p>Set country</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">setCountry</span><span class="op">(</span><span class="va">country</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>country</code></dt>
 <dd><p>country</p></dd>
 
@@ -237,12 +282,12 @@ ISOAddress"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 </div><p></p><hr><a id="method-ISOAddress-setEmail"></a><div class="section">
 <h3 id="method-setemail-">Method <code>setEmail()</code><a class="anchor" aria-label="anchor" href="#method-setemail-"></a></h3>
 <p>Set email</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">setEmail</span><span class="op">(</span><span class="va">email</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>email</code></dt>
 <dd><p>email</p></dd>
 
@@ -254,15 +299,55 @@ ISOAddress"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 </dl><p></p></div>
 </div>
 
+</div><p></p><hr><a id="method-ISOAddress-addEmail"></a><div class="section">
+<h3 id="method-addemail-">Method <code>addEmail()</code><a class="anchor" aria-label="anchor" href="#method-addemail-"></a></h3>
+<p>Adds email</p><div class="section">
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">addEmail</span><span class="op">(</span><span class="va">email</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>email</code></dt>
+<dd><p>email</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOAddress-delEmail"></a><div class="section">
+<h3 id="method-delemail-">Method <code>delEmail()</code><a class="anchor" aria-label="anchor" href="#method-delemail-"></a></h3>
+<p>Deletes email</p><div class="section">
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">delEmail</span><span class="op">(</span><span class="va">email</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>email</code></dt>
+<dd><p>email</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
 </div><p></p><hr><a id="method-ISOAddress-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAddress</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

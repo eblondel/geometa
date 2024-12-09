@@ -62,7 +62,8 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Citation</p>
+<p>- ISO 19115-3 https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Citation</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -115,7 +116,7 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 
 
 <dt><code>collectiveTitle</code></dt>
-<dd><p>collective title</p></dd>
+<dd><p>collective title (for ISO 19139)</p></dd>
 
 
 <dt><code>ISBN</code></dt>
@@ -124,6 +125,14 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 
 <dt><code>ISSN</code></dt>
 <dd><p>ISSN</p></dd>
+
+
+<dt><code>onlineResource</code></dt>
+<dd><p>online resource (for ISO 19115-3)</p></dd>
+
+
+<dt><code>graphic</code></dt>
+<dd><p>graphic (for ISO 19115-3)</p></dd>
 
 
 </dl><p></p></div>
@@ -136,19 +145,15 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 
 <ul><li><p><a href="#method-ISOCitation-new"><code>ISOCitation$new()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-setTitle"><code>ISOCitation$setTitle()</code></a></p></li>
-<li><p><a href="#method-ISOCitation-setAlternateTitle"><code>ISOCitation$setAlternateTitle()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-addAlternateTitle"><code>ISOCitation$addAlternateTitle()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-delAlternateTitle"><code>ISOCitation$delAlternateTitle()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-addDate"><code>ISOCitation$addDate()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-setEdition"><code>ISOCitation$setEdition()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-setEditionDate"><code>ISOCitation$setEditionDate()</code></a></p></li>
-<li><p><a href="#method-ISOCitation-setIdentifier"><code>ISOCitation$setIdentifier()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-addIdentifier"><code>ISOCitation$addIdentifier()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-delIdentifier"><code>ISOCitation$delIdentifier()</code></a></p></li>
-<li><p><a href="#method-ISOCitation-setCitedResponsibleParty"><code>ISOCitation$setCitedResponsibleParty()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-addCitedResponsibleParty"><code>ISOCitation$addCitedResponsibleParty()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-delCitedResponsibleParty"><code>ISOCitation$delCitedResponsibleParty()</code></a></p></li>
-<li><p><a href="#method-ISOCitation-setPresentationForm"><code>ISOCitation$setPresentationForm()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-addPresentationForm"><code>ISOCitation$addPresentationForm()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-delPresentationForm"><code>ISOCitation$delPresentationForm()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-setSeries"><code>ISOCitation$setSeries()</code></a></p></li>
@@ -156,6 +161,10 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <li><p><a href="#method-ISOCitation-setCollectiveTitle"><code>ISOCitation$setCollectiveTitle()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-setISBN"><code>ISOCitation$setISBN()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-setISSN"><code>ISOCitation$setISSN()</code></a></p></li>
+<li><p><a href="#method-ISOCitation-addOnlineResource"><code>ISOCitation$addOnlineResource()</code></a></p></li>
+<li><p><a href="#method-ISOCitation-delOnlineResource"><code>ISOCitation$delOnlineResource()</code></a></p></li>
+<li><p><a href="#method-ISOCitation-addGraphic"><code>ISOCitation$addGraphic()</code></a></p></li>
+<li><p><a href="#method-ISOCitation-delGraphic"><code>ISOCitation$delGraphic()</code></a></p></li>
 <li><p><a href="#method-ISOCitation-clone"><code>ISOCitation$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -222,35 +231,15 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOCitation-setAlternateTitle"></a><div class="section">
-<h3 id="method-setalternatetitle-">Method <code>setAlternateTitle()</code><a class="anchor" aria-label="anchor" href="#method-setalternatetitle-"></a></h3>
-<p>Set alternate title</p><div class="section">
-<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setAlternateTitle</span><span class="op">(</span><span class="va">alternateTitle</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>alternateTitle</code></dt>
-<dd><p>alternate title</p></dd>
-
-
-<dt><code>locales</code></dt>
-<dd><p>list of localized names. Default is <code>NULL</code></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
 </div><p></p><hr><a id="method-ISOCitation-addAlternateTitle"></a><div class="section">
 <h3 id="method-addalternatetitle-">Method <code>addAlternateTitle()</code><a class="anchor" aria-label="anchor" href="#method-addalternatetitle-"></a></h3>
 <p>Adds alternate title</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">addAlternateTitle</span><span class="op">(</span><span class="va">alternateTitle</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>alternateTitle</code></dt>
 <dd><p>alternate title</p></dd>
 
@@ -269,12 +258,12 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 </div><p></p><hr><a id="method-ISOCitation-delAlternateTitle"></a><div class="section">
 <h3 id="method-delalternatetitle-">Method <code>delAlternateTitle()</code><a class="anchor" aria-label="anchor" href="#method-delalternatetitle-"></a></h3>
 <p>Deletes alternate title</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">delAlternateTitle</span><span class="op">(</span><span class="va">alternateTitle</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>alternateTitle</code></dt>
 <dd><p>alternate title</p></dd>
 
@@ -293,12 +282,12 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 </div><p></p><hr><a id="method-ISOCitation-addDate"></a><div class="section">
 <h3 id="method-adddate-">Method <code>addDate()</code><a class="anchor" aria-label="anchor" href="#method-adddate-"></a></h3>
 <p>Adds date</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">date</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>date</code></dt>
 <dd><p>date</p></dd>
 
@@ -313,12 +302,12 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 </div><p></p><hr><a id="method-ISOCitation-setEdition"></a><div class="section">
 <h3 id="method-setedition-">Method <code>setEdition()</code><a class="anchor" aria-label="anchor" href="#method-setedition-"></a></h3>
 <p>Set edition</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setEdition</span><span class="op">(</span><span class="va">edition</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>edition</code></dt>
 <dd><p>edition</p></dd>
 
@@ -336,30 +325,14 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
    a simple R date "POSIXct"/"POSIXt" object. For thesaurus citations, an ISODate
    should be used while for the general citation of <code><a href="ISODataIdentification.html">ISODataIdentification</a></code>,
    a simple R date should be used.</p><div class="section">
-<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setEditionDate</span><span class="op">(</span><span class="va">editionDate</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>editionDate</code></dt>
 <dd><p>object of class <a href="https://rdrr.io/r/base/Dates.html" class="external-link">Date</a> or <a href="https://rdrr.io/r/base/DateTimeClasses.html" class="external-link">POSIXct</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
-</div><p></p><hr><a id="method-ISOCitation-setIdentifier"></a><div class="section">
-<h3 id="method-setidentifier-">Method <code>setIdentifier()</code><a class="anchor" aria-label="anchor" href="#method-setidentifier-"></a></h3>
-<p>Set identifier</p><div class="section">
-<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setIdentifier</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>identifier</code></dt>
-<dd><p>identifier, object of class <a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></p></dd>
 
 
 </dl><p></p></div>
@@ -368,12 +341,12 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 </div><p></p><hr><a id="method-ISOCitation-addIdentifier"></a><div class="section">
 <h3 id="method-addidentifier-">Method <code>addIdentifier()</code><a class="anchor" aria-label="anchor" href="#method-addidentifier-"></a></h3>
 <p>Adds identifier</p><div class="section">
-<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">addIdentifier</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>identifier</code></dt>
 <dd><p>identifier, object of class <a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></p></dd>
 
@@ -392,12 +365,12 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 </div><p></p><hr><a id="method-ISOCitation-delIdentifier"></a><div class="section">
 <h3 id="method-delidentifier-">Method <code>delIdentifier()</code><a class="anchor" aria-label="anchor" href="#method-delidentifier-"></a></h3>
 <p>Deletes identifier</p><div class="section">
-<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">delIdentifier</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>identifier</code></dt>
 <dd><p>identifier, object of class <a href="ISOMetaIdentifier.html">ISOMetaIdentifier</a></p></dd>
 
@@ -413,31 +386,15 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOCitation-setCitedResponsibleParty"></a><div class="section">
-<h3 id="method-setcitedresponsibleparty-">Method <code>setCitedResponsibleParty()</code><a class="anchor" aria-label="anchor" href="#method-setcitedresponsibleparty-"></a></h3>
-<p>Set cited responsible party</p><div class="section">
-<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>rp</code></dt>
-<dd><p>cited responsible party, object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
 </div><p></p><hr><a id="method-ISOCitation-addCitedResponsibleParty"></a><div class="section">
 <h3 id="method-addcitedresponsibleparty-">Method <code>addCitedResponsibleParty()</code><a class="anchor" aria-label="anchor" href="#method-addcitedresponsibleparty-"></a></h3>
 <p>Adds cited responsible party</p><div class="section">
-<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>rp</code></dt>
 <dd><p>cited responsible party, object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a> (in ISO 19139) or
 <a href="ISOResponsibility.html">ISOResponsibility</a> (in ISO 19115-3)</p></dd>
@@ -457,12 +414,12 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 </div><p></p><hr><a id="method-ISOCitation-delCitedResponsibleParty"></a><div class="section">
 <h3 id="method-delcitedresponsibleparty-">Method <code>delCitedResponsibleParty()</code><a class="anchor" aria-label="anchor" href="#method-delcitedresponsibleparty-"></a></h3>
 <p>Deletes cited responsible party</p><div class="section">
-<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">delCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>rp</code></dt>
 <dd><p>cited responsible party, object of class <a href="ISOResponsibleParty.html">ISOResponsibleParty</a> (in ISO 19139) or
 <a href="ISOResponsibility.html">ISOResponsibility</a> (in ISO 19115-3)</p></dd>
@@ -479,32 +436,15 @@ ISOCitation"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOCitation-setPresentationForm"></a><div class="section">
-<h3 id="method-setpresentationform-">Method <code>setPresentationForm()</code><a class="anchor" aria-label="anchor" href="#method-setpresentationform-"></a></h3>
-<p>Sets presentation form</p><div class="section">
-<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setPresentationForm</span><span class="op">(</span><span class="va">presentationForm</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>presentationForm</code></dt>
-<dd><p>presentation form, object of class <a href="ISOPresentationForm.html">ISOPresentationForm</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> among values
-returned by <code>ISOPresentationForm$values()</code></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
 </div><p></p><hr><a id="method-ISOCitation-addPresentationForm"></a><div class="section">
 <h3 id="method-addpresentationform-">Method <code>addPresentationForm()</code><a class="anchor" aria-label="anchor" href="#method-addpresentationform-"></a></h3>
 <p>Adds presentation form</p><div class="section">
-<h4 id="usage-15">Usage<a class="anchor" aria-label="anchor" href="#usage-15"></a></h4>
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">addPresentationForm</span><span class="op">(</span><span class="va">presentationForm</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-15">Arguments<a class="anchor" aria-label="anchor" href="#arguments-15"></a></h4>
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>presentationForm</code></dt>
 <dd><p>presentation form, object of class <a href="ISOPresentationForm.html">ISOPresentationForm</a> or
 <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> among values returned by <code>ISOPresentationForm$values()</code></p></dd>
@@ -520,12 +460,12 @@ returned by <code>ISOPresentationForm$values()</code></p></dd>
 </div><p></p><hr><a id="method-ISOCitation-delPresentationForm"></a><div class="section">
 <h3 id="method-delpresentationform-">Method <code>delPresentationForm()</code><a class="anchor" aria-label="anchor" href="#method-delpresentationform-"></a></h3>
 <p>Deletes presentation form</p><div class="section">
-<h4 id="usage-16">Usage<a class="anchor" aria-label="anchor" href="#usage-16"></a></h4>
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">delPresentationForm</span><span class="op">(</span><span class="va">presentationForm</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-16">Arguments<a class="anchor" aria-label="anchor" href="#arguments-16"></a></h4>
+<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>presentationForm</code></dt>
 <dd><p>presentation form, object of class <a href="ISOPresentationForm.html">ISOPresentationForm</a> or
 <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> among values returned by <code>ISOPresentationForm$values()</code></p></dd>
@@ -541,12 +481,12 @@ returned by <code>ISOPresentationForm$values()</code></p></dd>
 </div><p></p><hr><a id="method-ISOCitation-setSeries"></a><div class="section">
 <h3 id="method-setseries-">Method <code>setSeries()</code><a class="anchor" aria-label="anchor" href="#method-setseries-"></a></h3>
 <p>Set series</p><div class="section">
-<h4 id="usage-17">Usage<a class="anchor" aria-label="anchor" href="#usage-17"></a></h4>
+<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setSeries</span><span class="op">(</span><span class="va">series</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-17">Arguments<a class="anchor" aria-label="anchor" href="#arguments-17"></a></h4>
+<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>series</code></dt>
 <dd><p>object of class <a href="ISOCitationSeries.html">ISOCitationSeries</a></p></dd>
 
@@ -557,12 +497,12 @@ returned by <code>ISOPresentationForm$values()</code></p></dd>
 </div><p></p><hr><a id="method-ISOCitation-setOtherCitationDetails"></a><div class="section">
 <h3 id="method-setothercitationdetails-">Method <code>setOtherCitationDetails()</code><a class="anchor" aria-label="anchor" href="#method-setothercitationdetails-"></a></h3>
 <p>Set other citation details</p><div class="section">
-<h4 id="usage-18">Usage<a class="anchor" aria-label="anchor" href="#usage-18"></a></h4>
+<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setOtherCitationDetails</span><span class="op">(</span><span class="va">otherCitationDetails</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-18">Arguments<a class="anchor" aria-label="anchor" href="#arguments-18"></a></h4>
+<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>otherCitationDetails</code></dt>
 <dd><p>other citation details</p></dd>
 
@@ -577,12 +517,12 @@ returned by <code>ISOPresentationForm$values()</code></p></dd>
 </div><p></p><hr><a id="method-ISOCitation-setCollectiveTitle"></a><div class="section">
 <h3 id="method-setcollectivetitle-">Method <code>setCollectiveTitle()</code><a class="anchor" aria-label="anchor" href="#method-setcollectivetitle-"></a></h3>
 <p>Set collective title</p><div class="section">
-<h4 id="usage-19">Usage<a class="anchor" aria-label="anchor" href="#usage-19"></a></h4>
+<h4 id="usage-15">Usage<a class="anchor" aria-label="anchor" href="#usage-15"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setCollectiveTitle</span><span class="op">(</span><span class="va">collectiveTitle</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-19">Arguments<a class="anchor" aria-label="anchor" href="#arguments-19"></a></h4>
+<h4 id="arguments-15">Arguments<a class="anchor" aria-label="anchor" href="#arguments-15"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>collectiveTitle</code></dt>
 <dd><p>collective title</p></dd>
 
@@ -597,12 +537,12 @@ returned by <code>ISOPresentationForm$values()</code></p></dd>
 </div><p></p><hr><a id="method-ISOCitation-setISBN"></a><div class="section">
 <h3 id="method-setisbn-">Method <code>setISBN()</code><a class="anchor" aria-label="anchor" href="#method-setisbn-"></a></h3>
 <p>Set ISBN</p><div class="section">
-<h4 id="usage-20">Usage<a class="anchor" aria-label="anchor" href="#usage-20"></a></h4>
+<h4 id="usage-16">Usage<a class="anchor" aria-label="anchor" href="#usage-16"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setISBN</span><span class="op">(</span><span class="va">isbn</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-20">Arguments<a class="anchor" aria-label="anchor" href="#arguments-20"></a></h4>
+<h4 id="arguments-16">Arguments<a class="anchor" aria-label="anchor" href="#arguments-16"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>isbn</code></dt>
 <dd><p>isbn</p></dd>
 
@@ -613,17 +553,97 @@ returned by <code>ISOPresentationForm$values()</code></p></dd>
 </div><p></p><hr><a id="method-ISOCitation-setISSN"></a><div class="section">
 <h3 id="method-setissn-">Method <code>setISSN()</code><a class="anchor" aria-label="anchor" href="#method-setissn-"></a></h3>
 <p>Set ISSN</p><div class="section">
-<h4 id="usage-21">Usage<a class="anchor" aria-label="anchor" href="#usage-21"></a></h4>
+<h4 id="usage-17">Usage<a class="anchor" aria-label="anchor" href="#usage-17"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">setISSN</span><span class="op">(</span><span class="va">issn</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-21">Arguments<a class="anchor" aria-label="anchor" href="#arguments-21"></a></h4>
+<h4 id="arguments-17">Arguments<a class="anchor" aria-label="anchor" href="#arguments-17"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>issn</code></dt>
 <dd><p>issn</p></dd>
 
 
 </dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOCitation-addOnlineResource"></a><div class="section">
+<h3 id="method-addonlineresource-">Method <code>addOnlineResource()</code><a class="anchor" aria-label="anchor" href="#method-addonlineresource-"></a></h3>
+<p>Adds online resource</p><div class="section">
+<h4 id="usage-18">Usage<a class="anchor" aria-label="anchor" href="#usage-18"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">addOnlineResource</span><span class="op">(</span><span class="va">onlineResource</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-18">Arguments<a class="anchor" aria-label="anchor" href="#arguments-18"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>onlineResource</code></dt>
+<dd><p>object of class <a href="ISOOnlineResource.html">ISOOnlineResource</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-9">Returns<a class="anchor" aria-label="anchor" href="#returns-9"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOCitation-delOnlineResource"></a><div class="section">
+<h3 id="method-delonlineresource-">Method <code>delOnlineResource()</code><a class="anchor" aria-label="anchor" href="#method-delonlineresource-"></a></h3>
+<p>Deletes online resource</p><div class="section">
+<h4 id="usage-19">Usage<a class="anchor" aria-label="anchor" href="#usage-19"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">delOnlineResource</span><span class="op">(</span><span class="va">onlineResource</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-19">Arguments<a class="anchor" aria-label="anchor" href="#arguments-19"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>onlineResource</code></dt>
+<dd><p>object of class <a href="ISOOnlineResource.html">ISOOnlineResource</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-10">Returns<a class="anchor" aria-label="anchor" href="#returns-10"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOCitation-addGraphic"></a><div class="section">
+<h3 id="method-addgraphic-">Method <code>addGraphic()</code><a class="anchor" aria-label="anchor" href="#method-addgraphic-"></a></h3>
+<p>Adds graphic</p><div class="section">
+<h4 id="usage-20">Usage<a class="anchor" aria-label="anchor" href="#usage-20"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">addGraphic</span><span class="op">(</span><span class="va">graphic</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-20">Arguments<a class="anchor" aria-label="anchor" href="#arguments-20"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>graphic</code></dt>
+<dd><p>object of class <a href="ISOBrowseGraphic.html">ISOBrowseGraphic</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-11">Returns<a class="anchor" aria-label="anchor" href="#returns-11"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOCitation-delGraphic"></a><div class="section">
+<h3 id="method-delgraphic-">Method <code>delGraphic()</code><a class="anchor" aria-label="anchor" href="#method-delgraphic-"></a></h3>
+<p>Adds graphic</p><div class="section">
+<h4 id="usage-21">Usage<a class="anchor" aria-label="anchor" href="#usage-21"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOCitation</span><span class="op">$</span><span class="fu">delGraphic</span><span class="op">(</span><span class="va">graphic</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-21">Arguments<a class="anchor" aria-label="anchor" href="#arguments-21"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>graphic</code></dt>
+<dd><p>object of class <a href="ISOBrowseGraphic.html">ISOBrowseGraphic</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-12">Returns<a class="anchor" aria-label="anchor" href="#returns-12"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
 </div><p></p><hr><a id="method-ISOCitation-clone"></a><div class="section">

@@ -62,7 +62,8 @@ ISOContact"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Contact</p>
+<p>- ISO 19115-3 https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Contact</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -116,6 +117,10 @@ ISOContact"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 <li><p><a href="#method-ISOContact-setOnlineResource"><code>ISOContact$setOnlineResource()</code></a></p></li>
 <li><p><a href="#method-ISOContact-addOnlineResource"><code>ISOContact$addOnlineResource()</code></a></p></li>
 <li><p><a href="#method-ISOContact-delOnlineResource"><code>ISOContact$delOnlineResource()</code></a></p></li>
+<li><p><a href="#method-ISOContact-addHoursOfService"><code>ISOContact$addHoursOfService()</code></a></p></li>
+<li><p><a href="#method-ISOContact-delHoursOfService"><code>ISOContact$delHoursOfService()</code></a></p></li>
+<li><p><a href="#method-ISOContact-setContactInstructions"><code>ISOContact$setContactInstructions()</code></a></p></li>
+<li><p><a href="#method-ISOContact-setContactType"><code>ISOContact$setContactType()</code></a></p></li>
 <li><p><a href="#method-ISOContact-clone"><code>ISOContact$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -330,15 +335,95 @@ ISOContact"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOContact-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISOContact-addHoursOfService"></a><div class="section">
+<h3 id="method-addhoursofservice-">Method <code>addHoursOfService()</code><a class="anchor" aria-label="anchor" href="#method-addhoursofservice-"></a></h3>
+<p>Adds hours of service (with ISO 19115-3)</p><div class="section">
 <h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">addHoursOfService</span><span class="op">(</span><span class="va">hoursOfService</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>hoursOfService</code></dt>
+<dd><p>object of class <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-6">Returns<a class="anchor" aria-label="anchor" href="#returns-6"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOContact-delHoursOfService"></a><div class="section">
+<h3 id="method-delhoursofservice-">Method <code>delHoursOfService()</code><a class="anchor" aria-label="anchor" href="#method-delhoursofservice-"></a></h3>
+<p>Deletes hours of service (with ISO 19115-3)</p><div class="section">
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">delHoursOfService</span><span class="op">(</span><span class="va">hoursOfService</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>hoursOfService</code></dt>
+<dd><p>object of class <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-7">Returns<a class="anchor" aria-label="anchor" href="#returns-7"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOContact-setContactInstructions"></a><div class="section">
+<h3 id="method-setcontactinstructions-">Method <code>setContactInstructions()</code><a class="anchor" aria-label="anchor" href="#method-setcontactinstructions-"></a></h3>
+<p>Set contact instructions</p><div class="section">
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">setContactInstructions</span><span class="op">(</span><span class="va">contactInstructions</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>contactInstructions</code></dt>
+<dd><p>contact instructions</p></dd>
+
+
+<dt><code>locales</code></dt>
+<dd><p>list of localized editions. Default is <code>NULL</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOContact-setContactType"></a><div class="section">
+<h3 id="method-setcontacttype-">Method <code>setContactType()</code><a class="anchor" aria-label="anchor" href="#method-setcontacttype-"></a></h3>
+<p>Set contact type</p><div class="section">
+<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">setContactType</span><span class="op">(</span><span class="va">contactType</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>contactType</code></dt>
+<dd><p>contact type</p></dd>
+
+
+<dt><code>locales</code></dt>
+<dd><p>list of localized editions. Default is <code>NULL</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOContact-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOContact</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

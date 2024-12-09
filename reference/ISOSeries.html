@@ -62,7 +62,8 @@ ISOSeries"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Series</p>
+<p>- ISO 19115-3 https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Series</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -72,6 +73,22 @@ ISOSeries"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
     <h2>Super classes</h2>
     <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code><a href="ISOAbstractAggregate.html">geometa::ISOAbstractAggregate</a></code> -&gt; <code>ISOSeries</code></p>
     </div>
+    <div id="public-fields">
+    <h2>Public fields</h2>
+    <p></p><div class="r6-fields"><dl><dt><code>name</code></dt>
+<dd><p>name [0..1] : character</p></dd>
+
+
+<dt><code>issueIdentification</code></dt>
+<dd><p>issueIdentification [0..1]: character</p></dd>
+
+
+<dt><code>page</code></dt>
+<dd><p>page [0..1]: character</p></dd>
+
+
+</dl><p></p></div>
+    </div>
     <div id="methods">
     <h2>Methods</h2>
 
@@ -79,6 +96,9 @@ ISOSeries"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOSeries-new"><code>ISOSeries$new()</code></a></p></li>
+<li><p><a href="#method-ISOSeries-setName"><code>ISOSeries$setName()</code></a></p></li>
+<li><p><a href="#method-ISOSeries-setIssueIdentification"><code>ISOSeries$setIssueIdentification()</code></a></p></li>
+<li><p><a href="#method-ISOSeries-setPage"><code>ISOSeries$setPage()</code></a></p></li>
 <li><p><a href="#method-ISOSeries-clone"><code>ISOSeries$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -133,15 +153,71 @@ ISOSeries"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/m
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOSeries-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISOSeries-setName"></a><div class="section">
+<h3 id="method-setname-">Method <code>setName()</code><a class="anchor" aria-label="anchor" href="#method-setname-"></a></h3>
+<p>Set name</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSeries</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSeries</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="va">name</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>name</code></dt>
+<dd><p>name</p></dd>
+
+
+<dt><code>locales</code></dt>
+<dd><p>list of localized titles. Default is <code>NULL</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOSeries-setIssueIdentification"></a><div class="section">
+<h3 id="method-setissueidentification-">Method <code>setIssueIdentification()</code><a class="anchor" aria-label="anchor" href="#method-setissueidentification-"></a></h3>
+<p>Set issue identification</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSeries</span><span class="op">$</span><span class="fu">setIssueIdentification</span><span class="op">(</span><span class="va">issueIdentification</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>issueIdentification</code></dt>
+<dd><p>issue identification</p></dd>
+
+
+<dt><code>locales</code></dt>
+<dd><p>list of localized titles. Default is <code>NULL</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOSeries-setPage"></a><div class="section">
+<h3 id="method-setpage-">Method <code>setPage()</code><a class="anchor" aria-label="anchor" href="#method-setpage-"></a></h3>
+<p>Set page</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSeries</span><span class="op">$</span><span class="fu">setPage</span><span class="op">(</span><span class="va">page</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>locales</code></dt>
+<dd><p>list of localized titles. Default is <code>NULL</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOSeries-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSeries</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
