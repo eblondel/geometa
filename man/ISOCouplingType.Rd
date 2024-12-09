@@ -24,7 +24,9 @@ ISOCouplingType
 
 }
 \references{
-ISO 19119:2005 - Geographic information -- Services
+- ISO 19139 \link{https://schemas.isotc211.org/19119/-/srv/1.0/srv/#element_SV_CouplingType}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_CouplingType}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

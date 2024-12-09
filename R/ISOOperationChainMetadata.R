@@ -12,9 +12,9 @@
 #'   xml <- md$encode()
 #' 
 #' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19119/srv/srv/#element_SV_OperationChainMetadata}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-1/srv/1.3.0/srv/#element_SV_OperationChainMetadata}
+#'  - ISO 19139 \link{https://schemas.isotc211.org/19119/-/srv/1.0/srv/#element_SV_OperationChainMetadata}
+#'  
+#'  - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_OperationChainMetadata}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

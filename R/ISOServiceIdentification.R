@@ -294,7 +294,9 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
 #'   xml <- md$encode()
 #'    
 #' @references 
-#'   ISO 19119:2005 - Geographic information -- Services 
+#'   - ISO 19119 \url{https://schemas.isotc211.org/19119/srv/srv/#element_SV_ServiceIdentification}
+
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_ServiceIdentification}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
