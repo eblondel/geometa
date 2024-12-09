@@ -8,7 +8,7 @@
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @references
-#'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gco/1.0/gco/#element_LocalName}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -17,8 +17,7 @@ ISOLocalName <- R6Class("ISOLocalName",
     private = list(
       xmlElement = "LocalName",
       xmlNamespacePrefix = list(
-        "19139" = "GCO",
-        "19115-3" = "GCO"
+        "19139" = "GCO"
       )
     ),
     public = list(

@@ -10,7 +10,9 @@
 #' @note Class used by geometa internal XML decoder/encoder
 #' 
 #' @references
-#'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gco/1.0/gco/#element_DateTime}
+#'   
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gco/1.0/gco/#element_DateTime}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

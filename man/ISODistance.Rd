@@ -15,19 +15,10 @@ ISODistance
 
 ISODistance
 }
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml,value, uom, useUomURI)}}{
-   This method is used to instantiate an ISODistance. The \code{uom} argument represents
-   the symbol of unit of measure used. The parameter  \code{useUomURI} can be used to 
-   set the uom as URI, its default value is \code{FALSE}.
- }
-}
-}
-
 \references{
-ISO/TS 19103:2005 Geographic information -- Conceptual schema language
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gco/1.0/gco/#element_Distance}
+  
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gco/1.0/gco/#element_Distance}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
