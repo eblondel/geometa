@@ -43,7 +43,9 @@
 #'  xml <- md$encode()
 #'  
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'  - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Citation}
+#'  
+#'  - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Citation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -77,12 +79,16 @@ ISOCitation<- R6Class("ISOCitation",
     series = NULL,
     #'@field otherCitationDetails other citation details
     otherCitationDetails = NULL,
-    #'@field collectiveTitle collective title
+    #'@field collectiveTitle collective title (for ISO 19139)
     collectiveTitle = NULL,
     #'@field ISBN ISBN
     ISBN = NULL,
     #'@field ISSN ISSN
     ISSN = NULL,
+    #'@field onlineResource online resource (for ISO 19115-3)
+    onlineResource = list(),
+    #'@field graphic graphic (for ISO 19115-3)
+    graphic = list(),
     
     #'@description Initializes object
     #'@param xml object of class \link{XMLInternalNode-class}
@@ -108,32 +114,8 @@ ISOCitation<- R6Class("ISOCitation",
         stop("Title should be an object of class 'character' or 'ISOAnchor'")
       }
       self$title <- title
-	  if(!is.null(locales)){
+	    if(!is.null(locales)){
         self$title <- self$createLocalisedProperty(title, locales)
-      }
-    },
-    
-    #'@description Set alternate title
-    #'@param alternateTitle alternate title
-    #'@param locales list of localized names. Default is \code{NULL}
-    setAlternateTitle = function(alternateTitle, locales = NULL){
-      warning("'setAlternateTitle' is deprecated, use 'addAlternateTitle' instead")
-      classPass <- TRUE
-      if(is.null(alternateTitle)){
-        classPath <- FALSE
-      }else{
-        if(!inherits(alternateTitle,"ISOAbstractObject")){
-          if(!(is.na(alternateTitle) || is(alternateTitle, "character"))) classPass <- FALSE
-        }else{
-          if(is(alternateTitle,"ISOAnchor")){ classPass <- TRUE }else{ classPass <- FALSE }
-        }
-      }
-      if(!classPass){
-        stop("Alternate title should be an object of class 'character' or 'ISOAnchor'")
-      }
-      self$alternateTitle <- alternateTitle
-      if(!is.null(locales)){
-        self$alternateTitle <- self$createLocalisedProperty(alternateTitle, locales)
       }
     },
     
@@ -219,16 +201,6 @@ ISOCitation<- R6Class("ISOCitation",
       self$editionDate <- editionDate
     },
     
-    #'@description Set identifier
-    #'@param identifier identifier, object of class \link{ISOMetaIdentifier}
-    setIdentifier = function(identifier){
-      warning("'setIdentifier' method is deprecated, use 'addIdentifier' instead")
-      if(!is(identifier, "ISOMetaIdentifier")){
-        stop("The argument should be a 'ISOMetaIdentifier' object")
-      }
-      self$addIdentifier(identifier)
-    },
-    
     #'@description Adds identifier
     #'@param identifier identifier, object of class \link{ISOMetaIdentifier}
     #'@param locales list of localized identifiers. Default is \code{NULL}
@@ -249,16 +221,6 @@ ISOCitation<- R6Class("ISOCitation",
         stop("The argument should be a 'ISOMetaIdentifier' object")
       }
       return(self$delListElement("identifier", identifier))
-    },
-    
-    #'@description Set cited responsible party
-    #'@param rp cited responsible party, object of class \link{ISOResponsibleParty}
-    setCitedResponsibleParty = function(rp){
-      warning("'setCitedResponsibleParty' method is deprecated, use 'addCitedResponsibleParty' instead")
-      if(!is(rp, "ISOResponsibleParty")){
-        stop("The argument should be a 'ISOResponsibleParty' object")
-      }
-      self$addCitedResponsibleParty(rp)
     },
     
     #'@description Adds cited responsible party
@@ -301,17 +263,6 @@ ISOCitation<- R6Class("ISOCitation",
        }
       )
       return(self$delListElement("citedResponsibleParty", rp))
-    },
-    
-    #'@description Sets presentation form
-    #'@param presentationForm presentation form, object of class \link{ISOPresentationForm} or \link{character} among values
-    #'  returned by \code{ISOPresentationForm$values()}
-    setPresentationForm = function(presentationForm){
-      warning("'setPresentationForm' method is deprecated, use 'addPresentationForm' instead")
-      if(is(presentationForm, "character")){
-        presentationForm <- ISOPresentationForm$new(value = presentationForm)
-      }
-      self$addPresentationForm(presentationForm)
     },
     
     #'@description Adds presentation form
@@ -359,6 +310,7 @@ ISOCitation<- R6Class("ISOCitation",
     #'@param collectiveTitle collective title
     #'@param locales list of localized titles. Default is \code{NULL}
     setCollectiveTitle = function(collectiveTitle, locales = NULL){
+      self$stopIfMetadataStandardIsNot("19139")
       self$collectiveTitle <- collectiveTitle
       if(!is.null(locales)){
         self$collectiveTitle <- self$createLocalisedProperty(collectiveTitle, locales)
@@ -375,7 +327,51 @@ ISOCitation<- R6Class("ISOCitation",
     #'@param issn issn
     setISSN = function(issn){
       self$ISSN <- issn
-    }
+    },
     
+    #'@description Adds online resource
+    #'@param onlineResource object of class \link{ISOOnlineResource}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
+    addOnlineResource = function(onlineResource){
+      self$stopIfMetadataStandardIsNot("19115-3")
+      if(!is(onlineResource, "ISOOnlineResource")){
+        stop("The argument should be a 'ISOOnlineResource' object")
+      }
+      return(self$addListElement("onlineResource", onlineResource))
+    },
+    
+    #'@description Deletes online resource
+    #'@param onlineResource object of class \link{ISOOnlineResource}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
+    delOnlineResource = function(onlineResource){
+      self$stopIfMetadataStandardIsNot("19115-3")
+      if(!is(onlineResource, "ISOOnlineResource")){
+        stop("The argument should be a 'ISOOnlineResource' object")
+      }
+      return(self$delListElement("onlineResource", onlineResource))
+    },
+    
+    #'@description Adds graphic
+    #'@param graphic object of class \link{ISOBrowseGraphic}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
+    addGraphic = function(graphic){
+      self$stopIfMetadataStandardIsNot("19115-3")
+      if(!is(graphic, "ISOBrowseGraphic")){
+        stop("The argument should be a 'ISOBrowseGraphic' object")
+      }
+      return(self$addListElement("graphic", graphic))
+    },
+    
+    #'@description Adds graphic
+    #'@param graphic object of class \link{ISOBrowseGraphic}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+    delGraphic = function(graphic){
+      self$stopIfMetadataStandardIsNot("19115-3")
+      if(!is(graphic, "ISOBrowseGraphic")){
+        stop("The argument should be a 'ISOBrowseGraphic' object")
+      }
+      return(self$delListElement("graphic", graphic))
+    }
+
   )                                          
 )

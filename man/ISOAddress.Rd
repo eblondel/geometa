@@ -26,7 +26,9 @@ ISOAddress
  
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Address}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Address}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -56,10 +58,14 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \itemize{
 \item \href{#method-ISOAddress-new}{\code{ISOAddress$new()}}
 \item \href{#method-ISOAddress-setDeliveryPoint}{\code{ISOAddress$setDeliveryPoint()}}
+\item \href{#method-ISOAddress-addDeliveryPoint}{\code{ISOAddress$addDeliveryPoint()}}
+\item \href{#method-ISOAddress-delDeliveryPoint}{\code{ISOAddress$delDeliveryPoint()}}
 \item \href{#method-ISOAddress-setCity}{\code{ISOAddress$setCity()}}
 \item \href{#method-ISOAddress-setPostalCode}{\code{ISOAddress$setPostalCode()}}
 \item \href{#method-ISOAddress-setCountry}{\code{ISOAddress$setCountry()}}
 \item \href{#method-ISOAddress-setEmail}{\code{ISOAddress$setEmail()}}
+\item \href{#method-ISOAddress-addEmail}{\code{ISOAddress$addEmail()}}
+\item \href{#method-ISOAddress-delEmail}{\code{ISOAddress$delEmail()}}
 \item \href{#method-ISOAddress-clone}{\code{ISOAddress$clone()}}
 }
 }
@@ -132,6 +138,46 @@ Set delivery point
 \item{\code{locales}}{list of localized names}
 }
 \if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAddress-addDeliveryPoint"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAddress-addDeliveryPoint}{}}}
+\subsection{Method \code{addDeliveryPoint()}}{
+Adds delivery point
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAddress$addDeliveryPoint(deliveryPoint, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deliveryPoint}}{delivery point}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAddress-delDeliveryPoint"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAddress-delDeliveryPoint}{}}}
+\subsection{Method \code{delDeliveryPoint()}}{
+Deletes delivery point
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAddress$delDeliveryPoint(deliveryPoint, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deliveryPoint}}{delivery point}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
 }
 }
 \if{html}{\out{<hr>}}
@@ -208,6 +254,46 @@ Set email
 \item{\code{locales}}{list of localized names}
 }
 \if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAddress-addEmail"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAddress-addEmail}{}}}
+\subsection{Method \code{addEmail()}}{
+Adds email
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAddress$addEmail(email, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{email}}{email}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAddress-delEmail"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAddress-delEmail}{}}}
+\subsection{Method \code{delEmail()}}{
+Deletes email
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAddress$delEmail(email, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{email}}{email}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
 }
 }
 \if{html}{\out{<hr>}}

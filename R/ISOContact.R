@@ -27,7 +27,9 @@
 #'  xml <- md$encode()
 #'  
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'  - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Contact}
+#'  
+#'  - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Contact}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -160,6 +162,51 @@ ISOContact <- R6Class("ISOContact",
        }
        if(is.null(self$onlineResource)) self$onlineResource = list()
        return(self$delListElement("onlineResource", onlineResource))
+     },
+     
+     #'@description Adds hours of service (with ISO 19115-3)
+     #'@param hoursOfService object of class \link{character}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addHoursOfService = function(hoursOfService){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(hoursOfService, "character")) hoursOfService = as.character(hoursOfService)
+       if(is.null(self$hoursOfService)) self$hoursOfService = list()
+       return(self$addListElement("hoursOfService", hoursOfService))
+     },
+     
+     #'@description Deletes hours of service (with ISO 19115-3)
+     #'@param hoursOfService object of class \link{character}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delHoursOfService = function(hoursOfService){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(hoursOfService, "character")) hoursOfService = as.character(hoursOfService)
+       if(is.null(self$hoursOfService)) self$hoursOfService = list()
+       return(self$delListElement("hoursOfService", hoursOfService))
+     },
+     
+     #'@description Set contact instructions
+     #'@param contactInstructions contact instructions
+     #'@param locales list of localized editions. Default is \code{NULL}
+     setContactInstructions = function(contactInstructions, locales = NULL){
+       if(!is.null(locales)){
+         contactInstructions = self$createLocalisedProperty(contactInstructions, locales)
+       }else{
+         contactInstructions = as.character(contactInstructions)
+       }
+       self$contactInstructions = contactInstructions
+     },
+     
+     #'@description Set contact type
+     #'@param contactType contact type
+     #'@param locales list of localized editions. Default is \code{NULL}
+     setContactType = function(contactType, locales = NULL){
+       if(!is.null(locales)){
+         contactType = self$createLocalisedProperty(contactType, locales)
+       }else{
+         contactType = as.character(contactType)
+       }
+       self$contactType = contactType
      }
+
    )                        
 )

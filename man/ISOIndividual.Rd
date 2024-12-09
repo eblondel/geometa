@@ -16,7 +16,7 @@ ISOIndividual
 ISOIndividual
 }
 \references{
-ISO 19115-1:2014 Geographic information — Metadata Part 1: Fundamentals
+- ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Individual}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

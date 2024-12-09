@@ -36,7 +36,9 @@ ISOContact
  
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Contact}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Contact}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -76,6 +78,10 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOContact-setOnlineResource}{\code{ISOContact$setOnlineResource()}}
 \item \href{#method-ISOContact-addOnlineResource}{\code{ISOContact$addOnlineResource()}}
 \item \href{#method-ISOContact-delOnlineResource}{\code{ISOContact$delOnlineResource()}}
+\item \href{#method-ISOContact-addHoursOfService}{\code{ISOContact$addHoursOfService()}}
+\item \href{#method-ISOContact-delHoursOfService}{\code{ISOContact$delHoursOfService()}}
+\item \href{#method-ISOContact-setContactInstructions}{\code{ISOContact$setContactInstructions()}}
+\item \href{#method-ISOContact-setContactType}{\code{ISOContact$setContactType()}}
 \item \href{#method-ISOContact-clone}{\code{ISOContact$clone()}}
 }
 }
@@ -300,6 +306,84 @@ Deletes online resource (with ISO 19115-3)
 }
 \subsection{Returns}{
 \code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-addHoursOfService"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-addHoursOfService}{}}}
+\subsection{Method \code{addHoursOfService()}}{
+Adds hours of service (with ISO 19115-3)
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$addHoursOfService(hoursOfService)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{hoursOfService}}{object of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-delHoursOfService"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-delHoursOfService}{}}}
+\subsection{Method \code{delHoursOfService()}}{
+Deletes hours of service (with ISO 19115-3)
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$delHoursOfService(hoursOfService)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{hoursOfService}}{object of class \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-setContactInstructions"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-setContactInstructions}{}}}
+\subsection{Method \code{setContactInstructions()}}{
+Set contact instructions
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$setContactInstructions(contactInstructions, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{contactInstructions}}{contact instructions}
+
+\item{\code{locales}}{list of localized editions. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOContact-setContactType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOContact-setContactType}{}}}
+\subsection{Method \code{setContactType()}}{
+Set contact type
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOContact$setContactType(contactType, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{contactType}}{contact type}
+
+\item{\code{locales}}{list of localized editions. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
 }
 }
 \if{html}{\out{<hr>}}

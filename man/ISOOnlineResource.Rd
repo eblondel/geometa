@@ -26,7 +26,9 @@ ISOOnlineResource
   
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_OnlineResource}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_OnlineResource}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -52,7 +54,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{function}}{function}
 
-\item{\code{protocolRequest}}{protocol request}
+\item{\code{protocolRequest}}{protocol request in (ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }

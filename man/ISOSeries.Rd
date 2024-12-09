@@ -16,7 +16,9 @@ ISOSeries
 ISOSeries
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Series}
+ 
+ - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Series}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -26,10 +28,24 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Super classes}{
 \code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractAggregate]{geometa::ISOAbstractAggregate}} -> \code{ISOSeries}
 }
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{name}}{name [0..1] : character}
+
+\item{\code{issueIdentification}}{issueIdentification [0..1]: character}
+
+\item{\code{page}}{page [0..1]: character}
+}
+\if{html}{\out{</div>}}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOSeries-new}{\code{ISOSeries$new()}}
+\item \href{#method-ISOSeries-setName}{\code{ISOSeries$setName()}}
+\item \href{#method-ISOSeries-setIssueIdentification}{\code{ISOSeries$setIssueIdentification()}}
+\item \href{#method-ISOSeries-setPage}{\code{ISOSeries$setPage()}}
 \item \href{#method-ISOSeries-clone}{\code{ISOSeries$clone()}}
 }
 }
@@ -89,6 +105,61 @@ Initializes object
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSeries-setName"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSeries-setName}{}}}
+\subsection{Method \code{setName()}}{
+Set name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSeries$setName(name, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{name}}{name}
+
+\item{\code{locales}}{list of localized titles. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSeries-setIssueIdentification"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSeries-setIssueIdentification}{}}}
+\subsection{Method \code{setIssueIdentification()}}{
+Set issue identification
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSeries$setIssueIdentification(issueIdentification, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{issueIdentification}}{issue identification}
+
+\item{\code{locales}}{list of localized titles. Default is \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSeries-setPage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSeries-setPage}{}}}
+\subsection{Method \code{setPage()}}{
+Set page
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSeries$setPage(page, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locales}}{list of localized titles. Default is \code{NULL}}
 }
 \if{html}{\out{</div>}}
 }

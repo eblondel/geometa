@@ -74,6 +74,9 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractAggregate" data-id="delSeriesMetadata"><a href='../../geometa/html/ISOAbstractAggregate.html#method-ISOAbstractAggregate-delSeriesMetadata'><code>geometa::ISOAbstractAggregate$delSeriesMetadata()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractAggregate" data-id="delSubset"><a href='../../geometa/html/ISOAbstractAggregate.html#method-ISOAbstractAggregate-delSubset'><code>geometa::ISOAbstractAggregate$delSubset()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractAggregate" data-id="delSuperset"><a href='../../geometa/html/ISOAbstractAggregate.html#method-ISOAbstractAggregate-delSuperset'><code>geometa::ISOAbstractAggregate$delSuperset()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOSeries" data-id="setIssueIdentification"><a href='../../geometa/html/ISOSeries.html#method-ISOSeries-setIssueIdentification'><code>geometa::ISOSeries$setIssueIdentification()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOSeries" data-id="setName"><a href='../../geometa/html/ISOSeries.html#method-ISOSeries-setName'><code>geometa::ISOSeries$setName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOSeries" data-id="setPage"><a href='../../geometa/html/ISOSeries.html#method-ISOSeries-setPage'><code>geometa::ISOSeries$setPage()</code></a></span></li>
 </ul>
 </details>
 }}
