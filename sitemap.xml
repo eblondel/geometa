@@ -175,6 +175,7 @@
 <url><loc>/reference/ISOCompletenessCommission.html</loc></url>
 <url><loc>/reference/ISOCompletenessOmission.html</loc></url>
 <url><loc>/reference/ISOConceptualConsistency.html</loc></url>
+<url><loc>/reference/ISOConfidence.html</loc></url>
 <url><loc>/reference/ISOConformanceResult.html</loc></url>
 <url><loc>/reference/ISOConstraint.html</loc></url>
 <url><loc>/reference/ISOConstraints.html</loc></url>
@@ -230,6 +231,7 @@
 <url><loc>/reference/ISOGeoreferenceable.html</loc></url>
 <url><loc>/reference/ISOGridSpatialRepresentation.html</loc></url>
 <url><loc>/reference/ISOGriddedDataPositionalAccuracy.html</loc></url>
+<url><loc>/reference/ISOHomogeneity.html</loc></url>
 <url><loc>/reference/ISOIdentification.html</loc></url>
 <url><loc>/reference/ISOIdentification19115_3.html</loc></url>
 <url><loc>/reference/ISOIdentification19139.html</loc></url>
@@ -344,6 +346,7 @@
 <url><loc>/reference/ISORelativeInternalPositionalAccuracy.html</loc></url>
 <url><loc>/reference/ISOReleasability.html</loc></url>
 <url><loc>/reference/ISORepresentativeFraction.html</loc></url>
+<url><loc>/reference/ISORepresentativity.html</loc></url>
 <url><loc>/reference/ISOResolution.html</loc></url>
 <url><loc>/reference/ISOResponsibility.html</loc></url>
 <url><loc>/reference/ISOResponsibleParty.html</loc></url>
