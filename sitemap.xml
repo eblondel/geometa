@@ -100,6 +100,7 @@
 <url><loc>/reference/ISOAbstractCompleteness.html</loc></url>
 <url><loc>/reference/ISOAbstractConstraints.html</loc></url>
 <url><loc>/reference/ISOAbstractContentInformation.html</loc></url>
+<url><loc>/reference/ISOAbstractDataEvaluation.html</loc></url>
 <url><loc>/reference/ISOAbstractDataQuality.html</loc></url>
 <url><loc>/reference/ISOAbstractDistribution.html</loc></url>
 <url><loc>/reference/ISOAbstractExtent.html</loc></url>
@@ -112,6 +113,7 @@
 <url><loc>/reference/ISOAbstractMaintenanceInformation.html</loc></url>
 <url><loc>/reference/ISOAbstractMetadata.html</loc></url>
 <url><loc>/reference/ISOAbstractMetadataExtension.html</loc></url>
+<url><loc>/reference/ISOAbstractMetaquality.html</loc></url>
 <url><loc>/reference/ISOAbstractObject.html</loc></url>
 <url><loc>/reference/ISOAbstractOnlineResource.html</loc></url>
 <url><loc>/reference/ISOAbstractParameter.html</loc></url>
@@ -130,6 +132,7 @@
 <url><loc>/reference/ISOAbstractSpatialResolution.html</loc></url>
 <url><loc>/reference/ISOAbstractStandardOrderProcess.html</loc></url>
 <url><loc>/reference/ISOAbstractTemporalAccuracy.html</loc></url>
+<url><loc>/reference/ISOAbstractTemporalQuality.html</loc></url>
 <url><loc>/reference/ISOAbstractThematicAccuracy.html</loc></url>
 <url><loc>/reference/ISOAbstractTypedDate.html</loc></url>
 <url><loc>/reference/ISOAccuracyOfATimeMeasurement.html</loc></url>
