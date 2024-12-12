@@ -20,7 +20,9 @@ ISOReferenceIdentifier <- R6Class("ISOReferenceIdentifier",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "RS_Identifier",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19139"= "GMD"
+     )
    ),
    public = list(
      
@@ -37,8 +39,9 @@ ISOReferenceIdentifier <- R6Class("ISOReferenceIdentifier",
      #'@param xml object of class \link{XMLInternalNode-class}
      #'@param code code
      #'@param codeSpace code space
-     initialize = function(xml = NULL, code, codeSpace = NULL){
-       self$setCode(code)
+     initialize = function(xml = NULL, code = NULL, codeSpace = NULL){
+       super$initialize(xml = xml)
+       if(!is.null(code)) self$setCode(code)
        if(!is.null(codeSpace)) self$setCodeSpace(codeSpace)
      },
      
