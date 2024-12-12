@@ -53,3 +53,99 @@ ISOAbstractMetaquality <- R6Class("ISOAbstractMetaquality",
      
    )                        
 )
+
+#' ISOConfidence
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO confidence
+#' @return Object of \code{\link{R6Class}} for modelling an ISO confidence
+#' @format \code{\link{R6Class}} object.
+#'   
+#' @references 
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_Confidence}
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
+ISOConfidence <- R6Class("ISOConfidence",
+  inherit = ISOAbstractMetaquality,
+  private = list(
+    xmlElement = "DQ_Confidence",
+    xmlNamespacePrefix = list(
+      "19115-3" = "MDQ"
+    )
+  ),
+  public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    initialize = function(xml = NULL){
+      super$initialize(xml = xml)
+    }
+  )
+)
+
+#' ISOHomogeneity
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO homogeneity
+#' @return Object of \code{\link{R6Class}} for modelling an ISO homogeneity
+#' @format \code{\link{R6Class}} object.
+#'   
+#' @references 
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_Homogeneity}
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
+ISOHomogeneity <- R6Class("ISOHomogeneity",
+   inherit = ISOAbstractMetaquality,
+   private = list(
+     xmlElement = "DQ_Homogeneity",
+     xmlNamespacePrefix = list(
+       "19115-3" = "MDQ"
+     )
+   ),
+   public = list(
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     initialize = function(xml = NULL){
+       super$initialize(xml = xml)
+     }
+   )
+)
+
+#' ISORepresentativity
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO representativity
+#' @return Object of \code{\link{R6Class}} for modelling an ISO representativity
+#' @format \code{\link{R6Class}} object.
+#'   
+#' @references 
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_Representativity}
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
+ISORepresentativity <- R6Class("ISORepresentativity",
+  inherit = ISOAbstractMetaquality,
+  private = list(
+    xmlElement = "DQ_Representativity",
+    xmlNamespacePrefix = list(
+      "19115-3" = "MDQ"
+    )
+  ),
+  public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    initialize = function(xml = NULL){
+      super$initialize(xml = xml)
+    }
+  )
+)
