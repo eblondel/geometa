@@ -62,7 +62,8 @@ ISOConformanceResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_ConformanceResult</p>
+<p>- ISO 19115-3 https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_ConformanceResult</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -74,7 +75,15 @@ ISOConformanceResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
     </div>
     <div id="public-fields">
     <h2>Public fields</h2>
-    <p></p><div class="r6-fields"><dl><dt><code>specification</code></dt>
+    <p></p><div class="r6-fields"><dl><dt><code>resultScope</code></dt>
+<dd><p>resultScope [0..1]: ISOScope (=&gt; 19115-3)</p></dd>
+
+
+<dt><code>dateTime</code></dt>
+<dd><p>dateTime [0..1] (=&gt; 19115-3)</p></dd>
+
+
+<dt><code>specification</code></dt>
 <dd><p>specification</p></dd>
 
 
@@ -95,6 +104,8 @@ ISOConformanceResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOConformanceResult-new"><code>ISOConformanceResult$new()</code></a></p></li>
+<li><p><a href="#method-ISOConformanceResult-setResultScope"><code>ISOConformanceResult$setResultScope()</code></a></p></li>
+<li><p><a href="#method-ISOConformanceResult-setDateTime"><code>ISOConformanceResult$setDateTime()</code></a></p></li>
 <li><p><a href="#method-ISOConformanceResult-setSpecification"><code>ISOConformanceResult$setSpecification()</code></a></p></li>
 <li><p><a href="#method-ISOConformanceResult-setExplanation"><code>ISOConformanceResult$setExplanation()</code></a></p></li>
 <li><p><a href="#method-ISOConformanceResult-setPass"><code>ISOConformanceResult$setPass()</code></a></p></li>
@@ -144,15 +155,47 @@ ISOConformanceResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOConformanceResult-setSpecification"></a><div class="section">
-<h3 id="method-setspecification-">Method <code>setSpecification()</code><a class="anchor" aria-label="anchor" href="#method-setspecification-"></a></h3>
-<p>Set specification</p><div class="section">
+</div><p></p><hr><a id="method-ISOConformanceResult-setResultScope"></a><div class="section">
+<h3 id="method-setresultscope-">Method <code>setResultScope()</code><a class="anchor" aria-label="anchor" href="#method-setresultscope-"></a></h3>
+<p>Set result scope</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConformanceResult</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">specification</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConformanceResult</span><span class="op">$</span><span class="fu">setResultScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>scope</code></dt>
+<dd><p>object of class <a href="ISOScope.html">ISOScope</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOConformanceResult-setDateTime"></a><div class="section">
+<h3 id="method-setdatetime-">Method <code>setDateTime()</code><a class="anchor" aria-label="anchor" href="#method-setdatetime-"></a></h3>
+<p>Set date time</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConformanceResult</span><span class="op">$</span><span class="fu">setDateTime</span><span class="op">(</span><span class="va">dateTime</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>dateTime</code></dt>
+<dd><p>date time, object of class <a href="https://rdrr.io/r/base/DateTimeClasses.html" class="external-link">POSIXct</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOConformanceResult-setSpecification"></a><div class="section">
+<h3 id="method-setspecification-">Method <code>setSpecification()</code><a class="anchor" aria-label="anchor" href="#method-setspecification-"></a></h3>
+<p>Set specification</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConformanceResult</span><span class="op">$</span><span class="fu">setSpecification</span><span class="op">(</span><span class="va">specification</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>specification</code></dt>
 <dd><p>specification</p></dd>
 
@@ -163,12 +206,12 @@ ISOConformanceResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 </div><p></p><hr><a id="method-ISOConformanceResult-setExplanation"></a><div class="section">
 <h3 id="method-setexplanation-">Method <code>setExplanation()</code><a class="anchor" aria-label="anchor" href="#method-setexplanation-"></a></h3>
 <p>Set explanation about the conformance result</p><div class="section">
-<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConformanceResult</span><span class="op">$</span><span class="fu">setExplanation</span><span class="op">(</span><span class="va">explanation</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>explanation</code></dt>
 <dd><p>explanation</p></dd>
 
@@ -183,12 +226,12 @@ ISOConformanceResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 </div><p></p><hr><a id="method-ISOConformanceResult-setPass"></a><div class="section">
 <h3 id="method-setpass-">Method <code>setPass()</code><a class="anchor" aria-label="anchor" href="#method-setpass-"></a></h3>
 <p>Set wether the conformance passed or not</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConformanceResult</span><span class="op">$</span><span class="fu">setPass</span><span class="op">(</span><span class="va">pass</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>pass</code></dt>
 <dd><p>object of class <a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a></p></dd>
 
@@ -199,12 +242,12 @@ ISOConformanceResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
 </div><p></p><hr><a id="method-ISOConformanceResult-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOConformanceResult</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

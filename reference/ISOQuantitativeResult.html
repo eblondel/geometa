@@ -62,7 +62,8 @@ ISOQuantitativeResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19115:2003 - Geographic information – Metadata</p>
+    <p>- ISO 19139 https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_QuantitativeResult</p>
+<p>- ISO 19115-3 https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_QuantitativeResult</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -74,8 +75,16 @@ ISOQuantitativeResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
     </div>
     <div id="public-fields">
     <h2>Public fields</h2>
-    <p></p><div class="r6-fields"><dl><dt><code>valueType</code></dt>
-<dd><p>valueType [0..1]- ISORecord</p></dd>
+    <p></p><div class="r6-fields"><dl><dt><code>resultScope</code></dt>
+<dd><p>resultScope [0..1]: ISOScope (=&gt; 19115-3)</p></dd>
+
+
+<dt><code>dateTime</code></dt>
+<dd><p>dateTime [0..1]: POSIX/date (=&gt; 19115-3)</p></dd>
+
+
+<dt><code>valueType</code></dt>
+<dd><p>valueType [0..1]- ISORecordType</p></dd>
 
 
 <dt><code>valueUnit</code></dt>
@@ -99,6 +108,8 @@ ISOQuantitativeResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOQuantitativeResult-new"><code>ISOQuantitativeResult$new()</code></a></p></li>
+<li><p><a href="#method-ISOQuantitativeResult-setResultScope"><code>ISOQuantitativeResult$setResultScope()</code></a></p></li>
+<li><p><a href="#method-ISOQuantitativeResult-setDateTime"><code>ISOQuantitativeResult$setDateTime()</code></a></p></li>
 <li><p><a href="#method-ISOQuantitativeResult-setValueType"><code>ISOQuantitativeResult$setValueType()</code></a></p></li>
 <li><p><a href="#method-ISOQuantitativeResult-setValueUnit"><code>ISOQuantitativeResult$setValueUnit()</code></a></p></li>
 <li><p><a href="#method-ISOQuantitativeResult-setErrorStatistic"><code>ISOQuantitativeResult$setErrorStatistic()</code></a></p></li>
@@ -150,15 +161,47 @@ ISOQuantitativeResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOQuantitativeResult-setValueType"></a><div class="section">
-<h3 id="method-setvaluetype-">Method <code>setValueType()</code><a class="anchor" aria-label="anchor" href="#method-setvaluetype-"></a></h3>
-<p>Set value type</p><div class="section">
+</div><p></p><hr><a id="method-ISOQuantitativeResult-setResultScope"></a><div class="section">
+<h3 id="method-setresultscope-">Method <code>setResultScope()</code><a class="anchor" aria-label="anchor" href="#method-setresultscope-"></a></h3>
+<p>Set result scope</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOQuantitativeResult</span><span class="op">$</span><span class="fu">setValueType</span><span class="op">(</span><span class="va">valueType</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOQuantitativeResult</span><span class="op">$</span><span class="fu">setResultScope</span><span class="op">(</span><span class="va">scope</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>scope</code></dt>
+<dd><p>object of class <a href="ISOScope.html">ISOScope</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOQuantitativeResult-setDateTime"></a><div class="section">
+<h3 id="method-setdatetime-">Method <code>setDateTime()</code><a class="anchor" aria-label="anchor" href="#method-setdatetime-"></a></h3>
+<p>Set date time</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOQuantitativeResult</span><span class="op">$</span><span class="fu">setDateTime</span><span class="op">(</span><span class="va">dateTime</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>dateTime</code></dt>
+<dd><p>date time, object of class <a href="https://rdrr.io/r/base/DateTimeClasses.html" class="external-link">POSIXct</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOQuantitativeResult-setValueType"></a><div class="section">
+<h3 id="method-setvaluetype-">Method <code>setValueType()</code><a class="anchor" aria-label="anchor" href="#method-setvaluetype-"></a></h3>
+<p>Set value type</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOQuantitativeResult</span><span class="op">$</span><span class="fu">setValueType</span><span class="op">(</span><span class="va">valueType</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>valueType</code></dt>
 <dd><p>object of class <a href="ISORecordType.html">ISORecordType</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
@@ -169,12 +212,12 @@ ISOQuantitativeResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
 </div><p></p><hr><a id="method-ISOQuantitativeResult-setValueUnit"></a><div class="section">
 <h3 id="method-setvalueunit-">Method <code>setValueUnit()</code><a class="anchor" aria-label="anchor" href="#method-setvalueunit-"></a></h3>
 <p>Set value unit</p><div class="section">
-<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOQuantitativeResult</span><span class="op">$</span><span class="fu">setValueUnit</span><span class="op">(</span><span class="va">valueUnit</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>valueUnit</code></dt>
 <dd><p>object of class inheriting <a href="GMLUnitDefinition.html">GMLUnitDefinition</a></p></dd>
 
@@ -185,12 +228,12 @@ ISOQuantitativeResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
 </div><p></p><hr><a id="method-ISOQuantitativeResult-setErrorStatistic"></a><div class="section">
 <h3 id="method-seterrorstatistic-">Method <code>setErrorStatistic()</code><a class="anchor" aria-label="anchor" href="#method-seterrorstatistic-"></a></h3>
 <p>Set error statistic</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOQuantitativeResult</span><span class="op">$</span><span class="fu">setErrorStatistic</span><span class="op">(</span><span class="va">errorStatistic</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>errorStatistic</code></dt>
 <dd><p>error statistic</p></dd>
 
@@ -201,12 +244,12 @@ ISOQuantitativeResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
 </div><p></p><hr><a id="method-ISOQuantitativeResult-addValue"></a><div class="section">
 <h3 id="method-addvalue-">Method <code>addValue()</code><a class="anchor" aria-label="anchor" href="#method-addvalue-"></a></h3>
 <p>Adds value</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOQuantitativeResult</span><span class="op">$</span><span class="fu">addValue</span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>value</code></dt>
 <dd><p>object of class <a href="ISORecord.html">ISORecord</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
@@ -221,12 +264,12 @@ ISOQuantitativeResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
 </div><p></p><hr><a id="method-ISOQuantitativeResult-delValue"></a><div class="section">
 <h3 id="method-delvalue-">Method <code>delValue()</code><a class="anchor" aria-label="anchor" href="#method-delvalue-"></a></h3>
 <p>Deletes value</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOQuantitativeResult</span><span class="op">$</span><span class="fu">delValue</span><span class="op">(</span><span class="va">value</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>value</code></dt>
 <dd><p>object of class <a href="ISORecord.html">ISORecord</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
 
@@ -241,12 +284,12 @@ ISOQuantitativeResult"><!-- mathjax --><script src="https://cdnjs.cloudflare.com
 </div><p></p><hr><a id="method-ISOQuantitativeResult-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOQuantitativeResult</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
