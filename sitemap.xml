@@ -138,6 +138,7 @@
 <url><loc>/reference/ISOAccuracyOfATimeMeasurement.html</loc></url>
 <url><loc>/reference/ISOAddress.html</loc></url>
 <url><loc>/reference/ISOAggregateInformation.html</loc></url>
+<url><loc>/reference/ISOAggregationDerivation.html</loc></url>
 <url><loc>/reference/ISOAnchor.html</loc></url>
 <url><loc>/reference/ISOAngle.html</loc></url>
 <url><loc>/reference/ISOApplicationSchemaInformation.html</loc></url>
@@ -208,6 +209,7 @@
 <url><loc>/reference/ISODistributor.html</loc></url>
 <url><loc>/reference/ISODomainConsistency.html</loc></url>
 <url><loc>/reference/ISOElementSequence.html</loc></url>
+<url><loc>/reference/ISOEvaluationMethod.html</loc></url>
 <url><loc>/reference/ISOEvaluationMethodType.html</loc></url>
 <url><loc>/reference/ISOExtendedElementInformation.html</loc></url>
 <url><loc>/reference/ISOExtent.html</loc></url>
@@ -222,6 +224,7 @@
 <url><loc>/reference/ISOFormat.html</loc></url>
 <url><loc>/reference/ISOFormatConsistency.html</loc></url>
 <url><loc>/reference/ISOFreeText.html</loc></url>
+<url><loc>/reference/ISOFullInspection.html</loc></url>
 <url><loc>/reference/ISOGeographicBoundingBox.html</loc></url>
 <url><loc>/reference/ISOGeographicDescription.html</loc></url>
 <url><loc>/reference/ISOGeographicExtent.html</loc></url>
@@ -279,6 +282,7 @@
 <url><loc>/reference/ISOImageryTrigger.html</loc></url>
 <url><loc>/reference/ISOImageryUsability.html</loc></url>
 <url><loc>/reference/ISOImagingCondition.html</loc></url>
+<url><loc>/reference/ISOIndirectEvaluation.html</loc></url>
 <url><loc>/reference/ISOIndividual.html</loc></url>
 <url><loc>/reference/ISOInheritanceRelation.html</loc></url>
 <url><loc>/reference/ISOInitiative.html</loc></url>
@@ -356,6 +360,7 @@
 <url><loc>/reference/ISOSRVParameter.html</loc></url>
 <url><loc>/reference/ISOSRVParameterDirection.html</loc></url>
 <url><loc>/reference/ISOSRVServiceIdentification.html</loc></url>
+<url><loc>/reference/ISOSampleBasedInspection.html</loc></url>
 <url><loc>/reference/ISOSampleDimension.html</loc></url>
 <url><loc>/reference/ISOScale.html</loc></url>
 <url><loc>/reference/ISOScope.html</loc></url>
