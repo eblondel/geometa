@@ -87,7 +87,7 @@ the xml data to the <span class="pkg">geometa</span> data model.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="va">mdfile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/examples"</span>, <span class="st">"metadata.xml"</span>, package <span class="op">=</span> <span class="st">"geometa"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="fu">readISO19139</span><span class="op">(</span><span class="va">mdfile</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in initialize(...):</span> argument "code" is missing, with no default</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in self$checkMetadataStandardCompliance():</span> Class 'ISOReferenceIdentifier' can't be loaded with current metadata standard '19115-3'</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
