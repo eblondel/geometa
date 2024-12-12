@@ -29,7 +29,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{element}
 \keyword{quality}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISODataQualityAbstractElement}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractQualityElement]{geometa::ISOAbstractQualityElement}} -> \code{ISODataQualityAbstractElement}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -77,8 +77,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISODataQualityAbstractElement-setDateTime}{\code{ISODataQualityAbstractElement$setDateTime()}}
 \item \href{#method-ISODataQualityAbstractElement-addResult}{\code{ISODataQualityAbstractElement$addResult()}}
 \item \href{#method-ISODataQualityAbstractElement-delResult}{\code{ISODataQualityAbstractElement$delResult()}}
-\item \href{#method-ISODataQualityAbstractElement-addElement}{\code{ISODataQualityAbstractElement$addElement()}}
-\item \href{#method-ISODataQualityAbstractElement-delElement}{\code{ISODataQualityAbstractElement$delElement()}}
+\item \href{#method-ISODataQualityAbstractElement-addDerivedElement}{\code{ISODataQualityAbstractElement$addDerivedElement()}}
+\item \href{#method-ISODataQualityAbstractElement-delDerivedElement}{\code{ISODataQualityAbstractElement$delDerivedElement()}}
 \item \href{#method-ISODataQualityAbstractElement-clone}{\code{ISODataQualityAbstractElement$clone()}}
 }
 }
@@ -383,12 +383,12 @@ Deletes result
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ISODataQualityAbstractElement-addElement"></a>}}
-\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-addElement}{}}}
-\subsection{Method \code{addElement()}}{
-Adds element
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-addDerivedElement"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-addDerivedElement}{}}}
+\subsection{Method \code{addDerivedElement()}}{
+Adds derived element
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$addElement(element)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$addDerivedElement(element)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -403,12 +403,12 @@ Adds element
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ISODataQualityAbstractElement-delElement"></a>}}
-\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-delElement}{}}}
-\subsection{Method \code{delElement()}}{
-Deletes element
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-delDerivedElement"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-delDerivedElement}{}}}
+\subsection{Method \code{delDerivedElement()}}{
+Deletes derived element
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$delElement(element)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$delDerivedElement(element)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

@@ -15,7 +15,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
-  inherit = ISOAbstractObject,
+  inherit = ISOAbstractQualityElement,
   private = list(
     xmlElement = "AbstractDQ_Element",
     xmlNamespacePrefix = list(
@@ -190,24 +190,24 @@ ISODataQualityAbstractElement <- R6Class("ISODataQualityAbstractElement",
       return(self$delListElement("result", result))
     },
     
-    #'@description Adds element
+    #'@description Adds derived element
     #'@param element object of class \link{ISODataQualityAbstractElement}
     #'@return \code{TRUE} if added, \code{FALSE} otherwise
-    addElement = function(element){
+    addDerivedElement = function(element){
     if(!is(element, "ISODataQualityAbstractElement")){
       stop("The argument value should be an object of class 'ISODataQualityAbstractElement'")
     }
-    return(self$addListElement("element", element))
+    return(self$addListElement("derivedElement", element))
     },
     
-    #'@description Deletes element
+    #'@description Deletes derived element
     #'@param element object of class \link{ISODataQualityAbstractElement}
     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
-    delElement = function(element){
+    delDerivedElement = function(element){
       if(!is(element, "ISODataQualityAbstractElement")){
         stop("The argument value should be an object of class 'ISODataQualityAbstractElement'")
       }
-      return(self$delListElement("element", element))
+      return(self$delListElement("derivedElement", element))
     }
   )                        
 )
