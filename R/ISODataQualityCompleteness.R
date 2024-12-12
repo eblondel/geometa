@@ -8,7 +8,9 @@
 #' @format \code{\link{R6Class}} object.
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_Completeness}
+#'   
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Completeness}  
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -16,7 +18,10 @@ ISOAbstractCompleteness <- R6Class("ISOAbstractCompleteness",
    inherit = ISODataQualityAbstractElement,
    private = list(
      xmlElement = "AbstractDQ_Completeness",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19139" = "GMD",
+       "19115-3" = "MDQ"
+     )
    ),
    public = list()
 )
@@ -56,7 +61,9 @@ ISOAbstractCompleteness <- R6Class("ISOAbstractCompleteness",
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_CompletenessOmission}
+#'   
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_CompletenessOmission} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -64,7 +71,10 @@ ISOCompletenessOmission <- R6Class("ISOCompletenessOmission",
   inherit = ISOAbstractThematicAccuracy,
   private = list(
     xmlElement = "DQ_CompletenessOmission",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19139" = "GMD",
+      "19115-3" = "MDQ"
+    )
   ),
   public = list()
 )
@@ -104,7 +114,9 @@ ISOCompletenessOmission <- R6Class("ISOCompletenessOmission",
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_CompletenessCommission}
+#'   
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_CompletenessCommission} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -112,7 +124,10 @@ ISOCompletenessCommission <- R6Class("ISOCompletenessCommission",
    inherit = ISOAbstractThematicAccuracy,
    private = list(
      xmlElement = "DQ_CompletenessCommission",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19139" = "GMD",
+       "19115-3" = "MDQ"
+     )
    ),
    public = list()
 )

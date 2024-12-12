@@ -42,7 +42,9 @@ ISOFormatConsistency
   
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_FormatConsistency}
+  
+  - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_FormatConsistency}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -93,17 +95,22 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="stopIfMetadataStandardIsNot"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-stopIfMetadataStandardIsNot'><code>geometa::ISOAbstractObject$stopIfMetadataStandardIsNot()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="addElement"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-addElement'><code>geometa::ISODataQualityAbstractElement$addElement()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="addNameOfMeasure"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-addNameOfMeasure'><code>geometa::ISODataQualityAbstractElement$addNameOfMeasure()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="addResult"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-addResult'><code>geometa::ISODataQualityAbstractElement$addResult()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="delElement"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-delElement'><code>geometa::ISODataQualityAbstractElement$delElement()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="delNameOfMeasure"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-delNameOfMeasure'><code>geometa::ISODataQualityAbstractElement$delNameOfMeasure()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="delResult"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-delResult'><code>geometa::ISODataQualityAbstractElement$delResult()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="initialize"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-initialize'><code>geometa::ISODataQualityAbstractElement$initialize()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="setDateTime"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-setDateTime'><code>geometa::ISODataQualityAbstractElement$setDateTime()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="setEvaluationMethod"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-setEvaluationMethod'><code>geometa::ISODataQualityAbstractElement$setEvaluationMethod()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="setEvaluationMethodDescription"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-setEvaluationMethodDescription'><code>geometa::ISODataQualityAbstractElement$setEvaluationMethodDescription()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="setEvaluationMethodType"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-setEvaluationMethodType'><code>geometa::ISODataQualityAbstractElement$setEvaluationMethodType()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="setEvaluationProcedure"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-setEvaluationProcedure'><code>geometa::ISODataQualityAbstractElement$setEvaluationProcedure()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="setMeasure"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-setMeasure'><code>geometa::ISODataQualityAbstractElement$setMeasure()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="setMeasureDescription"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-setMeasureDescription'><code>geometa::ISODataQualityAbstractElement$setMeasureDescription()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="setMeasureIdentification"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-setMeasureIdentification'><code>geometa::ISODataQualityAbstractElement$setMeasureIdentification()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISODataQualityAbstractElement" data-id="setStandaloneQualityReportDetails"><a href='../../geometa/html/ISODataQualityAbstractElement.html#method-ISODataQualityAbstractElement-setStandaloneQualityReportDetails'><code>geometa::ISODataQualityAbstractElement$setStandaloneQualityReportDetails()</code></a></span></li>
 </ul>
 </details>
 }}

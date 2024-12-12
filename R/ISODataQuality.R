@@ -88,12 +88,17 @@ ISODataQuality <- R6Class("ISODataQuality",
   inherit = ISOAbstractObject,
   private = list(
     xmlElement = "DQ_DataQuality",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19139" = "GMD",
+      "19115-3" = "MDQ" 
+    )
   ),
   public = list(
     #'@field scope scope
     scope = NULL,
-    #'@field report list of reports
+    #'@field standaloneQualityReport standalone quality report (=> 19115-3)
+    standaloneQualityReport = NULL,
+    #'@field report list of reports (=> 19139)
     report = list(),
     #'@field lineage lineage
     lineage = NULL,
@@ -107,18 +112,36 @@ ISODataQuality <- R6Class("ISODataQuality",
     #'@description Set scope
     #'@param scope scope
     setScope = function(scope){
-      if(!is(scope, "ISODataQualityScope")){
-        stop("The argument should be a 'ISODataQualityScope' object")
-      }
+      switch(getMetadataStandard(),
+        "19139" = {
+          if(!is(scope, "ISODataQualityScope")){
+            stop("The argument should be a 'ISODataQualityScope' object")
+          }
+        },
+        "19115-3" = {
+          if(!is(scope, "ISOScope")){
+            stop("The argument should be a 'ISOScope' object")
+          }
+        }
+      )
       self$scope <- scope
     },
     
+    #'@description Set standalone quality report
+    #'@param report object of class \link{ISOStandaloneQualityReportInformation}
+    setStandaloneQualityReport = function(report){
+      if(!is(report, "ISOStandaloneQualityReportInformation")){
+        stop("The argument should inherit class 'ISOStandaloneQualityReportInformation'")
+      }
+      self$standaloneQualityReport = report
+    },
+    
     #'@description Adds report
-    #'@param report report, object of class \link{ISODomainConsistency}
+    #'@param report report, object of class \link{ISODataQualityAbstractElement}
     #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addReport = function(report){
-      if(!is(report, "ISODomainConsistency")){
-        stop("The argument should be a 'ISODomainConsistency' object")
+      if(!is(report, "ISODataQualityAbstractElement")){
+        stop("The argument should inherit class 'ISODataQualityAbstractElement'")
       }
       self$report <- c(self$report, report)
     },
@@ -126,6 +149,7 @@ ISODataQuality <- R6Class("ISODataQuality",
     #'@description Set lineage
     #'@param lineage lineage, object of class \link{ISOLineage}
     setLineage = function(lineage){
+      self$stopIfMetadataStandardIsNot("19139")
       if(!is(lineage, "ISOLineage")){
         stop("The argument should be a 'ISOLineage' object")
       }

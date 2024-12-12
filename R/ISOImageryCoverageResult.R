@@ -8,7 +8,9 @@
 #' @format \code{\link{R6Class}} object.
 #' 
 #' @references 
-#'   ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
+#'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_QE_CoverageResult}
+#'   
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_QE_CoverageResult} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #' 
@@ -16,10 +18,17 @@ ISOImageryCoverageResult <- R6Class("ISOImageryCoverageResult",
   inherit = ISOAbstractResult,
   private = list(
     xmlElement = "QE_CoverageResult",
-    xmlNamespacePrefix = "GMI"
+    xmlNamespacePrefix = list(
+      "19139" = "GMI",
+      "19115-3" = "MDQ"
+    )
   ),
   public = list(
     
+    #'@field resultScope resultScope [0..1]: ISOScope
+    resultScope = NULL,
+    #'@field dateTime dateTime [0..1]: POSIX/date
+    dateTime = NULL,
     #'@field spatialRepresentationType spatialRepresentationType [1..1] : ISOSpatialRepresentationType
     spatialRepresentationType = NULL,
     #'@field resultFile resultFile [1..1]: ISODataFile
@@ -37,6 +46,26 @@ ISOImageryCoverageResult <- R6Class("ISOImageryCoverageResult",
       super$initialize(xml = xml)
     },
     
+    #'@description Set result scope
+    #'@param scope object of class \link{ISOScope}
+    setResultScope = function(scope){
+      self$stopIfMetadataStandardIsNot("19115-3")
+      if(!is(scope, "ISOScope")){
+        stop("The argument should be a 'ISOScope' object")
+      }
+      self$resultScope = scope
+    },
+    
+    #'@description Set date time
+    #'@param dateTime date time, object of class \link{POSIXct}
+    setDateTime = function(dateTime){
+      self$stopIfMetadataStandardIsNot("19115-3")
+      if(!all(class(dateTime) == c("POSIXct","POSIXt"))){ 
+        stop("The argument should be an 'POSIXct'/'POSIXt' object")
+      }
+      self$dateTime <- dateTime
+    },
+    
     #'@description Set spatial representation type
     #'@param spatialRepresentationType object of class \link{ISOSpatialRepresentationType} or \link{character}
     #' among values returned by \code{ISOSpatialRepresentationType$values()}
@@ -52,11 +81,21 @@ ISOImageryCoverageResult <- R6Class("ISOImageryCoverageResult",
     },
     
     #'@description Set result file
-    #'@param resultFile object of class \link{ISODataFile}
+    #'@param resultFile object of class \link{ISODataFile} (in ISO 19139) 
+    #'or \link{ISOQualityResultFile} (in ISO 19115-3)
     setResultFile = function(resultFile){
-      if(!is(resultFile, "ISODataFile")){
-        stop("The argument should be an object of class 'ISODataFile'")
-      }
+      switch(getMetadataStandard(),
+        "19139" = {
+          if(!is(resultFile, "ISODataFile")){
+            stop("The argument should be an object of class 'ISODataFile'")
+          }
+        },
+        "19115-3" = {
+          if(!is(resultFile, "ISOQualityResultFile")){
+            stop("The argument should be an object of class 'ISOQualityResultFile'")
+          } 
+        }
+      )
       self$resultFile <- resultFile
     },
     

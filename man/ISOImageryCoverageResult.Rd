@@ -16,7 +16,9 @@ ISOImageryCoverageResult
 ISOImageryCoverageResult
 }
 \references{
-ISO 19115-2:2009 - Geographic information -- Metadata Part 2: Extensions for imagery and gridded data
+- 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_QE_CoverageResult}
+  
+  - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_QE_CoverageResult}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -31,6 +33,10 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
+\item{\code{resultScope}}{resultScope [0..1]: ISOScope}
+
+\item{\code{dateTime}}{dateTime [0..1]: POSIX/date}
+
 \item{\code{spatialRepresentationType}}{spatialRepresentationType [1..1] : ISOSpatialRepresentationType}
 
 \item{\code{resultFile}}{resultFile [1..1]: ISODataFile}
@@ -47,6 +53,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOImageryCoverageResult-new}{\code{ISOImageryCoverageResult$new()}}
+\item \href{#method-ISOImageryCoverageResult-setResultScope}{\code{ISOImageryCoverageResult$setResultScope()}}
+\item \href{#method-ISOImageryCoverageResult-setDateTime}{\code{ISOImageryCoverageResult$setDateTime()}}
 \item \href{#method-ISOImageryCoverageResult-setSpatialRepresentationType}{\code{ISOImageryCoverageResult$setSpatialRepresentationType()}}
 \item \href{#method-ISOImageryCoverageResult-setResultFile}{\code{ISOImageryCoverageResult$setResultFile()}}
 \item \href{#method-ISOImageryCoverageResult-setResultSpatialRepresentation}{\code{ISOImageryCoverageResult$setResultSpatialRepresentation()}}
@@ -108,6 +116,40 @@ Initializes object
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryCoverageResult-setResultScope"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-setResultScope}{}}}
+\subsection{Method \code{setResultScope()}}{
+Set result scope
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryCoverageResult$setResultScope(scope)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{scope}}{object of class \link{ISOScope}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOImageryCoverageResult-setDateTime"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-setDateTime}{}}}
+\subsection{Method \code{setDateTime()}}{
+Set date time
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOImageryCoverageResult$setDateTime(dateTime)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dateTime}}{date time, object of class \link{POSIXct}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ISOImageryCoverageResult-setSpatialRepresentationType"></a>}}
 \if{latex}{\out{\hypertarget{method-ISOImageryCoverageResult-setSpatialRepresentationType}{}}}
 \subsection{Method \code{setSpatialRepresentationType()}}{
@@ -139,7 +181,8 @@ Set result file
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{resultFile}}{object of class \link{ISODataFile}}
+\item{\code{resultFile}}{object of class \link{ISODataFile} (in ISO 19139) 
+or \link{ISOQualityResultFile} (in ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }

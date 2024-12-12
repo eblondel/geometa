@@ -13,7 +13,7 @@
 #'   xml <- md$encode()
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata
+#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_Scope}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -21,7 +21,9 @@ ISODataQualityScope <- R6Class("ISODataQualityScope",
    inherit = ISOAbstractObject,
    private = list(
      xmlElement = "DQ_Scope",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19139" = "GMD"
+     )
    ),
    public = list(
      #'@field level level

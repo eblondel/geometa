@@ -19,7 +19,9 @@ ISOAbstractResult
 abstract class
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_Result}
+
+  - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Result}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -30,17 +32,6 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{result}
 \section{Super classes}{
 \code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractResult}
-}
-\section{Public fields}{
-\if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{specification}}{specification}
-
-\item{\code{explanation}}{explanation}
-
-\item{\code{pass}}{pass}
-}
-\if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{

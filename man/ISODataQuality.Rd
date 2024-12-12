@@ -105,7 +105,9 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \describe{
 \item{\code{scope}}{scope}
 
-\item{\code{report}}{list of reports}
+\item{\code{standaloneQualityReport}}{standalone quality report (=> 19115-3)}
+
+\item{\code{report}}{list of reports (=> 19139)}
 
 \item{\code{lineage}}{lineage}
 }
@@ -116,6 +118,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \itemize{
 \item \href{#method-ISODataQuality-new}{\code{ISODataQuality$new()}}
 \item \href{#method-ISODataQuality-setScope}{\code{ISODataQuality$setScope()}}
+\item \href{#method-ISODataQuality-setStandaloneQualityReport}{\code{ISODataQuality$setStandaloneQualityReport()}}
 \item \href{#method-ISODataQuality-addReport}{\code{ISODataQuality$addReport()}}
 \item \href{#method-ISODataQuality-setLineage}{\code{ISODataQuality$setLineage()}}
 \item \href{#method-ISODataQuality-clone}{\code{ISODataQuality$clone()}}
@@ -191,6 +194,23 @@ Set scope
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQuality-setStandaloneQualityReport"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQuality-setStandaloneQualityReport}{}}}
+\subsection{Method \code{setStandaloneQualityReport()}}{
+Set standalone quality report
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQuality$setStandaloneQualityReport(report)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{report}}{object of class \link{ISOStandaloneQualityReportInformation}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ISODataQuality-addReport"></a>}}
 \if{latex}{\out{\hypertarget{method-ISODataQuality-addReport}{}}}
 \subsection{Method \code{addReport()}}{
@@ -202,7 +222,7 @@ Adds report
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{report}}{report, object of class \link{ISODomainConsistency}}
+\item{\code{report}}{report, object of class \link{ISODataQualityAbstractElement}}
 }
 \if{html}{\out{</div>}}
 }

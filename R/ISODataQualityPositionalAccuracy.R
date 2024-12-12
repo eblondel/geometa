@@ -8,7 +8,9 @@
 #' @format \code{\link{R6Class}} object.
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_PositionalAccuracy}
+#'   
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_PositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -16,7 +18,10 @@ ISOAbstractPositionalAccuracy <- R6Class("ISOAbstractPositionalAccuracy",
    inherit = ISODataQualityAbstractElement,
    private = list(
      xmlElement = "AbstractDQ_PositionalAccuracy",
-     xmlNamespacePrefix = "GMD"
+     xmlNamespacePrefix = list(
+       "19139" = "GMD",
+       "19115-3" = "MDQ"
+     )
    ),
    public = list()
 )
@@ -56,7 +61,9 @@ ISOAbstractPositionalAccuracy <- R6Class("ISOAbstractPositionalAccuracy",
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_AbsoluteExternalPositionalAccuracy}
+#'   
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_AbsoluteExternalPositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -64,7 +71,10 @@ ISOAbsoluteExternalPositionalAccuracy <- R6Class("ISOAbsoluteExternalPositionalA
  inherit = ISOAbstractPositionalAccuracy,
  private = list(
    xmlElement = "DQ_AbsoluteExternalPositionalAccuracy",
-   xmlNamespacePrefix = "GMD"
+   xmlNamespacePrefix = list(
+     "19139" = "GMD",
+     "19115-3" = "MDQ"
+   )
  ),
  public = list()
 )
@@ -104,7 +114,9 @@ ISOAbsoluteExternalPositionalAccuracy <- R6Class("ISOAbsoluteExternalPositionalA
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_RelativeInternalPositionalAccuracy}
+#'   
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_RelativeInternalPositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -112,7 +124,10 @@ ISORelativeInternalPositionalAccuracy <- R6Class("ISORelativeInternalPositionalA
  inherit = ISOAbstractPositionalAccuracy,
  private = list(
    xmlElement = "DQ_RelativeInternalPositionalAccuracy",
-   xmlNamespacePrefix = "GMD"
+   xmlNamespacePrefix = list(
+     "19139" = "GMD",
+     "19115-3" = "MDQ"
+   )
  ),
  public = list()
 )
@@ -152,7 +167,9 @@ ISORelativeInternalPositionalAccuracy <- R6Class("ISORelativeInternalPositionalA
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_GriddedDataPositionalAccuracy}
+#'   
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_GriddedDataPositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -160,7 +177,10 @@ ISOGriddedDataPositionalAccuracy <- R6Class("ISOGriddedDataPositionalAccuracy",
   inherit = ISOAbstractPositionalAccuracy,
   private = list(
     xmlElement = "DQ_GriddedDataPositionalAccuracy",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19139" = "GMD",
+      "19115-3" = "MDQ"
+    )
   ),
   public = list()
 )

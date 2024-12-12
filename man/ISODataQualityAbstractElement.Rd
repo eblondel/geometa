@@ -16,7 +16,9 @@ ISODataQualityAbstractElement
 ISODataQualityAbstractElement
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_Element}
+  
+  - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Element}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -32,21 +34,29 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{nameOfMeasure}}{nameOfMeasure [0..*]: character}
+\item{\code{standaloneQualityReportDetails}}{standaloneQualityReportDetails [0..1]: character (=> 19115-3)}
 
-\item{\code{measureIdentification}}{measureIdentification [0..1]: ISOMetaIdentifier}
+\item{\code{nameOfMeasure}}{nameOfMeasure [0..*]: character (=> 19139)}
 
-\item{\code{measureDescription}}{measureDescription [0..1]: character}
+\item{\code{measureIdentification}}{measureIdentification [0..1]: ISOMetaIdentifier (=> 19139)}
 
-\item{\code{evaluationMethodType}}{evaluationMethodType [0..1]: ISOEvaluationMethodType}
+\item{\code{measureDescription}}{measureDescription [0..1]: character (=> 19139)}
 
-\item{\code{evaluationMethodDescription}}{evaluationMethodDescription [0..1]: character}
+\item{\code{measure}}{measure [0..1]: ISOMeasureReference (=> 19115-3)}
 
-\item{\code{evaluationProcedure}}{evaluationProcedure [0..1]: ISOCitation}
+\item{\code{evaluationMethodType}}{evaluationMethodType [0..1]: ISOEvaluationMethodType (=> 19139)}
 
-\item{\code{dateTime}}{dateTime [0..1]: ISODateTime}
+\item{\code{evaluationMethodDescription}}{evaluationMethodDescription [0..1]: character (=> 19139)}
 
-\item{\code{result}}{result [1..2]: ISOConformanceResult}
+\item{\code{evaluationProcedure}}{evaluationProcedure [0..1]: ISOCitation (=> 19139)}
+
+\item{\code{evaluationMethod}}{evaluationMethod [0..1]: ISOEvaluationMethod (=> 19115-3)}
+
+\item{\code{dateTime}}{dateTime [0..1]: ISODateTime (=> 19139)}
+
+\item{\code{result}}{result [1..2]: ISOAbstractResult}
+
+\item{\code{derivedElement}}{derivedElement [0..*]: ISODataQualityAbstractElement (=> 19115-3)}
 }
 \if{html}{\out{</div>}}
 }
@@ -54,16 +64,21 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISODataQualityAbstractElement-new}{\code{ISODataQualityAbstractElement$new()}}
+\item \href{#method-ISODataQualityAbstractElement-setStandaloneQualityReportDetails}{\code{ISODataQualityAbstractElement$setStandaloneQualityReportDetails()}}
 \item \href{#method-ISODataQualityAbstractElement-addNameOfMeasure}{\code{ISODataQualityAbstractElement$addNameOfMeasure()}}
 \item \href{#method-ISODataQualityAbstractElement-delNameOfMeasure}{\code{ISODataQualityAbstractElement$delNameOfMeasure()}}
 \item \href{#method-ISODataQualityAbstractElement-setMeasureIdentification}{\code{ISODataQualityAbstractElement$setMeasureIdentification()}}
+\item \href{#method-ISODataQualityAbstractElement-setMeasure}{\code{ISODataQualityAbstractElement$setMeasure()}}
 \item \href{#method-ISODataQualityAbstractElement-setMeasureDescription}{\code{ISODataQualityAbstractElement$setMeasureDescription()}}
 \item \href{#method-ISODataQualityAbstractElement-setEvaluationMethodType}{\code{ISODataQualityAbstractElement$setEvaluationMethodType()}}
 \item \href{#method-ISODataQualityAbstractElement-setEvaluationMethodDescription}{\code{ISODataQualityAbstractElement$setEvaluationMethodDescription()}}
 \item \href{#method-ISODataQualityAbstractElement-setEvaluationProcedure}{\code{ISODataQualityAbstractElement$setEvaluationProcedure()}}
+\item \href{#method-ISODataQualityAbstractElement-setEvaluationMethod}{\code{ISODataQualityAbstractElement$setEvaluationMethod()}}
 \item \href{#method-ISODataQualityAbstractElement-setDateTime}{\code{ISODataQualityAbstractElement$setDateTime()}}
 \item \href{#method-ISODataQualityAbstractElement-addResult}{\code{ISODataQualityAbstractElement$addResult()}}
 \item \href{#method-ISODataQualityAbstractElement-delResult}{\code{ISODataQualityAbstractElement$delResult()}}
+\item \href{#method-ISODataQualityAbstractElement-addElement}{\code{ISODataQualityAbstractElement$addElement()}}
+\item \href{#method-ISODataQualityAbstractElement-delElement}{\code{ISODataQualityAbstractElement$delElement()}}
 \item \href{#method-ISODataQualityAbstractElement-clone}{\code{ISODataQualityAbstractElement$clone()}}
 }
 }
@@ -115,6 +130,23 @@ Initializes object
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-setStandaloneQualityReportDetails"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setStandaloneQualityReportDetails}{}}}
+\subsection{Method \code{setStandaloneQualityReportDetails()}}{
+Set Standalone quality report details
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$setStandaloneQualityReportDetails(details)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{details}}{object of class \link{character}}
 }
 \if{html}{\out{</div>}}
 }
@@ -176,6 +208,23 @@ Set measure identification
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{identification}}{object of class \link{ISOMetaIdentifier}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-setMeasure"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setMeasure}{}}}
+\subsection{Method \code{setMeasure()}}{
+Set measure
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$setMeasure(measure)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{measure}}{object of class \link{ISOMeasureReference}}
 }
 \if{html}{\out{</div>}}
 }
@@ -260,6 +309,23 @@ Set evaluation procedure
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-setEvaluationMethod"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setEvaluationMethod}{}}}
+\subsection{Method \code{setEvaluationMethod()}}{
+Set evaluation method
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$setEvaluationMethod(evaluationMethod)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{evaluationMethod}}{object of class \link{ISOEvaluationMethod}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ISODataQualityAbstractElement-setDateTime"></a>}}
 \if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-setDateTime}{}}}
 \subsection{Method \code{setDateTime()}}{
@@ -288,7 +354,7 @@ Adds result
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{result}}{object of class \link{ISOConformanceResult}}
+\item{\code{result}}{object of class \link{ISOAbstractResult}}
 }
 \if{html}{\out{</div>}}
 }
@@ -308,7 +374,47 @@ Deletes result
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{result}}{object of class \link{ISOConformanceResult}}
+\item{\code{result}}{object of class \link{ISOAbstractResult}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-addElement"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-addElement}{}}}
+\subsection{Method \code{addElement()}}{
+Adds element
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$addElement(element)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{element}}{object of class \link{ISODataQualityAbstractElement}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISODataQualityAbstractElement-delElement"></a>}}
+\if{latex}{\out{\hypertarget{method-ISODataQualityAbstractElement-delElement}{}}}
+\subsection{Method \code{delElement()}}{
+Deletes element
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISODataQualityAbstractElement$delElement(element)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{element}}{object of class \link{ISODataQualityAbstractElement}}
 }
 \if{html}{\out{</div>}}
 }

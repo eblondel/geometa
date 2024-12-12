@@ -31,7 +31,9 @@ ISOConformanceResult
  
 }
 \references{
-ISO 19115:2003 - Geographic information -- Metadata
+- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_ConformanceResult}
+
+  - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_ConformanceResult}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -45,6 +47,10 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
+\item{\code{resultScope}}{resultScope [0..1]: ISOScope (=> 19115-3)}
+
+\item{\code{dateTime}}{dateTime [0..1] (=> 19115-3)}
+
 \item{\code{specification}}{specification}
 
 \item{\code{explanation}}{explanation}
@@ -57,6 +63,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOConformanceResult-new}{\code{ISOConformanceResult$new()}}
+\item \href{#method-ISOConformanceResult-setResultScope}{\code{ISOConformanceResult$setResultScope()}}
+\item \href{#method-ISOConformanceResult-setDateTime}{\code{ISOConformanceResult$setDateTime()}}
 \item \href{#method-ISOConformanceResult-setSpecification}{\code{ISOConformanceResult$setSpecification()}}
 \item \href{#method-ISOConformanceResult-setExplanation}{\code{ISOConformanceResult$setExplanation()}}
 \item \href{#method-ISOConformanceResult-setPass}{\code{ISOConformanceResult$setPass()}}
@@ -111,6 +119,40 @@ Initializes object
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOConformanceResult-setResultScope"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOConformanceResult-setResultScope}{}}}
+\subsection{Method \code{setResultScope()}}{
+Set result scope
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOConformanceResult$setResultScope(scope)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{scope}}{object of class \link{ISOScope}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOConformanceResult-setDateTime"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOConformanceResult-setDateTime}{}}}
+\subsection{Method \code{setDateTime()}}{
+Set date time
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOConformanceResult$setDateTime(dateTime)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dateTime}}{date time, object of class \link{POSIXct}}
 }
 \if{html}{\out{</div>}}
 }

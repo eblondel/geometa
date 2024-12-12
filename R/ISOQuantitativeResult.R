@@ -12,7 +12,9 @@
 #'  xml <- md$encode()
 #'  
 #' @references 
-#'   ISO 19115:2003 - Geographic information -- Metadata 
+#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_QuantitativeResult}
+#'   
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_QuantitativeResult}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -20,10 +22,18 @@ ISOQuantitativeResult <- R6Class("ISOQuantitativeResult",
   inherit = ISOAbstractResult,
   private = list(
     xmlElement = "DQ_QuantitativeResult",
-    xmlNamespacePrefix = "GMD"
+    xmlNamespacePrefix = list(
+      "19139" = "GMD",
+      "19115-3" = "MDQ"
+    )
   ),
   public = list(
-    #'@field valueType valueType [0..1]- ISORecord 
+    
+    #'@field resultScope resultScope [0..1]: ISOScope (=> 19115-3)
+    resultScope = NULL,
+    #'@field dateTime dateTime [0..1]: POSIX/date (=> 19115-3)
+    dateTime = NULL,
+    #'@field valueType valueType [0..1]- ISORecordType 
     valueType = NULL,
     #'@field valueUnit valueUnit [1..1]- GMLUnitDefinition
     valueUnit = NA,
@@ -36,6 +46,26 @@ ISOQuantitativeResult <- R6Class("ISOQuantitativeResult",
     #'@param xml object of class \link{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
+    },
+    
+    #'@description Set result scope
+    #'@param scope object of class \link{ISOScope}
+    setResultScope = function(scope){
+      self$stopIfMetadataStandardIsNot("19115-3")
+      if(!is(scope, "ISOScope")){
+        stop("The argument should be a 'ISOScope' object")
+      }
+      self$resultScope = scope
+    },
+    
+    #'@description Set date time
+    #'@param dateTime date time, object of class \link{POSIXct}
+    setDateTime = function(dateTime){
+      self$stopIfMetadataStandardIsNot("19115-3")
+      if(!all(class(dateTime) == c("POSIXct","POSIXt"))){ 
+        stop("The argument should be an 'POSIXct'/'POSIXt' object")
+      }
+      self$dateTime <- dateTime
     },
     
     #'@description Set value type
