@@ -184,3 +184,28 @@ ISOThematicClassificationCorrectness <- R6Class("ISOThematicClassificationCorrec
   ),
   public = list()
 )
+
+#' ISONonQuantitativeAttributeCorrectness
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO data quality non-quantitative attribute correctness
+#' @return Object of \code{\link{R6Class}} for modelling an ISONonQuantitativeAttributeCorrectness
+#' @format \code{\link{R6Class}} object.
+#' 
+#' @references 
+#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_NonQuantitativeAttributeCorrectness}
+#' 
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
+ISONonQuantitativeAttributeCorrectness <- R6Class("ISONonQuantitativeAttributeCorrectness",
+    inherit = ISOAbstractTemporalAccuracy,
+    private = list(
+      xmlElement = "DQ_NonQuantitativeAttributeCorrectness",
+      xmlNamespacePrefix = list(
+        "19115-3" = "MDQ"
+      )
+    ),
+    public = list()
+)
