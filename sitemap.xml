@@ -191,6 +191,7 @@
 <url><loc>/reference/ISODataIdentification.html</loc></url>
 <url><loc>/reference/ISODataIdentification19115_3.html</loc></url>
 <url><loc>/reference/ISODataIdentification19139.html</loc></url>
+<url><loc>/reference/ISODataInspection.html</loc></url>
 <url><loc>/reference/ISODataQuality.html</loc></url>
 <url><loc>/reference/ISODataQualityAbstractElement.html</loc></url>
 <url><loc>/reference/ISODataQualityScope.html</loc></url>
@@ -200,6 +201,7 @@
 <url><loc>/reference/ISODateType.html</loc></url>
 <url><loc>/reference/ISODefinitionReference.html</loc></url>
 <url><loc>/reference/ISODefinitionSource.html</loc></url>
+<url><loc>/reference/ISODescriptiveResult.html</loc></url>
 <url><loc>/reference/ISODigitalTransferOptions.html</loc></url>
 <url><loc>/reference/ISODimension.html</loc></url>
 <url><loc>/reference/ISODimensionNameType.html</loc></url>
@@ -308,6 +310,7 @@
 <url><loc>/reference/ISOMaintenanceFrequency.html</loc></url>
 <url><loc>/reference/ISOMaintenanceInformation.html</loc></url>
 <url><loc>/reference/ISOMeasure.html</loc></url>
+<url><loc>/reference/ISOMeasureReference.html</loc></url>
 <url><loc>/reference/ISOMedium.html</loc></url>
 <url><loc>/reference/ISOMediumFormat.html</loc></url>
 <url><loc>/reference/ISOMediumName.html</loc></url>
@@ -321,6 +324,7 @@
 <url><loc>/reference/ISOMultiplicity.html</loc></url>
 <url><loc>/reference/ISOMultiplicityRange.html</loc></url>
 <url><loc>/reference/ISONonQuantitativeAttributeAccuracy.html</loc></url>
+<url><loc>/reference/ISONonQuantitativeAttributeCorrectness.html</loc></url>
 <url><loc>/reference/ISOObligation.html</loc></url>
 <url><loc>/reference/ISOOnLineFunction.html</loc></url>
 <url><loc>/reference/ISOOnlineResource.html</loc></url>
@@ -339,6 +343,7 @@
 <url><loc>/reference/ISOProductionSeries.html</loc></url>
 <url><loc>/reference/ISOProgress.html</loc></url>
 <url><loc>/reference/ISOPropertyType.html</loc></url>
+<url><loc>/reference/ISOQualityResultFile.html</loc></url>
 <url><loc>/reference/ISOQuantitativeAttributeAccuracy.html</loc></url>
 <url><loc>/reference/ISOQuantitativeResult.html</loc></url>
 <url><loc>/reference/ISORangeDimension.html</loc></url>
@@ -375,6 +380,7 @@
 <url><loc>/reference/ISOSpatialRepresentation.html</loc></url>
 <url><loc>/reference/ISOSpatialRepresentationType.html</loc></url>
 <url><loc>/reference/ISOSpatialTemporalExtent.html</loc></url>
+<url><loc>/reference/ISOStandaloneQualityReportInformation.html</loc></url>
 <url><loc>/reference/ISOStandardOrderProcess.html</loc></url>
 <url><loc>/reference/ISOStatus.html</loc></url>
 <url><loc>/reference/ISOStereoMate.html</loc></url>
@@ -392,6 +398,7 @@
 <url><loc>/reference/ISOURL.html</loc></url>
 <url><loc>/reference/ISOUnlimitedInteger.html</loc></url>
 <url><loc>/reference/ISOUomIdentifier.html</loc></url>
+<url><loc>/reference/ISOUsabilityElement.html</loc></url>
 <url><loc>/reference/ISOUsage.html</loc></url>
 <url><loc>/reference/ISOVectorSpatialRepresentation.html</loc></url>
 <url><loc>/reference/ISOVerticalExtent.html</loc></url>
