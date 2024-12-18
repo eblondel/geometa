@@ -49,7 +49,7 @@ getISOMetadataSchemaFile <- function(version = "19139"){
 #'setISOMetadataSchemas
 #'@export
 setISOMetadataSchemas <- function(version = "19139"){
-  packageStartupMessage("Loading ISO 19139 XML schemas...")
+  packageStartupMessage(sprintf("Loading ISO %s XML schemas...", version))
   registerISOMetadataSchema(getISOMetadataSchemaFile(version = version))
 }
 
