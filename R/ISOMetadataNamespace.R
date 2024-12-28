@@ -149,6 +149,11 @@ setISOMetadataNamespaces <- function(version = "19139"){
         id = "fcc", uri = "https://standards.iso.org/iso/19110/fcc/1.0",
         standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO/TS 19139:2007", title = "Feature Catalog Common (FCC) Version: 1.0", stringsAsFactors = FALSE)
       ),
+      #GFC
+      ISOMetadataNamespace$new(
+        id = "gfc", uri = "https://standards.iso.org/iso/19110/gfc/1.1",
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO/TS 19139:2007", title = "General Feature Catalog (GFC) Version: 1.1", stringsAsFactors = FALSE)
+      ),
       #ISO 19115-3
       #----------------------------------------------------
       #CAT

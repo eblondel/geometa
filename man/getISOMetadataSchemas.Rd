@@ -4,14 +4,14 @@
 \alias{getISOMetadataSchemas}
 \title{getISOMetadataSchemas}
 \usage{
-getISOMetadataSchemas()
+getISOMetadataSchemas(version)
 }
 \description{
 \code{getISOMetadataSchemas} gets the schemas registered in \pkg{geometa}
 }
 \examples{
             
-  getISOMetadataSchemas()
+  getISOMetadataSchemas(version = "19115-3")
 
 }
 \author{

@@ -5,8 +5,9 @@
 #' @description \code{registerISOMetadataSchema} allows to register a new schema
 #' in \pkg{geometa}
 #' 
-#' @usage registerISOMetadataSchema(xsdFile)
+#' @usage registerISOMetadataSchema(version, xsdFile)
 #' 
+#' @param version the schema version
 #' @param xsdFile the schema XSD file
 #' 
 #' @examples             
@@ -14,14 +15,18 @@
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
-registerISOMetadataSchema <- function(xsdFile){
+registerISOMetadataSchema <- function(version, xsdFile){
   schemas <- tryCatch(
     XML::xmlParse(
       xsdFile, isSchema = TRUE, xinclude = TRUE,
-      error = function (msg, code, domain, line, col, level, filename, class = "XMLError"){}
+      error = function (msg, code, domain, line, col, level, filename, class = "XMLError"){
+        print("=>")
+        print(filename)
+        print(msg)
+      }
     )
   )
-  .geometa.iso$schemas <- schemas
+  .geometa.iso$schemas[[version]] <- schemas
 }
 
 #'getISOMetadataSchemaFile
@@ -50,7 +55,7 @@ getISOMetadataSchemaFile <- function(version = "19139"){
 #'@export
 setISOMetadataSchemas <- function(version = "19139"){
   packageStartupMessage(sprintf("Loading ISO %s XML schemas...", version))
-  registerISOMetadataSchema(getISOMetadataSchemaFile(version = version))
+  registerISOMetadataSchema(version = version, getISOMetadataSchemaFile(version = version))
 }
 
 #' @name getISOMetadataSchemas
@@ -59,15 +64,21 @@ setISOMetadataSchemas <- function(version = "19139"){
 #' @export
 #' @description \code{getISOMetadataSchemas} gets the schemas registered in \pkg{geometa}
 #' 
-#' @usage getISOMetadataSchemas()
+#' @usage getISOMetadataSchemas(version)
 #' 
 #' @examples             
-#'   getISOMetadataSchemas()
+#'   getISOMetadataSchemas(version = "19115-3")
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
-getISOMetadataSchemas <- function(){
-  return(.geometa.iso$schemas)
+getISOMetadataSchemas <- function(version = "19139"){
+  available_versions <- c("19139","19115-3")
+  if(!version %in% available_versions){
+    errMsg <- sprintf("Version '%s' not among available schema versions (%s)",
+                      version, paste0(available_versions, collapse = ","))
+    stop(errMsg)
+  }
+  return(.geometa.iso$schemas[[version]])
 }
 
 

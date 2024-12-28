@@ -1083,7 +1083,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       }
       
       #proceed with schema xml schema validation
-      xsd <- getISOMetadataSchemas()
+      xsd <- getISOMetadataSchemas(version = getMetadataStandard())
       if(is(xml, "XMLInternalNode")) xml <- xmlDoc(xml)
       report <- xmlSchemaValidate(xsd, xml)
       

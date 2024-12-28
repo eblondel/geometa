@@ -4,9 +4,11 @@
 \alias{registerISOMetadataSchema}
 \title{registerISOMetadataSchema}
 \usage{
-registerISOMetadataSchema(xsdFile)
+registerISOMetadataSchema(version, xsdFile)
 }
 \arguments{
+\item{version}{the schema version}
+
 \item{xsdFile}{the schema XSD file}
 }
 \description{
