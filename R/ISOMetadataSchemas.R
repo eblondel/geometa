@@ -19,11 +19,7 @@ registerISOMetadataSchema <- function(version, xsdFile){
   schemas <- tryCatch(
     XML::xmlParse(
       xsdFile, isSchema = TRUE, xinclude = TRUE,
-      error = function (msg, code, domain, line, col, level, filename, class = "XMLError"){
-        print("=>")
-        print(filename)
-        print(msg)
-      }
+      error = function (msg, code, domain, line, col, level, filename, class = "XMLError"){}
     )
   )
   .geometa.iso$schemas[[version]] <- schemas
