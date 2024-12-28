@@ -52,14 +52,18 @@ in <span class="pkg">geometa</span></p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">registerISOMetadataSchema</span><span class="op">(</span><span class="va">xsdFile</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">registerISOMetadataSchema</span><span class="op">(</span><span class="va">version</span>, <span class="va">xsdFile</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
 
 
-<dl><dt id="arg-xsdfile">xsdFile<a class="anchor" aria-label="anchor" href="#arg-xsdfile"></a></dt>
+<dl><dt id="arg-version">version<a class="anchor" aria-label="anchor" href="#arg-version"></a></dt>
+<dd><p>the schema version</p></dd>
+
+
+<dt id="arg-xsdfile">xsdFile<a class="anchor" aria-label="anchor" href="#arg-xsdfile"></a></dt>
 <dd><p>the schema XSD file</p></dd>
 
 </dl></div>
@@ -72,7 +76,17 @@ in <span class="pkg">geometa</span></p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>            </span></span>
 <span class="r-in"><span>  <span class="fu">registerISOMetadataSchema</span><span class="op">(</span>xsdFile <span class="op">=</span> <span class="st">"http://www.isotc211.org/2005/gmd/gmd.xsd"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "=&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Unknown IO error"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "=&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "failed to load external entity \"http://www.isotc211.org/2005/gmd/gmd.xsd\"\n"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "=&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> character(0)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Failed to locate the main schema resource at 'http://www.isotc211.org/2005/gmd/gmd.xsd'.\n"</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>NULL value for external reference</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .geometa.iso$schemas[[version]] &lt;- schemas:</span> missing subscript</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
