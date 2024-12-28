@@ -248,8 +248,8 @@ setISOMetadataNamespaces <- function(version = "19139"){
       ),
       #MRC
       ISOMetadataNamespace$new(
-        id = "mrc", uri = "http://standards.iso.org/iso/19115/-3/mrc/1.0",
-        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Resource Content (MRC) Version: 1.0", stringsAsFactors = FALSE)
+        id = "mrc", uri = "http://standards.iso.org/iso/19115/-3/mrc/2.0",
+        standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO 19115-1:2014", title = "Metadata for Resource Content (MRC) Version: 2.0", stringsAsFactors = FALSE)
       ),
       #MRD
       ISOMetadataNamespace$new(
