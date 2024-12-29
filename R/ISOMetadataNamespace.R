@@ -120,7 +120,7 @@ setISOMetadataNamespaces <- function(version = "19139"){
       ),
       #GMI
       ISOMetadataNamespace$new(
-        id = "gmi", uri = "http://www.isotc211.org/2005/gmi",
+        id = "gmi", uri = "http://standards.iso.org/iso/19115/-2/gmi/1.0",
         standard = data.frame(specification = "ISO/TS 19139:2007", schema = "ISO 19115-2:2009", title = "Geographic Information - Metadata - Part 2: Extensions for imagery and gridded data", stringsAsFactors = FALSE)
       ),
       #GMX
@@ -146,12 +146,12 @@ setISOMetadataNamespaces <- function(version = "19139"){
       #----------------------------------------------------
       #FCC
       ISOMetadataNamespace$new(
-        id = "fcc", uri = "https://standards.iso.org/iso/19110/fcc/1.0",
+        id = "fcc", uri = "http://standards.iso.org/iso/19110/fcc/1.0",
         standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO/TS 19139:2007", title = "Feature Catalog Common (FCC) Version: 1.0", stringsAsFactors = FALSE)
       ),
       #GFC
       ISOMetadataNamespace$new(
-        id = "gfc", uri = "https://standards.iso.org/iso/19110/gfc/1.1",
+        id = "gfc", uri = "http://standards.iso.org/iso/19110/gfc/1.1",
         standard = data.frame(specification = "ISO/TS 19115-3:2023", schema = "ISO/TS 19139:2007", title = "General Feature Catalog (GFC) Version: 1.1", stringsAsFactors = FALSE)
       ),
       #ISO 19115-3
