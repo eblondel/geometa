@@ -242,7 +242,10 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                           wrap = TRUE, value_as_field = FALSE){
       self$checkMetadataStandardCompliance()
       if(!is.null(element)){ private$xmlElement <- element }
-      if(!is.null(namespace)){ private$xmlNamespacePrefix <- toupper(namespace)}
+      if(!is.null(namespace)){ 
+        private$xmlNamespacePrefix <- toupper(namespace)
+        if(is.list(namespace)) private$xmlNamespacePrefix <- lapply(namespace, toupper)
+      }
       self$element = private$xmlElement
       if(is.list(private$xmlElement)) if(getMetadataStandard() %in% names(private$xmlElement)) {
         private$xmlElement = private$xmlElement[[getMetadataStandard()]]
@@ -896,7 +899,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                       wrapperAttrs <- nodeValue$attrs
                       if(length(wrapperAttrs)>1) wrapperAttrs <- wrapperAttrs[names(wrapperAttrs)!="gco:nilReason"]
                     }
-					          wrapperAttrs <- c(wrapperAttrs,freeTextAttr)
+                    if(hasLocales && !("xsi:type" %in% names(wrapperAttrs))) wrapperAttrs <- c(wrapperAttrs, freeTextAttr)
                     wrapperNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = wrapperAttrs)
                     if(!nodeValue$isNull){
                       for(child in nodeValueXml.children){
