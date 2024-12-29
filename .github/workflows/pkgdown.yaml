@@ -26,7 +26,7 @@ jobs:
 
       - name: Install dependencies on Linux
         if: runner.os == 'Linux'
-        run: sudo apt-get install -y make libsodium-dev libicu-dev libxml2-dev libssl-dev pandoc librdf0-dev libnode-dev libcurl4-gnutls-dev libmysqlclient-dev libpq-dev zlib1g-dev make libjq-dev libsecret-1-dev libnetcdf-dev libpng-dev libgdal-dev gdal-bin libgeos-dev libproj-dev libsqlite3-dev libudunits2-dev
+        run: sudo apt-get install -y make libsodium-dev libicu-dev libxml2-dev libssl-dev pandoc librdf0-dev libnode-dev libcurl4-gnutls-dev libmysqlclient-dev libpq-dev zlib1g-dev make libjq-dev libsecret-1-dev libnetcdf-dev libpng-dev libgdal-dev gdal-bin libgeos-dev libproj-dev libsqlite3-dev libudunits2-dev libfontconfig1-dev
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::pkgdown, any::XML, sf, units, ncdf4, jqr, jsonld, emld, EML, local::.
