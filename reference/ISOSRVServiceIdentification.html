@@ -54,11 +54,11 @@ ISOSRVServiceIdentification"><!-- mathjax --><script src="https://cdnjs.cloudfla
 
     <div id="format">
     <h2>Format</h2>
-    <p><code>R6Class</code> object.</p>
+    <p><code><a href="https://r6.r-lib.org/reference/R6Class.html" class="external-link">R6Class</a></code> object.</p>
     </div>
     <div id="value">
     <h2>Value</h2>
-    <p>Object of <code>R6Class</code> for modelling an ISO ServiceIdentification</p>
+    <p>Object of <code><a href="https://r6.r-lib.org/reference/R6Class.html" class="external-link">R6Class</a></code> for modelling an ISO ServiceIdentification</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -515,11 +515,8 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co">#encoding</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOSRVServiceIdentification</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml = xml, defaults = defaults):</span> unused argument (defaults = defaults)</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setAbstract</span><span class="op">(</span><span class="st">"abstract"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setPurpose</span><span class="op">(</span><span class="st">"purpose"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#adding a point of contact</span></span></span>
 <span class="r-in"><span>  <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -545,7 +542,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addPointOfContact</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#citation</span></span></span>
 <span class="r-in"><span>  <span class="va">ct</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -563,7 +560,6 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">ct</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setCitation</span><span class="op">(</span><span class="va">ct</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#graphic overview</span></span></span>
 <span class="r-in"><span>  <span class="va">go</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOBrowseGraphic.html">ISOBrowseGraphic</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
@@ -572,13 +568,13 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>    fileType <span class="op">=</span> <span class="st">"image/png"</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addGraphicOverview</span><span class="op">(</span><span class="va">go</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#maintenance information</span></span></span>
 <span class="r-in"><span>  <span class="va">mi</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">mi</span><span class="op">$</span><span class="fu">setMaintenanceFrequency</span><span class="op">(</span><span class="st">"daily"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addResourceMaintenance</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#adding legal constraints</span></span></span>
 <span class="r-in"><span>  <span class="va">lc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOLegalConstraints.html">ISOLegalConstraints</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -597,22 +593,22 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#specific elements to service identification</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setServiceType</span><span class="op">(</span><span class="st">"Fishery data harmonization process"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addServiceTypeVersion</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">orderProcess</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOStandardOrderProcess.html">ISOStandardOrderProcess</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">orderProcess</span><span class="op">$</span><span class="fu">setFees</span><span class="op">(</span><span class="st">"fees"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">orderProcess</span><span class="op">$</span><span class="fu">setPlannedAvailableDateTime</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2017</span>,<span class="fl">7</span>,<span class="fl">5</span>,<span class="fl">12</span>,<span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">orderProcess</span><span class="op">$</span><span class="fu">setOrderingInstructions</span><span class="op">(</span><span class="st">"instructions"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">orderProcess</span><span class="op">$</span><span class="fu">setTurnaround</span><span class="op">(</span><span class="st">"turnaround"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setAccessProperties</span><span class="op">(</span><span class="va">orderProcess</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setRestrictions</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="va">kwds</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOKeywords.html">ISOKeywords</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">kwds</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword1"</span><span class="op">)</span></span></span>
@@ -625,7 +621,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">th</span><span class="op">$</span><span class="fu">addDate</span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">kwds</span><span class="op">$</span><span class="fu">setThesaurusName</span><span class="op">(</span><span class="va">th</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addKeywords</span><span class="op">(</span><span class="va">kwds</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#adding extent</span></span></span>
 <span class="r-in"><span>  <span class="va">extent</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOExtent.html">ISOExtent</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -633,13 +629,13 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">extent</span><span class="op">$</span><span class="fu">addGeographicElement</span><span class="op">(</span><span class="va">bbox</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#coupling type</span></span></span>
 <span class="r-in"><span>  <span class="co">#(here "tight" associated with a particular dataset "my-dataset-identifier")</span></span></span>
 <span class="r-in"><span>  <span class="co">#see ISOCouplingType$values(labels = T) for other values</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setCouplingType</span><span class="op">(</span><span class="st">"tight"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">coupledDataset1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCoupledResource.html">ISOCoupledResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">coupledDataset1</span><span class="op">$</span><span class="fu">setOperationName</span><span class="op">(</span><span class="st">"Rscript"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">coupledDataset1</span><span class="op">$</span><span class="fu">setIdentifier</span><span class="op">(</span><span class="st">"my-dataset-identifier"</span><span class="op">)</span></span></span>
@@ -647,9 +643,9 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">coupledDataset2</span><span class="op">$</span><span class="fu">setOperationName</span><span class="op">(</span><span class="st">"WPS:Execute"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">coupledDataset2</span><span class="op">$</span><span class="fu">setIdentifier</span><span class="op">(</span><span class="st">"my-dataset-identifier"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addCoupledResource</span><span class="op">(</span><span class="va">coupledDataset1</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addCoupledResource</span><span class="op">(</span><span class="va">coupledDataset2</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#add operation metadata 1 (Rscript)</span></span></span>
 <span class="r-in"><span>  <span class="va">scriptOp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOperationMetadata.html">ISOOperationMetadata</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -693,7 +689,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">scriptOp</span><span class="op">$</span><span class="fu">addConnectPoint</span><span class="op">(</span><span class="va">or</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addOperationMetadata</span><span class="op">(</span><span class="va">scriptOp</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="co">#add operation metadata 1 (WPS)</span></span></span>
 <span class="r-in"><span>  <span class="va">wpsOp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOperationMetadata.html">ISOOperationMetadata</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">setOperationName</span><span class="op">(</span><span class="st">"WPS:Execute"</span><span class="op">)</span></span></span>
@@ -747,9 +743,10 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">addConnectPoint</span><span class="op">(</span><span class="va">or2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addOperationMetadata</span><span class="op">(</span><span class="va">wpsOp</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/srv}SV_ServiceIdentification': Missing child element(s). Expected is one of ( {http://www.isotc211.org/2005/gmd}resourceConstraints, {http://www.isotc211.org/2005/gmd}aggregationInfo, {http://www.isotc211.org/2005/srv}serviceType ) at line 1. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOSRVServiceIdentification19139' is INVALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span>   </span></span>
 </code></pre></div>
     </div>

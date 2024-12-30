@@ -54,16 +54,16 @@ ISOCountry"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
 
     <div id="format">
     <h2>Format</h2>
-    <p><code>R6Class</code> object.</p>
+    <p><code><a href="https://r6.r-lib.org/reference/R6Class.html" class="external-link">R6Class</a></code> object.</p>
     </div>
     <div id="value">
     <h2>Value</h2>
-    <p>Object of <code>R6Class</code> for modelling an ISO Country</p>
+    <p>Object of <code><a href="https://r6.r-lib.org/reference/R6Class.html" class="external-link">R6Class</a></code> for modelling an ISO Country</p>
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>- ISO 19139 https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_Country</p>
-<p>- ISO 19115-3 https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_CountryCode</p>
+    <p>- ISO 19139 <a href="https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_Country" class="external-link">https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_Country</a></p>
+<p>- ISO 19115-3 <a href="https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_CountryCode" class="external-link">https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_CountryCode</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -159,10 +159,10 @@ ISOCountry"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co">#possible values</span></span></span>
 <span class="r-in"><span>  <span class="va">values</span> <span class="op">&lt;-</span> <span class="va">ISOCountry</span><span class="op">$</span><span class="fu">values</span><span class="op">(</span>labels <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (element == "MD_ScopeCode") element &lt;- "MX_ScopeCode":</span> the condition has length &gt; 1</span>
 <span class="r-in"><span>  </span></span>
 <span class="r-in"><span>  <span class="co">#some charset</span></span></span>
 <span class="r-in"><span>  <span class="va">charset</span> <span class="op">&lt;-</span> <span class="va">ISOCountry</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>value <span class="op">=</span> <span class="st">"utf8"</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>No ISO 'Country' codelist entry for value 'utf8'</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
