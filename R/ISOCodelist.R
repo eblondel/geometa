@@ -57,7 +57,7 @@ ISOCodelist <- R6Class("ISOCodelist",
        if(pretty){
          entries <- do.call("rbind", lapply(entries, function(entry){
            data.frame(
-             identifier = entry$identifier,
+             identifier = if(is(entry$identifier,"ISOScopedName")) entry$identifier$value else entry$identifier,
              description = entry$description,
              stringsAsFactors = FALSE
            )

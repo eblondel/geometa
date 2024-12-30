@@ -75,11 +75,19 @@ ISOFeatureAttribute <- R6Class("ISOFeatureAttribute",
      },
      
      #'@description Set value measurement unit
-     #'@param uom uom, object of class \link{GMLUnitDefinition}
+     #'@param uom uom, object of class \link{GMLUnitDefinition} (in ISO 19139) 
+     #'or \link{ISOUomIdentifier} / \link{character} (in ISO 19115-3)
      setValueMeasurementUnit = function(uom){
-       if(!is(uom, "GMLUnitDefinition")){
-         stop("The argument should be an object of class 'GMLUnitDefinition")
-       } 
+       switch(getMetadataStandard(),
+        "19139" = {
+          if(!is(uom, "GMLUnitDefinition")){
+            stop("The argument should be an object of class 'GMLUnitDefinition")
+          } 
+        },
+        "19115-3" = {
+          if(!is(uom, "ISOUomIdentifier")) uom = ISOUomIdentifier$new(value = uom)
+        }
+       )
        self$valueMeasurementUnit <- uom
      },
      

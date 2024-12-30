@@ -202,7 +202,7 @@ Set producer
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{producer}}{object of class \link{ISOResponsibleParty}}
+\item{\code{producer}}{object of class \link{ISOResponsibleParty} (in ISO 19139) or \link{ISOResponsibility} (in ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }

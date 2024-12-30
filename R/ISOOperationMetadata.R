@@ -34,7 +34,7 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
     operationDescription = NULL,
     #'@field invocationName invocationName [0..1]: character
     invocationName = NULL,
-    #'@field parameters parameters [0..*]: ISOParameter
+    #'@field parameters parameters [0..*]: ISOSRVParameter
     parameters = list(),
     #'@field connectPoint connectPoint [1..*]: ISOOnlineResource
     connectPoint = list(),
@@ -100,21 +100,21 @@ ISOOperationMetadata <- R6Class("ISOOperationMetadata",
     },
     
     #'@description Adds parameter
-    #'@param parameter object of class \link{ISOParameter}
+    #'@param parameter object of class \link{ISOSRVParameter}
     #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addParameter = function(parameter){
-      if(!is(parameter, "ISOParameter")){
-        stop("The argument value should be an object of class 'ISOParameter'")
+      if(!is(parameter, "ISOSRVParameter")){
+        stop("The argument value should be an object of class 'ISOSRVParameter'")
       }
       return(self$addListElement("parameters", parameter))
     },
     
     #'@description Deletes parameter
-    #'@param parameter object of class \link{ISOParameter}
+    #'@param parameter object of class \link{ISOSRVParameter}
     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delParameter = function(parameter){
-      if(!is(parameter, "ISOParameter")){
-        stop("The argument value should be an object of class 'ISOParameter'")
+      if(!is(parameter, "ISOSRVParameter")){
+        stop("The argument value should be an object of class 'ISOSRVParameter'")
       }
       return(self$delListElement("parameters", parameter))
     },

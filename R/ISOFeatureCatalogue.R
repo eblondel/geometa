@@ -109,11 +109,20 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       },
       
       #'@description Set producer
-      #'@param producer object of class \link{ISOResponsibleParty}
+      #'@param producer object of class \link{ISOResponsibleParty} (in ISO 19139) or \link{ISOResponsibility} (in ISO 19115-3)
       setProducer = function(producer){
-        if(!is(producer,"ISOResponsibleParty")){
-          stop("The argument should be a 'ISOResponsibleParty' object")
-        }
+        switch(getMetadataStandard(),
+          "19139" = {
+            if(!is(producer,"ISOResponsibleParty")){
+              stop("The argument should be a 'ISOResponsibleParty' object")
+            }
+          },
+          "19115-3" = {
+            if(!is(producer,"ISOResponsibility")){
+              stop("The argument should be a 'ISOResponsibility' object")
+            }
+          }
+        )
         self$producer <- producer
       },
       

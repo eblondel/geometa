@@ -72,7 +72,7 @@ ISOProgress$values <- function(labels = FALSE){
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOStatus<- R6Class("ISOStatus",
-   inherit = ISOCodeListValue,
+   inherit = ISOProgress,
    private = list(
      deprecated = TRUE,
      xmlElement = "MD_ProgressCode",
@@ -88,8 +88,8 @@ ISOStatus<- R6Class("ISOStatus",
       #'@param value value
       #'@param description description
       initialize = function(xml = NULL, value, description = NULL){
+        super$initialize(xml = xml, value = value, description = description)
         warnings("Class 'ISOStatus' is deprecated, please use 'ISOProgress' instead!")
-        ISOProgress$new(xml = xml, value = value, description = description)
      }
    )                        
 )

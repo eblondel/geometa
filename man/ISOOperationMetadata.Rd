@@ -44,7 +44,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{invocationName}}{invocationName [0..1]: character}
 
-\item{\code{parameters}}{parameters [0..*]: ISOParameter}
+\item{\code{parameters}}{parameters [0..*]: ISOSRVParameter}
 
 \item{\code{connectPoint}}{connectPoint [1..*]: ISOOnlineResource}
 
@@ -236,7 +236,7 @@ Adds parameter
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{parameter}}{object of class \link{ISOParameter}}
+\item{\code{parameter}}{object of class \link{ISOSRVParameter}}
 }
 \if{html}{\out{</div>}}
 }
@@ -256,7 +256,7 @@ Deletes parameter
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{parameter}}{object of class \link{ISOParameter}}
+\item{\code{parameter}}{object of class \link{ISOSRVParameter}}
 }
 \if{html}{\out{</div>}}
 }

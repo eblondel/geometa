@@ -17,7 +17,7 @@ test_that("encoding",{
   md$setOperationDescription("WPS Execute")
   md$setInvocationName("identifier")
   for(i in 1:3){
-    param <- ISOParameter$new()
+    param <- ISOSRVParameter$new()
     param$setName(sprintf("name%s",i), "xs:string")
     param$setDirection("in")
     param$setDescription(sprintf("description%s",i))
@@ -26,7 +26,7 @@ test_that("encoding",{
     param$setValueType("xs:string")
     md$addParameter(param)
   }
-  outParam <-ISOParameter$new()
+  outParam <-ISOSRVParameter$new()
   outParam$setName("name", "xs:string")
   outParam$setDirection("in")
   outParam$setDescription("description")

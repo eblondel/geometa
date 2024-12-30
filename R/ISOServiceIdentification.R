@@ -100,6 +100,63 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
    )                        
 )
 
+#' ISOServiceIdentification19139
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO service identification
+#' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification in ISO 19139
+#' @format \code{\link{R6Class}} object.
+ISOServiceIdentification19139 <- R6Class("ISOServiceIdentification19139",
+  inherit = ISOIdentification19139,
+  private = list(
+    xmlElement = "MD_ServiceIdentification",
+    xmlNamespacePrefix = "GMD"
+  ),
+  public = list(
+    
+    #'@description Initializes object
+    #'@param xml object of class \link{XMLInternalNode-class}
+    initialize = function(xml = NULL){
+      defaults <- list(characterSet = ISOCharacterSet$new(value = "utf8"))
+      super$initialize(xml = xml, defaults = defaults)
+    }
+  )                        
+)
+
+#' ISOServiceIdentification19115_3
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO service identification
+#' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification in ISO 19115-3
+#' @format \code{\link{R6Class}} object.
+ISOServiceIdentification19115_3 <- R6Class("ISOServiceIdentification19115_3",
+   inherit = ISOIdentification19115_3,
+   private = list(
+     xmlElement = "MD_ServiceIdentification",
+     xmlNamespacePrefix = "GMD"
+   ),
+   public = list(
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     initialize = function(xml = NULL){
+       super$initialize(xml = xml)
+     }
+   )                        
+)
+
+ISOServiceIdentification$new = function(xml = NULL){
+  self <- switch(getMetadataStandard(),
+                 "19139" = ISOServiceIdentification19139$new(xml = xml),
+                 "19115-3" = ISOServiceIdentification19115_3$new(xml = xml)
+  )
+  return(self)
+}
+
 #' ISOSRVServiceIdentification
 #'
 #' @docType class
@@ -492,3 +549,60 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
    
   )                        
 )
+
+#' ISOSRVServiceIdentification19139
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO service identification
+#' @return Object of \code{\link{R6Class}} for modelling an ISO SRV ServiceIdentification in ISO 19139
+#' @format \code{\link{R6Class}} object.
+ISOSRVServiceIdentification19139 <- R6Class("ISOSRVServiceIdentification19139",
+   inherit = ISOServiceIdentification19139,
+   private = list(
+     xmlElement = "SV_ServiceIdentification",
+     xmlNamespacePrefix = "SRV"
+   ),
+   public = list(
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     initialize = function(xml = NULL){
+       defaults <- list(characterSet = ISOCharacterSet$new(value = "utf8"))
+       super$initialize(xml = xml, defaults = defaults)
+     }
+   )                        
+)
+
+#' ISOSRVServiceIdentification19115_3
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#' @keywords ISO service identification
+#' @return Object of \code{\link{R6Class}} for modelling an ISO SRV ServiceIdentification in ISO 19115-3
+#' @format \code{\link{R6Class}} object.
+ISOSRVServiceIdentification19115_3 <- R6Class("ISOSRVServiceIdentification19115_3",
+   inherit = ISOServiceIdentification19115_3,
+   private = list(
+     xmlElement = "SV_ServiceIdentification",
+     xmlNamespacePrefix = "SRV"
+   ),
+   public = list(
+     
+     #'@description Initializes object
+     #'@param xml object of class \link{XMLInternalNode-class}
+     initialize = function(xml = NULL){
+       super$initialize(xml = xml)
+     }
+   )                        
+)
+
+ISOSRVServiceIdentification$new = function(xml = NULL){
+  self <- switch(getMetadataStandard(),
+     "19139" = ISOSRVServiceIdentification19139$new(xml = xml),
+     "19115-3" = ISOSRVServiceIdentification19115_3$new(xml = xml)
+  )
+  return(self)
+}

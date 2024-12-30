@@ -24,7 +24,7 @@ test_that("encoding",{
   
   md$setCheckPointAvailability(TRUE)
   md$setCheckPointDescription("string")
-  pt <- st_point(c(1,1)) 
+  pt <- sf::st_point(c(1,1)) 
   md$setCenterPoint(sfg = pt)
   md$setPixelOrientation("center")
   
@@ -35,5 +35,5 @@ test_that("encoding",{
   md2 <- ISOGeorectified$new(xml = xml)
   xml2 <- md2$encode()
   
-  expect_true(ISOAbstractObject$compare(md, md2))
+  expect_true(ISOAbstractObject$compare(md, md2, method = "xml"))
 })

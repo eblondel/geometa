@@ -37,7 +37,7 @@ ISOSRVParameter <- R6Class("ISOSRVParameter",
        
        #'@field name name [1..1]: character
        name = NULL,
-       #'@field direction direction [0..1]: ISOParameterDirection
+       #'@field direction direction [0..1]: ISOParameterDirection or character
        direction = NULL,
        #'@field description description [0..1]: character
        description = NULL,
@@ -71,11 +71,11 @@ ISOSRVParameter <- R6Class("ISOSRVParameter",
        },
        
        #'@description Set direction
-       #'@param direction object of class \link{ISOParameterDirection} or \link{character}
-       #'  among values returned by \code{ISOParameterDirection$values()}
+       #'@param direction object of class \link{ISOSRVParameterDirection} or \link{character}
+       #'  among values returned by \code{ISOSRVParameterDirection$values()}
        setDirection = function(direction){
-         if(!is(direction, "ISOParameterDirection")){
-           direction <- ISOParameterDirection$new(value = direction)
+         if(!is(direction, "ISOSRVParameterDirection")){
+           direction <- ISOSRVParameterDirection$new(value = direction)
          }
          self$direction <- direction
        },

@@ -43,7 +43,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \describe{
 \item{\code{name}}{name [1..1]: character}
 
-\item{\code{direction}}{direction [0..1]: ISOParameterDirection}
+\item{\code{direction}}{direction [0..1]: ISOParameterDirection or character}
 
 \item{\code{description}}{description [0..1]: character}
 
@@ -153,8 +153,8 @@ Set direction
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{direction}}{object of class \link{ISOParameterDirection} or \link{character}
-among values returned by \code{ISOParameterDirection$values()}}
+\item{\code{direction}}{object of class \link{ISOSRVParameterDirection} or \link{character}
+among values returned by \code{ISOSRVParameterDirection$values()}}
 }
 \if{html}{\out{</div>}}
 }

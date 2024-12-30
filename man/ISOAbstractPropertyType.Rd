@@ -37,6 +37,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{cardinality}}{cardinality [1..1]: ISOMultiplicity}
 
+\item{\code{designation}}{designatio [0..1]: character (=> ISO 19115-3)}
+
 \item{\code{definitionReference}}{definitionReference [0..1]}
 
 \item{\code{featureCatalogue}}{featureCatalogue [0..1]}
@@ -50,6 +52,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOAbstractPropertyType-setMemberName}{\code{ISOAbstractPropertyType$setMemberName()}}
 \item \href{#method-ISOAbstractPropertyType-setDefinition}{\code{ISOAbstractPropertyType$setDefinition()}}
 \item \href{#method-ISOAbstractPropertyType-setCardinality}{\code{ISOAbstractPropertyType$setCardinality()}}
+\item \href{#method-ISOAbstractPropertyType-setDesignation}{\code{ISOAbstractPropertyType$setDesignation()}}
 \item \href{#method-ISOAbstractPropertyType-setDefinitionReference}{\code{ISOAbstractPropertyType$setDefinitionReference()}}
 \item \href{#method-ISOAbstractPropertyType-setFeatureCatalogue}{\code{ISOAbstractPropertyType$setFeatureCatalogue()}}
 \item \href{#method-ISOAbstractPropertyType-clone}{\code{ISOAbstractPropertyType$clone()}}
@@ -124,7 +127,8 @@ Set member name
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{memberName}}{member name object of class \link{character} or \link{ISOLocalName}}
+\item{\code{memberName}}{member name object of class \link{character} (in ISO 19139 and 19115-3) 
+or \link{ISOLocalName} (in ISO 19139 only)}
 }
 \if{html}{\out{</div>}}
 }
@@ -163,6 +167,25 @@ Set cardinality
 \item{\code{lower}}{lower}
 
 \item{\code{upper}}{upper}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractPropertyType-setDesignation"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractPropertyType-setDesignation}{}}}
+\subsection{Method \code{setDesignation()}}{
+Set designation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractPropertyType$setDesignation(designation, locales = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{designation}}{designation}
+
+\item{\code{locales}}{locale designations, as \link{list}}
 }
 \if{html}{\out{</div>}}
 }

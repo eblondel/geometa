@@ -22,4 +22,8 @@
   <import namespace="http://standards.iso.org/iso/19115/-3/gmw/1.0" schemaLocation="../../../../19115/-3/gmw/1.0/gmw.xsd"/>
   <import namespace="http://standards.iso.org/iso/19115/-3/mds/2.0" schemaLocation="../../../../19115/-3/mds/2.0/mds.xsd"/>
   
+  <!-- @eblondel support for GFC -->
+  <import namespace="https://standards.iso.org/iso/19110/gfc/1.1" schemaLocation="../../../../19110/gfc/1.1/gfc.xsd"/>
+  
+  
 </schema>

@@ -167,7 +167,7 @@ ISOCodeListValue$values = function(class, labels = FALSE){
   }
   if(element == "MD_ScopeCode") element <- "MX_ScopeCode"
   cl = getISOCodelist(element)
-  out = sapply(cl$codeEntry, function(x){x$identifier$value})
+  out = sapply(cl$codeEntry, function(x){if(is(x$identifier, "ISOScopedName")) x$identifier$value else x$identifier})
   if(labels){
     out = data.frame(
       out,

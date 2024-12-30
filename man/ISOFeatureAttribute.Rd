@@ -120,6 +120,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setCardinality"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setCardinality'><code>geometa::ISOAbstractPropertyType$setCardinality()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setDefinition"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setDefinition'><code>geometa::ISOAbstractPropertyType$setDefinition()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setDefinitionReference"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setDefinitionReference'><code>geometa::ISOAbstractPropertyType$setDefinitionReference()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setDesignation"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setDesignation'><code>geometa::ISOAbstractPropertyType$setDesignation()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setFeatureCatalogue"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setFeatureCatalogue'><code>geometa::ISOAbstractPropertyType$setFeatureCatalogue()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractPropertyType" data-id="setMemberName"><a href='../../geometa/html/ISOAbstractPropertyType.html#method-ISOAbstractPropertyType-setMemberName'><code>geometa::ISOAbstractPropertyType$setMemberName()</code></a></span></li>
 </ul>
@@ -173,7 +174,8 @@ Set value measurement unit
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{uom}}{uom, object of class \link{GMLUnitDefinition}}
+\item{\code{uom}}{uom, object of class \link{GMLUnitDefinition} (in ISO 19139) 
+or \link{ISOUomIdentifier} / \link{character} (in ISO 19115-3)}
 }
 \if{html}{\out{</div>}}
 }

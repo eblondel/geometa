@@ -1,17 +1,17 @@
-# test_ISOParameter.R
+# test_ISOSRVParameter.R
 # Author: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 #
-# Description: Unit tests for ISOParameter.R
+# Description: Unit tests for ISOSRVParameter
 #=======================
 require(geometa, quietly = TRUE)
 require(testthat)
 
-context("ISOParameter")
+context("ISOSRVParameter")
 
 test_that("encoding",{
   testthat::skip_on_cran()
   #encoding
-  md <- ISOParameter$new()
+  md <- ISOSRVParameter$new()
   attrType <- ISOTypeName$new()
   attrType$setName("test")
   md$setName("name", attrType)
@@ -25,7 +25,7 @@ test_that("encoding",{
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  md2 <- ISOParameter$new(xml = xml)
+  md2 <- ISOSRVParameter$new(xml = xml)
   xml2 <- md2$encode()
   
   expect_true(ISOAbstractObject$compare(md, md2))
@@ -35,7 +35,7 @@ test_that("encoding",{
 test_that("encoding - i18n",{
   testthat::skip_on_cran()
   #encoding
-  md <- ISOParameter$new()
+  md <- ISOSRVParameter$new()
   attrType <- ISOTypeName$new()
   attrType$setName(
     "name",
@@ -68,7 +68,7 @@ test_that("encoding - i18n",{
   expect_is(xml, "XMLInternalNode")
   
   #decoding
-  md2 <- ISOParameter$new(xml = xml)
+  md2 <- ISOSRVParameter$new(xml = xml)
   xml2 <- md2$encode()
   
   expect_true(ISOAbstractObject$compare(md, md2))
