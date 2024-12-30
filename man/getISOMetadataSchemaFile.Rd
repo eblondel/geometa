@@ -4,8 +4,18 @@
 \alias{getISOMetadataSchemaFile}
 \title{getISOMetadataSchemaFile}
 \usage{
-getISOMetadataSchemaFile(version = "19139")
+getISOMetadataSchemaFile(version)
+}
+\arguments{
+\item{version}{the schema version}
+}
+\value{
+the internal path to the schema file
 }
 \description{
-getISOMetadataSchemaFile
+\code{getISOMetadataSchemaFile} allows to get the schema file
+in \pkg{geometa}
+}
+\author{
+Emmanuel Blondel, \email{emmanuel.blondel1@gmail.com}
 }

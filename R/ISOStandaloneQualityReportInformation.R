@@ -36,7 +36,7 @@ ISOStandaloneQualityReportInformation <- R6Class("ISOStandaloneQualityReportInfo
     },
     
     #'@description set Report reference
-    #'@param reportReference object of class \link{ISOCiation}
+    #'@param reportReference object of class \link{ISOCitation}
     setReportReference = function(reportReference){
       if(!is(reportReference, "ISOCitation")){
         stop("The argument should be an object of class 'ISOCitation'")

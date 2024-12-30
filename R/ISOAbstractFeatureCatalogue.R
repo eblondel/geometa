@@ -1,4 +1,4 @@
-#' ISoAbstractFeatureCatalogue
+#' ISOAbstractFeatureCatalogue
 #'
 #' @docType class
 #' @importFrom R6 R6Class
@@ -12,7 +12,7 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISoAbstractFeatureCatalogue <- R6Class("ISoAbstractFeatureCatalogue",
+ISOAbstractFeatureCatalogue <- R6Class("ISOAbstractFeatureCatalogue",
    inherit = ISOAbstractCatalogue,
    private = list(
      xmlElement = "Abstract_FeatureCatalogue",

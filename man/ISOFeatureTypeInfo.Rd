@@ -110,7 +110,7 @@ Set feature type Name
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{name}}{object of class \link{ISOGenericName} or \link{character}}
+\item{\code{name}}{object of class \link{ISOAbstractGenericName} or \link{character}}
 }
 \if{html}{\out{</div>}}
 }

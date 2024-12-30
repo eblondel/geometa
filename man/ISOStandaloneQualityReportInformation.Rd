@@ -115,7 +115,7 @@ set Report reference
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{reportReference}}{object of class \link{ISOCiation}}
+\item{\code{reportReference}}{object of class \link{ISOCitation}}
 }
 \if{html}{\out{</div>}}
 }

@@ -5,7 +5,7 @@
 \alias{geometa_coverae}
 \title{geometa_coverage}
 \usage{
-geometa_coverage()
+geometa_coverage(version)
 }
 \arguments{
 \item{version}{main metadata standard version}

@@ -6,6 +6,9 @@
 \usage{
 getISOMetadataSchemas(version)
 }
+\arguments{
+\item{version}{the schema version}
+}
 \description{
 \code{getISOMetadataSchemas} gets the schemas registered in \pkg{geometa}
 }
@@ -13,7 +16,4 @@ getISOMetadataSchemas(version)
             
   getISOMetadataSchemas(version = "19115-3")
 
-}
-\author{
-Emmanuel Blondel, \email{emmanuel.blondel1@gmail.com}
 }

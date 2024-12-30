@@ -34,7 +34,7 @@ ISOFeatureTypeInfo <- R6Class("ISOFeatureTypeInfo",
      },
      
      #'@description Set feature type Name
-     #'@param name object of class \link{ISOGenericName} or \link{character}
+     #'@param name object of class \link{ISOAbstractGenericName} or \link{character}
      setFeatureTypeName = function(name){
        if(!is(name, "ISOAbstractGenericName")){
          name = ISOAbstractGenericName$new(value = name)

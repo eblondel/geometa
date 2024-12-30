@@ -4,8 +4,16 @@
 \alias{setISOMetadataSchemas}
 \title{setISOMetadataSchemas}
 \usage{
-setISOMetadataSchemas(version = "19139")
+setISOMetadataSchemas(version)
+}
+\arguments{
+\item{version}{the schema version}
 }
 \description{
-setISOMetadataSchemas
+\code{setISOMetadataSchemas} register the schemas in \pkg{geometa}
+}
+\examples{
+            
+  setISOMetadataSchemas(version = "19115-3")
+
 }
