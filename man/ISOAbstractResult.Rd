@@ -5,10 +5,10 @@
 \alias{ISOAbstractResult}
 \title{ISOAbstractResult}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO Result
+Object of \code{\link[R6]{R6Class}} for modelling an ISO Result
 }
 \description{
 ISOAbstractResult
@@ -19,9 +19,9 @@ ISOAbstractResult
 abstract class
 }
 \references{
-- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_Result}
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_Result}
 
-  - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Result}
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Result}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

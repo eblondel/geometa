@@ -5,10 +5,10 @@
 \alias{ISOMediumFormat}
 \title{ISOMediumFormat}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISOMediumFormat
+Object of \code{\link[R6]{R6Class}} for modelling an ISOMediumFormat
 }
 \description{
 ISOMediumFormat

@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO imagery PlatformPass
-#' @return Object of \code{\link{R6Class}} for modelling an ISO imagery PlatformPass
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO imagery PlatformPass
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
 #'    md <- ISOImageryPlatformPass$new()

@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO GML Curve
-#' @return Object of \code{\link{R6Class}} for modelling an GML abstract curve
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an GML abstract curve
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @note Experimental
 #' 

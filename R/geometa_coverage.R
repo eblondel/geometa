@@ -226,7 +226,7 @@ get_schema_elements <- function(url, verbose = FALSE, schemaCollector = new.env(
 #' @note This function is used as Quality Assurance indicator to assess the percentage of completeness
 #' of ISO/OGC standards in \pkg{geometa}.
 #'
-#' @usage geometa_coverage()
+#' @usage geometa_coverage(version)
 #' 
 #' @param version main metadata standard version
 #' @return an object of class \code{data.frame}

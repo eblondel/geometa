@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO OnLineFunction
-#' @return Object of \code{\link{R6Class}} for modelling an ISO OnLineFunction
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO OnLineFunction
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #possible values
@@ -15,9 +15,9 @@
 #'   download <- ISOOnLineFunction$new(value = "download")
 #'   
 #' @references 
-#'  - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_OnlineFunctionCode}
+#'  - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_OnlineFunctionCode}
 #'  
-#'  - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_OnlineFunctionCode}
+#'  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_OnlineFunctionCode}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

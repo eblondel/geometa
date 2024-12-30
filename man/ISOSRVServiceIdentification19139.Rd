@@ -5,10 +5,10 @@
 \alias{ISOSRVServiceIdentification19139}
 \title{ISOSRVServiceIdentification19139}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO SRV ServiceIdentification in ISO 19139
+Object of \code{\link[R6]{R6Class}} for modelling an ISO SRV ServiceIdentification in ISO 19139
 }
 \description{
 ISOSRVServiceIdentification19139

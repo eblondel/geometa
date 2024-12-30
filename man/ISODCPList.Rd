@@ -5,10 +5,10 @@
 \alias{ISODCPList}
 \title{ISODCPList}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO DCPList
+Object of \code{\link[R6]{R6Class}} for modelling an ISO DCPList
 }
 \description{
 ISODCPList
@@ -24,9 +24,9 @@ ISODCPList
   
 }
 \references{
-- ISO 19139 \link{https://schemas.isotc211.org/19119/-/srv/1.0/srv/#element_DCPList}
+- ISO 19139 \url{https://schemas.isotc211.org/19119/-/srv/1.0/srv/#element_DCPList}
  
- - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_DCPList}
+ - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_DCPList}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

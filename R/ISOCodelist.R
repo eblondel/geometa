@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO codelist
-#' @return Object of \code{\link{R6Class}} for modelling an ISO codelist
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO codelist
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @note Class used by geometa internal codelist XML decoder/encoder
 #' 
@@ -43,7 +43,7 @@ ISOCodelist <- R6Class("ISOCodelist",
        super$initialize(xml = xml)
        
        #legacy
-       if(!is.null(refFile) && !is.null(id)){
+       if(!is.null(refFile) & !is.null(id) & length(self$codeEntry)==0){
          self$refFile <- refFile
          self$parse(refFile, id)
        }
@@ -162,11 +162,11 @@ ISOCodelist <- R6Class("ISOCodelist",
            return(entry.df)
          }))
          colnames(codeEntry) <- c("value", "name", "description")
-         # self$codeEntry = lapply(1:nrow(codeEntry), function(i){
-         #   clv = ISOCodelistValue$new()
-         #   clv$identifier = codeEntry[i,]$value; clv$description = codeEntry[i,]$description;
-         #   return(clv)
-         # })
+         self$codeEntry = lapply(1:nrow(codeEntry), function(i){
+           clv = ISOCodelistValue$new()
+           clv$identifier = codeEntry[i,]$value; clv$description = codeEntry[i,]$description;
+           return(clv)
+         })
        }
      }
    )                      

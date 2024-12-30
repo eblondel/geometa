@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO InheritanceRelation
-#' @return Object of \code{\link{R6Class}} for modelling an ISOInheritanceRelation
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOInheritanceRelation
+#' @format \code{\link[R6]{R6Class}} object.
 #'  
 #' @references 
 #'   ISO 19110:2005 Methodology for Feature cataloguing

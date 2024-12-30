@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO abstract party
-#' @return Object of \code{\link{R6Class}} for modelling an ISO abstract Party
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract Party
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   ISO 19115-1:2014 Geographic information — Metadata Part 1: Fundamentals

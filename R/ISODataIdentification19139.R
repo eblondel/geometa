@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data identification
-#' @return Object of \code{\link{R6Class}} for modelling an ISO DataIdentification in ISO 19139
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO DataIdentification in ISO 19139
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
 #'    #create dataIdentification

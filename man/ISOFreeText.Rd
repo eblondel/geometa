@@ -5,10 +5,10 @@
 \alias{ISOFreeText}
 \title{ISOFreeText}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO FreeText
+Object of \code{\link[R6]{R6Class}} for modelling an ISO FreeText
 }
 \description{
 ISOFreeText
@@ -20,9 +20,9 @@ ISOFreeText
   
 }
 \references{
-- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_PT_FreeText}
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_PT_FreeText}
  
- - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_PT_FreeText}
+ - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_PT_FreeText}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

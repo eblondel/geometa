@@ -4,13 +4,13 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality abstract positional accuracy
-#' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractPositionalAccuracy
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOAbstractPositionalAccuracy
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_PositionalAccuracy}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_PositionalAccuracy}{element_AbstractDQ_PositionalAccuracy}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_PositionalAccuracy}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_PositionalAccuracy}{element_AbstractDQ_PositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -32,8 +32,8 @@ ISOAbstractPositionalAccuracy <- R6Class("ISOAbstractPositionalAccuracy",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality absolute external positional accuracy
-#' @return Object of \code{\link{R6Class}} for modelling an ISOAbsoluteExternalPositionalAccuracy
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOAbsoluteExternalPositionalAccuracy
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #encoding
@@ -61,9 +61,9 @@ ISOAbstractPositionalAccuracy <- R6Class("ISOAbstractPositionalAccuracy",
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_AbsoluteExternalPositionalAccuracy}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_AbsoluteExternalPositionalAccuracy}{element_DQ_AbsoluteExternalPositionalAccuracy}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_AbsoluteExternalPositionalAccuracy}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_AbsoluteExternalPositionalAccuracy}{element_DQ_AbsoluteExternalPositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -85,8 +85,8 @@ ISOAbsoluteExternalPositionalAccuracy <- R6Class("ISOAbsoluteExternalPositionalA
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality relative internal positional accuracy
-#' @return Object of \code{\link{R6Class}} for modelling an ISORelativeInternalPositionalAccuracy
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISORelativeInternalPositionalAccuracy
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #encoding
@@ -114,9 +114,9 @@ ISOAbsoluteExternalPositionalAccuracy <- R6Class("ISOAbsoluteExternalPositionalA
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_RelativeInternalPositionalAccuracy}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_RelativeInternalPositionalAccuracy}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_RelativeInternalPositionalAccuracy}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_RelativeInternalPositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -138,8 +138,8 @@ ISORelativeInternalPositionalAccuracy <- R6Class("ISORelativeInternalPositionalA
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality gridded data positional accuracy
-#' @return Object of \code{\link{R6Class}} for modelling an ISOGriddedDataPositionalAccuracy
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOGriddedDataPositionalAccuracy
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #encoding
@@ -167,9 +167,9 @@ ISORelativeInternalPositionalAccuracy <- R6Class("ISORelativeInternalPositionalA
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_GriddedDataPositionalAccuracy}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_GriddedDataPositionalAccuracy}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_GriddedDataPositionalAccuracy}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_GriddedDataPositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

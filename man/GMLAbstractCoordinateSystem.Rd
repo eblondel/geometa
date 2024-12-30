@@ -5,10 +5,10 @@
 \alias{GMLAbstractCoordinateSystem}
 \title{GMLAbstractCoordinateSystem}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an GMLAbstractCoordinateSystem
+Object of \code{\link[R6]{R6Class}} for modelling an GMLAbstractCoordinateSystem
 }
 \description{
 GMLAbstractCoordinateSystem

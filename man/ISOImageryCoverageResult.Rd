@@ -5,10 +5,10 @@
 \alias{ISOImageryCoverageResult}
 \title{ISOImageryCoverageResult}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO imagery coverage result
+Object of \code{\link[R6]{R6Class}} for modelling an ISO imagery coverage result
 }
 \description{
 ISOImageryCoverageResult
@@ -18,7 +18,7 @@ ISOImageryCoverageResult
 \references{
 - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_QE_CoverageResult}
   
-  - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_QE_CoverageResult}
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_QE_CoverageResult}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

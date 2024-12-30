@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO abstract meta quality
-#' @return Object of \code{\link{R6Class}} for modelling an ISO abstract meta quality
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract meta quality
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Metaquality}
@@ -60,8 +60,8 @@ ISOAbstractMetaquality <- R6Class("ISOAbstractMetaquality",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO confidence
-#' @return Object of \code{\link{R6Class}} for modelling an ISO confidence
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO confidence
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_Confidence}
@@ -92,8 +92,8 @@ ISOConfidence <- R6Class("ISOConfidence",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO homogeneity
-#' @return Object of \code{\link{R6Class}} for modelling an ISO homogeneity
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO homogeneity
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_Homogeneity}
@@ -124,8 +124,8 @@ ISOHomogeneity <- R6Class("ISOHomogeneity",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO representativity
-#' @return Object of \code{\link{R6Class}} for modelling an ISO representativity
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO representativity
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_Representativity}

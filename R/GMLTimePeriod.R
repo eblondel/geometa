@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO time period
-#' @return Object of \code{\link{R6Class}} for modelling an GMLTimePeriod
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an GMLTimePeriod
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   start <- ISOdate(2000, 1, 12, 12, 59, 45)

@@ -5,10 +5,10 @@
 \alias{ISOGeographicExtent}
 \title{ISOGeographicExtent}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO abstract geographicExtent
+Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract geographicExtent
 }
 \description{
 ISOGeographicExtent
@@ -19,9 +19,9 @@ ISOGeographicExtent
 abstract class
 }
 \references{
-- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractEX_GeographicExtent}
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractEX_GeographicExtent}
  
- - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/gex/1.0/gex/#element_AbstractEX_GeographicExtent}
+ - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gex/1.0/gex/#element_AbstractEX_GeographicExtent}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

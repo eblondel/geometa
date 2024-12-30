@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO typename
-#' @return Object of \code{\link{R6Class}} for modelling an ISOTypeName
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOTypeName
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   typeName <- ISOTypeName$new(aName = "name")

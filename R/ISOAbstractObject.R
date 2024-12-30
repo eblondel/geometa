@@ -14,8 +14,8 @@
 #' @import crayon
 #' @export
 #' @keywords ISO metadata element
-#' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO Metadata Element
+#' @format \code{\link[R6]{R6Class}} object.
 #'
 #' @section Static Methods:
 #' \describe{
@@ -1256,7 +1256,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     },
     
     #'@description Get class
-    #'@return the corresponding class, as \link{R6Class} reference object generator
+    #'@return the corresponding class, as \link[R6]{R6Class} reference object generator
     getClass = function(){
       class <- try(eval(parse(text = self$getClassName())), silent = TRUE)
       level <- 1L
@@ -1272,7 +1272,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #'@description Wraps base element
     #'@param field field name
     #'@param fieldObj field object
-    #'@param an object of class \link{R6Class}
+    #'@param an object of class \link[R6]{R6Class}
     wrapBaseElement = function(field, fieldObj){
       dataType <- class(fieldObj)[1]
       
@@ -1433,7 +1433,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     
     #'@description Indicates the class a field inherits from
     #'@param field field
-    #'@return an object generator of class \link{R6Class}
+    #'@return an object generator of class \link[R6]{R6Class}
     isFieldInheritedFrom = function(field){
       parentClass <- NULL
       inherited <- !(field %in% names(self$getClass()$public_fields))

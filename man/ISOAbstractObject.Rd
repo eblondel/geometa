@@ -5,10 +5,10 @@
 \alias{ISOAbstractObject}
 \title{ISOAbstractObject}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO Metadata Element
+Object of \code{\link[R6]{R6Class}} for modelling an ISO Metadata Element
 }
 \description{
 ISOAbstractObject
@@ -387,7 +387,7 @@ Get class
 }
 
 \subsection{Returns}{
-the corresponding class, as \link{R6Class} reference object generator
+the corresponding class, as \link[R6]{R6Class} reference object generator
 }
 }
 \if{html}{\out{<hr>}}
@@ -406,7 +406,7 @@ Wraps base element
 
 \item{\code{fieldObj}}{field object}
 
-\item{\code{an}}{object of class \link{R6Class}}
+\item{\code{an}}{object of class \link[R6]{R6Class}}
 }
 \if{html}{\out{</div>}}
 }
@@ -668,7 +668,7 @@ Indicates the class a field inherits from
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-an object generator of class \link{R6Class}
+an object generator of class \link[R6]{R6Class}
 }
 }
 \if{html}{\out{<hr>}}

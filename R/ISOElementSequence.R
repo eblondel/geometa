@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO record
-#' @return Object of \code{\link{R6Class}} for modelling an ISOElementSequence
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOElementSequence
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @note This class is used internally by geometa to deal with simple type not
 #' handled by proper class element. e.g. \code{name} property of \code{ISOParameter}

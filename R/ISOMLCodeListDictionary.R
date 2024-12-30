@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO code element
-#' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata codelist dictionary
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO Metadata codelist dictionary
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @note Abstract ISO codelist class used internally by geometa
 #' 

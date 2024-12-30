@@ -5,10 +5,10 @@
 \alias{ISOSensor}
 \title{ISOSensor}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISOSensor
+Object of \code{\link[R6]{R6Class}} for modelling an ISOSensor
 }
 \description{
 ISOSensor

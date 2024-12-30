@@ -4,13 +4,13 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality abstract completeness
-#' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractCompleteness
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOAbstractCompleteness
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_Completeness}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_Completeness}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Completeness}  
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Completeness}  
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -32,8 +32,8 @@ ISOAbstractCompleteness <- R6Class("ISOAbstractCompleteness",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality completeness omission
-#' @return Object of \code{\link{R6Class}} for modelling an ISOCompletenessOmission
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOCompletenessOmission
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #encoding
@@ -61,9 +61,9 @@ ISOAbstractCompleteness <- R6Class("ISOAbstractCompleteness",
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_CompletenessOmission}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_CompletenessOmission}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_CompletenessOmission} 
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_CompletenessOmission} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -85,8 +85,8 @@ ISOCompletenessOmission <- R6Class("ISOCompletenessOmission",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality completeness commission
-#' @return Object of \code{\link{R6Class}} for modelling an ISOCompletenessCommission
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOCompletenessCommission
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #encoding
@@ -114,9 +114,9 @@ ISOCompletenessOmission <- R6Class("ISOCompletenessOmission",
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_CompletenessCommission}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_CompletenessCommission}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_CompletenessCommission} 
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_CompletenessCommission} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

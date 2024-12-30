@@ -5,10 +5,10 @@
 \alias{ISOAbstractRSReferenceSystem}
 \title{ISOAbstractRSReferenceSystem}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO abstract RS Reference system
+Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract RS Reference system
 }
 \description{
 ISOAbstractRSReferenceSystem

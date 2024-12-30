@@ -5,10 +5,10 @@
 \alias{pivot_converter}
 \title{pivot_converter}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling a mapping format converter
+Object of \code{\link[R6]{R6Class}} for modelling a mapping format converter
 }
 \description{
 pivot_converter

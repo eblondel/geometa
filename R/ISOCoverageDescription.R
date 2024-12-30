@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO coverage description
-#' @return Object of \code{\link{R6Class}} for modelling an ISOCoverageDescription
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOCoverageDescription
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
 #'    #create coverage description

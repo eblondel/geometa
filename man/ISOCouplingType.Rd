@@ -5,10 +5,10 @@
 \alias{ISOCouplingType}
 \title{ISOCouplingType}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISOCouplingType
+Object of \code{\link[R6]{R6Class}} for modelling an ISOCouplingType
 }
 \description{
 ISOCouplingType
@@ -24,9 +24,9 @@ ISOCouplingType
 
 }
 \references{
-- ISO 19139 \link{https://schemas.isotc211.org/19119/-/srv/1.0/srv/#element_SV_CouplingType}
+- ISO 19139 \url{https://schemas.isotc211.org/19119/-/srv/1.0/srv/#element_SV_CouplingType}
  
- - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_CouplingType}
+ - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_CouplingType}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

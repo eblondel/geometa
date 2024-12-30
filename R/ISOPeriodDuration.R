@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO period duration
-#' @return Object of \code{\link{R6Class}} for modelling an ISO PeriodDuration
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO PeriodDuration
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @references
 #'  - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gts/1.0/gts/#element_TM_PeriodDuration}

@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO code element
-#' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata codelist element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO Metadata codelist element
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @note Abstract ISO codelist class used internally by geometa
 #' 
@@ -160,12 +160,13 @@ ISOCodeListValue$values = function(class, labels = FALSE){
   element <- class$private_fields$xmlElement
   if(is.list(element)){
    if(getMetadataStandard() %in% names(element)){
-     element[[getMetadataStandard()]]
+     element = element[[getMetadataStandard()]]
    }else{
-     element[[1]]
+     element = element[[1]]
    }
   }
-  if(element == "MD_ScopeCode") element <- "MX_ScopeCode"
+  if(element == "MD_ScopeCode") element <- "MX_ScopeCode" 
+  if(element == "CountryCode") element <- "Country"
   cl = getISOCodelist(element)
   out = sapply(cl$codeEntry, function(x){if(is(x$identifier, "ISOScopedName")) x$identifier$value else x$identifier})
   if(labels){

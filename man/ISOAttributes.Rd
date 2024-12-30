@@ -5,10 +5,10 @@
 \alias{ISOAttributes}
 \title{ISOAttributes}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Spatial object of \code{\link{R6Class}} for modelling a list of ISO xml attributes
+Spatial object of \code{\link[R6]{R6Class}} for modelling a list of ISO xml attributes
 }
 \description{
 ISOAttributes

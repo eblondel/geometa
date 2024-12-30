@@ -5,10 +5,10 @@
 \alias{ISOAbstractApplicationSchemaInformation}
 \title{ISOAbstractApplicationSchemaInformation}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO ApplicationSchemaInformation
+Object of \code{\link[R6]{R6Class}} for modelling an ISO ApplicationSchemaInformation
 }
 \description{
 ISOAbstractApplicationSchemaInformation
@@ -16,7 +16,7 @@ ISOAbstractApplicationSchemaInformation
 ISOAbstractApplicationSchemaInformation
 }
 \references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_ApplicationSchemaInformation}
+- ISO 19115-3 \href{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_ApplicationSchemaInformation}{element_Abstract_ApplicationSchemaInformation}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

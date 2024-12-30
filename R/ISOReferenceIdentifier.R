@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO reference identifier
-#' @return Object of \code{\link{R6Class}} for modelling an ISO ReferenceIdentifier
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO ReferenceIdentifier
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   md <- ISOReferenceIdentifier$new(code = "4326", codeSpace = "EPSG")

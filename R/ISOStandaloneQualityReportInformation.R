@@ -4,11 +4,11 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO standalone quality report information
-#' @return Object of \code{\link{R6Class}} for modelling an ISO standalone quality report information
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO standalone quality report information
+#' @format \code{\link[R6]{R6Class}} object.
 #'
 #' @references 
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_StandaloneQualityReportInformation}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_StandaloneQualityReportInformation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

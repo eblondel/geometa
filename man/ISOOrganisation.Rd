@@ -5,10 +5,10 @@
 \alias{ISOOrganisation}
 \title{ISOOrganisation}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO organisation
+Object of \code{\link[R6]{R6Class}} for modelling an ISO organisation
 }
 \description{
 ISOOrganisation
@@ -16,7 +16,7 @@ ISOOrganisation
 ISOOrganisation
 }
 \references{
-- ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Organisation}
+- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Organisation}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

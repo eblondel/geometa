@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO abstract data evaluation
-#' @return Object of \code{\link{R6Class}} for modelling an ISO abstract data evaluation
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract data evaluation
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_DataEvaluation}

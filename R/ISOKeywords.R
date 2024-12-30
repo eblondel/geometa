@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO keywords
-#' @return Object of \code{\link{R6Class}} for modelling a ISO set of keywords
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling a ISO set of keywords
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
 #'   #a basic keyword set

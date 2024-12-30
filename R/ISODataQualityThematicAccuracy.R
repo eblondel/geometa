@@ -4,13 +4,13 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality abstract thematic accuracy
-#' @return Object of \code{\link{R6Class}} for modelling an ISOAbstractThematicAccuracy
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOAbstractThematicAccuracy
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_ThematicAccuracy}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_ThematicAccuracy}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_ThematicAccuracy}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_ThematicAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -32,8 +32,8 @@ ISOAbstractThematicAccuracy <- R6Class("ISOAbstractThematicAccuracy",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality quantitative attribute accuracy
-#' @return Object of \code{\link{R6Class}} for modelling an ISOQuantitativeAttributeAccuracy
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOQuantitativeAttributeAccuracy
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #encoding
@@ -61,9 +61,9 @@ ISOAbstractThematicAccuracy <- R6Class("ISOAbstractThematicAccuracy",
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_QuantitativeAttributeAccuracy}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_QuantitativeAttributeAccuracy}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_QuantitativeAttributeAccuracy}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_QuantitativeAttributeAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -85,8 +85,8 @@ ISOQuantitativeAttributeAccuracy <- R6Class("ISOQuantitativeAttributeAccuracy",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality nonquantitative attribute accuracy
-#' @return Object of \code{\link{R6Class}} for modelling an ISONonQuantitativeAttributeAccuracy
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISONonQuantitativeAttributeAccuracy
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #encoding
@@ -114,9 +114,9 @@ ISOQuantitativeAttributeAccuracy <- R6Class("ISOQuantitativeAttributeAccuracy",
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_NonQuantitativeAttributeAccuracy}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_NonQuantitativeAttributeAccuracy}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_NonQuantitativeAttributeAccuracy}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_NonQuantitativeAttributeAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -138,8 +138,8 @@ ISONonQuantitativeAttributeAccuracy <- R6Class("ISONonQuantitativeAttributeAccur
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality thematic accuracy classification correctness
-#' @return Object of \code{\link{R6Class}} for modelling an ISOThematicClassificationCorrectness
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOThematicClassificationCorrectness
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #encoding
@@ -167,9 +167,9 @@ ISONonQuantitativeAttributeAccuracy <- R6Class("ISONonQuantitativeAttributeAccur
 #'   xml <- dq$encode()
 #'   
 #' @references 
-#'   - ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_ThematicClassificationCorrectness}
+#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_ThematicClassificationCorrectness}
 #'   
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_ThematicClassificationCorrectness}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_ThematicClassificationCorrectness}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -191,11 +191,11 @@ ISOThematicClassificationCorrectness <- R6Class("ISOThematicClassificationCorrec
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data quality non-quantitative attribute correctness
-#' @return Object of \code{\link{R6Class}} for modelling an ISONonQuantitativeAttributeCorrectness
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISONonQuantitativeAttributeCorrectness
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @references 
-#'   - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_NonQuantitativeAttributeCorrectness}
+#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_NonQuantitativeAttributeCorrectness}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

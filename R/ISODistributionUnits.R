@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO distribution units
-#' @return Object of \code{\link{R6Class}} for modelling an ISO DistributionUnits
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO DistributionUnits
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   unit <- ISODistributionUnits$new(value = "unit")

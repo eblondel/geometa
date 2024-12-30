@@ -4,14 +4,14 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO scope hierarchy level
-#' @return Object of \code{\link{R6Class}} for modelling an ISO Scope code
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO Scope code
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO scope code
-#' @return Object of \code{\link{R6Class}} for modelling an ISO Scope
-#' @format \code{\link{R6Class}} object
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO Scope
+#' @format \code{\link[R6]{R6Class}} object
 #' 
 #' @examples 
 #'   #possible values
@@ -52,7 +52,7 @@ ISOScopeCode$values <- function(labels = FALSE){
   return(ISOCodeListValue$values(ISOScopeCode, labels))
 }
 
-#' @format \code{\link{R6Class}} object
+#' @format \code{\link[R6]{R6Class}} object
 #' 
 #' @examples 
 #'   #possible values

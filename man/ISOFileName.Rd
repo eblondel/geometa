@@ -5,10 +5,10 @@
 \alias{ISOFileName}
 \title{ISOFileName}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO FileName
+Object of \code{\link[R6]{R6Class}} for modelling an ISO FileName
 }
 \description{
 ISOFileName
@@ -21,9 +21,9 @@ ISOFileName
 
 }
 \references{
-- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmx/1.0/gmx/#element_FileName}
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmx/1.0/gmx/#element_FileName}
  
- - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/gcx/1.0/gcx/#element_FileName}
+ - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gcx/1.0/gcx/#element_FileName}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

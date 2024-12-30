@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO evaluation method
-#' @return Object of \code{\link{R6Class}} for modelling an ISO abstract evaluation method
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract evaluation method
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_EvaluationMethod}
@@ -105,8 +105,8 @@ ISOEvaluationMethod <- R6Class("ISOEvaluationMethod",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO aggregation derivation
-#' @return Object of \code{\link{R6Class}} for modelling an ISO aggregation derivation
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO aggregation derivation
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_AggregationDerivation}
@@ -137,8 +137,8 @@ ISOAggregationDerivation <- R6Class("ISOAggregationDerivation",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO full inspection
-#' @return Object of \code{\link{R6Class}} for modelling an ISO full inspection
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO full inspection
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_FullInspection}
@@ -169,8 +169,8 @@ ISOFullInspection <- R6Class("ISOFullInspection",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO indirect evaluation
-#' @return Object of \code{\link{R6Class}} for modelling an ISO indirect evaluation
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO indirect evaluation
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_IndirectEvaluation}
@@ -201,8 +201,8 @@ ISOIndirectEvaluation <- R6Class("ISOIndirectEvaluation",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO sample based inspection
-#' @return Object of \code{\link{R6Class}} for modelling an ISO sample based inspection
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO sample based inspection
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_SampleBasedInspection}
@@ -233,8 +233,8 @@ ISOSampleBasedInspection <- R6Class("ISOSampleBasedInspection",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO data inspection
-#' @return Object of \code{\link{R6Class}} for modelling an ISO data inspection
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO data inspection
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_DataInspection}

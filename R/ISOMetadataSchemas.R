@@ -25,8 +25,20 @@ registerISOMetadataSchema <- function(version, xsdFile){
   .geometa.iso$schemas[[version]] <- schemas
 }
 
-#'getISOMetadataSchemaFile
-#'@export
+#' @name getISOMetadataSchemaFile
+#' @aliases getISOMetadataSchemaFile
+#' @title getISOMetadataSchemaFile
+#' @export
+#' @description \code{getISOMetadataSchemaFile} allows to get the schema file
+#' in \pkg{geometa}
+#' 
+#' @usage getISOMetadataSchemaFile(version)
+#' 
+#' @param version the schema version
+#' @return the internal path to the schema file
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
 getISOMetadataSchemaFile <- function(version = "19139"){
   available_versions <- c("19139","19115-3")
   if(!version %in% available_versions){
@@ -47,7 +59,19 @@ getISOMetadataSchemaFile <- function(version = "19139"){
   return(defaultXsdFile)
 }
 
-#'setISOMetadataSchemas
+#' @name setISOMetadataSchemas
+#' @aliases setISOMetadataSchemas
+#' @title setISOMetadataSchemas
+#' @export
+#' @description \code{setISOMetadataSchemas} register the schemas in \pkg{geometa}
+#' 
+#' @usage setISOMetadataSchemas(version)
+#' 
+#' @param version the schema version
+#' 
+#' @examples             
+#'   setISOMetadataSchemas(version = "19115-3")
+#'
 #'@export
 setISOMetadataSchemas <- function(version = "19139"){
   packageStartupMessage(sprintf("Loading ISO %s XML schemas...", version))
@@ -62,11 +86,11 @@ setISOMetadataSchemas <- function(version = "19139"){
 #' 
 #' @usage getISOMetadataSchemas(version)
 #' 
+#' @param version the schema version
+#' 
 #' @examples             
 #'   getISOMetadataSchemas(version = "19115-3")
 #' 
-#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
-#
 getISOMetadataSchemas <- function(version = "19139"){
   available_versions <- c("19139","19115-3")
   if(!version %in% available_versions){

@@ -5,10 +5,10 @@
 \alias{ISOThematicClassificationCorrectness}
 \title{ISOThematicClassificationCorrectness}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISOThematicClassificationCorrectness
+Object of \code{\link[R6]{R6Class}} for modelling an ISOThematicClassificationCorrectness
 }
 \description{
 ISOThematicClassificationCorrectness
@@ -42,9 +42,9 @@ ISOThematicClassificationCorrectness
   
 }
 \references{
-- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_ThematicClassificationCorrectness}
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_ThematicClassificationCorrectness}
   
-  - ISO 19115-3 \link{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_ThematicClassificationCorrectness}
+  - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_ThematicClassificationCorrectness}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

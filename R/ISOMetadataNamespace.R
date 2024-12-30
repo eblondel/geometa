@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO metadata namespace
-#' @return Object of \code{\link{R6Class}} for modelling an ISO Metadata Namespace
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO Metadata Namespace
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @note ISO class used internally by geometa for specifying XML namespaces
 #' 
@@ -47,8 +47,20 @@ ISOMetadataNamespace <- R6Class("ISOMetadataNamespace",
   )
 )
 
-#' setMetadataNamespaces
+#' @name setMetadataNamespaces
+#' @aliases setMetadataNamespaces
+#' @title setMetadataNamespaces
 #' @export
+#' @description \code{setMetadataNamespaces} sets the default list of namespaces
+#' 
+#' @usage setMetadataNamespaces(version)
+#' 
+#' @param version the standard version
+#' 
+#' @examples             
+#'   getISOMetadataNamespaces()
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 setISOMetadataNamespaces <- function(version = "19139"){
   
   #XML 1.0

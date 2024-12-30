@@ -4,17 +4,17 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO OperationMetadata
-#' @return Object of \code{\link{R6Class}} for modelling an ISOOperationMetadata
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOOperationMetadata
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
 #'   md <- ISOOperationMetadata$new()
 #'   xml <- md$encode()
 #' 
 #' @references 
-#'  - ISO 19139 \link{https://schemas.isotc211.org/19119/-/srv/1.0/srv/#element_SV_OperationMetadata}
+#'  - ISO 19139 \url{https://schemas.isotc211.org/19119/-/srv/1.0/srv/#element_SV_OperationMetadata}
 #'  
-#'  - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_OperationMetadata}
+#'  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_OperationMetadata}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

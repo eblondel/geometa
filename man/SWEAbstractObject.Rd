@@ -5,10 +5,10 @@
 \alias{SWEAbstractObject}
 \title{SWEAbstractObject}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an SWE abstract object
+Object of \code{\link[R6]{R6Class}} for modelling an SWE abstract object
 }
 \description{
 SWEAbstractObject

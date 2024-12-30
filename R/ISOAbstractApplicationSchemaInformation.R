@@ -4,11 +4,11 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO abstract application schema information
-#' @return Object of \code{\link{R6Class}} for modelling an ISO ApplicationSchemaInformation
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO ApplicationSchemaInformation
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_ApplicationSchemaInformation}
+#'   - ISO 19115-3 \href{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_ApplicationSchemaInformation}{element_Abstract_ApplicationSchemaInformation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

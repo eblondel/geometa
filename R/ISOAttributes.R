@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO attributes
-#' @return Spatial object of \code{\link{R6Class}} for modelling a list of ISO xml attributes
-#' @format \code{\link{R6Class}} object.
+#' @return Spatial object of \code{\link[R6]{R6Class}} for modelling a list of ISO xml attributes
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
 #'   attrs <- ISOAttributes$new(href = "http://somelink", title = "sometitle")

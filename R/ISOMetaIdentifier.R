@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO meta identifier
-#' @return Object of \code{\link{R6Class}} for modelling an ISO MetaIdentifier
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO MetaIdentifier
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   md <- ISOMetaIdentifier$new(code = "identifier")

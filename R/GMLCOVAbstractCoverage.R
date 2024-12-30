@@ -3,8 +3,8 @@
 #' @docType class
 #' @export
 #' @keywords GML GMLCOV Coverage
-#' @return Object of \code{\link{R6Class}} for modelling a GMLCOV Abstract Coverage
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling a GMLCOV Abstract Coverage
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @references 
 #'   GML 3.2.1 Application Schema for Coverages http://www.opengis.net/gmlcov/1.0

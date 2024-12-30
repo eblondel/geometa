@@ -5,10 +5,10 @@
 \alias{ISOAttributeGroup}
 \title{ISOAttributeGroup}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling a ISO attribute group
+Object of \code{\link[R6]{R6Class}} for modelling a ISO attribute group
 }
 \description{
 ISOAttributeGroup

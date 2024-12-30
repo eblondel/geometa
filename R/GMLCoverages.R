@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO GML multipoint coverage
-#' @return Object of \code{\link{R6Class}} for modelling an GML multipoint coverage
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an GML multipoint coverage
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -44,8 +44,8 @@ GMLMultiPointCoverage <- R6Class("GMLMultiPointCoverage",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO GML multicurve coverage
-#' @return Object of \code{\link{R6Class}} for modelling an GML multicurve coverage
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an GML multicurve coverage
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @note Class used internally by geometa
 #' 
@@ -86,8 +86,8 @@ GMLMultiCurveCoverage <- R6Class("GMLMultiCurveCoverage",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO GML multisurface coverage
-#' @return Object of \code{\link{R6Class}} for modelling an GML multisurface coverage
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an GML multisurface coverage
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @note Class used internally by geometa
 #' 
@@ -127,8 +127,8 @@ GMLMultiSurfaceCoverage <- R6Class("GMLMultiSurfaceCoverage",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO GML multisolid coverage
-#' @return Object of \code{\link{R6Class}} for modelling an GML multisolid coverage
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an GML multisolid coverage
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -166,8 +166,8 @@ GMLMultiSolidCoverage <- R6Class("GMLMultiSolidCoverage",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO GML grid coverage
-#' @return Object of \code{\link{R6Class}} for modelling an GML grid coverage
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an GML grid coverage
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.
@@ -205,8 +205,8 @@ GMLGridCoverage <- R6Class("GMLGridCoverage",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO GML rectified grid coverage
-#' @return Object of \code{\link{R6Class}} for modelling an GML rectified grid coverage
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an GML rectified grid coverage
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @references 
 #'   ISO 19136:2007 Geographic Information -- Geographic Markup Language.

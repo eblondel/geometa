@@ -5,10 +5,10 @@
 \alias{ISOHomogeneity}
 \title{ISOHomogeneity}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO homogeneity
+Object of \code{\link[R6]{R6Class}} for modelling an ISO homogeneity
 }
 \description{
 ISOHomogeneity

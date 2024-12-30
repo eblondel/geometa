@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO service identification
-#' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO ServiceIdentification
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
 #'   #encoding
@@ -106,8 +106,8 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO service identification
-#' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification in ISO 19139
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO ServiceIdentification in ISO 19139
+#' @format \code{\link[R6]{R6Class}} object.
 ISOServiceIdentification19139 <- R6Class("ISOServiceIdentification19139",
   inherit = ISOIdentification19139,
   private = list(
@@ -131,8 +131,8 @@ ISOServiceIdentification19139 <- R6Class("ISOServiceIdentification19139",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO service identification
-#' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification in ISO 19115-3
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO ServiceIdentification in ISO 19115-3
+#' @format \code{\link[R6]{R6Class}} object.
 ISOServiceIdentification19115_3 <- R6Class("ISOServiceIdentification19115_3",
    inherit = ISOIdentification19115_3,
    private = list(
@@ -144,7 +144,7 @@ ISOServiceIdentification19115_3 <- R6Class("ISOServiceIdentification19115_3",
      #'@description Initializes object
      #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
-       super$initialize(xml = xml)
+       super$initialize(xml = xml, defaults = list())
      }
    )                        
 )
@@ -163,8 +163,8 @@ ISOServiceIdentification$new = function(xml = NULL){
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO service identification
-#' @return Object of \code{\link{R6Class}} for modelling an ISO ServiceIdentification
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO ServiceIdentification
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
 #'   #encoding
@@ -556,8 +556,8 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO service identification
-#' @return Object of \code{\link{R6Class}} for modelling an ISO SRV ServiceIdentification in ISO 19139
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO SRV ServiceIdentification in ISO 19139
+#' @format \code{\link[R6]{R6Class}} object.
 ISOSRVServiceIdentification19139 <- R6Class("ISOSRVServiceIdentification19139",
    inherit = ISOServiceIdentification19139,
    private = list(
@@ -569,8 +569,7 @@ ISOSRVServiceIdentification19139 <- R6Class("ISOSRVServiceIdentification19139",
      #'@description Initializes object
      #'@param xml object of class \link{XMLInternalNode-class}
      initialize = function(xml = NULL){
-       defaults <- list(characterSet = ISOCharacterSet$new(value = "utf8"))
-       super$initialize(xml = xml, defaults = defaults)
+       super$initialize(xml = xml)
      }
    )                        
 )
@@ -581,8 +580,8 @@ ISOSRVServiceIdentification19139 <- R6Class("ISOSRVServiceIdentification19139",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO service identification
-#' @return Object of \code{\link{R6Class}} for modelling an ISO SRV ServiceIdentification in ISO 19115-3
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO SRV ServiceIdentification in ISO 19115-3
+#' @format \code{\link[R6]{R6Class}} object.
 ISOSRVServiceIdentification19115_3 <- R6Class("ISOSRVServiceIdentification19115_3",
    inherit = ISOServiceIdentification19115_3,
    private = list(

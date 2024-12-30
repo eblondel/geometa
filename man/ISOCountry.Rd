@@ -5,10 +5,10 @@
 \alias{ISOCountry}
 \title{ISOCountry}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO Country
+Object of \code{\link[R6]{R6Class}} for modelling an ISO Country
 }
 \description{
 ISOCountry
@@ -24,9 +24,9 @@ ISOCountry
 
 }
 \references{
-- ISO 19139 \link{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_Country}
+- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_Country}
  
- - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_CountryCode}
+ - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_CountryCode}
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

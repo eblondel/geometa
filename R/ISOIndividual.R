@@ -4,11 +4,11 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO individual
-#' @return Object of \code{\link{R6Class}} for modelling an ISO individual
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO individual
+#' @format \code{\link[R6]{R6Class}} object.
 #'   
 #' @references 
-#'  - ISO 19115-3 \link{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Individual}
+#'  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Individual}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

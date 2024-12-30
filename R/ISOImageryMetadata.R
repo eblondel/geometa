@@ -5,8 +5,8 @@
 #' @import XML
 #' @export
 #' @keywords ISO imagery metadata element
-#' @return Object of \code{\link{R6Class}} for modelling an ISO Imagery Metadata
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO Imagery Metadata
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
 #'     #example 1 - WRITE: Create an ISO metadata and encode it as XML

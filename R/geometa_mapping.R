@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords metadata convert mapping
-#' @return Object of \code{\link{R6Class}} for modelling a mapping format
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling a mapping format
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
 #'   #example on how geometa format is defined as pivot format
@@ -67,8 +67,8 @@ pivot_format <- R6Class("pivot_format",
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords metadata convert mapping
-#' @return Object of \code{\link{R6Class}} for modelling a mapping format converter
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{\link[R6]{R6Class}} for modelling a mapping format converter
+#' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

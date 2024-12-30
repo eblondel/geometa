@@ -5,12 +5,12 @@
 \alias{ISOScopeCode}
 \title{ISOScopeCode}
 \format{
-\code{\link{R6Class}} object
+\code{\link[R6]{R6Class}} object
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an ISO Scope code
+Object of \code{\link[R6]{R6Class}} for modelling an ISO Scope code
 
-Object of \code{\link{R6Class}} for modelling an ISO Scope
+Object of \code{\link[R6]{R6Class}} for modelling an ISO Scope
 }
 \description{
 ISOScopeCode

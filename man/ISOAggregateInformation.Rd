@@ -5,10 +5,10 @@
 \alias{ISOAggregateInformation}
 \title{ISOAggregateInformation}
 \format{
-\code{\link{R6Class}} object.
+\code{\link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling a ISO AggregateInformation
+Object of \code{\link[R6]{R6Class}} for modelling a ISO AggregateInformation
 }
 \description{
 ISOAggregateInformation
