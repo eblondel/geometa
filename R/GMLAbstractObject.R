@@ -31,7 +31,7 @@ GMLAbstractObject <- R6Class("GMLAbstractObject",
     #'@param wrap wrap element?
     initialize = function(xml = NULL, element = NULL, attrs = list(), defaults = list(), wrap = FALSE){
       if(is.null(element)) element <- private$xmlElement
-      super$initialize(xml, element, namespace = private$xmlNamespacePrefix, 
+      super$initialize(xml = xml, element = element, namespace = private$xmlNamespacePrefix, 
                        attrs = attrs, defaults = defaults,
                        wrap = wrap)
     }
