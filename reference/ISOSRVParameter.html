@@ -80,7 +80,7 @@ ISOSRVParameter"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/
 
 
 <dt><code>direction</code></dt>
-<dd><p>direction [0..1]: ISOParameterDirection</p></dd>
+<dd><p>direction [0..1]: ISOParameterDirection or character</p></dd>
 
 
 <dt><code>description</code></dt>
@@ -194,8 +194,8 @@ ISOSRVParameter"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/
 <div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>direction</code></dt>
-<dd><p>object of class <a href="ISOParameterDirection.html">ISOParameterDirection</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
-among values returned by <code>ISOParameterDirection$values()</code></p></dd>
+<dd><p>object of class <a href="ISOSRVParameterDirection.html">ISOSRVParameterDirection</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
+among values returned by <code>ISOSRVParameterDirection$values()</code></p></dd>
 
 
 </dl><p></p></div>
@@ -298,7 +298,6 @@ among values returned by <code>ISOParameterDirection$values()</code></p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOSRVParameter</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setName</span><span class="op">(</span><span class="st">"name"</span>, <span class="st">"attType"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setDirection</span><span class="op">(</span><span class="st">"in"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(xml = xml, id = private$xmlElement, value = value,     description = description, addCodeListAttrs = FALSE, setValue = FALSE):</span> No ISO codelist for identifier 'LE_ParameterDirection'</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setDescription</span><span class="op">(</span><span class="st">"description"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setOptionality</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setRepeatability</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>

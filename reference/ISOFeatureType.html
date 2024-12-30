@@ -62,7 +62,8 @@ ISOFeatureType"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>ISO 19110:2005 Methodology for Feature cataloguing</p>
+    <p>- ISO 19110 - GFC 1.0 https://schemas.isotc211.org/19110/-/gfc/1.0/gfc/#element_FC_FeatureType (in ISO 19139)</p>
+<p>- ISO 19110 - GFC 1.1 https://schemas.isotc211.org/19110/gfc/1.1/gfc/#element_FC_FeatureType (in ISO 19115-3)</p>
     </div>
     <div id="author">
     <h2>Author</h2>
@@ -72,54 +73,6 @@ ISOFeatureType"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
     <h2>Super classes</h2>
     <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code>ISOFeatureType</code></p>
     </div>
-    <div id="public-fields">
-    <h2>Public fields</h2>
-    <p></p><div class="r6-fields"><dl><dt><code>typeName</code></dt>
-<dd><p>typeName [1..1]: ISOLocalName</p></dd>
-
-
-<dt><code>definition</code></dt>
-<dd><p>definition [0..1]: character</p></dd>
-
-
-<dt><code>code</code></dt>
-<dd><p>code [0..1]: character</p></dd>
-
-
-<dt><code>isAbstract</code></dt>
-<dd><p>isAbstract [1..1]: logical</p></dd>
-
-
-<dt><code>aliases</code></dt>
-<dd><p>aliases [0..*]: ISOLocalName</p></dd>
-
-
-<dt><code>inheritsFrom</code></dt>
-<dd><p>inheritsFrom [0..*]: ISOInheritanceRelation</p></dd>
-
-
-<dt><code>inheritsTo</code></dt>
-<dd><p>inheritsTo [0..*]: ISOInheritanceRelation</p></dd>
-
-
-<dt><code>featureCatalogue</code></dt>
-<dd><p>featureCatalogue: ISOFeatureCatalogue</p></dd>
-
-
-<dt><code>constrainedBy</code></dt>
-<dd><p>constrainedBy [0..*]: ISOConstraint</p></dd>
-
-
-<dt><code>definitionReference</code></dt>
-<dd><p>definitionReference [0..*]: ISODefinitionReference</p></dd>
-
-
-<dt><code>carrierOfCharacteristics</code></dt>
-<dd><p>carrierOfCharacteristics [0..*]: ISOCarrierOfCharacteristics</p></dd>
-
-
-</dl><p></p></div>
-    </div>
     <div id="methods">
     <h2>Methods</h2>
 
@@ -127,22 +80,6 @@ ISOFeatureType"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOFeatureType-new"><code>ISOFeatureType$new()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-setTypeName"><code>ISOFeatureType$setTypeName()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-setDefinition"><code>ISOFeatureType$setDefinition()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-setCode"><code>ISOFeatureType$setCode()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-setIsAbstract"><code>ISOFeatureType$setIsAbstract()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-addAlias"><code>ISOFeatureType$addAlias()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-delAlias"><code>ISOFeatureType$delAlias()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-addInheritsFrom"><code>ISOFeatureType$addInheritsFrom()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-delInheritsFrom"><code>ISOFeatureType$delInheritsFrom()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-addInheritsTo"><code>ISOFeatureType$addInheritsTo()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-delInheritsTo"><code>ISOFeatureType$delInheritsTo()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-setFeatureCatalogue"><code>ISOFeatureType$setFeatureCatalogue()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-addConstraint"><code>ISOFeatureType$addConstraint()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-delConstraint"><code>ISOFeatureType$delConstraint()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-setDefinitionReference"><code>ISOFeatureType$setDefinitionReference()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-addCharacteristic"><code>ISOFeatureType$addCharacteristic()</code></a></p></li>
-<li><p><a href="#method-ISOFeatureType-delCharacteristic"><code>ISOFeatureType$delCharacteristic()</code></a></p></li>
 <li><p><a href="#method-ISOFeatureType-clone"><code>ISOFeatureType$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -189,319 +126,15 @@ ISOFeatureType"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOFeatureType-setTypeName"></a><div class="section">
-<h3 id="method-settypename-">Method <code>setTypeName()</code><a class="anchor" aria-label="anchor" href="#method-settypename-"></a></h3>
-<p>Set type name</p><div class="section">
-<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">setTypeName</span><span class="op">(</span><span class="va">typeName</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>typeName</code></dt>
-<dd><p>type name, object of class <a href="ISOLocalName.html">ISOLocalName</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-setDefinition"></a><div class="section">
-<h3 id="method-setdefinition-">Method <code>setDefinition()</code><a class="anchor" aria-label="anchor" href="#method-setdefinition-"></a></h3>
-<p>Set definition</p><div class="section">
-<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">setDefinition</span><span class="op">(</span><span class="va">definition</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>definition</code></dt>
-<dd><p>definition</p></dd>
-
-
-<dt><code>locales</code></dt>
-<dd><p>list of localized definitions. Default is <code>NULL</code></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-setCode"></a><div class="section">
-<h3 id="method-setcode-">Method <code>setCode()</code><a class="anchor" aria-label="anchor" href="#method-setcode-"></a></h3>
-<p>Set code</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">setCode</span><span class="op">(</span><span class="va">code</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>code</code></dt>
-<dd><p>definition</p></dd>
-
-
-<dt><code>locales</code></dt>
-<dd><p>list of localized codes. Default is <code>NULL</code></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-setIsAbstract"></a><div class="section">
-<h3 id="method-setisabstract-">Method <code>setIsAbstract()</code><a class="anchor" aria-label="anchor" href="#method-setisabstract-"></a></h3>
-<p>Set whether feature type is abstract</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">setIsAbstract</span><span class="op">(</span><span class="va">isAbstract</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>isAbstract</code></dt>
-<dd><p>object of class <a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-addAlias"></a><div class="section">
-<h3 id="method-addalias-">Method <code>addAlias()</code><a class="anchor" aria-label="anchor" href="#method-addalias-"></a></h3>
-<p>Adds alias</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">addAlias</span><span class="op">(</span><span class="va">alias</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>alias</code></dt>
-<dd><p>object of class <a href="ISOLocalName.html">ISOLocalName</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-delAlias"></a><div class="section">
-<h3 id="method-delalias-">Method <code>delAlias()</code><a class="anchor" aria-label="anchor" href="#method-delalias-"></a></h3>
-<p>Deletes alias</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">delAlias</span><span class="op">(</span><span class="va">alias</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>alias</code></dt>
-<dd><p>object of class <a href="ISOLocalName.html">ISOLocalName</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-addInheritsFrom"></a><div class="section">
-<h3 id="method-addinheritsfrom-">Method <code>addInheritsFrom()</code><a class="anchor" aria-label="anchor" href="#method-addinheritsfrom-"></a></h3>
-<p>Adds 'inheritsFrom' relation</p><div class="section">
-<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">addInheritsFrom</span><span class="op">(</span><span class="va">rel</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>rel</code></dt>
-<dd><p>rel, object of class <a href="ISOInheritanceRelation.html">ISOInheritanceRelation</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-delInheritsFrom"></a><div class="section">
-<h3 id="method-delinheritsfrom-">Method <code>delInheritsFrom()</code><a class="anchor" aria-label="anchor" href="#method-delinheritsfrom-"></a></h3>
-<p>Deletes 'inheritsFrom' relation</p><div class="section">
-<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">delInheritsFrom</span><span class="op">(</span><span class="va">rel</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>rel</code></dt>
-<dd><p>rel, object of class <a href="ISOInheritanceRelation.html">ISOInheritanceRelation</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-addInheritsTo"></a><div class="section">
-<h3 id="method-addinheritsto-">Method <code>addInheritsTo()</code><a class="anchor" aria-label="anchor" href="#method-addinheritsto-"></a></h3>
-<p>Adds 'inheritsTo' relation</p><div class="section">
-<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">addInheritsTo</span><span class="op">(</span><span class="va">rel</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>rel</code></dt>
-<dd><p>rel, object of class <a href="ISOInheritanceRelation.html">ISOInheritanceRelation</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-4">Returns<a class="anchor" aria-label="anchor" href="#returns-4"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-delInheritsTo"></a><div class="section">
-<h3 id="method-delinheritsto-">Method <code>delInheritsTo()</code><a class="anchor" aria-label="anchor" href="#method-delinheritsto-"></a></h3>
-<p>Deletes 'inheritsTo' relation</p><div class="section">
-<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">delInheritsTo</span><span class="op">(</span><span class="va">rel</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>rel</code></dt>
-<dd><p>rel, object of class <a href="ISOInheritanceRelation.html">ISOInheritanceRelation</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-5">Returns<a class="anchor" aria-label="anchor" href="#returns-5"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-setFeatureCatalogue"></a><div class="section">
-<h3 id="method-setfeaturecatalogue-">Method <code>setFeatureCatalogue()</code><a class="anchor" aria-label="anchor" href="#method-setfeaturecatalogue-"></a></h3>
-<p>Set feature catalogue</p><div class="section">
-<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">setFeatureCatalogue</span><span class="op">(</span><span class="va">fc</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>fc</code></dt>
-<dd><p>object of class <a href="ISOFeatureCatalogue.html">ISOFeatureCatalogue</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-addConstraint"></a><div class="section">
-<h3 id="method-addconstraint-">Method <code>addConstraint()</code><a class="anchor" aria-label="anchor" href="#method-addconstraint-"></a></h3>
-<p>Adds constraint</p><div class="section">
-<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">addConstraint</span><span class="op">(</span><span class="va">constraint</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>constraint</code></dt>
-<dd><p>constraint, object of class <a href="ISOConstraint.html">ISOConstraint</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-6">Returns<a class="anchor" aria-label="anchor" href="#returns-6"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-delConstraint"></a><div class="section">
-<h3 id="method-delconstraint-">Method <code>delConstraint()</code><a class="anchor" aria-label="anchor" href="#method-delconstraint-"></a></h3>
-<p>Deletes constraint</p><div class="section">
-<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">delConstraint</span><span class="op">(</span><span class="va">constraint</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>constraint</code></dt>
-<dd><p>constraint, object of class <a href="ISOConstraint.html">ISOConstraint</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-7">Returns<a class="anchor" aria-label="anchor" href="#returns-7"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-setDefinitionReference"></a><div class="section">
-<h3 id="method-setdefinitionreference-">Method <code>setDefinitionReference()</code><a class="anchor" aria-label="anchor" href="#method-setdefinitionreference-"></a></h3>
-<p>Set definition reference</p><div class="section">
-<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">setDefinitionReference</span><span class="op">(</span><span class="va">definitionReference</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>definitionReference</code></dt>
-<dd><p>object of class <a href="ISODefinitionReference.html">ISODefinitionReference</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-addCharacteristic"></a><div class="section">
-<h3 id="method-addcharacteristic-">Method <code>addCharacteristic()</code><a class="anchor" aria-label="anchor" href="#method-addcharacteristic-"></a></h3>
-<p>Adds characteristic</p><div class="section">
-<h4 id="usage-15">Usage<a class="anchor" aria-label="anchor" href="#usage-15"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">addCharacteristic</span><span class="op">(</span><span class="va">characteristic</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-15">Arguments<a class="anchor" aria-label="anchor" href="#arguments-15"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>characteristic</code></dt>
-<dd><p>characteristic, object inheriting class <a href="ISOAbstractCarrierOfCharacteristics.html">ISOAbstractCarrierOfCharacteristics</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-8">Returns<a class="anchor" aria-label="anchor" href="#returns-8"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
-</div>
-
-</div><p></p><hr><a id="method-ISOFeatureType-delCharacteristic"></a><div class="section">
-<h3 id="method-delcharacteristic-">Method <code>delCharacteristic()</code><a class="anchor" aria-label="anchor" href="#method-delcharacteristic-"></a></h3>
-<p>Deletes characteristic</p><div class="section">
-<h4 id="usage-16">Usage<a class="anchor" aria-label="anchor" href="#usage-16"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">delCharacteristic</span><span class="op">(</span><span class="va">characteristic</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
-<h4 id="arguments-16">Arguments<a class="anchor" aria-label="anchor" href="#arguments-16"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>characteristic</code></dt>
-<dd><p>characteristic, object inheriting class <a href="ISOAbstractCarrierOfCharacteristics.html">ISOAbstractCarrierOfCharacteristics</a></p></dd>
-
-
-</dl><p></p></div>
-</div>
-<div class="section">
-<h4 id="returns-9">Returns<a class="anchor" aria-label="anchor" href="#returns-9"></a></h4>
-<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
-</div>
-
 </div><p></p><hr><a id="method-ISOFeatureType-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-17">Usage<a class="anchor" aria-label="anchor" href="#usage-17"></a></h4>
+<h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureType</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-17">Arguments<a class="anchor" aria-label="anchor" href="#arguments-17"></a></h4>
+<h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
@@ -566,7 +199,7 @@ ISOFeatureType"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.opengis.net/gml/3.2}BaseUnit', attribute '{http://www.opengis.net/gml/3.2}id': 'ID%' is not a valid value of the atomic type 'xs:ID' at line 47. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.opengis.net/gml/3.2}BaseUnit', attribute '{http://www.opengis.net/gml/3.2}id': 'ID%' is not a valid value of the atomic type 'xs:ID' at line 118. </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.opengis.net/gml/3.2}BaseUnit', attribute '{http://www.opengis.net/gml/3.2}id': 'ID%' is not a valid value of the atomic type 'xs:ID' at line 189. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOFeatureType' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOFeatureType19139' is INVALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span> </span></span>
 </code></pre></div>
     </div>

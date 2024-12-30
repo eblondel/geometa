@@ -86,6 +86,10 @@ ISOAbstractPropertyType"><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 <dd><p>cardinality [1..1]: ISOMultiplicity</p></dd>
 
 
+<dt><code>designation</code></dt>
+<dd><p>designatio [0..1]: character (=&gt; ISO 19115-3)</p></dd>
+
+
 <dt><code>definitionReference</code></dt>
 <dd><p>definitionReference [0..1]</p></dd>
 
@@ -106,6 +110,7 @@ ISOAbstractPropertyType"><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 <li><p><a href="#method-ISOAbstractPropertyType-setMemberName"><code>ISOAbstractPropertyType$setMemberName()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractPropertyType-setDefinition"><code>ISOAbstractPropertyType$setDefinition()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractPropertyType-setCardinality"><code>ISOAbstractPropertyType$setCardinality()</code></a></p></li>
+<li><p><a href="#method-ISOAbstractPropertyType-setDesignation"><code>ISOAbstractPropertyType$setDesignation()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractPropertyType-setDefinitionReference"><code>ISOAbstractPropertyType$setDefinitionReference()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractPropertyType-setFeatureCatalogue"><code>ISOAbstractPropertyType$setFeatureCatalogue()</code></a></p></li>
 <li><p><a href="#method-ISOAbstractPropertyType-clone"><code>ISOAbstractPropertyType$clone()</code></a></p></li>
@@ -171,7 +176,8 @@ ISOAbstractPropertyType"><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 <div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>memberName</code></dt>
-<dd><p>member name object of class <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> or <a href="ISOLocalName.html">ISOLocalName</a></p></dd>
+<dd><p>member name object of class <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> (in ISO 19139 and 19115-3)
+or <a href="ISOLocalName.html">ISOLocalName</a> (in ISO 19139 only)</p></dd>
 
 
 </dl><p></p></div>
@@ -217,15 +223,35 @@ ISOAbstractPropertyType"><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOAbstractPropertyType-setDefinitionReference"></a><div class="section">
-<h3 id="method-setdefinitionreference-">Method <code>setDefinitionReference()</code><a class="anchor" aria-label="anchor" href="#method-setdefinitionreference-"></a></h3>
-<p>Set definition reference</p><div class="section">
+</div><p></p><hr><a id="method-ISOAbstractPropertyType-setDesignation"></a><div class="section">
+<h3 id="method-setdesignation-">Method <code>setDesignation()</code><a class="anchor" aria-label="anchor" href="#method-setdesignation-"></a></h3>
+<p>Set designation</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractPropertyType</span><span class="op">$</span><span class="fu">setDefinitionReference</span><span class="op">(</span><span class="va">definitionReference</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractPropertyType</span><span class="op">$</span><span class="fu">setDesignation</span><span class="op">(</span><span class="va">designation</span>, locales <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>designation</code></dt>
+<dd><p>designation</p></dd>
+
+
+<dt><code>locales</code></dt>
+<dd><p>locale designations, as <a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOAbstractPropertyType-setDefinitionReference"></a><div class="section">
+<h3 id="method-setdefinitionreference-">Method <code>setDefinitionReference()</code><a class="anchor" aria-label="anchor" href="#method-setdefinitionreference-"></a></h3>
+<p>Set definition reference</p><div class="section">
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractPropertyType</span><span class="op">$</span><span class="fu">setDefinitionReference</span><span class="op">(</span><span class="va">definitionReference</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>definitionReference</code></dt>
 <dd><p>object of class <a href="ISODefinitionReference.html">ISODefinitionReference</a></p></dd>
 
@@ -236,12 +262,12 @@ ISOAbstractPropertyType"><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 </div><p></p><hr><a id="method-ISOAbstractPropertyType-setFeatureCatalogue"></a><div class="section">
 <h3 id="method-setfeaturecatalogue-">Method <code>setFeatureCatalogue()</code><a class="anchor" aria-label="anchor" href="#method-setfeaturecatalogue-"></a></h3>
 <p>Set feature catalogue</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractPropertyType</span><span class="op">$</span><span class="fu">setFeatureCatalogue</span><span class="op">(</span><span class="va">featureCatalogue</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>featureCatalogue</code></dt>
 <dd><p>object of class <a href="ISOFeatureCatalogue.html">ISOFeatureCatalogue</a></p></dd>
 
@@ -252,12 +278,12 @@ ISOAbstractPropertyType"><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 </div><p></p><hr><a id="method-ISOAbstractPropertyType-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOAbstractPropertyType</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

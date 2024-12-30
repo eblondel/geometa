@@ -221,6 +221,8 @@
 <url><loc>/reference/ISOFeatureCatalogueDescription.html</loc></url>
 <url><loc>/reference/ISOFeatureOperation.html</loc></url>
 <url><loc>/reference/ISOFeatureType.html</loc></url>
+<url><loc>/reference/ISOFeatureType19115_3.html</loc></url>
+<url><loc>/reference/ISOFeatureType19139.html</loc></url>
 <url><loc>/reference/ISOFeatureTypeInfo.html</loc></url>
 <url><loc>/reference/ISOFileName.html</loc></url>
 <url><loc>/reference/ISOFormat.html</loc></url>
@@ -365,6 +367,8 @@
 <url><loc>/reference/ISOSRVParameter.html</loc></url>
 <url><loc>/reference/ISOSRVParameterDirection.html</loc></url>
 <url><loc>/reference/ISOSRVServiceIdentification.html</loc></url>
+<url><loc>/reference/ISOSRVServiceIdentification19115_3.html</loc></url>
+<url><loc>/reference/ISOSRVServiceIdentification19139.html</loc></url>
 <url><loc>/reference/ISOSampleBasedInspection.html</loc></url>
 <url><loc>/reference/ISOSampleDimension.html</loc></url>
 <url><loc>/reference/ISOScale.html</loc></url>
@@ -376,6 +380,8 @@
 <url><loc>/reference/ISOSensor.html</loc></url>
 <url><loc>/reference/ISOSeries.html</loc></url>
 <url><loc>/reference/ISOServiceIdentification.html</loc></url>
+<url><loc>/reference/ISOServiceIdentification19115_3.html</loc></url>
+<url><loc>/reference/ISOServiceIdentification19139.html</loc></url>
 <url><loc>/reference/ISOSource.html</loc></url>
 <url><loc>/reference/ISOSpatialRepresentation.html</loc></url>
 <url><loc>/reference/ISOSpatialRepresentationType.html</loc></url>

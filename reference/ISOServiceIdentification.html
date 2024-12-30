@@ -150,9 +150,7 @@ ISOServiceIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co">#encoding</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOServiceIdentification</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setAbstract</span><span class="op">(</span><span class="st">"abstract"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setPurpose</span><span class="op">(</span><span class="st">"purpose"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#adding a point of contact</span></span></span>
 <span class="r-in"><span>  <span class="va">rp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOResponsibleParty.html">ISOResponsibleParty</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -178,7 +176,7 @@ ISOServiceIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.
 <span class="r-in"><span>  <span class="va">contact</span><span class="op">$</span><span class="fu">setOnlineResource</span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">rp</span><span class="op">$</span><span class="fu">setContactInfo</span><span class="op">(</span><span class="va">contact</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addPointOfContact</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#citation</span></span></span>
 <span class="r-in"><span>  <span class="va">ct</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCitation.html">ISOCitation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -196,7 +194,6 @@ ISOServiceIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.
 <span class="r-in"><span>  <span class="va">ct</span><span class="op">$</span><span class="fu">addCitedResponsibleParty</span><span class="op">(</span><span class="va">rp</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setCitation</span><span class="op">(</span><span class="va">ct</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#graphic overview</span></span></span>
 <span class="r-in"><span>  <span class="va">go</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOBrowseGraphic.html">ISOBrowseGraphic</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
@@ -205,13 +202,13 @@ ISOServiceIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.
 <span class="r-in"><span>    fileType <span class="op">=</span> <span class="st">"image/png"</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addGraphicOverview</span><span class="op">(</span><span class="va">go</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#maintenance information</span></span></span>
 <span class="r-in"><span>  <span class="va">mi</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">mi</span><span class="op">$</span><span class="fu">setMaintenanceFrequency</span><span class="op">(</span><span class="st">"daily"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addResourceMaintenance</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#adding legal constraints</span></span></span>
 <span class="r-in"><span>  <span class="va">lc</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOLegalConstraints.html">ISOLegalConstraints</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -230,11 +227,10 @@ ISOServiceIdentification"><!-- mathjax --><script src="https://cdnjs.cloudflare.
 <span class="r-in"><span>  <span class="va">lc</span><span class="op">$</span><span class="fu">addUseConstraint</span><span class="op">(</span><span class="st">"license"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addResourceConstraints</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/gmd}MD_ServiceIdentification': Missing child element(s). Expected is ( {http://www.isotc211.org/2005/gmd}citation ) at line 1. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOServiceIdentification' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISOServiceIdentification19139' is VALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span>   </span></span>
 </code></pre></div>
     </div>
