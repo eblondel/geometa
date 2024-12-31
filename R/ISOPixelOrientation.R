@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOPixelOrientation <- R6Class("ISOPixelOrientation",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "MD_PixelOrientationCode",
     xmlNamespacePrefix = list(
@@ -45,5 +45,5 @@ ISOPixelOrientation <- R6Class("ISOPixelOrientation",
 )
 
 ISOPixelOrientation$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOPixelOrientation, labels))
+  return(ISOCodeListItem$values(ISOPixelOrientation, labels))
 }

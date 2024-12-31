@@ -16,7 +16,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODistributionUnits <- R6Class("ISODistributionUnits",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "MD_DistributionUnits",
     xmlNamespacePrefix = "GMD"

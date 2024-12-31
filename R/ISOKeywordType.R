@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOKeywordType <- R6Class("ISOKeywordType",
- inherit = ISOCodeListValue,
+ inherit = ISOCodeListItem,
  private = list(
    xmlElement = "MD_KeywordTypeCode",
    xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOKeywordType <- R6Class("ISOKeywordType",
 )
 
 ISOKeywordType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOKeywordType, labels))
+  return(ISOCodeListItem$values(ISOKeywordType, labels))
 }

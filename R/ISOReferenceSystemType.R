@@ -19,7 +19,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOReferenceSystemType <- R6Class("ISOReferenceSystemType",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = list(
       "19115-3" = "MD_ReferenceSystemTypeCode"
@@ -42,5 +42,5 @@ ISOReferenceSystemType <- R6Class("ISOReferenceSystemType",
 )
 
 ISOReferenceSystemType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOReferenceSystemType, labels))
+  return(ISOCodeListItem$values(ISOReferenceSystemType, labels))
 }

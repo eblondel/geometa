@@ -4,8 +4,20 @@
 \alias{setISOCodelists}
 \title{setISOCodelists}
 \usage{
-setISOCodelists(version = "19139")
+setISOCodelists(version)
+}
+\arguments{
+\item{version}{the version of the metadata standard}
 }
 \description{
-setISOCodelists
+\code{setISOCodelists} allows to set the list of ISO codelists
+registered in \pkg{geometa}
+}
+\examples{
+            
+  setISOCodelists(version = "19139")
+
+}
+\author{
+Emmanuel Blondel, \email{emmanuel.blondel1@gmail.com}
 }

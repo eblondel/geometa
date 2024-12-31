@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCountry <- R6Class("ISOCountry",
-   inherit = ISOCodeListValue,
+   inherit = ISOCodeListItem,
    private = list(
      xmlElement = list(
        "19139" = "Country",
@@ -47,5 +47,5 @@ ISOCountry <- R6Class("ISOCountry",
 )
 
 ISOCountry$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOCountry, labels))
+  return(ISOCodeListItem$values(ISOCountry, labels))
 }

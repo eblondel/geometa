@@ -302,7 +302,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       })]
       
       if(!inherits(self, "GMLElement") && !inherits(self, "SWEElement")) cat(crayon::white(paste0("<", crayon::underline(self$getClassName()), ">")))
-      if(is(self, "ISOCodeListValue")){
+      if(is(self, "ISOCodeListItem")){
         clVal <- self$printAttrs$codeListValue
         if("value" %in% names(clVal)) clVal = clVal$value
         clDes <- self$codelistId$codeEntry[sapply(self$codelistId$codeEntry, function(ce){
@@ -361,7 +361,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 }
                 cat(paste0("\n", paste(rep(shift, depth), collapse=""),"|-- ", crayon::italic(field), " ", attrs_str))
                 item$print(depth = depth+1, add_codelist_description = add_codelist_description)
-                if(is(item, "ISOCodeListValue")){
+                if(is(item, "ISOCodeListItem")){
                   clVal <- item$printAttrs$codeListValue
                   clDes <- item$codelistId$entries[item$codelistId$entries$value == clVal,"description"]
                   cat(paste0(": ", clVal, if(add_codelist_description) crayon::cyan(paste0(" {",clDes,"}")) else ""))
@@ -1512,7 +1512,7 @@ ISOAbstractObject$getISOClasses = function(extended = FALSE, pretty = FALSE){
     if(r6Predicate){
       if(!is.null(clazz$classname)){
         includePredicate <- !(clazz$classname %in% c("geometaLogger", "INSPIREMetadataValidator",
-          "ISOCodelist", "ISOCodeListValue", "ISOMetadataNamespace", "ISOTimePeriod","ISOAttributes",
+          "ISOCodelist", "ISOCodeListItem", "ISOMetadataNamespace", "ISOTimePeriod","ISOAttributes",
           "pivot_format"))
       }
     }

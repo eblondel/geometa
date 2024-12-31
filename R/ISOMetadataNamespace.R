@@ -47,13 +47,13 @@ ISOMetadataNamespace <- R6Class("ISOMetadataNamespace",
   )
 )
 
-#' @name setMetadataNamespaces
-#' @aliases setMetadataNamespaces
-#' @title setMetadataNamespaces
+#' @name setISOMetadataNamespaces
+#' @aliases setISOMetadataNamespaces
+#' @title setISOMetadataNamespaces
 #' @export
-#' @description \code{setMetadataNamespaces} sets the default list of namespaces
+#' @description \code{setISOMetadataNamespaces} sets the default list of namespaces
 #' 
-#' @usage setMetadataNamespaces(version)
+#' @usage setISOMetadataNamespaces(version)
 #' 
 #' @param version the standard version
 #' 

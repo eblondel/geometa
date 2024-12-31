@@ -34,7 +34,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{EvaluationMethodType}
 \keyword{ISO}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOEvaluationMethodType}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{geometa::ISOCodeListItem} -> \code{ISOEvaluationMethodType}
 }
 \section{Methods}{
 \subsection{Public methods}{
@@ -75,7 +75,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="stopIfMetadataStandardIsNot"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-stopIfMetadataStandardIsNot'><code>geometa::ISOAbstractObject$stopIfMetadataStandardIsNot()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCodeListValue" data-id="getAcceptedValues"><a href='../../geometa/html/ISOCodeListValue.html#method-ISOCodeListValue-getAcceptedValues'><code>geometa::ISOCodeListValue$getAcceptedValues()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCodeListItem" data-id="getAcceptedValues"><a href='../../geometa/html/ISOCodeListItem.html#method-ISOCodeListItem-getAcceptedValues'><code>geometa::ISOCodeListItem$getAcceptedValues()</code></a></span></li>
 </ul>
 </details>
 }}

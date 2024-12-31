@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODateType <- R6Class("ISODateType",
-   inherit = ISOCodeListValue,
+   inherit = ISOCodeListItem,
    private = list(
      xmlElement = "CI_DateTypeCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISODateType <- R6Class("ISODateType",
 )
 
 ISODateType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISODateType, labels))
+  return(ISOCodeListItem$values(ISODateType, labels))
 }

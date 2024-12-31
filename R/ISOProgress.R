@@ -21,7 +21,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOProgress<- R6Class("ISOProgress",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
      xmlElement = "MD_ProgressCode",
      xmlNamespacePrefix = list(
@@ -43,7 +43,7 @@ ISOProgress<- R6Class("ISOProgress",
 )
 
 ISOProgress$values <- function(labels = FALSE){
-   return(ISOCodeListValue$values(ISOProgress, labels))
+   return(ISOCodeListItem$values(ISOProgress, labels))
 }
 
 #' ISOStatus

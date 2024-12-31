@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryTrigger <- R6Class("ISOImageryTrigger",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "MI_TriggerCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImageryTrigger <- R6Class("ISOImageryTrigger",
 )
 
 ISOImageryTrigger$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOImageryTrigger, labels))
+  return(ISOCodeListItem$values(ISOImageryTrigger, labels))
 }

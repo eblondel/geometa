@@ -28,7 +28,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOScopeCode <- R6Class("ISOScopeCode",
-   inherit = ISOCodeListValue,
+   inherit = ISOCodeListItem,
    private = list(
      xmlElement = "MD_ScopeCode",
      xmlNamespacePrefix = list(
@@ -49,7 +49,7 @@ ISOScopeCode <- R6Class("ISOScopeCode",
 )
 
 ISOScopeCode$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOScopeCode, labels))
+  return(ISOCodeListItem$values(ISOScopeCode, labels))
 }
 
 #' @format \code{\link[R6]{R6Class}} object
@@ -69,7 +69,7 @@ ISOScopeCode$values <- function(labels = FALSE){
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOHierarchyLevel <- R6Class("ISOHierarchyLevel",
- inherit = ISOCodeListValue,
+ inherit = ISOCodeListItem,
  private = list(
    deprecated = TRUE,
    xmlElement = "MD_ScopeCode",

@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOGeometricObjectType <- R6Class("ISOGeometricObjectType",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "MD_GeometricObjectTypeCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOGeometricObjectType <- R6Class("ISOGeometricObjectType",
 )
 
 ISOGeometricObjectType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOGeometricObjectType, labels))
+  return(ISOCodeListItem$values(ISOGeometricObjectType, labels))
 }

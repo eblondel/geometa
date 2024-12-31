@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryObjectiveType <- R6Class("ISOImageryObjectiveType",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "MI_ObjectiveTypeCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImageryObjectiveType <- R6Class("ISOImageryObjectiveType",
 )
 
 ISOImageryObjectiveType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOImageryObjectiveType, labels))
+  return(ISOCodeListItem$values(ISOImageryObjectiveType, labels))
 }

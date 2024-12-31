@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryGeometryType <- R6Class("ISOImageryGeometryType",
-   inherit = ISOCodeListValue,
+   inherit = ISOCodeListItem,
    private = list(
      xmlElement = "MI_GeometryTypeCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImageryGeometryType <- R6Class("ISOImageryGeometryType",
 )
 
 ISOImageryGeometryType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOImageryGeometryType, labels))
+  return(ISOCodeListItem$values(ISOImageryGeometryType, labels))
 }

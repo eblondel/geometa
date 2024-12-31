@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryTransferFunctionType <- R6Class("ISOImageryTransferFunctionType",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "MI_TransferFunctionTypeCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImageryTransferFunctionType <- R6Class("ISOImageryTransferFunctionType",
 )
 
 ISOImageryTransferFunctionType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOImageryTransferFunctionType, labels))
+  return(ISOCodeListItem$values(ISOImageryTransferFunctionType, labels))
 }

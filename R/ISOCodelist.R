@@ -172,8 +172,22 @@ ISOCodelist <- R6Class("ISOCodelist",
    )                      
 )
 
-#' setISOCodelists
+#' @name setISOCodelists
+#' @aliases setISOCodelists
+#' @title setISOCodelists
 #' @export
+#' @description \code{setISOCodelists} allows to set the list of ISO codelists
+#' registered in \pkg{geometa}
+#' 
+#' @usage setISOCodelists(version)
+#' 
+#' @param version the version of the metadata standard
+#' 
+#' @examples             
+#'   setISOCodelists(version = "19139")
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
 setISOCodelists <- function(version = "19139"){
   langCL <- system.file("extdata/codelists", "ISO-639-2_utf-8.txt", package = "geometa", mustWork = TRUE) #from http://www.loc.gov/standards/iso639-2/
   ML_gmxCL <- system.file("extdata/codelists", "ML_gmxCodelists.xml", package = "geometa", mustWork = TRUE)
@@ -253,7 +267,7 @@ getISOCodelists <- function(){
     clazz <- eval(parse(text=classname))
     if(is(clazz, "R6ClassGenerator")){
       if(!is.null(clazz$inherit)){
-        if(clazz$inherit == "ISOCodeListValue"){
+        if(clazz$inherit == "ISOCodeListItem"){
           cl_classes <- c(cl_classes, clazz)
         }
       }

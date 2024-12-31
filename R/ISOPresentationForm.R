@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOPresentationForm <- R6Class("ISOPresentationForm",
-   inherit = ISOCodeListValue,
+   inherit = ISOCodeListItem,
    private = list(
      xmlElement = "CI_PresentationFormCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOPresentationForm <- R6Class("ISOPresentationForm",
 )
 
 ISOPresentationForm$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOPresentationForm, labels))
+  return(ISOCodeListItem$values(ISOPresentationForm, labels))
 }

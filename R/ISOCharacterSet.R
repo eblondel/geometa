@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCharacterSet <- R6Class("ISOCharacterSet",
- inherit = ISOCodeListValue,
+ inherit = ISOCodeListItem,
  private = list(
    xmlElement = "MD_CharacterSetCode",
    xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOCharacterSet <- R6Class("ISOCharacterSet",
 )
 
 ISOCharacterSet$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOCharacterSet, labels))
+  return(ISOCodeListItem$values(ISOCharacterSet, labels))
 }

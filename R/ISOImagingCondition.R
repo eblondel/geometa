@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImagingCondition <- R6Class("ISOImagingCondition",
-   inherit = ISOCodeListValue,
+   inherit = ISOCodeListItem,
    private = list(
      xmlElement = "MD_ImagingConditionCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImagingCondition <- R6Class("ISOImagingCondition",
 )
 
 ISOImagingCondition$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOImagingCondition, labels))
+  return(ISOCodeListItem$values(ISOImagingCondition, labels))
 }

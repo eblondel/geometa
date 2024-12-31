@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODimensionNameType <- R6Class("ISODimensionNameType",
-    inherit = ISOCodeListValue,
+    inherit = ISOCodeListItem,
     private = list(
       xmlElement = "MD_DimensionNameTypeCode",
       xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISODimensionNameType <- R6Class("ISODimensionNameType",
 )
 
 ISODimensionNameType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISODimensionNameType, labels))
+  return(ISOCodeListItem$values(ISODimensionNameType, labels))
 }

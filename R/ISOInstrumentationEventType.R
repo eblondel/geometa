@@ -18,7 +18,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOInstrumentationEventType <- R6Class("ISOInstrumentationEventType",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "MI_InstrumentationEventTypeCode",
     xmlNamespacePrefix = list(
@@ -40,5 +40,5 @@ ISOInstrumentationEventType <- R6Class("ISOInstrumentationEventType",
 )
 
 ISOInstrumentationEventType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOInstrumentationEventType, labels))
+  return(ISOCodeListItem$values(ISOInstrumentationEventType, labels))
 }

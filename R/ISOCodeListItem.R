@@ -1,10 +1,10 @@
-#' ISOCodeListValue
+#' @name ISOCodeListItem
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @keywords ISO code element
-#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO Metadata codelist element
+#' @keywords ISO code list item
+#' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO Metadata codelist item
 #' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @note Abstract ISO codelist class used internally by geometa
@@ -14,11 +14,11 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOCodeListValue <- R6Class("ISOCodeListValue",
+ISOCodeListItem <- R6Class("ISOCodeListItem",
    inherit = ISOAbstractObject,
    private = list(
       printAttrs = list(),
-      xmlElement = "CodeListValue",
+      xmlElement = "CodeListItem",
       xmlNamespacePrefix = "GCO"
    ),
    public = list(
@@ -31,7 +31,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
      #'@field valueDescription value description
      valueDescription = NULL,
      
-     #'@description Method used to instantiate an \link{ISOCodeListValue}. By default,
+     #'@description Method used to instantiate an \link{ISOCodeListItem}. By default,
      #'    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The 
      #'    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
      #'    \code{addCodeLisAttrs} is set to \code{FALSE}. The argument \code{setValue}
@@ -154,7 +154,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
    )                        
 )
 
-ISOCodeListValue$values = function(class, labels = FALSE){
+ISOCodeListItem$values = function(class, labels = FALSE){
   fields <- "value"
   if(labels) fields <- c(fields, "name", "description")
   element <- class$private_fields$xmlElement

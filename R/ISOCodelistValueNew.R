@@ -1,4 +1,4 @@
-#' ISOCodelistValue
+#' @name ISOCodelistValue
 #'
 #' @docType class
 #' @importFrom R6 R6Class

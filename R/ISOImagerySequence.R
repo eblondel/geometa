@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImagerySequence <- R6Class("ISOImagerySequence",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "MI_SequenceCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImagerySequence <- R6Class("ISOImagerySequence",
 )
 
 ISOImagerySequence$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOImagerySequence, labels))
+  return(ISOCodeListItem$values(ISOImagerySequence, labels))
 }

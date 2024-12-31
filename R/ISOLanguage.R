@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOLanguage <- R6Class("ISOLanguage",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "LanguageCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOLanguage <- R6Class("ISOLanguage",
 )
 
 ISOLanguage$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOLanguage, labels))
+  return(ISOCodeListItem$values(ISOLanguage, labels))
 }

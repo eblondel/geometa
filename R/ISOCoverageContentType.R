@@ -29,7 +29,7 @@
 #'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrc/1.0/mrc/#element_MD_CoverageContentTypeCode}
 #'
 ISOCoverageContentType <- R6Class("ISOCoverageContentType",
-    inherit = ISOCodeListValue,
+    inherit = ISOCodeListItem,
     private = list(
       xmlElement = "MD_CoverageContentTypeCode",
       xmlNamespacePrefix = list(
@@ -51,5 +51,5 @@ ISOCoverageContentType <- R6Class("ISOCoverageContentType",
 )
 
 ISOCoverageContentType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOCoverageContentType, labels))
+  return(ISOCodeListItem$values(ISOCoverageContentType, labels))
 }

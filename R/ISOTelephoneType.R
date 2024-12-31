@@ -21,7 +21,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOTelephoneType <- R6Class("ISOTelephoneType",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = list(
       "19115-3" = "CI_TelephoneTypeCode"
@@ -44,5 +44,5 @@ ISOTelephoneType <- R6Class("ISOTelephoneType",
 )
 
 ISOTelephoneType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOTelephoneType, labels))
+  return(ISOCodeListItem$values(ISOTelephoneType, labels))
 }

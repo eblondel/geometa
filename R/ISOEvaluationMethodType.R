@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOEvaluationMethodType <- R6Class("ISOEvaluationMethodType",
-  inherit = ISOCodeListValue,
+  inherit = ISOCodeListItem,
   private = list(
     xmlElement = "DQ_EvaluationMethodTypeCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOEvaluationMethodType <- R6Class("ISOEvaluationMethodType",
 )
 
 ISOEvaluationMethodType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOEvaluationMethodType, labels))
+  return(ISOCodeListItem$values(ISOEvaluationMethodType, labels))
 }

@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOTopologyLevel <- R6Class("ISOTopologyLevel",
-   inherit = ISOCodeListValue,
+   inherit = ISOCodeListItem,
    private = list(
      xmlElement = "MD_TopologyLevelCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOTopologyLevel <- R6Class("ISOTopologyLevel",
 )
 
 ISOTopologyLevel$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOTopologyLevel, labels))
+  return(ISOCodeListItem$values(ISOTopologyLevel, labels))
 }

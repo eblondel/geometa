@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOAssociationType <- R6Class("ISOAssociationType",
-    inherit = ISOCodeListValue,
+    inherit = ISOCodeListItem,
     private = list(
       xmlElement = "DS_AssociationTypeCode",
       xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOAssociationType <- R6Class("ISOAssociationType",
 )
 
 ISOAssociationType$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOAssociationType, labels))
+  return(ISOCodeListItem$values(ISOAssociationType, labels))
 }

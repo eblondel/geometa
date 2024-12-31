@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryPriority <- R6Class("ISOImageryPriority",
-   inherit = ISOCodeListValue,
+   inherit = ISOCodeListItem,
    private = list(
      xmlElement = "MI_PriorityCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImageryPriority <- R6Class("ISOImageryPriority",
 )
 
 ISOImageryPriority$values <- function(labels = FALSE){
-  return(ISOCodeListValue$values(ISOImageryPriority, labels))
+  return(ISOCodeListItem$values(ISOImageryPriority, labels))
 }
