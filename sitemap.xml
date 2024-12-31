@@ -170,7 +170,6 @@
 <url><loc>/reference/ISOClassification.html</loc></url>
 <url><loc>/reference/ISOCodeDefinition.html</loc></url>
 <url><loc>/reference/ISOCodeListDictionary.html</loc></url>
-<url><loc>/reference/ISOCodeListValue.html</loc></url>
 <url><loc>/reference/ISOCodelist.html</loc></url>
 <url><loc>/reference/ISOCodelistCatalogue.html</loc></url>
 <url><loc>/reference/ISOCompletenessCommission.html</loc></url>
@@ -461,9 +460,9 @@
 <url><loc>/reference/setGeometaOption.html</loc></url>
 <url><loc>/reference/setIANAMimeTypes.html</loc></url>
 <url><loc>/reference/setISOCodelists.html</loc></url>
+<url><loc>/reference/setISOMetadataNamespaces.html</loc></url>
 <url><loc>/reference/setISOMetadataSchemas.html</loc></url>
 <url><loc>/reference/setMappingFormats.html</loc></url>
-<url><loc>/reference/setMetadataNamespaces.html</loc></url>
 <url><loc>/reference/setMetadataStandard.html</loc></url>
 </urlset>
 
