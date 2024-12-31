@@ -566,10 +566,186 @@ ISOSRVServiceIdentification19139 <- R6Class("ISOSRVServiceIdentification19139",
    ),
    public = list(
      
+     #'@field serviceType serviceType [1..1]: ISOGenericName
+     serviceType = NULL,
+     #'@field serviceTypeVersion serviceTypeVersion [0..*]: character
+     serviceTypeVersion = list(),
+     #'@field accessProperties accessProperties [0..1]: ISOStandardOrderProcess
+     accessProperties = NULL,
+     #'@field restrictions restrictions [0..1]: ISOConstraints
+     restrictions = NULL,
+     #'@field keywords keywords [0..*]: ISOKeywords
+     keywords = list(),
+     #'@field extent extent [0..*]: ISOExtent
+     extent = list(),
+     #'@field coupledResource coupledResource [0..*]: ISOCoupledResource
+     coupledResource = list(),
+     #'@field couplingType couplingType [1..1]: ISOCouplingType
+     couplingType = NULL,
+     #'@field containsOperations containsOperations [1..*]: ISOOperationMetadata
+     containsOperations = list(),
+     #'@field operatesOn operatesOn [0..*]: ISODataIdentification
+     operatesOn = list(),
+     
      #'@description Initializes object
      #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
+     },
+     
+     #'@description Set service type
+     #'@param serviceType object of class \link{ISOLocalName}, \link{ISOScopedName} or \link{character}
+     setServiceType = function(serviceType){
+       if(!inherits(serviceType, "ISOAbstractGenericName")){
+         if(is(serviceType, "character")){
+           serviceType <- ISOLocalName$new(value = serviceType)
+         }else{
+           stop("The argument value should be an object of class 'character', 'ISOLocalName' or 'ISOScopedName'")
+         }
+       }
+       self$serviceType <- serviceType
+     },
+     
+     #'@description Adds service type version
+     #'@param version version
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addServiceTypeVersion = function(version){
+       return(self$addListElement("serviceTypeVersion", version))
+     },
+     
+     #'@description Deletes service type version
+     #'@param version version
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delServiceTypeVersion = function(version){
+       return(self$delListElement("serviceTypeVersion", version))
+     },
+     
+     #'@description Set access properties
+     #'@param accessProperties object of class \link{ISOStandardOrderProcess}
+     setAccessProperties = function(accessProperties){
+       if(!is(accessProperties, "ISOStandardOrderProcess")){
+         stop("The argument value should be an object of class 'ISOStandardOrderProcess")
+       }
+       self$accessProperties <- accessProperties
+     },
+     
+     #'@description Set restrictions
+     #'@param restrictions object of class \link{ISOConstraints}
+     setRestrictions = function(restrictions){
+       if(!is(restrictions, "ISOConstraints")){
+         stop("The argument should be an object of class 'ISOConstraints'")
+       }
+       self$restrictions <- restrictions
+     },
+     
+     #'@description Adds keywords
+     #'@param keywords object of class \link{ISOKeywords}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addKeywords = function(keywords){
+       if(!is(keywords, "ISOKeywords")){
+         stop("The argument should be a 'ISOKeywords' object")
+       }
+       return(self$addListElement("keywords", keywords))
+     },
+     
+     #'@description Deletes keywords
+     #'@param keywords object of class \link{ISOKeywords}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delKeywords = function(keywords){
+       if(!is(keywords, "ISOKeywords")){
+         stop("The argument should be a 'ISOKeywords' object")
+       }
+       return(self$delListElement("keywords", keywords))
+     },
+     
+     #'@description Adds extent
+     #'@param extent object of class \link{ISOExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addExtent = function(extent){
+       if(!is(extent, "ISOExtent")){
+         stop("The argument should be a 'ISOExtent' object")
+       }
+       return(self$addListElement("extent", extent))
+     },
+     
+     #'@description Deletes extent
+     #'@param extent object of class \link{ISOExtent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delExtent = function(extent){
+       if(!is(extent, "ISOExtent")){
+         stop("The argument should be a 'ISOExtent' object")
+       }
+       return(self$delListElement("extent", extent))
+     },
+     
+     #'@description Adds coupled resource
+     #'@param resource object of class \link{ISOCoupledResource}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addCoupledResource = function(resource){
+       if(!is(resource, "ISOCoupledResource")){
+         stop("The argument should be an object of class 'ISOCoupledResource'")
+       }
+       return(self$addListElement("coupledResource", resource))
+     },
+     
+     #'@description Deletes coupled resource
+     #'@param resource object of class \link{ISOCoupledResource}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delCoupledResource = function(resource){
+       if(!is(resource, "ISOCoupledResource")){
+         stop("The argument should be an object of class 'ISOCoupledResource'")
+       }
+       return(self$delListElement("coupledResource", resource))
+     },
+     
+     #'@description Set coupling type
+     #'@param couplingType object of class \link{ISOCouplingType} or any \link{character}
+     #' among values returned by \code{ISOCouplingType$values()}
+     setCouplingType = function(couplingType){
+       if(!is(couplingType, "ISOCouplingType")){
+         couplingType <- ISOCouplingType$new(value = couplingType)
+       }
+       self$couplingType <- couplingType
+     },
+     
+     #'@description Adds operation metadata
+     #'@param operationMetadata object of class \link{ISOOperationMetadata}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addOperationMetadata = function(operationMetadata){
+       if(!is(operationMetadata, "ISOOperationMetadata")){
+         stop("The argument value should be an object of class 'ISOOperationMetadata'")
+       }
+       return(self$addListElement("containsOperations", operationMetadata))
+     },
+     
+     #'@description Deletes operation metadata
+     #'@param operationMetadata object of class \link{ISOOperationMetadata}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delOperationMetadata = function(operationMetadata){
+       if(!is(operationMetadata, "ISOOperationMetadata")){
+         stop("The argument value should be an object of class 'ISOOperationMetadata'")
+       }
+       return(self$delListElement("containsOperations", operationMetadata))
+     },
+     
+     #'@description Adds operates on
+     #'@param dataIdentification object of class \link{ISODataIdentification}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addOperatesOn = function(dataIdentification){
+       if(!is(dataIdentification, "ISODataIdentification")){
+         stop("The argument value should be an object of class 'ISODataIdentification'")
+       }
+       return(self$addListElement("operatesOn", dataIdentification))
+     },
+     
+     #'@description Deletes operates on
+     #'@param dataIdentification object of class \link{ISODataIdentification}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delOperatesOn = function(dataIdentification){
+       if(!is(dataIdentification, "ISODataIdentification")){
+         stop("The argument value should be an object of class 'ISODataIdentification'")
+       }
+       return(self$delListElement("operatesOn", dataIdentification))
      }
    )                        
 )
@@ -590,10 +766,186 @@ ISOSRVServiceIdentification19115_3 <- R6Class("ISOSRVServiceIdentification19115_
    ),
    public = list(
      
+     #'@field serviceType serviceType [1..1]: ISOGenericName
+     serviceType = NULL,
+     #'@field serviceTypeVersion serviceTypeVersion [0..*]: character
+     serviceTypeVersion = list(),
+     #'@field accessProperties accessProperties [0..1]: ISOStandardOrderProcess
+     accessProperties = NULL,
+     #'@field restrictions restrictions [0..1]: ISOConstraints
+     restrictions = NULL,
+     #'@field keywords keywords [0..*]: ISOKeywords
+     keywords = list(),
+     #'@field extent extent [0..*]: ISOExtent
+     extent = list(),
+     #'@field coupledResource coupledResource [0..*]: ISOCoupledResource
+     coupledResource = list(),
+     #'@field couplingType couplingType [1..1]: ISOCouplingType
+     couplingType = NULL,
+     #'@field containsOperations containsOperations [1..*]: ISOOperationMetadata
+     containsOperations = list(),
+     #'@field operatesOn operatesOn [0..*]: ISODataIdentification
+     operatesOn = list(),
+     
      #'@description Initializes object
      #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
+     },
+     
+     #'@description Set service type
+     #'@param serviceType object of class \link{ISOLocalName}, \link{ISOScopedName} or \link{character}
+     setServiceType = function(serviceType){
+       if(!inherits(serviceType, "ISOAbstractGenericName")){
+         if(is(serviceType, "character")){
+           serviceType <- ISOLocalName$new(value = serviceType)
+         }else{
+           stop("The argument value should be an object of class 'character', 'ISOLocalName' or 'ISOScopedName'")
+         }
+       }
+       self$serviceType <- serviceType
+     },
+     
+     #'@description Adds service type version
+     #'@param version version
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addServiceTypeVersion = function(version){
+       return(self$addListElement("serviceTypeVersion", version))
+     },
+     
+     #'@description Deletes service type version
+     #'@param version version
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delServiceTypeVersion = function(version){
+       return(self$delListElement("serviceTypeVersion", version))
+     },
+     
+     #'@description Set access properties
+     #'@param accessProperties object of class \link{ISOStandardOrderProcess}
+     setAccessProperties = function(accessProperties){
+       if(!is(accessProperties, "ISOStandardOrderProcess")){
+         stop("The argument value should be an object of class 'ISOStandardOrderProcess")
+       }
+       self$accessProperties <- accessProperties
+     },
+     
+     #'@description Set restrictions
+     #'@param restrictions object of class \link{ISOConstraints}
+     setRestrictions = function(restrictions){
+       if(!is(restrictions, "ISOConstraints")){
+         stop("The argument should be an object of class 'ISOConstraints'")
+       }
+       self$restrictions <- restrictions
+     },
+     
+     #'@description Adds keywords
+     #'@param keywords object of class \link{ISOKeywords}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addKeywords = function(keywords){
+       if(!is(keywords, "ISOKeywords")){
+         stop("The argument should be a 'ISOKeywords' object")
+       }
+       return(self$addListElement("keywords", keywords))
+     },
+     
+     #'@description Deletes keywords
+     #'@param keywords object of class \link{ISOKeywords}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delKeywords = function(keywords){
+       if(!is(keywords, "ISOKeywords")){
+         stop("The argument should be a 'ISOKeywords' object")
+       }
+       return(self$delListElement("keywords", keywords))
+     },
+     
+     #'@description Adds extent
+     #'@param extent object of class \link{ISOExtent}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addExtent = function(extent){
+       if(!is(extent, "ISOExtent")){
+         stop("The argument should be a 'ISOExtent' object")
+       }
+       return(self$addListElement("extent", extent))
+     },
+     
+     #'@description Deletes extent
+     #'@param extent object of class \link{ISOExtent}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delExtent = function(extent){
+       if(!is(extent, "ISOExtent")){
+         stop("The argument should be a 'ISOExtent' object")
+       }
+       return(self$delListElement("extent", extent))
+     },
+     
+     #'@description Adds coupled resource
+     #'@param resource object of class \link{ISOCoupledResource}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addCoupledResource = function(resource){
+       if(!is(resource, "ISOCoupledResource")){
+         stop("The argument should be an object of class 'ISOCoupledResource'")
+       }
+       return(self$addListElement("coupledResource", resource))
+     },
+     
+     #'@description Deletes coupled resource
+     #'@param resource object of class \link{ISOCoupledResource}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delCoupledResource = function(resource){
+       if(!is(resource, "ISOCoupledResource")){
+         stop("The argument should be an object of class 'ISOCoupledResource'")
+       }
+       return(self$delListElement("coupledResource", resource))
+     },
+     
+     #'@description Set coupling type
+     #'@param couplingType object of class \link{ISOCouplingType} or any \link{character}
+     #' among values returned by \code{ISOCouplingType$values()}
+     setCouplingType = function(couplingType){
+       if(!is(couplingType, "ISOCouplingType")){
+         couplingType <- ISOCouplingType$new(value = couplingType)
+       }
+       self$couplingType <- couplingType
+     },
+     
+     #'@description Adds operation metadata
+     #'@param operationMetadata object of class \link{ISOOperationMetadata}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addOperationMetadata = function(operationMetadata){
+       if(!is(operationMetadata, "ISOOperationMetadata")){
+         stop("The argument value should be an object of class 'ISOOperationMetadata'")
+       }
+       return(self$addListElement("containsOperations", operationMetadata))
+     },
+     
+     #'@description Deletes operation metadata
+     #'@param operationMetadata object of class \link{ISOOperationMetadata}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delOperationMetadata = function(operationMetadata){
+       if(!is(operationMetadata, "ISOOperationMetadata")){
+         stop("The argument value should be an object of class 'ISOOperationMetadata'")
+       }
+       return(self$delListElement("containsOperations", operationMetadata))
+     },
+     
+     #'@description Adds operates on
+     #'@param dataIdentification object of class \link{ISODataIdentification}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addOperatesOn = function(dataIdentification){
+       if(!is(dataIdentification, "ISODataIdentification")){
+         stop("The argument value should be an object of class 'ISODataIdentification'")
+       }
+       return(self$addListElement("operatesOn", dataIdentification))
+     },
+     
+     #'@description Deletes operates on
+     #'@param dataIdentification object of class \link{ISODataIdentification}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delOperatesOn = function(dataIdentification){
+       if(!is(dataIdentification, "ISODataIdentification")){
+         stop("The argument value should be an object of class 'ISODataIdentification'")
+       }
+       return(self$delListElement("operatesOn", dataIdentification))
      }
    )                        
 )
