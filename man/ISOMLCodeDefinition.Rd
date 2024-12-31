@@ -69,7 +69,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="stopIfMetadataStandardIsNot"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-stopIfMetadataStandardIsNot'><code>geometa::ISOAbstractObject$stopIfMetadataStandardIsNot()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="validate"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-validate'><code>geometa::ISOAbstractObject$validate()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOAbstractObject" data-id="wrapBaseElement"><a href='../../geometa/html/ISOAbstractObject.html#method-ISOAbstractObject-wrapBaseElement'><code>geometa::ISOAbstractObject$wrapBaseElement()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCodeDefinition" data-id="toISOCodelistValue"><a href='../../geometa/html/ISOCodeDefinition.html#method-ISOCodeDefinition-toISOCodelistValue'><code>geometa::ISOCodeDefinition$toISOCodelistValue()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOCodeDefinition" data-id="toISOCTCodelistValue"><a href='../../geometa/html/ISOCodeDefinition.html#method-ISOCodeDefinition-toISOCTCodelistValue'><code>geometa::ISOCodeDefinition$toISOCTCodelistValue()</code></a></span></li>
 </ul>
 </details>
 }}

@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMediumFormat <- R6Class("ISOMediumFormat",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_MediumFormatCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOMediumFormat <- R6Class("ISOMediumFormat",
 )
 
 ISOMediumFormat$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOMediumFormat, labels))
+  return(ISOCodeListValue$values(ISOMediumFormat, labels))
 }

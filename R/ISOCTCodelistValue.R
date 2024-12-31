@@ -1,4 +1,4 @@
-#' @name ISOCodelistValue
+#' @name ISOCTCodelistValue
 #'
 #' @docType class
 #' @importFrom R6 R6Class
@@ -14,7 +14,7 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOCodelistValue <- R6Class("ISOCodelistValue",
+ISOCTCodelistValue <- R6Class("ISOCTCodelistValue",
    inherit = ISOAbstractObject,
    private = list(
      metadataStandardCompliance = FALSE,

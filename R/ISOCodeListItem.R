@@ -1,4 +1,4 @@
-#' @name ISOCodeListItem
+#' @name ISOCodeListValue
 #'
 #' @docType class
 #' @importFrom R6 R6Class
@@ -14,7 +14,7 @@
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
-ISOCodeListItem <- R6Class("ISOCodeListItem",
+ISOCodeListValue <- R6Class("ISOCodeListValue",
    inherit = ISOAbstractObject,
    private = list(
       printAttrs = list(),
@@ -31,7 +31,7 @@ ISOCodeListItem <- R6Class("ISOCodeListItem",
      #'@field valueDescription value description
      valueDescription = NULL,
      
-     #'@description Method used to instantiate an \link{ISOCodeListItem}. By default,
+     #'@description Method used to instantiate an \link{ISOCodeListValue}. By default,
      #'    \code{addCodeListAttrs = TRUE}, to add codelist atributes to root XML. The 
      #'    parameter \code{addCodeSpaceAttr = TRUE} by default, and ignored if the valueof
      #'    \code{addCodeLisAttrs} is set to \code{FALSE}. The argument \code{setValue}
@@ -154,7 +154,7 @@ ISOCodeListItem <- R6Class("ISOCodeListItem",
    )                        
 )
 
-ISOCodeListItem$values = function(class, labels = FALSE){
+ISOCodeListValue$values = function(class, labels = FALSE){
   fields <- "value"
   if(labels) fields <- c(fields, "name", "description")
   element <- class$private_fields$xmlElement

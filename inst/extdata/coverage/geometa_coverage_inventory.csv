@@ -760,7 +760,7 @@
 "ISO/TS 19115-3:2023","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT","AbstractCT_Item","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2023  -  ISO/TS 19139:2007  -  CAT"
 "ISO/TS 19115-3:2023","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT","CT_Codelist","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2023  -  ISO/TS 19139:2007  -  CAT"
 "ISO/TS 19115-3:2023","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT","CT_CodelistCatalogue","ISOCodelistCatalogue",TRUE,TRUE,"ISO/TS 19115-3:2023  -  ISO/TS 19139:2007  -  CAT"
-"ISO/TS 19115-3:2023","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT","CT_CodelistValue","ISOCodelistValue",TRUE,TRUE,"ISO/TS 19115-3:2023  -  ISO/TS 19139:2007  -  CAT"
+"ISO/TS 19115-3:2023","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT","CT_CodelistValue","ISOCTCodelistValue",TRUE,TRUE,"ISO/TS 19115-3:2023  -  ISO/TS 19139:2007  -  CAT"
 "ISO/TS 19115-3:2023","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT","CT_CoordinateSystem","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2023  -  ISO/TS 19139:2007  -  CAT"
 "ISO/TS 19115-3:2023","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT","CT_CoordinateSystemAxis","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2023  -  ISO/TS 19139:2007  -  CAT"
 "ISO/TS 19115-3:2023","ISO/TS 19139:2007","CATalogue Objects (CAT) Version: 1.0","CAT","CT_CRS","<missing>",FALSE,FALSE,"ISO/TS 19115-3:2023  -  ISO/TS 19139:2007  -  CAT"

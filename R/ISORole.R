@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISORole <- R6Class("ISORole",
-  inherit = ISOCodeListItem,
+  inherit = ISOCodeListValue,
   private = list(
     xmlElement = "CI_RoleCode",
     xmlNamespacePrefix = list(
@@ -42,5 +42,5 @@ ISORole <- R6Class("ISORole",
 )
 
 ISORole$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISORole, labels))
+  return(ISOCodeListValue$values(ISORole, labels))
 }

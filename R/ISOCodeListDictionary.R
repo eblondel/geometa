@@ -45,7 +45,7 @@ ISOCodeListDictionary <- R6Class("ISOCodeListDictionary",
         cl$identifier = identifier
         cl$description = self$description$value
         cl$codeEntry = lapply(self$codeEntry, function(codeEntry){
-          codeEntry$toISOCodelistValue()
+          codeEntry$toISOCTCodelistValue()
         })
         return(cl)
       }

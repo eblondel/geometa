@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOInitiativeType <- R6Class("ISOInitiativeType",
-    inherit = ISOCodeListItem,
+    inherit = ISOCodeListValue,
     private = list(
       xmlElement = "DS_InitiativeTypeCode",
       xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOInitiativeType <- R6Class("ISOInitiativeType",
 )
 
 ISOInitiativeType$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOInitiativeType, labels))
+  return(ISOCodeListValue$values(ISOInitiativeType, labels))
 }

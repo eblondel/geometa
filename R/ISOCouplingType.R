@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCouplingType <- R6Class("ISOCouplingType",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "SV_CouplingType",
      xmlNamespacePrefix = "SRV"
@@ -41,5 +41,5 @@ ISOCouplingType <- R6Class("ISOCouplingType",
 )
 
 ISOCouplingType$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOCouplingType, labels))
+  return(ISOCodeListValue$values(ISOCouplingType, labels))
 }

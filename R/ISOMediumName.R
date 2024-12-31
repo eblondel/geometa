@@ -20,7 +20,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMediumName <- R6Class("ISOMediumName",
-inherit = ISOCodeListItem,
+inherit = ISOCodeListValue,
 private = list(
   xmlElement = "MD_MediumNameCode",
   xmlNamespacePrefix = "GMD"
@@ -39,5 +39,5 @@ public = list(
 )
 
 ISOMediumName$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOMediumName, labels))
+  return(ISOCodeListValue$values(ISOMediumName, labels))
 }

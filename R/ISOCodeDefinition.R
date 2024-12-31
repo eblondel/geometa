@@ -34,10 +34,10 @@ ISOCodeDefinition <- R6Class("ISOCodeDefinition",
        super$initialize(xml = xml)
      },
      
-     #'@description Converts to \link{ISOCodelistValue}
-     #'@return object of class \link{ISOCodelistValue}
-     toISOCodelistValue = function(){
-       clv = ISOCodelistValue$new()
+     #'@description Converts to \link{ISOCTCodelistValue}
+     #'@return object of class \link{ISOCTCodelistValue}
+     toISOCTCodelistValue = function(){
+       clv = ISOCTCodelistValue$new()
        clv$identifier = self$identifier$value
        clv$description = self$description$value
        return(clv)

@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryOperationType <- R6Class("ISOImageryOperationType",
-  inherit = ISOCodeListItem,
+  inherit = ISOCodeListValue,
   private = list(
     xmlElement = "MI_OperationTypeCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImageryOperationType <- R6Class("ISOImageryOperationType",
 )
 
 ISOImageryOperationType$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOImageryOperationType, labels))
+  return(ISOCodeListValue$values(ISOImageryOperationType, labels))
 }

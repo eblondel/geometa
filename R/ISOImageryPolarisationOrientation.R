@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryPolarisationOrientation <- R6Class("ISOImageryPolarisationOrientation",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MI_PolarisationOrientationCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImageryPolarisationOrientation <- R6Class("ISOImageryPolarisationOrientation"
 )
 
 ISOImageryPolarisationOrientation$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOImageryPolarisationOrientation, labels))
+  return(ISOCodeListValue$values(ISOImageryPolarisationOrientation, labels))
 }

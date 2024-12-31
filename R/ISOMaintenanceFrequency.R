@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMaintenanceFrequency <- R6Class("ISOMaintenanceFrequency",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_MaintenanceFrequencyCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOMaintenanceFrequency <- R6Class("ISOMaintenanceFrequency",
 )
 
 ISOMaintenanceFrequency$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOMaintenanceFrequency, labels))
+  return(ISOCodeListValue$values(ISOMaintenanceFrequency, labels))
 }

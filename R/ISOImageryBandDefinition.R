@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryBandDefinition <- R6Class("ISOImageryBandDefinition",
-    inherit = ISOCodeListItem,
+    inherit = ISOCodeListValue,
     private = list(
       xmlElement = "MI_BandDefinition",
       xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImageryBandDefinition <- R6Class("ISOImageryBandDefinition",
 )
 
 ISOImageryBandDefinition$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOImageryBandDefinition, labels))
+  return(ISOCodeListValue$values(ISOImageryBandDefinition, labels))
 }

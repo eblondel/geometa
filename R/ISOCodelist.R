@@ -95,7 +95,7 @@ ISOCodelist <- R6Class("ISOCodelist",
          codeEntry <- codeEntry[,c("alpha3", "english", "english")]
          colnames(codeEntry) <- c("value","name", "description")
          self$codeEntry = lapply(1:nrow(codeEntry), function(i){
-           clv = ISOCodelistValue$new()
+           clv = ISOCTCodelistValue$new()
            clv$identifier = codeEntry[i,]$value; clv$description = codeEntry[i,]$description
            return(clv)
          })
@@ -163,7 +163,7 @@ ISOCodelist <- R6Class("ISOCodelist",
          }))
          colnames(codeEntry) <- c("value", "name", "description")
          self$codeEntry = lapply(1:nrow(codeEntry), function(i){
-           clv = ISOCodelistValue$new()
+           clv = ISOCTCodelistValue$new()
            clv$identifier = codeEntry[i,]$value; clv$description = codeEntry[i,]$description;
            return(clv)
          })
@@ -267,7 +267,7 @@ getISOCodelists <- function(){
     clazz <- eval(parse(text=classname))
     if(is(clazz, "R6ClassGenerator")){
       if(!is.null(clazz$inherit)){
-        if(clazz$inherit == "ISOCodeListItem"){
+        if(clazz$inherit == "ISOCodeListValue"){
           cl_classes <- c(cl_classes, clazz)
         }
       }

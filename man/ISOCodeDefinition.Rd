@@ -43,7 +43,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOCodeDefinition-new}{\code{ISOCodeDefinition$new()}}
-\item \href{#method-ISOCodeDefinition-toISOCodelistValue}{\code{ISOCodeDefinition$toISOCodelistValue()}}
+\item \href{#method-ISOCodeDefinition-toISOCTCodelistValue}{\code{ISOCodeDefinition$toISOCTCodelistValue()}}
 \item \href{#method-ISOCodeDefinition-clone}{\code{ISOCodeDefinition$clone()}}
 }
 }
@@ -100,16 +100,16 @@ Initializes object
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ISOCodeDefinition-toISOCodelistValue"></a>}}
-\if{latex}{\out{\hypertarget{method-ISOCodeDefinition-toISOCodelistValue}{}}}
-\subsection{Method \code{toISOCodelistValue()}}{
-Converts to \link{ISOCodelistValue}
+\if{html}{\out{<a id="method-ISOCodeDefinition-toISOCTCodelistValue"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOCodeDefinition-toISOCTCodelistValue}{}}}
+\subsection{Method \code{toISOCTCodelistValue()}}{
+Converts to \link{ISOCTCodelistValue}
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOCodeDefinition$toISOCodelistValue()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOCodeDefinition$toISOCTCodelistValue()}\if{html}{\out{</div>}}
 }
 
 \subsection{Returns}{
-object of class \link{ISOCodelistValue}
+object of class \link{ISOCTCodelistValue}
 }
 }
 \if{html}{\out{<hr>}}

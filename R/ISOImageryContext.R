@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryContext <- R6Class("ISOImageryContext",
-  inherit = ISOCodeListItem,
+  inherit = ISOCodeListValue,
   private = list(
     xmlElement = "MI_ContextCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOImageryContext <- R6Class("ISOImageryContext",
 )
 
 ISOImageryContext$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOImageryContext, labels))
+  return(ISOCodeListValue$values(ISOImageryContext, labels))
 }

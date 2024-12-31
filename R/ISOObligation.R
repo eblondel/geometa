@@ -20,7 +20,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOObligation <- R6Class("ISOObligation",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_ObligationCode",
      xmlNamespacePrefix = "GMD"
@@ -39,5 +39,5 @@ ISOObligation <- R6Class("ISOObligation",
 )
 
 ISOObligation$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOObligation, labels))
+  return(ISOCodeListValue$values(ISOObligation, labels))
 }

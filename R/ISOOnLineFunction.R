@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOOnLineFunction <- R6Class("ISOOnLineFunction",
-  inherit = ISOCodeListItem,
+  inherit = ISOCodeListValue,
   private = list(
     xmlElement = "CI_OnLineFunctionCode",
     xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOOnLineFunction <- R6Class("ISOOnLineFunction",
 )
 
 ISOOnLineFunction$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOOnLineFunction, labels))
+  return(ISOCodeListValue$values(ISOOnLineFunction, labels))
 }

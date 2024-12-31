@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOSpatialRepresentationType <- R6Class("ISOSpatialRepresentationType",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_SpatialRepresentationTypeCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOSpatialRepresentationType <- R6Class("ISOSpatialRepresentationType",
 )
 
 ISOSpatialRepresentationType$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOSpatialRepresentationType, labels))
+  return(ISOCodeListValue$values(ISOSpatialRepresentationType, labels))
 }

@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODCPList <- R6Class("ISODCPList",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "DCPList",
      xmlNamespacePrefix = "SRV"
@@ -41,5 +41,5 @@ ISODCPList <- R6Class("ISODCPList",
 )
 
 ISODCPList$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISODCPList, labels))
+  return(ISOCodeListValue$values(ISODCPList, labels))
 }

@@ -68,7 +68,7 @@ ISOCodelistCatalogue <- R6Class("ISOCodelistCatalogue",
      #         cl$identifier = ISOScopedName$new(xml = xmlChildren(xml_cl$name)[[1]])
      #         cl$codeEntry = lapply(xml_cl[names(xml_cl)=="codeEntry"], function(y){
      #           xml_clval = XML::xmlChildren(y)[[1]]
-     #           clval = ISOCodelistValue$new(xml = xml_clval)
+     #           clval = ISOCTCodelistValue$new(xml = xml_clval)
      #           xml_clval_c = xmlChildren(xml_clval)
      #           clval$identifier = ISOScopedName$new(xml = xmlChildren(xml_clval_c$name)[[1]])
      #         })

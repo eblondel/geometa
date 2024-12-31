@@ -20,7 +20,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISODatatype <- R6Class("ISODatatype",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_DatatypeCode",
      xmlNamespacePrefix = "GMD"
@@ -39,5 +39,5 @@ ISODatatype <- R6Class("ISODatatype",
 )
 
 ISODatatype$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISODatatype, labels))
+  return(ISOCodeListValue$values(ISODatatype, labels))
 }

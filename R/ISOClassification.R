@@ -22,7 +22,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOClassification <- R6Class("ISOClassification",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MD_ClassificationCode",
      xmlNamespacePrefix = list(
@@ -44,5 +44,5 @@ ISOClassification <- R6Class("ISOClassification",
 )
 
 ISOClassification$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOClassification, labels))
+  return(ISOCodeListValue$values(ISOClassification, labels))
 }

@@ -20,7 +20,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOParameterDirection <- R6Class("ISOParameterDirection",
-  inherit = ISOCodeListItem,
+  inherit = ISOCodeListValue,
   private = list(
     xmlElement = "LE_ParameterDirection",
     xmlNamespacePrefix = list(
@@ -42,5 +42,5 @@ ISOParameterDirection <- R6Class("ISOParameterDirection",
 )
 
 ISOParameterDirection$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOParameterDirection, labels))
+  return(ISOCodeListValue$values(ISOParameterDirection, labels))
 }

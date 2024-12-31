@@ -18,7 +18,7 @@
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImagerySensorType <- R6Class("ISOImagerySensorType",
-   inherit = ISOCodeListItem,
+   inherit = ISOCodeListValue,
    private = list(
      xmlElement = "MI_SensorTypeCode",
      xmlNamespacePrefix = list(
@@ -40,5 +40,5 @@ ISOImagerySensorType <- R6Class("ISOImagerySensorType",
 )
 
 ISOImagerySensorType$values <- function(labels = FALSE){
-  return(ISOCodeListItem$values(ISOImagerySensorType, labels))
+  return(ISOCodeListValue$values(ISOImagerySensorType, labels))
 }
