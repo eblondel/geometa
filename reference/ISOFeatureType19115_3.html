@@ -543,12 +543,13 @@ or <a href="https://rdrr.io/r/base/character.html" class="external-link">charact
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="co">#featuretype</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="fu"><a href="setMetadataStandard.html">setMetadataStandard</a></span><span class="op">(</span><span class="st">"19115-3"</span><span class="op">)</span> <span class="co">#required</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Loading ISO 19115-3 codelists...</span>
+<span class="r-in"><span> <span class="co">#featuretype</span></span></span>
 <span class="r-in"><span> <span class="va">md</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOFeatureType.html">ISOFeatureType</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">setTypeName</span><span class="op">(</span><span class="st">"typeName"</span><span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">setDefinition</span><span class="op">(</span><span class="st">"definition"</span><span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">setDesignation</span><span class="op">(</span><span class="st">"designation"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">setCode</span><span class="op">(</span><span class="st">"code"</span><span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">setIsAbstract</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="va">md</span><span class="op">$</span><span class="fu">addAlias</span><span class="op">(</span><span class="st">"alias1"</span><span class="op">)</span></span></span>
@@ -593,10 +594,14 @@ or <a href="https://rdrr.io/r/base/character.html" class="external-link">charact
 <span class="r-in"><span>   <span class="va">md</span><span class="op">$</span><span class="fu">addCharacteristic</span><span class="op">(</span><span class="va">fat</span><span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="op">}</span></span></span>
 <span class="r-in"><span> <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.opengis.net/gml/3.2}BaseUnit', attribute '{http://www.opengis.net/gml/3.2}id': 'ID%' is not a valid value of the atomic type 'xs:ID' at line 47. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.opengis.net/gml/3.2}BaseUnit', attribute '{http://www.opengis.net/gml/3.2}id': 'ID%' is not a valid value of the atomic type 'xs:ID' at line 118. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.opengis.net/gml/3.2}BaseUnit', attribute '{http://www.opengis.net/gml/3.2}id': 'ID%' is not a valid value of the atomic type 'xs:ID' at line 189. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOFeatureType19139' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://standards.iso.org/iso/19115/-3/gco/1.0}UomIdentifier': Element content is not allowed, because the type definition is simple at line 38. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://standards.iso.org/iso/19115/-3/gco/1.0}UomIdentifier': '' is not a valid value of the union type '{http://standards.iso.org/iso/19115/-3/gco/1.0}UomIdentifierType' at line 38. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://standards.iso.org/iso/19115/-3/gco/1.0}UomIdentifier': Element content is not allowed, because the type definition is simple at line 102. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://standards.iso.org/iso/19115/-3/gco/1.0}UomIdentifier': '' is not a valid value of the union type '{http://standards.iso.org/iso/19115/-3/gco/1.0}UomIdentifierType' at line 102. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://standards.iso.org/iso/19115/-3/gco/1.0}UomIdentifier': Element content is not allowed, because the type definition is simple at line 166. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://standards.iso.org/iso/19115/-3/gco/1.0}UomIdentifier': '' is not a valid value of the union type '{http://standards.iso.org/iso/19115/-3/gco/1.0}UomIdentifierType' at line 166. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOFeatureType19115_3' is INVALID according to ISO 19115-3 XML schemas! </span>
+<span class="r-in"><span> <span class="fu"><a href="setMetadataStandard.html">setMetadataStandard</a></span><span class="op">(</span><span class="st">"19139"</span><span class="op">)</span> </span></span>
 <span class="r-in"><span> </span></span>
 </code></pre></div>
     </div>

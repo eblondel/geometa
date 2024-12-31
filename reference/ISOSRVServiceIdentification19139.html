@@ -64,6 +64,50 @@ ISOSRVServiceIdentification19139"><!-- mathjax --><script src="https://cdnjs.clo
     <h2>Super classes</h2>
     <p><code><a href="geometaLogger.html">geometa::geometaLogger</a></code> -&gt; <code><a href="ISOAbstractObject.html">geometa::ISOAbstractObject</a></code> -&gt; <code><a href="ISOIdentification.html">geometa::ISOIdentification</a></code> -&gt; <code><a href="ISOIdentification19139.html">geometa::ISOIdentification19139</a></code> -&gt; <code><a href="ISOServiceIdentification19139.html">geometa::ISOServiceIdentification19139</a></code> -&gt; <code>ISOSRVServiceIdentification19139</code></p>
     </div>
+    <div id="public-fields">
+    <h2>Public fields</h2>
+    <p></p><div class="r6-fields"><dl><dt><code>serviceType</code></dt>
+<dd><p>serviceType [1..1]: ISOGenericName</p></dd>
+
+
+<dt><code>serviceTypeVersion</code></dt>
+<dd><p>serviceTypeVersion [0..*]: character</p></dd>
+
+
+<dt><code>accessProperties</code></dt>
+<dd><p>accessProperties [0..1]: ISOStandardOrderProcess</p></dd>
+
+
+<dt><code>restrictions</code></dt>
+<dd><p>restrictions [0..1]: ISOConstraints</p></dd>
+
+
+<dt><code>keywords</code></dt>
+<dd><p>keywords [0..*]: ISOKeywords</p></dd>
+
+
+<dt><code>extent</code></dt>
+<dd><p>extent [0..*]: ISOExtent</p></dd>
+
+
+<dt><code>coupledResource</code></dt>
+<dd><p>coupledResource [0..*]: ISOCoupledResource</p></dd>
+
+
+<dt><code>couplingType</code></dt>
+<dd><p>couplingType [1..1]: ISOCouplingType</p></dd>
+
+
+<dt><code>containsOperations</code></dt>
+<dd><p>containsOperations [1..*]: ISOOperationMetadata</p></dd>
+
+
+<dt><code>operatesOn</code></dt>
+<dd><p>operatesOn [0..*]: ISODataIdentification</p></dd>
+
+
+</dl><p></p></div>
+    </div>
     <div id="methods">
     <h2>Methods</h2>
 
@@ -71,6 +115,22 @@ ISOSRVServiceIdentification19139"><!-- mathjax --><script src="https://cdnjs.clo
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-ISOSRVServiceIdentification19139-new"><code>ISOSRVServiceIdentification19139$new()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-setServiceType"><code>ISOSRVServiceIdentification19139$setServiceType()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-addServiceTypeVersion"><code>ISOSRVServiceIdentification19139$addServiceTypeVersion()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-delServiceTypeVersion"><code>ISOSRVServiceIdentification19139$delServiceTypeVersion()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-setAccessProperties"><code>ISOSRVServiceIdentification19139$setAccessProperties()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-setRestrictions"><code>ISOSRVServiceIdentification19139$setRestrictions()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-addKeywords"><code>ISOSRVServiceIdentification19139$addKeywords()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-delKeywords"><code>ISOSRVServiceIdentification19139$delKeywords()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-addExtent"><code>ISOSRVServiceIdentification19139$addExtent()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-delExtent"><code>ISOSRVServiceIdentification19139$delExtent()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-addCoupledResource"><code>ISOSRVServiceIdentification19139$addCoupledResource()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-delCoupledResource"><code>ISOSRVServiceIdentification19139$delCoupledResource()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-setCouplingType"><code>ISOSRVServiceIdentification19139$setCouplingType()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-addOperationMetadata"><code>ISOSRVServiceIdentification19139$addOperationMetadata()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-delOperationMetadata"><code>ISOSRVServiceIdentification19139$delOperationMetadata()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-addOperatesOn"><code>ISOSRVServiceIdentification19139$addOperatesOn()</code></a></p></li>
+<li><p><a href="#method-ISOSRVServiceIdentification19139-delOperatesOn"><code>ISOSRVServiceIdentification19139$delOperatesOn()</code></a></p></li>
 <li><p><a href="#method-ISOSRVServiceIdentification19139-clone"><code>ISOSRVServiceIdentification19139$clone()</code></a></p></li>
 </ul></div><p><details><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="ERROR"><a href="geometaLogger.html#method-ERROR"><code>geometa::geometaLogger$ERROR()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="geometaLogger" data-id="INFO"><a href="geometaLogger.html#method-INFO"><code>geometa::geometaLogger$INFO()</code></a></span></li>
@@ -105,7 +165,6 @@ ISOSRVServiceIdentification19139"><!-- mathjax --><script src="https://cdnjs.clo
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="addCredit"><a href="ISOIdentification19139.html#method-addCredit"><code>geometa::ISOIdentification19139$addCredit()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="addFormat"><a href="ISOIdentification19139.html#method-addFormat"><code>geometa::ISOIdentification19139$addFormat()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="addGraphicOverview"><a href="ISOIdentification19139.html#method-addGraphicOverview"><code>geometa::ISOIdentification19139$addGraphicOverview()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="addKeywords"><a href="ISOIdentification19139.html#method-addKeywords"><code>geometa::ISOIdentification19139$addKeywords()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="addPointOfContact"><a href="ISOIdentification19139.html#method-addPointOfContact"><code>geometa::ISOIdentification19139$addPointOfContact()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="addResourceConstraints"><a href="ISOIdentification19139.html#method-addResourceConstraints"><code>geometa::ISOIdentification19139$addResourceConstraints()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="addResourceMaintenance"><a href="ISOIdentification19139.html#method-addResourceMaintenance"><code>geometa::ISOIdentification19139$addResourceMaintenance()</code></a></span></li>
@@ -115,7 +174,6 @@ ISOSRVServiceIdentification19139"><!-- mathjax --><script src="https://cdnjs.clo
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="delCredit"><a href="ISOIdentification19139.html#method-delCredit"><code>geometa::ISOIdentification19139$delCredit()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="delFormat"><a href="ISOIdentification19139.html#method-delFormat"><code>geometa::ISOIdentification19139$delFormat()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="delGraphicOverview"><a href="ISOIdentification19139.html#method-delGraphicOverview"><code>geometa::ISOIdentification19139$delGraphicOverview()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="delKeywords"><a href="ISOIdentification19139.html#method-delKeywords"><code>geometa::ISOIdentification19139$delKeywords()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="delPointOfContact"><a href="ISOIdentification19139.html#method-delPointOfContact"><code>geometa::ISOIdentification19139$delPointOfContact()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="delResourceConstraints"><a href="ISOIdentification19139.html#method-delResourceConstraints"><code>geometa::ISOIdentification19139$delResourceConstraints()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19139" data-id="delResourceMaintenance"><a href="ISOIdentification19139.html#method-delResourceMaintenance"><code>geometa::ISOIdentification19139$delResourceMaintenance()</code></a></span></li>
@@ -143,15 +201,320 @@ ISOSRVServiceIdentification19139"><!-- mathjax --><script src="https://cdnjs.clo
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
-<p>The objects of this class are cloneable with this method.</p><div class="section">
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-setServiceType"></a><div class="section">
+<h3 id="method-setservicetype-">Method <code>setServiceType()</code><a class="anchor" aria-label="anchor" href="#method-setservicetype-"></a></h3>
+<p>Set service type</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">setServiceType</span><span class="op">(</span><span class="va">serviceType</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>serviceType</code></dt>
+<dd><p>object of class <a href="ISOLocalName.html">ISOLocalName</a>, <a href="ISOScopedName.html">ISOScopedName</a> or <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-addServiceTypeVersion"></a><div class="section">
+<h3 id="method-addservicetypeversion-">Method <code>addServiceTypeVersion()</code><a class="anchor" aria-label="anchor" href="#method-addservicetypeversion-"></a></h3>
+<p>Adds service type version</p><div class="section">
+<h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">addServiceTypeVersion</span><span class="op">(</span><span class="va">version</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>version</code></dt>
+<dd><p>version</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-delServiceTypeVersion"></a><div class="section">
+<h3 id="method-delservicetypeversion-">Method <code>delServiceTypeVersion()</code><a class="anchor" aria-label="anchor" href="#method-delservicetypeversion-"></a></h3>
+<p>Deletes service type version</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">delServiceTypeVersion</span><span class="op">(</span><span class="va">version</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>version</code></dt>
+<dd><p>version</p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-setAccessProperties"></a><div class="section">
+<h3 id="method-setaccessproperties-">Method <code>setAccessProperties()</code><a class="anchor" aria-label="anchor" href="#method-setaccessproperties-"></a></h3>
+<p>Set access properties</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">setAccessProperties</span><span class="op">(</span><span class="va">accessProperties</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>accessProperties</code></dt>
+<dd><p>object of class <a href="ISOStandardOrderProcess.html">ISOStandardOrderProcess</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-setRestrictions"></a><div class="section">
+<h3 id="method-setrestrictions-">Method <code>setRestrictions()</code><a class="anchor" aria-label="anchor" href="#method-setrestrictions-"></a></h3>
+<p>Set restrictions</p><div class="section">
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">setRestrictions</span><span class="op">(</span><span class="va">restrictions</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>restrictions</code></dt>
+<dd><p>object of class <a href="ISOConstraints.html">ISOConstraints</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-addKeywords"></a><div class="section">
+<h3 id="method-addkeywords-">Method <code>addKeywords()</code><a class="anchor" aria-label="anchor" href="#method-addkeywords-"></a></h3>
+<p>Adds keywords</p><div class="section">
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">addKeywords</span><span class="op">(</span><span class="va">keywords</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>keywords</code></dt>
+<dd><p>object of class <a href="ISOKeywords.html">ISOKeywords</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-delKeywords"></a><div class="section">
+<h3 id="method-delkeywords-">Method <code>delKeywords()</code><a class="anchor" aria-label="anchor" href="#method-delkeywords-"></a></h3>
+<p>Deletes keywords</p><div class="section">
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">delKeywords</span><span class="op">(</span><span class="va">keywords</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>keywords</code></dt>
+<dd><p>object of class <a href="ISOKeywords.html">ISOKeywords</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-addExtent"></a><div class="section">
+<h3 id="method-addextent-">Method <code>addExtent()</code><a class="anchor" aria-label="anchor" href="#method-addextent-"></a></h3>
+<p>Adds extent</p><div class="section">
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">addExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>extent</code></dt>
+<dd><p>object of class <a href="ISOExtent.html">ISOExtent</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-4">Returns<a class="anchor" aria-label="anchor" href="#returns-4"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-delExtent"></a><div class="section">
+<h3 id="method-delextent-">Method <code>delExtent()</code><a class="anchor" aria-label="anchor" href="#method-delextent-"></a></h3>
+<p>Deletes extent</p><div class="section">
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">delExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>extent</code></dt>
+<dd><p>object of class <a href="ISOExtent.html">ISOExtent</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-5">Returns<a class="anchor" aria-label="anchor" href="#returns-5"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-addCoupledResource"></a><div class="section">
+<h3 id="method-addcoupledresource-">Method <code>addCoupledResource()</code><a class="anchor" aria-label="anchor" href="#method-addcoupledresource-"></a></h3>
+<p>Adds coupled resource</p><div class="section">
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">addCoupledResource</span><span class="op">(</span><span class="va">resource</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>resource</code></dt>
+<dd><p>object of class <a href="ISOCoupledResource.html">ISOCoupledResource</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-6">Returns<a class="anchor" aria-label="anchor" href="#returns-6"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-delCoupledResource"></a><div class="section">
+<h3 id="method-delcoupledresource-">Method <code>delCoupledResource()</code><a class="anchor" aria-label="anchor" href="#method-delcoupledresource-"></a></h3>
+<p>Deletes coupled resource</p><div class="section">
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">delCoupledResource</span><span class="op">(</span><span class="va">resource</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-11">Arguments<a class="anchor" aria-label="anchor" href="#arguments-11"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>resource</code></dt>
+<dd><p>object of class <a href="ISOCoupledResource.html">ISOCoupledResource</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-7">Returns<a class="anchor" aria-label="anchor" href="#returns-7"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-setCouplingType"></a><div class="section">
+<h3 id="method-setcouplingtype-">Method <code>setCouplingType()</code><a class="anchor" aria-label="anchor" href="#method-setcouplingtype-"></a></h3>
+<p>Set coupling type</p><div class="section">
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">setCouplingType</span><span class="op">(</span><span class="va">couplingType</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-12">Arguments<a class="anchor" aria-label="anchor" href="#arguments-12"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>couplingType</code></dt>
+<dd><p>object of class <a href="ISOCouplingType.html">ISOCouplingType</a> or any <a href="https://rdrr.io/r/base/character.html" class="external-link">character</a>
+among values returned by <code>ISOCouplingType$values()</code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-addOperationMetadata"></a><div class="section">
+<h3 id="method-addoperationmetadata-">Method <code>addOperationMetadata()</code><a class="anchor" aria-label="anchor" href="#method-addoperationmetadata-"></a></h3>
+<p>Adds operation metadata</p><div class="section">
+<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">addOperationMetadata</span><span class="op">(</span><span class="va">operationMetadata</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-13">Arguments<a class="anchor" aria-label="anchor" href="#arguments-13"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>operationMetadata</code></dt>
+<dd><p>object of class <a href="ISOOperationMetadata.html">ISOOperationMetadata</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-8">Returns<a class="anchor" aria-label="anchor" href="#returns-8"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-delOperationMetadata"></a><div class="section">
+<h3 id="method-deloperationmetadata-">Method <code>delOperationMetadata()</code><a class="anchor" aria-label="anchor" href="#method-deloperationmetadata-"></a></h3>
+<p>Deletes operation metadata</p><div class="section">
+<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">delOperationMetadata</span><span class="op">(</span><span class="va">operationMetadata</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-14">Arguments<a class="anchor" aria-label="anchor" href="#arguments-14"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>operationMetadata</code></dt>
+<dd><p>object of class <a href="ISOOperationMetadata.html">ISOOperationMetadata</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-9">Returns<a class="anchor" aria-label="anchor" href="#returns-9"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-addOperatesOn"></a><div class="section">
+<h3 id="method-addoperateson-">Method <code>addOperatesOn()</code><a class="anchor" aria-label="anchor" href="#method-addoperateson-"></a></h3>
+<p>Adds operates on</p><div class="section">
+<h4 id="usage-15">Usage<a class="anchor" aria-label="anchor" href="#usage-15"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">addOperatesOn</span><span class="op">(</span><span class="va">dataIdentification</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-15">Arguments<a class="anchor" aria-label="anchor" href="#arguments-15"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>dataIdentification</code></dt>
+<dd><p>object of class <a href="ISODataIdentification.html">ISODataIdentification</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-10">Returns<a class="anchor" aria-label="anchor" href="#returns-10"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-delOperatesOn"></a><div class="section">
+<h3 id="method-deloperateson-">Method <code>delOperatesOn()</code><a class="anchor" aria-label="anchor" href="#method-deloperateson-"></a></h3>
+<p>Deletes operates on</p><div class="section">
+<h4 id="usage-16">Usage<a class="anchor" aria-label="anchor" href="#usage-16"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">delOperatesOn</span><span class="op">(</span><span class="va">dataIdentification</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-16">Arguments<a class="anchor" aria-label="anchor" href="#arguments-16"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>dataIdentification</code></dt>
+<dd><p>object of class <a href="ISODataIdentification.html">ISODataIdentification</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-11">Returns<a class="anchor" aria-label="anchor" href="#returns-11"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOSRVServiceIdentification19139-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-17">Usage<a class="anchor" aria-label="anchor" href="#usage-17"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOSRVServiceIdentification19139</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-17">Arguments<a class="anchor" aria-label="anchor" href="#arguments-17"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

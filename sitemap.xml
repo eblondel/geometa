@@ -162,6 +162,7 @@
 <url><loc>/reference/ISOBoundFeatureAttribute.html</loc></url>
 <url><loc>/reference/ISOBoundingPolygon.html</loc></url>
 <url><loc>/reference/ISOBrowseGraphic.html</loc></url>
+<url><loc>/reference/ISOCTCodelistValue.html</loc></url>
 <url><loc>/reference/ISOCarrierOfCharacteristics.html</loc></url>
 <url><loc>/reference/ISOCellGeometry.html</loc></url>
 <url><loc>/reference/ISOCharacterSet.html</loc></url>
@@ -170,6 +171,7 @@
 <url><loc>/reference/ISOClassification.html</loc></url>
 <url><loc>/reference/ISOCodeDefinition.html</loc></url>
 <url><loc>/reference/ISOCodeListDictionary.html</loc></url>
+<url><loc>/reference/ISOCodeListValue.html</loc></url>
 <url><loc>/reference/ISOCodelist.html</loc></url>
 <url><loc>/reference/ISOCodelistCatalogue.html</loc></url>
 <url><loc>/reference/ISOCompletenessCommission.html</loc></url>
@@ -215,6 +217,8 @@
 <url><loc>/reference/ISOExtendedElementInformation.html</loc></url>
 <url><loc>/reference/ISOExtent.html</loc></url>
 <url><loc>/reference/ISOFeatureAssociation.html</loc></url>
+<url><loc>/reference/ISOFeatureAssociation19115_3.html</loc></url>
+<url><loc>/reference/ISOFeatureAssociation19139.html</loc></url>
 <url><loc>/reference/ISOFeatureAttribute.html</loc></url>
 <url><loc>/reference/ISOFeatureCatalogue.html</loc></url>
 <url><loc>/reference/ISOFeatureCatalogueDescription.html</loc></url>
