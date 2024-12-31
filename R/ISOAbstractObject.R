@@ -230,7 +230,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     anyElement = FALSE,
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param element element name
     #'@param namespace namespace
     #'@param attrs attrs
@@ -416,7 +416,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     },
     
     #'@description Decodes object from XML
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     decode = function(xml){
       
       #remove comments if any (in case of document)
@@ -1065,7 +1065,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     },
     
     #'@description Validates an XML object resulting from object encoding
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param strict strict validation? If \code{TRUE}, a invalid XML will return an error
     #'@param inspire perform INSPIRE validation? Default is \code{FALSE}
     #'@param inspireValidator an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation

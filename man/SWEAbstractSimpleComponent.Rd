@@ -99,7 +99,7 @@ Initializes an object of class \link{SWEAbstractSimpleComponent}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}}
 
 \item{\code{element}}{element}
 

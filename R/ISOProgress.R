@@ -32,7 +32,7 @@ ISOProgress<- R6Class("ISOProgress",
   public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}  
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}  
      #'@param value value
      #'@param description description
      initialize = function(xml = NULL, value, description = NULL){
@@ -84,7 +84,7 @@ ISOStatus<- R6Class("ISOStatus",
    public = list(
       
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}  
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}  
       #'@param value value
       #'@param description description
       initialize = function(xml = NULL, value, description = NULL){

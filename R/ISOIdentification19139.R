@@ -50,7 +50,7 @@ ISOIdentification19139 <- R6Class("ISOIdentification19139",
      aggregationInfo = list(),
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param defaults defaults list
      initialize = function(xml = NULL, defaults = list()){
        super$initialize(xml, defaults = defaults)

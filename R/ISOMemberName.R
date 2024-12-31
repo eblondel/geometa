@@ -30,7 +30,7 @@ ISOMemberName <- R6Class("ISOMemberName",
      attributeType = NULL,
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param aName a name
      #'@param attributeType attribute type
      initialize = function(xml = NULL, aName = NULL, attributeType = NULL){

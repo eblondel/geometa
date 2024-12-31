@@ -86,7 +86,7 @@ Initializes a SWE Text Encoding element
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}}
 
 \item{\code{collapseWhiteSpaces}}{Indicates whether white spaces (i.e. space, tab, CR, LF) 
 should be collapsed with separators when parsing the data stream. Default is \code{TRUE}}

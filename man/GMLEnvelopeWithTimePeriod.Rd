@@ -107,7 +107,7 @@ a matrix of dim 2,2 giving the x/y min/max values of a bouding box, as returned 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 
 \item{\code{element}}{element}
 
@@ -140,7 +140,7 @@ Decodes an XML representation
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 }
 \if{html}{\out{</div>}}
 }

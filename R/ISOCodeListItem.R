@@ -38,7 +38,7 @@ ISOCodeListItem <- R6Class("ISOCodeListItem",
      #'    sets the value as node text (defaut is \code{TRUE}). The argument \code{setValueDescription}
      #'    allows to force having description set as value, default is \code{FALSE} in which case
      #'    the name will be preferred, and in case no name is provided, code value will be used.
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param id id
      #'@param value value
      #'@param description description

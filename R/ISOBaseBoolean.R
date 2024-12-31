@@ -30,7 +30,7 @@ ISOBaseBoolean <- R6Class("ISOBaseBoolean",
     value = NA,
     
     #'@description Initializes a base boolean object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param value value
     initialize = function(xml = NULL, value){
       super$initialize(xml = xml)

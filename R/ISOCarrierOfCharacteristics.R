@@ -21,7 +21,7 @@ ISOCarrierOfCharacteristics <- R6Class("ISOCarrierOfCharacteristics",
    public = list(
       
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param defaults defaults
      initialize = function(xml = NULL, defaults = NULL){
        super$initialize(xml = xml, defaults = defaults)

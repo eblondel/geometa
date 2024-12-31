@@ -30,7 +30,7 @@ SWETimeRange <- R6Class("SWETimeRange",
     value = matrix(NA_real_, 1, 2),
     
     #'@description Initializes an object of class \link{SWETimeRange}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param uom uom
     #'@param constraint constraint
     #'@param start start time

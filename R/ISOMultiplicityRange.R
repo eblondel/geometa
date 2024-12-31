@@ -35,7 +35,7 @@ ISOMultiplicityRange <- R6Class("ISOMultiplicityRange",
     upper = NULL,
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param lower lower
     #'@param upper upper
     initialize = function(xml = NULL, lower, upper){

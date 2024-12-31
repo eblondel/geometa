@@ -26,7 +26,7 @@ ISOIdentification <- R6Class("ISOIdentification",
    public = list(
 
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param defaults defaults list
      initialize = function(xml = NULL, defaults = list()){
        super$initialize(xml = xml, defaults = defaults)

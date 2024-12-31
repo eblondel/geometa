@@ -21,7 +21,7 @@ SWEXMLEncoding <- R6Class("SWEXMLEncoding",
    public = list(
      
      #'@description Initializes a SWE XML Encoding element
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }

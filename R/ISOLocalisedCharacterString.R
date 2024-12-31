@@ -30,7 +30,7 @@ ISOLocalisedCharacterString <- R6Class("ISOLocalisedCharacterString",
   public = list(
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param locale locale
     #'@param value value
     initialize = function(xml = NULL, locale = NULL, value){

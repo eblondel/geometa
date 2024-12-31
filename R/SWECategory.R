@@ -30,7 +30,7 @@ SWECategory <- R6Class("SWECategory",
      value = NA_character_,
      
      #'@description Initializes an object of class \link{SWECategory}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param codeSpace codeSpace
      #'@param constraint constraint
      #'@param value value

@@ -28,7 +28,7 @@ SWEAbstractSWEIdentifiable <- R6Class("SWEAbstractSWEIdentifiable",
      description = NULL,
      
      #'@description Initializes a SWE Nil Values object
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param element element
      #'@param attrs attrs
      #'@param defaults defaults

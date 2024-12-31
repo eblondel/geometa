@@ -31,7 +31,7 @@ GMLLinearRing <- R6Class("GMLLinearRing",
     posList = matrix(NA_real_, 2, 2),
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param m simple object of class \link{matrix}
     initialize = function(xml = NULL, m){
       super$initialize(xml, element = private$xmlElement, wrap = TRUE)

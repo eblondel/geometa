@@ -30,7 +30,7 @@ ISOBaseInteger <- R6Class("ISOBaseInteger",
     value = NA,
     
     #'@description Initializes a base integer object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param value value
     initialize = function(xml = NULL, value){
       super$initialize(xml = xml)

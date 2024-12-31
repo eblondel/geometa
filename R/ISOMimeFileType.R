@@ -30,7 +30,7 @@ ISOMimeFileType <- R6Class("ISOMimeFileType",
      public = list(
        
        #'@description Initializes object
-       #'@param xml object of class \link{XMLInternalNode-class}
+       #'@param xml object of class \link[XML]{XMLInternalNode-class}
        #'@param type type
        #'@param name name
        initialize = function(xml = NULL, type = NULL, name = NULL){

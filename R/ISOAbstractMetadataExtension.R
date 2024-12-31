@@ -23,7 +23,7 @@ ISOAbstractMetadataExtension <- R6Class("ISOAbstractMetadataExtension",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }

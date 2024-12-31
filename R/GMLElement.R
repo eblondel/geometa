@@ -24,7 +24,7 @@ GMLElement <- R6Class("GMLElement",
     public = list(
       
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param element element
       #'@param attrs attrs
       #'@param defaults default values
@@ -36,7 +36,7 @@ GMLElement <- R6Class("GMLElement",
       
       
       #'@description Decodes the XML
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       decode = function(xml){
         fieldName <- xmlName(xml)
         nsPrefix <- ""

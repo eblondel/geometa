@@ -21,7 +21,7 @@ ISOPropertyType <- R6Class("ISOPropertyType",
     public = list(
       
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param defaults default values
       initialize = function(xml = NULL, defaults = NULL){
         if(is.null(defaults)) defaults <- list(cardinality = ISOMultiplicity$new(lower=1L,upper=1L))

@@ -26,7 +26,7 @@ GMLAbstractFeature <- R6Class("GMLAbstractFeature",
      boundedBy = NULL,
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param element element name
      #'@param attrs list of attributes
      #'@param defaults list of default values

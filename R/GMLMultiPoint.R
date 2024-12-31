@@ -28,7 +28,7 @@ GMLMultiPoint <- R6Class("GMLMultiPoint",
      pointMember = list(),
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param sfg simple feature geometry resulting from \pkg{sf}
      initialize = function(xml = NULL, sfg = NULL){
        super$initialize(xml, element = private$xmlElement, wrap = TRUE)

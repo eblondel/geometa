@@ -27,7 +27,7 @@ SWECount <- R6Class("SWECount",
     value = NULL,
     
     #'@description Initializes an object of class \link{SWECount}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param constraint constraint
     #'@param value value
     #'@param updatable updatable

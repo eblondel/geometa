@@ -26,7 +26,7 @@ SWEAbstractDataComponent <- R6Class("SWEAbstractDataComponent",
     name = list(),
     
     #'@description Initializes an object of class \link{SWEAbstractDataComponent}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param element element
     #'@param updatable updatable
     #'@param optional optional

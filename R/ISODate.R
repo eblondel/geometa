@@ -36,7 +36,7 @@ ISODate <- R6Class("ISODate",
      dateType = NULL,
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param date object of class \link{Date} or \link{POSIXt}
      #'@param dateType object of class \link{ISODateType} or any \link{character}
      #'value among values returned by \code{ISODateType$values()}

@@ -34,7 +34,7 @@ ISOAbstractPropertyType <- R6Class("ISOAbstractPropertyType",
      featureCatalogue = NULL,
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param defaults default values
      initialize = function(xml = NULL, defaults = NULL){
        if(is.null(defaults)) defaults <- list(cardinality = ISOMultiplicity$new(lower=1L,upper=1L))

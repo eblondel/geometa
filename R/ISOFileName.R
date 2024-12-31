@@ -32,7 +32,7 @@ ISOFileName <- R6Class("ISOFileName",
     attrs = list(),
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param file file
     #'@param name name
     initialize = function(xml = NULL, file = NULL, name = NULL){

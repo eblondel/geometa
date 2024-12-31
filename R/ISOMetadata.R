@@ -422,7 +422,7 @@ ISOMetadata <- R6Class("ISOMetadata",
      applicationSchemaInformation = list(), #TODO
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        
        #default values

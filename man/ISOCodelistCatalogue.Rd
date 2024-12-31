@@ -105,7 +105,7 @@ Initializes object
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 
 \item{\code{refFile}}{ref file}
 }
@@ -131,7 +131,7 @@ will be mapped as \link{ISOCodelist}, to facilitate the consumption of codelists
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 }
 \if{html}{\out{</div>}}
 }

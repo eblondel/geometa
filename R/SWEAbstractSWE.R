@@ -20,7 +20,7 @@ SWEAbstractSWE <- R6Class("SWEAbstractSWE",
    public = list(
      
      #'@description Initializes an object of class \link{SWEAbstractSWE}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param element element
      #'@param attrs attrs
      #'@param defaults defaults

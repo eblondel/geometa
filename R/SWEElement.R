@@ -31,7 +31,7 @@ SWEElement <- R6Class("SWEElement",
   public = list(
     
     #'@description Initializes a generic abstract SWE element
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param element element
     #'@param attrs attrs
     #'@param defaults defaults
@@ -42,7 +42,7 @@ SWEElement <- R6Class("SWEElement",
     },
     
     #'@description Decodes object from XML
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     decode = function(xml){
       fieldName <- xmlName(xml)
       nsPrefix <- ""

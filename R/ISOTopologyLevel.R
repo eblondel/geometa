@@ -33,7 +33,7 @@ ISOTopologyLevel <- R6Class("ISOTopologyLevel",
    public = list(
       
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}  
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}  
       #'@param value value
       #'@param description description
      initialize = function(xml = NULL, value, description = NULL){

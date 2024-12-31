@@ -21,7 +21,7 @@ SWETextEncoding <- R6Class("SWETextEncoding",
   public = list(
     
     #'@description Initializes a SWE Text Encoding element
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param collapseWhiteSpaces Indicates whether white spaces (i.e. space, tab, CR, LF) 
     #'  should be collapsed with separators when parsing the data stream. Default is \code{TRUE}
     #'@param decimalSeparator Character used as the decimal separator. Default is \code{TRUE}

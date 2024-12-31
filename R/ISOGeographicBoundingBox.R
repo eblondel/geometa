@@ -38,7 +38,7 @@ ISOGeographicBoundingBox <- R6Class("ISOGeographicBoundingBox",
      northBoundLatitude = NULL,
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param minx minx object of class \link{numeric}
      #'@param miny miny object of class \link{numeric}
      #'@param maxx maxx object of class \link{numeric}

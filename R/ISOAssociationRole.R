@@ -32,7 +32,7 @@ ISOAssociationRole <- R6Class("ISOAssociationRole",
       rolePlayer = list(),
       
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       initialize = function(xml = NULL){
         defaults = list(type = ISORoleType$new(value = "ordinary"))
         super$initialize(xml = xml, defaults = defaults)

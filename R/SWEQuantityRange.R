@@ -30,7 +30,7 @@ SWEQuantityRange <- R6Class("SWEQuantityRange",
      value = matrix(NA_real_, 1, 2),
      
      #'@description Initializes an object of class \link{SWEQuantityRange}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param uom uom
      #'@param constraint constraint
      #'@param value value

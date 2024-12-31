@@ -27,7 +27,7 @@ GMLAbstractTimePrimitive <- R6Class("GMLAbstractTimePrimitive",
        relatedTime = list(),
                  
        #'@description Initializes object
-       #'@param xml object of class \link{XMLInternalNode-class}
+       #'@param xml object of class \link[XML]{XMLInternalNode-class}
        #'@param defaults list of default values
        initialize = function(xml = NULL, defaults = list()){
          super$initialize(xml, defaults)

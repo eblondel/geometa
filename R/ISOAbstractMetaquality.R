@@ -26,7 +26,7 @@ ISOAbstractMetaquality <- R6Class("ISOAbstractMetaquality",
      relatedElement = list(),
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
@@ -79,7 +79,7 @@ ISOConfidence <- R6Class("ISOConfidence",
   public = list(
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     }
@@ -111,7 +111,7 @@ ISOHomogeneity <- R6Class("ISOHomogeneity",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }
@@ -143,7 +143,7 @@ ISORepresentativity <- R6Class("ISORepresentativity",
   public = list(
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     }

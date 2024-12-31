@@ -28,7 +28,7 @@ GMLPoint <- R6Class("GMLPoint",
      pos = matrix(NA_real_, 1, 2),
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param sfg simple feature geometry from \pkg{sf}
      #'@param m simple object of class \link{matrix}
      initialize = function(xml = NULL, sfg = NULL, m = NULL){

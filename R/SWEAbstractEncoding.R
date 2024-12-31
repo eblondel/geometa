@@ -21,7 +21,7 @@ SWEAbstractEncoding <- R6Class("SWEAbstractEncoding",
   public = list(
     
     #'@description Initializes a SWE Nil Values object
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     initialize = function(xml = NULL){
       super$initialize(xml, element = private$xmlElement, 
                        attrs = list(), defaults = list(),

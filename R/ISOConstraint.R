@@ -28,7 +28,7 @@ ISOConstraint <- R6Class("ISOConstraint",
      description = NULL,
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param description description
      initialize = function(xml = NULL, description = NULL){
        super$initialize(xml = xml)

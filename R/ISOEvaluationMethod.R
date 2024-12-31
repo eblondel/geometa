@@ -34,7 +34,7 @@ ISOEvaluationMethod <- R6Class("ISOEvaluationMethod",
      evaluationMethodType = NULL,
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },
@@ -124,7 +124,7 @@ ISOAggregationDerivation <- R6Class("ISOAggregationDerivation",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }
@@ -156,7 +156,7 @@ ISOFullInspection <- R6Class("ISOFullInspection",
   public = list(
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     }
@@ -188,7 +188,7 @@ ISOIndirectEvaluation <- R6Class("ISOIndirectEvaluation",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }
@@ -220,7 +220,7 @@ ISOSampleBasedInspection <- R6Class("ISOSampleBasedInspection",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }
@@ -252,7 +252,7 @@ ISODataInspection <- R6Class("ISODataInspection",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }

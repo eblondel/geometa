@@ -30,7 +30,7 @@ ISOGeographicExtent <- R6Class("ISOGeographicExtent",
       extentTypeCode = NULL,
       
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param defaults defaults list
       initialize = function(xml = NULL, defaults = list()){        
         #defaults = list(extentTypeCode = TRUE)

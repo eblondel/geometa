@@ -30,7 +30,7 @@ GMLPolygon <- R6Class("GMLPolygon",
     interior = list(),
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param sfg simple object from \pkg{sf}
     initialize = function(xml = NULL, sfg){
       super$initialize(xml, element = private$xmlElement, wrap = TRUE)

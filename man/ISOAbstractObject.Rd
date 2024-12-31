@@ -147,7 +147,7 @@ Initializes object
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 
 \item{\code{element}}{element name}
 
@@ -225,7 +225,7 @@ Decodes object from XML
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 }
 \if{html}{\out{</div>}}
 }
@@ -304,7 +304,7 @@ Validates an XML object resulting from object encoding
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 
 \item{\code{strict}}{strict validation? If \code{TRUE}, a invalid XML will return an error}
 

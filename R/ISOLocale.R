@@ -41,7 +41,7 @@ ISOLocale <- R6Class("ISOLocale",
      characterEncoding = NULL,
 
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param id id
      #'@param language language
      #'@param country country

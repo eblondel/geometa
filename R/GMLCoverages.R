@@ -24,7 +24,7 @@ GMLMultiPointCoverage <- R6Class("GMLMultiPointCoverage",
  public = list(
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param element element name
     #'@param attrs list of attributes
     #'@param defaults list of default values
@@ -66,7 +66,7 @@ GMLMultiCurveCoverage <- R6Class("GMLMultiCurveCoverage",
    public = list(
       
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param element element name
       #'@param attrs list of attributes
       #'@param defaults list of default values
@@ -107,7 +107,7 @@ GMLMultiSurfaceCoverage <- R6Class("GMLMultiSurfaceCoverage",
    ),
    public = list(
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param element element name
       #'@param attrs list of attributes
       #'@param defaults list of default values
@@ -146,7 +146,7 @@ GMLMultiSolidCoverage <- R6Class("GMLMultiSolidCoverage",
    ),
    public = list(
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param element element name
       #'@param attrs list of attributes
       #'@param defaults list of default values
@@ -185,7 +185,7 @@ GMLGridCoverage <- R6Class("GMLGridCoverage",
    ),
    public = list(
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param element element name
       #'@param attrs list of attributes
       #'@param defaults list of default values
@@ -224,7 +224,7 @@ GMLRectifiedGridCoverage <- R6Class("GMLRectifiedGridCoverage",
    ),
    public = list(
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param element element name
       #'@param attrs list of attributes
       #'@param defaults list of default values

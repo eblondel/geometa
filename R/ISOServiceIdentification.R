@@ -92,7 +92,7 @@ ISOServiceIdentification <- R6Class("ISOServiceIdentification",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        defaults <- list(characterSet = ISOCharacterSet$new(value = "utf8"))
        super$initialize(xml = xml, defaults = defaults)
@@ -117,7 +117,7 @@ ISOServiceIdentification19139 <- R6Class("ISOServiceIdentification19139",
   public = list(
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     initialize = function(xml = NULL){
       defaults <- list(characterSet = ISOCharacterSet$new(value = "utf8"))
       super$initialize(xml = xml, defaults = defaults)
@@ -142,7 +142,7 @@ ISOServiceIdentification19115_3 <- R6Class("ISOServiceIdentification19115_3",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml, defaults = list())
      }
@@ -387,7 +387,7 @@ ISOSRVServiceIdentification <- R6Class("ISOSRVServiceIdentification",
     operatesOn = list(),
     
     #'@description Initializes object
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },
@@ -567,7 +567,7 @@ ISOSRVServiceIdentification19139 <- R6Class("ISOSRVServiceIdentification19139",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }
@@ -591,7 +591,7 @@ ISOSRVServiceIdentification19115_3 <- R6Class("ISOSRVServiceIdentification19115_
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      }

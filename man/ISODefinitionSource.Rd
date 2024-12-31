@@ -89,7 +89,7 @@ Initializes object
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 
 \item{\code{source}}{source object of class \link{ISOCitation}}
 }

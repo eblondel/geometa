@@ -36,7 +36,7 @@ ISOCodelist <- R6Class("ISOCodelist",
      codeEntry = list(),
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param refFile ref file
      #'@param id id
      initialize = function(xml = NULL, refFile = NULL, id = NULL){

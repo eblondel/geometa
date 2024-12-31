@@ -25,7 +25,7 @@ SWEDataRecord <- R6Class("SWEDataRecord",
     field = list(),
     
     #'@description Initializes an object of class \link{SWEDataRecord}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param element element
     #'@param updatable updatable
     #'@param optional optional

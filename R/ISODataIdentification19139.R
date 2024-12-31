@@ -136,7 +136,7 @@ ISODataIdentification19139 <- R6Class("ISODataIdentification19139",
      supplementalInformation = NULL, 
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      initialize = function(xml = NULL){
        
        #default values

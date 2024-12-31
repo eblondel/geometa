@@ -28,7 +28,7 @@ ISOCodelistCatalogue <- R6Class("ISOCodelistCatalogue",
      codelistItem = list(),
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param refFile ref file
      initialize = function(xml = NULL, refFile = NULL){
        if(!is.null(refFile)){
@@ -45,7 +45,7 @@ ISOCodelistCatalogue <- R6Class("ISOCodelistCatalogue",
      #'@description Decodes and builds an \code{ISOCodelistCatalogue} from XML. This is done
      #'specifically for this class, without using the generic \code{ISOAbstractObject}
      #'decoder, to make it fully decodable on package load.
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      # decode = function(xml){
      #   message("custom decode")
      #   xml = XML::xmlRoot(xml)

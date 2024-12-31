@@ -36,7 +36,7 @@ ISOMetadataScope <- R6Class("ISOMetadataScope",
       name = NULL,
       
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param resourceScope resource scope
       #'@param name name
       initialize = function(xml = NULL, resourceScope = NULL, name = NULL){

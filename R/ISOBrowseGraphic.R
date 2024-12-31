@@ -40,7 +40,7 @@ ISOBrowseGraphic <- R6Class("ISOBrowseGraphic",
      fileType = NULL,
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param fileName file name
      #'@param fileDescription file description
      #'@param fileType file type

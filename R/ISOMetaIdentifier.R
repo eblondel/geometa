@@ -41,7 +41,7 @@ ISOMetaIdentifier <- R6Class("ISOMetaIdentifier",
      description = NULL,
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param code code
      #'@param codeSpace code space
      initialize = function(xml = NULL, code = NULL, codeSpace = NULL){

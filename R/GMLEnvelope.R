@@ -32,7 +32,7 @@ GMLEnvelope <- R6Class("GMLEnvelope",
    #'@description Initializes a GML envelope. The argument 'bbox' should be a matrix of dim 2,2 
    #' giving the x/y min/max values of a bouding box, as returned by \code{bbox} function 
    #' in package \pkg{sp}.
-   #'@param xml object of class \link{XMLInternalNode-class}
+   #'@param xml object of class \link[XML]{XMLInternalNode-class}
    #'@param element element
    #'@param bbox object of class \link{matrix}
    #'@param srsName SRS name
@@ -68,7 +68,7 @@ GMLEnvelope <- R6Class("GMLEnvelope",
    },
    
    #'@description Decodes an XML representation
-   #'@param xml object of class \link{XMLInternalNode-class}
+   #'@param xml object of class \link[XML]{XMLInternalNode-class}
    decode = function(xml){
       super$decode(xml)
       #backward compatibility in case of GML < 3

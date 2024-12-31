@@ -101,7 +101,7 @@ ISOFeatureCatalogue <- R6Class("ISOFeatureCatalogue",
       definitionSource = list(),
       
       #'@description Initializes object
-      #'@param xml object of class \link{XMLInternalNode-class}
+      #'@param xml object of class \link[XML]{XMLInternalNode-class}
       #'@param uuid uuid
       initialize = function(xml = NULL, uuid = NULL){
         super$initialize(xml = xml)

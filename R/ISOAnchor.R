@@ -30,7 +30,7 @@ ISOAnchor <- R6Class("ISOAnchor",
    public = list(
      
      #'@description Initializes object
-     #'@param xml object of class \link{XMLInternalNode-class}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param name name
      #'@param ... attributes for XML encoding
      initialize = function(xml = NULL, name = NULL, ...){
