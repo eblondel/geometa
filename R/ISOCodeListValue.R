@@ -62,7 +62,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        if(id=="CountryCode") id <- "Country"
        cl <- getISOCodelist(id)
        if(is.null(cl)){
-         stop(sprintf("No ISO codelist for identifier '%s'", id))
+         warnings(sprintf("No ISO codelist for identifier '%s'", id))
        }
        self$codelistId = cl
        clCodeSpace <- cl$codeSpace
@@ -111,7 +111,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        }
         
        clUrl = ""
-       if(!is.na(cl$refFile)){
+       if(!is.null(cl)) if(!is.na(cl$refFile)){
          isLocalFile <- !grepl("^http", cl$refFile) & !grepl("^https", cl$refFile)
          clUrl <- paste(cl$refFile, id, sep="#")
          clUrl <- gsub("ML_", "", clUrl)
