@@ -597,18 +597,15 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#specific elements to service identification</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setServiceType</span><span class="op">(</span><span class="st">"Fishery data harmonization process"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addServiceTypeVersion</span><span class="op">(</span><span class="st">"1.0"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">orderProcess</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOStandardOrderProcess.html">ISOStandardOrderProcess</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">orderProcess</span><span class="op">$</span><span class="fu">setFees</span><span class="op">(</span><span class="st">"fees"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">orderProcess</span><span class="op">$</span><span class="fu">setPlannedAvailableDateTime</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2017</span>,<span class="fl">7</span>,<span class="fl">5</span>,<span class="fl">12</span>,<span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">orderProcess</span><span class="op">$</span><span class="fu">setOrderingInstructions</span><span class="op">(</span><span class="st">"instructions"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">orderProcess</span><span class="op">$</span><span class="fu">setTurnaround</span><span class="op">(</span><span class="st">"turnaround"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setAccessProperties</span><span class="op">(</span><span class="va">orderProcess</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setRestrictions</span><span class="op">(</span><span class="va">lc</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="va">kwds</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOKeywords.html">ISOKeywords</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">kwds</span><span class="op">$</span><span class="fu">addKeyword</span><span class="op">(</span><span class="st">"keyword1"</span><span class="op">)</span></span></span>
@@ -629,13 +626,12 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">extent</span><span class="op">$</span><span class="fu">addGeographicElement</span><span class="op">(</span><span class="va">bbox</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addExtent</span><span class="op">(</span><span class="va">extent</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#coupling type</span></span></span>
 <span class="r-in"><span>  <span class="co">#(here "tight" associated with a particular dataset "my-dataset-identifier")</span></span></span>
 <span class="r-in"><span>  <span class="co">#see ISOCouplingType$values(labels = T) for other values</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">setCouplingType</span><span class="op">(</span><span class="st">"tight"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
 <span class="r-in"><span>  <span class="va">coupledDataset1</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOCoupledResource.html">ISOCoupledResource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">coupledDataset1</span><span class="op">$</span><span class="fu">setOperationName</span><span class="op">(</span><span class="st">"Rscript"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">coupledDataset1</span><span class="op">$</span><span class="fu">setIdentifier</span><span class="op">(</span><span class="st">"my-dataset-identifier"</span><span class="op">)</span></span></span>
@@ -643,9 +639,9 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">coupledDataset2</span><span class="op">$</span><span class="fu">setOperationName</span><span class="op">(</span><span class="st">"WPS:Execute"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">coupledDataset2</span><span class="op">$</span><span class="fu">setIdentifier</span><span class="op">(</span><span class="st">"my-dataset-identifier"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addCoupledResource</span><span class="op">(</span><span class="va">coupledDataset1</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addCoupledResource</span><span class="op">(</span><span class="va">coupledDataset2</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co">#add operation metadata 1 (Rscript)</span></span></span>
 <span class="r-in"><span>  <span class="va">scriptOp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOperationMetadata.html">ISOOperationMetadata</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -689,7 +685,7 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">scriptOp</span><span class="op">$</span><span class="fu">addConnectPoint</span><span class="op">(</span><span class="va">or</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addOperationMetadata</span><span class="op">(</span><span class="va">scriptOp</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="co">#add operation metadata 1 (WPS)</span></span></span>
 <span class="r-in"><span>  <span class="va">wpsOp</span> <span class="op">&lt;-</span> <span class="va"><a href="ISOOperationMetadata.html">ISOOperationMetadata</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">setOperationName</span><span class="op">(</span><span class="st">"WPS:Execute"</span><span class="op">)</span></span></span>
@@ -743,10 +739,9 @@ among values returned by <code>ISOCouplingType$values()</code></p></dd>
 <span class="r-in"><span>  <span class="va">wpsOp</span><span class="op">$</span><span class="fu">addConnectPoint</span><span class="op">(</span><span class="va">or2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">md</span><span class="op">$</span><span class="fu">addOperationMetadata</span><span class="op">(</span><span class="va">wpsOp</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> attempt to apply non-function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Element '{http://www.isotc211.org/2005/srv}SV_ServiceIdentification': Missing child element(s). Expected is one of ( {http://www.isotc211.org/2005/gmd}resourceConstraints, {http://www.isotc211.org/2005/gmd}aggregationInfo, {http://www.isotc211.org/2005/srv}serviceType ) at line 1. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][WARN] Object 'ISOSRVServiceIdentification19139' is INVALID according to ISO 19139 XML schemas! </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISOSRVServiceIdentification19139' is VALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span>   </span></span>
 </code></pre></div>
     </div>
