@@ -8,7 +8,7 @@
 #' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
-#'   md <- ISOImagerySensorType$new()
+#'   md <- ISOImagerySensorType$new(value ="type")
 #' 
 #' @references 
 #'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_SensoryTypeCode}
@@ -32,9 +32,9 @@ ISOImagerySensorType <- R6Class("ISOImagerySensorType",
      #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param value value
      #'@param description description
-     initialize = function(xml = NULL, value, description = NULL){
+     initialize = function(xml = NULL, value = NULL, description = NULL){
        super$initialize(xml = xml, id = private$xmlElement, value = value, description = description, 
-                        addCodeSpaceAttr = FALSE)
+                        addCodeListAttrs = FALSE,addCodeSpaceAttr = FALSE)
      }
    )                        
 )

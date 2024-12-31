@@ -8,6 +8,7 @@
 #' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
+#'  setMetadataStandard("19115-3") #required
 #'  #featuretype
 #'  md <- ISOFeatureType$new()
 #'  md$setTypeName("typeName")
@@ -55,6 +56,7 @@
 #'    md$addCharacteristic(fat)
 #'  }
 #'  xml <- md$encode()
+#'  setMetadataStandard("19139") 
 #'  
 #' @references 
 #'   - ISO 19110 - GFC 1.1 https://schemas.isotc211.org/19110/gfc/1.1/gfc/#element_FC_FeatureType

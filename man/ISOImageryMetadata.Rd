@@ -223,7 +223,7 @@ ISOImageryMetadata
    
    #create dataQuality object with a 'dataset' scope
    dq <- ISODataQuality$new()
-   scope <- ISOScopeCode$new()
+   scope <- ISODataQualityScope$new()
    scope$setLevel("dataset")
    dq$setScope(scope)
   

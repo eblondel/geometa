@@ -1,4 +1,5 @@
 #' @name ISOCodeListValue
+#' @title ISOCodeListValue
 #'
 #' @docType class
 #' @importFrom R6 R6Class
@@ -18,7 +19,7 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
    inherit = ISOAbstractObject,
    private = list(
       printAttrs = list(),
-      xmlElement = "CodeListItem",
+      xmlElement = "CodeListValue",
       xmlNamespacePrefix = "GCO"
    ),
    public = list(

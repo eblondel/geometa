@@ -35,7 +35,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{characterSet}
 \keyword{charset}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{geometa::ISOCodeListValue} -> \code{ISOCharacterSet}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOCharacterSet}
 }
 \section{Methods}{
 \subsection{Public methods}{

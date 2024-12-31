@@ -33,7 +33,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{direction}
 \keyword{parameter}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{geometa::ISOCodeListValue} -> \code{ISOParameterDirection}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOParameterDirection}
 }
 \section{Methods}{
 \subsection{Public methods}{

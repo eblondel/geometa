@@ -28,7 +28,7 @@ ISOFeatureCatalogueDescription
   contact$setOnlineResource(fcLink)
   rp = ISOResponsibleParty$new()
   rp$setContactInfo(contact)
-  cit$setCitedResponsibleParty(rp)
+  cit$addCitedResponsibleParty(rp)
   md$addFeatureCatalogueCitation(cit)
  
 }

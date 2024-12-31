@@ -16,7 +16,7 @@ ISOImagerySensorType
 ISOImagerySensorType
 }
 \examples{
-  md <- ISOImagerySensorType$new()
+  md <- ISOImagerySensorType$new(value ="type")
 
 }
 \references{
@@ -32,7 +32,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{sensor}
 \keyword{type}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{geometa::ISOCodeListValue} -> \code{ISOImagerySensorType}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOImagerySensorType}
 }
 \section{Methods}{
 \subsection{Public methods}{
@@ -83,7 +83,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOImagerySensorType$new(xml = NULL, value, description = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOImagerySensorType$new(xml = NULL, value = NULL, description = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

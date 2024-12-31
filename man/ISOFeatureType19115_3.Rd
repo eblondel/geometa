@@ -16,6 +16,7 @@ ISOFeatureType19115_3
 ISOFeatureType19115_3
 }
 \examples{
+ setMetadataStandard("19115-3") #required
  #featuretype
  md <- ISOFeatureType$new()
  md$setTypeName("typeName")
@@ -63,6 +64,7 @@ ISOFeatureType19115_3
    md$addCharacteristic(fat)
  }
  xml <- md$encode()
+ setMetadataStandard("19139") 
  
 }
 \references{

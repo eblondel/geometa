@@ -35,7 +35,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ObjectiveType}
 \keyword{imagery}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{geometa::ISOCodeListValue} -> \code{ISOImageryObjectiveType}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOImageryObjectiveType}
 }
 \section{Methods}{
 \subsection{Public methods}{

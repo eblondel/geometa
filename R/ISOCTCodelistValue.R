@@ -1,4 +1,5 @@
 #' @name ISOCTCodelistValue
+#' @title ISOCTCodelistValue
 #'
 #' @docType class
 #' @importFrom R6 R6Class

@@ -33,7 +33,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{medium}
 \keyword{name}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{geometa::ISOCodeListValue} -> \code{ISOMediumName}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOMediumName}
 }
 \section{Methods}{
 \subsection{Public methods}{

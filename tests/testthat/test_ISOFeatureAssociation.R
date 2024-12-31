@@ -74,7 +74,7 @@ test_that("encoding",{
   asso2$setIsNavigable(FALSE)
   md$addRoleName(asso2)
   
-  expect_is(md, "ISOFeatureAssociation")
+  expect_is(md, "ISOFeatureType")
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
   

@@ -1,4 +1,5 @@
 ^.*\.Rproj$
+^.*\.REnviron$
 ^\.Rproj\.user$
 ^CODE_OF_CONDUCT\.md$
 ^CONTRIBUTING\.md$

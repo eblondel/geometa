@@ -1346,7 +1346,7 @@ test_that("encoding/decoding - ISO 19115-3",{
   # dq <- ISODataQuality$new()
   # 
   # #add scope
-  # scope <- ISOScopeCode$new()
+  # scope <- ISODataQualityScope$new()
   # scope$setLevel("dataset")
   # dq$setScope(scope)
   # 

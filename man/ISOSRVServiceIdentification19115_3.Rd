@@ -21,10 +21,51 @@ ISOSRVServiceIdentification19115_3
 \section{Super classes}{
 \code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOIdentification]{geometa::ISOIdentification}} -> \code{\link[geometa:ISOIdentification19115_3]{geometa::ISOIdentification19115_3}} -> \code{\link[geometa:ISOServiceIdentification19115_3]{geometa::ISOServiceIdentification19115_3}} -> \code{ISOSRVServiceIdentification19115_3}
 }
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{serviceType}}{serviceType [1..1]: ISOGenericName}
+
+\item{\code{serviceTypeVersion}}{serviceTypeVersion [0..*]: character}
+
+\item{\code{accessProperties}}{accessProperties [0..1]: ISOStandardOrderProcess}
+
+\item{\code{restrictions}}{restrictions [0..1]: ISOConstraints}
+
+\item{\code{keywords}}{keywords [0..*]: ISOKeywords}
+
+\item{\code{extent}}{extent [0..*]: ISOExtent}
+
+\item{\code{coupledResource}}{coupledResource [0..*]: ISOCoupledResource}
+
+\item{\code{couplingType}}{couplingType [1..1]: ISOCouplingType}
+
+\item{\code{containsOperations}}{containsOperations [1..*]: ISOOperationMetadata}
+
+\item{\code{operatesOn}}{operatesOn [0..*]: ISODataIdentification}
+}
+\if{html}{\out{</div>}}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-ISOSRVServiceIdentification19115_3-new}{\code{ISOSRVServiceIdentification19115_3$new()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-setServiceType}{\code{ISOSRVServiceIdentification19115_3$setServiceType()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-addServiceTypeVersion}{\code{ISOSRVServiceIdentification19115_3$addServiceTypeVersion()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-delServiceTypeVersion}{\code{ISOSRVServiceIdentification19115_3$delServiceTypeVersion()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-setAccessProperties}{\code{ISOSRVServiceIdentification19115_3$setAccessProperties()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-setRestrictions}{\code{ISOSRVServiceIdentification19115_3$setRestrictions()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-addKeywords}{\code{ISOSRVServiceIdentification19115_3$addKeywords()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-delKeywords}{\code{ISOSRVServiceIdentification19115_3$delKeywords()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-addExtent}{\code{ISOSRVServiceIdentification19115_3$addExtent()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-delExtent}{\code{ISOSRVServiceIdentification19115_3$delExtent()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-addCoupledResource}{\code{ISOSRVServiceIdentification19115_3$addCoupledResource()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-delCoupledResource}{\code{ISOSRVServiceIdentification19115_3$delCoupledResource()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-setCouplingType}{\code{ISOSRVServiceIdentification19115_3$setCouplingType()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-addOperationMetadata}{\code{ISOSRVServiceIdentification19115_3$addOperationMetadata()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-delOperationMetadata}{\code{ISOSRVServiceIdentification19115_3$delOperationMetadata()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-addOperatesOn}{\code{ISOSRVServiceIdentification19115_3$addOperatesOn()}}
+\item \href{#method-ISOSRVServiceIdentification19115_3-delOperatesOn}{\code{ISOSRVServiceIdentification19115_3$delOperatesOn()}}
 \item \href{#method-ISOSRVServiceIdentification19115_3-clone}{\code{ISOSRVServiceIdentification19115_3$clone()}}
 }
 }
@@ -63,10 +104,8 @@ ISOSRVServiceIdentification19115_3
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addAdditionalDocumentation"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addAdditionalDocumentation'><code>geometa::ISOIdentification19115_3$addAdditionalDocumentation()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addAssociatedResource"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addAssociatedResource'><code>geometa::ISOIdentification19115_3$addAssociatedResource()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addCredit"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addCredit'><code>geometa::ISOIdentification19115_3$addCredit()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addExtent"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addExtent'><code>geometa::ISOIdentification19115_3$addExtent()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addFormat"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addFormat'><code>geometa::ISOIdentification19115_3$addFormat()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addGraphicOverview"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addGraphicOverview'><code>geometa::ISOIdentification19115_3$addGraphicOverview()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addKeywords"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addKeywords'><code>geometa::ISOIdentification19115_3$addKeywords()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addPointOfContact"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addPointOfContact'><code>geometa::ISOIdentification19115_3$addPointOfContact()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addResourceConstraints"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addResourceConstraints'><code>geometa::ISOIdentification19115_3$addResourceConstraints()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="addResourceMaintenance"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-addResourceMaintenance'><code>geometa::ISOIdentification19115_3$addResourceMaintenance()</code></a></span></li>
@@ -79,10 +118,8 @@ ISOSRVServiceIdentification19115_3
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delAdditionalDocumentation"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delAdditionalDocumentation'><code>geometa::ISOIdentification19115_3$delAdditionalDocumentation()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delAssociatedResource"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delAssociatedResource'><code>geometa::ISOIdentification19115_3$delAssociatedResource()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delCredit"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delCredit'><code>geometa::ISOIdentification19115_3$delCredit()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delExtent"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delExtent'><code>geometa::ISOIdentification19115_3$delExtent()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delFormat"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delFormat'><code>geometa::ISOIdentification19115_3$delFormat()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delGraphicOverview"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delGraphicOverview'><code>geometa::ISOIdentification19115_3$delGraphicOverview()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delKeywords"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delKeywords'><code>geometa::ISOIdentification19115_3$delKeywords()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delPointOfContact"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delPointOfContact'><code>geometa::ISOIdentification19115_3$delPointOfContact()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delResourceConstraints"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delResourceConstraints'><code>geometa::ISOIdentification19115_3$delResourceConstraints()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="geometa" data-topic="ISOIdentification19115_3" data-id="delResourceMaintenance"><a href='../../geometa/html/ISOIdentification19115_3.html#method-ISOIdentification19115_3-delResourceMaintenance'><code>geometa::ISOIdentification19115_3$delResourceMaintenance()</code></a></span></li>
@@ -114,6 +151,315 @@ Initializes object
 \item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 }
 \if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-setServiceType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-setServiceType}{}}}
+\subsection{Method \code{setServiceType()}}{
+Set service type
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$setServiceType(serviceType)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{serviceType}}{object of class \link{ISOLocalName}, \link{ISOScopedName} or \link{character}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-addServiceTypeVersion"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-addServiceTypeVersion}{}}}
+\subsection{Method \code{addServiceTypeVersion()}}{
+Adds service type version
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$addServiceTypeVersion(version)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{version}}{version}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-delServiceTypeVersion"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-delServiceTypeVersion}{}}}
+\subsection{Method \code{delServiceTypeVersion()}}{
+Deletes service type version
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$delServiceTypeVersion(version)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{version}}{version}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-setAccessProperties"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-setAccessProperties}{}}}
+\subsection{Method \code{setAccessProperties()}}{
+Set access properties
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$setAccessProperties(accessProperties)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{accessProperties}}{object of class \link{ISOStandardOrderProcess}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-setRestrictions"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-setRestrictions}{}}}
+\subsection{Method \code{setRestrictions()}}{
+Set restrictions
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$setRestrictions(restrictions)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{restrictions}}{object of class \link{ISOConstraints}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-addKeywords"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-addKeywords}{}}}
+\subsection{Method \code{addKeywords()}}{
+Adds keywords
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$addKeywords(keywords)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{keywords}}{object of class \link{ISOKeywords}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-delKeywords"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-delKeywords}{}}}
+\subsection{Method \code{delKeywords()}}{
+Deletes keywords
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$delKeywords(keywords)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{keywords}}{object of class \link{ISOKeywords}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-addExtent"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-addExtent}{}}}
+\subsection{Method \code{addExtent()}}{
+Adds extent
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$addExtent(extent)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{extent}}{object of class \link{ISOExtent}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-delExtent"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-delExtent}{}}}
+\subsection{Method \code{delExtent()}}{
+Deletes extent
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$delExtent(extent)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{extent}}{object of class \link{ISOExtent}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-addCoupledResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-addCoupledResource}{}}}
+\subsection{Method \code{addCoupledResource()}}{
+Adds coupled resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$addCoupledResource(resource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{object of class \link{ISOCoupledResource}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-delCoupledResource"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-delCoupledResource}{}}}
+\subsection{Method \code{delCoupledResource()}}{
+Deletes coupled resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$delCoupledResource(resource)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resource}}{object of class \link{ISOCoupledResource}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-setCouplingType"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-setCouplingType}{}}}
+\subsection{Method \code{setCouplingType()}}{
+Set coupling type
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$setCouplingType(couplingType)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{couplingType}}{object of class \link{ISOCouplingType} or any \link{character}
+among values returned by \code{ISOCouplingType$values()}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-addOperationMetadata"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-addOperationMetadata}{}}}
+\subsection{Method \code{addOperationMetadata()}}{
+Adds operation metadata
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$addOperationMetadata(operationMetadata)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{operationMetadata}}{object of class \link{ISOOperationMetadata}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-delOperationMetadata"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-delOperationMetadata}{}}}
+\subsection{Method \code{delOperationMetadata()}}{
+Deletes operation metadata
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$delOperationMetadata(operationMetadata)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{operationMetadata}}{object of class \link{ISOOperationMetadata}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-addOperatesOn"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-addOperatesOn}{}}}
+\subsection{Method \code{addOperatesOn()}}{
+Adds operates on
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$addOperatesOn(dataIdentification)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataIdentification}}{object of class \link{ISODataIdentification}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOSRVServiceIdentification19115_3-delOperatesOn"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOSRVServiceIdentification19115_3-delOperatesOn}{}}}
+\subsection{Method \code{delOperatesOn()}}{
+Deletes operates on
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOSRVServiceIdentification19115_3$delOperatesOn(dataIdentification)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataIdentification}}{object of class \link{ISODataIdentification}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
 }
 }
 \if{html}{\out{<hr>}}
