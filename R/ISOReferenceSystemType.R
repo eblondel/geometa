@@ -8,10 +8,14 @@
 #' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
+#' \dontrun{
+#'   setMetadataStandard("19115-3")
 #'   #possible values
 #'   values <- ISOReferenceSystemType$values(labels = TRUE)
 #'   
 #'   projected <- ISOReferenceSystemType$new(value = "projected")
+#'   setMetadataStandard("19139")
+#'  }
 #'   
 #' @references 
 #'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrs/1.0/mrs/#element_MD_ReferenceSystemTypeCode}

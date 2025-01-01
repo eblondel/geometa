@@ -16,10 +16,14 @@ ISOReferenceSystemType
 ISOReferenceSystemType
 }
 \examples{
+\dontrun{
+  setMetadataStandard("19115-3")
   #possible values
   values <- ISOReferenceSystemType$values(labels = TRUE)
   
   projected <- ISOReferenceSystemType$new(value = "projected")
+  setMetadataStandard("19139")
+ }
   
 }
 \references{
