@@ -8,6 +8,8 @@
 #' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
+#' \dontrun{
+#'    setMetadataStandard("19115-3")
 #'    #create band range dimension
 #'    md <- ISOSampleDimension$new()
 #'    md$setSequenceIdentifier(ISOMemberName$new(aName = "name", attributeType = "type"))
@@ -26,6 +28,8 @@
 #'    md$setScaleFactor(1)
 #'    md$setOffset(4)
 #'    xml <- md$encode()
+#'    setMetadataStandard("19139")
+#'  }
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #' 

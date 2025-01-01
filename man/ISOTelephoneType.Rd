@@ -16,11 +16,14 @@ ISOTelephoneType
 ISOTelephoneType
 }
 \examples{
+\dontrun{
+  setMetadataStandard("19115-3")
   #possible values
   values <- ISOTelephoneType$values(labels = TRUE)
   
   voice <- ISOTelephoneType$new(value = "voice")
-  
+  setMetadataStandard("19139")
+ }
 }
 \references{
 - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_TelephoneTypeCode}

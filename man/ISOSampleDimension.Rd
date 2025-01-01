@@ -16,6 +16,8 @@ ISOSampleDimension
 ISOSampleDimension
 }
 \examples{
+\dontrun{
+   setMetadataStandard("19115-3")
    #create band range dimension
    md <- ISOSampleDimension$new()
    md$setSequenceIdentifier(ISOMemberName$new(aName = "name", attributeType = "type"))
@@ -34,6 +36,8 @@ ISOSampleDimension
    md$setScaleFactor(1)
    md$setOffset(4)
    xml <- md$encode()
+   setMetadataStandard("19139")
+ }
 
 }
 \references{
