@@ -206,14 +206,16 @@ ISOMetadataScope"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOMetadataScope</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \dontrun{</span></span></span>
+<span class="r-in"><span> <span class="fu"><a href="setMetadataStandard.html">setMetadataStandard</a></span><span class="op">(</span><span class="st">"19115-3"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">ISOMetadataScope</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
 <span class="r-in"><span>  resourceScope <span class="op">=</span> <span class="st">"service"</span>,</span></span>
 <span class="r-in"><span>  name <span class="op">=</span> <span class="st">"Internal service"</span></span></span>
 <span class="r-in"><span> <span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in self$checkMetadataStandardCompliance():</span> Class 'ISOMetadataScope' can't be loaded with current metadata standard '19139'</span>
 <span class="r-in"><span> <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
-<span class="r-in"><span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISOMetadataScope' is VALID according to ISO 19115-3 XML schemas! </span>
+<span class="r-in"><span> <span class="fu"><a href="setMetadataStandard.html">setMetadataStandard</a></span><span class="op">(</span><span class="st">"19139"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
