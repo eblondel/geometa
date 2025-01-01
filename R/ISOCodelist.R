@@ -261,10 +261,12 @@ getISOInternalCodelists <- function(){
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 getISOCodelists <- function(){
+  setISOMetadataNamespaces(version = "19139")
+  setISOMetadataNamespaces(version = "19115-3")
   cl_classes <- list()
   classes <- ls("package:geometa")
   for(classname in classes){
-    clazz <- eval(parse(text=classname))
+    clazz <- try(eval(parse(text=classname)), silent = T)
     if(is(clazz, "R6ClassGenerator")){
       if(!is.null(clazz$inherit)){
         if(clazz$inherit == "ISOCodeListValue"){
@@ -275,15 +277,30 @@ getISOCodelists <- function(){
   }
   cl_classes_out <- do.call("rbind", lapply(cl_classes, function(x){
     el <- x$private_fields$xmlElement
+    if(is.list(el)){
+      if(version %in% names(el)){
+        el = el[[version]]
+      }else{
+        el = el[[1]]
+      }
+    }
     if(el=="MD_ScopeCode") el <- "MX_ScopeCode"
     cl <- getISOCodelist(el)
-    cl_ns <- getISOMetadataNamespace(x$private_fields$xmlNamespacePrefix)$uri
+    prefix = x$private_fields$xmlNamespacePrefix
+    if(is.list(prefix)){
+      if(version %in% names(prefix)) {
+        prefix = prefix[[version]]
+      }else{
+        prefix = prefix[[1]]
+      }
+    }
+    cl_ns <- getISOMetadataNamespace(prefix)$uri
     out <- data.frame(
       classname = x$classname,
-      codeSpace = cl$codeSpace,
-      description = cl$description,
+      codeSpace = if(!is.null(cl$codeSpace)) cl$codeSpace else NA,
+      description = if(!is.null(cl$description)) cl$description else NA,
       xmlNamespace = cl_ns,
-      xmlElement = cl$id
+      xmlElement = el
     )
     return(out)
   }))
@@ -350,7 +367,7 @@ registerISOCodelist <- function(refFile, id, force = FALSE){
   cl <- getISOCodelist(id)
   if(!is.null(cl)){
     if(!force) stop(sprintf("ISOcodelist with id '%s' already exists. Use force = TRUE to force registration", id))
-    .geometa.iso$codelists[sapply(.geometa.iso$codelists, function(x){x$id == id})][[1]] <- ISOCodelist$new(refFile, id)
+    .geometa.iso$codelists[sapply(.geometa.iso$codelists, function(x){x$id == id})][[1]] <- ISOCodelist$new(refFile = refFile, id = id)
   }else{
     cl <- ISOCodelist$new(refFile, id)
     .geometa.iso$codelists <- c(.geometa.iso$codelists, cl)
