@@ -8,12 +8,15 @@
 #' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples 
+#' \dontrun{
+#'  setMetadataStandard("19115-3")
 #'  md <- ISOMetadataScope$new(
 #'   resourceScope = "service",
 #'   name = "Internal service"
 #'  )
 #'  xml <- md$encode()
-#' 
+#'  setMetadataStandard("19139")
+#' }
 #' @references 
 #'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_MetadataScope}
 #'   
