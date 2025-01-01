@@ -282,7 +282,7 @@ ISOServiceIdentification$new = function(xml = NULL){
 #'   scriptOp$setOperationDescription("WPS Execute")
 #'   scriptOp$setInvocationName("identifier")
 #'   for(i in 1:3){
-#'     param <- ISOParameter$new()
+#'     param <- ISOSRVParameter$new()
 #'     param$setName(sprintf("name%s",i), "xs:string")
 #'     param$setDirection("in")
 #'     param$setDescription(sprintf("description%s",i))
@@ -291,7 +291,7 @@ ISOServiceIdentification$new = function(xml = NULL){
 #'     param$setValueType("xs:string")
 #'     scriptOp$addParameter(param)
 #'   }
-#'   outParam <-ISOParameter$new()
+#'   outParam <-ISOSRVParameter$new()
 #'   outParam$setName("outputname", "xs:string")
 #'   outParam$setDirection("out")
 #'   outParam$setDescription("outputdescription")
@@ -315,7 +315,7 @@ ISOServiceIdentification$new = function(xml = NULL){
 #'   invocationName <- "mywpsidentifier"
 #'   wpsOp$setInvocationName(invocationName)
 #'   for(i in 1:3){
-#'     param <- ISOParameter$new()
+#'     param <- ISOSRVParameter$new()
 #'     param$setName(sprintf("name%s",i), "xs:string")
 #'     param$setDirection("in")
 #'     param$setDescription(sprintf("description%s",i))
@@ -324,7 +324,7 @@ ISOServiceIdentification$new = function(xml = NULL){
 #'     param$setValueType("xs:string")
 #'     wpsOp$addParameter(param)
 #'   }
-#'   outParam <-ISOParameter$new()
+#'   outParam <-ISOSRVParameter$new()
 #'   outParam$setName("outputname", "xs:string")
 #'   outParam$setDirection("out")
 #'   outParam$setDescription("outputdescription")
