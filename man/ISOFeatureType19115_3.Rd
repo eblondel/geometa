@@ -16,6 +16,7 @@ ISOFeatureType19115_3
 ISOFeatureType19115_3
 }
 \examples{
+\dontrun{
  setMetadataStandard("19115-3") #required
  #featuretype
  md <- ISOFeatureType$new()
@@ -65,7 +66,7 @@ ISOFeatureType19115_3
  }
  xml <- md$encode()
  setMetadataStandard("19139") 
- 
+ }
 }
 \references{
 - ISO 19110 - GFC 1.1 https://schemas.isotc211.org/19110/gfc/1.1/gfc/#element_FC_FeatureType

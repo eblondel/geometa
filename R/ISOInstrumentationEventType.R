@@ -8,8 +8,11 @@
 #' @format \code{\link[R6]{R6Class}} object.
 #' 
 #' @examples
-#'   md <- ISOInstrumentationEventType$new()
-#' 
+#'  \dontrun{
+#'   setMetadataStandard("19115-3")
+#'   md <- ISOInstrumentationEventType$new("type")
+#'   setMetadataStandard("19139")
+#'  }
 #' @references 
 #'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_InstrumentationEventTypeCode}
 #'   
@@ -32,7 +35,7 @@ ISOInstrumentationEventType <- R6Class("ISOInstrumentationEventType",
     #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param value value
     #'@param description description
-    initialize = function(xml = NULL, value = NULL, description = NULL){
+    initialize = function(xml = NULL, value, description = NULL){
       super$initialize(xml = xml, id = private$xmlElement, value = value, description = description, 
                        addCodeSpaceAttr = FALSE)
     }

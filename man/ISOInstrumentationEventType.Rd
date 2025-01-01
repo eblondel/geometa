@@ -16,8 +16,11 @@ ISOInstrumentationEventType
 ISOInstrumentationEventType
 }
 \examples{
-  md <- ISOInstrumentationEventType$new()
-
+ \dontrun{
+  setMetadataStandard("19115-3")
+  md <- ISOInstrumentationEventType$new("type")
+  setMetadataStandard("19139")
+ }
 }
 \references{
 - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_InstrumentationEventTypeCode}
