@@ -4,7 +4,11 @@
 \alias{getISOCodelists}
 \title{getISOCodelists}
 \usage{
-getISOCodelists()
+getISOCodelists(version)
+}
+\arguments{
+\item{version}{the metadata standard version. If \code{NULL} (default), 
+all codelists will be listed}
 }
 \description{
 \code{getISOCodelists} allows to get the list of ISO codelists

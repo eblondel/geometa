@@ -253,57 +253,65 @@ getISOInternalCodelists <- function(){
 #' registered in \pkg{geometa}, their description and XML definition. The object
 #' returned is of class "data.frame"
 #' 
-#' @usage getISOCodelists()
+#' @usage getISOCodelists(version)
+#' 
+#' @param version the metadata standard version. If \code{NULL} (default), 
+#' all codelists will be listed
 #' 
 #' @examples             
 #'   getISOCodelists()
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
-getISOCodelists <- function(){
-  setISOMetadataNamespaces(version = "19139")
-  setISOMetadataNamespaces(version = "19115-3")
-  cl_classes <- list()
-  classes <- ls("package:geometa")
-  for(classname in classes){
-    clazz <- try(eval(parse(text=classname)), silent = T)
-    if(is(clazz, "R6ClassGenerator")){
-      if(!is.null(clazz$inherit)){
-        if(clazz$inherit == "ISOCodeListValue"){
-          cl_classes <- c(cl_classes, clazz)
+getISOCodelists <- function(version = NULL){
+  cl_classes_out <- NULL
+  if(!is.null(version)){
+    setISOMetadataNamespaces(version = version)
+    cl_classes <- list()
+    classes <- ls("package:geometa")
+    for(classname in classes){
+      clazz <- try(eval(parse(text=classname)), silent = T)
+      if(is(clazz, "R6ClassGenerator")){
+        if(!is.null(clazz$inherit)){
+          if(clazz$inherit == "ISOCodeListValue"){
+            cl_classes <- c(cl_classes, clazz)
+          }
         }
       }
     }
+    cl_classes_out <- do.call("rbind", lapply(cl_classes, function(x){
+      el <- x$private_fields$xmlElement
+      if(is.list(el)){
+        if(version %in% names(el)){
+          el = el[[version]]
+        }else{
+          el = el[[1]]
+        }
+      }
+      if(el=="MD_ScopeCode") el <- "MX_ScopeCode"
+      cl <- getISOCodelist(el)
+      prefix = x$private_fields$xmlNamespacePrefix
+      if(is.list(prefix)){
+        if(version %in% names(prefix)) {
+          prefix = prefix[[version]]
+        }else{
+          prefix = prefix[[1]]
+        }
+      }
+      cl_ns <- getISOMetadataNamespace(prefix)$uri
+      out <- data.frame(
+        classname = x$classname,
+        codeSpace = if(!is.null(cl$codeSpace)) cl$codeSpace else NA,
+        description = if(!is.null(cl$description)) cl$description else NA,
+        xmlNamespace = cl_ns,
+        xmlElement = el
+      )
+      return(out)
+    }))
+  }else{
+    versions = c("19139", "19115-3")
+    cl_classes_out = do.call("rbind", lapply(versions, getISOCodelists))
   }
-  cl_classes_out <- do.call("rbind", lapply(cl_classes, function(x){
-    el <- x$private_fields$xmlElement
-    if(is.list(el)){
-      if(version %in% names(el)){
-        el = el[[version]]
-      }else{
-        el = el[[1]]
-      }
-    }
-    if(el=="MD_ScopeCode") el <- "MX_ScopeCode"
-    cl <- getISOCodelist(el)
-    prefix = x$private_fields$xmlNamespacePrefix
-    if(is.list(prefix)){
-      if(version %in% names(prefix)) {
-        prefix = prefix[[version]]
-      }else{
-        prefix = prefix[[1]]
-      }
-    }
-    cl_ns <- getISOMetadataNamespace(prefix)$uri
-    out <- data.frame(
-      classname = x$classname,
-      codeSpace = if(!is.null(cl$codeSpace)) cl$codeSpace else NA,
-      description = if(!is.null(cl$description)) cl$description else NA,
-      xmlNamespace = cl_ns,
-      xmlElement = el
-    )
-    return(out)
-  }))
   return(cl_classes_out)
 }
 
