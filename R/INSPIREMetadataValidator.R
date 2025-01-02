@@ -32,6 +32,7 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
     url = "https://inspire.ec.europa.eu/validator/v2",
     #'@field running wether the service is up and running
     running = FALSE,
+    status = NULL,
     
     #'@description Method used to instantiate an INSPIRE Metadata validator. To check 
     #'    metadata with the INSPIRE metadata validator, a user API key is now required, 
@@ -43,7 +44,7 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
     #'@param url url
     #'@param apiKey API key
     #'@param keyring_backend backend name to use with \pkg{keyring} to store API key
-    initialize = function(url = "https://inspire.ec.europa.eu/validator/v2",
+    initialize = function(url = "https://inspire.ec.europa.eu/validator-api",
                           apiKey, keyring_backend = 'env'){
       if(!require("httr")){
         stop("The INSPIRE metadata validator requires the installation of 'httr' package")
@@ -53,8 +54,10 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
       private$keyring_service <- paste0("geometa@", self$url)
       if(!is.null(apiKey)) private$keyring_backend$set_with_value(private$keyring_service, username = "geometa_inspire_validator", password = apiKey)
       
-      ping <- status_code(HEAD(paste(self$url, "status", sep = "/")))
+      ping_req = GET(paste(self$url, "status", sep = "/"))
+      ping <- status_code(ping_req)
       self$running <- if(ping==200) TRUE else FALSE
+      self$status <- content(ping_req)$status
       
     },
     
