@@ -303,9 +303,10 @@ getISOCodelists <- function(version = NULL){
         classname = x$classname,
         codeSpace = if(!is.null(cl$codeSpace)) cl$codeSpace else NA,
         description = if(!is.null(cl$description)) cl$description else NA,
-        xmlNamespace = cl_ns,
+        xmlNamespace = if(!is.null(cl_ns)) cl_ns else NA,
         xmlElement = el
       )
+      out = out[!is.na(out$xmlNamespace),]
       return(out)
     }))
   }else{
