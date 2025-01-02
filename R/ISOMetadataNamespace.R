@@ -24,7 +24,7 @@ ISOMetadataNamespace <- R6Class("ISOMetadataNamespace",
     #'@param id id
     #'@param uri uri
     #'@param standard standard
-    initialize = function(id, uri, standard){
+    initialize = function(id, uri, standard = NA){
       self$id = id
       self$uri = uri
       self$standard = standard
