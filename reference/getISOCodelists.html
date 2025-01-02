@@ -54,9 +54,18 @@ returned is of class "data.frame"</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getISOCodelists</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getISOCodelists</span><span class="op">(</span><span class="va">version</span><span class="op">)</span></span></code></pre></div>
     </div>
 
+    <div id="arguments">
+    <h2>Arguments</h2>
+
+
+<dl><dt id="arg-version">version<a class="anchor" aria-label="anchor" href="#arg-version"></a></dt>
+<dd><p>the metadata standard version. If <code>NULL</code> (default),
+all codelists will be listed</p></dd>
+
+</dl></div>
     <div id="author">
     <h2>Author</h2>
     <p>Emmanuel Blondel, <a href="mailto:emmanuel.blondel1@gmail.com">emmanuel.blondel1@gmail.com</a></p>
@@ -66,7 +75,402 @@ returned is of class "data.frame"</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>            </span></span>
 <span class="r-in"><span>  <span class="fu">getISOCodelists</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (version %in% names(prefix)) {    prefix = prefix[[version]]} else {    prefix = prefix[[1]]}:</span> the condition has length &gt; 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                            classname  codeSpace</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                 ISOAssociationType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                    ISOCellGeometry       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                    ISOCharacterSet       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                  ISOClassification       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                         ISOCountry ISO 3166-2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                    ISOCouplingType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7             ISOCoverageContentType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                         ISODCPList       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                        ISODatatype       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                       ISODateType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11              ISODimensionNameType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12              ISODistributionUnits       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13           ISOEvaluationMethodType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14            ISOGeometricObjectType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15          ISOImageryBandDefinition       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                 ISOImageryContext       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17            ISOImageryGeometryType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18           ISOImageryObjectiveType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19           ISOImageryOperationType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 ISOImageryPolarisationOrientation       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                ISOImageryPriority       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22              ISOImagerySensorType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                ISOImagerySequence       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24    ISOImageryTransferFunctionType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                 ISOImageryTrigger       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26               ISOImagingCondition       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                 ISOInitiativeType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28       ISOInstrumentationEventType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29                    ISOKeywordType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                       ISOLanguage  ISO 639-2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31           ISOMaintenanceFrequency       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                   ISOMediumFormat       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33                     ISOMediumName       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34                     ISOObligation       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35                 ISOOnLineFunction       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36             ISOParameterDirection       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37               ISOPixelOrientation       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38               ISOPresentationForm       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39                       ISOProgress       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40            ISOReferenceSystemType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41                    ISORestriction       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42                           ISORole       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43                       ISORoleType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44          ISOSRVParameterDirection       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45                      ISOScopeCode       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46      ISOSpatialRepresentationType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47                  ISOTelephoneType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48                  ISOTopicCategory       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49                  ISOTopologyLevel       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50                ISOAssociationType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51                   ISOCellGeometry       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52                   ISOCharacterSet       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53                 ISOClassification       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54                        ISOCountry       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55                   ISOCouplingType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56            ISOCoverageContentType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57                        ISODCPList       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58                       ISODatatype       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59                       ISODateType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60              ISODimensionNameType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61              ISODistributionUnits       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62           ISOEvaluationMethodType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63            ISOGeometricObjectType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64          ISOImageryBandDefinition       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65                 ISOImageryContext       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66            ISOImageryGeometryType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67           ISOImageryObjectiveType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68           ISOImageryOperationType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69 ISOImageryPolarisationOrientation       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70                ISOImageryPriority       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71              ISOImagerySensorType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72                ISOImagerySequence       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73    ISOImageryTransferFunctionType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74                 ISOImageryTrigger       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75               ISOImagingCondition       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76                 ISOInitiativeType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77       ISOInstrumentationEventType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78                    ISOKeywordType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79                       ISOLanguage  ISO 639-2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80           ISOMaintenanceFrequency       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81                   ISOMediumFormat       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82                     ISOMediumName       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83                     ISOObligation       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84                 ISOOnLineFunction       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85             ISOParameterDirection       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86               ISOPixelOrientation       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87               ISOPresentationForm       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88                       ISOProgress       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89            ISOReferenceSystemType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90                    ISORestriction       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91                           ISORole       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92                       ISORoleType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93          ISOSRVParameterDirection       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94                      ISOScopeCode       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95      ISOSpatialRepresentationType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96                  ISOTelephoneType       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97                  ISOTopicCategory       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98                  ISOTopologyLevel       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                   description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                                                                                                                                                                                                                                          justification for the correlation of two resources</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                                                                                                                                                                                                             code indicating the geometry represented by the grid cell value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                                                                                                                                                                                                                                  name of the character coding standard used in the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                                                                                                                                                                                                                                           name of the handling restrictions on the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                                                                                                                                                                                                                                                         Country : ISO 3166-2 (2 characters)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                                                                                                                                                                                                                                            type of coupling between service and associated data (if exists)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                                                                                                                                                                                                                                                                        specific type of information represented in the cell</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                                                                                                                                                                                                                                                                class of information to which the referencing entity applies</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                                                                                                                                                                                                                                                                                               datatype of element or entity</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                                                                                                                                                                                                                                                                                              identification of when a given event occurred</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                                                                                                                                                                                                                                                                                                      name of the dimension</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                                                                                                                                                                                                                                                                                                                                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                                                                                                                                                                                                                                                                           type or method for evaluating an identified data quality measure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                                                                                                                                                                                                                    name of point or vector objects used to locate zero-, one-, two-, or three-dimensional spatial locations in the dataset</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                                                                                                                                                                                                                                                  designation of criterion for defining maximum and minimum wavelengths for a spectral band</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                                                                                                                                                                                                                                                            designation of criterion for defining the context of the scanning process event</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                                                                                                                                                                                                                                                                                                    geometric description of the collection</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                                                                                                                                                                                                                                                                                               temporal persistence of collection objective</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                                                                                                                                                                                                                                               code indicating whether the data contained in this packet is real, simulated, or synthesized</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                                                                                                                                                                                                                                                                                       Polarisation of the antenna relative to the waveform</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                                                                                                                                                                                                                                                                                                                 ordered list of priorities</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                                                                                                                                                                                                                                                                                                                                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                                                                                                                                                                                                                                                                                                            temporal relation of activation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24                                                                                                                                                                                                                                                            transform function to be used when scaling a physical value for a given element</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                                                                                                                                                                                                                                                                                                                    mechanism of activation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26                                                                                                                                                                                                                                                                                 code which indicates conditions which may affect the image</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                                                                                                                                                                                                                                                                                type of aggregation activity in which resources are related</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28                                                                                                                                                                                                                                                                                                                                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29                                                                                                                                                                                                                                                                                                     methods used to group similar keywords</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                                                                                                                                                                                                                                                                                                        Language : ISO 639-2 (3 characters)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                                                                                                                                                                                                                                           frequency with which modifications and deletions are made to the data after it is first produced</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                                                                                                                                                                                                                                                                                                         method used to write to the medium</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33                                                                                                                                                                                                                                                                                                                         name of the medium</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34                                                                                                                                                                                                                                                                                                        obligation of the element or entity</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35                                                                                                                                                                                                                                                                                                         function performed by the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36                                                                                                                                                                                                                                                            identificaties the parameters as an input to the process, or an output, or both</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37                                                                                                                                                                                                                                                                          point in a pixel corresponding to the Earth location of the pixel</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38                                                                                                                                                                                                                                                                                                     mode in which the data are represented</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39                                                                                                                                                                                                                                                                                                                     status of the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40                                                                                                                                                                                                                                                                                                      defines type of reference system used</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41                                                                                                                                                                                                                                                                                    limitation(s) placed upon the access or use of the data</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42                                                                                                                                                                                                                                                                                                function performed by the responsible party</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43                                                                                                                                                                                                                                                                                                 code list for the classification of roles </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44                                                                                                                                                                                                                                                                               class of information to which the referencing entity applies</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45                                                                                                                                                                                                                                        Extension of MD_ScopeCode for the needs of GMX application schemas and in the context of a transfer</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46                                                                                                                                                                                                                                                                            method used to represent geographic information in the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47                                                                                                                                                                                                                                                                                                                          type of telephone</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48 high-level geographic data thematic classification to assist in the grouping and search of available geographic data sets. Can be used to group keywords as well. Listed examples are not exhaustive.  NOTE: It is understood there are overlaps between general categories and the user is encouraged to select the one most appropriate.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49                                                                                                                                                                                                                                                                                          degree of complexity of the spatial relationships</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50                                                                                                                                                                                                                                                                                         justification for the correlation of two resources</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51                                                                                                                                                                                                                                                                            code indicating the geometry represented by the grid cell value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52                                                                                                                                                                                                                                                                                 name of the character coding standard used in the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53                                                                                                                                                                                                                                                                                          name of the handling restrictions on the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54                                                                                                                                                                                                                                                                                                                                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55                                                                                                                                                                                                                                                                           type of coupling between service and associated data (if exists)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56                                                                                                                                                                                                                                                                                       specific type of information represented in the cell</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57                                                                                                                                                                                                                                                                               class of information to which the referencing entity applies</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58                                                                                                                                                                                                                                                                                                              datatype of element or entity</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59                                                                                                                                                                                                                                                                                              identification of when a given event occurred</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60                                                                                                                                                                                                                                                                                                                      name of the dimension</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61                                                                                                                                                                                                                                                                                                                                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62                                                                                                                                                                                                                                                                           type or method for evaluating an identified data quality measure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63                                                                                                                                                                                                                    name of point or vector objects used to locate zero-, one-, two-, or three-dimensional spatial locations in the dataset</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64                                                                                                                                                                                                                                                  designation of criterion for defining maximum and minimum wavelengths for a spectral band</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65                                                                                                                                                                                                                                                            designation of criterion for defining the context of the scanning process event</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66                                                                                                                                                                                                                                                                                                    geometric description of the collection</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67                                                                                                                                                                                                                                                                                               temporal persistence of collection objective</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68                                                                                                                                                                                                                                               code indicating whether the data contained in this packet is real, simulated, or synthesized</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69                                                                                                                                                                                                                                                                                       Polarisation of the antenna relative to the waveform</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70                                                                                                                                                                                                                                                                                                                 ordered list of priorities</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71                                                                                                                                                                                                                                                                                                                                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72                                                                                                                                                                                                                                                                                                            temporal relation of activation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73                                                                                                                                                                                                                                                            transform function to be used when scaling a physical value for a given element</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74                                                                                                                                                                                                                                                                                                                    mechanism of activation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75                                                                                                                                                                                                                                                                                 code which indicates conditions which may affect the image</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76                                                                                                                                                                                                                                                                                type of aggregation activity in which resources are related</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77                                                                                                                                                                                                                                                                                                                                       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78                                                                                                                                                                                                                                                                                                     methods used to group similar keywords</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79                                                                                                                                                                                                                                                                                                        Language : ISO 639-2 (3 characters)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80                                                                                                                                                                                                                                           frequency with which modifications and deletions are made to the data after it is first produced</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81                                                                                                                                                                                                                                                                                                         method used to write to the medium</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82                                                                                                                                                                                                                                                                                                                         name of the medium</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83                                                                                                                                                                                                                                                                                                        obligation of the element or entity</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84                                                                                                                                                                                                                                                                                                         function performed by the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85                                                                                                                                                                                                                                                            identificaties the parameters as an input to the process, or an output, or both</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86                                                                                                                                                                                                                                                                          point in a pixel corresponding to the Earth location of the pixel</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87                                                                                                                                                                                                                                                                                                     mode in which the data are represented</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88                                                                                                                                                                                                                                                                                                                     status of the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89                                                                                                                                                                                                                                                                                                      defines type of reference system used</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90                                                                                                                                                                                                                                                                                    limitation(s) placed upon the access or use of the data</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91                                                                                                                                                                                                                                                                                                function performed by the responsible party</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92                                                                                                                                                                                                                                                                                                 code list for the classification of roles </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93                                                                                                                                                                                                                                                                               class of information to which the referencing entity applies</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94                                                                                                                                                                                                                                        Extension of MD_ScopeCode for the needs of GMX application schemas and in the context of a transfer</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95                                                                                                                                                                                                                                                                            method used to represent geographic information in the resource</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96                                                                                                                                                                                                                                                                                                                          type of telephone</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97 high-level geographic data thematic classification to assist in the grouping and search of available geographic data sets. Can be used to group keywords as well. Listed examples are not exhaustive.  NOTE: It is understood there are overlaps between general categories and the user is encouraged to select the one most appropriate.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98                                                                                                                                                                                                                                                                                          degree of complexity of the spatial relationships</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                     xmlNamespace</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1               http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2               http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3               http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4               http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5               http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6               http://www.isotc211.org/2005/srv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7               http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8               http://www.isotc211.org/2005/srv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9               http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28 http://standards.iso.org/iso/19115/-2/gmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36              http://www.isotc211.org/2005/srv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40 http://standards.iso.org/iso/19115/-3/mrs/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43              http://www.isotc211.org/2005/gfc</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44              http://www.isotc211.org/2005/srv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47 http://standards.iso.org/iso/19115/-3/cit/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50 http://standards.iso.org/iso/19115/-3/mri/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51 http://standards.iso.org/iso/19115/-3/msr/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52 http://standards.iso.org/iso/19115/-3/lan/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53 http://standards.iso.org/iso/19115/-3/mco/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54 http://standards.iso.org/iso/19115/-3/lan/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55 http://standards.iso.org/iso/19115/-3/srv/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56 http://standards.iso.org/iso/19115/-3/mrc/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57 http://standards.iso.org/iso/19115/-3/srv/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59 http://standards.iso.org/iso/19115/-3/cit/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60 http://standards.iso.org/iso/19115/-3/msr/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62 http://standards.iso.org/iso/19157/-2/mdq/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63 http://standards.iso.org/iso/19115/-3/msr/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64 http://standards.iso.org/iso/19115/-3/mrc/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65 http://standards.iso.org/iso/19115/-3/mac/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66 http://standards.iso.org/iso/19115/-3/mac/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67 http://standards.iso.org/iso/19115/-3/mac/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68 http://standards.iso.org/iso/19115/-3/mac/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69 http://standards.iso.org/iso/19115/-3/mrc/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70 http://standards.iso.org/iso/19115/-3/mac/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71 http://standards.iso.org/iso/19115/-3/mac/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72 http://standards.iso.org/iso/19115/-3/mac/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73 http://standards.iso.org/iso/19115/-3/mrc/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74 http://standards.iso.org/iso/19115/-3/mac/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75 http://standards.iso.org/iso/19115/-3/mrc/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76 http://standards.iso.org/iso/19115/-3/mri/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77 http://standards.iso.org/iso/19115/-3/mac/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78 http://standards.iso.org/iso/19115/-3/mri/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79 http://standards.iso.org/iso/19115/-3/lan/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80 http://standards.iso.org/iso/19115/-3/mmi/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81 http://standards.iso.org/iso/19115/-3/mrd/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83              http://www.isotc211.org/2005/gmd</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84 http://standards.iso.org/iso/19115/-3/cit/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85 http://standards.iso.org/iso/19115/-3/mrl/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86 http://standards.iso.org/iso/19115/-3/msr/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87 http://standards.iso.org/iso/19115/-3/cit/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88 http://standards.iso.org/iso/19115/-3/mcc/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89 http://standards.iso.org/iso/19115/-3/mrs/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90 http://standards.iso.org/iso/19115/-3/mco/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91 http://standards.iso.org/iso/19115/-3/cit/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92    http://standards.iso.org/iso/19110/gfc/1.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93 http://standards.iso.org/iso/19115/-3/srv/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94 http://standards.iso.org/iso/19115/-3/mcc/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95 http://standards.iso.org/iso/19115/-3/mcc/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96 http://standards.iso.org/iso/19115/-3/cit/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97 http://standards.iso.org/iso/19115/-3/mri/1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98 http://standards.iso.org/iso/19115/-3/msr/2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                          xmlElement</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1            DS_AssociationTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2               MD_CellGeometryCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3               MD_CharacterSetCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4             MD_ClassificationCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                           Country</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                   SV_CouplingType</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7        MD_CoverageContentTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                           DCPList</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                   MD_DatatypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                  CI_DateTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11         MD_DimensionNameTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12             MD_DistributionUnits</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13      DQ_EvaluationMethodTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14       MD_GeometricObjectTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                MI_BandDefinition</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                   MI_ContextCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17              MI_GeometryTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18             MI_ObjectiveTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19             MI_OperationTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20   MI_PolarisationOrientationCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                  MI_PriorityCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                MI_SensorTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                  MI_SequenceCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24      MI_TransferFunctionTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                   MI_TriggerCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26          MD_ImagingConditionCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27            DS_InitiativeTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28  MI_InstrumentationEventTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29               MD_KeywordTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                     LanguageCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31      MD_MaintenanceFrequencyCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32              MD_MediumFormatCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33                MD_MediumNameCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34                MD_ObligationCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35            CI_OnLineFunctionCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36            LE_ParameterDirection</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37          MD_PixelOrientationCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38          CI_PresentationFormCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39                  MD_ProgressCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40       MD_ReferenceSystemTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41               MD_RestrictionCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42                      CI_RoleCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43                      FC_RoleType</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44            SV_ParameterDirection</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45                     MX_ScopeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46 MD_SpatialRepresentationTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47             CI_TelephoneTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48             MD_TopicCategoryCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49             MD_TopologyLevelCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50           DS_AssociationTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51              MD_CellGeometryCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52              MD_CharacterSetCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53            MD_ClassificationCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54                      CountryCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55                  SV_CouplingType</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56       MD_CoverageContentTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57                          DCPList</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58                  MD_DatatypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59                  CI_DateTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60         MD_DimensionNameTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61             MD_DistributionUnits</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62      DQ_EvaluationMethodTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63       MD_GeometricObjectTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64                MI_BandDefinition</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65                   MI_ContextCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66              MI_GeometryTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67             MI_ObjectiveTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68             MI_OperationTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69   MI_PolarisationOrientationCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70                  MI_PriorityCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71                MI_SensorTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72                  MI_SequenceCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73      MI_TransferFunctionTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74                   MI_TriggerCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75          MD_ImagingConditionCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76            DS_InitiativeTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77  MI_InstrumentationEventTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78               MD_KeywordTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79                     LanguageCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80      MD_MaintenanceFrequencyCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81              MD_MediumFormatCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82                MD_MediumNameCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83                MD_ObligationCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84            CI_OnLineFunctionCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85            LE_ParameterDirection</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86          MD_PixelOrientationCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87          CI_PresentationFormCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88                  MD_ProgressCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89       MD_ReferenceSystemTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90               MD_RestrictionCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91                      CI_RoleCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92                      FC_RoleType</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93            SV_ParameterDirection</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94                     MX_ScopeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95 MD_SpatialRepresentationTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96             CI_TelephoneTypeCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97             MD_TopicCategoryCode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98             MD_TopologyLevelCode</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
