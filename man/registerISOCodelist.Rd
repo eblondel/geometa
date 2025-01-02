@@ -4,12 +4,14 @@
 \alias{registerISOCodelist}
 \title{registerISOCodelist}
 \usage{
-registerISOCodelist(refFile, id, force)
+registerISOCodelist(refFile, id, version, force)
 }
 \arguments{
 \item{refFile}{ISO XML file handling the ISO codelist}
 
 \item{id}{identifier of the ISO codelist}
+
+\item{version}{the version of the metadata standard}
 
 \item{force}{logical parameter indicating if registration has be to be forced
 in case the identified codelist is already registered}
@@ -23,6 +25,7 @@ registered in \pkg{geometa}
   registerISOCodelist(
    refFile = "http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml",
    id = "LanguageCode",
+   version = "19139",
    force = TRUE
  )
 

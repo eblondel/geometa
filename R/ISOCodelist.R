@@ -356,10 +356,11 @@ getISOCodelist <- function(id){
 #' @description \code{registerISOCodelist} allows to register a new codelist
 #' registered in \pkg{geometa}
 #' 
-#' @usage registerISOCodelist(refFile, id, force)
+#' @usage registerISOCodelist(refFile, id, version, force)
 #' 
 #' @param refFile ISO XML file handling the ISO codelist
 #' @param id identifier of the ISO codelist
+#' @param version the version of the metadata standard
 #' @param force logical parameter indicating if registration has be to be forced
 #' in case the identified codelist is already registered
 #' 
@@ -367,18 +368,20 @@ getISOCodelist <- function(id){
 #'   registerISOCodelist(
 #'    refFile = "http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml",
 #'    id = "LanguageCode",
+#'    version = "19139",
 #'    force = TRUE
 #'  )
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
-registerISOCodelist <- function(refFile, id, force = FALSE){
+registerISOCodelist <- function(refFile, id, version = c("19139", "19115-3"), force = FALSE){
+  version = match.arg(version)
   cl <- getISOCodelist(id)
   if(!is.null(cl)){
     if(!force) stop(sprintf("ISOcodelist with id '%s' already exists. Use force = TRUE to force registration", id))
-    .geometa.iso$codelists[sapply(.geometa.iso$codelists, function(x){x$id == id})][[1]] <- ISOCodelist$new(refFile = refFile, id = id)
+    .geometa.iso$codelists[[version]][sapply(.geometa.iso$codelists[[version]], function(x){x$identifier$value == id})][[1]] <- ISOCodelist$new(refFile = refFile, id = id)
   }else{
     cl <- ISOCodelist$new(refFile, id)
-    .geometa.iso$codelists <- c(.geometa.iso$codelists, cl)
+    .geometa.iso$codelists[[version]] <- c(.geometa.iso$codelists[[version]], cl)
   }
 }
