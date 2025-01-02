@@ -50,7 +50,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes namespace object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOMetadataNamespace$new(id, uri, standard)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadataNamespace$new(id, uri, standard = NA)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

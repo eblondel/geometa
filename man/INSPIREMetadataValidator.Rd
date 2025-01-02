@@ -79,7 +79,7 @@ Method used to instantiate an INSPIRE Metadata validator. To check
    the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{INSPIREMetadataValidator$new(
-  url = "https://inspire.ec.europa.eu/validator/v2",
+  url = "https://inspire.ec.europa.eu/validator-api",
   apiKey,
   keyring_backend = "env"
 )}\if{html}{\out{</div>}}

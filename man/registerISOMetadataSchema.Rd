@@ -17,7 +17,7 @@ in \pkg{geometa}
 }
 \examples{
             
-  registerISOMetadataSchema(xsdFile = "http://www.isotc211.org/2005/gmd/gmd.xsd")
+  registerISOMetadataSchema(version = "19139", xsdFile = "http://www.isotc211.org/2005/gmd/gmd.xsd")
 
 }
 \author{
