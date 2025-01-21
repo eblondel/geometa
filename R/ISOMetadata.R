@@ -411,6 +411,8 @@ ISOMetadata <- R6Class("ISOMetadata",
      distributionInfo = NULL,
      #'@field dataQualityInfo dataQualityInfo [0..*]: ISODataQuality
      dataQualityInfo = list(),
+     #'@field resourceLineage resourceLineage [0..*]: ISOLineage (ISO 19115-3)
+     resourceLineage = list(),
      #'@field metadataMaintenance metadataMaintenance [0..1]: ISOMaintenanceInformation
      metadataMaintenance = NULL,
      
@@ -1020,6 +1022,31 @@ ISOMetadata <- R6Class("ISOMetadata",
          stop("The argument should be a 'ISODataQuality' object")
        }
        return(self$delListElement("dataQualityInfo", dataQualityInfo))
+     },
+     
+     #LI_Lineage (19115-3)
+     #--------------------------------------------------------------------------     
+     
+     #'@description Adds lineage info
+     #'@param lineageInfo object of class \link{ISOLineage}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addResourceLineage = function(lineageInfo){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(lineageInfo,"ISOLineage")){
+         stop("The argument should be a 'ISOLineage' object")
+       }
+       return(self$addListElement("resourceLineage", lineageInfo))
+     },
+     
+     #'@description Deletes lineage info
+     #'@param lineageInfo object of class \link{ISOLineage}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delResourceLineage = function(lineageInfo){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(lineageInfo,"ISOLineage")){
+         stop("The argument should be a 'ISOLineage' object")
+       }
+       return(self$delListElement("resourceLineage", lineageInfo))
      },
      
      #MD_MaintenanceInformation

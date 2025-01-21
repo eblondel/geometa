@@ -405,6 +405,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{dataQualityInfo}}{dataQualityInfo [0..*]: ISODataQuality}
 
+\item{\code{resourceLineage}}{resourceLineage [0..*]: ISOLineage (ISO 19115-3)}
+
 \item{\code{metadataMaintenance}}{metadataMaintenance [0..1]: ISOMaintenanceInformation}
 
 \item{\code{portrayalCatalogueInfo}}{portrayalCatalogueInfo [0..*]}
@@ -463,6 +465,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOMetadata-addDataQualityInfo}{\code{ISOMetadata$addDataQualityInfo()}}
 \item \href{#method-ISOMetadata-setDataQualityInfo}{\code{ISOMetadata$setDataQualityInfo()}}
 \item \href{#method-ISOMetadata-delDataQualityInfo}{\code{ISOMetadata$delDataQualityInfo()}}
+\item \href{#method-ISOMetadata-addResourceLineage}{\code{ISOMetadata$addResourceLineage()}}
+\item \href{#method-ISOMetadata-delResourceLineage}{\code{ISOMetadata$delResourceLineage()}}
 \item \href{#method-ISOMetadata-setMetadataMaintenance}{\code{ISOMetadata$setMetadataMaintenance()}}
 \item \href{#method-ISOMetadata-addContentInfo}{\code{ISOMetadata$addContentInfo()}}
 \item \href{#method-ISOMetadata-delContentInfo}{\code{ISOMetadata$delContentInfo()}}
@@ -1409,6 +1413,46 @@ Deletes data quality info
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{dataQualityInfo}}{object of class \link{ISODataQuality}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addResourceLineage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addResourceLineage}{}}}
+\subsection{Method \code{addResourceLineage()}}{
+Adds lineage info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addResourceLineage(lineageInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{lineageInfo}}{object of class \link{ISOLineage}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delResourceLineage"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delResourceLineage}{}}}
+\subsection{Method \code{delResourceLineage()}}{
+Deletes lineage info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delResourceLineage(lineageInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{lineageInfo}}{object of class \link{ISOLineage}}
 }
 \if{html}{\out{</div>}}
 }

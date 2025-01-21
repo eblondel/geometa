@@ -1343,62 +1343,64 @@ test_that("encoding/decoding - ISO 19115-3",{
   
   #Data Quality
   #-------------
-  # dq <- ISODataQuality$new()
-  # 
-  # #add scope
-  # scope <- ISODataQualityScope$new()
-  # scope$setLevel("dataset")
-  # dq$setScope(scope)
-  # 
-  # #add report
-  # dc <- ISODomainConsistency$new()
-  # result <- ISOConformanceResult$new()
-  # spec <- ISOCitation$new()
-  # spec$setTitle("specification title")
-  # spec$addAlternateTitle("specification alternate title")
-  # d <- ISODate$new()
-  # d$setDate(ISOdate(2015, 1, 1, 1))
-  # d$setDateType("publication")
-  # spec$addDate(d1)
-  # result$setSpecification(spec)
-  # result$setExplanation("some explanation about the conformance")
-  # result$setPass(TRUE)
-  # dc$addResult(result)
-  # dq$addReport(dc)
-  # 
-  # #add lineage
-  # lineage <- ISOLineage$new()
-  # lineage$setStatement("statement")
-  # dq$setLineage(lineage)
-  # 
-  # md$addDataQualityInfo(dq)
+  dq <- ISODataQuality$new()
+
+  #add scope
+  scope <- ISOScope$new()
+  scope$setLevel("dataset")
+  dq$setScope(scope)
+
+  #add report
+  dc <- ISODomainConsistency$new()
+  result <- ISOConformanceResult$new()
+  spec <- ISOCitation$new()
+  spec$setTitle("specification title")
+  spec$addAlternateTitle("specification alternate title")
+  d <- ISODate$new()
+  d$setDate(ISOdate(2015, 1, 1, 1))
+  d$setDateType("publication")
+  spec$addDate(d1)
+  result$setSpecification(spec)
+  result$setExplanation("some explanation about the conformance")
+  result$setPass(TRUE)
+  dc$addResult(result)
+  dq$addReport(dc)
+
+  #Resource lineage
+  #-------------
+  lineage <- ISOLineage$new()
+  lineage$setStatement("statement")
+  md$addResourceLineage(lineage)
+   
+  md$addDataQualityInfo(dq)
   
   #Content Information
   #-------------------------
-  # #add a feature catalogue description
-  # fcd <- ISOFeatureCatalogueDescription$new()
-  # fcd$setComplianceCode(FALSE)
-  # fcd$addLanguage("eng")
-  # fcd$setIncludedWithDataset(FALSE)
-  # cit = ISOCitation$new()
-  # cit$setTitle("title")
-  # cit$addAlternateTitle("alternate title")
-  # d <- ISODate$new()
-  # d$setDate(ISOdate(2015,1,1))
-  # d$setDateType("creation")
-  # cit$addDate(d1)
-  # contact = ISOContact$new()
-  # fcLink <- ISOOnlineResource$new()
-  # fcLink$setLinkage("http://somelink/featurecatalogue")
-  # contact$setOnlineResource(fcLink)
-  # rp = ISOResponsibleParty$new()
-  # rp$setRole("publisher")
-  # rp$setContactInfo(contact)
-  # cit$addCitedResponsibleParty(rp)
-  # fcd$addFeatureCatalogueCitation(cit)
-  # 
-  # md$addContentInfo(fcd)
-  
+  #add a feature catalogue description
+  fcd <- ISOFeatureCatalogueDescription$new()
+  fcd$setComplianceCode(FALSE)
+  fcd$language = NULL
+  fcd$setIncludedWithDataset(FALSE)
+  cit = ISOCitation$new()
+  cit$setTitle("title")
+  cit$addAlternateTitle("alternate title")
+  d <- ISODate$new()
+  d$setDate(ISOdate(2015,1,1))
+  d$setDateType("creation")
+  cit$addDate(d1)
+  contact = ISOContact$new()
+  fcLink <- ISOOnlineResource$new()
+  fcLink$setLinkage("http://somelink/featurecatalogue")
+  contact$addOnlineResource(fcLink)
+  resp = ISOResponsibility$new()
+  resp$setRole("publisher")
+  rp = ISOOrganisation$new()
+  rp$addContactInfo(contact)
+  resp$addParty(rp)
+  cit$addCitedResponsibleParty(resp)
+  fcd$addFeatureCatalogueCitation(cit)
+
+  md$addContentInfo(fcd)
   
   xml <- md$encode()
   expect_is(xml, "XMLInternalNode")
@@ -1407,14 +1409,12 @@ test_that("encoding/decoding - ISO 19115-3",{
   md2 <- ISOMetadata$new(xml = xml)
   xml2 <- md2$encode()
   
-  if(FALSE){#TO WORK ON
-    elapsed_with_print_comparator <- system.time(expect_true(ISOAbstractObject$compare(md, md2)))[["elapsed"]] #NOT OK FOR NOW, issue With Telephone
-    setGeometaOption("object_comparator", "xml")
-    elapsed_with_xml_comparator <- system.time(expect_true(ISOAbstractObject$compare(md, md2)))[["elapsed"]]
-    setGeometaOption("object_comparator", "print")
-    expect_true(elapsed_with_print_comparator < elapsed_with_xml_comparator)
-  }
-    
+  elapsed_with_print_comparator <- system.time(expect_true(ISOAbstractObject$compare(md, md2)))[["elapsed"]]
+  setGeometaOption("object_comparator", "xml")
+  elapsed_with_xml_comparator <- system.time(expect_true(ISOAbstractObject$compare(md, md2)))[["elapsed"]]
+  setGeometaOption("object_comparator", "print")
+  expect_true(elapsed_with_print_comparator < elapsed_with_xml_comparator)
+
   setMetadataStandard("19139")
   
 })

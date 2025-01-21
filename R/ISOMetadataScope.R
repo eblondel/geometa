@@ -34,9 +34,9 @@ ISOMetadataScope <- R6Class("ISOMetadataScope",
     ),
     public = list(
       #'@field resourceScope resource scope
-      resourceScope = NULL,
+      resourceScope = NA,
       #'@field name name
-      name = NULL,
+      name = NA,
       
       #'@description Initializes object
       #'@param xml object of class \link[XML]{XMLInternalNode-class}
@@ -45,8 +45,8 @@ ISOMetadataScope <- R6Class("ISOMetadataScope",
       initialize = function(xml = NULL, resourceScope = NULL, name = NULL){
         super$initialize(xml = xml)
         if(is.null(xml)){
-          self$setResourceScope(resourceScope)
-          self$setName(name)
+          if(!is.null(resourceScope)) self$setResourceScope(resourceScope)
+          if(!is.null(name)) self$setName(name)
         }
       },
       

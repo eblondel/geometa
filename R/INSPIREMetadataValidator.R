@@ -32,6 +32,7 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
     url = "https://inspire.ec.europa.eu/validator/v2",
     #'@field running wether the service is up and running
     running = FALSE,
+    #'@field status status
     status = NULL,
     
     #'@description Method used to instantiate an INSPIRE Metadata validator. To check 

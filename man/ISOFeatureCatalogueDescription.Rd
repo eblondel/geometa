@@ -54,6 +54,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 \item{\code{language}}{language [0..*]: character}
 
+\item{\code{locale}}{locale [0..*]: ISOLocale}
+
 \item{\code{includedWithDataset}}{includedWithDataset: logical}
 
 \item{\code{featureTypes}}{featureTypes [0..*]: GenericName #TODO?}
@@ -69,6 +71,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOFeatureCatalogueDescription-setComplianceCode}{\code{ISOFeatureCatalogueDescription$setComplianceCode()}}
 \item \href{#method-ISOFeatureCatalogueDescription-addLanguage}{\code{ISOFeatureCatalogueDescription$addLanguage()}}
 \item \href{#method-ISOFeatureCatalogueDescription-delLanguage}{\code{ISOFeatureCatalogueDescription$delLanguage()}}
+\item \href{#method-ISOFeatureCatalogueDescription-addLocale}{\code{ISOFeatureCatalogueDescription$addLocale()}}
+\item \href{#method-ISOFeatureCatalogueDescription-delLocale}{\code{ISOFeatureCatalogueDescription$delLocale()}}
 \item \href{#method-ISOFeatureCatalogueDescription-setIncludedWithDataset}{\code{ISOFeatureCatalogueDescription$setIncludedWithDataset()}}
 \item \href{#method-ISOFeatureCatalogueDescription-addFeatureCatalogueCitation}{\code{ISOFeatureCatalogueDescription$addFeatureCatalogueCitation()}}
 \item \href{#method-ISOFeatureCatalogueDescription-delFeatureCatalogueCitation}{\code{ISOFeatureCatalogueDescription$delFeatureCatalogueCitation()}}
@@ -177,6 +181,46 @@ Deletes language
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{lang}}{lang}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFeatureCatalogueDescription-addLocale"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFeatureCatalogueDescription-addLocale}{}}}
+\subsection{Method \code{addLocale()}}{
+Adds locale
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFeatureCatalogueDescription$addLocale(locale)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locale}}{object of class \link{ISOLocale}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOFeatureCatalogueDescription-delLocale"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOFeatureCatalogueDescription-delLocale}{}}}
+\subsection{Method \code{delLocale()}}{
+Deletes locale
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOFeatureCatalogueDescription$delLocale(locale)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{locale}}{object of class \link{ISOLocale}}
 }
 \if{html}{\out{</div>}}
 }

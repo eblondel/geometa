@@ -23,7 +23,7 @@ ISOScope <- R6Class("ISOScope",
   public = list(
     
     #'@field level level [0..1]: ISOScope
-    level = list(),
+    level = NULL,
     #'@field extent extent [0..*]: ISOAbstractExtent
     extent = NULL,
     #'@field levelDescription levelDescription [0..*]: ISOScopeDescription

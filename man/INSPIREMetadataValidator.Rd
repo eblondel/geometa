@@ -44,6 +44,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item{\code{url}}{url of the INSPIRE metadata validator}
 
 \item{\code{running}}{wether the service is up and running}
+
+\item{\code{status}}{status}
 }
 \if{html}{\out{</div>}}
 }

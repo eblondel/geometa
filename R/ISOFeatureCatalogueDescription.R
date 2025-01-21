@@ -45,6 +45,8 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
      complianceCode = NULL,
      #'@field language language [0..*]: character
      language = list(),
+     #'@field locale locale [0..*]: ISOLocale
+     locale = list(),
      #'@field includedWithDataset includedWithDataset: logical
      includedWithDataset = FALSE,
      #'@field featureTypes featureTypes [0..*]: GenericName #TODO?
@@ -80,6 +82,28 @@ ISOFeatureCatalogueDescription <- R6Class("ISOFeatureCatalogueDescription",
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delLanguage = function(lang){
        return(self$delListElement("language", lang))
+     },
+     
+     #'@description Adds locale
+     #'@param locale object of class \link{ISOLocale}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addLocale = function(locale){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(locale,"ISOLocale")){
+         stop("The argument should be a 'ISOLocale' object")  
+       }
+       return(self$addListElement("locale", locale))
+     },
+     
+     #'@description Deletes locale
+     #'@param locale object of class \link{ISOLocale}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delLocale = function(locale){
+       self$stopIfMetadataStandardIsNot("19115-3")
+       if(!is(locale,"ISOLocale")){
+         stop("The argument should be a 'ISOLocale' object")  
+       }
+       return(self$delListElement("locale", locale))
      },
      
      #'@description Set included with dataset

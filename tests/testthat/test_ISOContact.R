@@ -157,3 +157,39 @@ test_that("encoding - i18n",{
   expect_true(ISOAbstractObject$compare(md, md2))
   
 })
+
+test_that("encoding/decoding - ISO 19115-3",{
+  setMetadataStandard("19115-3")
+  
+  contact <- ISOContact$new()
+  phone <- ISOTelephone$new()
+  phone$setNumber("myphonenumber")
+  phone$setNumberType("voice")
+  contact$addPhone(phone)
+  sms <- ISOTelephone$new()
+  sms$setNumber("mysmsnumber")
+  sms$setNumberType("sms")
+  contact$addPhone(sms)
+  address <- ISOAddress$new()
+  address$addDeliveryPoint("theaddress")
+  address$setCity("thecity")
+  address$setPostalCode("111")
+  address$setCountry("France")
+  address$setEmail("someone@theorg.org")
+  contact$addAddress(address)
+  res <- ISOOnlineResource$new()
+  res$setLinkage("http://somelink")
+  res$setName("someresourcename")
+  contact$addOnlineResource(res)
+  
+  xml <- contact$encode()
+  expect_is(xml, "XMLInternalNode")
+  
+  #decoding
+  contact2 <- ISOContact$new(xml = xml)
+  xml2 <- contact2$encode()
+  
+  expect_true(ISOAbstractObject$compare(contact, contact2))
+  
+  setMetadataStandard()
+})
