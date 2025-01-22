@@ -191,6 +191,10 @@ ISOMetadata"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <dd><p>dataQualityInfo [0..*]: ISODataQuality</p></dd>
 
 
+<dt><code>resourceLineage</code></dt>
+<dd><p>resourceLineage [0..*]: ISOLineage (ISO 19115-3)</p></dd>
+
+
 <dt><code>metadataMaintenance</code></dt>
 <dd><p>metadataMaintenance [0..1]: ISOMaintenanceInformation</p></dd>
 
@@ -258,6 +262,8 @@ ISOMetadata"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <li><p><a href="#method-ISOMetadata-addDataQualityInfo"><code>ISOMetadata$addDataQualityInfo()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setDataQualityInfo"><code>ISOMetadata$setDataQualityInfo()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-delDataQualityInfo"><code>ISOMetadata$delDataQualityInfo()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-addResourceLineage"><code>ISOMetadata$addResourceLineage()</code></a></p></li>
+<li><p><a href="#method-ISOMetadata-delResourceLineage"><code>ISOMetadata$delResourceLineage()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-setMetadataMaintenance"><code>ISOMetadata$setMetadataMaintenance()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-addContentInfo"><code>ISOMetadata$addContentInfo()</code></a></p></li>
 <li><p><a href="#method-ISOMetadata-delContentInfo"><code>ISOMetadata$delContentInfo()</code></a></p></li>
@@ -1191,17 +1197,17 @@ inheriting class <a href="ISOAbstractResponsibility.html">ISOAbstractResponsibil
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-setMetadataMaintenance"></a><div class="section">
-<h3 id="method-setmetadatamaintenance-">Method <code>setMetadataMaintenance()</code><a class="anchor" aria-label="anchor" href="#method-setmetadatamaintenance-"></a></h3>
-<p>Sets metadata maintenance</p><div class="section">
+</div><p></p><hr><a id="method-ISOMetadata-addResourceLineage"></a><div class="section">
+<h3 id="method-addresourcelineage-">Method <code>addResourceLineage()</code><a class="anchor" aria-label="anchor" href="#method-addresourcelineage-"></a></h3>
+<p>Adds lineage info</p><div class="section">
 <h4 id="usage-47">Usage<a class="anchor" aria-label="anchor" href="#usage-47"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setMetadataMaintenance</span><span class="op">(</span><span class="va">metadataMaintenance</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addResourceLineage</span><span class="op">(</span><span class="va">lineageInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-47">Arguments<a class="anchor" aria-label="anchor" href="#arguments-47"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>metadataMaintenance</code></dt>
-<dd><p>object of class <a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></p></dd>
+<p></p><div class="arguments"><dl><dt><code>lineageInfo</code></dt>
+<dd><p>object of class <a href="ISOLineage.html">ISOLineage</a></p></dd>
 
 
 </dl><p></p></div>
@@ -1211,35 +1217,55 @@ inheriting class <a href="ISOAbstractResponsibility.html">ISOAbstractResponsibil
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-addContentInfo"></a><div class="section">
-<h3 id="method-addcontentinfo-">Method <code>addContentInfo()</code><a class="anchor" aria-label="anchor" href="#method-addcontentinfo-"></a></h3>
-<p>Adds content information</p><div class="section">
+</div><p></p><hr><a id="method-ISOMetadata-delResourceLineage"></a><div class="section">
+<h3 id="method-delresourcelineage-">Method <code>delResourceLineage()</code><a class="anchor" aria-label="anchor" href="#method-delresourcelineage-"></a></h3>
+<p>Deletes lineage info</p><div class="section">
 <h4 id="usage-48">Usage<a class="anchor" aria-label="anchor" href="#usage-48"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addContentInfo</span><span class="op">(</span><span class="va">contentInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delResourceLineage</span><span class="op">(</span><span class="va">lineageInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-48">Arguments<a class="anchor" aria-label="anchor" href="#arguments-48"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>contentInfo</code></dt>
-<dd><p>object of class inheriting <a href="ISOAbstractContentInformation.html">ISOAbstractContentInformation</a></p></dd>
+<p></p><div class="arguments"><dl><dt><code>lineageInfo</code></dt>
+<dd><p>object of class <a href="ISOLineage.html">ISOLineage</a></p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns-36">Returns<a class="anchor" aria-label="anchor" href="#returns-36"></a></h4>
-<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOMetadata-delContentInfo"></a><div class="section">
-<h3 id="method-delcontentinfo-">Method <code>delContentInfo()</code><a class="anchor" aria-label="anchor" href="#method-delcontentinfo-"></a></h3>
-<p>Deletes content information</p><div class="section">
+</div><p></p><hr><a id="method-ISOMetadata-setMetadataMaintenance"></a><div class="section">
+<h3 id="method-setmetadatamaintenance-">Method <code>setMetadataMaintenance()</code><a class="anchor" aria-label="anchor" href="#method-setmetadatamaintenance-"></a></h3>
+<p>Sets metadata maintenance</p><div class="section">
 <h4 id="usage-49">Usage<a class="anchor" aria-label="anchor" href="#usage-49"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delContentInfo</span><span class="op">(</span><span class="va">contentInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">setMetadataMaintenance</span><span class="op">(</span><span class="va">metadataMaintenance</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-49">Arguments<a class="anchor" aria-label="anchor" href="#arguments-49"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>metadataMaintenance</code></dt>
+<dd><p>object of class <a href="ISOMaintenanceInformation.html">ISOMaintenanceInformation</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-37">Returns<a class="anchor" aria-label="anchor" href="#returns-37"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-addContentInfo"></a><div class="section">
+<h3 id="method-addcontentinfo-">Method <code>addContentInfo()</code><a class="anchor" aria-label="anchor" href="#method-addcontentinfo-"></a></h3>
+<p>Adds content information</p><div class="section">
+<h4 id="usage-50">Usage<a class="anchor" aria-label="anchor" href="#usage-50"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">addContentInfo</span><span class="op">(</span><span class="va">contentInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-50">Arguments<a class="anchor" aria-label="anchor" href="#arguments-50"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>contentInfo</code></dt>
 <dd><p>object of class inheriting <a href="ISOAbstractContentInformation.html">ISOAbstractContentInformation</a></p></dd>
 
@@ -1247,19 +1273,39 @@ inheriting class <a href="ISOAbstractResponsibility.html">ISOAbstractResponsibil
 </dl><p></p></div>
 </div>
 <div class="section">
-<h4 id="returns-37">Returns<a class="anchor" aria-label="anchor" href="#returns-37"></a></h4>
+<h4 id="returns-38">Returns<a class="anchor" aria-label="anchor" href="#returns-38"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOMetadata-delContentInfo"></a><div class="section">
+<h3 id="method-delcontentinfo-">Method <code>delContentInfo()</code><a class="anchor" aria-label="anchor" href="#method-delcontentinfo-"></a></h3>
+<p>Deletes content information</p><div class="section">
+<h4 id="usage-51">Usage<a class="anchor" aria-label="anchor" href="#usage-51"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">delContentInfo</span><span class="op">(</span><span class="va">contentInfo</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-51">Arguments<a class="anchor" aria-label="anchor" href="#arguments-51"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>contentInfo</code></dt>
+<dd><p>object of class inheriting <a href="ISOAbstractContentInformation.html">ISOAbstractContentInformation</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-39">Returns<a class="anchor" aria-label="anchor" href="#returns-39"></a></h4>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
 </div><p></p><hr><a id="method-ISOMetadata-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-50">Usage<a class="anchor" aria-label="anchor" href="#usage-50"></a></h4>
+<h4 id="usage-52">Usage<a class="anchor" aria-label="anchor" href="#usage-52"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOMetadata</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-50">Arguments<a class="anchor" aria-label="anchor" href="#arguments-50"></a></h4>
+<h4 id="arguments-52">Arguments<a class="anchor" aria-label="anchor" href="#arguments-52"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 

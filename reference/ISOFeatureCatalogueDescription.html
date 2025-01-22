@@ -83,6 +83,10 @@ ISOFeatureCatalogueDescription"><!-- mathjax --><script src="https://cdnjs.cloud
 <dd><p>language [0..*]: character</p></dd>
 
 
+<dt><code>locale</code></dt>
+<dd><p>locale [0..*]: ISOLocale</p></dd>
+
+
 <dt><code>includedWithDataset</code></dt>
 <dd><p>includedWithDataset: logical</p></dd>
 
@@ -107,6 +111,8 @@ ISOFeatureCatalogueDescription"><!-- mathjax --><script src="https://cdnjs.cloud
 <li><p><a href="#method-ISOFeatureCatalogueDescription-setComplianceCode"><code>ISOFeatureCatalogueDescription$setComplianceCode()</code></a></p></li>
 <li><p><a href="#method-ISOFeatureCatalogueDescription-addLanguage"><code>ISOFeatureCatalogueDescription$addLanguage()</code></a></p></li>
 <li><p><a href="#method-ISOFeatureCatalogueDescription-delLanguage"><code>ISOFeatureCatalogueDescription$delLanguage()</code></a></p></li>
+<li><p><a href="#method-ISOFeatureCatalogueDescription-addLocale"><code>ISOFeatureCatalogueDescription$addLocale()</code></a></p></li>
+<li><p><a href="#method-ISOFeatureCatalogueDescription-delLocale"><code>ISOFeatureCatalogueDescription$delLocale()</code></a></p></li>
 <li><p><a href="#method-ISOFeatureCatalogueDescription-setIncludedWithDataset"><code>ISOFeatureCatalogueDescription$setIncludedWithDataset()</code></a></p></li>
 <li><p><a href="#method-ISOFeatureCatalogueDescription-addFeatureCatalogueCitation"><code>ISOFeatureCatalogueDescription$addFeatureCatalogueCitation()</code></a></p></li>
 <li><p><a href="#method-ISOFeatureCatalogueDescription-delFeatureCatalogueCitation"><code>ISOFeatureCatalogueDescription$delFeatureCatalogueCitation()</code></a></p></li>
@@ -212,15 +218,55 @@ ISOFeatureCatalogueDescription"><!-- mathjax --><script src="https://cdnjs.cloud
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
-</div><p></p><hr><a id="method-ISOFeatureCatalogueDescription-setIncludedWithDataset"></a><div class="section">
-<h3 id="method-setincludedwithdataset-">Method <code>setIncludedWithDataset()</code><a class="anchor" aria-label="anchor" href="#method-setincludedwithdataset-"></a></h3>
-<p>Set included with dataset</p><div class="section">
+</div><p></p><hr><a id="method-ISOFeatureCatalogueDescription-addLocale"></a><div class="section">
+<h3 id="method-addlocale-">Method <code>addLocale()</code><a class="anchor" aria-label="anchor" href="#method-addlocale-"></a></h3>
+<p>Adds locale</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureCatalogueDescription</span><span class="op">$</span><span class="fu">setIncludedWithDataset</span><span class="op">(</span><span class="va">include</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureCatalogueDescription</span><span class="op">$</span><span class="fu">addLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
+<dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOFeatureCatalogueDescription-delLocale"></a><div class="section">
+<h3 id="method-dellocale-">Method <code>delLocale()</code><a class="anchor" aria-label="anchor" href="#method-dellocale-"></a></h3>
+<p>Deletes locale</p><div class="section">
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureCatalogueDescription</span><span class="op">$</span><span class="fu">delLocale</span><span class="op">(</span><span class="va">locale</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>locale</code></dt>
+<dd><p>object of class <a href="ISOLocale.html">ISOLocale</a></p></dd>
+
+
+</dl><p></p></div>
+</div>
+<div class="section">
+<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
+<p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
+</div>
+
+</div><p></p><hr><a id="method-ISOFeatureCatalogueDescription-setIncludedWithDataset"></a><div class="section">
+<h3 id="method-setincludedwithdataset-">Method <code>setIncludedWithDataset()</code><a class="anchor" aria-label="anchor" href="#method-setincludedwithdataset-"></a></h3>
+<p>Set included with dataset</p><div class="section">
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureCatalogueDescription</span><span class="op">$</span><span class="fu">setIncludedWithDataset</span><span class="op">(</span><span class="va">include</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>include</code></dt>
 <dd><p>include, object of class <a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a></p></dd>
 
@@ -231,7 +277,7 @@ ISOFeatureCatalogueDescription"><!-- mathjax --><script src="https://cdnjs.cloud
 </div><p></p><hr><a id="method-ISOFeatureCatalogueDescription-addFeatureCatalogueCitation"></a><div class="section">
 <h3 id="method-addfeaturecataloguecitation-">Method <code>addFeatureCatalogueCitation()</code><a class="anchor" aria-label="anchor" href="#method-addfeaturecataloguecitation-"></a></h3>
 <p>Adds feature catalogue citation</p><div class="section">
-<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureCatalogueDescription</span><span class="op">$</span><span class="fu">addFeatureCatalogueCitation</span><span class="op">(</span></span>
 <span>  <span class="va">citation</span>,</span>
 <span>  uuid <span class="op">=</span> <span class="cn">NULL</span></span>
@@ -239,7 +285,7 @@ ISOFeatureCatalogueDescription"><!-- mathjax --><script src="https://cdnjs.cloud
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>citation, </code></dt>
 <dd><p>object of class <a href="ISOCitation.html">ISOCitation</a></p></dd>
 
@@ -251,14 +297,14 @@ ISOFeatureCatalogueDescription"><!-- mathjax --><script src="https://cdnjs.cloud
 </dl><p></p></div>
 </div>
 <div class="section">
-<h4 id="returns-2">Returns<a class="anchor" aria-label="anchor" href="#returns-2"></a></h4>
+<h4 id="returns-4">Returns<a class="anchor" aria-label="anchor" href="#returns-4"></a></h4>
 <p><code>TRUE</code> if added, <code>FALSE</code> otherwise</p>
 </div>
 
 </div><p></p><hr><a id="method-ISOFeatureCatalogueDescription-delFeatureCatalogueCitation"></a><div class="section">
 <h3 id="method-delfeaturecataloguecitation-">Method <code>delFeatureCatalogueCitation()</code><a class="anchor" aria-label="anchor" href="#method-delfeaturecataloguecitation-"></a></h3>
 <p>Deletes feature catalogue citation</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureCatalogueDescription</span><span class="op">$</span><span class="fu">delFeatureCatalogueCitation</span><span class="op">(</span></span>
 <span>  <span class="va">citation</span>,</span>
 <span>  uuid <span class="op">=</span> <span class="cn">NULL</span></span>
@@ -266,7 +312,7 @@ ISOFeatureCatalogueDescription"><!-- mathjax --><script src="https://cdnjs.cloud
 </div>
 
 <div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>citation, </code></dt>
 <dd><p>object of class <a href="ISOCitation.html">ISOCitation</a></p></dd>
 
@@ -278,19 +324,19 @@ ISOFeatureCatalogueDescription"><!-- mathjax --><script src="https://cdnjs.cloud
 </dl><p></p></div>
 </div>
 <div class="section">
-<h4 id="returns-3">Returns<a class="anchor" aria-label="anchor" href="#returns-3"></a></h4>
+<h4 id="returns-5">Returns<a class="anchor" aria-label="anchor" href="#returns-5"></a></h4>
 <p><code>TRUE</code> if deleted, <code>FALSE</code> otherwise</p>
 </div>
 
 </div><p></p><hr><a id="method-ISOFeatureCatalogueDescription-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">ISOFeatureCatalogueDescription</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
