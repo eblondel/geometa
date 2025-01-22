@@ -461,6 +461,8 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                 if(!is(childroot, "XMLInternalTextNode")){
                   child <- childroot
                   fieldClass <- ISOAbstractObject$getISOClassByNode(childroot)
+                }else{
+                  fieldClass <- ISOElementSequence
                 }
               }else{
                 #more than one child, consider it as sequence
@@ -502,7 +504,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                                  },
                                  fieldValue
             )
-			if(length(fieldValue)==0) fieldValue = NA										 
+			      if(length(fieldValue)==0) fieldValue = NA										 
           }else{
             fieldValue <- fieldClass$new(xml = child)
             fieldValue$parentAttrs <- parentAttrs
@@ -800,12 +802,14 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   attrs = wrapperAttrs
                 )
                 for(child in fieldObjXml.children){
+                  if(is(child, "XMLInternalTextNode")) child <- xmlTextNode(xmlValue(child))
                   wrapperNode$addNode(child)
                 }
                 rootXML$addNode(wrapperNode$value())
               }else{
       				  if(hasLocales && !("xsi:type" %in% names(rootXMLAttrs))) rootXMLAttrs <- c(rootXMLAttrs, freeTextAttr)
                 for(child in fieldObjXml.children){
+                    if(is(child, "XMLInternalTextNode")) child <- xmlTextNode(xmlValue(child))
                     rootXML$addNode(child)
                 }
               }
@@ -903,6 +907,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                     wrapperNode <- xmlOutputDOM(tag = field,nameSpace = namespaceId, attrs = wrapperAttrs)
                     if(!nodeValue$isNull){
                       for(child in nodeValueXml.children){
+                        if(is(child, "XMLInternalTextNode")) child <- xmlTextNode(xmlValue(child))
                         wrapperNode$addNode(child)
                       }
                     }
@@ -910,6 +915,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   }else{
 					          if(hasLocales && !("xsi:type" %in% names(rootXMLAttrs))) rootXMLAttrs <- c(rootXMLAttrs, freeTextAttr)
                     for(child in nodeValueXml.children){
+                      if(is(child, "XMLInternalTextNode")) child <- xmlTextNode(xmlValue(child))
                       rootXML$addNode(child)
                     }
                   }
