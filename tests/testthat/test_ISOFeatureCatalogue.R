@@ -401,9 +401,7 @@ test_that("encoding - ISO 19115-3",{
   fc2 <- ISOFeatureCatalogue$new(xml = xml)
   xml2 <- fc2$encode()
   
-  if(FALSE){#TO WORK ON
-    expect_true(ISOAbstractObject$compare(fc, fc2, "xml"))
-  }
+  expect_true(ISOAbstractObject$compare(fc, fc2, "xml"))
   
   setMetadataStandard("19139")
   
