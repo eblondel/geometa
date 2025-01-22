@@ -4,7 +4,7 @@
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/geometa)](https://cran.r-project.org/package=geometa)
 [![cran checks](https://badges.cranchecks.info/worst/geometa.svg)](https://cran.r-project.org/web/checks/check_results_geometa.html)
 [![Github_Status_Badge](https://img.shields.io/badge/Github-0.9-blue.svg)](https://github.com/eblondel/geometa)
-[![R-Universe](https://eblondel.r-universe.dev/badges/geometa)](http://eblondel.r-universe.dev/ui/#package:geometa)
+[![R-Universe](https://eblondel.r-universe.dev/badges/geometa)](http://eblondel.r-universe.dev/#package:geometa)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1184892.svg)](https://doi.org/10.5281/zenodo.1184892)
 
 **Tools for Reading and Writing ISO/OGC Geographic Metadata**
@@ -17,7 +17,7 @@ Please check the [online documentation](https://github.com/eblondel/geometa/wiki
 
 Many thanks to the following organizations that have provided fundings for strenghtening the ``geometa`` package:
 
-<a href="https://www.r-consortium.org"><img src="https://r-consortium.org/images/RConsortium_Horizontal_Pantone.webp" height="100"/></a>
+<a href="https://r-consortium.org/"><img src="https://r-consortium.org/images/RConsortium_Horizontal_Pantone.webp" height="100"/></a>
 
 For geometa sponsoring/funding new developments, enhancements, support requests, please contact me by [e-mail](mailto:emmanuel.blondel1@gmail.com)
 
