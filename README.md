@@ -19,7 +19,12 @@ Many thanks to the following organizations that have provided fundings for stren
 
 <a href="https://r-consortium.org/"><img src="https://r-consortium.org/images/RConsortium_Horizontal_Pantone.webp" height="100"/></a>
 
-For geometa sponsoring/funding new developments, enhancements, support requests, please contact me by [e-mail](mailto:emmanuel.blondel1@gmail.com)
+The [R Consortium]() funded two grants:
+
+* 2018: [_Strenghtening of R in support of spatial data infrastructures management - geometa and ows4R R packages_](https://r-consortium.org/all-projects/2018-group-2.html#strengthening-of-r-in-support-of-spatial-data-infrastructures-management-geometa-and-ows4r-r-packages)
+* 2024: [_ISO 19115-3 standard implementation in geometa R package_](https://r-consortium.org/all-projects/2024-group-1.html#iso-19115-3-standard-implementation-in-geometa-r-package)
+
+For geometa sponsoring/funding new developments, enhancements, support requests, please contact me by [e-mail](mailto:eblondel.pro@gmail.com)
 
 ## Citation
 
