@@ -10,8 +10,10 @@
 #' @param version the schema version
 #' @param xsdFile the schema XSD file
 #' 
-#' @examples             
+#' @examples
+#' \donttest{             
 #'   registerISOMetadataSchema(version = "19139", xsdFile = "http://www.isotc211.org/2005/gmd/gmd.xsd")
+#' }
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
@@ -113,9 +115,10 @@ getISOMetadataSchemas <- function(version = "19139"){
 #' 
 #' @param version the standard version
 #' 
-#' @examples             
+#' @examples
+#' \donttest{          
 #'   setMetadataStandard(version = "19115-3")
-#' 
+#' }
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 setMetadataStandard <- function(version = "19139"){

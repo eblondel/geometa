@@ -14,9 +14,9 @@ setMetadataStandard(version)
  By default the standard "19139" will be used. Possible alternative value "19115-3"
 }
 \examples{
-            
+\donttest{          
   setMetadataStandard(version = "19115-3")
-
+}
 }
 \author{
 Emmanuel Blondel, \email{emmanuel.blondel1@gmail.com}
