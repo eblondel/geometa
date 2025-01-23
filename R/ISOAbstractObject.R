@@ -462,7 +462,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
                   child <- childroot
                   fieldClass <- ISOAbstractObject$getISOClassByNode(childroot)
                 }else{
-                  if(self$namespace$id != "gml") fieldClass <- ISOElementSequence
+                  if(!self$namespace$id %in% c("gml","gmlrgrid", "swe")) fieldClass <- ISOElementSequence
                 }
               }else{
                 #more than one child, consider it as sequence
