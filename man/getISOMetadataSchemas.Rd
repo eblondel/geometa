@@ -14,6 +14,6 @@ getISOMetadataSchemas(version)
 }
 \examples{
             
-  getISOMetadataSchemas(version = "19115-3")
+  getISOMetadataSchemas(version = "19139")
 
 }

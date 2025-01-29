@@ -15,7 +15,7 @@ setMetadataStandard(version)
 }
 \examples{
 \donttest{          
-  setMetadataStandard(version = "19115-3")
+  setMetadataStandard(version = "19139")
 }
 }
 \author{

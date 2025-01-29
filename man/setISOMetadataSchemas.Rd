@@ -14,6 +14,6 @@ setISOMetadataSchemas(version)
 }
 \examples{
             
-  setISOMetadataSchemas(version = "19115-3")
+  setISOMetadataSchemas(version = "19139")
 
 }

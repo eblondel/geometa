@@ -72,7 +72,7 @@ getISOMetadataSchemaFile <- function(version = "19139"){
 #' @param version the schema version
 #' 
 #' @examples             
-#'   setISOMetadataSchemas(version = "19115-3")
+#'   setISOMetadataSchemas(version = "19139")
 #'
 #'@export
 setISOMetadataSchemas <- function(version = "19139"){
@@ -91,7 +91,7 @@ setISOMetadataSchemas <- function(version = "19139"){
 #' @param version the schema version
 #' 
 #' @examples             
-#'   getISOMetadataSchemas(version = "19115-3")
+#'   getISOMetadataSchemas(version = "19139")
 #' 
 getISOMetadataSchemas <- function(version = "19139"){
   available_versions <- c("19139","19115-3")
@@ -117,7 +117,7 @@ getISOMetadataSchemas <- function(version = "19139"){
 #' 
 #' @examples
 #' \donttest{          
-#'   setMetadataStandard(version = "19115-3")
+#'   setMetadataStandard(version = "19139")
 #' }
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
