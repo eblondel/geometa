@@ -53,7 +53,6 @@
 #'
 ISOAbstractObject <- R6Class("ISOAbstractObject",
   inherit = geometaLogger,
-  cloneable = FALSE,
   private = list(
     metadataStandardCompliance = TRUE,
     xmlElement = "AbstractObject",
