@@ -28,7 +28,7 @@ GMLTimeInstant <- R6Class("GMLTimeInstant",
      #'@description Initializes object
      #'@param xml object of class \link[XML]{XMLInternalNode-class}
      #'@param timePosition time position
-     initialize = function(xml = NULL, timePosition){
+     initialize = function(xml = NULL, timePosition = NULL){
        super$initialize(xml = xml)
        if(is.null(xml)){
          self$setTimePosition(timePosition)
