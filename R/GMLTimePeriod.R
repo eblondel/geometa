@@ -61,7 +61,7 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       endPos <- endPosition
       if(is(endPos,"numeric")) endPos <- as(endPos, "character")
       if(!(is(endPos, "character") & nchar(endPos) %in% c(4,7))){
-        if(!is(beginPos,"POSIXt") & !is(beginPos, "Date")){
+        if(!is(endPos,"POSIXt") & !is(endPos, "Date")){
           stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
         }
       }
