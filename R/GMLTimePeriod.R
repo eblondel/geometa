@@ -47,8 +47,8 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       beginPos <- beginPosition
       if(is(beginPos,"numeric")) beginPos <- as(beginPos, "character")
       if(!(is(beginPos, "character") & nchar(beginPos) %in% c(4,7))){
-        if(!all(class(beginPos)==c("POSIXct","POSIXt")) | is(beginPos, "Date")){
-          stop("For a date, the value should be of class ('POSIXct','POSIXt') or 'Date'")
+        if(!is(beginPos,"POSIXt") & !is(beginPos, "Date")){
+          stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
         }
       }
       self$beginPosition <- GMLElement$create("beginPosition", value = beginPos)
@@ -61,7 +61,7 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       endPos <- endPosition
       if(is(endPos,"numeric")) endPos <- as(endPos, "character")
       if(!(is(endPos, "character") & nchar(endPos) %in% c(4,7))){
-        if(!all(class(endPos)==c("POSIXct","POSIXt")) | is(endPos, "Date")){
+        if(!is(beginPos,"POSIXt") & !is(beginPos, "Date")){
           stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
         }
       }
