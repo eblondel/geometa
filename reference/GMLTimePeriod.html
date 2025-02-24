@@ -265,9 +265,8 @@ method calls the static function <code>GMLTimePeriod$computeISODuration</code></
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="va">start</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2000</span>, <span class="fl">1</span>, <span class="fl">12</span>, <span class="fl">12</span>, <span class="fl">59</span>, <span class="fl">45</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">end</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ISOdatetime.html" class="external-link">ISOdate</a></span><span class="op">(</span><span class="fl">2010</span>, <span class="fl">8</span>, <span class="fl">22</span>, <span class="fl">13</span>, <span class="fl">12</span>, <span class="fl">43</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">md</span> <span class="op">&lt;-</span> <span class="va">GMLTimePeriod</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>beginPosition <span class="op">=</span> <span class="va">start</span>, endPosition <span class="op">=</span> <span class="va">end</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in self$setEndPosition(endPosition):</span> object 'beginPos' not found</span>
 <span class="r-in"><span>  <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'md' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'GMLTimePeriod' is VALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
