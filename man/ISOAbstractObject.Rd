@@ -116,6 +116,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOAbstractObject-isDocument}{\code{ISOAbstractObject$isDocument()}}
 \item \href{#method-ISOAbstractObject-isFieldInheritedFrom}{\code{ISOAbstractObject$isFieldInheritedFrom()}}
 \item \href{#method-ISOAbstractObject-createLocalisedProperty}{\code{ISOAbstractObject$createLocalisedProperty()}}
+\item \href{#method-ISOAbstractObject-clone}{\code{ISOAbstractObject$clone()}}
 }
 }
 \if{html}{\out{
@@ -686,6 +687,23 @@ Creates a localised property
 \item{\code{text}}{text}
 
 \item{\code{locales}}{a list of localized names}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOAbstractObject-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOAbstractObject-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOAbstractObject$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
 }
 \if{html}{\out{</div>}}
 }

@@ -18,7 +18,8 @@ GMLTimeInstant <- R6Class("GMLTimeInstant",
    inherit = GMLAbstractTimeGeometricPrimitive,
    private = list(
      xmlElement = "TimeInstant",
-     xmlNamespacePrefix = "GML"
+     xmlNamespacePrefix = "GML",
+     indeterminatePositions = c("after", "before", "now", "unknown")
    ),
    public = list(
      #'@field timePosition [\code{\link{numeric}}|\code{\link{character}}|\code{\link{Date}}|\code{\link{POSIXt}}]
@@ -36,15 +37,26 @@ GMLTimeInstant <- R6Class("GMLTimeInstant",
      
      #'@description Sets the position (date or date and time of the resource contents), 
      #'@param timePosition object of class "numeric", "POSIXct"/"POSIXt" or "Date"
-     setTimePosition = function(timePosition){
+     #'@param frame frame attribute
+     #'@param calendarEraName calendarEraName attribute
+     #'@param indeterminatePosition indeterminatePosition attribute
+     setTimePosition = function(timePosition = NULL,
+                                frame = NULL, 
+                                calendarEraName = NULL, 
+                                indeterminatePosition = NULL){
        timePos <- timePosition
        if(is(timePos, "numeric")) timePos <- as(timePos, "character")
-       if(!(is(timePos, "character") & nchar(timePos)%in%c(4,7))){
+       if(!is.null(timePos)) if(!(is(timePos, "character") & nchar(timePos)%in%c(4,7))){
          if(!is(timePos,"POSIXt") & !is(timePos, "Date")){
            stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
          }
        }
        self$timePosition <- GMLElement$create("timePosition", value = timePos)
+       if(!is.null(frame)) self$timePosition$setAttr("frame", frame)
+       if(!is.null(calendarEraName)) self$timePosition$setAttr("calendarEraName", calendarEraName)
+       if(!is.null(indeterminatePosition)) if(indeterminatePosition %in% private$indeterminatePositions){
+         self$timePosition$setAttr("indeterminatePosition", indeterminatePosition)
+       }
      },
      
      #'@description Export to ISO format (\link{character})

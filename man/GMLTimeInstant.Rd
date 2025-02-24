@@ -113,13 +113,24 @@ Initializes object
 \subsection{Method \code{setTimePosition()}}{
 Sets the position (date or date and time of the resource contents),
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{GMLTimeInstant$setTimePosition(timePosition)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{GMLTimeInstant$setTimePosition(
+  timePosition = NULL,
+  frame = NULL,
+  calendarEraName = NULL,
+  indeterminatePosition = NULL
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{timePosition}}{object of class "numeric", "POSIXct"/"POSIXt" or "Date"}
+
+\item{\code{frame}}{frame attribute}
+
+\item{\code{calendarEraName}}{calendarEraName attribute}
+
+\item{\code{indeterminatePosition}}{indeterminatePosition attribute}
 }
 \if{html}{\out{</div>}}
 }

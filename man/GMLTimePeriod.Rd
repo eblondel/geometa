@@ -122,13 +122,24 @@ Initializes object
 \subsection{Method \code{setBeginPosition()}}{
 Set begin position
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{GMLTimePeriod$setBeginPosition(beginPosition)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{GMLTimePeriod$setBeginPosition(
+  beginPosition = NULL,
+  frame = NULL,
+  calendarEraName = NULL,
+  indeterminatePosition = NULL
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{beginPosition}}{object of class \link{numeric}, \link{Date} or \link{POSIXct-class}}
+
+\item{\code{frame}}{frame attribute}
+
+\item{\code{calendarEraName}}{calendarEraName attribute}
+
+\item{\code{indeterminatePosition}}{indeterminatePosition attribute}
 }
 \if{html}{\out{</div>}}
 }
@@ -139,13 +150,24 @@ Set begin position
 \subsection{Method \code{setEndPosition()}}{
 Set end position
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{GMLTimePeriod$setEndPosition(endPosition)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{GMLTimePeriod$setEndPosition(
+  endPosition = NULL,
+  frame = NULL,
+  calendarEraName = NULL,
+  indeterminatePosition = NULL
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{endPosition}}{object of class \link{numeric}, \link{Date} or \link{POSIXct-class}}
+
+\item{\code{frame}}{frame attribute}
+
+\item{\code{calendarEraName}}{calendarEraName attribute}
+
+\item{\code{indeterminatePosition}}{indeterminatePosition attribute}
 }
 \if{html}{\out{</div>}}
 }

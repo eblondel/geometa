@@ -19,7 +19,8 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
   inherit = GMLAbstractTimeGeometricPrimitive,
   private = list(
     xmlElement = "TimePeriod",
-    xmlNamespacePrefix = "GML"
+    xmlNamespacePrefix = "GML",
+    indeterminatePositions = c("after", "before", "now", "unknown")
   ),
   public = list(
     #'@field beginPosition beginPosition [1]: 'POSIXct','POSIXt'
@@ -43,30 +44,60 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
     
     #'@description Set begin position
     #'@param beginPosition object of class \link{numeric}, \link{Date} or \link{POSIXct-class}
-    setBeginPosition = function(beginPosition){
+    #'@param frame frame attribute
+    #'@param calendarEraName calendarEraName attribute
+    #'@param indeterminatePosition indeterminatePosition attribute
+    setBeginPosition = function(beginPosition = NULL, 
+                                frame = NULL, 
+                                calendarEraName = NULL, 
+                                indeterminatePosition = NULL){
       beginPos <- beginPosition
       if(is(beginPos,"numeric")) beginPos <- as(beginPos, "character")
-      if(!(is(beginPos, "character") & nchar(beginPos) %in% c(4,7))){
+      if(!is.null(beginPos)) if(!(is(beginPos, "character") & nchar(beginPos) %in% c(4,7))){
         if(!is(beginPos,"POSIXt") & !is(beginPos, "Date")){
           stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
         }
       }
       self$beginPosition <- GMLElement$create("beginPosition", value = beginPos)
-      if(!is.null(self$endPosition)) self$computeInterval()
+      if(!is.null(frame)) self$beginPosition$setAttr("frame", frame)
+      if(!is.null(calendarEraName)) self$beginPosition$setAttr("calendarEraName", calendarEraName)
+      if(!is.null(indeterminatePosition)) if(indeterminatePosition %in% private$indeterminatePositions){
+        self$beginPosition$setAttr("indeterminatePosition", indeterminatePosition)
+      }
+      if(!is.null(self$endPosition)) {
+        if(!is.null(self$endPosition$indeterminatePosition) & !is.null(self$beginPosition$indeterminatePosition)){
+          self$computeInterval()
+        }
+      }
     },
     
     #'@description Set end position
     #'@param endPosition object of class \link{numeric}, \link{Date} or \link{POSIXct-class}
-    setEndPosition = function(endPosition){
+    #'@param frame frame attribute
+    #'@param calendarEraName calendarEraName attribute
+    #'@param indeterminatePosition indeterminatePosition attribute
+    setEndPosition = function(endPosition = NULL,
+                              frame = NULL, 
+                              calendarEraName = NULL, 
+                              indeterminatePosition = NULL){
       endPos <- endPosition
       if(is(endPos,"numeric")) endPos <- as(endPos, "character")
-      if(!(is(endPos, "character") & nchar(endPos) %in% c(4,7))){
+      if(!is.null(endPos)) if(!(is(endPos, "character") & nchar(endPos) %in% c(4,7))){
         if(!is(endPos,"POSIXt") & !is(endPos, "Date")){
           stop("Value should be of class ('POSIXct','POSIXt') or 'Date'")
         }
       }
       self$endPosition <- GMLElement$create("endPosition", value = endPos)
-      if(!is.null(self$beginPosition)) self$computeInterval()
+      if(!is.null(frame)) self$endPosition$setAttr("frame", frame)
+      if(!is.null(calendarEraName)) self$endPosition$setAttr("calendarEraName", calendarEraName)
+      if(!is.null(indeterminatePosition)) if(indeterminatePosition %in% private$indeterminatePositions){
+        self$endPosition$setAttr("indeterminatePosition", indeterminatePosition)
+      }
+      if(!is.null(self$beginPosition)){
+        if(!is.null(self$endPosition$indeterminatePosition) & !is.null(self$beginPosition$indeterminatePosition)){
+          self$computeInterval()
+        }
+      }
     },
     
     #'@description Compute interval (ISO defined duration) and set proper attribute for XML encoding. The
@@ -79,6 +110,8 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
       
       start <- self$beginPosition$value
       end <- self$endPosition$value
+      years = 0; months = 0; days = 0;
+      hours = 0; mins = 0; secs = 0;
       if(nchar(start)==4 && nchar(end)==4){
         years <- length(as.numeric(start):as.numeric(end))
         months <- 0; days <- 0; hours <- 0; mins <- 0; secs <- 0;
@@ -97,23 +130,26 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
         months <- length(months.seq)-1
         days <- 0; hours <- 0; mins <- 0; secs <- 0;
       }else{
+        with_dates = is(start,"Date") & is(end,"Date")
         years.seq <- seq(start, end, by = "years")
         years <- length(years.seq)-1
         months.start <- years.seq[length(years.seq)]
         months.seq <- seq(months.start, end, by = "months")
         months <- length(months.seq)-1
         days.start <- months.seq[length(months.seq)]
-        days.seq <- seq(days.start, end, by = "DSTdays")
+        days.seq <- seq(days.start, end, by = if(with_dates) "days" else "DSTdays")
         days <- length(days.seq)-1
-        hours.start <- days.seq[length(days.seq)]
-        hours.seq <- seq(hours.start, end, by = "hours")
-        hours <- length(hours.seq)-1
-        mins.start <- hours.seq[length(hours.seq)]
-        mins.seq <- seq(mins.start, end, by = "mins")
-        mins <- length(mins.seq)-1
-        secs.start <- mins.seq[length(mins.seq)]
-        secs.seq <- seq(secs.start, end, by = "secs")
-        secs <- length(secs.seq)-1
+        if(!with_dates){
+          hours.start <- days.seq[length(days.seq)]
+          hours.seq <- seq(hours.start, end, by = "hours")
+          hours <- length(hours.seq)-1
+          mins.start <- hours.seq[length(hours.seq)]
+          mins.seq <- seq(mins.start, end, by = "mins")
+          mins <- length(mins.seq)-1
+          secs.start <- mins.seq[length(mins.seq)]
+          secs.seq <- seq(secs.start, end, by = "secs")
+          secs <- length(secs.seq)-1
+        }
       }
       isoduration <- GMLTimePeriod$computeISODuration(years, months, days, 
                                                       hours, mins, secs)           
