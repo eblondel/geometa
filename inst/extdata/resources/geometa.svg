@@ -1,0 +1,40 @@
+<svg width="200" height="200" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Define gradients for the sky background -->
+    <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" style="stop-color:green;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:blue;stop-opacity:1" />
+    </linearGradient>
+    <!-- Import Font Awesome and Google Fonts style -->
+    <style type="text/css">
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap');
+      .fa {
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+      }
+      .modern-font {
+        font-family: 'Roboto', sans-serif;
+      }
+      .handwritten-font {
+        font-family: 'Pacifico', cursive;
+      }
+    </style>
+  </defs>
+  <!-- Hexagon background with shaded blue gradient -->
+  <polygon points="100,10 180,60 180,160 100,210 20,160 20,60" fill="url(#skyGradient)" stroke="white" stroke-width="5"/>
+
+  <!-- Map-location-dot icon centered -->
+  <text x="100" y="100" font-size="90" fill="white" fill-opacity="0.8" text-anchor="middle" dominant-baseline="middle" class="fa">&#xf5a0;</text>
+
+  <!-- Text "geo" and "<meta/>" in the middle with modern font-family -->
+  <text x="100" y="160" font-size="23" text-anchor="middle" class="modern-font" fill="gray">
+    <tspan fill="gold" font-weight="bold" opacity="0.8">&lt;</tspan>
+    <tspan fill="white"> geo</tspan><tspan fill="white" font-weight="bold">meta</tspan>
+    <tspan fill="gold" font-weight="bold" opacity="0.8">/&gt;</tspan>
+  </text>
+
+  <!-- Additional small texts "ISO", "OGC", and "INSPIRE" in handwritten font -->
+  <text x="65" y="125" font-weight="bold" font-size="12" text-anchor="middle" fill="brown">ISO</text>
+  <text x="136" y="125" font-weight="bold" font-size="12" text-anchor="middle" fill="brown">OGC</text>
+</svg>
