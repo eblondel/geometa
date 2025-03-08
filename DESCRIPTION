@@ -2,7 +2,7 @@ Package: geometa
 Type: Package
 Title: Tools for Reading and Writing ISO/OGC Geographic Metadata
 Version: 0.9.2
-Date: 2025-02-24
+Date: 2025-03-08
 Authors@R: c(
   person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")),
   person("R Consortium", role = "fnd"))
