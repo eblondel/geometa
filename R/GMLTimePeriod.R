@@ -65,7 +65,7 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
         self$beginPosition$setAttr("indeterminatePosition", indeterminatePosition)
       }
       if(!is.null(self$endPosition)) {
-        if(is.null(self$endPosition$indeterminatePosition) & is.null(self$beginPosition$indeterminatePosition)){
+        if(is.null(self$endPosition$attrs$indeterminatePosition) & is.null(self$beginPosition$attrs$indeterminatePosition)){
           self$computeInterval()
         }
       }
@@ -94,7 +94,7 @@ GMLTimePeriod <- R6Class("GMLTimePeriod",
         self$endPosition$setAttr("indeterminatePosition", indeterminatePosition)
       }
       if(!is.null(self$beginPosition)){
-        if(is.null(self$endPosition$indeterminatePosition) & is.null(self$beginPosition$indeterminatePosition)){
+        if(is.null(self$endPosition$attrs$indeterminatePosition) & is.null(self$beginPosition$attrs$indeterminatePosition)){
           self$computeInterval()
         }
       }
