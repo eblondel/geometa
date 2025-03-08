@@ -3,7 +3,10 @@
   assign(".geometa.options", new.env(), envir= asNamespace(pkgname))
   .geometa.options$languageUrl = "http://www.loc.gov/standards/iso639-2/"
   .geometa.options$schemaBaseUrl = "http://www.isotc211.org/2005/resources"
-  .geometa.options$codelistUrl <- "http://standards.iso.org/iso/19139/resources"
+  .geometa.options$codelistUrls <- list(
+    "19139" = "https://standards.iso.org/iso/19139/resources",
+    "19115-3" = "https://standards.iso.org/iso/19115/resources/Codelists/cat"
+  )
   .geometa.options$internalCodelists <- TRUE
   .geometa.options$object_comparator <- "print"
   

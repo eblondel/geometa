@@ -112,14 +112,25 @@ ISOCodeListValue <- R6Class("ISOCodeListValue",
        }
         
        clUrl = ""
-       if(!is.null(cl)) if(!is.na(cl$refFile)){
-         isLocalFile <- !grepl("^http", cl$refFile) & !grepl("^https", cl$refFile)
-         clUrl <- paste(cl$refFile, id, sep="#")
-         clUrl <- gsub("ML_", "", clUrl)
-         if(isLocalFile) clUrl <- paste(getGeometaOption("codelistUrl"), clUrl, sep="/")
-         if(id == "LanguageCode"){
-           langUrlOp <- getGeometaOption("languageUrl")
-           if(!is.null(langUrlOp)) clUrl <- langUrlOp
+       if(!is.null(cl)) {
+         if(!is.na(cl$refFile)){
+           isLocalFile <- !grepl("^http", cl$refFile) & !grepl("^https", cl$refFile)
+           clUrl <- paste(cl$refFile, id, sep="#")
+           clUrl <- gsub("ML_", "", clUrl)
+           if(isLocalFile) clUrl <- paste(getGeometaOption("codelistUrls")[["19139"]], basename(clUrl), sep="/")
+           if(id == "LanguageCode"){
+             langUrlOp <- getGeometaOption("languageUrl")
+             if(!is.null(langUrlOp)) clUrl <- langUrlOp
+           }
+         }else{
+           clUrl <- switch(getMetadataStandard(),
+            "19139" = {
+              file.path(getGeometaOption("codelistUrls")[["19139"]], paste("gmxCodelists.xml", cl$identifier$value, sep = "#"))
+            },
+            "19115-3" = {
+              file.path(getGeometaOption("codelistUrls")[["19115-3"]], paste("codelists.xml", cl$identifier$value, sep = "#"))
+            }
+           )
          }
        }
        
