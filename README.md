@@ -1,4 +1,4 @@
-# geometa
+# geometa <a href="https://github.com/eblondel/geometa"><img src='https://github.com/eblondel/geometa/blob/master/inst/extdata/resources/geometa.png?raw=true' align="right" height="139" /></a>
 
 [![Build Status](https://github.com/eblondel/geometa/actions/workflows/r-cmd-check.yml/badge.svg?branch=master)](https://github.com/eblondel/geometa/actions/workflows/r-cmd-check.yml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/geometa)](https://cran.r-project.org/package=geometa)
