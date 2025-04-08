@@ -35,7 +35,7 @@ ISOMDFeatureCatalogue <- R6Class("ISOMDFeatureCatalogue",
      #'@param featureCatalogue object inheriting class \link{ISOAbstractFeatureCatalogue}
      #'@return \code{TRUE} if added, \code{FALSe} otherwise
      addFeatureCatalogue = function(featureCatalogue){
-       if(!is(featureCatalogue, "ISOAbstractFeatureCatalogue")){
+       if(!is(featureCatalogue, "ISOAbstractFeatureCatalogue") & !is(featureCatalogue, "ISOFeatureCatalogue")){
          stop("The argument should be an object of class 'ISOAbstractFeatureCatalogue'")
        }
        return(self$addListElement("featureCatalogue", featureCatalogue))
@@ -45,7 +45,7 @@ ISOMDFeatureCatalogue <- R6Class("ISOMDFeatureCatalogue",
      #'@param featureCatalogue object inheriting class \link{ISOAbstractFeatureCatalogue}
      #'@return \code{TRUE} if deleted, \code{FALSe} otherwise
      delFeatureCatalogue = function(featureCatalogue){
-       if(!is(featureCatalogue, "ISOAbstractFeatureCatalogue")){
+       if(!is(featureCatalogue, "ISOAbstractFeatureCatalogue") & !is(featureCatalogue, "ISOFeatureCatalogue")){
          stop("The argument should be an object of class 'ISOAbstractFeatureCatalogue'")
        }
        return(self$delListElement("featureCatalogue", featureCatalogue))
