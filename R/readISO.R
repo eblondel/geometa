@@ -60,6 +60,7 @@ readISO <- function(file = NULL, url = NULL, raw = FALSE){
       #inspect namespace
       version <- switch(XML::xmlNamespace(raw_xml),
                         "http://www.isotc211.org/2005/gmd" = "19139",
+                        "http://standards.iso.org/iso/19115/-3/mdb/1.0" = "19115-3",
                         "http://standards.iso.org/iso/19115/-3/mdb/2.0" = "19115-3",
                         "http://www.isotc211.org/2005/gfc" = "19139",
                         "http://standards.iso.org/iso/19110/gfc/1.1" = "19115-3",
