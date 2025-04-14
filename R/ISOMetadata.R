@@ -415,11 +415,11 @@ ISOMetadata <- R6Class("ISOMetadata",
      resourceLineage = list(),
      #'@field metadataMaintenance metadataMaintenance [0..1]: ISOMaintenanceInformation
      metadataMaintenance = NULL,
+     #'@field portrayalCatalogueInfo portrayalCatalogueInfo [0..*]
+     portrayalCatalogueInfo = list(),
      
      #unsupported sets (to implement)
      #----------------
-     #'@field portrayalCatalogueInfo portrayalCatalogueInfo [0..*]
-     portrayalCatalogueInfo = list(), #TODO
      #'@field applicationSchemaInformation applicationSchemaInfo [0..*]
      applicationSchemaInformation = list(), #TODO
      
@@ -1083,6 +1083,29 @@ ISOMetadata <- R6Class("ISOMetadata",
          stop("The argument should be a 'ISOAbstractContentInformation' object")
        }
        return(self$delListElement("contentInfo", contentInfo))
+     },
+     
+     #MD_PortrayalCatalogueReference
+     #--------------------------------------------------------------------------     
+     
+     #'@description Adds portrayal catalogue info
+     #'@param portrayalCatalogueInfo object of class inheriting \link{ISOPortrayalCatalogueReference}
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addPortrayalCatalogueInfo = function(portrayalCatalogueInfo){
+       if(!is(portrayalCatalogueInfo,"ISOPortrayalCatalogueReference")){
+         stop("The argument should be a 'ISOPortrayalCatalogueReference' object")
+       }
+       return(self$addListElement("portrayalCatalogueInfo", portrayalCatalogueInfo))
+     },
+     
+     #'@description Deletes portrayal catalogue info
+     #'@param portrayalCatalogueInfo object of class inheriting \link{ISOPortrayalCatalogueReference}
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delPortrayalCatalogueInfo = function(portrayalCatalogueInfo){
+       if(!is(portrayalCatalogueInfo,"ISOPortrayalCatalogueReference")){
+         stop("The argument should be a 'ISOPortrayalCatalogueReference' object")
+       }
+       return(self$delListElement("portrayalCatalogueInfo", portrayalCatalogueInfo))
      }
      
   )                        
