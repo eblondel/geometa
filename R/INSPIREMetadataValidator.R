@@ -43,10 +43,13 @@ INSPIREMetadataValidator <- R6Class("INSPIREMetadataValidator",
     #'    The \code{keyring_backend} can be set to use a different backend for storing 
     #'    the INSPIRE metadata validator API key with \pkg{keyring} (Default value is 'env').
     #'@param url url
-    #'@param apiKey API key
+    #'@param apiKey API key. Default is \code{NULL}.
     #'@param keyring_backend backend name to use with \pkg{keyring} to store API key
+    #'
+    #'@note Starting 2025-05-02, The API key is not needed anymore and metadata can be 
+    #'then validated as anonymous user.
     initialize = function(url = "https://inspire.ec.europa.eu/validator-api",
-                          apiKey, keyring_backend = 'env'){
+                          apiKey = NULL, keyring_backend = 'env'){
       if(!require("httr")){
         stop("The INSPIRE metadata validator requires the installation of 'httr' package")
       }

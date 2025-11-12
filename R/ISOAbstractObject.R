@@ -685,10 +685,14 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #'@param validate validate XML output against schemas?
     #'@param strict strict validation? Default is \code{FALSE}.
     #'@param inspire perform INSPIRE validation? Default is \code{FALSE}
-    #'@param inspireValidator an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation
+    #'@param inspireValidator an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation. 
+    #'Deprecated. See below note.
     #'@param resetSerialID reset Serial ID? Default is \code{TRUE}
     #'@param setSerialID set serial ID? Default is \code{TRUE}
     #'@param encoding encoding. Default is \code{UTF-8}
+    #'
+    #'@note From 2025-05-02, the INSPIRE metadata validation does not require anymore an API Key. Therefore, it is not
+    #'required to specify an \code{inspireValidator}. To send your metadata to INSPIRE, just set \code{inspire} to \code{TRUE}.
     encode = function(addNS = TRUE, validate = TRUE, strict = FALSE, inspire = FALSE, inspireValidator = NULL,
                       resetSerialID = TRUE, setSerialID = TRUE,
                       encoding = "UTF-8"){
@@ -703,6 +707,11 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
             .geometa.gml$serialId <- .geometa.gml$serialId+1
           }
         }
+      }
+      
+      #inspire
+      if(inspire){
+        inspireValidator = INSPIREMetadataValidator$new()
       }
       
       #list of fields to encode as XML
@@ -761,6 +770,7 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       
       if(!self$isNull) for(field in fields){
         fieldObj <- self[[field]]
+        print(fieldObj)
         
         #default values management
         if(is.null(fieldObj) || (is.list(fieldObj) & length(fieldObj)==0)){
@@ -1073,9 +1083,18 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
     #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param strict strict validation? If \code{TRUE}, a invalid XML will return an error
     #'@param inspire perform INSPIRE validation? Default is \code{FALSE}
-    #'@param inspireValidator an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation
+    #'@param inspireValidator an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation.
+    #'Deprecated, see below note.
     #'@return \code{TRUE} if valid, \code{FALSE} otherwise
+    #'
+    #'@note From 2025-05-02, the INSPIRE metadata validation does not require anymore an API Key. Therefore, it is not
+    #'required to specify an \code{inspireValidator}. To send your metadata to INSPIRE, just set \code{inspire} to \code{TRUE}.
     validate = function(xml = NULL, strict = FALSE, inspire = FALSE, inspireValidator = NULL){
+      
+      #inspire
+      if(inspire){
+        inspireValidator = INSPIREMetadataValidator$new()
+      }
       
       #xml
       schemaNamespaceId <- NULL
