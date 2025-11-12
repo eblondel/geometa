@@ -18,7 +18,7 @@ ISOPortrayalCatalogueReference"><!-- mathjax --><script src="https://cdnjs.cloud
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">geometa</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.9.3</span>
       </span>
     </div>
 
@@ -240,6 +240,164 @@ ISOPortrayalCatalogueReference"><!-- mathjax --><script src="https://cdnjs.cloud
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="va">xml</span> <span class="op">&lt;-</span> <span class="va">md</span><span class="op">$</span><span class="fu">encode</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOCitation</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">title</span>: <span style="background-color: #BBBBBB;">sometitle</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">date</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISODate</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">date</span>: <span style="background-color: #BBBBBB;">2015-01-01T01:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">dateType</span>  [<span style="color: #BB00BB;">codeList=</span><span style="color: #00BB00;">https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode</span>,<span style="color: #BB00BB;">codeListValue=</span><span style="color: #00BB00;">publication</span>,<span style="color: #BB00BB;">codeSpace=</span><span style="color: #00BB00;">NA</span>] <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISODateType</span><span style="color: #BBBBBB;">&gt;</span>: publication<span style="color: #00BBBB;"> {date identifies when the resource was issued}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">date identifies when the resource was issued</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">edition</span>: <span style="background-color: #BBBBBB;">1.0</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">editionDate</span>: <span style="background-color: #BBBBBB;">2015-01-01</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">identifier</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOMetaIdentifier</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">code</span>: <span style="background-color: #BBBBBB;">identifier</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">citedResponsibleParty</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOResponsibleParty</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">individualName</span>: <span style="background-color: #BBBBBB;">someone</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">organisationName</span>: <span style="background-color: #BBBBBB;">somewhere</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">positionName</span>: <span style="background-color: #BBBBBB;">someposition</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">contactInfo</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOContact</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">phone</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOTelephone</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">voice</span>: <span style="background-color: #BBBBBB;">myphonenumber</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">facsimile</span>: <span style="background-color: #BBBBBB;">myfacsimile</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">address</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOAddress</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">deliveryPoint</span>: <span style="background-color: #BBBBBB;">theaddress</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">city</span>: <span style="background-color: #BBBBBB;">thecity</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">postalCode</span>: <span style="background-color: #BBBBBB;">111</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">country</span>: <span style="background-color: #BBBBBB;">France</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">electronicMailAddress</span>: <span style="background-color: #BBBBBB;">someone@theorg.org</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">onlineResource</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOOnlineResource</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">linkage</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOURL</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....................|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">http://somelink</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">name</span>: <span style="background-color: #BBBBBB;">somename</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">role</span>  [<span style="color: #BB00BB;">codeList=</span><span style="color: #00BB00;">https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode</span>,<span style="color: #BB00BB;">codeListValue=</span><span style="color: #00BB00;">pointOfContact</span>,<span style="color: #BB00BB;">codeSpace=</span><span style="color: #00BB00;">NA</span>] <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISORole</span><span style="color: #BBBBBB;">&gt;</span>: pointOfContact<span style="color: #00BBBB;"> {party who can be contacted for acquiring knowledge about or acquisition of the resource}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">party who can be contacted for acquiring knowledge about or acquisition of the resource</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">presentationForm</span>  [<span style="color: #BB00BB;">codeList=</span><span style="color: #00BB00;">https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode</span>,<span style="color: #BB00BB;">codeListValue=</span><span style="color: #00BB00;">mapDigital</span>,<span style="color: #BB00BB;">codeSpace=</span><span style="color: #00BB00;">NA</span>] <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOPresentationForm</span><span style="color: #BBBBBB;">&gt;</span>: mapDigital<span style="color: #00BBBB;"> {map represented in raster or vector form}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">map represented in raster or vector form</span>: mapDigital<span style="color: #00BBBB;"> {}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "sometitle"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "sometitle"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISODate</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">date</span>: <span style="background-color: #BBBBBB;">2015-01-01T01:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">dateType</span>  [<span style="color: #BB00BB;">codeList=</span><span style="color: #00BB00;">https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode</span>,<span style="color: #BB00BB;">codeListValue=</span><span style="color: #00BB00;">publication</span>,<span style="color: #BB00BB;">codeSpace=</span><span style="color: #00BB00;">NA</span>] <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISODateType</span><span style="color: #BBBBBB;">&gt;</span>: publication<span style="color: #00BBBB;"> {date identifies when the resource was issued}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">date identifies when the resource was issued</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2015-01-01 01:00:00 GMT"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2015-01-01 01:00:00 GMT"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISODateType</span><span style="color: #BBBBBB;">&gt;</span>: publication<span style="color: #00BBBB;"> {date identifies when the resource was issued}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">date identifies when the resource was issued</span>[1] "date identifies when the resource was issued"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2015-01-01"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2015-01-01"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOMetaIdentifier</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">code</span>: <span style="background-color: #BBBBBB;">identifier</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "identifier"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "identifier"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOResponsibleParty</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">individualName</span>: <span style="background-color: #BBBBBB;">someone</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">organisationName</span>: <span style="background-color: #BBBBBB;">somewhere</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">positionName</span>: <span style="background-color: #BBBBBB;">someposition</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">contactInfo</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOContact</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">phone</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOTelephone</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">voice</span>: <span style="background-color: #BBBBBB;">myphonenumber</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">facsimile</span>: <span style="background-color: #BBBBBB;">myfacsimile</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">address</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOAddress</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">deliveryPoint</span>: <span style="background-color: #BBBBBB;">theaddress</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">city</span>: <span style="background-color: #BBBBBB;">thecity</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">postalCode</span>: <span style="background-color: #BBBBBB;">111</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">country</span>: <span style="background-color: #BBBBBB;">France</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">electronicMailAddress</span>: <span style="background-color: #BBBBBB;">someone@theorg.org</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">onlineResource</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOOnlineResource</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">linkage</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOURL</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ................|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">http://somelink</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">name</span>: <span style="background-color: #BBBBBB;">somename</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">role</span>  [<span style="color: #BB00BB;">codeList=</span><span style="color: #00BB00;">https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode</span>,<span style="color: #BB00BB;">codeListValue=</span><span style="color: #00BB00;">pointOfContact</span>,<span style="color: #BB00BB;">codeSpace=</span><span style="color: #00BB00;">NA</span>] <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISORole</span><span style="color: #BBBBBB;">&gt;</span>: pointOfContact<span style="color: #00BBBB;"> {party who can be contacted for acquiring knowledge about or acquisition of the resource}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">party who can be contacted for acquiring knowledge about or acquisition of the resource</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "someone"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "someone"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "somewhere"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "somewhere"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "someposition"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "someposition"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOContact</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">phone</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOTelephone</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">voice</span>: <span style="background-color: #BBBBBB;">myphonenumber</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">facsimile</span>: <span style="background-color: #BBBBBB;">myfacsimile</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">address</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOAddress</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">deliveryPoint</span>: <span style="background-color: #BBBBBB;">theaddress</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">city</span>: <span style="background-color: #BBBBBB;">thecity</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">postalCode</span>: <span style="background-color: #BBBBBB;">111</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">country</span>: <span style="background-color: #BBBBBB;">France</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">electronicMailAddress</span>: <span style="background-color: #BBBBBB;">someone@theorg.org</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">onlineResource</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOOnlineResource</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">linkage</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOURL</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ............|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">http://somelink</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">name</span>: <span style="background-color: #BBBBBB;">somename</span>NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOTelephone</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">voice</span>: <span style="background-color: #BBBBBB;">myphonenumber</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">facsimile</span>: <span style="background-color: #BBBBBB;">myfacsimile</span>NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "myphonenumber"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "myphonenumber"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "myfacsimile"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "myfacsimile"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOAddress</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">deliveryPoint</span>: <span style="background-color: #BBBBBB;">theaddress</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">city</span>: <span style="background-color: #BBBBBB;">thecity</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">postalCode</span>: <span style="background-color: #BBBBBB;">111</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">country</span>: <span style="background-color: #BBBBBB;">France</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">electronicMailAddress</span>: <span style="background-color: #BBBBBB;">someone@theorg.org</span>NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "theaddress"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "theaddress"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "thecity"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "thecity"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "111"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "111"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "France"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "France"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "someone@theorg.org"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "someone@theorg.org"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOOnlineResource</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">linkage</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOURL</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ........|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">http://somelink</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">name</span>: <span style="background-color: #BBBBBB;">somename</span>NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOURL</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">http://somelink</span>[1] "http://somelink"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "somename"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "somename"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISORole</span><span style="color: #BBBBBB;">&gt;</span>: pointOfContact<span style="color: #00BBBB;"> {party who can be contacted for acquiring knowledge about or acquisition of the resource}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">party who can be contacted for acquiring knowledge about or acquisition of the resource</span>[1] "party who can be contacted for acquiring knowledge about or acquisition of the resource"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">ISOPresentationForm</span><span style="color: #BBBBBB;">&gt;</span>: mapDigital<span style="color: #00BBBB;"> {map represented in raster or vector form}</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">value</span>: <span style="background-color: #BBBBBB;">map represented in raster or vector form</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "map represented in raster or vector form"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [geometa][INFO] Object 'ISOPortrayalCatalogueReference' is VALID according to ISO 19139 XML schemas! </span>
 <span class="r-in"><span>   </span></span>
 </code></pre></div>
@@ -256,7 +414,7 @@ ISOPortrayalCatalogueReference"><!-- mathjax --><script src="https://cdnjs.cloud
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
       </footer></div>
