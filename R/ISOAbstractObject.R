@@ -770,7 +770,6 @@ ISOAbstractObject <- R6Class("ISOAbstractObject",
       
       if(!self$isNull) for(field in fields){
         fieldObj <- self[[field]]
-        print(fieldObj)
         
         #default values management
         if(is.null(fieldObj) || (is.list(fieldObj) & length(fieldObj)==0)){
