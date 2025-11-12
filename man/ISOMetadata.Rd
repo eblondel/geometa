@@ -470,6 +470,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-ISOMetadata-setMetadataMaintenance}{\code{ISOMetadata$setMetadataMaintenance()}}
 \item \href{#method-ISOMetadata-addContentInfo}{\code{ISOMetadata$addContentInfo()}}
 \item \href{#method-ISOMetadata-delContentInfo}{\code{ISOMetadata$delContentInfo()}}
+\item \href{#method-ISOMetadata-addPortrayalCatalogueInfo}{\code{ISOMetadata$addPortrayalCatalogueInfo()}}
+\item \href{#method-ISOMetadata-delPortrayalCatalogueInfo}{\code{ISOMetadata$delPortrayalCatalogueInfo()}}
 \item \href{#method-ISOMetadata-clone}{\code{ISOMetadata$clone()}}
 }
 }
@@ -1513,6 +1515,46 @@ Deletes content information
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{contentInfo}}{object of class inheriting \link{ISOAbstractContentInformation}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-addPortrayalCatalogueInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-addPortrayalCatalogueInfo}{}}}
+\subsection{Method \code{addPortrayalCatalogueInfo()}}{
+Adds portrayal catalogue info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$addPortrayalCatalogueInfo(portrayalCatalogueInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{portrayalCatalogueInfo}}{object of class inheriting \link{ISOPortrayalCatalogueReference}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ISOMetadata-delPortrayalCatalogueInfo"></a>}}
+\if{latex}{\out{\hypertarget{method-ISOMetadata-delPortrayalCatalogueInfo}{}}}
+\subsection{Method \code{delPortrayalCatalogueInfo()}}{
+Deletes portrayal catalogue info
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ISOMetadata$delPortrayalCatalogueInfo(portrayalCatalogueInfo)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{portrayalCatalogueInfo}}{object of class inheriting \link{ISOPortrayalCatalogueReference}}
 }
 \if{html}{\out{</div>}}
 }

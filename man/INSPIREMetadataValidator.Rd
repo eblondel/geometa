@@ -15,6 +15,10 @@ INSPIREMetadataValidator
 
 INSPIREMetadataValidator
 }
+\note{
+Starting 2025-05-02, The API key is not needed anymore and metadata can be 
+then validated as anonymous user.
+}
 \examples{
  \donttest{
   apiKey <- ""
@@ -82,7 +86,7 @@ Method used to instantiate an INSPIRE Metadata validator. To check
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{INSPIREMetadataValidator$new(
   url = "https://inspire.ec.europa.eu/validator-api",
-  apiKey,
+  apiKey = NULL,
   keyring_backend = "env"
 )}\if{html}{\out{</div>}}
 }
@@ -92,7 +96,7 @@ Method used to instantiate an INSPIRE Metadata validator. To check
 \describe{
 \item{\code{url}}{url}
 
-\item{\code{apiKey}}{API key}
+\item{\code{apiKey}}{API key. Default is \code{NULL}.}
 
 \item{\code{keyring_backend}}{backend name to use with \pkg{keyring} to store API key}
 }

@@ -17,6 +17,12 @@ ISOAbstractObject
 }
 \note{
 Abstract ISO Metadata class used internally by geometa
+
+From 2025-05-02, the INSPIRE metadata validation does not require anymore an API Key. Therefore, it is not
+required to specify an \code{inspireValidator}. To send your metadata to INSPIRE, just set \code{inspire} to \code{TRUE}.
+
+From 2025-05-02, the INSPIRE metadata validation does not require anymore an API Key. Therefore, it is not
+required to specify an \code{inspireValidator}. To send your metadata to INSPIRE, just set \code{inspire} to \code{TRUE}.
 }
 \section{Static Methods}{
 
@@ -277,7 +283,8 @@ Encodes object as XML.
 
 \item{\code{inspire}}{perform INSPIRE validation? Default is \code{FALSE}}
 
-\item{\code{inspireValidator}}{an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation}
+\item{\code{inspireValidator}}{an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation. 
+Deprecated. See below note.}
 
 \item{\code{resetSerialID}}{reset Serial ID? Default is \code{TRUE}}
 
@@ -311,7 +318,8 @@ Validates an XML object resulting from object encoding
 
 \item{\code{inspire}}{perform INSPIRE validation? Default is \code{FALSE}}
 
-\item{\code{inspireValidator}}{an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation}
+\item{\code{inspireValidator}}{an object of class \link{INSPIREMetadataValidator} to perform INSPIRE metadata validation.
+Deprecated, see below note.}
 }
 \if{html}{\out{</div>}}
 }
