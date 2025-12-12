@@ -6,6 +6,7 @@
 #' @importFrom methods is
 #' @importFrom methods as
 #' @importFrom utils read.csv
+#' @importFrom digest digest
 #' @import XML
 #' @import httr
 #' @import readr
@@ -1692,6 +1693,9 @@ ISOAbstractObject$compare = function(metadataElement1, metadataElement2, method 
         text2 <- as.character(metadataElement2)
       }
       same <- (text1 == text2)
+    },
+    "digest" = {
+      digest::digest(metadataElement1) == digest::digest(metadataElement2)
     }
   )
   return(same)

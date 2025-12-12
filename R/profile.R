@@ -8,7 +8,7 @@
     "19115-3" = "https://standards.iso.org/iso/19115/resources/Codelists/cat"
   )
   .geometa.options$internalCodelists <- TRUE
-  .geometa.options$object_comparator <- "print"
+  .geometa.options$object_comparator <- "digest"
   
   #hidden objects
   assign(".geometa.iso", new.env(), envir= asNamespace(pkgname))

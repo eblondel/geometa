@@ -15,7 +15,7 @@ Description: Provides facilities to read, write and validate geographic metadata
  as well, such as the Sensor Web Enablement (SWE) Common Data Model, the OGC GML 
  Coverage Implementation Schema (GMLCOV), or the OGC GML Referenceable Grid (GMLRGRID).
 Depends: R (>= 3.3.0)
-Imports: methods, R6, XML, httr, jsonlite, keyring, readr, crayon
+Imports: methods, R6, XML, httr, jsonlite, keyring, readr, crayon, digest
 Suggests: sf, ncdf4, EML, emld, units, testthat, roxygen2
 License: MIT + file LICENSE
 URL: https://github.com/eblondel/geometa/wiki
