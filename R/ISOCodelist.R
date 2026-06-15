@@ -48,7 +48,7 @@ ISOCodelist <- R6Class("ISOCodelist",
                            refFile = NULL, id = NULL){
        super$initialize(xml = xml)
        
-       if(!is.null(identifier)) self$identifier = ISOScopedName$new(value = identifier)
+       if(!is.null(identifier)) self$identifier = identifier
        if(!is.null(data)){
          #assumes data is a data.frame with columns codeSpace, identifier, description
          self$codeEntry = lapply(1:nrow(data), function(i){
