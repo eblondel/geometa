@@ -6,9 +6,6 @@
 #' @keywords ISO imagery revision
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO imagery revision
 #' @format \code{\link[R6]{R6Class}} object.
-#'    
-#' @references 
-#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Revision}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

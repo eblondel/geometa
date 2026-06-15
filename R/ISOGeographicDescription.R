@@ -12,11 +12,6 @@
 #'   md$setGeographicIdentifier(ISOMetaIdentifier$new(code = "identifier"))
 #'   xml <- md$encode()
 #' 
-#' @references 
-#'  - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_EX_GeographicDescription}
-#'  
-#'  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gex/1.0/gex/#element_EX_GeographicDescription}
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOGeographicDescription <- R6Class("ISOGeographicDescription",

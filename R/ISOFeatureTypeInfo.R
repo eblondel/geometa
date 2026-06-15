@@ -6,9 +6,6 @@
 #' @keywords ISO feature type info
 #' @return Object of \code{\link[R6]{R6Class}} for modelling a ISO feature type info
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrc/1.0/mrc/#element_MD_FeatureTypeInfo}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

@@ -7,9 +7,6 @@
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract GenericName
 #' @format \code{\link[R6]{R6Class}} object.
 #' 
-#' @references
-#'  ISO/TS 19103:2005 Geographic information -- Conceptual schema language
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOAbstractGenericName <- R6Class("ISOAbstractGenericName",

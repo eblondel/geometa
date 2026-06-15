@@ -14,9 +14,6 @@
 #'   #paramDir
 #'   paramDir <- ISOParameterDirection$new(value = "in")
 #' 
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrl/2.0/mrl/#element_LE_ParameterDirection}
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOParameterDirection <- R6Class("ISOParameterDirection",

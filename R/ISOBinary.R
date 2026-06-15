@@ -9,11 +9,6 @@
 #' 
 #' @examples
 #'   bin <- ISOBinary$new(value = "http://someuri")
-#'  
-#' @references
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gco/1.0/gco/#element_Binary}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gco/1.0/gco/#element_Binary}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

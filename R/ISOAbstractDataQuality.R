@@ -6,9 +6,6 @@
 #' @keywords ISO abstract data quality
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract data quality
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/dqc/1.2/dqc/#element_Abstract_DataQuality}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

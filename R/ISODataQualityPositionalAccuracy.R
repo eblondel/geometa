@@ -6,11 +6,6 @@
 #' @keywords ISO data quality abstract positional accuracy
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOAbstractPositionalAccuracy
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_PositionalAccuracy}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_PositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -59,11 +54,6 @@ ISOAbstractPositionalAccuracy <- R6Class("ISOAbstractPositionalAccuracy",
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_AbsoluteExternalPositionalAccuracy}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_AbsoluteExternalPositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -112,11 +102,6 @@ ISOAbsoluteExternalPositionalAccuracy <- R6Class("ISOAbsoluteExternalPositionalA
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_RelativeInternalPositionalAccuracy}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_RelativeInternalPositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -165,11 +150,6 @@ ISORelativeInternalPositionalAccuracy <- R6Class("ISORelativeInternalPositionalA
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_GriddedDataPositionalAccuracy}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_GriddedDataPositionalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

@@ -13,11 +13,6 @@
 #'   
 #'   #example of 'point' cell geometry code
 #'   pointCode <- ISOCellGeometry$new(value = "point")
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_CellGeometryCode}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MD_CellGeometryCode}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

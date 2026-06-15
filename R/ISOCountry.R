@@ -14,11 +14,6 @@
 #'   #some charset
 #'   charset <- ISOCountry$new(value = "utf8")
 #' 
-#' @references 
-#'  - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_Country}
-#'  
-#'  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_CountryCode}
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOCountry <- R6Class("ISOCountry",

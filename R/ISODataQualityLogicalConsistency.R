@@ -6,11 +6,6 @@
 #' @keywords ISO data quality abstract logical consistency
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOAbstractLogicalConsistency
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_LogicalConsistency}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_LogicalConsistency}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -59,11 +54,6 @@ ISOAbstractLogicalConsistency <- R6Class("ISOAbstractLogicalConsistency",
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_TopologicalConsistency}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_TopologicalConsistency} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -112,11 +102,6 @@ ISOTopologicalConsistency <- R6Class("ISOTopologicalConsistency",
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_FormatConsistency}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_FormatConsistency} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -165,11 +150,6 @@ ISOFormatConsistency <- R6Class("ISOFormatConsistency",
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_DomainConsistency}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_DomainConsistency} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -218,11 +198,6 @@ ISODomainConsistency <- R6Class("ISODomainConsistency",
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_ConceptualConsistency}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_ConceptualConsistency} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

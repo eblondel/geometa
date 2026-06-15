@@ -6,9 +6,6 @@
 #' @keywords ISO abstract acquisition information
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO acquisition information
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_AcquisitionInformation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

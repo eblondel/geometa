@@ -11,11 +11,6 @@
 #'   md <- ISOFileName$new(file = "someuri", name = "filename")
 #'   xml <- md$encode()
 #' 
-#' @references
-#'  - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmx/1.0/gmx/#element_FileName}
-#'  
-#'  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gcx/1.0/gcx/#element_FileName}
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOFileName <- R6Class("ISOFileName",

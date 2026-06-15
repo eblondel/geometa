@@ -6,9 +6,6 @@
 #' @keywords ISO abstract spatial representation
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract spatial representation
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_SpatialRepresentation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

@@ -322,11 +322,6 @@
 #'    md <- ISOImageryMetadata$new(xml = xml)
 #'    }
 #' 
-#' @references 
-#'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Metadata}
-#'   
-#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_Metadata}
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImageryMetadata <- R6Class("ISOImageryMetadata",

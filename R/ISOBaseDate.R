@@ -9,11 +9,6 @@
 #' 
 #' @note Class used by geometa internal XML decoder/encoder
 #' 
-#' @references
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gco/1.0/gco/#element_Date}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gco/1.0/gco/#element_Date}
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOBaseDate <- R6Class("ISOBaseDate",

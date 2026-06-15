@@ -6,11 +6,6 @@
 #' @keywords ISO locale container
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO LocaleContainer
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'  - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_PT_LocaleContainer}
-#'  
-#'  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/lan/1.0/lan/#element_PT_LocaleContainer}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

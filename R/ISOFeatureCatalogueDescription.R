@@ -22,11 +22,6 @@
 #'   rp$setContactInfo(contact)
 #'   cit$addCitedResponsibleParty(rp)
 #'   md$addFeatureCatalogueCitation(cit)
-#'  
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_FeatureCatalogueDescription}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrc/1.0/mrc/#element_MD_FeatureCatalogueDescription}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

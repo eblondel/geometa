@@ -14,11 +14,6 @@
 #'   #some def
 #'   inst <- ISOImagerySequence$new(value = "instantaneous")
 #' 
-#' @references 
-#'   - 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_SequenceCode}
-#'   
-#'   - 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/1.0/mac/#element_MI_SequenceCode}
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOImagerySequence <- R6Class("ISOImagerySequence",

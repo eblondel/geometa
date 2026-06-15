@@ -54,9 +54,6 @@
 #'    md$addCharacteristic(fat)
 #'  }
 #'  xml <- md$encode()
-#'  
-#' @references 
-#'   - ISO 19110 - GFC 1.0 https://schemas.isotc211.org/19110/-/gfc/1.0/gfc/#element_FC_FeatureType
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

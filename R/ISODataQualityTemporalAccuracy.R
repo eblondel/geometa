@@ -6,11 +6,6 @@
 #' @keywords ISO data quality abstract temporal accuracy
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOAbstractTemporalAccuracy
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_TemporalAccuracy}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_TemporalAccuracy}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -59,11 +54,6 @@ ISOAbstractTemporalAccuracy <- R6Class("ISOAbstractTemporalAccuracy",
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_TemporalValidity}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_TemporalValidity}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -112,11 +102,6 @@ ISOTemporalValidity <- R6Class("ISOTemporalValidity",
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_TemporalConsistency}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_TemporalConsistency} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -165,11 +150,6 @@ ISOTemporalConsistency <- R6Class("ISOTemporalConsistency",
 #'   result$setPass(TRUE)
 #'   dq$addResult(result)
 #'   xml <- dq$encode()
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_AccuracyOfATimeMeasurement}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_AccuracyOfATimeMeasurement} 
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

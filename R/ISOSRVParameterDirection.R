@@ -14,11 +14,6 @@
 #'   #paramDir
 #'   paramDir <- ISOSRVParameterDirection$new(value = "in")
 #' 
-#' @references 
-#'   - ISO 19119 \url{https://schemas.isotc211.org/19119/srv/srv/#element_SV_ParameterDirection}
-#'
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_ParameterDirection}
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOSRVParameterDirection <- R6Class("ISOSRVParameterDirection",

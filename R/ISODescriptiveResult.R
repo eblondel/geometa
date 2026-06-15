@@ -6,9 +6,6 @@
 #' @keywords ISO data quality descriptive result
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISODescriptiveResult
 #' @format \code{\link[R6]{R6Class}} object.
-#'
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_DescriptiveResult}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

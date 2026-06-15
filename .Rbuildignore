@@ -5,3 +5,4 @@
 ^CONTRIBUTING\.md$
 doc/slides
 ^\.github$
+data-raw

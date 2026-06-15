@@ -7,11 +7,6 @@
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISOMemberName
 #' @format \code{\link[R6]{R6Class}} object.
 #' 
-#' @references
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gco/1.0/gco/#element_MemberName}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gco/1.0/gco/#element_MemberName}
-#' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 ISOMemberName <- R6Class("ISOMemberName",
