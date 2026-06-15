@@ -15,9 +15,6 @@ ISOAbstractFeatureCatalogue
 
 ISOAbstractFeatureCatalogue
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19110/-/fcc/2.2/fcc/#element_Abstract_FeatureCatalogue}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

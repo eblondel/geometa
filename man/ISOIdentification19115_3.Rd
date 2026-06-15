@@ -15,9 +15,6 @@ ISOIdentification19115_3
 
 ISOIdentification19115_3
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mri/1.0/mri/#element_AbstractMD_Identification}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

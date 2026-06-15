@@ -15,9 +15,6 @@ ISOInstrumentationEventList
 
 ISOInstrumentationEventList
 }
-\references{
-- 19115-3 \url{https://schemas.isotc211.org/19115/-3/mac/2.0/mac/#element_MI_InstrumentationEventList}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

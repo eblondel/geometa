@@ -15,9 +15,6 @@ ISOAbstractPropertyType
 
 ISOAbstractPropertyType
 }
-\references{
-ISO 19110:2005 Methodology for Feature cataloguing
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

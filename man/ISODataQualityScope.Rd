@@ -19,10 +19,7 @@ ISODataQualityScope
   md <- ISODataQualityScope$new()
   md$setLevel("dataset")
   xml <- md$encode()
-  
-}
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_Scope}
+
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

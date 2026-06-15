@@ -20,11 +20,6 @@ ISOOperationMetadata
   xml <- md$encode()
 
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19119/-/srv/1.0/srv/#element_SV_OperationMetadata}
- 
- - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_OperationMetadata}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

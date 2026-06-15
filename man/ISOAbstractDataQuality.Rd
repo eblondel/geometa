@@ -15,9 +15,6 @@ ISOAbstractDataQuality
 
 ISOAbstractDataQuality
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/dqc/1.2/dqc/#element_Abstract_DataQuality}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

@@ -20,12 +20,7 @@ ISOTelephone
   md$setVoice("myphonenumber")
   md$setFacsimile("myfacsimile")
   xml <- md$encode()
-  
-}
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_CI_Telephone}
- 
- - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/cit/2.0/cit/#element_CI_Telephone}
+
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

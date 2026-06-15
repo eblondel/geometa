@@ -25,11 +25,6 @@ ISOImageryRangeElementDescription
    xml <- md$encode()
 
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_RangeElementDescription}
-  
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrc/1.0/mrc/#element_MI_RangeElementDescription}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

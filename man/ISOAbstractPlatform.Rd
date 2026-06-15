@@ -15,9 +15,6 @@ ISOAbstractPlatform
 
 ISOAbstractPlatform
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/#element_Abstract_Platform}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

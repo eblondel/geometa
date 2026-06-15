@@ -15,11 +15,6 @@ ISOAbstractCatalogue
 
 ISOAbstractCatalogue
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/cat/1.2.0/cat/#element_AbstractCT_Catalogue}
-  
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/cat/1.0/cat/#element_AbstractCT_Catalogue}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

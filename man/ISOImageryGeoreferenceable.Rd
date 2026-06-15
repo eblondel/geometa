@@ -15,11 +15,6 @@ ISOImageryGeoreferenceable
 
 ISOImageryGeoreferenceable
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19115/-2/gmi/1.0/gmi/#element_MI_Georeferenceable}
-  
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MI_Georeferenceable}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

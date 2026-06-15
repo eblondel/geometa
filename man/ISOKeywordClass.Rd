@@ -15,9 +15,6 @@ ISOKeywordClass
 
 ISOKeywordClass
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mri/1.0/mri/#element_MD_KeywordClass}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

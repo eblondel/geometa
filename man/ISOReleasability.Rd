@@ -15,9 +15,6 @@ ISOReleasability
 
 ISOReleasability
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mco/1.0/mco/#element_MD_Releasability}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

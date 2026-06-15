@@ -23,11 +23,6 @@ ISOPixelOrientation
   PixelOrientation <- ISOPixelOrientation$new(value = "center")
 
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_PixelOrientationCode}
-  
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/msr/1.0/msr/#element_MD_PixelOrientationCode}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

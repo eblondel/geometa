@@ -15,11 +15,6 @@ ISOScale
 
 ISOScale
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gco/1.0/gco/#element_Scale}
-  
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gco/1.0/gco/#element_Scale}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

@@ -15,9 +15,6 @@ ISODescriptiveResult
 
 ISODescriptiveResult
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_DescriptiveResult}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

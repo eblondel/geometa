@@ -18,11 +18,6 @@ ISOBoundingPolygon
 \note{
 Experimental
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_EX_BoundingPolygon}
- 
- - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/gex/1.0/gex/#element_EX_BoundingPolygon}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

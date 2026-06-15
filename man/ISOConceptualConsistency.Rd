@@ -39,12 +39,7 @@ ISOConceptualConsistency
   result$setPass(TRUE)
   dq$addResult(result)
   xml <- dq$encode()
-  
-}
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DQ_ConceptualConsistency}
-  
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_ConceptualConsistency}
+
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

@@ -197,11 +197,7 @@ ISOSRVServiceIdentification
   wpsOp$addConnectPoint(or2)
   md$addOperationMetadata(wpsOp)
   xml <- md$encode()
-   
-}
-\references{
-- ISO 19119 \url{https://schemas.isotc211.org/19119/srv/srv/#element_SV_ServiceIdentification}
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/srv/2.0/srv/#element_SV_ServiceIdentification}
+
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

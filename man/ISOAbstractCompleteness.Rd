@@ -15,11 +15,6 @@ ISOAbstractCompleteness
 
 ISOAbstractCompleteness
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_Completeness}
-  
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Completeness}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

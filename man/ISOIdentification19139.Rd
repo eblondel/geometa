@@ -15,9 +15,6 @@ ISOIdentification19139
 
 ISOIdentification19139
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractMD_Identification}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

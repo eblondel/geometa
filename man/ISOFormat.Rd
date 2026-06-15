@@ -21,12 +21,7 @@ ISOFormat
  md$setVersion("1.0")
  md$setAmendmentNumber("2")
  md$setSpecification("specification")
- 
-}
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Format}
-  
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd/#element_MD_Format}
+
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>

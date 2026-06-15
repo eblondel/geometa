@@ -21,11 +21,6 @@ ISOResolution
   xml <- md$encode()
 
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_Resolution}
-  
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mri/1.0/mri/#element_MD_Resolution}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }

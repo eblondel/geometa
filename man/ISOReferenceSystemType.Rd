@@ -24,10 +24,7 @@ ISOReferenceSystemType
   projected <- ISOReferenceSystemType$new(value = "projected")
   setMetadataStandard("19139")
  }
-  
-}
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrs/1.0/mrs/#element_MD_ReferenceSystemTypeCode}
+
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
