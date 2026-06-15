@@ -37,10 +37,31 @@ ISOCodelist <- R6Class("ISOCodelist",
      
      #'@description Initializes object
      #'@param xml object of class \link[XML]{XMLInternalNode-class}
+     #'@param identifier codelist identifier
+     #'@param data an object class \link{data.frame} with columns codeSpace, identifier, description
+     #'@param codeSpace code space
+     #'@param description description
      #'@param refFile ref file
      #'@param id id
-     initialize = function(xml = NULL, refFile = NULL, id = NULL){
+     initialize = function(xml = NULL, 
+                           identifier = NULL, data = NULL, codeSpace = NA, description = NA, 
+                           refFile = NULL, id = NULL){
        super$initialize(xml = xml)
+       
+       if(!is.null(identifier)) self$identifier = ISOScopedName$new(value = identifier)
+       if(!is.null(data)){
+         #assumes data is a data.frame with columns codeSpace, identifier, description
+         self$codeEntry = lapply(1:nrow(data), function(i){
+          ent_id = ISOScopedName$new(value = data[i,]$identifier)
+          if(!is.na(data[i,]$codeSpace)) ent_id$attrs$codeSpace = data[i,]$codeSpace 
+          ISOCTCodelistValue$new(
+            identifier = ent_id, 
+            description = data[i,]$description
+          )
+         })
+       }
+       if(!is.null(codeSpace)) self$codeSpace = codeSpace
+       if(!is.null(description)) self$description = description
        
        #legacy
        if(!is.null(refFile) & !is.null(id) & length(self$codeEntry)==0){
@@ -57,6 +78,7 @@ ISOCodelist <- R6Class("ISOCodelist",
        if(pretty){
          entries <- do.call("rbind", lapply(entries, function(entry){
            data.frame(
+             codeSpace = if(is(entry$identifier, "ISOScopedName"))entry$identifier$attrs$codeSpace else NA,
              identifier = if(is(entry$identifier,"ISOScopedName")) entry$identifier$value else entry$identifier,
              description = entry$description,
              stringsAsFactors = FALSE
@@ -172,6 +194,62 @@ ISOCodelist <- R6Class("ISOCodelist",
    )                      
 )
 
+#' @name parseISOCodelists
+#' @aliases parseISOCodelists
+#' @title parseISOCodelists
+#' @export
+#' @description \code{parseISOCodelists} allows to parse the list of ISO codelists
+#' registered in \pkg{geometa}
+#' 
+#' @usage parseISOCodelists(version)
+#' 
+#' @param version the version of the metadata standard
+#' 
+#' @return a \code{list} of \link{ISOCodelist} objects
+#' 
+#' @examples             
+#'   parseISOCodelists(version = "19139")
+#' 
+#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
+#
+parseISOCodelists <- function(version){
+  
+  langCL <- system.file("extdata/codelists", "ISO-639-2_utf-8.txt", 
+                        package = "geometa", mustWork = TRUE)
+  ML_gmxCL <- system.file("extdata/codelists", "ML_gmxCodelists.xml", 
+                          package = "geometa", mustWork = TRUE)
+  
+  codelists <- switch(version, `19139` = {
+    cls = c(ISOCodelist$new(refFile = ML_gmxCL, id = "Country"), 
+            ISOCodelist$new(refFile = langCL, id = "LanguageCode"), 
+            {
+              cat <- ISOCodelistCatalogue$new(refFile = system.file("extdata/codelists", 
+                                                                    "gmxCodelists.xml", package = "geometa", 
+                                                                    mustWork = TRUE))
+              cat$getCodelists()
+            })
+    cls = cls[!sapply(cls, is.null)]
+    names(cls) <- sapply(cls, function(cl) {
+      cl$identifier$value
+    })
+    cls
+  }, `19115-3` = {
+    cls = c(ISOCodelist$new(refFile = ML_gmxCL, id = "Country"), 
+            ISOCodelist$new(refFile = langCL, id = "LanguageCode"), 
+            {
+              cat <- ISOCodelistCatalogue$new(refFile = system.file("extdata/schemas/19115/resources/Codelists/cat", 
+                                                                    "codelists.xml", package = "geometa", mustWork = TRUE))
+              cat$getCodelists()
+            })
+    cls = cls[!sapply(cls, is.null)]
+    names(cls) <- sapply(cls, function(cl) {
+      cl$identifier$value
+    })
+    cls
+  })
+  return(codelists)
+}
+
 #' @name setISOCodelists
 #' @aliases setISOCodelists
 #' @title setISOCodelists
@@ -189,40 +267,20 @@ ISOCodelist <- R6Class("ISOCodelist",
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 setISOCodelists <- function(version = "19139"){
-  langCL <- system.file("extdata/codelists", "ISO-639-2_utf-8.txt", package = "geometa", mustWork = TRUE) #from http://www.loc.gov/standards/iso639-2/
-  ML_gmxCL <- system.file("extdata/codelists", "ML_gmxCodelists.xml", package = "geometa", mustWork = TRUE)
-  
   if(is.null(.geometa.iso$codelists)) .geometa.iso$codelists = list()
   if(is.null(.geometa.iso$codelists[[version]])){
     packageStartupMessage(sprintf("Loading ISO %s codelists...", version))
-    codelists <- switch(version,
-      "19139" = {
-        cls = c(
-          ISOCodelist$new(refFile = ML_gmxCL, id = "Country"),
-          ISOCodelist$new(refFile = langCL, id = "LanguageCode"), #from http://www.loc.gov/standards/iso639-2/
-          {
-            cat <- ISOCodelistCatalogue$new(refFile = system.file("extdata/codelists", "gmxCodelists.xml", package = "geometa", mustWork = TRUE))
-            cat$getCodelists()
-          }
-        )
-        cls = cls[!sapply(cls, is.null)]
-        names(cls) <- sapply(cls, function(cl){cl$identifier$value})
-        cls
-      },
-      "19115-3" = {
-        cls = c(
-          ISOCodelist$new(refFile = ML_gmxCL, id = "Country"),
-          ISOCodelist$new(refFile = langCL, id = "LanguageCode"), #from http://www.loc.gov/standards/iso639-2/
-          {
-            cat <- ISOCodelistCatalogue$new(refFile = system.file("extdata/schemas/19115/resources/Codelists/cat", "codelists.xml", package = "geometa", mustWork = TRUE))
-            cat$getCodelists()
-          }
-        )
-        cls = cls[!sapply(cls, is.null)]
-        names(cls) <- sapply(cls, function(cl){cl$identifier$value})
-        cls
-      }
-    )
+    codelists <- lapply(geometa::codelists[[version]], function(codelist){
+      ISOCodelist$new(
+        identifier = ISOScopedName$new(value = codelist$identifier),
+        data = codelist$data,
+        codeSpace = codelist$codeSpace,
+        description = codelist$description,
+        refFile = codelist$refFile,
+        id = codelist$id
+      )
+    })
+    names(codelists) = names(geometa::codelists[[version]])
     .geometa.iso$codelists[[version]] <- codelists
   }
 }

@@ -87,13 +87,17 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOCTCodelistValue$new(xml = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOCTCodelistValue$new(xml = NULL, identifier = NULL, description = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
+
+\item{\code{identifier}}{identifier}
+
+\item{\code{description}}{description}
 }
 \if{html}{\out{</div>}}
 }

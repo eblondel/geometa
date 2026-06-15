@@ -1,8 +1,8 @@
 Package: geometa
 Type: Package
 Title: Tools for Reading and Writing ISO/OGC Geographic Metadata
-Version: 0.9.4
-Date: 2025-11-16
+Version: 0.10.0
+Date: 2026-06-15
 Authors@R: c(
   person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")),
   person("R Consortium", role = "fnd"))
@@ -14,7 +14,8 @@ Description: Provides facilities to read, write and validate geographic metadata
  and 19136 (GML). Other interoperable schemas from the OGC are progressively supported 
  as well, such as the Sensor Web Enablement (SWE) Common Data Model, the OGC GML 
  Coverage Implementation Schema (GMLCOV), or the OGC GML Referenceable Grid (GMLRGRID).
-Depends: R (>= 3.3.0)
+Depends: 
+    R (>= 3.5)
 Imports: methods, R6, XML, httr, jsonlite, keyring, readr, crayon, digest
 Suggests: sf, ncdf4, EML, emld, units, testthat, roxygen2
 License: MIT + file LICENSE
@@ -24,3 +25,4 @@ LazyLoad: yes
 Encoding: UTF-8
 RoxygenNote: 7.3.3
 Roxygen: list(r6 = TRUE)
+LazyData: true

@@ -93,13 +93,29 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes object
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ISOCodelist$new(xml = NULL, refFile = NULL, id = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ISOCodelist$new(
+  xml = NULL,
+  identifier = NULL,
+  data = NULL,
+  codeSpace = NA,
+  description = NA,
+  refFile = NULL,
+  id = NULL
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
+
+\item{\code{identifier}}{codelist identifier}
+
+\item{\code{data}}{an object class \link{data.frame} with columns codeSpace, identifier, description}
+
+\item{\code{codeSpace}}{code space}
+
+\item{\code{description}}{description}
 
 \item{\code{refFile}}{ref file}
 

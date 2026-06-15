@@ -33,8 +33,12 @@ ISOCTCodelistValue <- R6Class("ISOCTCodelistValue",
      
      #'@description Initializes object
      #'@param xml object of class \link[XML]{XMLInternalNode-class}
-     initialize = function(xml = NULL){
+     #'@param identifier identifier
+     #'@param description description
+     initialize = function(xml = NULL, identifier = NULL, description = NULL){
        super$initialize(xml = xml)
+       if(!is.null(identifier)) self$identifier = identifier
+       if(!is.null(description)) self$description = description
      }
    )                        
 )
