@@ -69,7 +69,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{coverage}
 \keyword{description}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractContentInformation]{geometa::ISOAbstractContentInformation}} -> \code{\link[geometa:ISOCoverageDescription]{geometa::ISOCoverageDescription}} -> \code{ISOImageDescription}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractContentInformation} -> \code{geometa::ISOCoverageDescription} -> \code{ISOImageDescription}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

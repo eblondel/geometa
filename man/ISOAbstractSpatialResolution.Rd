@@ -23,7 +23,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{resolution}
 \keyword{spatial}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractSpatialResolution}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractSpatialResolution}
 }
 \section{Methods}{
 \subsection{Public methods}{

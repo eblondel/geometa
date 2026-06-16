@@ -22,7 +22,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{name}
 \keyword{scoped}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLCodeType]{geometa::GMLCodeType}} -> \code{\link[geometa:ISOAbstractGenericName]{geometa::ISOAbstractGenericName}} -> \code{ISOScopedName}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLCodeType} -> \code{geometa::ISOAbstractGenericName} -> \code{ISOScopedName}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

@@ -29,7 +29,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{DimensionNameType}
 \keyword{ISO}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISODimensionNameType}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOCodeListValue} -> \code{ISODimensionNameType}
 }
 \section{Methods}{
 \subsection{Public methods}{

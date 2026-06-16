@@ -24,7 +24,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{InheritanceRelation}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOInheritanceRelation}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOInheritanceRelation}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

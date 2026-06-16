@@ -25,7 +25,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{bounding}
 \keyword{polygon}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOGeographicExtent]{geometa::ISOGeographicExtent}} -> \code{ISOBoundingPolygon}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOGeographicExtent} -> \code{ISOBoundingPolygon}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

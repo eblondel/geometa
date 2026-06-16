@@ -31,7 +31,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{address}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractSpatialRepresentation]{geometa::ISOAbstractSpatialRepresentation}} -> \code{\link[geometa:ISOSpatialRepresentation]{geometa::ISOSpatialRepresentation}} -> \code{ISOVectorSpatialRepresentation}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractSpatialRepresentation} -> \code{geometa::ISOSpatialRepresentation} -> \code{ISOVectorSpatialRepresentation}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

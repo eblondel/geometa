@@ -25,7 +25,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{positional}
 \keyword{quality}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractQualityElement]{geometa::ISOAbstractQualityElement}} -> \code{\link[geometa:ISODataQualityAbstractElement]{geometa::ISODataQualityAbstractElement}} -> \code{ISOAbstractPositionalAccuracy}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractQualityElement} -> \code{geometa::ISODataQualityAbstractElement} -> \code{ISOAbstractPositionalAccuracy}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -338,7 +338,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{imagery}
 \keyword{metadata}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOMetadata]{geometa::ISOMetadata}} -> \code{ISOImageryMetadata}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOMetadata} -> \code{ISOImageryMetadata}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

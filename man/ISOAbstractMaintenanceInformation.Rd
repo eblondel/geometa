@@ -23,7 +23,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{information}
 \keyword{maintenance}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractMaintenanceInformation}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractMaintenanceInformation}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -30,7 +30,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{crs}
 \keyword{single}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractGML]{geometa::GMLAbstractGML}} -> \code{\link[geometa:GMLDefinition]{geometa::GMLDefinition}} -> \code{\link[geometa:GMLAbstractCRS]{geometa::GMLAbstractCRS}} -> \code{\link[geometa:GMLAbstractSingleCRS]{geometa::GMLAbstractSingleCRS}} -> \code{GMLAbstractGeneralDerivedCRS}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLAbstractObject} -> \code{geometa::GMLAbstractGML} -> \code{geometa::GMLDefinition} -> \code{geometa::GMLAbstractCRS} -> \code{geometa::GMLAbstractSingleCRS} -> \code{GMLAbstractGeneralDerivedCRS}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

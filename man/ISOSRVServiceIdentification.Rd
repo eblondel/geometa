@@ -206,7 +206,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{identification}
 \keyword{service}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOIdentification]{geometa::ISOIdentification}} -> \code{\link[geometa:ISOServiceIdentification]{geometa::ISOServiceIdentification}} -> \code{ISOSRVServiceIdentification}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOIdentification} -> \code{geometa::ISOServiceIdentification} -> \code{ISOSRVServiceIdentification}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

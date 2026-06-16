@@ -25,7 +25,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{definition}
 \keyword{reference}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISODefinitionReference}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISODefinitionReference}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

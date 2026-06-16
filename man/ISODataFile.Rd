@@ -40,7 +40,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{data}
 \keyword{file}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISODataFile}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISODataFile}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

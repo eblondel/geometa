@@ -24,7 +24,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{quality}
 \keyword{usability}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractQualityElement]{geometa::ISOAbstractQualityElement}} -> \code{\link[geometa:ISODataQualityAbstractElement]{geometa::ISODataQualityAbstractElement}} -> \code{ISOUsabilityElement}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractQualityElement} -> \code{geometa::ISODataQualityAbstractElement} -> \code{ISOUsabilityElement}
 }
 \section{Methods}{
 \subsection{Public methods}{

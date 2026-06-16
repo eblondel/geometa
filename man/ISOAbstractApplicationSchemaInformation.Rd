@@ -24,7 +24,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{information}
 \keyword{schema}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractApplicationSchemaInformation}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractApplicationSchemaInformation}
 }
 \section{Methods}{
 \subsection{Public methods}{

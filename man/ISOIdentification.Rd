@@ -26,7 +26,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{identification}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOIdentification}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOIdentification}
 }
 \section{Methods}{
 \subsection{Public methods}{

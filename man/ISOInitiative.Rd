@@ -24,7 +24,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{initiative}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractAggregate]{geometa::ISOAbstractAggregate}} -> \code{ISOInitiative}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractAggregate} -> \code{ISOInitiative}
 }
 \section{Methods}{
 \subsection{Public methods}{

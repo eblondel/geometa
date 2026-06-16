@@ -35,7 +35,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{extent}
 \keyword{spatialtemporal}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOTemporalExtent]{geometa::ISOTemporalExtent}} -> \code{ISOSpatialTemporalExtent}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOTemporalExtent} -> \code{ISOSpatialTemporalExtent}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

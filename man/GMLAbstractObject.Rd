@@ -27,7 +27,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{GML}
 \keyword{ISO}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{GMLAbstractObject}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{GMLAbstractObject}
 }
 \section{Methods}{
 \subsection{Public methods}{

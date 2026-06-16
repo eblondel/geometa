@@ -121,7 +121,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{data}
 \keyword{identification}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOIdentification]{geometa::ISOIdentification}} -> \code{\link[geometa:ISOIdentification19139]{geometa::ISOIdentification19139}} -> \code{ISODataIdentification19139}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOIdentification} -> \code{geometa::ISOIdentification19139} -> \code{ISODataIdentification19139}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

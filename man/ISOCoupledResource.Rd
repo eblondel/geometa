@@ -28,7 +28,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{CoupledResource}
 \keyword{ISO}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOCoupledResource}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOCoupledResource}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

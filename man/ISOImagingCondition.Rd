@@ -30,7 +30,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{condition}
 \keyword{imaging}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOImagingCondition}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOCodeListValue} -> \code{ISOImagingCondition}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -28,7 +28,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{localised}
 \keyword{string}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOBaseCharacterString]{geometa::ISOBaseCharacterString}} -> \code{ISOLocalisedCharacterString}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOBaseCharacterString} -> \code{ISOLocalisedCharacterString}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -25,7 +25,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{aggregate}
 \keyword{other}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractAggregate]{geometa::ISOAbstractAggregate}} -> \code{ISOOtherAggregate}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractAggregate} -> \code{ISOOtherAggregate}
 }
 \section{Methods}{
 \subsection{Public methods}{

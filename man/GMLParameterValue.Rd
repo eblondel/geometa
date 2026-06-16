@@ -42,7 +42,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{parameter}
 \keyword{value}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractGeneralParameterValue]{geometa::GMLAbstractGeneralParameterValue}} -> \code{GMLParameterValue}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLAbstractObject} -> \code{geometa::GMLAbstractGeneralParameterValue} -> \code{GMLParameterValue}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

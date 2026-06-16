@@ -31,7 +31,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{browse}
 \keyword{graphic}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOBrowseGraphic}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOBrowseGraphic}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

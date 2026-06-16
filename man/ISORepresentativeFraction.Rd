@@ -29,7 +29,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{fraction}
 \keyword{representative}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISORepresentativeFraction}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISORepresentativeFraction}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

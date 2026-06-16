@@ -24,7 +24,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{Binding}
 \keyword{ISO}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractCarrierOfCharacteristics]{geometa::ISOAbstractCarrierOfCharacteristics}} -> \code{ISOBinding}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractCarrierOfCharacteristics} -> \code{ISOBinding}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

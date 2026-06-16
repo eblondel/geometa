@@ -33,7 +33,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{listed}
 \keyword{value}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOListedValue}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOListedValue}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

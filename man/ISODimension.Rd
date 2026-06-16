@@ -30,7 +30,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{dimension}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISODimension}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISODimension}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

@@ -40,7 +40,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{validation}
 \keyword{validator}
 \section{Super class}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{INSPIREMetadataValidator}
+\code{geometa::geometaLogger} -> \code{INSPIREMetadataValidator}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

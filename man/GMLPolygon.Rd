@@ -31,7 +31,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{Point}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractGML]{geometa::GMLAbstractGML}} -> \code{\link[geometa:GMLAbstractGeometry]{geometa::GMLAbstractGeometry}} -> \code{\link[geometa:GMLAbstractGeometricPrimitive]{geometa::GMLAbstractGeometricPrimitive}} -> \code{\link[geometa:GMLAbstractSurface]{geometa::GMLAbstractSurface}} -> \code{GMLPolygon}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLAbstractObject} -> \code{geometa::GMLAbstractGML} -> \code{geometa::GMLAbstractGeometry} -> \code{geometa::GMLAbstractGeometricPrimitive} -> \code{geometa::GMLAbstractSurface} -> \code{GMLPolygon}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

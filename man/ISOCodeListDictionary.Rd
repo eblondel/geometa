@@ -28,7 +28,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{code}
 \keyword{element}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOCodeListDictionary}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOCodeListDictionary}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

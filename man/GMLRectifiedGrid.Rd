@@ -40,7 +40,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{Grid}
 \keyword{ISO}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractGML]{geometa::GMLAbstractGML}} -> \code{\link[geometa:GMLAbstractGeometry]{geometa::GMLAbstractGeometry}} -> \code{\link[geometa:GMLAbstractImplicitGeometry]{geometa::GMLAbstractImplicitGeometry}} -> \code{\link[geometa:GMLGrid]{geometa::GMLGrid}} -> \code{GMLRectifiedGrid}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLAbstractObject} -> \code{geometa::GMLAbstractGML} -> \code{geometa::GMLAbstractGeometry} -> \code{geometa::GMLAbstractImplicitGeometry} -> \code{geometa::GMLGrid} -> \code{GMLRectifiedGrid}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

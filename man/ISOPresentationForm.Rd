@@ -30,7 +30,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{form}
 \keyword{presentation}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOPresentationForm}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOCodeListValue} -> \code{ISOPresentationForm}
 }
 \section{Methods}{
 \subsection{Public methods}{

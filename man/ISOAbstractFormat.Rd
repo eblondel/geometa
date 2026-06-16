@@ -22,7 +22,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{abstract}
 \keyword{format}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractFormat}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractFormat}
 }
 \section{Methods}{
 \subsection{Public methods}{

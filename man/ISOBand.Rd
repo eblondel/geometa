@@ -50,7 +50,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{band}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISORangeDimension]{geometa::ISORangeDimension}} -> \code{ISOBand}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISORangeDimension} -> \code{ISOBand}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

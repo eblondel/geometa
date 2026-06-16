@@ -29,7 +29,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{operation}
 \keyword{parameter}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractGML]{geometa::GMLAbstractGML}} -> \code{\link[geometa:GMLDefinition]{geometa::GMLDefinition}} -> \code{\link[geometa:GMLAbstractGeneralOperationParameter]{geometa::GMLAbstractGeneralOperationParameter}} -> \code{GMLOperationParameter}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLAbstractObject} -> \code{geometa::GMLAbstractGML} -> \code{geometa::GMLDefinition} -> \code{geometa::GMLAbstractGeneralOperationParameter} -> \code{GMLOperationParameter}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -23,7 +23,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{quality}
 \keyword{result}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOQualityResultFile}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOQualityResultFile}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

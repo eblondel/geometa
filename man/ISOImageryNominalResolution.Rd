@@ -34,7 +34,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{nominal}
 \keyword{resolution}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractQualityElement]{geometa::ISOAbstractQualityElement}} -> \code{\link[geometa:ISODataQualityAbstractElement]{geometa::ISODataQualityAbstractElement}} -> \code{ISOImageryNominalResolution}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractQualityElement} -> \code{geometa::ISODataQualityAbstractElement} -> \code{ISOImageryNominalResolution}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

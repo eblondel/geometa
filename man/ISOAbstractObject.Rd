@@ -63,7 +63,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{element}
 \keyword{metadata}
 \section{Super class}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{ISOAbstractObject}
+\code{geometa::geometaLogger} -> \code{ISOAbstractObject}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

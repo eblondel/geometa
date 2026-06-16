@@ -27,7 +27,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{GML}
 \keyword{codetype}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{GMLCodeType}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{GMLCodeType}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

@@ -21,7 +21,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{responsibility}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractResponsibility]{geometa::ISOAbstractResponsibility}} -> \code{ISOResponsibility}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractResponsibility} -> \code{ISOResponsibility}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

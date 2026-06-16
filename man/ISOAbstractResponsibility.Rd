@@ -25,7 +25,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{abstract}
 \keyword{responsibility}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractResponsibility}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractResponsibility}
 }
 \section{Methods}{
 \subsection{Public methods}{

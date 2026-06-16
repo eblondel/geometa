@@ -25,7 +25,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{data}
 \keyword{inspection}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOEvaluationMethod]{geometa::ISOEvaluationMethod}} -> \code{ISODataInspection}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOEvaluationMethod} -> \code{ISODataInspection}
 }
 \section{Methods}{
 \subsection{Public methods}{

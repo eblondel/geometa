@@ -29,7 +29,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{record}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOElementSequence}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOElementSequence}
 }
 \section{Methods}{
 \subsection{Public methods}{

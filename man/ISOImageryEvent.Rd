@@ -33,7 +33,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{event}
 \keyword{imagery}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOImageryEvent}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOImageryEvent}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

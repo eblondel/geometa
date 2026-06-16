@@ -25,7 +25,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{aggregation}
 \keyword{derivation}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOEvaluationMethod]{geometa::ISOEvaluationMethod}} -> \code{ISOAggregationDerivation}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOEvaluationMethod} -> \code{ISOAggregationDerivation}
 }
 \section{Methods}{
 \subsection{Public methods}{

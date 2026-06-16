@@ -24,7 +24,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{constraints}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOConstraints}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOConstraints}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

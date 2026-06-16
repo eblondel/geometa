@@ -26,7 +26,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{description}
 \keyword{resource}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractResourceDescription}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractResourceDescription}
 }
 \section{Methods}{
 \subsection{Public methods}{

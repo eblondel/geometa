@@ -26,7 +26,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{OperationChainMetadata}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOOperationChainMetadata}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOOperationChainMetadata}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

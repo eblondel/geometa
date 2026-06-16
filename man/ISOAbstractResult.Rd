@@ -31,7 +31,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{quality}
 \keyword{result}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractResult}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractResult}
 }
 \section{Methods}{
 \subsection{Public methods}{

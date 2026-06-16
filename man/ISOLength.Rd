@@ -22,7 +22,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{length}
 \keyword{measure}
 \section{Super classes}{
-\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOMeasure]{geometa::ISOMeasure}} -> \code{ISOLength}
+\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOMeasure} -> \code{ISOLength}
 }
 \section{Methods}{
 \subsection{Public methods}{
