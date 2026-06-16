@@ -22,7 +22,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{catalogue}
 \keyword{feature}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractContentInformation} -> \code{ISOMDFeatureCatalogue}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractContentInformation]{geometa::ISOAbstractContentInformation}} -> \code{ISOMDFeatureCatalogue}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

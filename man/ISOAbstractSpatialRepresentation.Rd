@@ -23,7 +23,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{representation}
 \keyword{spatial}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractSpatialRepresentation}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractSpatialRepresentation}
 }
 \section{Methods}{
 \subsection{Public methods}{

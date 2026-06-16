@@ -30,7 +30,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{imagery}
 \keyword{priority}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOCodeListValue} -> \code{ISOImageryPriority}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOImageryPriority}
 }
 \section{Methods}{
 \subsection{Public methods}{

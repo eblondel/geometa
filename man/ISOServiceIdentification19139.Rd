@@ -19,7 +19,7 @@ ISOServiceIdentification19139
 \keyword{identification}
 \keyword{service}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOIdentification} -> \code{geometa::ISOIdentification19139} -> \code{ISOServiceIdentification19139}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOIdentification]{geometa::ISOIdentification}} -> \code{\link[geometa:ISOIdentification19139]{geometa::ISOIdentification19139}} -> \code{ISOServiceIdentification19139}
 }
 \section{Methods}{
 \subsection{Public methods}{

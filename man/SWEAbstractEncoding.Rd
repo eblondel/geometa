@@ -24,7 +24,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{SWE}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::SWEAbstractObject} -> \code{geometa::SWEAbstractSWE} -> \code{SWEAbstractEncoding}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:SWEAbstractObject]{geometa::SWEAbstractObject}} -> \code{\link[geometa:SWEAbstractSWE]{geometa::SWEAbstractSWE}} -> \code{SWEAbstractEncoding}
 }
 \section{Methods}{
 \subsection{Public methods}{

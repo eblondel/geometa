@@ -18,11 +18,6 @@ ISOAbstractResult
 \note{
 abstract class
 }
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_AbstractDQ_Result}
-
-  - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Result}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
@@ -31,7 +26,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{quality}
 \keyword{result}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractResult}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractResult}
 }
 \section{Methods}{
 \subsection{Public methods}{

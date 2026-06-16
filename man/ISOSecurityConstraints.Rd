@@ -33,7 +33,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{constraints}
 \keyword{security}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOConstraints} -> \code{ISOSecurityConstraints}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOConstraints]{geometa::ISOConstraints}} -> \code{ISOSecurityConstraints}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

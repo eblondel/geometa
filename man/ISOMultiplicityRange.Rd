@@ -27,7 +27,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{multiplicity}
 \keyword{range}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOMultiplicityRange}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOMultiplicityRange}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

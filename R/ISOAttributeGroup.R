@@ -6,9 +6,6 @@
 #' @keywords ISO attribute group
 #' @return Object of \code{\link[R6]{R6Class}} for modelling a ISO attribute group
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mrc/1.0/mrc/}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

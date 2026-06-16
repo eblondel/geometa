@@ -25,7 +25,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{GML}
 \keyword{GMLCOV}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLAbstractObject} -> \code{geometa::GMLAbstractFeature} -> \code{geometa::GMLAbstractCoverage} -> \code{GMLCOVAbstractCoverage}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractFeature]{geometa::GMLAbstractFeature}} -> \code{\link[geometa:GMLAbstractCoverage]{geometa::GMLAbstractCoverage}} -> \code{GMLCOVAbstractCoverage}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

@@ -31,7 +31,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{coverage}
 \keyword{multicurve}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLAbstractObject} -> \code{geometa::GMLAbstractFeature} -> \code{geometa::GMLAbstractCoverage} -> \code{geometa::GMLAbstractDiscreteCoverage} -> \code{GMLMultiCurveCoverage}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractFeature]{geometa::GMLAbstractFeature}} -> \code{\link[geometa:GMLAbstractCoverage]{geometa::GMLAbstractCoverage}} -> \code{\link[geometa:GMLAbstractDiscreteCoverage]{geometa::GMLAbstractDiscreteCoverage}} -> \code{GMLMultiCurveCoverage}
 }
 \section{Methods}{
 \subsection{Public methods}{

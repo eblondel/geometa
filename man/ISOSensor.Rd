@@ -24,7 +24,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{Sensor}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractAggregate} -> \code{geometa::ISOSeries} -> \code{ISOSensor}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractAggregate]{geometa::ISOAbstractAggregate}} -> \code{\link[geometa:ISOSeries]{geometa::ISOSeries}} -> \code{ISOSensor}
 }
 \section{Methods}{
 \subsection{Public methods}{

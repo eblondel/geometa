@@ -51,7 +51,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{nonquantitative}
 \keyword{quality}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractQualityElement} -> \code{geometa::ISODataQualityAbstractElement} -> \code{geometa::ISOAbstractThematicAccuracy} -> \code{ISONonQuantitativeAttributeAccuracy}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractQualityElement]{geometa::ISOAbstractQualityElement}} -> \code{\link[geometa:ISODataQualityAbstractElement]{geometa::ISODataQualityAbstractElement}} -> \code{\link[geometa:ISOAbstractThematicAccuracy]{geometa::ISOAbstractThematicAccuracy}} -> \code{ISONonQuantitativeAttributeAccuracy}
 }
 \section{Methods}{
 \subsection{Public methods}{

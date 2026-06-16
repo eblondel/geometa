@@ -29,7 +29,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{grid}
 \keyword{rectified}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLAbstractObject} -> \code{geometa::GMLAbstractFeature} -> \code{geometa::GMLAbstractCoverage} -> \code{geometa::GMLAbstractDiscreteCoverage} -> \code{GMLRectifiedGridCoverage}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLAbstractFeature]{geometa::GMLAbstractFeature}} -> \code{\link[geometa:GMLAbstractCoverage]{geometa::GMLAbstractCoverage}} -> \code{\link[geometa:GMLAbstractDiscreteCoverage]{geometa::GMLAbstractDiscreteCoverage}} -> \code{GMLRectifiedGridCoverage}
 }
 \section{Methods}{
 \subsection{Public methods}{

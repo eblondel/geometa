@@ -23,7 +23,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{date}
 \keyword{typed}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractTypedDate}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractTypedDate}
 }
 \section{Methods}{
 \subsection{Public methods}{

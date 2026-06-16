@@ -53,7 +53,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{band}
 \keyword{imagery}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISORangeDimension} -> \code{geometa::ISOBand} -> \code{ISOImageryBand}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISORangeDimension]{geometa::ISORangeDimension}} -> \code{\link[geometa:ISOBand]{geometa::ISOBand}} -> \code{ISOImageryBand}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

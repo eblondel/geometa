@@ -50,7 +50,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{format}
 \keyword{quality}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractQualityElement} -> \code{geometa::ISODataQualityAbstractElement} -> \code{geometa::ISOAbstractLogicalConsistency} -> \code{ISOFormatConsistency}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractQualityElement]{geometa::ISOAbstractQualityElement}} -> \code{\link[geometa:ISODataQualityAbstractElement]{geometa::ISODataQualityAbstractElement}} -> \code{\link[geometa:ISOAbstractLogicalConsistency]{geometa::ISOAbstractLogicalConsistency}} -> \code{ISOFormatConsistency}
 }
 \section{Methods}{
 \subsection{Public methods}{

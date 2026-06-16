@@ -55,7 +55,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{feature}
 \keyword{operation}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractCarrierOfCharacteristics} -> \code{geometa::ISOAbstractPropertyType} -> \code{geometa::ISOPropertyType} -> \code{ISOFeatureAttribute}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractCarrierOfCharacteristics]{geometa::ISOAbstractCarrierOfCharacteristics}} -> \code{\link[geometa:ISOAbstractPropertyType]{geometa::ISOAbstractPropertyType}} -> \code{\link[geometa:ISOPropertyType]{geometa::ISOPropertyType}} -> \code{ISOFeatureAttribute}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

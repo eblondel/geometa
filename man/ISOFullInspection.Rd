@@ -15,9 +15,6 @@ ISOFullInspection
 
 ISOFullInspection
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_FullInspection}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
@@ -25,7 +22,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{full}
 \keyword{inspection}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOEvaluationMethod} -> \code{ISOFullInspection}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOEvaluationMethod]{geometa::ISOEvaluationMethod}} -> \code{ISOFullInspection}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -28,7 +28,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{GML}
 \keyword{ISO}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::GMLAbstractObject} -> \code{geometa::GMLEnvelope} -> \code{GMLEnvelopeWithTimePeriod}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:GMLAbstractObject]{geometa::GMLAbstractObject}} -> \code{\link[geometa:GMLEnvelope]{geometa::GMLEnvelope}} -> \code{GMLEnvelopeWithTimePeriod}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

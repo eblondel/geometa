@@ -27,7 +27,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{sensor}
 \keyword{type}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOCodeListValue} -> \code{ISOImagerySensorType}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListValue]{geometa::ISOCodeListValue}} -> \code{ISOImagerySensorType}
 }
 \section{Methods}{
 \subsection{Public methods}{

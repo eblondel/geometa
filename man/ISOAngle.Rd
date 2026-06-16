@@ -22,7 +22,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{angle}
 \keyword{measure}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOMeasure} -> \code{ISOAngle}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOMeasure]{geometa::ISOMeasure}} -> \code{ISOAngle}
 }
 \section{Methods}{
 \subsection{Public methods}{

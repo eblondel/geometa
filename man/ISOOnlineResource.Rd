@@ -32,7 +32,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{online}
 \keyword{resource}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractOnlineResource} -> \code{ISOOnlineResource}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractOnlineResource]{geometa::ISOAbstractOnlineResource}} -> \code{ISOOnlineResource}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

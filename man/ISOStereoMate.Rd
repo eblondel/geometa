@@ -25,7 +25,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{mate}
 \keyword{stereo}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractAggregate} -> \code{ISOStereoMate}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractAggregate]{geometa::ISOAbstractAggregate}} -> \code{ISOStereoMate}
 }
 \section{Methods}{
 \subsection{Public methods}{

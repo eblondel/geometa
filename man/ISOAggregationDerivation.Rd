@@ -15,9 +15,6 @@ ISOAggregationDerivation
 
 ISOAggregationDerivation
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_AggregationDerivation}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
@@ -25,7 +22,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{aggregation}
 \keyword{derivation}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOEvaluationMethod} -> \code{ISOAggregationDerivation}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOEvaluationMethod]{geometa::ISOEvaluationMethod}} -> \code{ISOAggregationDerivation}
 }
 \section{Methods}{
 \subsection{Public methods}{

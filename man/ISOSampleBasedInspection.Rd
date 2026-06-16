@@ -15,9 +15,6 @@ ISOSampleBasedInspection
 
 ISOSampleBasedInspection
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_SampleBasedInspection}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
@@ -26,7 +23,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{inspection}
 \keyword{sample}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOEvaluationMethod} -> \code{ISOSampleBasedInspection}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOEvaluationMethod]{geometa::ISOEvaluationMethod}} -> \code{ISOSampleBasedInspection}
 }
 \section{Methods}{
 \subsection{Public methods}{

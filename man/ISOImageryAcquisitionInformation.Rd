@@ -29,7 +29,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{element}
 \keyword{imagery}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractAcquisitionInformation} -> \code{ISOImageryAcquisitionInformation}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractAcquisitionInformation]{geometa::ISOAbstractAcquisitionInformation}} -> \code{ISOImageryAcquisitionInformation}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

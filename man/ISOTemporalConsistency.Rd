@@ -50,7 +50,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{quality}
 \keyword{temporal}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractQualityElement} -> \code{geometa::ISODataQualityAbstractElement} -> \code{geometa::ISOAbstractTemporalAccuracy} -> \code{ISOTemporalConsistency}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractQualityElement]{geometa::ISOAbstractQualityElement}} -> \code{\link[geometa:ISODataQualityAbstractElement]{geometa::ISODataQualityAbstractElement}} -> \code{\link[geometa:ISOAbstractTemporalAccuracy]{geometa::ISOAbstractTemporalAccuracy}} -> \code{ISOTemporalConsistency}
 }
 \section{Methods}{
 \subsection{Public methods}{

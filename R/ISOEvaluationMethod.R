@@ -104,9 +104,6 @@ ISOEvaluationMethod <- R6Class("ISOEvaluationMethod",
 #' @keywords ISO aggregation derivation
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO aggregation derivation
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_AggregationDerivation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -136,9 +133,6 @@ ISOAggregationDerivation <- R6Class("ISOAggregationDerivation",
 #' @keywords ISO full inspection
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO full inspection
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_FullInspection}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -168,9 +162,6 @@ ISOFullInspection <- R6Class("ISOFullInspection",
 #' @keywords ISO indirect evaluation
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO indirect evaluation
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_IndirectEvaluation}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -200,9 +191,6 @@ ISOIndirectEvaluation <- R6Class("ISOIndirectEvaluation",
 #' @keywords ISO sample based inspection
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO sample based inspection
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_SampleBasedInspection}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -232,9 +220,6 @@ ISOSampleBasedInspection <- R6Class("ISOSampleBasedInspection",
 #' @keywords ISO data inspection
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO data inspection
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_DataInspection}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

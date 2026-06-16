@@ -37,7 +37,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{element}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::SWEAbstractObject} -> \code{SWEElement}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:SWEAbstractObject]{geometa::SWEAbstractObject}} -> \code{SWEElement}
 }
 \section{Methods}{
 \subsection{Public methods}{

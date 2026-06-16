@@ -71,7 +71,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{feature}
 \keyword{type}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOFeatureType} -> \code{ISOFeatureType19139}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOFeatureType]{geometa::ISOFeatureType}} -> \code{ISOFeatureType19139}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

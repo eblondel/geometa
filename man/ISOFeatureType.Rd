@@ -71,7 +71,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{feature}
 \keyword{type}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOFeatureType}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOFeatureType}
 }
 \section{Methods}{
 \subsection{Public methods}{

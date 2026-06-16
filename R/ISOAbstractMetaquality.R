@@ -6,9 +6,6 @@
 #' @keywords ISO abstract meta quality
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO abstract meta quality
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_AbstractDQ_Metaquality}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -62,9 +59,6 @@ ISOAbstractMetaquality <- R6Class("ISOAbstractMetaquality",
 #' @keywords ISO confidence
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO confidence
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_Confidence}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -94,9 +88,6 @@ ISOConfidence <- R6Class("ISOConfidence",
 #' @keywords ISO homogeneity
 #' @return Object of \code{\link[R6]{R6Class}} for modelling an ISO homogeneity
 #' @format \code{\link[R6]{R6Class}} object.
-#'   
-#' @references 
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19157/-/mdq/1.2/mdq/#element_DQ_Homogeneity}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

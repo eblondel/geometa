@@ -57,7 +57,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{citation}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractCitation} -> \code{ISOCitation}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractCitation]{geometa::ISOAbstractCitation}} -> \code{ISOCitation}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

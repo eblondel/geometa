@@ -28,7 +28,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{code}
 \keyword{element}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOCodeListDictionary} -> \code{ISOMLCodeListDictionary}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOCodeListDictionary]{geometa::ISOCodeListDictionary}} -> \code{ISOMLCodeListDictionary}
 }
 \section{Methods}{
 \subsection{Public methods}{

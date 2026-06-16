@@ -22,7 +22,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{parameter}
 \keyword{process}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractParameter} -> \code{ISOProcessParameter}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractParameter]{geometa::ISOAbstractParameter}} -> \code{ISOProcessParameter}
 }
 \section{Methods}{
 \subsection{Public methods}{

@@ -13,11 +13,6 @@
 #'   
 #'   #geomOnly
 #'   geomOnly <- ISOAssociationType$new(value = "source")
-#'   
-#' @references 
-#'   - ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_DS_AssociationTypeCode}
-#'   
-#'   - ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mri/1.0/mri/}
 #' 
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

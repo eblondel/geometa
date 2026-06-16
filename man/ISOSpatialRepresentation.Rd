@@ -24,7 +24,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{ISO}
 \keyword{address}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOAbstractSpatialRepresentation} -> \code{ISOSpatialRepresentation}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOAbstractSpatialRepresentation]{geometa::ISOAbstractSpatialRepresentation}} -> \code{ISOSpatialRepresentation}
 }
 \section{Methods}{
 \subsection{Public methods}{

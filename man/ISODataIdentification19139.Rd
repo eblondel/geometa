@@ -109,10 +109,7 @@ ISODataIdentification19139
    md$setSupplementalInformation("some additional information")
    
    xml <- md$encode()
-   
-}
-\references{
-- ISO 19139 \url{https://schemas.isotc211.org/19139/-/gmd/1.0/gmd/#element_MD_DataIdentification}
+
 }
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
@@ -121,7 +118,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{data}
 \keyword{identification}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{geometa::ISOIdentification} -> \code{geometa::ISOIdentification19139} -> \code{ISODataIdentification19139}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{\link[geometa:ISOIdentification]{geometa::ISOIdentification}} -> \code{\link[geometa:ISOIdentification19139]{geometa::ISOIdentification19139}} -> \code{ISODataIdentification19139}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

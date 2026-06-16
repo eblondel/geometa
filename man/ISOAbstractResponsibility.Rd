@@ -15,9 +15,6 @@ ISOAbstractResponsibility
 
 ISOAbstractResponsibility
 }
-\references{
-- ISO 19115-3 \url{https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc/}
-}
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
@@ -25,7 +22,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{abstract}
 \keyword{responsibility}
 \section{Super classes}{
-\code{geometa::geometaLogger} -> \code{geometa::ISOAbstractObject} -> \code{ISOAbstractResponsibility}
+\code{\link[geometa:geometaLogger]{geometa::geometaLogger}} -> \code{\link[geometa:ISOAbstractObject]{geometa::ISOAbstractObject}} -> \code{ISOAbstractResponsibility}
 }
 \section{Methods}{
 \subsection{Public methods}{
