@@ -207,8 +207,7 @@ ISOCodelist <- R6Class("ISOCodelist",
 #' 
 #' @return a \code{list} of \link{ISOCodelist} objects
 #' 
-#' @examples             
-#'   parseISOCodelists(version = "19139")
+#' @note Internal method used to parse ISO codelists for package build
 #' 
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
