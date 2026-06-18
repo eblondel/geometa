@@ -19,7 +19,8 @@
   <!-- Changed schema location to address gml vs. gml/3.2 problem Ted Habermann 2013-12-26 -->
   <!--<import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="../../../../19115/-3/gco/1.0/gco.xsd"/>-->
   <xs:import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="../../../../19115/-3/gco/1.0/gco.xsd"/>
-	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+	<!--<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>-->
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="../../../../xlink/xlink.xsd"/>
 	<!-- ########################################################################### -->
 	<!-- ########################################################################### -->
 	<!-- ================================== Classes ================================= -->
