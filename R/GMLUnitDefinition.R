@@ -64,6 +64,8 @@ GMLUnitDefinition <- R6Class("GMLUnitDefinition",
 GMLUnitDefinition$buildFrom = function(x, by = "symbol", unitsystem = "udunits2"){
    out <- NULL
    
+   if(is.null(x) || length(x) != 1 || is.na(x)) return(NULL)
+   
    if(!requireNamespace("units", quietly = TRUE)) 
       stop("Package 'units' is required.")
    
